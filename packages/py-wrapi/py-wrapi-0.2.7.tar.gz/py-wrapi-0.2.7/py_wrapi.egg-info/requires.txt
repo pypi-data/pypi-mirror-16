@@ -1,0 +1,4 @@
+tapioca-wrapper<2
+requests-oauthlib>=0.4.2
+terminaltables==3.0.0
+oauth2client<=1.4.12
