@@ -1,0 +1,4 @@
+Django >= 1.9
+six >= 1.10
+tqdm >= 4.7.6
+requests >= 2.10

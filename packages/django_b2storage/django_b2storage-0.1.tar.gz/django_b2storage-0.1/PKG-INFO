@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: django_b2storage
+Version: 0.1
+Summary: A backblaze b2 storage system for django
+Home-page: https://github.com/amlatyrngom/django_b2storage
+Author: Amadou Latyr Ngom
+Author-email: amlatyr.ngom@gmail.com
+License: MIT
+Description: # Django Backblaze B2 Storage
+        A backblaze b2 storage system for django
+        
+        ## Use
+        Soon
+        
+Keywords: backblaze b2 django storage media
+Platform: UNKNOWN
+Classifier: Framework :: Django
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Developers
