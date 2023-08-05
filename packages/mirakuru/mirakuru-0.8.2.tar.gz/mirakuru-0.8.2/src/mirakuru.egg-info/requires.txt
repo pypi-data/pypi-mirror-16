@@ -1,0 +1,11 @@
+psutil>=4.0.0
+
+[docs]
+sphinx
+
+[tests]
+pytest==2.9.2
+pytest-cov==2.3.0
+mock==2.0.0
+python-daemon==2.1.1
+pylama==7.0.9
