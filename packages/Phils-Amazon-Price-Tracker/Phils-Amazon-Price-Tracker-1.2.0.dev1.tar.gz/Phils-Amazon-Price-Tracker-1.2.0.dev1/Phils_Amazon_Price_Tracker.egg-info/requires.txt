@@ -1,0 +1,10 @@
+plotly
+html2text
+robobrowser
+pillow
+
+[dev]
+check-manifest
+
+[test]
+coverage
