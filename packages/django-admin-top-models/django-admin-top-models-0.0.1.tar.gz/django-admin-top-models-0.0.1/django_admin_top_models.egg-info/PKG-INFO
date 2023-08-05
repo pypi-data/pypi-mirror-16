@@ -1,0 +1,38 @@
+Metadata-Version: 1.1
+Name: django-admin-top-models
+Version: 0.0.1
+Summary: UNKNOWN
+Home-page: https://github.com/KostyaEsmukov/django-admin-top-models
+Author: Kostya Esmukov
+Author-email: kostya@esmukov.ru
+License: LPGL
+Description: =======================
+        django-admin-top-models
+        =======================
+        
+        
+        TBD
+        
+        
+        =========
+        CHANGELOG
+        =========
+        
+        0.0.1 (unreleased)
+        ------------------
+        
+        * Initial working version
+        
+Keywords: django modeladmin admin reorder top
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
