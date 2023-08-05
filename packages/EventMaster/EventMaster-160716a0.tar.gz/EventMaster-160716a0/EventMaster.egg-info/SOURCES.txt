@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+EventMaster/__init__.py
+EventMaster.egg-info/PKG-INFO
+EventMaster.egg-info/SOURCES.txt
+EventMaster.egg-info/dependency_links.txt
+EventMaster.egg-info/top_level.txt
