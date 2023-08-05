@@ -1,0 +1,11 @@
+setup.py
+pypershelf/__init__.py
+pypershelf/base.py
+pypershelf/helpers.py
+pypershelf/play.py
+pypershelf.egg-info/PKG-INFO
+pypershelf.egg-info/SOURCES.txt
+pypershelf.egg-info/dependency_links.txt
+pypershelf.egg-info/not-zip-safe
+pypershelf.egg-info/top_level.txt
+test/test_main.py
