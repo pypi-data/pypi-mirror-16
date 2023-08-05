@@ -1,0 +1,143 @@
+{% extends "receipt/base.rml.jinja2" %}
+{% import "receipt/form.rml.jinja2" as form %}
+{% import "receipt/graphics.rml.jinja2" as graphics %}
+
+{% set TEST_MODE = False %}
+{% set MAX_LINE_ITEMS_SINGLE_PAGE = 4 %}
+{% set MAX_LINE_ITEMS_FIRST_PAGE = 9 %}
+{% set MAX_LINE_ITEMS_MIDDLE_PAGE = 11 %}
+{% set MAX_LINE_ITEMS_LAST_PAGE = 7 %}
+
+{% block template %}
+    <pageTemplate id="single">
+        <pageGraphics>
+            {{ graphics.draw_header(order_token) }}
+            {% if split_shipment %}
+                {{ graphics.draw_multiple_shipments_notice() }}
+            {% endif %}
+            {{ graphics.draw_subheader_fields() }}
+            {{ graphics.draw_receipt_fields() }}
+            {{ graphics.draw_barcode(order_token) }}
+        </pageGraphics>
+        <frame id="line-items" x1="18" y1="95" width="396" height="90" />
+        {{ graphics.draw_subheader_frames() }}
+        {{ graphics.draw_receipt_frames() }}
+    </pageTemplate>
+
+    <pageTemplate id="first">
+        <pageGraphics>
+            {{ graphics.draw_header(order_token) }}
+            {% if split_shipment %}
+                {{ graphics.draw_multiple_shipments_notice() }}
+            {% endif %}
+            {{ graphics.draw_subheader_fields() }}
+            {{ graphics.draw_barcode(order_token) }}
+        </pageGraphics>
+        <frame id="line-items" x1="18" y1="18" width="396" height="167" />
+        {{ graphics.draw_subheader_frames() }}
+    </pageTemplate>
+
+    <pageTemplate id="middle">
+        <pageGraphics>
+            {{ graphics.draw_header(order_token) }}
+            {% if split_shipment %}
+                {{ graphics.draw_multiple_shipments_notice() }}
+            {% endif %}
+        </pageGraphics>
+        <frame id="line-items" x1="18" y1="18" width="396" height="209" />
+    </pageTemplate>
+
+    <pageTemplate id="last">
+        <pageGraphics>
+            {{ graphics.draw_header(order_token) }}
+            {% if split_shipment %}
+                {{ graphics.draw_multiple_shipments_notice() }}
+            {% endif %}
+            {{ graphics.draw_receipt_fields() }}
+        </pageGraphics>
+        <frame id="line-items" x1="18" y1="95" width="396" height="132" />
+        {{ graphics.draw_receipt_frames() }}
+    </pageTemplate>
+{% endblock %}
+
+{% block stylesheet %}
+    <blockTableStyle id="line-items">
+        <blockValign value="MIDDLE" />
+        <blockAlignment value="CENTER" start="0,0" stop="-1,-1" />
+        <blockAlignment value="LEFT" start="1,0" stop="-3,-1" />
+        <blockTopPadding length="2" />
+        <blockBottomPadding length="2" />
+        <blockLeftPadding length="3" />
+        <blockRightPadding length="3" />
+        <lineStyle kind="GRID" thickness="1" colorName="silver" start="0,1" stop="-1,-1" />
+        <blockFont name="Helvetica" size="10" start="0,0" stop="-1,-1" />
+
+        <blockTopPadding length="3" start="0,0" stop="-1,0" />
+        <blockBottomPadding length="3" start="0,0" stop="-1,0" />
+        <blockLeftPadding length="7" start="0,0" stop="-1,0" />
+        <blockLeftPadding length="7" start="1,1" stop="1,-1" />
+        <blockRightPadding length="7" start="0,0" stop="-1,0" />
+
+        <blockFont name="Helvetica-Bold" size="10" start="0,0" stop="-1,0" />
+        <blockTextColor colorName="#444444" start="0,0" stop="-1,0" />
+        <blockBackground colorName="#000000" start="0,0" stop="-1,0" />
+    </blockTableStyle>
+{% endblock %}
+
+{% block story_attrs %}
+    firstPageTemplate="{% if line_items|length > MAX_LINE_ITEMS_SINGLE_PAGE %}first{% else %}single{% endif %}"
+{% endblock %}
+
+{% block story %}
+
+    <!-- Fill in subheader content. -->
+    {{ form.fill_subheader_content(
+        shipping_address=shipping_address,
+        payment_date=created,
+        payment_method=payment_method,
+        last_4=last_4) }}
+
+    <!-- Render MAX_LINE_ITEMS_SINGLE_PAGE or fewer line items on a single page. -->
+    {% if line_items|length <= MAX_LINE_ITEMS_SINGLE_PAGE %}
+        {{ form.fill_line_items(line_items) }}
+
+    <!-- Render (MAX_LINE_ITEMS_FIRST_PAGE + MAX_LINE_ITEMS_LAST_PAGE) line items on two pages. -->
+    {% elif line_items|length <= (MAX_LINE_ITEMS_FIRST_PAGE + MAX_LINE_ITEMS_LAST_PAGE) %}
+        {{ form.fill_line_items(line_items[:MAX_LINE_ITEMS_FIRST_PAGE]) }}
+        <setNextTemplate name="last" />
+        <nextPage />
+        {{ form.fill_line_items(line_items[MAX_LINE_ITEMS_FIRST_PAGE:]) }}
+
+    <!-- Render more than (MAX_LINE_ITEMS_FIRST_PAGE + MAX_LINE_ITEMS_LAST_PAGE) line items on several pages. -->
+    {% else %}
+
+        <!-- Render first page. -->
+        {{ form.fill_line_items(line_items[:MAX_LINE_ITEMS_FIRST_PAGE]) }}
+
+        <!-- Render middle page(s). -->
+        <setNextTemplate name="middle" />
+        <nextPage />
+        {% for page in line_items[MAX_LINE_ITEMS_FIRST_PAGE:]|batch(MAX_LINE_ITEMS_MIDDLE_PAGE) %}
+            <!-- Render last page, when appropriate. -->
+            {% if loop.last and page|length <= MAX_LINE_ITEMS_LAST_PAGE %}
+                <setNextTemplate name="last" />
+                <nextPage />
+                {{ form.fill_line_items(page) }}
+            {% elif loop.last %}
+                {{ form.fill_line_items(page) }}
+                <setNextTemplate name="last" />
+                <nextPage />
+            {% else %}
+                {{ form.fill_line_items(page) }}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    <!-- Fill in order totals. -->
+    {{ form.fill_receipt(
+        subtotal=subtotal,
+        sales_tax=sales_tax,
+        shipping_cost=shipping_cost,
+        total=total) }}
+
+{% endblock %}
