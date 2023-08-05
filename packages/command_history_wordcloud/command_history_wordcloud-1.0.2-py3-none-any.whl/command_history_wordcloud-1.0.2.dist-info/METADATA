@@ -1,0 +1,19 @@
+Metadata-Version: 2.0
+Name: command-history-wordcloud
+Version: 1.0.2
+Summary: Generate word cloud images for frequency of commands usage on your shell
+Home-page: https://github.com/hatappo/command_history_wordcloud
+Author: Fumihiko Hata
+Author-email: hatappo44+command_history_wordcloud@gmail.com
+License: MIT License
+Keywords: wordcloud
+Platform: UNKNOWN
+Requires-Dist: Django
+Requires-Dist: Pillow
+Requires-Dist: image
+Requires-Dist: numpy
+Requires-Dist: wordcloud
+
+UNKNOWN
+
+

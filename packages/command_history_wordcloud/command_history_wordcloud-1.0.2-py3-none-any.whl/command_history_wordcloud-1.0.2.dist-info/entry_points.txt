@@ -1,0 +1,4 @@
+
+          [console_scripts]
+          command_history_wordcloud = command_history_wordcloud.command_history_wordcloud:main
+      
