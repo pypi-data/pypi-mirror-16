@@ -1,0 +1,10 @@
+setup.py
+django_url_shortener/__init__.py
+django_url_shortener/settings.py
+django_url_shortener/urls.py
+django_url_shortener/wsgi.py
+django_url_shortener.egg-info/PKG-INFO
+django_url_shortener.egg-info/SOURCES.txt
+django_url_shortener.egg-info/dependency_links.txt
+django_url_shortener.egg-info/requires.txt
+django_url_shortener.egg-info/top_level.txt
