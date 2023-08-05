@@ -1,0 +1,4 @@
+traitlets
+ipython
+pandas
+vega>=0.4.1
