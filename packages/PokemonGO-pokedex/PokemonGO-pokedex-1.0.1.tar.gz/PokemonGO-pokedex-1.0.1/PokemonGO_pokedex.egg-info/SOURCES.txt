@@ -1,0 +1,8 @@
+PokemonGO-pokedex
+setup.py
+PokemonGO_pokedex.egg-info/PKG-INFO
+PokemonGO_pokedex.egg-info/SOURCES.txt
+PokemonGO_pokedex.egg-info/dependency_links.txt
+PokemonGO_pokedex.egg-info/pbr.json
+PokemonGO_pokedex.egg-info/requires.txt
+PokemonGO_pokedex.egg-info/top_level.txt

@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+# Usage:
+# $ pokemonGO-pokedex
+# Enter the Pokedex number from Pokemon GO Application.
+#
+# import library
+from sys import version_info
+import requests
+import json
+
+python3 = version_info[0] > 2 # boolean to test python version
+if python3: # Generate id based on user input
+    id = raw_input('Enter Pokedex number from Pokemon GO: ')
+else:
+    id = raw_input('Enter Pokedex number from Pokemon GO: ')
+    
+url = ('http://pokeapi.co/api/v2/pokemon/' + id ) # URL from pokeapi.co using pokemon list API
+
+r = requests.get(url)
+pokedex_data = json.loads(r.text)
+
+print "Pokemon name is: ", pokedex_data[u'name'] # print Pokemon name
