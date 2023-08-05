@@ -1,0 +1,53 @@
+Metadata-Version: 1.1
+Name: gazta
+Version: 0.2.1
+Summary: Winning a handmade Cheese
+Home-page: https://www.codesyntax.com
+Author: CodeSyntax
+Author-email: info@codesyntax.com
+License: GNU General Public License v3
+Description: =====
+        gazta
+        =====
+        
+        
+        You are two steps away from winning a handmade cheese!
+        ======================================================
+        
+        
+        Install this package and see what happens.
+        
+        Just for EuroPython 2016 attendants
+        
+        
+        CodeSyntax, 2016
+        
+        
+        History
+        =======
+        
+        0.2.1 (2016-07-15)
+        ------------------
+        
+        * Fix README
+        
+        0.2 (2016-07-15)
+        ----------------
+        
+        * Fix single-version-externally-managed problem
+        
+        0.1.0 (2016-07-13)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: gazta
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
