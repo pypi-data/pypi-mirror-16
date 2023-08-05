@@ -1,0 +1,21 @@
+language: python
+python:
+  - "2.6"
+  - "2.7"
+  - "3.2"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+addons:
+  apt:
+    packages:
+    - ttf-dejavu
+install:
+  - pip install --upgrade setuptools
+  - pip install pytest flake8 -e .
+  - mkdir -p ~/.fonts
+  - wget "https://github.com/Kozea/Ahem/blob/master/Ahem.ttf?raw=true" -O ~/.fonts/Ahem.ttf
+script:
+  - py.test -s
+  - flake8 weasyprint
+sudo: false
