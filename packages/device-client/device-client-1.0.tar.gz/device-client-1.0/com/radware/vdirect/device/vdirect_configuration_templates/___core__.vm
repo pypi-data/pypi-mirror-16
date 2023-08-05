@@ -1,0 +1,83 @@
+
+#set($beanToRead=$device.newBean($query.beanName))
+
+#if(!$query.indexEntries.empty)
+  #set($temp=[1])    
+  #populateMeta($beanToRead,$temp)
+  #set($meta=$temp[0])  
+  #foreach($indexEntry in $query.indexEntries)
+    #if($meta.get($indexEntry.key))
+      #set($temp='#set($beanToRead.' + $indexEntry.key + ' = "' + $indexEntry.value + '")')  
+    #else
+      #set($temp='#set($beanToRead.' + $indexEntry.key + ' = ' + $indexEntry.value + ')')  
+    #end
+    #evaluate($temp)
+  #end
+#end
+
+#set($beans=$device.readAll($beanToRead))
+#set($result='[')
+#set($json=[1])    
+#foreach($bean in $beans)
+  #toJSON($bean,$json)
+  #set($result=$result + $json[0])
+  #if($velocityHasNext)
+  	#set($result=$result + ',')                     
+  #end        
+#end
+#set($result=$result + ']')    
+
+##
+## Collect bean meta data
+##
+#macro(populateMeta,$bean,$result)
+	#set($meta={})
+	#set($fields=$bean.getClass().getDeclaredFields())
+    #foreach($field in $fields)
+    	#set($nada=$field.setAccessible(true))
+       	#set($name=$field.getName())
+        #set($needsQuote=!$NO_QUOTE_TYPES.contains($field.type.toString()))
+        #set($nada=$meta.put($name,$needsQuote))
+	#end
+    #set($result[0]=$meta)
+#end
+
+
+##
+## Represent a bean as JSON
+##
+#macro(toJSON, $bean,$result)
+    #set($data={})
+	#set($fields=$bean.getClass().getDeclaredFields())
+    #foreach($field in $fields)
+    	#set($nada=$field.setAccessible(true))
+       	#set($name=$field.getName())
+        #if(!$FIELDS_TO_SKIP.contains($name) && ($query.projection.contains($name) || $query.projection.empty))
+          #set($value=$field.get($bean))
+          #if(!$device.isNull($value))
+            #set($needsQuote=!$NO_QUOTE_TYPES.contains($field.type.toString()))
+            #if($value.getClass().toString() == $BYTE_ARRAY)
+            	#set($value=$convert.printHex($value))
+                #set($needsQuote=true)
+            #end            
+            #set($nada=$data.put($name,{'value': $value, 'needsQuote': $needsQuote}))
+          #end
+        #end
+	#end
+    #set($jsonStr='{')
+    #foreach($entry in $data.entrySet())
+        #set($jsonStr=$jsonStr + '"' + $entry.getKey() + '":')
+        #if($entry.getValue().get("needsQuote"))
+        	#set($jsonStr=$jsonStr + '"')
+        #end
+        #set($jsonStr=$jsonStr + $entry.getValue().get("value"))
+        #if($entry.getValue().get("needsQuote"))
+        	#set($jsonStr=$jsonStr + '"')
+        #end        
+        #if($velocityHasNext)
+        	#set($jsonStr=$jsonStr + ',')
+        #end
+    #end
+    #set($jsonStr=$jsonStr + '}')   
+    #set($result[0]=$jsonStr)
+#end

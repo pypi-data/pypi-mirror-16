@@ -1,0 +1,9 @@
+#parse("___params__.vm")
+
+#param($query, 'queryArgs', 'in','prompt=Query Arguments')
+#param($result, 'string', 'out')
+
+#device($device, 'type=defensePro')
+
+#parse("___core__.vm")
+

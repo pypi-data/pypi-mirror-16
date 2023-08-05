@@ -1,0 +1,15 @@
+#typedef('indexEntry')
+	#param($key, 'string', 'prompt=Index Field Name')
+	#param($value, 'string', 'prompt=Index Field Value')
+#end
+
+#typedef('queryArgs')
+    #param($beanName, 'string', 'in','prompt=Bean Name')
+    #param($projection, 'string[]', 'in','prompt=Projection')
+    #param($indexEntries, 'indexEntry[]', 'in','prompt=Index Fields')
+#end
+
+
+#set($FIELDS_TO_SKIP=['serialVersionUID','modifiedList'])
+#set($BYTE_ARRAY='class [B')
+#set($NO_QUOTE_TYPES=['class java.lang.Integer','class java.lang.Long','class java.lang.Boolean', $BYTE_ARRAY])
