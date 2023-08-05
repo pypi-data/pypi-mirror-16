@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: tdxutil
+Version: 0.0.2
+Summary: Tools for working with container types, command data operations, and concise exception handling
+Home-page: https://github.com/stroxler/tdxutil
+Author: Steven Troxler
+Author-email: steven.troxler@gmail.com
+License: MIT
+Description: # Welcome to tdxutil
+        
+        This project grew out of a desire to stop rewriting the same functions in
+        a `utils` module of every new package.
+        
+        Mostly it remains that way - very simple functions. The only exceptions
+        are the `wrapping` and `reflection` modules, which deal with decorators
+        and function-call-inspection tools that I've wanted to use on a few occasions
+        but never took the time to implement.
+        
+        More documentation to come, hopefully after unit tests :)
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
