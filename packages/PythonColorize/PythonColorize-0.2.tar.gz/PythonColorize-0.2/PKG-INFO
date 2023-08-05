@@ -1,0 +1,71 @@
+Metadata-Version: 1.1
+Name: PythonColorize
+Version: 0.2
+Summary: Simple module to colorize text on terminal
+Home-page: https://TiagoDanin.github.io/PythonColorize/
+Author: Tiago Danin
+Author-email: TiagoDanin@outlook.com
+License: GPLv3
+Description: 
+        		PythonColorize
+        		==============
+        
+        		Simple module to colorize text on terminal
+        
+        		Install ::
+        
+        			sudo pip3 install PythonColorize
+        
+        		DOC
+        		===
+        
+        		Colors  | Styles             |
+        		--------|--------------------|
+        		black   | bold               |
+        		red     | dark               |
+        		green   | underline          |
+        		yellow  | negative           |
+        		blue    | hide               |
+        		magenta |                    |
+        		cyan    |                    |
+        		white   |                    |
+        
+        		Params  | Result             |
+        		--------|--------------------|
+        		bg_     | background         |
+        		lg_     | light              |
+        		bg_lg_  | background & Light |
+        
+        		Module function
+        		===============
+        
+        		Get color ::
+        
+        			PythonColorize.colors.<[param][style]_>[name]
+        
+        		<.> Optional
+        
+        		Colorize ::
+        
+        			PythonColorize.colorize(text=[text], color=[color], style=[style], light=[True|False], background=[True|False])`
+        		
+Keywords: shell terminal python3 python2 color colorize
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.0
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Shells
+Classifier: Topic :: Terminals
+Classifier: Topic :: Utilities
