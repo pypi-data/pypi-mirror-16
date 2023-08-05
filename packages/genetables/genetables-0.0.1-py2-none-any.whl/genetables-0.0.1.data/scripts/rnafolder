@@ -1,0 +1,129 @@
+#!python
+
+
+# rnafolder - process RNAfold output
+#
+# Copyright (C) 2016 - Sven E. Templer <sven.templer@gmail.com>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this
+# software and associated documentation files (the "Software"), to deal in the Software
+# without restriction, including without limitation the rights to use, copy, modify,
+# merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+# permit persons to whom the Software is furnished to do so, subject to the following
+# conditions:
+#
+# The above copyright notice and this permission notice shall be included in all copies or
+# substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+# INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+# PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+# LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
+# OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+
+
+### arguments
+
+
+import argparse
+arg = argparse.ArgumentParser()
+argsub = arg.add_subparsers(dest = 'cmd', metavar = 'command',
+        help = 'command help')
+arg.add_argument('--testing', action = "store_true",
+        help = 'only return the first 10 lines of output')
+# subparser
+argsub1 = argsub.add_parser('fold2tsv',
+        help = 'convert RNAfold to .tsv')
+argsub1.add_argument('rna',
+        help = 'RNAfold output')
+#argsub1.add_argument('-o', '--output', metavar = 'file', nargs = 1,
+#        help = 'output file - not yet supported, use stdout')
+argsub1.add_argument('--skip-first', action = "store_true",
+        help = 'skip first character from RNAfold id (e.g. ">" if fasta input used for RNAfold)')
+# subparser
+argsub2 = argsub.add_parser('mergefoldbam',
+        help = 'merge RNAfold with bam')
+argsub2.add_argument('rna',
+        help = 'RNAfold output file')
+argsub2.add_argument('bam',
+        help = 'bam file')
+#argsub2.add_argument('-o', '--output', metavar = 'file', nargs = 1,
+#        help = 'output file - not yet supported, use stdout')
+argsub2.add_argument('--skip-first', action = "store_true",
+        help = 'skip first character from RNAfold id (e.g. ">" if fasta input used for RNAfold)')
+# parse
+opt = arg.parse_args()
+# add to description:
+# - rnafold usage: RNAfold -i .fa > .rna
+# add output option to txt file instead stdout
+
+
+### presets
+
+
+import sys
+import pysam
+from genetable.gtreader import readline_rnafold
+from genetable.gtreader import readline_bam
+
+
+### select subpars
+
+
+if opt.cmd == "fold2tsv":
+
+
+    f = open(opt.rna)
+    v = []
+    i = 0
+    while True:
+        v = []
+        v = readline_rnafold(f, opt.skip_first)
+        if v is None:
+            break
+        i += 1
+        print '\t'.join(v)
+        if opt.testing and i > 9:
+            break
+
+
+elif opt.cmd == "mergefoldbam":
+
+
+    iterr = open(opt.rna)
+    fileb = pysam.AlignmentFile(opt.bam, 'rb')
+    iterb = fileb.fetch()
+    i = 0
+    while True:
+        i += 1
+        ### read bam
+        bv = readline_bam(iterb)
+        ### read rnafold
+        rv = readline_rnafold(iterr, opt.skip_first)
+        if rv is None:
+            break
+        if bv is None:
+            break
+        ### join results
+        bv = '\t'.join(bv)
+        rv = '\t'.join(rv[1:]) # drop id from rnafold
+        #rv = '\t'.join(rv)
+        ### TODO
+        # compare ids
+        # fetch mate (other parameters) from bam?
+        ### print
+        print bv + '\t' + rv
+        ### test break
+        if opt.testing and i > 9:
+            break
+    iterr.close()
+    fileb.close()
+
+
+else:
+
+
+    print 'nothing done'
+
+

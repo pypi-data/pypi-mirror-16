@@ -1,0 +1,157 @@
+#!python
+
+
+# famap - create maps from fasta files
+#
+# Copyright (C) 2016 - Sven E. Templer <sven.templer@gmail.com>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this
+# software and associated documentation files (the "Software"), to deal in the Software
+# without restriction, including without limitation the rights to use, copy, modify,
+# merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+# permit persons to whom the Software is furnished to do so, subject to the following
+# conditions:
+#
+# The above copyright notice and this permission notice shall be included in all copies or
+# substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+# INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+# PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+# LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
+# OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+
+
+### arguments
+
+
+import argparse
+arg = argparse.ArgumentParser()
+# input options
+arg.add_argument('fasta',
+        help = 'fasta input')
+arg.add_argument('-g', '--gtf',
+        help = 'gtf input')
+# output options
+arg.add_argument('-o', '--output',
+        help = 'output file base name')
+arg.add_argument('-n', '--nucleotide', default = 'C',
+        help = 'select nucleotide to map')
+arg.add_argument('-s', '--split-header', action = 'store_false',
+        help = 'do not reduce header to first string without spaces')
+arg.add_argument('-f', '--feature',
+        help = 'select positions feature from gtf file, if supplied')
+# parse
+opt = arg.parse_args()
+
+
+### inform
+
+
+import sys
+print >> sys.stderr, "arguments"
+for k, v in vars(a).iteritems():
+    print >> sys.stderr, '* ' + k + ' = ' + str(v)
+if opt.gtf is not None and not opt.split_header:
+    print >> sys.stderr, """warning: Not splitting header. 
+    Intersecting with gtf file might result in bedtools intersect error!"""
+
+
+### presets
+
+
+seq = ""
+head = ""
+n = 0
+nt_complement = { 'C':'G', 'G':'C', 'A':'T', 'T':'A' }
+nf = opt.nucleotide
+nr = nt_complement[nf]
+if opt.output is not None:
+    bedfilebase = opt.output + '_' + opt.nucleotide
+from genetables.gtbed import is_featuretype
+from genetables.gtbed import subset_featuretype
+from genetables.gtbed import get_chrom
+
+
+### open files
+
+
+f_fa = open(opt.fasta)
+if opt.output is not None:
+    f_out = open(bedfilebase + '.famap', "w")
+
+
+### process fasta
+
+
+print >> sys.stderr, 'processing fasta file'
+for line in f_fa:
+    n += 1
+    #if n > 1000000: # testing
+    #    break # testing
+    #m = n % 1000000
+    #if (m == 0):
+    #    print >> sys.stderr, "* processed " + str(n) + " lines"
+    if (line[0] == ">"):
+        pos = 0
+        head = line[1:-1] # drop > and \n
+        if opt.split_header:
+            head = head.split(' ')[0]
+    else:
+        for char in line[:-1]:
+            pos += 1
+            if char in [nf, nr]:
+                o = []
+                strand = '+'
+                if char == nr:
+                    strand = '-'
+                o.append(head)         # chromosome
+                o.append(str(pos - 1)) # position (0-based)
+                o.append(str(pos))     # position
+                #obed = pybedtools.create_interval_from_list(o)
+                o.append('.')          # name
+                o.append('0')          # score
+                o.append(strand)       # strand
+                o = '\t'.join(o)
+                if opt.output is None:
+                    print o
+                else:
+                    f_out.write(o + '\n')
+print >> sys.stderr, '* processed ' + str(n) + ' lines'
+
+
+### intersect
+
+
+if opt.gtf is not None:
+    import pybedtools
+    print >> sys.stderr, 'subsetting gtf file'
+    gtf = as_bed(opt.gtf)
+    if opt.feature is not None:
+        print >> sys.stderr, '* selecting feature ' + opt.feature
+        gtf = subset_featuretype(opt.feature, gtf)
+    gtf_chromosomes = get_chrom(gtf)
+    #print gtf # testing
+    bed = as_bed(bedfilebase + '.famap')
+    bed = bed.intersect(gtf, u=True, s=True)
+    bedfile = bedfilebase + '_gtf.famap'
+    if opt.feature is not None:
+        bedfile = bedfilebase + '_gtf_' + opt.feature + '.famap'
+    bed.saveas(bedfile)
+
+
+### close files
+
+
+f_fopt.close()
+if opt.output is not None:
+    f_out.close()
+
+
+### done
+
+
+print >> sys.stderr, "done"
+
+
