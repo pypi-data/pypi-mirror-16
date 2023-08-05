@@ -1,0 +1,14 @@
+MANIFEST.in
+requirements.txt
+setup.py
+version.json
+faker_cinema/__init__.py
+faker_cinema/cinema.py
+faker_cinema/cpl.py
+faker_cinema/exhibitor.py
+faker_cinema/screen.py
+faker_cinema.egg-info/PKG-INFO
+faker_cinema.egg-info/SOURCES.txt
+faker_cinema.egg-info/dependency_links.txt
+faker_cinema.egg-info/requires.txt
+faker_cinema.egg-info/top_level.txt
