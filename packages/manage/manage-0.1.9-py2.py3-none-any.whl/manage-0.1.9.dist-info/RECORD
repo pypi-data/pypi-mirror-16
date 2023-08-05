@@ -1,0 +1,13 @@
+manage/__init__.py,sha256=IiIE-RDgxhj--Wk3rsplihaNmINSg6jWD-Xrvfdd2iU,110
+manage/__main__.py,sha256=qyO7GH_6NtyKe-CM2MtTm1cseC92Hof2HKN9n8Rb7eg,35
+manage/auto_import.py,sha256=NMYTWQsfvbn4reHqngsG-jzM5ESUTEAPRIkXt9SHYlg,1789
+manage/cli.py,sha256=bxHzv2aWovZo0JaQwQcPUHiCiCRNkDL6ODVGCmQgRkE,6796
+manage/commands_collector.py,sha256=LBIwyCDfC7kiDjG-inGVivYOtJhbV2aN2ps8gw5hKnA,6296
+manage/template.py,sha256=ZHW73QU1N72ul6bD148suwPlqt_Kluq0qHP3Xl7URWg,788
+manage-0.1.9.dist-info/DESCRIPTION.rst,sha256=kPf-GFEEagWTpS-rv2T2BvFlKO4IKlEtOyZ-dZStm3A,11777
+manage-0.1.9.dist-info/METADATA,sha256=yCSiQ7sh3np1UABNRVV9ln2jm4SUVOeALA1TXOYpcr4,12703
+manage-0.1.9.dist-info/RECORD,,
+manage-0.1.9.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+manage-0.1.9.dist-info/entry_points.txt,sha256=KJgofM08VLtxLrACw7DOOHHI9FXgjFuQpW7KmY6H3uc,44
+manage-0.1.9.dist-info/metadata.json,sha256=blIihM2-owFW1bIOmfZvGAy25-4ztUHDiWMvEUvKapM,1255
+manage-0.1.9.dist-info/top_level.txt,sha256=iMvQHgcJMRvyiUuxi5NQaP4gDHfmzSBOBMMfr1INpJ4,7
