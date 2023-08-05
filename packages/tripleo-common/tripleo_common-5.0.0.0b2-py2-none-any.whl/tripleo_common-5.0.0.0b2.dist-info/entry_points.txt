@@ -1,0 +1,8 @@
+[mistral.actions]
+tripleo.create_container = tripleo_common.actions.plan:CreateContainerAction
+tripleo.create_plan = tripleo_common.actions.plan:CreatePlanAction
+tripleo.get_capabilities = tripleo_common.actions.heat_capabilities:GetCapabilitiesAction
+tripleo.register_or_update_nodes = tripleo_common.actions.baremetal:RegisterOrUpdateNodes
+tripleo.update_capabilities = tripleo_common.actions.heat_capabilities:UpdateCapabilitiesAction
+tripleo.upload_default_templates = tripleo_common.actions.templates:UploadTemplatesAction
+
