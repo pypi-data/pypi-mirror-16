@@ -1,0 +1,9 @@
+pykwalify
+PyYAML
+future
+docopt
+docker-py
+
+[django]
+django
+django-form-utils
