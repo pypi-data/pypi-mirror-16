@@ -1,0 +1,4 @@
+2016-07-20, v02016-07-20, v0.13
+	* Use PEP 440 compatible versions
+	* Add support for newer git-buildpackage
+
