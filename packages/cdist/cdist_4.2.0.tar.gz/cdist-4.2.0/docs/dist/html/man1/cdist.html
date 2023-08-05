@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>9. cdist(1) &mdash; cdist 4.2.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="cdist 4.2.0 documentation" href="../index.html"/>
+        <link rel="next" title="10. Bootstrap" href="../cdist-bootstrap.html"/>
+        <link rel="prev" title="8. Quickstart" href="../cdist-quickstart.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> cdist
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                4.2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cdist-intro.html">1. cdist - usable configuration management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-why.html">2. Why should I use cdist?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-os.html">3. Supported Operating Systems</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-install.html">4. How to install cdist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-update.html">5. How to update cdist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-support.html">6. Support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-features.html">7. Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-quickstart.html">8. Quickstart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. cdist(1)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#name">9.1. NAME</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#synopsis">9.2. SYNOPSIS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#description">9.3. DESCRIPTION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general">9.4. GENERAL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#banner">9.5. BANNER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#config">9.6. CONFIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shell">9.7. SHELL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#examples">9.8. EXAMPLES</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment">9.9. ENVIRONMENT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exit-status">9.10. EXIT STATUS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#authors">9.11. AUTHORS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#copying">9.12. COPYING</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-bootstrap.html">10. Bootstrap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-manifest.html">11. Manifest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-type.html">12. cdist type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-types.html">13. cdist types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-explorer.html">14. Explorer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-messaging.html">15. Messaging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-reference.html">16. Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-best-practice.html">17. Best practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-stages.html">18. Execution stages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-remote-exec-copy.html">19. Remote exec and copy commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-hacker.html">20. Hacking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cdist-troubleshooting.html">21. Troubleshooting</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">cdist</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>9. cdist(1)</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/man1/cdist.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cdist-1">
+<h1>9. cdist(1)<a class="headerlink" href="#cdist-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="name">
+<h2>9.1. NAME<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h2>
+<p>cdist - Usable Configuration Management</p>
+</div>
+<div class="section" id="synopsis">
+<h2>9.2. SYNOPSIS<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cdist</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">V</span><span class="p">]</span> <span class="p">{</span><span class="n">banner</span><span class="p">,</span><span class="n">config</span><span class="p">,</span><span class="n">shell</span><span class="p">}</span> <span class="o">...</span>
+
+<span class="n">cdist</span> <span class="n">banner</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span>
+
+<span class="n">cdist</span> <span class="n">config</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">V</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">c</span> <span class="n">CONF_DIR</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">f</span> <span class="n">HOSTFILE</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">i</span> <span class="n">MANIFEST</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">s</span><span class="p">]</span> <span class="p">[</span><span class="n">host</span> <span class="p">[</span><span class="n">host</span> <span class="o">...</span><span class="p">]]</span>
+
+<span class="n">cdist</span> <span class="n">shell</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">d</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">s</span> <span class="n">SHELL</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="description">
+<h2>9.3. DESCRIPTION<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>cdist is the frontend executable to the cdist configuration management.
+cdist supports different subcommands as explained below.</p>
+</div>
+<div class="section" id="general">
+<h2>9.4. GENERAL<a class="headerlink" href="#general" title="Permalink to this headline">¶</a></h2>
+<p>All commands accept the following options:</p>
+<dl class="option">
+<dt id="cmdoption-d">
+<span id="cmdoption--debug"></span><code class="descname">-d</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--debug</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-d" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set log level to debug</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-h">
+<span id="cmdoption--help"></span><code class="descname">-h</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--help</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the help screen</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-v">
+<span id="cmdoption--verbose"></span><code class="descname">-v</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--verbose</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set log level to info, be more verbose</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-V">
+<span id="cmdoption--version"></span><code class="descname">-V</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--version</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-V" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show version and exit</p>
+</dd></dl>
+
+</div>
+<div class="section" id="banner">
+<h2>9.5. BANNER<a class="headerlink" href="#banner" title="Permalink to this headline">¶</a></h2>
+<p>Displays the cdist banner. Useful for printing
+cdist posters - a must have for every office.</p>
+</div>
+<div class="section" id="config">
+<h2>9.6. CONFIG<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h2>
+<p>Configure one or more hosts</p>
+<dl class="option">
+<dt id="cmdoption-c">
+<span id="cmdoption--conf-dir"></span><code class="descname">-c</code><code class="descclassname"> CONF_DIR</code><code class="descclassname">, </code><code class="descname">--conf-dir</code><code class="descclassname"> CONF_DIR</code><a class="headerlink" href="#cmdoption-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a configuration directory. Can be specified multiple times.
+If configuration directories contain conflicting types, explorers or
+manifests, then the last one found is used. Additionally this can also
+be configured by setting the CDIST_PATH environment variable to a colon
+delimited list of config directories. Directories given with the
+&#8211;conf-dir argument have higher precedence over those set through the
+environment variable.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-f">
+<span id="cmdoption--file"></span><code class="descname">-f</code><code class="descclassname"> HOSTFILE</code><code class="descclassname">, </code><code class="descname">--file</code><code class="descclassname"> HOSTFILE</code><a class="headerlink" href="#cmdoption-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read additional hosts to operate on from specified file
+or from stdin if &#8216;-&#8216; (each host on separate line).
+If no host or host file is specified then, by default,
+read hosts from stdin.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-i">
+<span id="cmdoption--initial-manifest"></span><code class="descname">-i</code><code class="descclassname"> MANIFEST</code><code class="descclassname">, </code><code class="descname">--initial-manifest</code><code class="descclassname"> MANIFEST</code><a class="headerlink" href="#cmdoption-i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Path to a cdist manifest or - to read from stdin</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-p">
+<span id="cmdoption--parallel"></span><code class="descname">-p</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--parallel</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-p" title="Permalink to this definition">¶</a></dt>
+<dd><p>Operate on multiple hosts in parallel</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-s">
+<span id="cmdoption--sequential"></span><code class="descname">-s</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--sequential</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Operate on multiple hosts sequentially</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption--remote-copy">
+<code class="descname">--remote-copy</code><code class="descclassname"> REMOTE_COPY</code><a class="headerlink" href="#cmdoption--remote-copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command to use for remote copy (should behave like scp)</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption--remote-exec">
+<code class="descname">--remote-exec</code><code class="descclassname"> REMOTE_EXEC</code><a class="headerlink" href="#cmdoption--remote-exec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Command to use for remote execution (should behave like ssh)</p>
+</dd></dl>
+
+</div>
+<div class="section" id="shell">
+<h2>9.7. SHELL<a class="headerlink" href="#shell" title="Permalink to this headline">¶</a></h2>
+<p>This command allows you to spawn a shell that enables access
+to the types as commands. It can be thought as an
+&#8220;interactive manifest&#8221; environment. See below for example
+usage. Its primary use is for debugging type parameters.</p>
+<dl class="option">
+<dt id="cmdoption-s">
+<code class="descname">-s</code><code class="descclassname">/--shell</code><a class="headerlink" href="#cmdoption-s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select shell to use, defaults to current shell</p>
+</dd></dl>
+
+</div>
+<div class="section" id="examples">
+<h2>9.8. EXAMPLES<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh"><div class="highlight"><pre><span></span><span class="c1"># Configure ikq05.ethz.ch with debug enabled</span>
+% cdist config -d ikq05.ethz.ch
+
+<span class="c1"># Configure hosts in parallel and use a different configuration directory</span>
+% cdist config -c ~/p/cdist-nutzung <span class="se">\</span>
+    -p ikq02.ethz.ch ikq03.ethz.ch ikq04.ethz.ch
+
+<span class="c1"># Use custom remote exec / copy commands</span>
+% cdist config --remote-exec /path/to/my/remote/exec <span class="se">\</span>
+    --remote-copy /path/to/my/remote/copy <span class="se">\</span>
+    -p ikq02.ethz.ch ikq03.ethz.ch ikq04.ethz.ch
+
+<span class="c1"># Configure hosts read from file loadbalancers</span>
+% cdist config -f loadbalancers
+
+<span class="c1"># Display banner</span>
+cdist banner
+
+<span class="c1"># Show help</span>
+% cdist --help
+
+<span class="c1"># Show Version</span>
+% cdist --version
+
+<span class="c1"># Enter a shell that has access to emulated types</span>
+% cdist shell
+% __git
+usage: __git --source SOURCE <span class="o">[</span>--state STATE<span class="o">]</span> <span class="o">[</span>--branch BRANCH<span class="o">]</span>
+             <span class="o">[</span>--group GROUP<span class="o">]</span> <span class="o">[</span>--owner OWNER<span class="o">]</span> <span class="o">[</span>--mode MODE<span class="o">]</span> object_id
+</pre></div>
+</div>
+</div>
+<div class="section" id="environment">
+<h2>9.9. ENVIRONMENT<a class="headerlink" href="#environment" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>TMPDIR, TEMP, TMP</dt>
+<dd>Setup the base directory for the temporary directory.
+See <a class="reference external" href="http://docs.python.org/py3k/library/tempfile.html">http://docs.python.org/py3k/library/tempfile.html</a> for
+more information. This is rather useful, if the standard
+directory used does not allow executables.</dd>
+<dt>CDIST_LOCAL_SHELL</dt>
+<dd>Selects shell for local script execution, defaults to /bin/sh</dd>
+<dt>CDIST_REMOTE_SHELL</dt>
+<dd>Selects shell for remote scirpt execution, defaults to /bin/sh</dd>
+<dt>CDIST_REMOTE_EXEC</dt>
+<dd>Use this command for remote execution (should behave like ssh)</dd>
+<dt>CDIST_REMOTE_COPY</dt>
+<dd>Use this command for remote copy (should behave like scp)</dd>
+</dl>
+</div>
+<div class="section" id="exit-status">
+<h2>9.10. EXIT STATUS<a class="headerlink" href="#exit-status" title="Permalink to this headline">¶</a></h2>
+<p>The following exit values shall be returned:</p>
+<dl class="docutils">
+<dt>0</dt>
+<dd>Successful completion</dd>
+<dt>1</dt>
+<dd>One or more host configurations failed</dd>
+</dl>
+</div>
+<div class="section" id="authors">
+<h2>9.11. AUTHORS<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<p>Nico Schottelius &lt;<a class="reference external" href="mailto:nico-cdist--&#37;&#52;&#48;--schottelius&#46;org">nico-cdist--<span>&#64;</span>--schottelius<span>&#46;</span>org</a>&gt;</p>
+</div>
+<div class="section" id="copying">
+<h2>9.12. COPYING<a class="headerlink" href="#copying" title="Permalink to this headline">¶</a></h2>
+<p>Copyright (C) 2011-2013 Nico Schottelius. Free use of this software is
+granted under the terms of the GNU General Public License version 3 (GPLv3).</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cdist-bootstrap.html" class="btn btn-neutral float-right" title="10. Bootstrap" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../cdist-quickstart.html" class="btn btn-neutral" title="8. Quickstart" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'4.2.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
