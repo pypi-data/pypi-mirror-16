@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: soscleaner
+Version: 0.3.0
+Summary: To clean and filter sensitive data from a standard sosreport
+Home-page: https://github.com/RedHatGov/SOSCleaner
+Author: Jamie Duncan
+Author-email: jduncan@redhat.com
+License: GPLv2
+Download-URL: https://github.com/RedHatGov/soscleaner/releases/tags/0.3.0
+Description: soscleaner is an application to help obfuscate sensitive data from a standard sosreport
+Platform: UNKNOWN
