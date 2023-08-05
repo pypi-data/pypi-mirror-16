@@ -1,0 +1,3 @@
+easybuild-easyconfigs == 2.8.2
+easybuild-easyblocks == 2.8.2
+easybuild-framework == 2.8.2
