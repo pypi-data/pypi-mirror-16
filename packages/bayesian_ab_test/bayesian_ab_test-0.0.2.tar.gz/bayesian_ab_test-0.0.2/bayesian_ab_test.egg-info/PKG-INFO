@@ -1,0 +1,27 @@
+Metadata-Version: 1.1
+Name: bayesian-ab-test
+Version: 0.0.2
+Summary: Calculates Bayesian Probability that A - B > x
+Home-page: http://github.com/eriktaubeneck/bayesian_ab_test
+Author: Erik Taubeneck
+Author-email: erik.taubeneck@gmail.com
+License: MIT
+Description: 
+        Bayesian AB Test
+        -----------------
+        
+        Calculates Bayesian Probabilty that A - B > x
+        
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Plugins
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Flask
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English 
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
