@@ -1,0 +1,11 @@
+MANIFEST.in
+requirements.txt
+setup.py
+hirosql/__init__.py
+hirosql/main.py
+hirosql.egg-info/PKG-INFO
+hirosql.egg-info/SOURCES.txt
+hirosql.egg-info/dependency_links.txt
+hirosql.egg-info/entry_points.txt
+hirosql.egg-info/requires.txt
+hirosql.egg-info/top_level.txt
