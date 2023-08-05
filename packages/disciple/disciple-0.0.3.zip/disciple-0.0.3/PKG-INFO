@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: disciple
+Version: 0.0.3
+Summary: A multi-access distributed message pattern with ZMQ (pyzmq) and ZooKeeper (kazoo).
+Home-page: https://github.com/xuwei0455/disciple
+Author: Faith Carlson <xuwei0455@github.com>
+Author-email: xuwei0455@gmail.com
+License: Apache 2.0
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
