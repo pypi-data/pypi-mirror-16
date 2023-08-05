@@ -1,0 +1,6 @@
+sat
+twisted
+txJSON-RPC
+zope.interface
+pyopenssl
+jinja2
