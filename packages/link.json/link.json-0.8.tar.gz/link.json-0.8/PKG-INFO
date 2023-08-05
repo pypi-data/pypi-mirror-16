@@ -1,0 +1,36 @@
+Metadata-Version: 1.1
+Name: link.json
+Version: 0.8
+Summary: Provides utilities for JSON Schema, JSON Patch, Collection+JSON, ...
+Home-page: https://github.com/linkdd/link.json
+Author: David Delassus
+Author-email: david.jose.delassus@gmail.com
+License: MIT
+Description: link.json
+        =========
+        
+        **link.json** provides some utilities for JSON like:
+        
+         - JSON Schema
+         - JSON Patch
+         - Collection+JSON
+         - ...
+        
+        See documentation_ for more informations.
+        
+        .. _documentation: https://linkjson.readthedocs.io
+        
+Keywords: link json
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Utilities
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
