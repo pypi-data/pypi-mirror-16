@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: lfi_url_encoding
+Version: 1.0
+Summary: A tool to encode URLs for LFI vulnerability.
+Home-page: https://github.com/noraj1337/CTF-tools/tree/master/Web/lfi_url_encoding
+Author: Alexandre ZANNI
+Author-email: alexandre.zanni@openmailbox.org
+License: GNU General Public License v3.0
+Description: UNKNOWN
+Keywords: encoding,LFI,URL
+Platform: UNKNOWN
+Classifier: Topic :: Security
+Classifier: Environment :: Other Environment
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
