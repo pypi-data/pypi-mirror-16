@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+setup.py
+slickdeals/__init__.py
+slickdeals/slickdeals.py
+slickdeals/utils.py
+slickdeals.egg-info/PKG-INFO
+slickdeals.egg-info/SOURCES.txt
+slickdeals.egg-info/dependency_links.txt
+slickdeals.egg-info/entry_points.txt
+slickdeals.egg-info/not-zip-safe
+slickdeals.egg-info/requires.txt
+slickdeals.egg-info/top_level.txt
