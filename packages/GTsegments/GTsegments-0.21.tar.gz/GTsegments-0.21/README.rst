@@ -1,0 +1,141 @@
+Genomic & Transcriptomic segments (GTsegments)
+==========================================
+
+This program is design to work with
+``python 2.7``, ``python 3.2+`` and ``pypy``. It needs the following libraries:
+
+- `Biopython <https://pypi.python.org/pypi/biopython/>`_
+- `NetworkX <https://pypi.python.org/pypi/networkx/>`_
+- `numpy <https://pypi.python.org/pypi/numpy>`_ (please follow the `numpypy install process <http://pypy.org/download.html#installing-numpy>`_ for ``pypy``)
+- `progressbar2 <https://pypi.python.org/pypi/progressbar2>`_
+- `UFx <https://pypi.python.org/pypi/UFx>`_
+
+
+Parameters
+----------
+.. code-block::
+
+    gts.py [-h] [--genome_type {gbk,tsv,seq}] [--graph_type {gexf,list}]
+                  [-min INT] [-max INT] [-d THRESHOLD] [--no_filter] [-o FILE]
+                  [-no_dom] [-m | --no_gene_list] [-q]
+                  COEXP_GRAPH [GENOME [GENOME ...]]
+
+    Compute the list of GTsegments from a genome and a coexpression network.
+
+    example:
+    gts.py -min 2 -max 50 -d 0.6 coexp_graph.gexf genome.gbk
+
+    positional arguments:
+      COEXP_GRAPH           Coexpression graph
+      GENOME                genome file(s) containing genomic organization of
+                            chromosomes
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -q, --quiet           Quiet mode: display only critical errors
+
+    File type:
+      --genome_type {gbk,tsv,seq}
+                            Type of the genome file(s) (default: gbk)
+      --graph_type {gexf,list}
+                            Type of the coexpression graph file (default: gexf)
+
+    GTsegments size:
+      -min INT, --min_size INT
+                            Minimum length of a GTsegment (default: 2)
+      -max INT, --max_size INT
+                            Maximum length of a GTsegment (default: maximum
+                            possible)
+
+    Density option:
+      -d THRESHOLD, --density THRESHOLD
+                            Select GTsegments with a genomic density ≥ THRESHOLD
+                            in ]0,1] (default: 0.6)
+      --no_filter           Do not apply density filtering
+
+    Output options:
+      -o FILE, --output FILE
+                            Output file name
+      -no_dom, --no_domination
+                            Keep all the GTsegments instead of the dominant ones
+      -m, --matrix          Output the density matrix instead of the listing of
+                            GTsegments
+      --no_gene_list        Do not add the gene list column in the listing of
+                            GTsegments
+
+Example
+-------
+
+seq.txt
+
+.. code-block::
+
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    12
+    13
+    14
+    15
+    16
+    17
+    18
+    19
+    20
+    21
+    22
+    23
+    24
+    25
+    #26
+
+
+graph.txt
+
+.. code-block::
+
+    2       4
+    4       5
+    7       8
+    6       9
+    6       10
+    9       10
+    12      16
+    14      15
+    14      16
+    14      18
+    11      17
+    17      23
+    25      1
+    # The node 26 does not exist in the genome (commented) and will ignored
+    25      26
+
+The following command ...
+
+.. code-block::
+
+    gts.py graph.txt seq.txt --graph_type list --genome_type seq
+
+will produce the following output:
+
+.. code-block::
+
+    chromosome	start	end	length	active_genes	density	list_of_active_genes
+    seq.txt	2	5	4	3	0.75	2 4 5
+    seq.txt	4	5	2	2	1.0	4 5
+    seq.txt	6	10	5	3	0.6	6 9 10
+    seq.txt	7	8	2	2	1.0	7 8
+    seq.txt	9	10	2	2	1.0	9 10
+    seq.txt	12	16	5	4	0.8	12 14 15 16
+    seq.txt	12	18	7	5	0.714285714286	12 14 15 16 18
+    seq.txt	14	16	3	3	1.0	14 15 16
+    seq.txt	14	18	5	4	0.8	14 15 16 18
+    seq.txt	25	1	2	2	1.0	25 1

@@ -1,0 +1,15 @@
+README.rst
+setup.py
+src/GTsegments.egg-info/PKG-INFO
+src/GTsegments.egg-info/SOURCES.txt
+src/GTsegments.egg-info/dependency_links.txt
+src/GTsegments.egg-info/not-zip-safe
+src/GTsegments.egg-info/requires.txt
+src/GTsegments.egg-info/top_level.txt
+src/gtsegments/DCC_domination.py
+src/gtsegments/DCC_listing.py
+src/gtsegments/DCC_matrix.py
+src/gtsegments/__init__.py
+src/gtsegments/gbk.py
+src/gtsegments/gts.py
+src/gtsegments/libs.py
