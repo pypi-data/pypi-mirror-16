@@ -1,0 +1,8 @@
+setup.py
+halfpipe/__init__.py
+halfpipe/functional.py
+halfpipe.egg-info/PKG-INFO
+halfpipe.egg-info/SOURCES.txt
+halfpipe.egg-info/dependency_links.txt
+halfpipe.egg-info/not-zip-safe
+halfpipe.egg-info/top_level.txt
