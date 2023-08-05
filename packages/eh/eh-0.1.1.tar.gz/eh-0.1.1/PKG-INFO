@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: eh
+Version: 0.1.1
+Summary: A command line program that will output helpful reminders based on parameters
+Home-page: http://github.com/roaet/eh
+Author: Justin L. Hammond
+Author-email: justin@roaet.com
+License: Apache-2
+Description: # eh
+        A command line program that will output helpful reminders based on parameters
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
