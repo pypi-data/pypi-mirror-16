@@ -1,0 +1,8 @@
+<div id="$tab_id" class="tab-pane fade$active">
+                    <table class="display data_table table table-hover">
+                        <thead>
+            $table_head                        </thead>
+                        <tbody>
+            $table_rows            </tbody>
+                    </table>
+                </div>

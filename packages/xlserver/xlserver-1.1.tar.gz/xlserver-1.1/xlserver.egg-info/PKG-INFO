@@ -1,0 +1,40 @@
+Metadata-Version: 1.1
+Name: xlserver
+Version: 1.1
+Summary: Simple Server HTTP for reading *.xls and *.xlsx files. 
+Home-page: https://github.com/catalinmititiuc/xlserver
+Author: Catalin Mititiuc
+Author-email: mititiuc.cata@gmail.com
+License: GPLv2
+Description: ========
+        xlserver
+        ========
+        Read your .xls and .xlsx files.
+        
+        .. contents::
+        
+        Install
+        =======
+        
+            ::
+        
+                $: pip xlserver
+                $: python setup.py install
+        
+        
+        How it works?
+        =============
+        
+        ::
+        
+          $: xlserver -p 8000
+        
+        Access http://localhost:8000
+        
+        
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
