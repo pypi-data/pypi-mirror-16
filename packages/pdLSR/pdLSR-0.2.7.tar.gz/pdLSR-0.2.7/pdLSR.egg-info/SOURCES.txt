@@ -1,0 +1,23 @@
+LICENSE
+MANIFEST.in
+README.md
+environment.yml
+requirements.txt
+setup.py
+pdLSR/__init__.py
+pdLSR/aggregation.py
+pdLSR/auxiliary.py
+pdLSR/docstring.py
+pdLSR/fitting.py
+pdLSR/functions.py
+pdLSR/pdLSR.py
+pdLSR/version.py
+pdLSR.egg-info/PKG-INFO
+pdLSR.egg-info/SOURCES.txt
+pdLSR.egg-info/dependency_links.txt
+pdLSR.egg-info/top_level.txt
+pdLSR/demo/GCN4_twofield.csv
+pdLSR/demo/pdLSR_demo.ipynb
+pdLSR/demo/.ipynb_checkpoints/paNLS demonstration-checkpoint.ipynb
+pdLSR/demo/.ipynb_checkpoints/pdLSR_demo-checkpoint.ipynb
+pdLSR/demo/.ipynb_checkpoints/pdlmfit_demo-checkpoint.ipynb
