@@ -1,0 +1,16 @@
+Metadata-Version: 2.0
+Name: flask-shell-ptpython
+Version: 0.0.1
+Summary: Replace the default `flask shell` command with a similar command running Ptpython.
+Home-page: http://github.com/jacquerie/flask-shell-ptpython
+Author: Jacopo Notarstefano
+Author-email: jacopo.notarstefano@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: click
+Requires-Dist: flask (>=0.11)
+Requires-Dist: ptpython (>=0.15)
+
+UNKNOWN
+
+
