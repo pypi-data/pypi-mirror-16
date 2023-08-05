@@ -1,0 +1,28 @@
+{% extends widget.get_base_template %}
+
+{% block content %}
+<div id="voronoitreemap_{{ widget.fe_identifier }}" class="voronoitreemap"></div>
+<script type="text/javascript">
+
+function draw_voronoitreemap_{{ widget.id }}(){
+  var placeholder = '#voronoitreemap_{{ widget.fe_identifier }}';
+  var parent_box = $(placeholder).parent();
+  width = parent_box.width();
+  d3.select(placeholder+" svg").remove();
+  voronoitreemap({
+    'width': width,
+    'height': width,
+    'placeholder': placeholder,
+    'base_polygon': "rectangle",
+    'data_source': "{{ widget.get_data }}"
+  });
+}
+
+$(document).ready(function() {
+  draw_voronoitreemap_{{ widget.id }}();
+  window.addEventListener("resize", draw_voronoitreemap_{{ widget.id }});
+});
+
+</script>
+{% endblock %}
+

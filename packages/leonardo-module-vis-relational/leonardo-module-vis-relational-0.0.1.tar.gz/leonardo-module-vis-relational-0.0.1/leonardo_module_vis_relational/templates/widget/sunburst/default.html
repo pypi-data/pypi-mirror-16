@@ -1,0 +1,26 @@
+{% extends widget.get_base_template %}
+
+{% block content %}
+<div id="sunburst_{{ widget.fe_identifier }}" class="sunburst"></div>
+<script type="text/javascript">
+
+function draw_sunburst_{{ widget.id }}(){
+  var placeholder = '#sunburst_{{ widget.fe_identifier }}';
+  var parent_box = $(placeholder).parent();
+  width = parent_box.width();
+  d3.select(placeholder+" svg").remove();
+  sunburst({
+    'width': width,
+    'height': width,
+    'placeholder': placeholder,
+    'data_source': "{{ widget.get_data }}"
+  });
+}
+
+$(document).ready(function() {
+  draw_sunburst_{{ widget.id }}();
+  window.addEventListener("resize", draw_sunburst_{{ widget.id }});
+});
+
+</script>
+{% endblock %}

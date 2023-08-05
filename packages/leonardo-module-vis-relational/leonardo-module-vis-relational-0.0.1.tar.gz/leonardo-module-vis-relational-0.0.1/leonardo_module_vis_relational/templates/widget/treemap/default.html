@@ -1,0 +1,26 @@
+{% extends widget.get_base_template %}
+
+{% block content %}
+<div id="treemap_{{ widget.fe_identifier }}" class="treemap"></div>
+<script>
+
+function draw_treemap_{{ widget.id }}(){
+  var placeholder = '#treemap_{{ widget.fe_identifier }}';
+  var parent_box = $(placeholder).parent();
+  width = parent_box.width();
+  d3.select(placeholder+" > div").remove();
+  treemap({
+    'width': width,
+    'height': width*2/3,
+    'placeholder': placeholder,
+    'data_source': "{{ widget.get_data }}"
+  });
+}
+
+$(document).ready(function() {
+  draw_treemap_{{ widget.id }}();
+  window.addEventListener("resize", draw_treemap_{{ widget.id }});
+});
+
+</script>
+{% endblock %}

@@ -1,0 +1,30 @@
+@import "/bootstrap/scss/bootstrap/_variables.scss";
+
+.circle-packing {
+
+  .node {
+    stroke: $text-color;
+    stroke-width: 2px;
+  }
+
+  .node:hover {
+    stroke: #000;
+    stroke-width: 2px;
+  }
+
+  .node--leaf {
+    fill: white;
+  }
+
+  text {
+    text-anchor: middle;
+    text-shadow: 0 1px 0 $tooltip-color, 1px 0 0 $tooltip-color, -1px 0 0 $tooltip-color, 0 -1px 0 $tooltip-color;
+  }
+
+  .label,
+  .node--root,
+  .node--leaf {
+    pointer-events: none;
+  }
+
+}

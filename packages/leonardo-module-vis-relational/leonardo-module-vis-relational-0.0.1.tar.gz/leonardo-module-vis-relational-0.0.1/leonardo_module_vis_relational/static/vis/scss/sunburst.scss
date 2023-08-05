@@ -1,0 +1,16 @@
+@import "/bootstrap/scss/bootstrap/_variables.scss";
+
+.sunburst {
+
+  path {
+    stroke: $tooltip-color;
+    stroke-width: 2px;
+  }
+
+  text {
+    fill: $tooltip-bg;
+    text-shadow: 0 1px 0 $tooltip-color, 1px 0 0 $tooltip-color, -1px 0 0 $tooltip-color, 0 -1px 0 $tooltip-color;
+  }
+
+
+}

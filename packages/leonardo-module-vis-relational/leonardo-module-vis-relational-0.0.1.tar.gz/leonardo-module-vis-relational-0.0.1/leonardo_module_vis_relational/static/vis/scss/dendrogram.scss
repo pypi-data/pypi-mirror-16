@@ -1,0 +1,27 @@
+@import "/bootstrap/scss/bootstrap/_variables.scss";
+
+.dendrogram {
+
+  .node {
+
+    circle {
+      fill: $brand-primary;
+      stroke: $text-color;
+      stroke-width: 2px;
+    }
+    
+    text {
+      fill: $tooltip-bg;
+      text-shadow: 0 1px 0 $tooltip-color, 1px 0 0 $tooltip-color, -1px 0 0 $tooltip-color, 0 -1px 0 $tooltip-color;
+    }
+
+  }
+
+  .link {
+    fill: none;
+    stroke: $text-color;
+    stroke-opacity: .5;
+    stroke-width: 2px;
+  }
+
+}

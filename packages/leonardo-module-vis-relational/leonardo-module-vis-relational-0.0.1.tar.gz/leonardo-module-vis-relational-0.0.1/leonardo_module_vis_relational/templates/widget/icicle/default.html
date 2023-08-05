@@ -1,0 +1,26 @@
+{% extends widget.get_base_template %}
+
+{% block content %}
+<div id="icicle_{{ widget.fe_identifier }}" class="icicle"></div>
+<script>
+
+function redraw_icicle_{{ widget.id }}(){
+  var placeholder = '#icicle_{{ widget.fe_identifier }}';
+  var parent_box = $(placeholder).parent();
+  width = parent_box.width();
+  d3.select(placeholder+" svg").remove();
+  icicle({
+    'width': width,
+    'height': width,
+    'placeholder': placeholder,
+    'data_source': "{{ widget.get_data }}"
+  });
+}
+
+$(document).ready(function() {
+  redraw_icicle_{{ widget.id }}();
+  window.addEventListener("resize", redraw_icicle_{{ widget.id }});
+});
+
+</script>
+{% endblock %}

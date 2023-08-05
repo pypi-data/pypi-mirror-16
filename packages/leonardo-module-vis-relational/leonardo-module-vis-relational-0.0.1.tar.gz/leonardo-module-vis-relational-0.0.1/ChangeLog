@@ -1,0 +1,54 @@
+CHANGES
+=======
+
+0.0.1
+-----
+
+* Update homepage
+* Fix urls
+* SCSSes
+* Cleanup urls
+* calendar heatmap
+* orbital layout modes
+* bubble fix
+* visual cleanups
+* fixes
+* orbital layout fixes
+* cleanup widgets
+* just pages in navigation
+* cleanup sitemap
+* cleanup widgets
+* icicle diagram fixes
+* d3 webcola, d3 dagre
+* sugiyama graph
+* edgebundle
+* Adjacency matrix, force-directed graph
+* imported the rest of boardie widgets
+* initial migration
+* migrations
+* cleanup templates
+* arcdiagram, abstract class for relational visualizations
+* new widgets, voronoi treemap, orbit layout, arc diagram
+* fix install
+* reqs
+* tree
+* reingold tree
+* dendrogram
+* dendrogram fix
+* models
+* scss dict
+* gitignore
+* fix
+* cleanup styles
+* fix
+* cleanup
+* widget cleanups
+* cleanups
+* clenups
+* Widgets
+* widgets
+* admin fix
+* cleanup
+* widgets
+* pkg fix
+* Initial commit

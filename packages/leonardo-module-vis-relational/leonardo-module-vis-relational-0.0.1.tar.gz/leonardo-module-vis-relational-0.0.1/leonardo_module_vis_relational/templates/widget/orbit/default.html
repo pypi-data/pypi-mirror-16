@@ -1,0 +1,34 @@
+{% extends widget.get_base_template %}
+
+{% block content %}
+<div id="orbit_{{ widget.fe_identifier }}" class="orbit"></div>
+<script type="text/javascript">
+
+function draw_orbit_{{ widget.id }}(){
+  var placeholder = '#orbit_{{ widget.fe_identifier }}';
+  var parent_box = $(placeholder).parent();
+  width = parent_box.width();
+
+  d3.json("{{ widget.get_data }}", function(data) {
+
+    config = {
+      'width': width,
+      'height': width,
+      'mode': '{{ widget.mode }}',
+      'placeholder': placeholder,
+      'data': data
+    };
+
+    orbit_layout(config);
+
+  });
+
+}
+
+$(document).ready(function() {
+  draw_orbit_{{ widget.id }}();
+  //window.addEventListener("resize", draw_orbit_{{ widget.id }});
+});
+
+</script>
+{% endblock %}
