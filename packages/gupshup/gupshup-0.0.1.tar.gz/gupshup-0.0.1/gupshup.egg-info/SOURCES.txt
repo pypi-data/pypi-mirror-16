@@ -1,0 +1,9 @@
+setup.py
+gupshup-io/__init__.py
+gupshup.egg-info/PKG-INFO
+gupshup.egg-info/SOURCES.txt
+gupshup.egg-info/dependency_links.txt
+gupshup.egg-info/not-zip-safe
+gupshup.egg-info/pbr.json
+gupshup.egg-info/requires.txt
+gupshup.egg-info/top_level.txt
