@@ -1,0 +1,21 @@
+Metadata-Version: 2.0
+Name: DWDocumentDB
+Version: 1.0.0b2
+Summary: Python library wrapper for pydocumentdb
+Home-page: https://github.com/kurniawano/DWDocumentDB
+Author: Oka Kurniawan
+Author-email: kurniawano@ieee.org
+License: MIT
+Keywords: documentdb microsoft api wrapper
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Education
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Requires-Dist: pydocumentdb
+
+DWDocumentDB
+============
+
+A Python wrapper for Microsoft's pydocumentdb package <https://pypi.python.org/pypi/pydocumentdb/>. This wrapper is used in a course Digital World in SUTD to simplify students' access to pydocumentdb. Please use at your own risk.
+
