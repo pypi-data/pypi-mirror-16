@@ -1,0 +1,12 @@
+packetmq/__init__.py,sha256=qbcAVdTBptg1OKpLsJjIz9WXJD_v6aUCjqrv1W_Z6UE,12133
+packetmq/packet.py,sha256=MhVZerebBdFAP9p2sQwXj3PZG0AwP85df2up-kYORZs,7518
+packetmq/packetprotocol.py,sha256=J80ICgIBZJwvMLMYbl5HBvcJfvmyG9NOv91w6FTQYm8,6242
+packetmq-0.1.6a1.data/data/README.md,sha256=JRRXcQSC_LfWYEPZ-Kx_JMASPWCFiCGze9qJcJxChEU,1090
+packetmq-0.1.6a1.data/data/pypi.rst,sha256=dSEHsfqaIPhDGxpSbzvSImoIKZrQWoIOofQuBr4n4kY,1108
+packetmq-0.1.6a1.data/data/requirements.txt,sha256=NGSa_LUw57tHRpQJ14gC6ff3lzhbQmzIN3vIKxIqvak,32
+packetmq-0.1.6a1.dist-info/DESCRIPTION.rst,sha256=a0E_tUwLpTfrki0lHANlpGJ_5vr1D8uLycCF3UIrp5A,1110
+packetmq-0.1.6a1.dist-info/METADATA,sha256=II99WM8O2M9snv0GCJhHu9UQF_pjy6y5KqJj-lCuhKc,2289
+packetmq-0.1.6a1.dist-info/RECORD,,
+packetmq-0.1.6a1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+packetmq-0.1.6a1.dist-info/metadata.json,sha256=_0asdAiE9aV3QZ5kLhwkwioPvfdFzFkqZnTdscJPjCs,1207
+packetmq-0.1.6a1.dist-info/top_level.txt,sha256=nPAUY7eWE2XAiw0alqElOWuoL9WF6O-S9ifEMn0iO8c,9
