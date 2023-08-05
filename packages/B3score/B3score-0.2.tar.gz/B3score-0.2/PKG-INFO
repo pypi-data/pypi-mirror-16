@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: B3score
+Version: 0.2
+Summary: BCUBED extrinsic clustering metric
+Home-page: https://github.com/m-wiesner/BCUBED
+Author: Matthew Wiesner
+Author-email: wiesner@jhu.edu
+License: UNKNOWN
+Download-URL: https://github.com/m-wiesner/BCUBED/tarball/0.1
+Description: UNKNOWN
+Keywords: python,clustering,bcubed,evaluation,fbcubed,b-cubed,extrinsic
+Platform: UNKNOWN
