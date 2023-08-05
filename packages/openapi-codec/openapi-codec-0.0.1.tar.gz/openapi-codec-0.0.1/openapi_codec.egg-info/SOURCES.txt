@@ -1,0 +1,6 @@
+setup.py
+openapi_codec/__init__.py
+openapi_codec.egg-info/PKG-INFO
+openapi_codec.egg-info/SOURCES.txt
+openapi_codec.egg-info/dependency_links.txt
+openapi_codec.egg-info/top_level.txt
