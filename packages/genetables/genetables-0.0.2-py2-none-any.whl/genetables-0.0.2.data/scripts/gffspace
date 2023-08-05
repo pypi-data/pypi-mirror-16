@@ -1,0 +1,163 @@
+#!python
+
+
+# gffspace - calculate attribute spaces from gff/gtf files
+#
+# Copyright (C) 2016 - Sven E. Templer <sven.templer@gmail.com>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this
+# software and associated documentation files (the "Software"), to deal in the Software
+# without restriction, including without limitation the rights to use, copy, modify,
+# merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+# permit persons to whom the Software is furnished to do so, subject to the following
+# conditions:
+#
+# The above copyright notice and this permission notice shall be included in all copies or
+# substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+# INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+# PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+# LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
+# OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+
+
+### arguments
+
+
+import argparse
+arg = argparse.ArgumentParser()
+# input
+arg.add_argument("gff",
+        help = "gff file")
+arg.add_argument("--feature", default = "exon",
+        help = "select feature")
+arg.add_argument("--attribute", default = "gene_id",
+        help = "select attribute")
+# output
+arg.add_argument("--output",
+        help = "output file")
+arg.add_argument("--no-header", action = "store_true",
+        help = "omit header")
+arg.add_argument("--bed", action = "store_true",
+        help = "output as bed file format")
+# parse
+opt = arg.parse_args()
+
+
+### presets
+
+
+streami = open(opt.gff)
+if opt.output is not None:
+    streamo = open(opt.out, 'w')
+space = dict() # collect data
+ranges = dict() # arrange data
+import re
+from genetables.gff import get_attr
+
+
+## read
+
+
+for line in streami:
+    
+    if line[0] == "#":
+        continue
+        
+    line = line[:-1].split('\t')
+    
+    # feature type
+    feat = line[2]                      
+    if not feat == opt.feature:
+        continue
+    
+    # chromosome 
+    chrom = line[0]                    
+    if not chrom in space:
+        space[chrom] = dict()
+    
+    # positions
+    pos_range = range(int(line[3]), int(line[4])+1)
+    
+    # attribute
+    attr = get_attr(line[8], opt.attribute)
+    if attr is None:
+        continue
+    if not attr in space[chrom]:
+        space[chrom][attr] = set()
+        
+    # add positions to position space
+    for pos in pos_range:
+        if not pos in space[chrom][attr]:
+            space[chrom][attr].add(pos)
+
+
+## write header
+
+
+if not opt.no_header:
+    header = []
+    header.append([ '#gffspace_source', opt.gff])
+    header.append([ '#gffspace_attribute', opt.attribute])
+    header.append([ '#gffspace_feature', opt.feature])
+    if opt.bed:
+        header.append(['#chrom', 'start', 'stop', 'attribute', 'size'])
+    else:
+        header.append(['#chrom', 'attribute', 'size', 'ranges'])
+    header = map(lambda x: '\t'.join(x), header)
+    header = '\n'.join(header)
+    if opt.output is None:
+        print header
+    else:
+        streamo.write(header)
+
+
+## cut ranges and write data
+
+
+for chrom in space.keys():
+    ranges[chrom] = list()
+
+for chrom in space.keys():
+    for attr in space[chrom].keys():
+        pos_range = sorted(space[chrom][attr])
+        pos_size = str(len(pos_range))
+        pos_old = pos_range[0]
+        pos_start = [ pos_range[0] ]
+        pos_end = []
+        for pos in pos_range:
+            if pos > pos_old + 1:
+                pos_start.append(pos_old)
+                pos_end.append(pos)
+            pos_old = pos
+        pos_end.append(pos_range[-1])
+        pos_start = map(str, pos_start)
+        pos_end = map(str, pos_end)
+        pos_ranges = zip(pos_start, pos_end)
+        if opt.bed:
+            for start, end in pos_ranges:
+                line = '\t'.join([chrom, start, end, attr, pos_size])
+                if opt.output is None:
+                    print line
+                else:
+                    streamo.write(line + '\n')
+        else:
+            pos_ranges = map(lambda x: '-'.join(x), pos_ranges)
+            pos_ranges = ';'.join(pos_ranges)
+            if not opt.bed:
+                line = '\t'.join([chrom, attr, pos_size, pos_ranges])
+            if opt.output is None:
+                print line
+            else:
+                streamo.write(line + '\n')
+
+
+## close files
+
+
+streami.close()        
+streamo.close()
+
+
