@@ -1,0 +1,6 @@
+Flask
+validators
+urllib3
+urlparse3
+cookiejar
+bs4
