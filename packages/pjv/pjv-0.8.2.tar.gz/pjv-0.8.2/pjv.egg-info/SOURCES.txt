@@ -1,0 +1,7 @@
+README.rst
+setup.py
+pjv.egg-info/PKG-INFO
+pjv.egg-info/SOURCES.txt
+pjv.egg-info/dependency_links.txt
+pjv.egg-info/top_level.txt
+scripts/pjv
