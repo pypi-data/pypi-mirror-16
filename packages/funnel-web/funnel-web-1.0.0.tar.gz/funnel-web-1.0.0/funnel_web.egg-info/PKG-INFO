@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: funnel-web
+Version: 1.0.0
+Summary: Graph and visualize a module's dependencies.
+Home-page: https://github.com/jenmud/module-dependencies
+Author: Jenda Mudron
+Author-email: jenmud@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: graph db momory database in-memory module dependencies
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 2 :: Only
+Classifier: Topic :: Database :: Database Engines/Servers
+Classifier: Topic :: Software Development :: Libraries
