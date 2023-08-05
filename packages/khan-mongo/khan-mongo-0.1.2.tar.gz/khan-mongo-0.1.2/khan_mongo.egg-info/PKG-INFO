@@ -1,0 +1,55 @@
+Metadata-Version: 1.1
+Name: khan-mongo
+Version: 0.1.2
+Summary: 'hack day'
+Home-page: https://github.com/otherpirate/khan
+Author: Mauro Andre Murari
+Author-email: mauro_murari@hotmail.com
+License: MIT license
+Description: # Khan is a unix "top" clone for MongoDB, inspired by Innotop and Motop.
+        
+        Khan presents a real time list of queries running in a given MongoDB instance and information about the replication status.
+        
+        ## Dependencies
+        
+          * Python >= 3.5
+          * MongoDB >= 3.0
+        
+        ## Installation
+        
+        
+        ```sh
+        pip install khan
+        ```
+        
+        ## Usage
+        
+        ```sh
+        khan --host <host> --port <port> --database <AdminDatabase> -u <user> -p <password> [-q|-r]
+        ```
+        
+        -q Show current ops
+        
+        -r Show replication status/info
+        
+        ## Support
+        
+        Please [open an issue](https://github.com/globocom/khan/issues) for support.
+        
+        ## Contributing
+        
+        Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/globocom/mongo-top/compare/).
+        
+Keywords: khan
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
