@@ -1,0 +1,6 @@
+include LICENSE
+include README.md
+recursive-include zadmin/static *
+recursive-include zadmin/templates *
+recursive-include docs *
+recursive-include examples *
