@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: OMM
+Version: 0.5.2
+Summary: Object Model Mapper for Python-based web apps and/or APIs
+Home-page: https://github.com/hiroaki-yamamoto/omm.git
+Author: Hiroaki Yamamoto
+Author-email: hiroaki@hysoftware.net
+License: MIT
+Description: UNKNOWN
+Keywords: json OMM Object Model Mapper Relational Document
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
