@@ -1,0 +1,11 @@
+xlmhg-2.2.5.dist-info/RECORD,,
+xlmhg-2.2.5.dist-info/top_level.txt,sha256=osYafJxINjXWbVF1jkgp5BiInmc7F64BUkFXgKEdKBw,6
+xlmhg-2.2.5.dist-info/METADATA,sha256=9wL3WZ3zDWOPiKCikU3K_xc3NEQvki7rkgwnn6MjwSE,5733
+xlmhg-2.2.5.dist-info/metadata.json,sha256=oPk1cpHP4_MIBM-E5HXrEoyz1BEnJ1gZO8mB2V3G8Ag,1143
+xlmhg-2.2.5.dist-info/WHEEL,sha256=FO-U_qE3v9UVkqkcibgzGqYSuGIvACgOboyXHbsAhvw,109
+xlmhg-2.2.5.dist-info/DESCRIPTION.rst,sha256=WVR7Pm_2mGVrQ1Ey4CyfxwJMO969P69dMvC1faMp8ms,4851
+xlmhg/test.py,sha256=wQsOw5x6UNeMSENakQY3CWP6_4KILBTO1cuB6Dd2IFA,9569
+xlmhg/__init__.py,sha256=ShwawkMEIAWCIa4tfHXDUvq5pB7eM84h4OW7aNPFJfY,279
+xlmhg/mhg.py,sha256=QIfce1RkMncIPa6Sacqqu7M6_iFOHsdeJ06wUknJ1Hk,11610
+xlmhg/result.py,sha256=lR0hyCcjBi4Bt6ju9zouS0Ql7xssuCMgSXVndBqwsaQ,3754
+xlmhg/mhg_cython.cpython-35m-x86_64-linux-gnu.so,sha256=s83HgSUa1LEYtwHSpZbo8PpsOg4Xgy6U6TGWM8JWMVE,968158
