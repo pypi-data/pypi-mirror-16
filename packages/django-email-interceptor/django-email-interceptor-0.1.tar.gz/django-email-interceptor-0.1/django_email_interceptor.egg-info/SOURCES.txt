@@ -1,0 +1,10 @@
+README.rst
+setup.py
+django_email_interceptor.egg-info/PKG-INFO
+django_email_interceptor.egg-info/SOURCES.txt
+django_email_interceptor.egg-info/dependency_links.txt
+django_email_interceptor.egg-info/not-zip-safe
+django_email_interceptor.egg-info/top_level.txt
+email_interceptor/__init__.py
+email_interceptor/backends.py
+email_interceptor/tests.py
