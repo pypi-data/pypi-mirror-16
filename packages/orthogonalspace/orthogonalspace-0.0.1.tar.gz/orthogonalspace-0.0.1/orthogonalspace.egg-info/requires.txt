@@ -1,0 +1,5 @@
+docopt
+autobahn>=0.9.1
+crossbar
+SQLAlchemy
+passlib

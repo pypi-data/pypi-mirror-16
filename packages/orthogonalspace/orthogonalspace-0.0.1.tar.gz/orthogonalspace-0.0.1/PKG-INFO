@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: orthogonalspace
+Version: 0.0.1
+Summary: Space-based game
+Home-page: https://github.com/umbc-hackafe/orthogonalspace
+Author: Dylan Whichard
+Author-email: dylan@hackafe.net
+License: GPLv3
+Description: Fly a ship with friends.
+Keywords: game
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: No Input/Output (Daemon)
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only

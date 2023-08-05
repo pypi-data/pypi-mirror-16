@@ -1,0 +1,13 @@
+setup.cfg
+setup.py
+orthogonalspace/__init__.py
+orthogonalspace/__main__.py
+orthogonalspace/database.py
+orthogonalspace/lobby.py
+orthogonalspace/ship.py
+orthogonalspace/types.py
+orthogonalspace.egg-info/PKG-INFO
+orthogonalspace.egg-info/SOURCES.txt
+orthogonalspace.egg-info/dependency_links.txt
+orthogonalspace.egg-info/requires.txt
+orthogonalspace.egg-info/top_level.txt
