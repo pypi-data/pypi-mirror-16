@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: py-wrapi
+Version: 0.1.8
+Summary: A simple, elegant collection of Python API wrappers
+Home-page: https://github.com/thisisandreeeee/py-wrapi
+Author: Andre Tan
+Author-email: tanandre93@gmail.com
+License: MIT
+Download-URL: https://github.com/thisisandreeeee/py-wrapi/tarball/0.1.8
+Description: UNKNOWN
+Keywords: sently,api,wrapper
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
