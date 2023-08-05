@@ -1,0 +1,14 @@
+auto_changelog/__init__.py,sha256=_3Xg4v_ZMB_oS_duJHdhCKnCScKlFbcgXLCC8hlGoX8,23
+auto_changelog/__main__.py,sha256=jfGvDkLOiO9K-q1VBFTG27p_z49hx9DqBM3B8Zs9XaA,1919
+auto_changelog/generator.py,sha256=VbldWK-JazNwjzXfaddWnYw4xPN4Sl-hIeXrB9AS2OA,545
+auto_changelog/models.py,sha256=4R5gR3iUzLoZzJmNsScPXNoZ1LcoIrMhyXpII7PEbxo,2223
+auto_changelog/parser.py,sha256=ZEOlSrLyr41S8qsoHrx2VOUTQ-HWiKUBKMtJpNZqOg4,2084
+auto_changelog/templates/base.jinja2,sha256=Uzsp7H6zHR1nXY5B8Zd8f5X1lcOFNwD4zIvDTuD--NA,345
+auto_changelog/templates/tag_format.jinja2,sha256=o6PrzQp7Gq5ecK3AQiQSiL6Xqy5zNeaPEV-d1KDeaYw,624
+auto_changelog-0.1.4.dist-info/DESCRIPTION.rst,sha256=sjFCQaih2sus9H2RWnbfYm8kUixDztw73BNOSXsuG0s,2007
+auto_changelog-0.1.4.dist-info/METADATA,sha256=GHrx2PuWYA4XsSYV7xZXRXAsYKkSqC1NTh95vSMayBk,3030
+auto_changelog-0.1.4.dist-info/RECORD,,
+auto_changelog-0.1.4.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+auto_changelog-0.1.4.dist-info/entry_points.txt,sha256=HaKr7lsPO6onwKWP7nhnlcjW8qCr4o8LkPgEDjagyVI,65
+auto_changelog-0.1.4.dist-info/metadata.json,sha256=Av5Mxuwe1o5le8PCiKAk-AShSxfYTv1fGg6WTmU3Xx0,1314
+auto_changelog-0.1.4.dist-info/top_level.txt,sha256=YWKoRQPeqTU6I_gXEhB6l3kXZykSKHCfJNB-D_n525w,15
