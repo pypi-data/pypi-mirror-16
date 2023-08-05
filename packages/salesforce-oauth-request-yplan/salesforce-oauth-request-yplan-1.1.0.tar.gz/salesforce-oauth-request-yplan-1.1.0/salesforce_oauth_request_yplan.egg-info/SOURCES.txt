@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+salesforce_oauth_request/__init__.py
+salesforce_oauth_request/utils.py
+salesforce_oauth_request_yplan.egg-info/PKG-INFO
+salesforce_oauth_request_yplan.egg-info/SOURCES.txt
+salesforce_oauth_request_yplan.egg-info/dependency_links.txt
+salesforce_oauth_request_yplan.egg-info/not-zip-safe
+salesforce_oauth_request_yplan.egg-info/requires.txt
+salesforce_oauth_request_yplan.egg-info/top_level.txt
+tests/__init__.py
+tests/__init__.pyc
+tests/test_salesforce_oauth_request.py
+tests/__pycache__/test_salesforce_oauth_request.cpython-27-PYTEST.pyc
