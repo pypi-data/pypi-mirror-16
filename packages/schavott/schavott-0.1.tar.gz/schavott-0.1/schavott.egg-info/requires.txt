@@ -1,0 +1,6 @@
+pyfasta
+h5py>=2.2.0
+bokeh
+watchdog
+numpy
+poretools
