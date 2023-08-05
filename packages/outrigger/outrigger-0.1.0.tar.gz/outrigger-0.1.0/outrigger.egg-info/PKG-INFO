@@ -1,0 +1,52 @@
+Metadata-Version: 1.1
+Name: outrigger
+Version: 0.1.0
+Summary: Outrigger is a tool to de novo annotate splice sites and exons
+Home-page: https://github.com/yeolab/outrigger
+Author: Olga Botvinnik
+Author-email: olga.botvinnik@gmail.com
+License: BSD
+Description: ===============================
+        BED annotator
+        ===============================
+        
+        .. image:: https://img.shields.io/travis/olgabot/outrigger.svg
+                :target: https://travis-ci.org/olgabot/outrigger
+        
+        .. image:: https://img.shields.io/pypi/v/outrigger.svg
+                :target: https://pypi.python.org/pypi/outrigger
+        
+        
+        Exon ontology is an attempt to catalogue scripts used to annotate exons and their functions
+        
+        * Free software: BSD license
+        * Documentation: https://olgabot.github.io/outrigger
+        
+        Features
+        --------
+        
+        * TODO
+        
+        
+        
+        
+        History
+        -------
+        
+        0.1.0 (2015-05-27)
+        ---------------------
+        
+        * First release on PyPI.
+        
+Keywords: outrigger
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
