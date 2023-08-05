@@ -1,0 +1,3 @@
+[console_scripts]
+ykdl = ykdl.__main__:main
+
