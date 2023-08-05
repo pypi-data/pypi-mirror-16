@@ -1,0 +1,11 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.py
+src/whirls.py
+src/whirls.egg-info/PKG-INFO
+src/whirls.egg-info/SOURCES.txt
+src/whirls.egg-info/dependency_links.txt
+src/whirls.egg-info/entry_points.txt
+src/whirls.egg-info/requires.txt
+src/whirls.egg-info/top_level.txt
