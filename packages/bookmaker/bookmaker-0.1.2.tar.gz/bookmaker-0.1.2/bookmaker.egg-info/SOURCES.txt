@@ -1,0 +1,6 @@
+README.rst
+setup.py
+bookmaker.egg-info/PKG-INFO
+bookmaker.egg-info/SOURCES.txt
+bookmaker.egg-info/dependency_links.txt
+bookmaker.egg-info/top_level.txt
