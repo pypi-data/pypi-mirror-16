@@ -1,0 +1,53 @@
+{
+  "type" : "knitting pattern",
+  "version" : "0.1",
+  "patterns" : [
+    {
+      "id" : "color test",
+      "name" : "colored line",
+      "rows" : [
+        {
+          "id" : "colored",
+          "color": "blue",
+          "instructions" : [
+            {"color": "green"},
+            {}
+          ]
+        },
+        {
+          "id" : "inherited uncolored +instructions",
+          "same as" : "inherited uncolored",
+          "instructions" : [
+            {},
+            {"color": "brown"}
+          ]
+        },
+        {
+          "id" : "inherited colored +instructions",
+          "same as" : "inherited colored",
+          "instructions" : [
+            {},
+            {"color": "red"}
+          ]
+        },
+        {
+          "id" : "uncolored",
+          "instructions" : [
+            {},
+            {"color": "yellow"}
+          ]
+        },
+        {
+          "id" : "inherited uncolored",
+          "same as" : "uncolored"
+        },
+        {
+          "id" : "inherited colored",
+          "same as" : "colored"
+        }
+      ],
+      "connections" : [
+      ]
+    }
+  ]
+}
