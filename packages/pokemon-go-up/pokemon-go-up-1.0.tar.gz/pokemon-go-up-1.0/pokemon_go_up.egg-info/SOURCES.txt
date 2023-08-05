@@ -1,0 +1,7 @@
+README.txt
+setup.py
+pokemon_go_up.egg-info/PKG-INFO
+pokemon_go_up.egg-info/SOURCES.txt
+pokemon_go_up.egg-info/dependency_links.txt
+pokemon_go_up.egg-info/requires.txt
+pokemon_go_up.egg-info/top_level.txt
