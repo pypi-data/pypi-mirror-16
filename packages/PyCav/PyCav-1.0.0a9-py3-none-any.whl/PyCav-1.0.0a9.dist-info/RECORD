@@ -1,0 +1,11 @@
+PyCav-1.0.0a9.dist-info/DESCRIPTION.rst,sha256=5nEyRF-gGLBsVSbGWzpd0inXfNAUyfihp-4WlOsyNb8,560
+PyCav-1.0.0a9.dist-info/METADATA,sha256=p48Ayj_5QkSf-w574z7Ui_BXyJz29TydT65NFy3dSyg,1438
+PyCav-1.0.0a9.dist-info/RECORD,,
+PyCav-1.0.0a9.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+PyCav-1.0.0a9.dist-info/metadata.json,sha256=qfakQGQTxWawxqPUP1KDDCInx5F9hYYSRwDblQzlWSA,998
+PyCav-1.0.0a9.dist-info/top_level.txt,sha256=Pt3eeAj_IAYphOgEABQDfknF8aYSJbMhMfPyIeuVX6M,6
+pycav/__init__.py,sha256=JOl41NviMN-qDV0Z8ZPmhNIxvgyauGGJHdB4A-8MhqM,93
+pycav/_version.py,sha256=zzXGzB59sdisHqwSemTA3foJbF6RjmRPgtWrzY3PYL8,473
+pycav/mechanics.py,sha256=lJfX2N89vatRWToP05hwqefHcpajX72EdYvMGw8ndXo,42207
+pycav/pde.py,sha256=3aBUuE0EWF3HjMBioz8B074Q9_Hx0pDnhYkL8MQMJB0,10604
+pycav/quantum.py,sha256=a5PVHauwwc0NrQPK14evoTslYA795A9bBY_NmUMEmeY,5357
