@@ -1,0 +1,15 @@
+cfdilib/__init__.py,sha256=QFRL7ZHno5pAzMdJgU7ptVoNN3CR96hRhr-IacHBEoA,125
+cfdilib/cfdilib.py,sha256=Q-kK65yudnziwSuEXCopMUqSsBVaVBjVkAGIF9QYVDY,9410
+cfdilib/cfdv32.py,sha256=lP_MjKBNsateKkqQeVnGO-GMyXEQzZYxo_cmLLLPf2w,1230
+cfdilib/signatory.py,sha256=I76jVWhk8R7vUZmrhY2XA1Spd0Y0fH7UwG-ALzAhjn8,1713
+cfdilib/tools.py,sha256=lHTcvS1fIRqxDA8Ti3QC5joDOHsx2EjQ-0KyP3d2NaY,1848
+cfdilib/cfdicli.py,sha256=AHC1sYgHh5AWovUVGQv7X0Hhz24t7QR7umucAw0sAXw,1692
+cfdilib/templates/cfdv32.xsd,sha256=jwbDhjnq9nxCSOoaxKV8bf0YbN1TCuTBIEhDeCHl6LA,42221
+cfdilib/templates/cfdv32.xml,sha256=JL__fHrD1xo7xVovabalMizyhcUD6F6TUFnkFMCvO-w,4245
+cfdilib-0.1.3.dist-info/top_level.txt,sha256=jS5CgTvmlxeW-jSuQ6Q6t3INbOND6bkw5I-kgPFcxNE,8
+cfdilib-0.1.3.dist-info/METADATA,sha256=4-GGafdREfQwbjcr1cPlDu5o0z6Ztuo-oAkzia1OROY,1814
+cfdilib-0.1.3.dist-info/DESCRIPTION.rst,sha256=bIJf_oysVpmV9gqoMrGMSFgFfIY9sk-skIcMFLfblr4,984
+cfdilib-0.1.3.dist-info/metadata.json,sha256=FQylaZ7iUlq9p_1Decqj9zvZwlZYDM2tMN-acSgIHzE,1074
+cfdilib-0.1.3.dist-info/WHEEL,sha256=6lxp_S3wZGmTBtGMVmNNLyvKFcp7HqQw2Wn4YYk-Suo,110
+cfdilib-0.1.3.dist-info/entry_points.txt,sha256=gC9D05QrNZjIbcmB5i9hVvhKsBvOiNThYWMTcmqBvl0,67
+cfdilib-0.1.3.dist-info/RECORD,,
