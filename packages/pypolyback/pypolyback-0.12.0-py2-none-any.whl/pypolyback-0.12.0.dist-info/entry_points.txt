@@ -1,0 +1,5 @@
+[console_scripts]
+pypolyback init = pypolyback.project:init
+pypolyback serve = pypolyback.server:start
+pypolyback start = pypolyback.server:start
+
