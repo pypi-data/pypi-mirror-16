@@ -1,0 +1,27 @@
+[console_scripts]
+polyarchiv = polyarchiv.cli:main
+
+[polyarchiv.filters]
+encrypt = polyarchiv.filters:SymmetricCrypt
+hashes = polyarchiv.filters:Hashsum
+
+[polyarchiv.locals]
+archive = polyarchiv.locals:ArchiveRepository
+files = polyarchiv.locals:FileRepository
+git = polyarchiv.locals:GitRepository
+
+[polyarchiv.remotes]
+archive = polyarchiv.remotes:TarArchive
+git = polyarchiv.remotes:GitRepository
+gitlab = polyarchiv.remotes:GitlabRepository
+rolling_archive = polyarchiv.remotes:RollingTarArchive
+synchronize = polyarchiv.remotes:Synchronize
+
+[polyarchiv.sources]
+dovecot = polyarchiv.sources:Dovecot
+ldap = polyarchiv.sources:Ldap
+local_files = polyarchiv.sources:LocalFiles
+mysql = polyarchiv.sources:MySQL
+postgressql = polyarchiv.sources:PostgresSQL
+remote_files = polyarchiv.sources:RemoteFiles
+
