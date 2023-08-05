@@ -1,0 +1,12 @@
+LICENSE.txt
+MANIFEST.in
+readme.md
+setup.cfg
+setup.py
+gt_py.egg-info/PKG-INFO
+gt_py.egg-info/SOURCES.txt
+gt_py.egg-info/dependency_links.txt
+gt_py.egg-info/requires.txt
+gt_py.egg-info/top_level.txt
+gtpy/api.py
+gtpy/tests.py
