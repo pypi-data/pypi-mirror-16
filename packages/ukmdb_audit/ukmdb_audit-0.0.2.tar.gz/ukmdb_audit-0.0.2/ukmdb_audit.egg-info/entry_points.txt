@@ -1,0 +1,3 @@
+[console_scripts]
+ukm_audit = ukmdb_audit.worker:main
+
