@@ -1,0 +1,10 @@
+textfairy/__init__.py,sha256=E1Z2zMfSe-0fNS9WXVYYHoI3VsXCNakclx4O9MIxk4E,166
+textfairy/cli.py,sha256=ixZMh2Ng_mR9r_tZsv4oOphtLGWQIRlAlydePOnaCaQ,342
+textfairy/textfairy.py,sha256=zaCjBP85fnqIXAmGPUnjxUQqkB7md2C_LhOKpvRQaEI,848
+textfairy-0.1.0.dist-info/DESCRIPTION.rst,sha256=s8MaKrje9R6NCT6F3KxE40p9jywRjhPzj06UDO0Wv1c,1240
+textfairy-0.1.0.dist-info/METADATA,sha256=BKbnDjUpv8qVyUen2K0WaxtYqsNJ_i2oMyulYn_8Ang,2057
+textfairy-0.1.0.dist-info/RECORD,,
+textfairy-0.1.0.dist-info/WHEEL,sha256=9Z5Xm-eel1bTS7e6ogYiKz0zmPEqDwIypurdHN1hR40,116
+textfairy-0.1.0.dist-info/entry_points.txt,sha256=0vW2NDQ95xq30oDXrQzR6A2ql638KS3gNUcRb27rsmM,50
+textfairy-0.1.0.dist-info/metadata.json,sha256=NFZYZTAacZ8s0nx1uP0MC7A-DypEUqsWZbzdvO7s9KU,1084
+textfairy-0.1.0.dist-info/top_level.txt,sha256=GaOJmbk6Mf6GVGjK9-zBDYaIGmgKqHAO7cxPdOYDlt4,10
