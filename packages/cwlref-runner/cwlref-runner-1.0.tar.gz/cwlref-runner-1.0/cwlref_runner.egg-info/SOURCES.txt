@@ -1,0 +1,9 @@
+README
+setup.py
+cwlref_runner.egg-info/PKG-INFO
+cwlref_runner.egg-info/SOURCES.txt
+cwlref_runner.egg-info/dependency_links.txt
+cwlref_runner.egg-info/entry_points.txt
+cwlref_runner.egg-info/requires.txt
+cwlref_runner.egg-info/top_level.txt
+cwlref_runner.egg-info/zip-safe
