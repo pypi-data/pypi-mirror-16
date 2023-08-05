@@ -1,0 +1,10 @@
+README.rst
+rst2pptx.py
+setup.py
+rst2pptx.egg-info/PKG-INFO
+rst2pptx.egg-info/SOURCES.txt
+rst2pptx.egg-info/dependency_links.txt
+rst2pptx.egg-info/entry_points.txt
+rst2pptx.egg-info/not-zip-safe
+rst2pptx.egg-info/requires.txt
+rst2pptx.egg-info/top_level.txt
