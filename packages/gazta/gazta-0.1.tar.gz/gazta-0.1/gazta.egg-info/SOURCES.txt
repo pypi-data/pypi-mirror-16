@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+gazta/__init__.py
+gazta.egg-info/PKG-INFO
+gazta.egg-info/SOURCES.txt
+gazta.egg-info/dependency_links.txt
+gazta.egg-info/entry_points.txt
+gazta.egg-info/not-zip-safe
+gazta.egg-info/top_level.txt
