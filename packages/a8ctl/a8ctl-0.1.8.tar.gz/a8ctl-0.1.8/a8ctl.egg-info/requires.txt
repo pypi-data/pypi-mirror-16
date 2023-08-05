@@ -1,0 +1,6 @@
+argparse
+requests
+parse
+prettytable
+decorator
+pygremlin==0.1.3
