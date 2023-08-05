@@ -1,0 +1,8 @@
+README.rst
+oappend.py
+setup.cfg
+setup.py
+argparse_oappend.egg-info/PKG-INFO
+argparse_oappend.egg-info/SOURCES.txt
+argparse_oappend.egg-info/dependency_links.txt
+argparse_oappend.egg-info/top_level.txt
