@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: Islykill2
+Version: 0.9rc1
+Summary: Utility to parse and verify Islykill authentication, using SAML 2.0
+Home-page: http://www.irdn.is/
+Author: Sindri Gudmundsson
+Author-email: sindrigudmundsson@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
