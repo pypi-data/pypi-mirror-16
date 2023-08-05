@@ -1,0 +1,9 @@
+README
+setup.py
+bin_packing_problem.egg-info/PKG-INFO
+bin_packing_problem.egg-info/SOURCES.txt
+bin_packing_problem.egg-info/dependency_links.txt
+bin_packing_problem.egg-info/top_level.txt
+binpackp/__init__.py
+binpackp/bins.py
+binpackp/fit.py
