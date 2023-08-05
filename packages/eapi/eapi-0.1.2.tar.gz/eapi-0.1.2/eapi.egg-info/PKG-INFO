@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: eapi
+Version: 0.1.2
+Summary: Modul zur Ansteuerung eines EA-Moduls fuer den Raspberry Pi.
+Home-page: https://github.com/pintman/ea_rpi_modul
+Author: Marco Bakera
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: Ein Modul zu Ansteuerung eines Eingabe-Ausgabe-Moduls für den Raspberry. Für die Ausgabe dienen LEDs und für die Eingabe Taster. Es kommt im Bildungsbereich zum Einsatz.
+Platform: UNKNOWN
