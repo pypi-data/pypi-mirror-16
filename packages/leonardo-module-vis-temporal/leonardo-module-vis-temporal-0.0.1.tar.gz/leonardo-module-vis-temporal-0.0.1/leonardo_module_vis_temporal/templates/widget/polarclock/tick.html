@@ -1,0 +1,24 @@
+{% extends widget.get_base_template %}
+
+{% block content %}
+<div id="polar_clock_{{ widget.fe_identifier }}" class="polar-clock"></div>
+<script type="text/javascript">
+function redraw_polar_clock_{{ widget.id }}(){
+  var placeholder = '#polar_clock_{{ widget.fe_identifier }}'
+  var parent_box = $('#polar_clock_{{ widget.fe_identifier }}').parent();
+  width = parent_box.width();
+  var config = {
+    'width': width,
+    'height': width,
+    'placeholder': placeholder
+  }
+  d3.select(placeholder+" svg").remove();
+  polar_clock(config);
+}
+
+$(document).ready(function() {
+  redraw_polar_clock_{{ widget.id }}();
+  window.addEventListener("resize", redraw_polar_clock_{{ widget.id }});
+});
+</script>
+{% endblock %}

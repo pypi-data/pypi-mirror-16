@@ -1,0 +1,56 @@
+@import "/bootstrap/scss/bootstrap/_variables.scss";
+
+.analog-clock {
+
+  fill: none;
+  stroke: $headings-color;
+  stroke-width: 3px;
+
+  svg {
+    stroke: $headings-color;
+    font-family: $font-family-base;
+  }
+
+  .second-hand {
+    stroke-width: 3;
+  }
+
+  .minute-hand {
+    stroke-width: 8;
+    stroke-linecap:round;
+  }
+
+  .hour-hand {
+    stroke-width: 12;
+    stroke-linecap:round;
+  }
+
+  .hands-cover {
+    stroke-width: 3;
+    fill: $body-bg;
+  }
+
+  .second-tick {
+    stroke-width: 3;
+    fill: $text-color;
+    stroke: $text-color;
+  }
+
+  .hour-tick {
+    stroke-width:8; /*same as the minute hand */
+    stroke: $text-color;
+  }
+
+  .second-label {
+    font-size: 12px;
+    stroke-width: 1px;
+    stroke: $text-color;
+  }
+
+  .hour-label {
+    font-size: 24px;
+    stroke-width: 2px;
+    stroke: $text-color;
+  }
+
+}

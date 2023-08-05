@@ -1,0 +1,28 @@
+{% extends widget.get_base_template %}
+
+{% block content %}
+<div id="analog_clock_{{ widget.fe_identifier }}" class="analog-clock"></div>
+<script type="text/javascript">
+
+function redraw_analog_clock_{{ widget.id }}(){
+  var placeholder = '#analog_clock_{{ widget.fe_identifier }}'
+  var parent_box = $(placeholder).parent();
+  width = parent_box.width();
+  d3.select(placeholder+" svg").remove();
+  d3clock({
+    target: placeholder,
+    face: '{% block face %}{% endblock %}',
+    width: width,
+    // date:'Mon May 25 2015 10:09:37',
+    TZOffset: {
+      hours: 0
+    }
+  });
+}
+
+$(document).ready(function() {
+  redraw_analog_clock_{{ widget.id }}();
+  window.addEventListener("resize", redraw_analog_clock_{{ widget.id }});
+});
+</script>
+{% endblock %}
