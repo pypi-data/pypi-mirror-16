@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: omxSocket
+Version: v1.2
+Summary: A library to launch omxplayer and give other scripts control over it through sockets
+Home-page: https://github.com/CRImier/omxSocket
+Author: Arsenijs Picugins
+Author-email: crimier@yandex.ru
+License: UNKNOWN
+Download-URL: https://github.com/CRImier/omxSocket/tarball/v1.2
+Description: UNKNOWN
+Keywords: raspberry pi,omxplayer
+Platform: UNKNOWN
