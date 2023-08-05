@@ -1,0 +1,3 @@
+[rinoh.typefaces]
+tex gyre schola = rinoh_typeface_texgyreschola:typeface
+
