@@ -1,0 +1,4 @@
+[console_scripts]
+inetproxy = inet.proxy:main
+inetserver = inet.inetserver:main
+
