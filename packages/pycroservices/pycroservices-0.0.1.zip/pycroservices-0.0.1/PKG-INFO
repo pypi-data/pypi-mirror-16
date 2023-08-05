@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: pycroservices
+Version: 0.0.1
+Summary: pycroservices is a microservices framework on AWS Lambda.
+Home-page: https://github.com/snuffkingit/pycroservices
+Author: Satoyuki Tsukano
+Author-email: tknstyk at gmail.com
+License: Apache License 2.0
+Description: UNKNOWN
+Keywords: microservices,AWS Lambda
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development

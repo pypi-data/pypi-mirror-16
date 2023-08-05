@@ -1,0 +1,9 @@
+README.rst
+pcs.py
+pycroservices.py
+setup.py
+pycroservices.egg-info/PKG-INFO
+pycroservices.egg-info/SOURCES.txt
+pycroservices.egg-info/dependency_links.txt
+pycroservices.egg-info/requires.txt
+pycroservices.egg-info/top_level.txt
