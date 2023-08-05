@@ -1,0 +1,3 @@
+[console_scripts]
+gen_ca_cert = contrail.security.ca.utils:main
+
