@@ -1,0 +1,9 @@
+setup.py
+kaczmarz/__init__.py
+kaczmarz/rowitr.py
+kaczmarz.egg-info/PKG-INFO
+kaczmarz.egg-info/SOURCES.txt
+kaczmarz.egg-info/dependency_links.txt
+kaczmarz.egg-info/requires.txt
+kaczmarz.egg-info/top_level.txt
+kaczmarz.egg-info/zip-safe
