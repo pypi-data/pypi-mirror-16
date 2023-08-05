@@ -1,0 +1,11 @@
+catex/__init__.py,sha256=y_H2I8p3bXItVwGVOQblaEUtcKUm38fJVn-B8Xc6rTU,23
+catex/cli.py,sha256=X0w_-vbVq51Dc7Wo_U_KdrTM1srWhLbHzc-qHG8Xhy4,479
+catex/core.py,sha256=lvx5SlCDfpv-J8-Z430QhZZLFOj3eMk6Eg91UDvNf2w,3980
+catex/version.py,sha256=Hv6cMYKWqZ0Y1HsphoIUAywvdaWXuZx3PqefAmB3bOE,17
+CaTeX-0.0.4.dist-info/DESCRIPTION.rst,sha256=iFUrnEsWF4_jZ_sP7yGGmO0MCKPv9xtODE113YiQvTk,526
+CaTeX-0.0.4.dist-info/entry_points.txt,sha256=M4b_diiuRUG2LZxpFZhqFn-c9_sXLaIpde46jOz1x7s,41
+CaTeX-0.0.4.dist-info/METADATA,sha256=jS085pH2nMhGpRA6DXP-WqBDsla7BkmgYemA8jTwxGs,1201
+CaTeX-0.0.4.dist-info/metadata.json,sha256=4aKXGVrNPgQtBLVRxpwNv9rOdz2cj2yzDKlrpTBVqZI,981
+CaTeX-0.0.4.dist-info/RECORD,,
+CaTeX-0.0.4.dist-info/top_level.txt,sha256=ghwHZAPspXWVCJC4kfdGM5hIIlvJwlB2xINcbRILJMM,6
+CaTeX-0.0.4.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
