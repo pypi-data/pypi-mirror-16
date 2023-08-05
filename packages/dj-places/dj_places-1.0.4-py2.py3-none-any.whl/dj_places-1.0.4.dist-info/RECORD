@@ -1,0 +1,12 @@
+dj_places-1.0.4.dist-info/DESCRIPTION.rst,sha256=_z-pY4apvqsj91LYLQ3XJ0CYxUrfU3NySHnTeuzK-kA,3423
+dj_places-1.0.4.dist-info/METADATA,sha256=WAVY7TOGP9NCzDiISudRPEpO12UIqxT9A6wBuMuvcUs,4293
+dj_places-1.0.4.dist-info/RECORD,,
+dj_places-1.0.4.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+dj_places-1.0.4.dist-info/metadata.json,sha256=NRhYs3PjGrqGwgROeG-kzsUxcAHVZxhhQQaPPd_Jgpw,975
+dj_places-1.0.4.dist-info/top_level.txt,sha256=_WwFuxGaPT4oeoaAQfOqkBvF6_pTf-fU3-Iw8RusLC8,9
+djplaces/__init__.py,sha256=thGZHY6pLPhJc6CwYBjUaQ6pGxLhwPMp_pjoYsiwvI4,22
+djplaces/fields.py,sha256=6MgpNc2gBgTKaMWvL8sWfacIrnaPzpWj7KRnCA4s5b4,1045
+djplaces/widgets.py,sha256=5FuRGrFJuAUgYfLihTwmtiW2AvI7olIhoi1-7_svpks,1012
+djplaces/static/css/djplaces.css,sha256=MQquZEQBWdJ8B19C-3FRxpC-7bxd40eoSb81UvwXIIE,97
+djplaces/static/js/djplaces.js,sha256=vCdJgVSA2vywWgMwWhuKAxPDr6l3qWi5xhY9136kewU,906
+djplaces/templates/djplaces/map_widget.html,sha256=3NEUERcEBUY4WvuK3hjzuHqAOnDNaQgLDD9Q_e8eTVU,76
