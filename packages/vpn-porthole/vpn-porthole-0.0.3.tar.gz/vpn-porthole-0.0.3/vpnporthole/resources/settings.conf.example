@@ -1,0 +1,61 @@
+# This is a sample settings file for vpn-porthole
+
+# Create as many session profiles as you like, and name them as you wish.
+# Below is just one session called "example".
+[session]
+    [[example]]
+        # vpn: the endpoint at which the VPN is contacted
+        vpn = vpn.example.com
+
+        # username: Directly add VPN username here, or use the SHELL feature as for
+        # the password
+        username = joe
+
+        # password: (optional) You can directly add your password here,
+        # but that is not good security. If you leave it blank then you will be
+        # prompted when needed. You can also configure your password to be
+        # retrieved with a shell command. I like to store my passwords in a keyring:
+        #   OSX: https://joshtronic.com/2014/02/17/using-keyring-access-on-the-osx-commandline/
+        #   Ubuntu: http://manpages.ubuntu.com/manpages/wily/man1/secret-tool.1.html
+        password = SHELL:~/path/to/password/script
+
+        # subnets: Add the IP address ranges that you wish to route into the VPN session
+        [[[subnets]]]
+            10.11.0.0/28 = True
+            10.12.13.0/24 = True
+
+        # domains: Add the DNS domains for which you wish to forward DNS lookups into the
+        # VPN Session
+        [[[domains]]]
+            example.org = True
+
+        [[[custom]]]
+
+            # Custom lines you wish to add to the Dockerfile as system
+            [[[[system]]]]
+                1 = RUN apt-get update && apt-get install -y wget
+
+            # Custom lines you wish to add to the Dockerfile as user
+            [[[[user]]]]
+                1 = RUN wget http://www.example.com/csd-wrapper.sh -O csd-wrapper.sh && chmod +x csd-wrapper.sh
+
+            # Additional command line options to pass to openconnect
+            [[[[openconnect]]]]
+                1 = -v
+                2 = --csd-user user
+                3 = --csd-wrapper ~/csd-wrapper.sh
+
+
+# If you are behind a HTTP Proxy then here you can setup named proxy profiles
+# Below is an example profile called "work". The proxy would typically be used as e.g.:
+#   $ vpnp --proxy work build example
+[proxy]
+    [[work]]
+        http_proxy = http://proxy.example.com:8080
+
+
+[system]
+    # sudo: (optional) Can be configured the same as for password.
+    # vpn-porthole needs to make use of sudo privileges to setup and tear down
+    # subnets and DNS domains
+    sudo =
