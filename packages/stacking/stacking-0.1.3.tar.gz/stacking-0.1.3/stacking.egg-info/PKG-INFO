@@ -1,0 +1,138 @@
+Metadata-Version: 1.1
+Name: stacking
+Version: 0.1.3
+Summary: A stacking library for ensemble learning
+Home-page: https://github.com/ikki407/stacking
+Author: Ikki Tanaka
+Author-email: ikki0407@gmail.com
+License: MIT
+Description: Library for stacking(Stacked generalization)
+        ============================================
+        
+        |PyPI version| |license|
+        
+        About this library(watch test folder for more detailed)
+        -------------------------------------------------------
+        
+        1. Set train and test dataset under data/input.
+        
+        2. Created features from original dataset need to be under
+           data/output/features.
+        
+        3. Models for stacking are defined in scripts under scripts folder.
+        
+        4. Need to define created features in that scripts.
+        
+        5. Just run ``sh run.sh`` (``python scripts/XXX.py``)
+        
+        --------------
+        
+        Getting started: 30 seconds to stacking
+        ---------------------------------------
+        
+        --------------
+        
+        Installation
+        ------------
+        
+        To install stacking, ``cd`` to the stacking folder and run the install
+        command:
+        
+        ::
+        
+            sudo python setup.py install
+        
+        You can also install stacking from PyPI:
+        
+        ::
+        
+            pip install stacking
+        
+        --------------
+        
+        Tree of files
+        -------------
+        
+        -  base\_fixed\_fold.py (class of stacking)
+        -  data/
+        -  input/
+        
+           -  train.csv (train dataset)
+           -  test.csv (test dataset)
+        
+        -  output/
+        
+           -  features/
+           -  features.csv (features user created)
+           -  temp/
+           -  temp.csv (files saved in stacking)
+        
+        -  scripts/
+        -  script.csv (main script where concrete models defined)
+        
+        --------------
+        
+        Details of scripts
+        ------------------
+        
+        -  base.py:
+        -  Base models for stacking are defined here (using
+           sklearn.base.BaseEstimator).
+        -  Some models are defined here. e.g., XGBoost, Keras, Vowpal Wabbit.
+        -  These models are wrapped as scikit-learn like (using
+           sklearn.base.ClassifierMixin, sklearn.base.RegressorMixin).
+        -  That is, model class has some methods, fit(), predict\_proba(), and
+           predict().
+        
+        New user-defined models can be added here.
+        
+        Scikit-learn models can be used.
+        
+        Base model have some arguments.
+        
+        -  's': Stacking. Saving a oof(out-of-fold)
+           prediction({model\_name}\_all\_fold.csv) and average of test
+           prediction based on train-fold models({model\_name}\_test.csv). These
+           files will be used for next level stacking.
+        
+        -  't': Training with all data and predict
+           test({model\_name}\_TestInAllTrainingData.csv). In this training, no
+           validation data are used.
+        
+        -  'st': Stacking and then training with all data and predict test ('s'
+           and 't').
+        
+        -  'cv': Only cross validation without saving the prediction.
+        
+        Define several models and its parameters used for stacking. Define task
+        details on the top of script. Train and test feature set are defined
+        here. Need to define CV-fold index.
+        
+        Any level stacking can be defined.
+        
+        --------------
+        
+        TODO LIST
+        ---------
+        
+        Need to be more general library.
+        
+        Please check isuues!!
+        
+        .. |PyPI version| image:: https://badge.fury.io/py/stacking.svg
+           :target: https://badge.fury.io/py/stacking
+        .. |license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000
+           :target: https://github.com/ikki407/stacking/LICENSE
+        
+Keywords: stacking,ensemble,machine learning,cross validation,sckit-learn,XGBoost,Keras,Vowpal Wabbit
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
