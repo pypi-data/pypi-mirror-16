@@ -1,0 +1,5 @@
+setup.py
+FilenameBear.egg-info/PKG-INFO
+FilenameBear.egg-info/SOURCES.txt
+FilenameBear.egg-info/dependency_links.txt
+FilenameBear.egg-info/top_level.txt
