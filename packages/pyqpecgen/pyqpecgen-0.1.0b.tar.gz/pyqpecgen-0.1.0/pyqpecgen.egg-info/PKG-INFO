@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: pyqpecgen
+Version: 0.1.0
+Summary: A QPEC problem generator for Python
+Home-page: https://github.com/discardthree/PyQPECgen
+Author: Trish Gillett-Kawamoto
+Author-email: discardthree@gmail.com
+License: MIT
+Description: This package provides a Python translation of the Matlab package Qpecgen which generates random MPEC test problems with quadratic objective functions and affine variational inequality constraints. For more information, see the paper and accompanying code by Houyuan Jiang, Daniel Ralph, 1997.
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Mathematics

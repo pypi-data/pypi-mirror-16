@@ -1,0 +1,14 @@
+MANIFEST.in
+requirements.txt
+setup.py
+pyqpecgen.egg-info/PKG-INFO
+pyqpecgen.egg-info/SOURCES.txt
+pyqpecgen.egg-info/dependency_links.txt
+pyqpecgen.egg-info/requires.txt
+pyqpecgen.egg-info/top_level.txt
+qpecgen/__init__.py
+qpecgen/avi.py
+qpecgen/base.py
+qpecgen/box.py
+qpecgen/helpers.py
+qpecgen/special.py
