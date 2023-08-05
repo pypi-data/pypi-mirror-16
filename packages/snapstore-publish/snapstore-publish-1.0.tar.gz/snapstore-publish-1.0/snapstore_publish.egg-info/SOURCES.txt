@@ -1,0 +1,8 @@
+macaroon-create
+setup.py
+snapstore-publish
+snapstore_publish.egg-info/PKG-INFO
+snapstore_publish.egg-info/SOURCES.txt
+snapstore_publish.egg-info/dependency_links.txt
+snapstore_publish.egg-info/requires.txt
+snapstore_publish.egg-info/top_level.txt

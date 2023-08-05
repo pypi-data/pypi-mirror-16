@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: snapstore-publish
+Version: 1.0
+Summary: Publish a snap to a snapstore
+Home-page: https://github.com/evandandrea/snapstore-publish
+Author: Evan Dandrea
+Author-email: ev@ubuntu.com
+License: MIT
+Description: UNKNOWN
+Keywords: snapcraft snap
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Environment :: Console
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Utilities

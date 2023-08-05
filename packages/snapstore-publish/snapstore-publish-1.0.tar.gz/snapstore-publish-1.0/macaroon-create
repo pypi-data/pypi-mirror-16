@@ -1,0 +1,108 @@
+#!/usr/bin/env python3
+
+from pymacaroons import Macaroon
+import os
+import sys
+import json
+import getpass
+import requests
+from subprocess import PIPE, Popen, TimeoutExpired
+
+
+MACAROON_URL = 'https://myapps.developer.ubuntu.com/dev/api/acl/'
+DISCHARGE_URL = 'https://login.ubuntu.com/api/v2/tokens/discharge'
+
+
+def post(url, **kwargs):
+    '''POST to the specified URL.
+
+    :return: json response object on success, None on error.
+    :raises: StoreException on error
+    '''
+    req = requests.request('POST', url, **kwargs)
+    req.raise_for_status()
+    return req.json()
+
+
+def get_macaroon():
+    data = {'permissions': ['package_upload']}
+    headers = {'Content-Type': 'application/json',
+               'Accept':'application/json'}
+    data = json.dumps(data)
+    result = post(MACAROON_URL, headers=headers, data=data)
+    return result['macaroon']
+
+def get_caveat(macaroon):
+    d = Macaroon.deserialize(macaroon)
+    for x in d.third_party_caveats():
+        if x.location == 'login.ubuntu.com':
+            return x.caveat_id
+
+
+def get_discharge(caveat):
+    print('Email: ', end='', file=sys.stderr)
+    email = input()
+    pw = getpass.getpass('Password: ', stream=sys.stderr)
+
+    headers = {'Accept': 'application/json',
+               'Content-Type': 'application/json'}
+    data = {'email': email, 'password': pw, 'caveat_id': caveat}
+
+    need_otp = False
+    try:
+        result = post(DISCHARGE_URL, data=json.dumps(data),
+                      headers=headers)
+    except requests.exceptions.HTTPError as e:
+        if e.response.status_code == 401:
+            need_otp = True
+
+    if need_otp:
+        data['otp'] = getpass.getpass('One-time password: ',
+                                      stream=sys.stderr)
+        data = json.dumps(data)
+        result = post(DISCHARGE_URL, data=data, headers=headers)
+
+    return result['discharge_macaroon']
+
+
+def encrypt(macaroon, discharge):
+    '''Encrypts the provided macaroon using AES-256 with the secret
+    from MACAROON_SECRET. Writes the encrypted macaroon to
+    MACAROON_FILE
+    '''
+    if 'MACAROON_SECRET' not in os.environ:
+        m = 'MACAROON_SECRET not set in the environment.'
+        raise RuntimeError(m)
+
+    contents = {'macaroon': macaroon, 'discharge': discharge}
+    contents = json.dumps(contents)
+
+    cmd = ['openssl', 'enc', '-aes-256-cbc', '-pass',
+           'env:MACAROON_SECRET', '-base64']
+    try:
+        p = Popen(cmd, stdin=PIPE, stdout=PIPE,
+                  universal_newlines=True)
+        outs, _ = p.communicate(input=contents)
+        return outs
+    except TimeoutExpired:
+        p.kill()
+
+    if p.returncode:
+        raise RuntimeError('Could not encrypt macaroon file.')
+
+
+def main():
+    try:
+        macaroon = get_macaroon()
+        caveat = get_caveat(macaroon)
+        discharge = get_discharge(caveat)
+    except Exception as e:
+        print('Error: {}'.format(e), file=sys.stderr)
+        return 1
+
+    print(encrypt(macaroon, discharge))
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())
