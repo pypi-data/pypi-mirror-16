@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: bitshuffle
+Version: 0.2.4
+Summary: Bitshuffle filter for improving typed data compression.
+Home-page: https://github.com/kiyo-masui/bitshuffle
+Author: Kiyoshi Wesley Masui
+Author-email: kiyo@physics.ubc.ca
+License: MIT
+Description: UNKNOWN
+Keywords: compression,hdf5,numpy
+Platform: UNKNOWN
