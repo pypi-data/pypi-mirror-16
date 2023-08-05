@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: mkdocs-inspired
+Version: 1.0.1
+Summary: Mobile responsive Mkdocs theme with slider nav based on bootswatch flatly
+Home-page: https://github.com/rnason/mkdocs-inspired.git
+Author: Richard Nason
+Author-email: rich@nason.co
+License: MIT
+Description: UNKNOWN
+Keywords: pip package,mkdocs,themes
+Platform: UNKNOWN
