@@ -1,0 +1,7 @@
+matplotlib
+matplotlib_venn
+attrs
+cycler
+
+[doc]
+sphinx
