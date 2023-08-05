@@ -1,0 +1,12 @@
+openapscontrib.mmhistorytools-0.1.4-py2.7-nspkg.pth,sha256=LJFJNaYi7MHtdvJlF-MbEnJS8TzsfHuZfh3unqGZjRw,329
+openapscontrib/mmhistorytools/__init__.py,sha256=Es-9l6vEE7aK9ujlqi5VvjonYjXOqNFkza8koc915NE,14981
+openapscontrib/mmhistorytools/historytools.py,sha256=5IW67Hc3fETPClorgLn-Ab3DR9nKhOKrPJUUcVQuzLQ,27748
+openapscontrib/mmhistorytools/models.py,sha256=FKNvi8ay3yLV1GINg5fDCdWR2MlPF5vxzkGJBlZso-s,1640
+openapscontrib/mmhistorytools/version.py,sha256=aBEbDvx4LMg8A1TJJR6dEHu8rQODVin528hLS_EDvuA,22
+openapscontrib.mmhistorytools-0.1.4.dist-info/DESCRIPTION.rst,sha256=deLtCiJE16v7qWiUtNidQAfls7OmslTn9cbcLuWP1J4,184
+openapscontrib.mmhistorytools-0.1.4.dist-info/METADATA,sha256=RHQrmFnHNqpMnQmGMer0WvH6_aCtrZgXDBSQz5h8HDA,912
+openapscontrib.mmhistorytools-0.1.4.dist-info/metadata.json,sha256=wgnZuoH6yqrKcGdRTcz-SOWt9WTw-OJf0IjxxlG6BbA,911
+openapscontrib.mmhistorytools-0.1.4.dist-info/namespace_packages.txt,sha256=HKBd4hNTLg49PI1PBhICs5oB4vigdYVWB81UmxW3Ioo,15
+openapscontrib.mmhistorytools-0.1.4.dist-info/RECORD,,
+openapscontrib.mmhistorytools-0.1.4.dist-info/top_level.txt,sha256=HKBd4hNTLg49PI1PBhICs5oB4vigdYVWB81UmxW3Ioo,15
+openapscontrib.mmhistorytools-0.1.4.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
