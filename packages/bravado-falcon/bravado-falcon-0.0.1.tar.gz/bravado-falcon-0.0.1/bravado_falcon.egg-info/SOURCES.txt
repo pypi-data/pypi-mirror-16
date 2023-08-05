@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.rst
+requirements.txt
+setup.py
+bravado_falcon/__init__.py
+bravado_falcon.egg-info/PKG-INFO
+bravado_falcon.egg-info/SOURCES.txt
+bravado_falcon.egg-info/dependency_links.txt
+bravado_falcon.egg-info/requires.txt
+bravado_falcon.egg-info/top_level.txt
