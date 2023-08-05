@@ -1,0 +1,41 @@
+{
+    "image_time_intervals": {
+        "dt_ca": 2,
+        "dt_sp": 300
+    },
+    "data_locations": {
+        "imagefolder": "path/to/my/folder/with/czi/files",
+        "resultsfolder": "path/to/my/results/folder/"
+    },
+    "cell_detection": {
+        "bg_thresh": 0.6,
+        "weight": 5,
+        "opening_radius": 3,
+        "prob_smooth": [
+            3,
+            5,
+            5
+        ]
+    },
+    "tracking": {
+        "search_range": 5,
+        "memory": 0  
+    },
+    "classification": {
+        "n_frames_min": 30,
+        "max_area_change_thresh": 0.7,
+        "spot_thresh": 4.6,
+        "sigma_hessian_determinant": 3.1
+    },
+    "visualization": {
+        "speck_brightness": 0.001
+    },
+    "channel_mapping": {
+        "brightfield_channel_sp": 4,
+        "speck_channel_sp": 3,
+        "readout_channels_sp" : [1, 4],
+        "readout_channels_ca" : [1, 2]
+    }
+}
+
+

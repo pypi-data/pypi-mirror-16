@@ -1,0 +1,6 @@
+include README.rst
+include ca_tracker/config/config.json
+recursive-include ca_tracker/cell_profiler *
+recursive-include ca_tracker/imagej *
+recursive-include ca_tracker/doc *
+recursive-exclude ca_tracker/tests/test_data *

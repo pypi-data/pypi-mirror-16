@@ -1,0 +1,12 @@
+numpy
+scipy
+matplotlib
+numexpr
+bottleneck
+six
+pandas
+scikit-image
+seaborn
+pillow
+pims
+trackpy
