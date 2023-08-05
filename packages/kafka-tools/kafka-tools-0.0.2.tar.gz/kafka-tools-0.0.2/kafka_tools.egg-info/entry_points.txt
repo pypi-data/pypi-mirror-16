@@ -1,0 +1,3 @@
+[console_scripts]
+kafka-assigner = kafka.tools.assigner.__main__:main
+

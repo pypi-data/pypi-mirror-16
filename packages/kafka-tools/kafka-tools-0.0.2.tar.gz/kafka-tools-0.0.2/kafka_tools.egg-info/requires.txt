@@ -1,0 +1,10 @@
+kazoo
+pex
+importlib
+argparse
+
+[dev]
+check-manifest
+
+[test]
+coverage
