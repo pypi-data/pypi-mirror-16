@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+decider_bwa_se/__init__.py
+decider_bwa_se/__main__.py
+decider_bwa_se/main.py
+decider_bwa_se.egg-info/PKG-INFO
+decider_bwa_se.egg-info/SOURCES.txt
+decider_bwa_se.egg-info/dependency_links.txt
+decider_bwa_se.egg-info/requires.txt
+decider_bwa_se.egg-info/top_level.txt
