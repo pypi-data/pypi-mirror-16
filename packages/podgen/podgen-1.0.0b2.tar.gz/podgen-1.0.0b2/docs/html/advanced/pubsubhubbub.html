@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using PubSubHubbub &mdash; PodGen Documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0.0b2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="PodGen Documentation" href="../index.html" />
+    <link rel="up" title="Advanced Topics" href="index.html" />
+    <link rel="next" title="Adding new tags" href="extending.html" />
+    <link rel="prev" title="Advanced Topics" href="index.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="using-pubsubhubbub">
+<h1>Using PubSubHubbub<a class="headerlink" href="#using-pubsubhubbub" title="Permalink to this headline">¶</a></h1>
+<p>PubSubHubbub is a free and open protocol for pushing updates to clients
+when there&#8217;s new content available in the feed, as opposed to the traditional
+polling clients do.</p>
+<p>Read about <a class="reference external" href="https://en.wikipedia.org/wiki/PubSubHubbub">what PubSubHubbub is</a> before you continue.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">While the protocol supports having multiple PubSubHubbub hubs for a single
+Podcast, there is no support for this in PodGen at the moment.</p>
+</div>
+<hr class="docutils" />
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#using-pubsubhubbub" id="id1">Using PubSubHubbub</a><ul>
+<li><a class="reference internal" href="#step-1-set-feed-url" id="id2">Step 1: Set feed_url</a></li>
+<li><a class="reference internal" href="#step-2-decide-on-a-hub" id="id3">Step 2: Decide on a hub</a></li>
+<li><a class="reference internal" href="#step-3-set-pubsubhubbub" id="id4">Step 3: Set pubsubhubbub</a></li>
+<li><a class="reference internal" href="#step-4-set-http-link-header" id="id5">Step 4: Set HTTP Link Header</a></li>
+<li><a class="reference internal" href="#step-5-publish-the-changes" id="id6">Step 5: Publish the changes</a></li>
+<li><a class="reference internal" href="#step-6-notify-the-hub-of-new-episodes" id="id7">Step 6: Notify the hub of new episodes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="step-1-set-feed-url">
+<h2>Step 1: Set feed_url<a class="headerlink" href="#step-1-set-feed-url" title="Permalink to this headline">¶</a></h2>
+<p>First, you must ensure that the <a class="reference internal" href="../api.podcast.html#podgen.Podcast" title="podgen.Podcast"><code class="xref py py-class docutils literal"><span class="pre">Podcast</span></code></a> object has the
+<a class="reference internal" href="../api.podcast.html#podgen.Podcast.feed_url" title="podgen.Podcast.feed_url"><code class="xref py py-attr docutils literal"><span class="pre">feed_url</span></code></a> attribute set to the URL at which the feed is
+accessible.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Assume p is a Podcast object</span>
+<span class="n">p</span><span class="o">.</span><span class="n">feed_url</span> <span class="o">=</span> <span class="s2">&quot;https://example.com/feeds/examplefeed.rss&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-2-decide-on-a-hub">
+<h2>Step 2: Decide on a hub<a class="headerlink" href="#step-2-decide-on-a-hub" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://en.wikipedia.org/wiki/PubSubHubbub#Usage">Wikipedia article</a> mentions a few options you can use (called Community
+Hosted hub providers). Alternatively, you can set up and host your own server
+using one of the implementations found at the <a class="reference external" href="https://github.com/pubsubhubbub">official PubSubHubbub project
+page</a>.</p>
+</div>
+<div class="section" id="step-3-set-pubsubhubbub">
+<h2>Step 3: Set pubsubhubbub<a class="headerlink" href="#step-3-set-pubsubhubbub" title="Permalink to this headline">¶</a></h2>
+<p>The Podcast must contain information about which hub to use. You do this by
+setting <a class="reference internal" href="../api.podcast.html#podgen.Podcast.pubsubhubbub" title="podgen.Podcast.pubsubhubbub"><code class="xref py py-attr docutils literal"><span class="pre">pubsubhubbub</span></code></a> to the URL which the hub is available at.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">pubsubhubbub</span> <span class="o">=</span> <span class="s2">&quot;https://pubsubhubbub.example.com/&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="step-4-set-http-link-header">
+<h2>Step 4: Set HTTP Link Header<a class="headerlink" href="#step-4-set-http-link-header" title="Permalink to this headline">¶</a></h2>
+<p>In addition to embedding the PubSubHubbub hub URL and the feed&#8217;s URL in the
+RSS itself, you should use the
+<a class="reference external" href="https://tools.ietf.org/html/rfc5988#page-6">Link header</a> in the HTTP response that is sent with this feed,
+duplicating the link to the PubSubHubbub and the feed. Example of
+what it might look like:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Link: &lt;https://link.to.pubsubhubbub.example.org/&gt;; rel=&quot;hub&quot;,
+      &lt;https://example.org/podcast.rss&gt;; rel=&quot;self&quot;
+</pre></div>
+</div>
+<p>How you can achieve this varies from framework to framework. Here is an example
+using Flask (assuming the code is inside a view function):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="k">import</span> <span class="n">make_response</span>
+<span class="kn">from</span> <span class="nn">podgen</span> <span class="k">import</span> <span class="n">Podcast</span>
+<span class="c1"># ...</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&lt;feedname&gt;&quot;</span><span class="p">)</span>  <span class="c1"># Just as an example</span>
+<span class="k">def</span> <span class="nf">show_feed</span><span class="p">(</span><span class="n">feedname</span><span class="p">):</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">Podcast</span><span class="p">()</span>
+    <span class="c1"># ...</span>
+    <span class="c1"># This is the relevant part:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">make_response</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;</span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="n">p</span><span class="o">.</span><span class="n">pubsubhubbub</span><span class="p">,</span> <span class="n">rel</span><span class="o">=</span><span class="s2">&quot;hub&quot;</span><span class="p">)</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;Link&quot;</span><span class="p">,</span> <span class="s2">&quot;&lt;</span><span class="si">%s</span><span class="s2">&gt;&quot;</span> <span class="o">%</span> <span class="n">p</span><span class="o">.</span><span class="n">feed_url</span><span class="p">,</span> <span class="n">rel</span><span class="o">=</span><span class="s2">&quot;self&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">response</span>
+</pre></div>
+</div>
+<p>This is necessary for compatibility with the different versions of
+PubSubHubbub. The <a class="reference external" href="http://pubsubhubbub.github.io/PubSubHubbub/pubsubhubbub-core-0.4.html#rfc.section.4">latest version of the standard</a> specifically says
+that publishers MUST use the Link header. If you&#8217;re unable to do this, you
+can try publishing the feed without; most clients and hubs should manage
+just fine.</p>
+</div>
+<div class="section" id="step-5-publish-the-changes">
+<h2>Step 5: Publish the changes<a class="headerlink" href="#step-5-publish-the-changes" title="Permalink to this headline">¶</a></h2>
+<p>Ensure the changes above are published before proceeding. That is, if a client
+downloads the feed, it should receive the Link headers and the pubsubhubbub
+and feed_url contents.</p>
+</div>
+<div class="section" id="step-6-notify-the-hub-of-new-episodes">
+<h2>Step 6: Notify the hub of new episodes<a class="headerlink" href="#step-6-notify-the-hub-of-new-episodes" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">PodGen does not contain any logic for figuring out whether a Podcast has
+changed or not. You must do that part yourself.</p>
+</div>
+<p>PodGen has two convenience methods that you can use to notify the hub you chose
+of any additions made to the feed. The way this works, is that you say to the
+hub &#8220;Hey, we&#8217;ve made additions to this feed&#8221;, and the hub looks at the feed and
+determines what is new, and sends the new episode(s) to any subscribed clients.</p>
+<p>There are three pre-requisites for using those methods:</p>
+<ol class="arabic simple">
+<li>The <a class="reference external" href="http://docs.python-requests.org">Requests</a> module has been installed.</li>
+<li>The <a class="reference internal" href="../api.podcast.html#podgen.Podcast" title="podgen.Podcast"><code class="xref py py-class docutils literal"><span class="pre">Podcast</span></code></a> object must have <a class="reference internal" href="../api.podcast.html#podgen.Podcast.pubsubhubbub" title="podgen.Podcast.pubsubhubbub"><code class="xref py py-attr docutils literal"><span class="pre">pubsubhubbub</span></code></a> and
+<a class="reference internal" href="../api.podcast.html#podgen.Podcast.feed_url" title="podgen.Podcast.feed_url"><code class="xref py py-attr docutils literal"><span class="pre">feed_url</span></code></a> set.</li>
+<li>The new episodes will be included in the feed if someone requests the feed
+at the moment the methods are called.<ul>
+<li>If this isn&#8217;t true, the hub will always be lagging one change behind!</li>
+</ul>
+</li>
+</ol>
+<p>One of the methods work best when only one feed has changed. The other one can
+handle both the case where one feed has changed, and the case where multiple
+feeds have changed.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="../api.podcast.html#podgen.Podcast.notify_hub" title="podgen.Podcast.notify_hub"><code class="xref py py-obj docutils literal"><span class="pre">podgen.Podcast.notify_hub</span></code></a>(requests[,&nbsp;timeout])</td>
+<td>Notify this podcast&#8217;s PubSubHubbub hub about new episode(s).</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="../api.podcast.html#podgen.Podcast.notify_multiple" title="podgen.Podcast.notify_multiple"><code class="xref py py-obj docutils literal"><span class="pre">podgen.Podcast.notify_multiple</span></code></a>(requests,&nbsp;feeds)</td>
+<td>Notify the PubSubHubbub hubs of additions in multiple Podcasts.</td>
+</tr>
+</tbody>
+</table>
+<p>Example where one Podcast has changed:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">podgen</span> <span class="k">import</span> <span class="n">Podcast</span>
+<span class="c1"># ...</span>
+<span class="n">p</span><span class="o">.</span><span class="n">notify_hub</span><span class="p">(</span><span class="n">requests</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Example where multiple Podcasts have changed:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">podgen</span> <span class="k">import</span> <span class="n">Podcast</span>
+<span class="c1"># ...</span>
+<span class="n">changed_podcasts</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># ... multiple Podcast objects here</span>
+<span class="p">]</span>
+<span class="n">Podcast</span><span class="o">.</span><span class="n">notify_multiple</span><span class="p">(</span><span class="n">requests</span><span class="p">,</span> <span class="n">changed_podcasts</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Always use the latter form when multiple Podcasts have changed; you&#8217;ll save
+lots of time since only one request needs to be made per hub.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="../index.html">
+    <img class="logo" src="../_static/logo.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=tobinus&repo=python-podgen&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../user/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/fork.html">Why the fork?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/basic_usage_guide/part_1.html">Creating the podcast</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/basic_usage_guide/part_2.html">Adding episodes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/basic_usage_guide/part_3.html">Generating the RSS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user/example.html">Full example</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Advanced Topics</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Using PubSubHubbub</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-set-feed-url">Step 1: Set feed_url</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-decide-on-a-hub">Step 2: Decide on a hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-3-set-pubsubhubbub">Step 3: Set pubsubhubbub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-4-set-http-link-header">Step 4: Set HTTP Link Header</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-5-publish-the-changes">Step 5: Publish the changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-6-notify-the-hub-of-new-episodes">Step 6: Notify the hub of new episodes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extending.html">Adding new tags</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API Documentation</a></li>
+</ul>
+
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2014, Lars Kiesow. Modified work © 2016, Thorben Dahl.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="../_sources/advanced/pubsubhubbub.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/tobinus/python-podgen" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
