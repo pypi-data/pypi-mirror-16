@@ -1,0 +1,10 @@
+README.rst
+setup.py
+WebElemental/Elemental.py
+WebElemental/TestElemental.py
+WebElemental/__init__.py
+WebElemental.egg-info/PKG-INFO
+WebElemental.egg-info/SOURCES.txt
+WebElemental.egg-info/dependency_links.txt
+WebElemental.egg-info/requires.txt
+WebElemental.egg-info/top_level.txt
