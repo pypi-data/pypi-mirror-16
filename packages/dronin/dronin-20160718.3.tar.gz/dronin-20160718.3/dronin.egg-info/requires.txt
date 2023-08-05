@@ -1,0 +1,7 @@
+six
+
+[all]
+pyserial
+numpy
+matplotlib
+pyqtgraph
