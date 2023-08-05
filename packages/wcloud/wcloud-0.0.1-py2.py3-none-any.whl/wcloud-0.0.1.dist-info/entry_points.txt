@@ -1,0 +1,3 @@
+[console_scripts]
+wcloud = wcloud.cli:main
+

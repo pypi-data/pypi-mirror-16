@@ -1,0 +1,10 @@
+wcloud/__init__.py,sha256=QijPHHMGS1U4XYbOIX0KJhpdvBLKpoU275mkSoHxlGM,116
+wcloud/cli.py,sha256=2Q51GA2eOTwi_-H8UgIQM9zBhPluqADixJ0ZAcsz7nw,493
+wcloud/wcloud.py,sha256=bcFqGVUH_UwAE22I9xYkoHX7WUOV4I3BrL3VcfXdKg0,570
+wcloud-0.0.1.dist-info/DESCRIPTION.rst,sha256=g4oM1U6gBfJCZojs22mPqE43wKsMQ7CoXPkEuIIr4c8,870
+wcloud-0.0.1.dist-info/entry_points.txt,sha256=tXlyEhkFAJKkHtRO_6f0CjvxX5VSnksAuiv2LEyQxUk,44
+wcloud-0.0.1.dist-info/METADATA,sha256=mgzcv0T5Gdk4IwX2SX53l9RO1y6vWIHyJEWTtocYPHY,1794
+wcloud-0.0.1.dist-info/metadata.json,sha256=rax2f0NUsIRsBq-kW0oV5zr_tKHIKBX1r6GUf0_TkZ4,1210
+wcloud-0.0.1.dist-info/RECORD,,
+wcloud-0.0.1.dist-info/top_level.txt,sha256=HGv20_SvISR2Z87yGTQZO_wsPAdLe-x6ywM5O8bCuLg,7
+wcloud-0.0.1.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
