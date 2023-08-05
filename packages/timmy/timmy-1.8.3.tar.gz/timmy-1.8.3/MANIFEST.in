@@ -1,0 +1,5 @@
+recursive-include rq *
+recursive-include doc *
+include README.md
+include config.yaml
+include rq.yaml
