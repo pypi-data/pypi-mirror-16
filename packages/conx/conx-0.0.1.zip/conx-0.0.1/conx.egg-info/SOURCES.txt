@@ -1,0 +1,8 @@
+setup.py
+conx/__init__.py
+conx.egg-info/PKG-INFO
+conx.egg-info/SOURCES.txt
+conx.egg-info/dependency_links.txt
+conx.egg-info/pbr.json
+conx.egg-info/requires.txt
+conx.egg-info/top_level.txt
