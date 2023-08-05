@@ -1,0 +1,14 @@
+pronto/__init__.py,sha256=VTN5BUP08j3_Fs_yCTfNTp3Y-pwDrk6jfVkqXN_sk-4,441
+pronto/ontology.py,sha256=SKIqT8HL9hU8H-XpmFHMCxlhcoW-3kZ6R9WKB7tcEAk,10829
+pronto/relationship.py,sha256=GpUz8C5ytGA6kRd-TRGs2vpsw0YCLehaVDSw3J-Um0g,5263
+pronto/term.py,sha256=j3EvdysHSL-0m3TAIVsHSwGkMzZdi1a_BC7LsIwp0Wc,6883
+pronto/utils.py,sha256=IBBKxgJ9KyQFPxNd5lbyYqx-pq8dKrzMkILFDC0SXTI,5122
+pronto/parser/__init__.py,sha256=lW4mRTY-3IYqa5opLS6vzxRGz7GqXwIWrNUbOtlgGBg,1644
+pronto/parser/obo.py,sha256=ab3JUdgGtvpkzfnW8rTP0rRSoWelrPIh82VHqK3fGrQ,5967
+pronto/parser/owl.py,sha256=n38JwN1QpkvibZRCJ2ltW9GwC_0UHEp1PwMA1vkQv9w,4374
+pronto-0.2.0.dist-info/DESCRIPTION.rst,sha256=brU7nKXO7y8k3XMnADOO4ylFV3r8eOyjy6rPhBVjE4Q,3604
+pronto-0.2.0.dist-info/METADATA,sha256=v1SqlWrwRJ-yU5CzA9D6wGyN-0aTbeRPfT6OxLPRrt0,5000
+pronto-0.2.0.dist-info/RECORD,,
+pronto-0.2.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+pronto-0.2.0.dist-info/metadata.json,sha256=zpkhGidsjpionOrFSOVYi6HJhe9nXvwVhnVeOOyf61g,1427
+pronto-0.2.0.dist-info/top_level.txt,sha256=wJneQxTBLRJQDFzpGyne5LvOgyLUYYH6-D9JJx4bFVc,7
