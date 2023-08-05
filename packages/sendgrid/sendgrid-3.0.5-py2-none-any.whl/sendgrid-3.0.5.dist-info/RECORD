@@ -1,0 +1,16 @@
+sendgrid/__init__.py,sha256=6bqHhWpYv5cPuJwIgzu_-zlu7tQyVTSSg6DcU3PjQ30,117
+sendgrid/sendgrid.py,sha256=2C6Y9rUB8X7zl7yhhibQrq2jqgJkWJ8McJ5QUzOUyMU,1183
+sendgrid/temp.py,sha256=hwBCYIoFh8RU9H_4vc6gQquG1Vs_ldl00PYVM0HiGU4,1286
+sendgrid/version.py,sha256=kqSvup3ABwumOJrv0cZGHuSUilmwWeAjIlyNWTRefNs,78
+sendgrid/helpers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sendgrid/helpers/mail/__init__.py,sha256=ns7wr4a3V4EWFHshzHid7vVm2slEpNw3C2DP9F3QNsg,20
+sendgrid/helpers/mail/mail.py,sha256=nxPB4kHsIG1vww0YCR55I4NHZkGgjOkyTj_QtGHdKA0,21263
+sendgrid-3.0.5.dist-info/DESCRIPTION.rst,sha256=NbLji20WI6f7eM9SyFuyvbxCUYVx03yqVNMFqA6pfGw,4633
+sendgrid-3.0.5.dist-info/METADATA,sha256=KkjmsytnTLJtfcZ4-rCgMTXWNUUv5kEyPf0f2EomI1A,5219
+sendgrid-3.0.5.dist-info/metadata.json,sha256=G9Di4c9FXnVV5qoM61BgW-Z3eaGAlEyUNZahLPWtmKM,771
+sendgrid-3.0.5.dist-info/RECORD,,
+sendgrid-3.0.5.dist-info/top_level.txt,sha256=eal4tbi_WImp6G0Aw1kh_sYXv2N4Kz-Bhz6rsKQVzf8,14
+sendgrid-3.0.5.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
+test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+test/test_mail.py,sha256=9FPZDMnnix-AfIqQydjeedcKJKViiE_8DnJKfMW6hp4,9862
+test/test_sendgrid.py,sha256=4LfTrjwY1hEeFR81Pqd-qPdTDwN40cB0Ad56f-_YPQs,74374
