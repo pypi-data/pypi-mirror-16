@@ -1,0 +1,17 @@
+MANIFEST.in
+README.rst
+setup.py
+test_chopsticks.py
+test_chopsticks_parallel.py
+chopsticks/__init__.py
+chopsticks/bubble.py
+chopsticks/facts.py
+chopsticks/group.py
+chopsticks/helpers.py
+chopsticks/ioloop.py
+chopsticks/tunnel.py
+chopsticks.egg-info/PKG-INFO
+chopsticks.egg-info/SOURCES.txt
+chopsticks.egg-info/dependency_links.txt
+chopsticks.egg-info/not-zip-safe
+chopsticks.egg-info/top_level.txt
