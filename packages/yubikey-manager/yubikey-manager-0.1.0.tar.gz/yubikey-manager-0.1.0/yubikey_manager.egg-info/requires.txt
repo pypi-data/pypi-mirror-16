@@ -1,0 +1,9 @@
+pyscard
+pyusb
+enum34
+
+[cli]
+click
+
+[gui]
+PySide
