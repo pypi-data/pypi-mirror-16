@@ -1,0 +1,14 @@
+README.rst
+setup.cfg
+setup.py
+collection_pipelines/__init__.py
+collection_pipelines/core.py
+collection_pipelines/graph.py
+collection_pipelines/http.py
+collection_pipelines/json.py
+collection_pipelines/std.py
+collection_pipelines/text.py
+collection_pipelines.egg-info/PKG-INFO
+collection_pipelines.egg-info/SOURCES.txt
+collection_pipelines.egg-info/dependency_links.txt
+collection_pipelines.egg-info/top_level.txt
