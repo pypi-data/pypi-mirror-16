@@ -1,0 +1,15 @@
+README.rst
+setup.py
+fakegit/__init__.py
+fakegit/args.py
+fakegit/docs.py
+fakegit/error.py
+fakegit/gitconf.py
+fakegit/github.py
+fakegit/main.py
+fakegit.egg-info/PKG-INFO
+fakegit.egg-info/SOURCES.txt
+fakegit.egg-info/dependency_links.txt
+fakegit.egg-info/entry_points.txt
+fakegit.egg-info/requires.txt
+fakegit.egg-info/top_level.txt
