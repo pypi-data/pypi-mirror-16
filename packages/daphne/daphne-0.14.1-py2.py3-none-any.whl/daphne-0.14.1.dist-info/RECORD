@@ -1,0 +1,15 @@
+daphne/__init__.py,sha256=DcrUHmqhXJJz-Sh-CsHfn9W6Q5OL-VL2FalGEX5hy6E,23
+daphne/access.py,sha256=DIaD3bbdeNQK3KAFZJB1jVHBNPR67HY0dYm7VVqA2Po,1871
+daphne/cli.py,sha256=DrPij5H-OZQgfIK6dQHpT11s6qqz9Qujz7Cl5O4ZVpI,4418
+daphne/http_protocol.py,sha256=fsZcv3uNeCw6Yt54DdQCQ_T-i_rWUvhdD8VtJrVWUmY,14581
+daphne/server.py,sha256=1mav0JfY8XBiCJH3XMf4-V_RiA7ZEdEc-QdUsg0qD9o,2901
+daphne/ws_protocol.py,sha256=xqP4CB9sORNIdQWgalbEcRYSIgUwrXtREjn_9t7qprw,8022
+daphne/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+daphne/tests/test_http.py,sha256=ebbwpLUr8tbua4A-eOyDC49s0m6D2mf1stXyFf8elS4,2604
+daphne-0.14.1.dist-info/DESCRIPTION.rst,sha256=HEPhyYBo41Nng8eNKOlLsCSmUtlbnSChKI6D3St5sqw,1403
+daphne-0.14.1.dist-info/METADATA,sha256=SEn3ws_w03ocyhD12u4R-iJABwPeYEMJPy8Tg3qOGak,1747
+daphne-0.14.1.dist-info/RECORD,,
+daphne-0.14.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+daphne-0.14.1.dist-info/entry_points.txt,sha256=4MfvTk6g7ucVcqFTq_Z0pKXS-KI2NZxnT9T6QG-bxs0,71
+daphne-0.14.1.dist-info/metadata.json,sha256=ItDF5Mu8NbdogtLq009ZXK45FKBfZkmk9MszmvyBKKk,734
+daphne-0.14.1.dist-info/top_level.txt,sha256=-OvbHbdbzg5OWsoxeXZ4gYCQYKkTUtaIZhYOetdC37o,7
