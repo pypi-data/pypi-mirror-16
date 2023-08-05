@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: djangorestframework-jwt-proxy
+Version: 0.1
+Summary: Django Rest Framework JWT Proxy <- forked from: https://github.com/eofs/django-rest-framework-proxy
+Home-page: https://github.com/Marcelo1180/djangorestframework-jwt-proxy
+Author: Marcelo Arteaga
+Author-email: arteagamarcelo@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/Marcelo1180/djangorestframework-jwt-proxy/tarball/0.1
+Description: UNKNOWN
+Keywords: django,restframework,proxy,jwt
+Platform: UNKNOWN
