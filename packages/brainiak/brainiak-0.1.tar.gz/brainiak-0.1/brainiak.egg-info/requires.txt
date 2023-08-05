@@ -1,0 +1,5 @@
+mpi4py
+numpy
+scikit-learn
+scipy
+pybind11>=1.7
