@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: custom-inherit
+Version: 1.0.3
+Summary: A Python package that provides customized docstring inheritance       schemes between derived classes and their parents.
+Home-page: https://github.com/meowklaski/custom_inherit/1.0.3
+Author: @meowklaski
+Author-email: rsoklaski@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
