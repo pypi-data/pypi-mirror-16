@@ -1,0 +1,3 @@
+[console_scripts]
+run-mirror = apt_package_mirror:main
+
