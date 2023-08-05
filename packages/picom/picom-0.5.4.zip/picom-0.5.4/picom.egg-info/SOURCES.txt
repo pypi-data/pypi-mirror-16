@@ -1,0 +1,9 @@
+MANIFEST.in
+setup.py
+picom/__init__.py
+picom/main.py
+picom.egg-info/PKG-INFO
+picom.egg-info/SOURCES.txt
+picom.egg-info/dependency_links.txt
+picom.egg-info/requires.txt
+picom.egg-info/top_level.txt
