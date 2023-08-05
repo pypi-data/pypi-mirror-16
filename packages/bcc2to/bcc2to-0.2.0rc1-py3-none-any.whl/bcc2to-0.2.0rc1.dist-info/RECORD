@@ -1,0 +1,13 @@
+bcc2to/__init__.py,sha256=UdOc-0_Wxh-6CMsa8xMbxTgAWSOkIRmD9nPQ5jkIxpk,1687
+bcc2to/__main__.py,sha256=Jv-_7EOW1cB3jkftioMw_bX1NjypwmrU7SGrrGY4R5c,335
+bcc2to/parts/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bcc2to/parts/cleanup.py,sha256=yK_-pAGzAnj73UZuuN7hV3FOJtXua6LWUrqBUpQY_Fg,493
+bcc2to/parts/install.py,sha256=bTNCG_jWEVSxN4tVYJaD3CmassA3TTe8iQ_RXgZFJfM,3640
+bcc2to/parts/proxy.py,sha256=-pvThAlnQgs3qbQWmN32sZWLJKPreRajKpngJfXULvg,11995
+bcc2to/parts/smtpd.py,sha256=dj24VCj08x4Obz622OzX0z1R4uWsFHRAq8gzcjBDe80,35350
+bcc2to-0.2.0rc1.dist-info/DESCRIPTION.rst,sha256=iE67KL8ndZx_E4rHzv7BFdJzqWkCPfBbFpizjkq_QIQ,753
+bcc2to-0.2.0rc1.dist-info/METADATA,sha256=ZfoII4OvbrFq5dxnCVa0QLbnVACth_CPly-mt0XV8L0,1410
+bcc2to-0.2.0rc1.dist-info/RECORD,,
+bcc2to-0.2.0rc1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+bcc2to-0.2.0rc1.dist-info/metadata.json,sha256=QOB6S0S3PgdpJRiulHTLQdymforRL4JwlQsCFyyhYeQ,746
+bcc2to-0.2.0rc1.dist-info/top_level.txt,sha256=NU7PY5evNka_jFTUK2oglfiUtEaIUs3lKAOcVgTgRQI,7
