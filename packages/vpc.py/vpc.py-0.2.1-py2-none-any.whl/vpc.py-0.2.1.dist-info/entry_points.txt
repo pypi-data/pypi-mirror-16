@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        vpc.py=vpc_cli:vpc_py
+    
