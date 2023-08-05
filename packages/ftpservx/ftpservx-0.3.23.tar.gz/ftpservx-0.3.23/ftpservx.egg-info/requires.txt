@@ -1,0 +1,8 @@
+PySide
+pyftpdlib
+
+[PySide]
+PySide>=1.0
+
+[pyftpdlib]
+pyftpdlib>=1.5
