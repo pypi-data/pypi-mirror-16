@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: django-bootstrap-form-tkliuxing
+Version: 3.2.1
+Summary: django-bootstrap-form-tkliuxing
+Home-page: http://github.com/tkliuxing/django-bootstrap-form
+Author: tkliuxing
+Author-email: ouyanghongyu@gmail.com
+License: BSD
+Description: UNKNOWN
+Keywords: bootstrap,django
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Framework :: Django
+Classifier: Environment :: Web Environment
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
