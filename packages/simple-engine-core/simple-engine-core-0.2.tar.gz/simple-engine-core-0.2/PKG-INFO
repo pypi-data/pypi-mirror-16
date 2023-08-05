@@ -1,0 +1,37 @@
+Metadata-Version: 1.0
+Name: simple-engine-core
+Version: 0.2
+Summary: Reads in HTML, reads out JSON
+Home-page: https://github.com/apizzimenti/simple-engine-core.git
+Author: Anthony Pizzimenti
+Author-email: pizzimentianthony@gmail.com
+License: MIT
+Description: # simple-engine
+        
+        `simple-engine` reads in an html file and generates a JSON map corresponding to the html.
+        
+        ## usage
+        
+        put a `config.json` file in a place that makes it convenient to type the source and destination paths out (a root
+        directory will do)
+        
+        ex. `config.json`
+        
+            {
+                "src": "app/index.html",
+                "dest": "output.js",
+                "toplevelid": "start"
+            }
+        
+        then run `engine` from the command line.
+        
+        ### options
+        
+        | option | description | default |
+        | :----: | :---------: | :----: |
+        | `src` | source html file | `index.html` |
+        | `dest` | destination file | `simpleDom.js` |
+        | `toplevelid` | html id where the interpreter starts | `start` |
+        
+        
+Platform: UNKNOWN
