@@ -1,0 +1,5 @@
+
+[zc.buildout]
+default = birdhousebuilder.recipe.celery:Recipe
+[zc.buildout.uninstall]
+default = birdhousebuilder.recipe.celery:uninstall
