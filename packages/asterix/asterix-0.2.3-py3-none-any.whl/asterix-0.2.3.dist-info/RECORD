@@ -1,0 +1,11 @@
+asterix/__init__.py,sha256=3cA4k7uiQJX0BNma-1kC2oPOlFV5d1SHZZ_fMqcHA44,143
+asterix/core.py,sha256=v9FrkDCh0QGbhRbVQrayjnpvcH0NJANhxz2cpBBa1QY,1776
+asterix/test.py,sha256=KQ2xigKIVhpUVlmTrC1qK-nPf5EfVhwczwwldUV67d4,524
+asterix-0.2.3.dist-info/DESCRIPTION.rst,sha256=DDJEFqjIDc1AyrTflyoC9jC16rGAYy_haR0DSErcCnY,268
+asterix-0.2.3.dist-info/METADATA,sha256=W27Odc7g_xSyqJqNrnwUazkZk5Bmf43TE6EQor5tSTs,985
+asterix-0.2.3.dist-info/RECORD,,
+asterix-0.2.3.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+asterix-0.2.3.dist-info/metadata.json,sha256=gYt-AI9pQ_hoi8EX5T-q-rc2C5lyGhm8-GxQ5WdkpWg,866
+asterix-0.2.3.dist-info/top_level.txt,sha256=8-48vd0QtEKiwRUmh4r3nEY1vZvhiiaS_lFK1BvfGI0,13
+test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+test/test_deps_graph.py,sha256=FQ1P_UibaxkMNMkBNSLHEz8Q36avzbvTriB1GN7np10,1378
