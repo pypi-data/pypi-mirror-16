@@ -1,0 +1,28 @@
+Metadata-Version: 2.0
+Name: mscript
+Version: 1.0.1
+Summary: An MScript to JavaScript compiler
+Home-page: http://mikakalevi.com/mscript
+Author: Mika Hämäläinen
+Author-email: mika@mikakalevi.com
+License: MIT
+Keywords: mscript javascript development
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+
+MScript
+
+MScript is a tool for compiling MScript files into JavaScript. This python package installs a commandline tool called mscript but it's also possible to compile .mscript files by using this python library directly from your python code.
+
+More information at http://mikakalevi.com/mscript
+

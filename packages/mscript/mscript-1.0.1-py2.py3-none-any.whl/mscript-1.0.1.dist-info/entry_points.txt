@@ -1,0 +1,3 @@
+[console_scripts]
+mscript = mscript.__init__:main
+
