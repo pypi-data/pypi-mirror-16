@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+lineagesim/__init__.py
+lineagesim/output.py
+lineagesim/population.py
+lineagesim.egg-info/PKG-INFO
+lineagesim.egg-info/SOURCES.txt
+lineagesim.egg-info/dependency_links.txt
+lineagesim.egg-info/entry_points.txt
+lineagesim.egg-info/requires.txt
+lineagesim.egg-info/top_level.txt
