@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: enhydris-synoptic
+Version: 0.1.1
+Summary: View current weather conditions in Enhydris
+Home-page: https://github.com/openmeteo/enhydris-synoptic
+Author: Antonis Christofides
+Author-email: anthony@itia.ntua.gr
+License: AGPL3
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Topic :: Scientific/Engineering :: Atmospheric Science
