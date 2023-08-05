@@ -1,0 +1,7 @@
+{
+  "name": "django-querybuilder",
+  "private": true,
+  "dependencies": {
+    "jquery-deserialize": "^1.3.3"
+  }
+}
