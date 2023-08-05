@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: flymph
+Version: 0.1.1
+Summary: Flask as Lymph Web API
+Home-page: https://github.com/eightnoteight/flymph
+Author: Srinivas Devaki
+Author-email: mr.eightnoteight@gmail.com
+License: MIT License
+Description: UNKNOWN
+Keywords: flask lymph web-api
+Platform: UNKNOWN
