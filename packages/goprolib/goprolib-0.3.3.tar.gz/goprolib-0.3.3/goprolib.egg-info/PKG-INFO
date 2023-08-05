@@ -1,0 +1,30 @@
+Metadata-Version: 1.1
+Name: goprolib
+Version: 0.3.3
+Summary: A library for communicating with GoPro Cameras (currently supported: HERO4)
+Home-page: https://github.com/networkjanitor/goprolib
+Author: Xyoz Netsphere
+Author-email: networkjanitor@gmx.de
+License: MIT
+Description: ========
+        goprolib
+        ========
+        
+        This is a python3 library to interact with wifi-connected gopro cameras.
+        
+        Currently supported are the following camera models:
+        
+            - HERO4 Silver
+            - HERO4 Black
+            - HERO4 Session
+        
+        READ ALL ABOUT THE API HERE: https://github.com/KonradIT/goprowifihack
+Keywords: gopro hero4
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
