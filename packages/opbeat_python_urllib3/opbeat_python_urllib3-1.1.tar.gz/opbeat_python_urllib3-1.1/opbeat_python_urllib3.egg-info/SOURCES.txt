@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+opbeat_python_urllib3/__init__.py
+opbeat_python_urllib3.egg-info/PKG-INFO
+opbeat_python_urllib3.egg-info/SOURCES.txt
+opbeat_python_urllib3.egg-info/dependency_links.txt
+opbeat_python_urllib3.egg-info/not-zip-safe
+opbeat_python_urllib3.egg-info/requires.txt
+opbeat_python_urllib3.egg-info/top_level.txt
