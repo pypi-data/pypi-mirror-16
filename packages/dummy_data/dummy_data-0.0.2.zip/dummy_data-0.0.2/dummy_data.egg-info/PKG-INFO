@@ -1,0 +1,26 @@
+Metadata-Version: 1.0
+Name: dummy-data
+Version: 0.0.2
+Summary: Create dummy data dynamically.
+Home-page: http://github.com/deaps/dummy_data
+Author: João Andrade
+Author-email: joaoandrade2@protonmail.com
+License: MIT
+Description: =========================
+        Python dummy_data Package
+        =========================
+        
+        Create dummy data dynamically.
+        
+        Simple Example
+        --------------
+        
+        .. code:: python
+        
+            import dummy_data
+        
+            folder = dummy_data.random_structure("folder/path", 10, 2)
+            dummy_data.create(folder)
+        
+Keywords: dummy files,dummy folders,filesystem
+Platform: UNKNOWN
