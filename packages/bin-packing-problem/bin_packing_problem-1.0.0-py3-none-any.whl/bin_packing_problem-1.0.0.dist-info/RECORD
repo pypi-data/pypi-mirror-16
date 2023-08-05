@@ -1,0 +1,9 @@
+bin_packing_problem-1.0.0.dist-info/DESCRIPTION.rst,sha256=4eqmoHknM9a4SWHMSHU4hlZAQEwb9H6mI7WPmNxtjBI,532
+bin_packing_problem-1.0.0.dist-info/METADATA,sha256=iIzmAAaIiDyYV4VfxsLnePI72gS-a2W2tLEIuSJuzNE,1125
+bin_packing_problem-1.0.0.dist-info/RECORD,,
+bin_packing_problem-1.0.0.dist-info/WHEEL,sha256=Ds0ba8WsPJtjBPzEMyPOBG3qfPa6B4mlzB-vhzorIZs,97
+bin_packing_problem-1.0.0.dist-info/metadata.json,sha256=T60PWOQCv3pB5PdeIhWMuOS2diYoRpipVMECSA10v40,767
+bin_packing_problem-1.0.0.dist-info/top_level.txt,sha256=_ITtwJ9MVbZE-9eLMGjQwemtdb8X5kq84pHoMz12B7E,9
+binpackp/__init__.py,sha256=NXPGP1ABwwZWWBnhfZFdMdRgpZ2QThUyHHubqKsMtsU,104
+binpackp/bins.py,sha256=hjNBuCVQgXXkRiMHEyHGxKa6x-N4irpenAlpNJH-BhY,4678
+binpackp/fit.py,sha256=lu_IrqX6JQjDXpbaJFnB82lcAWQPk7C6sgCi-maI_Ew,10988
