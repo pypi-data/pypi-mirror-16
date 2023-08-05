@@ -1,0 +1,14 @@
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+relaxed_types/__init__.py
+relaxed_types/checks.py
+relaxed_types/exceptions.py
+relaxed_types/predicates.py
+relaxed_types.egg-info/PKG-INFO
+relaxed_types.egg-info/SOURCES.txt
+relaxed_types.egg-info/dependency_links.txt
+relaxed_types.egg-info/not-zip-safe
+relaxed_types.egg-info/top_level.txt
