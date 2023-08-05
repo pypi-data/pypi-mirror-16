@@ -1,0 +1,14 @@
+pynini/__init__.py,sha256=z1IESXmgZ_8Ge2jONgSW1Y4u4eGGSPEDl1FwYC5Jajw,363
+pynini/data.py,sha256=8AvrTnXFRMyAWP3PcA_9l-9YGv2eSPJFRH5T-Jt7-yo,407
+pynini/exceptions.py,sha256=6_hikptAhZUHzkzz9YvtXEtpGxlMXp3K6wYZyxvZZT0,122
+pynini/formatting.py,sha256=bd5YSGCns0myW8Cqh8_7KdqLMEqj477zQPCRLXEw3no,8932
+pynini/setup.py,sha256=Eq7YYxF2gSGZA0-Iuv_xTbfONz689lpulPf-fwFpy0U,4380
+pynini/utils.py,sha256=mVYUCXKke-KfLhkWHGYY7KEkYViCZxJJ688LMwgTaJY,2535
+pynini/writing.py,sha256=0W-V4x3DGDUtlarax1ZrOuUenEWRzD2UNAkFG5-JMr4,226
+pynini-0.4.4.data/scripts/pynini,sha256=c6RknilulwBOg9huQA6FEqPThlhvR7aPDl3W96QYZ3M,669
+pynini-0.4.4.dist-info/DESCRIPTION.rst,sha256=CVqPEhiAsfEpT73lVyOkYp7rROr8UeXkChLjTAu-VBI,52
+pynini-0.4.4.dist-info/METADATA,sha256=TppECXKUnC5r9LjoIx8IhaWt-zqM41Us0IJhcSgh768,1099
+pynini-0.4.4.dist-info/RECORD,,
+pynini-0.4.4.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+pynini-0.4.4.dist-info/metadata.json,sha256=8y-94LlQVMXdqDkOTdBwp4mqifsI9d7rflVIBc93KQQ,1191
+pynini-0.4.4.dist-info/top_level.txt,sha256=jdFda4nV1kuL6GtC_mcnCVGFkNRWMr43fhq_IOoiu3g,7
