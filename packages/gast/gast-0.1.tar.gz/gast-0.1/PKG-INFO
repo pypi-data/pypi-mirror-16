@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: gast
+Version: 0.1
+Summary: Python AST that abstracts the underlying Python version
+Home-page: UNKNOWN
+Author: ['serge-sans-paille']
+Author-email: serge.guelton@telecom-bretagne.eu
+License: BSD 3-Clause
+Description: UNKNOWN
+Platform: UNKNOWN
