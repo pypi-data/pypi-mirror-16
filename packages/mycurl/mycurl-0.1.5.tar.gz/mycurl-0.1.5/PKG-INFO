@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: mycurl
+Version: 0.1.5
+Summary: A pycurl wrapper that tries to make pycurl work like requests
+Home-page: https://github.com/dbuckman/mycurl
+Author: Drew Buckman
+Author-email: drew.buckman@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/dbuckman/mycurl/tarball/0.1.5
+Description: UNKNOWN
+Keywords: MycURL,cURL,HTTP
+Platform: UNKNOWN
