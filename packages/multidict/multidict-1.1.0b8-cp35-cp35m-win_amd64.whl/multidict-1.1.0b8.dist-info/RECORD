@@ -1,0 +1,11 @@
+multidict/__init__.py,sha256=MY-xrHqMX-pyWqMVxGxaNCXKSMe8EsEMwGRUn-XimE8,1153
+multidict/_multidict.c,sha256=kv7dQo6P4dk5fAzSsUbNChpq7PJJOypqL3GEsIillZg,665088
+multidict/_multidict.cp35-win_amd64.pyd,sha256=XXL_GUx0FwaLZRdA_oJSI9Vex1kxevKQWjfJ_Fp9do8,132096
+multidict/_multidict.pyx,sha256=2DOQ0IXn_Cu_-_hnxWMgW0ygWyyeaSDktgjk9Ccx5Wg,18251
+multidict/_multidict_py.py,sha256=FoueJ1qS-SjnnvBF2mjReRmxfW06wiXJT1EY7V0TByE,10098
+multidict-1.1.0b8.dist-info/DESCRIPTION.rst,sha256=HRqThNIzWBPIB5bAfQElLLFAzSpyFxEPeakl26_iJ-c,1564
+multidict-1.1.0b8.dist-info/METADATA,sha256=8aQJrJaDgxFCgkViBZDqZpb3mjcnw-__egZwVNvTPi0,2100
+multidict-1.1.0b8.dist-info/RECORD,,
+multidict-1.1.0b8.dist-info/WHEEL,sha256=SUgfiiDWQYcL1n6t2OS_7aUz1Z2lCAWOT6Rx0MQyQko,106
+multidict-1.1.0b8.dist-info/metadata.json,sha256=ZeCXbOJIDAeVsObXYEFYbS8DVB6bZAV2cvGzhOFn7h0,730
+multidict-1.1.0b8.dist-info/top_level.txt,sha256=-euDElkk5_qkmfIJ7WiqCab02ZlSFZWynejKg59qZQQ,10
