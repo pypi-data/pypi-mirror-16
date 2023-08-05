@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: connectivipy
+Version: 0.36
+Summary: Python Connectivity Module
+Home-page: https://github.com/dokato/connectivipy
+Author: Dominik Krzeminski
+Author-email: UNKNOWN
+License: bsd
+Download-URL: https://github.com/dokato/connectivipy/releases/tag/v0.37
+Description: UNKNOWN
+Keywords: connectivity,mvar,biosignals,eeg,autoregressive model,ar model
+Platform: any
