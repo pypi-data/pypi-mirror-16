@@ -1,0 +1,13 @@
+README.rst
+setup.py
+src/django_xcache.egg-info/PKG-INFO
+src/django_xcache.egg-info/SOURCES.txt
+src/django_xcache.egg-info/dependency_links.txt
+src/django_xcache.egg-info/top_level.txt
+src/sample_project/__init__.py
+src/sample_project/settings.py
+src/sample_project/urls.py
+src/sample_project/wsgi.py
+src/xcache/__init__.py
+src/xcache/backends.py
+src/xcache/tests.py
