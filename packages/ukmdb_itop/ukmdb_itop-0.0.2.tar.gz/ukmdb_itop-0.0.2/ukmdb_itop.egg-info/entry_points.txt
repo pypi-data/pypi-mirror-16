@@ -1,0 +1,3 @@
+[console_scripts]
+ukm_itop = ukmdb_itop.worker:main
+
