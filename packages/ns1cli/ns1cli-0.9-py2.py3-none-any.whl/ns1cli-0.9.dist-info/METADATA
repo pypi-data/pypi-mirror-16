@@ -1,0 +1,27 @@
+Metadata-Version: 2.0
+Name: ns1cli
+Version: 0.9
+Summary: NS1 command line interface
+Home-page: https://ns1.com/
+Author: Shannon Weyrick
+Author-email: sweyrick@ns1.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Requires-Dist: click (==6.6)
+Requires-Dist: nsone (>=0.9.4)
+Requires-Dist: requests
+Requires-Dist: six
+
+UNKNOWN
+
+
