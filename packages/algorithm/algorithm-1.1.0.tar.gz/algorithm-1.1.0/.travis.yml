@@ -1,0 +1,17 @@
+language: python
+python:
+  - 2.6
+  - 2.7
+  - 3.2
+  - 3.3
+install:
+  - pip install --use-mirrors --upgrade pytest>=2.4
+  - pip install --use-mirrors --upgrade filesystem_tree
+  - pip install ./
+script: 
+  - ./runtests.sh
+notifications:
+  email: false
+branches:
+  only:
+    - master
