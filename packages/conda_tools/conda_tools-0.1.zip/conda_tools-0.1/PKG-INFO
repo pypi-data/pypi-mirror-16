@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: conda_tools
+Version: 0.1
+Summary: Useful abstractions of conda environments and package cache
+Home-page: https://github.com/groutr/conda-tools
+Author: Ryan Grout
+Author-email: ryan@ryangrout.org
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
