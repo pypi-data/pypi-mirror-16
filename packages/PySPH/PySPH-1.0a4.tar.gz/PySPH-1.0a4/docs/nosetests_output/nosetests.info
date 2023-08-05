@@ -1,0 +1,1 @@
+{"cpu_time": 0.00011801719665527344, "completed": true, "args": ["--testarg", "20"], "output_dir": "/Users/prabhu/research/sph/pysph/docs/nosetests_output", "fname": "nosetests"}
