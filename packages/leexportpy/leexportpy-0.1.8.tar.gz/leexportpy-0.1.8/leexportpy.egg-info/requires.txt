@@ -1,0 +1,6 @@
+requests==2.9.1
+datetime==4.1.1
+daemonize==2.4.6
+configobj==5.0.6
+twisted==16.2.0
+kafka==1.2.2
