@@ -1,0 +1,9 @@
+flask_simpleAcl.py
+setup.py
+test_simpleAcl.py
+Flask_SimpleACL.egg-info/PKG-INFO
+Flask_SimpleACL.egg-info/SOURCES.txt
+Flask_SimpleACL.egg-info/dependency_links.txt
+Flask_SimpleACL.egg-info/not-zip-safe
+Flask_SimpleACL.egg-info/requires.txt
+Flask_SimpleACL.egg-info/top_level.txt
