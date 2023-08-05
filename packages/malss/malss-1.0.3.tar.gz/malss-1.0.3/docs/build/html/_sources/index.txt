@@ -1,0 +1,48 @@
+.. MALSS documentation master file, created by
+   sphinx-quickstart on Wed Jun 15 22:41:51 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+
+MAchine Learning Support System: MALSS
+======================================
+
+`malss <https://github.com/canard0328/malss>`_ is a python module to not only facilitate machine learning tasks but also support users learn appropriate machine learning skills.
+
+Features
+--------
+
+#. Automated data analysis
+
+   * You just set the data
+
+   * malss select the best algorithm and tuning hyperparameters.
+
+#. Analysis report
+
+Installation
+------------
+
+::
+
+  pip install malss
+
+Contents:
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
+Contents
+========
+
+.. toctree::
+   :maxdepth: 1 
+
+   overfitting 
+
