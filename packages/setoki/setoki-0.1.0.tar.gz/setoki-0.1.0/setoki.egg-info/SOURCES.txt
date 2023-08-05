@@ -1,0 +1,11 @@
+setup.cfg
+setup.py
+setoki/__init__.py
+setoki/cli.py
+setoki.egg-info/PKG-INFO
+setoki.egg-info/SOURCES.txt
+setoki.egg-info/dependency_links.txt
+setoki.egg-info/entry_points.txt
+setoki.egg-info/not-zip-safe
+setoki.egg-info/requires.txt
+setoki.egg-info/top_level.txt

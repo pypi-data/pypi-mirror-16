@@ -1,0 +1,3 @@
+[console_scripts]
+setoki = setoki.cli:cli
+
