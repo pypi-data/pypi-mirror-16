@@ -1,0 +1,14 @@
+.gitattributes
+.gitignore
+.travis.yml
+LICENSE.rst
+README.rst
+pytest.ini
+scopes.py
+setup.cfg
+setup.py
+tox.ini
+scopes.egg-info/PKG-INFO
+scopes.egg-info/SOURCES.txt
+scopes.egg-info/dependency_links.txt
+scopes.egg-info/top_level.txt
