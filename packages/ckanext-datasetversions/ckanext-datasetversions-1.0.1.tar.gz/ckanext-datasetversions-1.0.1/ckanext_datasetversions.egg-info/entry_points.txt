@@ -1,0 +1,6 @@
+
+        [ckan.plugins]
+        datasetversions=ckanext.datasetversions.plugin:DatasetversionsPlugin
+	[babel.extractors]
+	ckan = ckan.lib.extract:extract_ckan
+    
