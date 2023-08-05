@@ -1,0 +1,15 @@
+Metadata-Version: 2.0
+Name: aiowinrm
+Version: 0.0.1
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: David Cournapeau
+Author-email: cournape@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: attrs (>=16.0.0)
+Requires-Dist: lxml (>=3.6.0)
+
+UNKNOWN
+
+
