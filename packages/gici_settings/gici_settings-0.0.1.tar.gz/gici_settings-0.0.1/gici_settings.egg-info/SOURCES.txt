@@ -1,0 +1,12 @@
+setup.py
+gici_settings/__init__.py
+gici_settings/anon.py
+gici_settings/base_config.py
+gici_settings/default_configs.py
+gici_settings/enviornments.py
+gici_settings/settings.py
+gici_settings.egg-info/PKG-INFO
+gici_settings.egg-info/SOURCES.txt
+gici_settings.egg-info/dependency_links.txt
+gici_settings.egg-info/not-zip-safe
+gici_settings.egg-info/top_level.txt
