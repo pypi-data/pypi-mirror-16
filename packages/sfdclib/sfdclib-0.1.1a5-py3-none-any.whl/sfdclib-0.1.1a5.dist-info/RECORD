@@ -1,0 +1,12 @@
+sfdclib/__init__.py,sha256=vg1gfZ2VDeGjVcdDy6bpQVooDeCGyZMvq8fxb6qtW0E,241
+sfdclib/logger.py,sha256=kNCzQ664rJX_VqpS7SSgdSNxBadGxBJY1cFenjF_qF0,1016
+sfdclib/messages.py,sha256=B-ekRppuVf69EcGPRE1JGIgIlzZGKFXV5l_jJhbjKY0,1931
+sfdclib/metadata.py,sha256=ZC6g581gPZpF_xlTULIQ7Mhbciz5dQAQeGUBKB60Oto,3656
+sfdclib/session.py,sha256=q_NeBOyW4mDhn41-qR4I434p9JHz06krdPNuVmH4znc,3068
+sfdclib/tooling.py,sha256=CFebtJm4bshhxMiq7gescJ13msmFx6DYPOpkq8X3G7M,1512
+sfdclib-0.1.1a5.dist-info/DESCRIPTION.rst,sha256=Qj6V_uldEUEhVdC81DpKtO6BpXQAXMpFattCV7FyiMQ,1981
+sfdclib-0.1.1a5.dist-info/METADATA,sha256=diUtmQNyGfXExJWdjWudWKLS9Jy8YVQlZxcaHW3g_8U,2760
+sfdclib-0.1.1a5.dist-info/RECORD,,
+sfdclib-0.1.1a5.dist-info/WHEEL,sha256=Ds0ba8WsPJtjBPzEMyPOBG3qfPa6B4mlzB-vhzorIZs,97
+sfdclib-0.1.1a5.dist-info/metadata.json,sha256=XCPOn5r9Ai4MrYJ9QnnvdQbVSvJdvsWoX7G1DMlwvFA,968
+sfdclib-0.1.1a5.dist-info/top_level.txt,sha256=fmFeyM4PvgmO6kdjhMR1O41xPvNGzHrPVG3zs3ThGxg,8
