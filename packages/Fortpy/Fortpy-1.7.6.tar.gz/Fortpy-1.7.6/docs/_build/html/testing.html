@@ -1,0 +1,1934 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Unit Testing Package &mdash; fortpy 1.7.5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.7.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="fortpy 1.7.5 documentation" href="index.html" />
+    <link rel="prev" title="XML Documentation Standard" href="docxml.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="docxml.html" title="XML Documentation Standard"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">fortpy 1.7.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="unit-testing-package">
+<h1>Unit Testing Package<a class="headerlink" href="#unit-testing-package" title="Permalink to this headline">¶</a></h1>
+<p>Unit testing modules are divided between the following tasks:</p>
+<ul class="simple">
+<li>Specifying test structure and cases.</li>
+<li>Generating and compiling the test directories.</li>
+<li>Executing the compiled tests.</li>
+<li>Verifying that the output is correct.</li>
+</ul>
+<span class="target" id="module-fortpy.testing.tester"></span><dl class="class">
+<dt id="fortpy.testing.tester.ExecutionResult">
+<em class="property">class </em><code class="descclassname">fortpy.testing.tester.</code><code class="descname">ExecutionResult</code><span class="sig-paren">(</span><em>folder</em>, <em>exitcode</em>, <em>runtime</em>, <em>tester</em>, <em>case=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#ExecutionResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.ExecutionResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>The result of running the executable on the system, NOT the
+result of the unit test file comparisons.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>folder</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; the folder in which the executable ran.</li>
+<li><strong>exitcode</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; the system exit code after the process terminated.</li>
+<li><strong>runtime</strong> (<a class="reference external" href="https://docs.python.org/2/library/datetime.html#datetime.datetime" title="(in Python v2.7)"><em>datetime.datetime</em></a>) &#8211; execution run time.</li>
+<li><strong>tester</strong> (<a class="reference internal" href="#fortpy.testing.tester.OutcomeTester" title="fortpy.testing.tester.OutcomeTester"><em>OutcomeTester</em></a>) &#8211; instance to test the outcome of this
+execution.</li>
+<li><strong>case</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; the case identifier if this was part of a series of
+cases run for the same outcome.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="fortpy.testing.tester.ExecutionResult.test">
+<code class="descname">test</code><span class="sig-paren">(</span><em>caseid</em>, <em>uresult</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#ExecutionResult.test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.ExecutionResult.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tests the outcome of this executable using its tester attribute.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>caseid</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; identifier for the specific case to test.</li>
+<li><strong>uresult</strong> (<a class="reference internal" href="#fortpy.testing.tester.TestResult" title="fortpy.testing.tester.TestResult"><em>TestResult</em></a>) &#8211; the overall result for the test; modified with the
+results of outcome testing for <cite>caseid</cite>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.tester.OutcomeTester">
+<em class="property">class </em><code class="descclassname">fortpy.testing.tester.</code><code class="descname">OutcomeTester</code><span class="sig-paren">(</span><em>testspec</em>, <em>codefolder</em>, <em>comparer</em>, <em>verbose</em>, <em>compiler</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#OutcomeTester"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.OutcomeTester" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs outcomes tests for a single &#8216;test&#8217; DocString.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>testspec</strong> &#8211; the :class:fortpy.testing.elements.TestSpecification for the &lt;test&gt; tag.</li>
+<li><strong>codefolder</strong> &#8211; the path to the folder that has all the modules from which
+the unit tests were built.</li>
+<li><strong>comparer</strong> &#8211; an instance of FileComparer to compare output files
+to the model ones.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="fortpy.testing.tester.OutcomeTester.compiler">
+<code class="descname">compiler</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.tester.OutcomeTester.compiler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Active compiler for the current test whose outcome is being run.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.tester.OutcomeTester.test">
+<code class="descname">test</code><span class="sig-paren">(</span><em>caseid</em>, <em>xresult</em>, <em>uresult</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#OutcomeTester.test"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.OutcomeTester.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks the output of the execution for the specified test specification.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>xresult</strong> &#8211; an ExecutionResult instance that has information about the
+execution whose outcome is being tested.</li>
+<li><strong>uresult</strong> &#8211; the unittest&#8217;s TestResult that holds information from all
+executions that were run for different cases.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.tester.TestResult">
+<em class="property">class </em><code class="descclassname">fortpy.testing.tester.</code><code class="descname">TestResult</code><span class="sig-paren">(</span><em>identifier</em>, <em>testid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#TestResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.TestResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a set of unit test results.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>identifier</strong> &#8211; the <cite>module.method</cite> identifier for this unit test.</li>
+<li><strong>testid</strong> &#8211; the identifier of the <cite>&lt;test&gt;</cite> tag for the specific test that this
+result represents.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="#fortpy.testing.elements.TestSource.cases" title="fortpy.testing.elements.TestSource.cases"><strong>cases</strong></a> &#8211; a dictionary of <a class="reference internal" href="#fortpy.testing.tester.ExecutionResult" title="fortpy.testing.tester.ExecutionResult"><code class="xref py py-class docutils literal"><span class="pre">ExecutionResult</span></code></a> objects with detail
+on how the system execution went for each case. Key is <cite>caseId</cite>.</li>
+<li><strong>paths</strong> &#8211; a dictionary of paths to the folders that were executed for each case.
+Keys match those in <cite>self.cases</cite>.</li>
+<li><strong>outcomes</strong> &#8211; a dictionary of :py:class:~`fortpy.testing.results.CompareResult` objects with detail
+on how similar the new output files are to the model ones. Keys
+are the same caseIds used in <cite>self.cases</cite>.</li>
+<li><strong>compiled</strong> &#8211; specifies whether the executable associated with
+this identifier compiled successfully.</li>
+<li><strong>failures</strong> &#8211; CompareResult or ValueResult instances that failed the
+tests outlined by the relevant test specification. Keys are the
+caseIds used by all the other dicts.</li>
+<li><strong>overtimes</strong> &#8211; a tuple of (actual runtime, desired runtime range) for
+tests that were outside of the range for runtime.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="fortpy.testing.tester.TestResult.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><em>case</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#TestResult.clean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.TestResult.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dereferences the test results&#8217; memory to the representations of
+the output and only retains the percent and common matches etc. for
+aggregate statistics. Should only be called after the <a href="#id1"><span class="problematic" id="id2">*</span></a>.compare files
+have been written out for the test case.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.tester.TestResult.common">
+<code class="descname">common</code><a class="headerlink" href="#fortpy.testing.tester.TestResult.common" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the common match percent success.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.tester.TestResult.failure_count">
+<code class="descname">failure_count</code><a class="headerlink" href="#fortpy.testing.tester.TestResult.failure_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the number of outcomes that failed because of tolerance
+or misformatted or no output files.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.tester.TestResult.percent">
+<code class="descname">percent</code><a class="headerlink" href="#fortpy.testing.tester.TestResult.percent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the percent success of the entire unit test.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.tester.TestResult.runtime">
+<code class="descname">runtime</code><span class="sig-paren">(</span><em>caseid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#TestResult.runtime"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.TestResult.runtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the absolute amount of time spent running <em>only</em> the executable
+being unit tested for this result.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.tester.TestResult.target">
+<code class="descname">target</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.tester.TestResult.target" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full path to the directory containing the compiled executable
+to run.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.tester.TestResult.totaltime">
+<code class="descname">totaltime</code><a class="headerlink" href="#fortpy.testing.tester.TestResult.totaltime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the total amount of time spent running <em>only</em> the unit tested
+executable for <em>all</em> cases in this result.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.tester.UnitTester">
+<em class="property">class </em><code class="descclassname">fortpy.testing.tester.</code><code class="descname">UnitTester</code><span class="sig-paren">(</span><em>libraryroot=None</em>, <em>verbose=False</em>, <em>compare_templates=None</em>, <em>fortpy_templates=None</em>, <em>rerun=None</em>, <em>compiler=None</em>, <em>debug=False</em>, <em>profile=False</em>, <em>quiet=False</em>, <em>strict=False</em>, <em>nprocs=1</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#UnitTester"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.UnitTester" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs automatic unit testing of individual subroutines and
+functions based on XML doctags found in the code files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>libraryroot</strong> &#8211; the path to folder in which to stage the tests.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="fortpy.testing.tester.UnitTester.compiler">
+<code class="descname">compiler</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.tester.UnitTester.compiler" title="Permalink to this definition">¶</a></dt>
+<dd><p>The full path to the compiler to use for the unit tests.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.tester.UnitTester.get_fortpy_version">
+<code class="descname">get_fortpy_version</code><span class="sig-paren">(</span><em>fortpath</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#UnitTester.get_fortpy_version"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.UnitTester.get_fortpy_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the fortpy version number from the first line of the specified file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.tester.UnitTester.libraryroot">
+<code class="descname">libraryroot</code><span class="sig-paren">(</span><em>identifier</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#UnitTester.libraryroot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.UnitTester.libraryroot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the absolute path to the staging directory for the unit tests with
+the specified testid.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.tester.UnitTester.nprocs">
+<code class="descname">nprocs</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.tester.UnitTester.nprocs" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of processors to use for multi-threading test case execution.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.tester.UnitTester.quiet">
+<code class="descname">quiet</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.tester.UnitTester.quiet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies whether the tester should run in quiet mode, which only prints
+essential information for the unit tests to stdout.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.tester.UnitTester.runall">
+<code class="descname">runall</code><span class="sig-paren">(</span><em>compiler=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#UnitTester.runall"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.UnitTester.runall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compiles and runs each new or modified unit test executable.
+After the run is complete, the outcomes are checked for consistency.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>compiler</strong> &#8211; the name of the compiler in &#8216;compilers.xml&#8217; to use.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.tester.UnitTester.set_compiler">
+<code class="descname">set_compiler</code><span class="sig-paren">(</span><em>compiler</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#UnitTester.set_compiler"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.UnitTester.set_compiler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the compiler to use for the unit testing of this code parser.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.tester.UnitTester.strict">
+<code class="descname">strict</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.tester.UnitTester.strict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies whether to compile files with <em>all</em> warnings enabled.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.tester.UnitTester.tests">
+<code class="descname">tests</code><span class="sig-paren">(</span><em>identifier</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#UnitTester.tests"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.UnitTester.tests" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of all the tests that need to be run for the
+specified module.executable identifier.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.tester.UnitTester.writeall">
+<code class="descname">writeall</code><span class="sig-paren">(</span><em>codefolder</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#UnitTester.writeall"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.UnitTester.writeall" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes all the unit test executables that are new or modified
+as well as the makefiles for all subroutines in all modules.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.tester.UnitTester.writer">
+<code class="descname">writer</code><span class="sig-paren">(</span><em>identifier</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#UnitTester.writer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.UnitTester.writer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the underlying executable writer that has a list of ordered
+method/assignment dependencies.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.tester.ValueCompareResult">
+<em class="property">class </em><code class="descclassname">fortpy.testing.tester.</code><code class="descname">ValueCompareResult</code><span class="sig-paren">(</span><em>path</em>, <em>value</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/tester.html#ValueCompareResult"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.tester.ValueCompareResult" title="Permalink to this definition">¶</a></dt>
+<dd><p>The result of comparing the contents of a file to an explicit
+value hard-coded in the testing XML tags.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Variables:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference internal" href="#fortpy.testing.elements.TestSource.path" title="fortpy.testing.elements.TestSource.path"><strong>path</strong></a> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; path to the file whose contents will be checked.</li>
+<li><strong>value</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; explicit value to compare the file contents to; is passed
+to <a class="reference external" href="https://docs.python.org/2/library/functions.html#eval" title="(in Python v2.7)"><code class="xref py py-func docutils literal"><span class="pre">eval()</span></code></a> before comparison.</li>
+<li><strong>equal</strong> (<a class="reference external" href="https://docs.python.org/2/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; <cite>True</cite> if the file contents are identical to <cite>value</cite>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="module-fortpy.testing.elements"></span><dl class="class">
+<dt id="fortpy.testing.elements.Assignment">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">Assignment</code><span class="sig-paren">(</span><em>element</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#Assignment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.Assignment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents an instance value assignment as part of a pre-req chain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attr element:</th><td class="field-body">the DocElement instance for the &lt;assignment&gt; tag that this
+assignment object represents.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr parent:</th><td class="field-body">the MethodFinder instance who owns this assignment.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr methods:</th><td class="field-body">a list that will never get used; needed for compatibility
+with method.MethodWriter._order_dependencies recursion.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr group:</th><td class="field-body">the parent TestingGroup instance, even if the immediate parent
+is not a testing group.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr name:</th><td class="field-body">the name of the variable whose value will be set.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Attr conditionals:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">a list of &#8216;if&#8217; blocks that conditionally set the value
+of the variable at run-time.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr values:</th><td class="field-body">a dict of AssignmentValues capable of setting the variable
+value from a constant, function, file or by calling an embedded method 
+if the variable is an instance of a derived type.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr allocate:</th><td class="field-body">when true, the variable having its value set will be
+allocated by this assignment object rather than some other method called
+previously. Default is True.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="fortpy.testing.elements.Assignment.allocatable">
+<code class="descname">allocatable</code><a class="headerlink" href="#fortpy.testing.elements.Assignment.allocatable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if the variable assigned by this object should be allocated.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.Assignment.attributes">
+<code class="descname">attributes</code><a class="headerlink" href="#fortpy.testing.elements.Assignment.attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides one-level-up access to the XML elements attributes collection.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.Assignment.autoclass">
+<code class="descname">autoclass</code><a class="headerlink" href="#fortpy.testing.elements.Assignment.autoclass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if any of the assignment values in an autoclass.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.Assignment.check_prereqs">
+<code class="descname">check_prereqs</code><span class="sig-paren">(</span><em>finder</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#Assignment.check_prereqs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.Assignment.check_prereqs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks all the values this assignment may use to make sure they reference
+a valid derived type. If an AssignmentValue specifies to check pre-reqs, 
+they are added to the pre-req chain.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>finder</strong> &#8211; the instance of MethodFinder for which the pre-reqs are being
+checked and added.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.Assignment.code">
+<code class="descname">code</code><span class="sig-paren">(</span><em>lines</em>, <em>position</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#Assignment.code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.Assignment.code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the code for this assignment to function correctly at the
+specified position in the code file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lines</strong> &#8211; the list of strings that form the code file.</li>
+<li><strong>position</strong> &#8211; one of [&#8216;vars&#8217;, &#8216;init&#8217;, &#8216;assign&#8217;, &#8216;before&#8217;, &#8216;after&#8217;] corresponding
+to variable declaration, initialization, assignment and cleanup.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.Assignment.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>coderoot</em>, <em>testroot</em>, <em>case</em>, <em>compiler</em>, <em>stagedir=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#Assignment.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.Assignment.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies the input files needed for this assignment to set a variable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>coderoot</strong> &#8211; the full path to folder with the code files.</li>
+<li><strong>testroot</strong> &#8211; the full path the folder where the test is running.</li>
+<li><strong>case</strong> &#8211; the case id for multi-case testing.</li>
+<li><strong>compiler</strong> &#8211; the name of the compiler used to make the unit test executable.</li>
+<li><strong>stagedir</strong> &#8211; the path to the staging directory to use (override).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.Assignment.global_attr">
+<code class="descname">global_attr</code><span class="sig-paren">(</span><em>key</em>, <em>default=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#Assignment.global_attr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.Assignment.global_attr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retuns the value of attribute with the specified key from the GlobalDeclaration
+instance for this variable being assigned.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.Assignment.globaldecl">
+<code class="descname">globaldecl</code><a class="headerlink" href="#fortpy.testing.elements.Assignment.globaldecl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the GlobalDeclaration instance for the current variable, which may have
+different parameters and modifiers than the actual code element.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.Assignment.parent">
+<code class="descname">parent</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.Assignment.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>An instance of TestSpecification or TestingGroup in which this &lt;assignment&gt;
+was defined.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.Assignment.parser">
+<code class="descname">parser</code><a class="headerlink" href="#fortpy.testing.elements.Assignment.parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns this Assignment&#8217;s parent&#8217;s CodeParser instance.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.Assignment.position">
+<code class="descname">position</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.Assignment.position" title="Permalink to this definition">¶</a></dt>
+<dd><p>If a test specification includes assignments local to the test then <em>global</em>
+&lt;assignments&gt; attached to the testing group are added either before/after the
+local assignments. This value specifies that position relative to the local ones.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.Assignment.testspec">
+<code class="descname">testspec</code><a class="headerlink" href="#fortpy.testing.elements.Assignment.testspec" title="Permalink to this definition">¶</a></dt>
+<dd><p>The currently active test specification for which this Assignment instance
+is being coded.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.Assignment.variable">
+<code class="descname">variable</code><a class="headerlink" href="#fortpy.testing.elements.Assignment.variable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the ValueElement instance that this assignment refers to.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.Assignment.writekey">
+<code class="descname">writekey</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.Assignment.writekey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Establishes a unique key for the driver writer so that multiple assignments
+of the same variable don&#8217;t interfere with each other.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.AssignmentConditional">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">AssignmentConditional</code><span class="sig-paren">(</span><em>xmltag</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#AssignmentConditional"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.AssignmentConditional" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a series of logical tests to perform, each of which results
+in a different value being assigned to the variable.</p>
+<dl class="method">
+<dt id="fortpy.testing.elements.AssignmentConditional.code">
+<code class="descname">code</code><span class="sig-paren">(</span><em>lines</em>, <em>position</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#AssignmentConditional.code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.AssignmentConditional.code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the lines to form the entire conditional code block of
+variable assignments.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.AssignmentConditional.repeats">
+<code class="descname">repeats</code><a class="headerlink" href="#fortpy.testing.elements.AssignmentConditional.repeats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if any of the values used by this condition are
+repeatable. In that case, the entire block needs to be repeated.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.AssignmentConditional.values">
+<code class="descname">values</code><a class="headerlink" href="#fortpy.testing.elements.AssignmentConditional.values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list of possible value objects from the parent
+Assignment object.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.AssignmentValue">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">AssignmentValue</code><span class="sig-paren">(</span><em>xmltag</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#AssignmentValue"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.AssignmentValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a value that can be assigned to the variable represented
+by an Assignment instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attr xml:</th><td class="field-body">the xml &lt;value&gt; tag that this object was created from.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr parent:</th><td class="field-body">the instance of Assignment that owns this value.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Attr identifier:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">the unique identifier of the this value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr folder:</th><td class="field-body">the folder path relative to the code folder where the
+file for setting a variable value is found.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr filename:</th><td class="field-body">the name of the file in the source folder.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr rename:</th><td class="field-body">the new name the file should have in the execution folder.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr constant:</th><td class="field-body">if specified, the constant value that the variable will
+be set to during the unit test.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr embedded:</th><td class="field-body">the name of an embedded procedure in a derived type to
+run. An error is thrown if the variable is not a derived type.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr function:</th><td class="field-body">exact fortran code for a function call to set the vars value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr repeats:</th><td class="field-body">if the variable will have its value set as part of a 
+constant-input mode program, this specifies whether it should keep being
+set during each iteration of the main method being tested.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr prereq:</th><td class="field-body">if not None/False, the embedded method on a derived type will be treated
+along with all its prereqs as part of the execution chain. This value should be the
+test identifier of the embedded subroutine&#8217;s test spec to use.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr D:</th><td class="field-body">the dimensionality of the data in the file that is setting the variable value.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr ragged:</th><td class="field-body">when true, the lines in a 2D array file are treated individually with
+some other (embedded or function) value assignment.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr dtype:</th><td class="field-body">for ragged array files, the data type of the values in each row.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr kind:</th><td class="field-body">the kind of each value in the data rows of the ragged array.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="fortpy.testing.elements.AssignmentValue.D">
+<code class="descname">D</code><a class="headerlink" href="#fortpy.testing.elements.AssignmentValue.D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the dimensionality of the variable having its value changed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.AssignmentValue.autoclass">
+<code class="descname">autoclass</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.AssignmentValue.autoclass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies whether the value comes from an auto-class structured folder.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.AssignmentValue.check_prereqs">
+<code class="descname">check_prereqs</code><span class="sig-paren">(</span><em>finder</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#AssignmentValue.check_prereqs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.AssignmentValue.check_prereqs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether this value element requires an embedded method to be
+added to the prereq chain of the method writer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.AssignmentValue.code">
+<code class="descname">code</code><span class="sig-paren">(</span><em>lines</em>, <em>position</em>, <em>spacer</em>, <em>slices=None</em>, <em>first=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#AssignmentValue.code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.AssignmentValue.code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the code lines to initialize the parent variable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lines</strong> &#8211; the list of strings to append to.</li>
+<li><strong>position</strong> &#8211; one of [&#8216;vars&#8217;, &#8216;init&#8217;, &#8216;assign&#8217;, &#8216;before&#8217;, &#8216;after&#8217;] indicating 
+where in the fortran program the code will be appended.</li>
+<li><strong>slices</strong> &#8211; for array value assignments, the specific indices to assign values
+to. Tuple of (slice string, [loopvars]).</li>
+<li><strong>first</strong> &#8211; if multiple value tags are being executed by the calling parent, this
+should be true only for the <em>first</em> &lt;value&gt; tag processed in the list.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.AssignmentValue.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>coderoot</em>, <em>testroot</em>, <em>case</em>, <em>compiler</em>, <em>stagedir=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#AssignmentValue.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.AssignmentValue.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies the input files needed for this value to set a variable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>coderoot</strong> &#8211; the full path to folder with the code files.</li>
+<li><strong>testroot</strong> &#8211; the full path the folder where the test is running.</li>
+<li><strong>case</strong> &#8211; the case id for multi-case testing.</li>
+<li><strong>compiler</strong> &#8211; the name of the compiler being used for the unit tests.</li>
+<li><strong>stagedir</strong> &#8211; the path to the staging directory to use (override).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.AssignmentValue.iid">
+<code class="descname">iid</code><a class="headerlink" href="#fortpy.testing.elements.AssignmentValue.iid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the globally unique identifier for this value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.AssignmentValue.livefile">
+<code class="descname">livefile</code><span class="sig-paren">(</span><em>testroot</em>, <em>case</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#AssignmentValue.livefile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.AssignmentValue.livefile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the full path to the file that should be <em>created</em> in the
+specified test directory as part of this assignment. This is only
+useful for file-based assignments.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.AssignmentValue.member">
+<code class="descname">member</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.AssignmentValue.member" title="Permalink to this definition">¶</a></dt>
+<dd><p>If this value should be assigned to the member of a derived type,
+then this is the name of that member.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.AssignmentValue.suffix">
+<code class="descname">suffix</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.AssignmentValue.suffix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides the default period joined list of loop variables for &lt;part&gt;
+or ragged assignment from files.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.AssignmentValue.testsource">
+<code class="descname">testsource</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.AssignmentValue.testsource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the module.executable.parameter name whose output from a previous
+unit test run will be used as input for this value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.AssignmentValue.xname">
+<code class="descname">xname</code><a class="headerlink" href="#fortpy.testing.elements.AssignmentValue.xname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the file to use taking renaming into account.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.AutoClasser">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">AutoClasser</code><span class="sig-paren">(</span><em>variable</em>, <em>folder</em>, <em>varfile</em>, <em>cases</em>, <em>coderoot=None</em>, <em>generic=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#AutoClasser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.AutoClasser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for generating read/save calls in Fortran for complex
+user-derived types. Ragged arrays are <em>not</em> supported.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>variable</strong> &#8211; an instance of ValueElement to auto-class.</li>
+<li><strong>folder</strong> &#8211; the path to the <em>parent</em> folder that houses the &#8216;varfile&#8217; folder with
+the contents of the variable.</li>
+<li><strong>varfile</strong> &#8211; the name of the folder to create (relative to &#8216;folder&#8217;) to contain
+the files for the variable.</li>
+<li><strong>cases</strong> &#8211; the TestSpecification instance&#8217;s cases that will run.</li>
+<li><strong>coderoot</strong> &#8211; the full path to the code folder that houses that executable being
+unit tested.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="fortpy.testing.elements.AutoClasser.abspath">
+<code class="descname">abspath</code><span class="sig-paren">(</span><em>root</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#AutoClasser.abspath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.AutoClasser.abspath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the absolute path to the auto-class folder relative to the root
+directory specified: 1) code root for reads; 2) test execution directory
+for writes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.AutoClasser.acroot">
+<code class="descname">acroot</code><a class="headerlink" href="#fortpy.testing.elements.AutoClasser.acroot" title="Permalink to this definition">¶</a></dt>
+<dd><p>The folder path to the auto-class target for read/write, <em>relative</em>
+to 1) code directory for reads; 2) test directory for writes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.AutoClasser.code">
+<code class="descname">code</code><span class="sig-paren">(</span><em>lines</em>, <em>position</em>, <em>spacer</em>, <em>write=True</em>, <em>first=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#AutoClasser.code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.AutoClasser.code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the code required to save/read the value of this auto-class to
+file-folder if the specified position is appropriate.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.AutoClasser.generic">
+<code class="descname">generic</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.AutoClasser.generic" title="Permalink to this definition">¶</a></dt>
+<dd><p>When true, instead of outputing the specific variable name for save and read
+operations, the generic &#8216;variable&#8217; will be used as the name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.AutoClasser.prep_read">
+<code class="descname">prep_read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#AutoClasser.prep_read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.AutoClasser.prep_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets this auto-classer up to handle reading-in from a folder
+by analyzing the contents of the folder.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.AutoClasser.set_folder">
+<code class="descname">set_folder</code><span class="sig-paren">(</span><em>folder</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#AutoClasser.set_folder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.AutoClasser.set_folder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the folder for the auto-class relative to the <em>code root</em>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.AutoClasser.tree_order">
+<code class="descname">tree_order</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.AutoClasser.tree_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order in which the tree&#8217;s dimensionalities will be saved in the
+.fortpy.analysis file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.AutoClasser.xcode">
+<code class="descname">xcode</code><span class="sig-paren">(</span><em>lines</em>, <em>position</em>, <em>spacer</em>, <em>write=True</em>, <em>first=True</em>, <em>testsource=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#AutoClasser.xcode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.AutoClasser.xcode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates the code to save/read a variable from its auto-class folder.
+This version uses the <cite>auxsave</cite> and <cite>auxread</cite> interfaces from <cite>fpy_auxiliary</cite>
+instead of generating all the save and read statements directly.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.Condition">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">Condition</code><span class="sig-paren">(</span><em>xmltag</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#Condition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.Condition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a single if, elseif or else block to execute.</p>
+<dl class="method">
+<dt id="fortpy.testing.elements.Condition.code">
+<code class="descname">code</code><span class="sig-paren">(</span><em>lines</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#Condition.code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.Condition.code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the code for this condition and its variable assignment.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.Condition.repeats">
+<code class="descname">repeats</code><a class="headerlink" href="#fortpy.testing.elements.Condition.repeats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if any of the values this conditional references have
+the repeat attribute set to true.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.GlobalDeclaration">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">GlobalDeclaration</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#GlobalDeclaration"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.GlobalDeclaration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a declaration to have a global variable instance available
+for execution of a unit test.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attr element:</th><td class="field-body">the docstring element representing the &lt;global&gt; tag.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="fortpy.testing.elements.GlobalDeclaration.D">
+<code class="descname">D</code><a class="headerlink" href="#fortpy.testing.elements.GlobalDeclaration.D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the integer number of dimensions that this variable
+is declared as having.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.GlobalDeclaration.attributes">
+<code class="descname">attributes</code><a class="headerlink" href="#fortpy.testing.elements.GlobalDeclaration.attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dictionary of attributes for this global variable declaration.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.GlobalDeclaration.compare">
+<code class="descname">compare</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#GlobalDeclaration.compare"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.GlobalDeclaration.compare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines whether the specified element defines the same variable
+type and name as this one.</p>
+<dl class="docutils">
+<dt>The two are considered equal if they have the same:</dt>
+<dd><ul class="first last simple">
+<li>name</li>
+<li>type</li>
+<li>dimensionality</li>
+<li>allocatable/pointer modifiers</li>
+</ul>
+</dd>
+</dl>
+<p>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.GlobalDeclaration.definition">
+<code class="descname">definition</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#GlobalDeclaration.definition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.GlobalDeclaration.definition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the fortran declaration that defines a global variable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>altname</strong> &#8211; specifies an alternative name to use for this variable; all
+other variable properties remain the same.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.GlobalDeclaration.dependency">
+<code class="descname">dependency</code><a class="headerlink" href="#fortpy.testing.elements.GlobalDeclaration.dependency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of a variable that this variable needs in order
+to be initialized or assigned a value or &#8220;&#8221;.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.GlobalDeclaration.dimension">
+<code class="descname">dimension</code><a class="headerlink" href="#fortpy.testing.elements.GlobalDeclaration.dimension" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the dimension specification from the &lt;global&gt; tag.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.GlobalDeclaration.ignore">
+<code class="descname">ignore</code><a class="headerlink" href="#fortpy.testing.elements.GlobalDeclaration.ignore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies whether this variable should be ignored when passed in to argument lists
+and for definitions etc.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.GlobalDeclaration.initialization">
+<code class="descname">initialization</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#GlobalDeclaration.initialization"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.GlobalDeclaration.initialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the fortran declaration to initialize the global variable&#8217;s value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.GlobalDeclaration.kind">
+<code class="descname">kind</code><a class="headerlink" href="#fortpy.testing.elements.GlobalDeclaration.kind" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the kind of the variable from the &lt;global&gt; tag declaration, if 
+it exists.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.GlobalDeclaration.position">
+<code class="descname">position</code><a class="headerlink" href="#fortpy.testing.elements.GlobalDeclaration.position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the position of a &lt;global&gt; declaration in a testing group relative
+to the test-local &lt;global&gt; definitions.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.GlobalDeclaration.range_check">
+<code class="descname">range_check</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#GlobalDeclaration.range_check"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.GlobalDeclaration.range_check" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines if this variable has a range check specified and
+writes the fortran code to compute the check.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.GlobalDeclaration.value_elem">
+<code class="descname">value_elem</code><span class="sig-paren">(</span><em>module</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#GlobalDeclaration.value_elem"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.GlobalDeclaration.value_elem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a fortpy.element.ValueElement to represent this GlobalDeclaration.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.MethodFinder">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">MethodFinder</code><span class="sig-paren">(</span><em>identifier</em>, <em>parser</em>, <em>element</em>, <em>testid</em>, <em>fatal_if_missing=True</em>, <em>main=False</em>, <em>basic=False</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#MethodFinder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.MethodFinder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class for recursively finding methods for executing pre-req methods
+that takes recursive dependencies into account.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>identifier</strong> &#8211; the &#8220;module.executable&#8221; that this method finder represents</li>
+<li><strong>parser</strong> &#8211; the code parser instance for inter-module access.</li>
+<li><strong>element</strong> &#8211; the DocElement that specified this method as a pre-req.</li>
+<li><strong>testid</strong> &#8211; the identifier of the test specification that this method finder is
+being constructed for.</li>
+<li><strong>fatal_if_missing</strong> &#8211; specified whether the framework chokes if it can&#8217;t
+find a method that is referenced as a pre-req.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Attr executable:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body"><p class="first">the code element instance of the executable found from
+the module that the method belongs to.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr main:</th><td class="field-body"><p class="first">when true, this instance is for the <em>main</em> method being unit tested.</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr basic:</th><td class="field-body"><p class="first last">when true, the Finder only initializes the executable attribute for
+the given identifier, but doesn&#8217;t recursively find pre-req and other dependency
+methods.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="fortpy.testing.elements.MethodFinder.add_prereq">
+<code class="descname">add_prereq</code><span class="sig-paren">(</span><em>identify</em>, <em>tag</em>, <em>chainto</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#MethodFinder.add_prereq"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.MethodFinder.add_prereq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a MethodFinder instance to the current one for the specified 
+&#8216;module.executable&#8217; identity.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>identify</strong> &#8211; a string of &#8220;modulename.executablename&#8221;.</li>
+<li><strong>tag</strong> &#8211; the DocElement instance that resulted in this prereq being added.</li>
+<li><strong>chainto</strong> &#8211; the test identifier specified by the pre-req that should be used
+for chaining.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.MethodFinder.attributes">
+<code class="descname">attributes</code><a class="headerlink" href="#fortpy.testing.elements.MethodFinder.attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the dictionary of attributes from the underlying xml tag.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.MethodFinder.code">
+<code class="descname">code</code><span class="sig-paren">(</span><em>lines</em>, <em>position</em>, <em>spacer</em>, <em>testid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#MethodFinder.code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.MethodFinder.code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the code to execute <em>only</em> this method&#8217;s main executable as
+part of the main program.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lines</strong> &#8211; the list of strings that form the contents of the <a href="#id3"><span class="problematic" id="id4">*</span></a>.f90 file
+being created.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.MethodFinder.module">
+<code class="descname">module</code><a class="headerlink" href="#fortpy.testing.elements.MethodFinder.module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the module instance for this method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.MethodFinder.parser">
+<code class="descname">parser</code><a class="headerlink" href="#fortpy.testing.elements.MethodFinder.parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the CodeParser instance for inter-modular access.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.MethodFinder.terminate">
+<code class="descname">terminate</code><a class="headerlink" href="#fortpy.testing.elements.MethodFinder.terminate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies whether any pre-reqs chained to this method should be executed or not.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.MethodFinder.test">
+<code class="descname">test</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.MethodFinder.test" title="Permalink to this definition">¶</a></dt>
+<dd><p>The TestSpecification instance for the unit test that this method finder is
+operating under.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.MethodFinder.timed">
+<code class="descname">timed</code><span class="sig-paren">(</span><em>testid</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#MethodFinder.timed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.MethodFinder.timed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if this method will produce code to time its execution.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.MethodFinder.variables">
+<code class="descname">variables</code><a class="headerlink" href="#fortpy.testing.elements.MethodFinder.variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all the global variables declared by the testing
+group of this method if they exist.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.MethodFinder.writekey">
+<code class="descname">writekey</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.MethodFinder.writekey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Key to uniquely identify this method finder from any other that exists because
+of multiple calls to the same pre-requisite methods.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.Part">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">Part</code><span class="sig-paren">(</span><em>xml</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#Part"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.Part" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a part assignment for a &lt;part&gt; tag to set specific dimensions on
+an array-valued variable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Attr identifier:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">the unique identifier for the &lt;part&gt;.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr start:</th><td class="field-body">the index of the array to start on.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr value:</th><td class="field-body">the value to assign to parts of the array specified by this part.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr limits:</th><td class="field-body">a comma-separated list of integer indices to assign the value to
+or a range of min-max integer dimension specifiers. The loop generated by this
+part tag will run over these values.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr parts:</th><td class="field-body">a dict of parts nested in this one.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr depth:</th><td class="field-body">the depth of this part in a nested part specification.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Attr assignment:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">the parent instance of Assignment for this part, even if its
+immediate parent is another Part instance.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr isloop:</th><td class="field-body">for a limit specificaton that is a comma-separated list, we don&#8217;t
+use a loop, only a repeated list of assignments.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr loopid:</th><td class="field-body">the name of the loop variable for this part.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Attr slice_list:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">list of the dimension specifcations for setting the array part that this
+object is supposed to set.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr repeats:</th><td class="field-body">when operating in constant mode, should the part assignment happen before
+each call to the main function being unit tested.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="fortpy.testing.elements.Part.code">
+<code class="descname">code</code><span class="sig-paren">(</span><em>lines</em>, <em>position</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#Part.code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.Part.code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the code to make this part specification (and loop) work.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.Part.top_parts">
+<code class="descname">top_parts</code><a class="headerlink" href="#fortpy.testing.elements.Part.top_parts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the parent &lt;part&gt; instances from a set of nested &lt;part&gt; tags.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.TestInput">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">TestInput</code><span class="sig-paren">(</span><em>xmltag</em>, <em>testspec</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestInput"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestInput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents information for a single input source as part of a unit test.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attr xml:</th><td class="field-body">the &lt;input&gt; tag that this object was created from.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr folder:</th><td class="field-body">the path to the folder that contains the input file relative
+to the code root.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr filename:</th><td class="field-body">the name of the file to use as input.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr rename:</th><td class="field-body">the new name to use for the input file for actual execution.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr line:</th><td class="field-body">a FileLine instance describing the values that appear in a single
+line of the input file. Use for constant-input mode.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="fortpy.testing.elements.TestInput.code_finalize">
+<code class="descname">code_finalize</code><span class="sig-paren">(</span><em>lines</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestInput.code_finalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestInput.code_finalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the code to finalize the constant-input operation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestInput.code_init">
+<code class="descname">code_init</code><span class="sig-paren">(</span><em>lines</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestInput.code_init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestInput.code_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the initialization code required for opening the input file
+when running in constant-input mode.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestInput.code_read">
+<code class="descname">code_read</code><span class="sig-paren">(</span><em>lines</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestInput.code_read"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestInput.code_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the fortran code for reading the values from the file into
+the global variables for a single iteration.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestInput.code_vars">
+<code class="descname">code_vars</code><span class="sig-paren">(</span><em>lines</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestInput.code_vars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestInput.code_vars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the fortran code for declaring any variables need to run 
+the constant-input mode.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestInput.constant">
+<code class="descname">constant</code><a class="headerlink" href="#fortpy.testing.elements.TestInput.constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true if operating in constant-input mode.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestInput.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>coderoot</em>, <em>testroot</em>, <em>case=''</em>, <em>compiler=None</em>, <em>stagedir=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestInput.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestInput.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies the input file from the specified code root directory to
+the folder where the test is being performed. Alternatively, the file is
+just symlinked if that is the global setting.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>coderoot</strong> &#8211; the full path to the folder that houses all the code files.</li>
+<li><strong>testroot</strong> &#8211; the full path to the folder that the parent test is being
+performed in.</li>
+<li><strong>case</strong> &#8211; if a specific case of the same test is being performed, the
+case identifier to use for string formatting.</li>
+<li><strong>compiler</strong> &#8211; the name of the compiler used to make the unit test executable.</li>
+<li><strong>stagedir</strong> &#8211; the path to the staging directory to use (override).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestInput.fileunit">
+<code class="descname">fileunit</code><a class="headerlink" href="#fortpy.testing.elements.TestInput.fileunit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name used for the variable that holds the file unit
+for reading the file in constant-input mode.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestInput.iid">
+<code class="descname">iid</code><a class="headerlink" href="#fortpy.testing.elements.TestInput.iid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the identifier for this input file when running in constant-
+input mode.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestInput.iostat_read">
+<code class="descname">iostat_read</code><a class="headerlink" href="#fortpy.testing.elements.TestInput.iostat_read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the variable that holds read IOSTAT for the
+read operations when running in constant-input mode.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestInput.repeats">
+<code class="descname">repeats</code><a class="headerlink" href="#fortpy.testing.elements.TestInput.repeats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the variable that holds the number of times to repeat 
+the read operation and execute the method.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestInput.runfile">
+<code class="descname">runfile</code><a class="headerlink" href="#fortpy.testing.elements.TestInput.runfile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the file that will be in the testing folder
+at run-time.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestInput.testsource">
+<code class="descname">testsource</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestInput.testsource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the module.executable.parameter name whose output from a previous
+unit test run will be used as input for this value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestInput.testspec">
+<code class="descname">testspec</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestInput.testspec" title="Permalink to this definition">¶</a></dt>
+<dd><p>TestSpecification parent instance that has access
+to code element information for test-source inputs.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.TestOutput">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">TestOutput</code><span class="sig-paren">(</span><em>xmltag</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestOutput"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestOutput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents an output file <em>compare</em> operation that needs to be performed
+by the tester.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attr xml:</th><td class="field-body">the XML &lt;output&gt; tag that the object was created from.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Attr identifier:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">the unique identifier for this output specification.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr folder:</th><td class="field-body">for file-mode, the folder that contains &#8216;file&#8217;.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr filename:</th><td class="field-body">the name of the model file to compare the output to.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr template:</th><td class="field-body">the name of the XML file that has template information
+for comparing the file.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr mode:</th><td class="field-body">the comparison mode for the FileComparer. Default=&#8217;default&#8217;.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr value:</th><td class="field-body">if the output value is a constant, its value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr tolerance:</th><td class="field-body">for value comparisons, as long as the values are within
+this percent, the test still passes. E.g. if tolerance=0.8, then a value
+of 0.92 is considered equivalent to 1.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="fortpy.testing.elements.TestOutput.abspath">
+<code class="descname">abspath</code><span class="sig-paren">(</span><em>coderoot</em>, <em>caseid=''</em>, <em>compiler=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestOutput.abspath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestOutput.abspath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the absolute path to the output file referenced by this
+output comparison specifier.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>coderoot</strong> &#8211; the full path to the directory storing the code files.</li>
+<li><strong>case</strong> &#8211; if a specific case of the same test is being performed, the
+case identifier to use for string formatting.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestOutput.actolerance">
+<code class="descname">actolerance</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestOutput.actolerance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the individual tolerance limit for any single file comparison
+in the auto-class comparision.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestOutput.autoclass">
+<code class="descname">autoclass</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestOutput.autoclass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies whether the output is running in auto-class mode where entire
+arrays of user-defined objects can be compared using a single tag.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestOutput.filemode">
+<code class="descname">filemode</code><a class="headerlink" href="#fortpy.testing.elements.TestOutput.filemode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a value indicating whether the output comparison is with
+a file (as opposed to a hard-coded value).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.TestPreReq">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">TestPreReq</code><span class="sig-paren">(</span><em>tag</em>, <em>parent</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestPreReq"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestPreReq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a subroutine or function that must run before the main
+executable being unit-tested can run.</p>
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestPreReq.chainto">
+<code class="descname">chainto</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestPreReq.chainto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies the ID of the test specification that should be used when
+chaining the pre-reqs.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestPreReq.method">
+<code class="descname">method</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestPreReq.method" title="Permalink to this definition">¶</a></dt>
+<dd><p>The &#8216;module.executable&#8217; identifier for the pre-req method to run.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestPreReq.paramlist">
+<code class="descname">paramlist</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestPreReq.paramlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides the default behavior of the parameter list.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestPreReq.parent">
+<code class="descname">parent</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestPreReq.parent" title="Permalink to this definition">¶</a></dt>
+<dd><p>The testing group or test specification instance that owns this tag.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestPreReq.position">
+<code class="descname">position</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestPreReq.position" title="Permalink to this definition">¶</a></dt>
+<dd><p>For pre-reqs specified in a testing group, the user must decide whether
+the global methods run before/after the local test specification methods.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.TestSource">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">TestSource</code><span class="sig-paren">(</span><em>compkey</em>, <em>testspec</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a link between the output of one unit test that is being used
+as input for another unit test.</p>
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSource.cases">
+<code class="descname">cases</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestSource.cases" title="Permalink to this definition">¶</a></dt>
+<dd><p>The list of test cases to use inputs for. One test case will be created
+for each distinct test source case using either &#8216;one-to-one&#8217; or &#8216;cartesian&#8217;.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestSource.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>coderoot</em>, <em>testroot</em>, <em>case</em>, <em>compiler=None</em>, <em>stagedir=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestSource.copy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestSource.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies the test-source file to the specified testing directory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stagedir</strong> &#8211; the path to the staging directory to use (override).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSource.filename">
+<code class="descname">filename</code><a class="headerlink" href="#fortpy.testing.elements.TestSource.filename" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the local file that will contain
+the full path to the data to use.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSource.filevar">
+<code class="descname">filevar</code><a class="headerlink" href="#fortpy.testing.elements.TestSource.filevar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the code to reference a trimmed, clean version of the contents
+of the variable containing the full path to the data.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSource.key">
+<code class="descname">key</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestSource.key" title="Permalink to this definition">¶</a></dt>
+<dd><p>The &#8216;module.executable.parameter&#8217; directive.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestSource.path">
+<code class="descname">path</code><span class="sig-paren">(</span><em>coderoot</em>, <em>case</em>, <em>compiler=None</em>, <em>stagedir=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestSource.path"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestSource.path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the full path to the <em>source</em> file that this test source
+is going to use (either directly or with copy).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stagedir</strong> &#8211; the path to the staging directory to use (override).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSource.source">
+<code class="descname">source</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestSource.source" title="Permalink to this definition">¶</a></dt>
+<dd><p>The CodeElement instance of the parameter whose output is being used.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSource.target">
+<code class="descname">target</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestSource.target" title="Permalink to this definition">¶</a></dt>
+<dd><p>The TestTarget instance for the variable whose output is being used as
+the test source.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSource.testid">
+<code class="descname">testid</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestSource.testid" title="Permalink to this definition">¶</a></dt>
+<dd><p>The identifier of the test whose output will be used.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSource.testspec">
+<code class="descname">testspec</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestSource.testspec" title="Permalink to this definition">¶</a></dt>
+<dd><p>The TestSpecification instance of the target whose input is being defined.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSource.varname">
+<code class="descname">varname</code><a class="headerlink" href="#fortpy.testing.elements.TestSource.varname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the local file <em>variable</em> that will contain
+the full path to the data to use.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.TestSpecification">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">TestSpecification</code><span class="sig-paren">(</span><em>xmltag</em>, <em>testgroup</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestSpecification"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestSpecification" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a single test that needs to be performed. Each test compiles
+a new executable with the same name as the test identifier; however, the
+tests all use the same base dependencies from other modules.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Attr identifier:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">a unique id for the test; the unit test executable will
+be created with this name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Attr description:</th></tr>
+<tr class="field-even field"><td>&nbsp;</td><td class="field-body">included in the summary of the auto-generated program
+<a href="#id5"><span class="problematic" id="id6">*</span></a>.f90 file.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr cases:</th><td class="field-body">a list of cases to run that use the same test specification
+except for a slight change in the names of input/model files.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr runtime:</th><td class="field-body">an integer list [min, max] range for the time this test 
+should take to run.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr unit:</th><td class="field-body">either &#8216;m&#8217; or &#8216;h&#8217;; the units for &#8216;runtime&#8217;.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr timed:</th><td class="field-body">when true, the execution time of the main method being unit tested
+will be accumulated and saved.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr targets:</th><td class="field-body">a list of TestTarget instances that specify which variables
+and files need to be verified after the unit test runs.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr inputs:</th><td class="field-body">a list of TestInput instances that specify how to initialize
+the values of the variables or that are required by other methods being
+run as pre-reqs of the main unit testing method.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr output:</th><td class="field-body">a dict of TestOutput instances; keys are the output identifiers
+the values are the object instances. Represent sources for model data to
+compare the unit tests&#8217; generated output to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr testgroup:</th><td class="field-body">the testing group that the specification belongs to.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSpecification.autoclass">
+<code class="descname">autoclass</code><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.autoclass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if any of the assignments in the test specification require
+auto-class support.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSpecification.autoclasses">
+<code class="descname">autoclasses</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.autoclasses" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dict of AutoClasser() instances for generating read/write blocks
+for user-derived type variables that are complex. We only need to write
+the variable declarations once per test specification, which is why we
+put them here.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestSpecification.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><em>testroot</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestSpecification.clean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all variable target output files so that the test folder
+is clean for a new run.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestSpecification.code_after">
+<code class="descname">code_after</code><span class="sig-paren">(</span><em>lines</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestSpecification.code_after"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.code_after" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the code required to save the value of any targets for this
+test to their files when their save frequency is set to &#8216;each&#8217;.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lines</strong> &#8211; the list of strings that will form the contents of the
+<a href="#id7"><span class="problematic" id="id8">*</span></a>.f90 file being created for the executable.</li>
+<li><strong>variables</strong> &#8211; the dictionary of all global variables declared in
+the program to be used by any methods being run.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestSpecification.code_before">
+<code class="descname">code_before</code><span class="sig-paren">(</span><em>lines</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestSpecification.code_before"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.code_before" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends all code required to read the next values from a file into
+their variables <em>before</em> the main test function is called again.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lines</strong> &#8211; the list of strings that will form the contents of the
+<a href="#id9"><span class="problematic" id="id10">*</span></a>.f90 file being created for the executable.</li>
+<li><strong>variables</strong> &#8211; the dictionary of all global variables declared in
+the program to be used by any methods being run.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestSpecification.code_finalize">
+<code class="descname">code_finalize</code><span class="sig-paren">(</span><em>lines</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestSpecification.code_finalize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.code_finalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the code for cleaning up open file handles and saving the
+final values of the targets to their files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lines</strong> &#8211; the list of strings that will form the contents of the
+<a href="#id11"><span class="problematic" id="id12">*</span></a>.f90 file being created for the executable.</li>
+<li><strong>variables</strong> &#8211; the dictionary of all global variables declared in
+the program to be used by any methods being run.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestSpecification.code_init">
+<code class="descname">code_init</code><span class="sig-paren">(</span><em>lines</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestSpecification.code_init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.code_init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends all code required to initialize all the constant-mode input
+file specifications and save starting values of targets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lines</strong> &#8211; the list of strings that will form the contents of the
+<a href="#id13"><span class="problematic" id="id14">*</span></a>.f90 file being created for the executable.</li>
+<li><strong>variables</strong> &#8211; the dictionary of all global variables declared in
+the program to be used by any methods being run.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestSpecification.code_validate">
+<code class="descname">code_validate</code><span class="sig-paren">(</span><em>lines</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestSpecification.code_validate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.code_validate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the fortran code to validate the length of the constant-valued
+input files if there is more than one of them.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lines</strong> &#8211; the list of strings that will form the contents of the
+<a href="#id15"><span class="problematic" id="id16">*</span></a>.f90 file being created for the executable.</li>
+<li><strong>variables</strong> &#8211; the dictionary of all global variables declared in
+the program to be used by any methods being run.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestSpecification.code_vars">
+<code class="descname">code_vars</code><span class="sig-paren">(</span><em>lines</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestSpecification.code_vars"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.code_vars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends all the code required by all the input file specifications
+in order to run the unit test to the list.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lines</strong> &#8211; the list of strings that will form the contents of the
+<a href="#id17"><span class="problematic" id="id18">*</span></a>.f90 file being created for the executable.</li>
+<li><strong>variables</strong> &#8211; the dictionary of all global variables declared in
+the program to be used by any methods being run.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSpecification.constant">
+<code class="descname">constant</code><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.constant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a value indicating whether any of the inputs in this test
+run in constant-input mode.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSpecification.executable">
+<code class="descname">executable</code><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.executable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the instance of Executable code element that this specification
+will test.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSpecification.methods">
+<code class="descname">methods</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.methods" title="Permalink to this definition">¶</a></dt>
+<dd><p>A set of <em>local</em> assignments and pre-reqs that apply to this test.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestSpecification.parse">
+<code class="descname">parse</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestSpecification.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses the child-tags and attributes of this test specification once
+its parent testing group is finished parsing.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSpecification.repeats">
+<code class="descname">repeats</code><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.repeats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of a variable to use for the do loop when the
+method execution is repeated for each line in constant-input file.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSpecification.testable">
+<code class="descname">testable</code><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.testable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True if this test specification includes at least one output
+specification making it testable.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestSpecification.variables">
+<code class="descname">variables</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestSpecification.variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>A set of <em>local</em> variable declarations for this test.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.TestTarget">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">TestTarget</code><span class="sig-paren">(</span><em>xmltag</em>, <em>testspec</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestTarget"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestTarget" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a specification to save the state of a variable at the end
+of the program run <em>or</em> each time the main method being tested is run.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attr xml:</th><td class="field-body">the xml &lt;target&gt; tag that the object was created from.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr name:</th><td class="field-body">the name of the variable that will be saved.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr varfile:</th><td class="field-body">if fortpy is handling the save to file, the name of the file
+that fortpy should save the variable under.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr when:</th><td class="field-body">specifies how often the variable should be saved. Possible values
+are [&#8216;begin&#8217;, &#8216;each&#8217;, &#8216;end&#8217;] corresponding to the start of the program,
+each time the method gets run and right before the variables are cleaned up
+by the program.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr generator:</th><td class="field-body">the name of a subroutine to call that will save the variable
+to a file. The only parameter passed to the subroutine is the instance of the
+variable to save.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr compareto:</th><td class="field-body">the identifier of an &lt;output&gt; tag that the variable&#8217;s values will
+be compared to after the program has run.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr testspec:</th><td class="field-body">the parent test specification that this target belongs to.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr member:</th><td class="field-body">the name of a member in a derived type whose value should be saved.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestTarget.autoclass">
+<code class="descname">autoclass</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestTarget.autoclass" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies whether the output is running in auto-class mode where entire
+arrays of user-defined objects can be compared using a single tag.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestTarget.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><em>testroot</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestTarget.clean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestTarget.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the output file for saving the variable&#8217;s value from the
+testing folder.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestTarget.code">
+<code class="descname">code</code><span class="sig-paren">(</span><em>lines</em>, <em>variables</em>, <em>position</em>, <em>spacer</em>, <em>first=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestTarget.code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestTarget.code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the code required to save the value of this target to
+file if the specified position is appropriate.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestTarget.init">
+<code class="descname">init</code><span class="sig-paren">(</span><em>testroot</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestTarget.init"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestTarget.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates any directories that this test target needs to function correctly.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="fortpy.testing.elements.TestingGroup">
+<em class="property">class </em><code class="descclassname">fortpy.testing.elements.</code><code class="descname">TestingGroup</code><span class="sig-paren">(</span><em>group</em>, <em>element</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestingGroup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestingGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Represents a unit testing documentation group with information on
+how to automate a unit test for a specific executable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Attr tests:</th><td class="field-body">a dict of TestSpecifications for running multiple tests
+that use the same variables, mappings and other parameters.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr mappings:</th><td class="field-body">a dict with keys as the parameter names from the method
+being tested and values being the variable names to pass in.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Attr assignments:</th></tr>
+<tr class="field-odd field"><td>&nbsp;</td><td class="field-body">a dict of assignments for changing the values of the
+variables.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr children:</th><td class="field-body">a list of the DocElement instances who belong to this
+testing group.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Attr methods:</th><td class="field-body">a dict of variable assignments and prereq methods for changing 
+variable values or executing pre-req subroutines. 
+The actual assignments are made as part of the executable chaining
+to make sure that values get changed in the correct order.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Attr finder:</th><td class="field-body">the MethodFinder instance that this group belongs to.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestingGroup.assignments">
+<code class="descname">assignments</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestingGroup.assignments" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dict of test-group level variable names that have their values
+changed by a test-group level assignment. Keys are lowered variable names
+values are dicts of variable attributes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestingGroup.code">
+<code class="descname">code</code><span class="sig-paren">(</span><em>testid</em>, <em>section</em>, <em>lines</em>, <em>spacer</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestingGroup.code"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestingGroup.code" title="Permalink to this definition">¶</a></dt>
+<dd><p>Appends the relevant code for the specified test and section of
+the final executable file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>testid</strong> &#8211; the identifier of the test to append code for.</li>
+<li><strong>section</strong> &#8211; one of [&#8216;vars&#8217;, &#8216;init&#8217;, &#8216;validate&#8217;, &#8216;before&#8217;, &#8216;after&#8217;,
+&#8216;final&#8217;]. Refers to section of the PROGRAM <a href="#id19"><span class="problematic" id="id20">*</span></a>.f90 file being created.</li>
+<li><strong>lines</strong> &#8211; a list of the strings collected so far for the contents
+of the <a href="#id21"><span class="problematic" id="id22">*</span></a>.f90 program file.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestingGroup.coderoot">
+<code class="descname">coderoot</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestingGroup.coderoot" title="Permalink to this definition">¶</a></dt>
+<dd><p>The absolute path to the code folder where the module file resides
+for the unit test being run.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestingGroup.finder">
+<code class="descname">finder</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestingGroup.finder" title="Permalink to this definition">¶</a></dt>
+<dd><p>The currently active MethodFinder instance being used by the MethodWriter
+to create the executable driver for a specific testid.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="fortpy.testing.elements.TestingGroup.global_add">
+<em class="property">static </em><code class="descname">global_add</code><span class="sig-paren">(</span><em>variables</em>, <em>order</em>, <em>name</em>, <em>doc</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestingGroup.global_add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestingGroup.global_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a global declaration for the specified DocElement if it isn&#8217;t already
+represented in the list.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestingGroup.inputs">
+<code class="descname">inputs</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestingGroup.inputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>A list of input files that need to be copied to the test execution directories
+for <em>all</em> the test specifications.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestingGroup.method_fullname">
+<code class="descname">method_fullname</code><a class="headerlink" href="#fortpy.testing.elements.TestingGroup.method_fullname" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the full module.method name of the executable that this
+group decorates.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestingGroup.name">
+<code class="descname">name</code><a class="headerlink" href="#fortpy.testing.elements.TestingGroup.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the underlying DocGroup.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestingGroup.outputs">
+<code class="descname">outputs</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestingGroup.outputs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dict of comparison outputs that should be available for <em>all</em> test specifications
+in the unit test.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="fortpy.testing.elements.TestingGroup.set_finder">
+<code class="descname">set_finder</code><span class="sig-paren">(</span><em>finder</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/fortpy/testing/elements.html#TestingGroup.set_finder"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#fortpy.testing.elements.TestingGroup.set_finder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the currently active MethodFinder instance being used by the MethodWriter
+to create the executable driver for a specific testid.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestingGroup.staging">
+<code class="descname">staging</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestingGroup.staging" title="Permalink to this definition">¶</a></dt>
+<dd><p>The path of the staging directory relative to the code directory.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestingGroup.targets">
+<code class="descname">targets</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestingGroup.targets" title="Permalink to this definition">¶</a></dt>
+<dd><p>List of the variables that should have their values saved to file and compared
+with model output for <em>all</em> the test specifications.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="fortpy.testing.elements.TestingGroup.variable_order">
+<code class="descname">variable_order</code><em class="property"> = None</em><a class="headerlink" href="#fortpy.testing.elements.TestingGroup.variable_order" title="Permalink to this definition">¶</a></dt>
+<dd><p>The order in which the global declarations appear in the group.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="docxml.html"
+                        title="previous chapter">XML Documentation Standard</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/testing.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="docxml.html" title="XML Documentation Standard"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">fortpy 1.7.5 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Conrad W. Rosenbrock.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+    </div>
+  </body>
+</html>

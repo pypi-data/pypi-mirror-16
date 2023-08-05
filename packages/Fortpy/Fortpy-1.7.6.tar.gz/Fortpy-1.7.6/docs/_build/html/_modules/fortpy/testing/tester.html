@@ -1,0 +1,987 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>fortpy.testing.tester &mdash; fortpy 1.7.5 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.7.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="fortpy 1.7.5 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">fortpy 1.7.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for fortpy.testing.tester</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">msg</span>
+<span class="kn">import</span> <span class="nn">fortpy</span>
+<span class="kn">from</span> <span class="nn">.generator</span> <span class="kn">import</span> <span class="n">TestGenerator</span>
+<span class="kn">from</span> <span class="nn">..code</span> <span class="kn">import</span> <span class="n">CodeParser</span><span class="p">,</span> <span class="n">secondsToStr</span>
+<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">system</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mkdir</span><span class="p">,</span> <span class="n">remove</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">clock</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">shutil</span> <span class="kn">import</span> <span class="n">copy</span><span class="p">,</span> <span class="n">copyfile</span>
+<span class="kn">from</span> <span class="nn">fortpy.code</span> <span class="kn">import</span> <span class="n">secondsToStr</span>
+<span class="kn">from</span> <span class="nn">.comparer</span> <span class="kn">import</span> <span class="n">FileComparer</span>
+<span class="kn">from</span> <span class="nn">fortpy.testing.results</span> <span class="kn">import</span> <span class="n">print_compare_result</span>
+<span class="kn">from</span> <span class="nn">fortpy.testing</span> <span class="kn">import</span> <span class="n">profiling</span>
+
+<div class="viewcode-block" id="ExecutionResult"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.ExecutionResult">[docs]</a><span class="k">class</span> <span class="nc">ExecutionResult</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The result of running the executable on the system, NOT the</span>
+<span class="sd">    result of the unit test file comparisons.</span>
+
+<span class="sd">    :arg str folder: the folder in which the executable ran.</span>
+<span class="sd">    :arg int exitcode: the system exit code after the process terminated.</span>
+<span class="sd">    :arg datetime.datetime runtime: execution run time.</span>
+<span class="sd">    :arg OutcomeTester tester: instance to test the outcome of this</span>
+<span class="sd">      execution.</span>
+<span class="sd">    :arg str case: the case identifier if this was part of a series of</span>
+<span class="sd">      cases run for the same outcome.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">exitcode</span><span class="p">,</span> <span class="n">runtime</span><span class="p">,</span> <span class="n">tester</span><span class="p">,</span> <span class="n">case</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">folder</span> <span class="o">=</span> <span class="n">folder</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">code</span> <span class="o">=</span> <span class="n">exitcode</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">runtime</span> <span class="o">=</span> <span class="n">runtime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tester</span> <span class="o">=</span> <span class="n">tester</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">case</span> <span class="o">=</span> <span class="n">case</span>
+
+    <span class="k">def</span> <span class="nf">_compare_time</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Determines if the runtime for this execution exceeded the</span>
+<span class="sd">        maximum in the tester.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tester</span><span class="o">.</span><span class="n">testspec</span><span class="o">.</span><span class="n">runtime</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> \
+           <span class="bp">self</span><span class="o">.</span><span class="n">tester</span><span class="o">.</span><span class="n">testspec</span><span class="o">.</span><span class="n">unit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="c1">#Get the runtime in a nice-to-compare format 0:00:00.000</span>
+            <span class="n">stime</span> <span class="o">=</span> <span class="n">secondsToStr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">runtime</span><span class="p">)</span>
+            <span class="c1">#we have limits specified as minutes or hours in a range</span>
+            <span class="c1">#No unit test should/can take more than 24 hours.</span>
+            <span class="n">utime</span> <span class="o">=</span> <span class="p">[</span> <span class="nb">int</span><span class="p">(</span><span class="n">u</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">stime</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span> <span class="p">]</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tester</span><span class="o">.</span><span class="n">testspec</span><span class="o">.</span><span class="n">unit</span> <span class="o">==</span> <span class="s2">&quot;h&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compare_list_time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tester</span><span class="o">.</span><span class="n">testspec</span><span class="o">.</span><span class="n">runtime</span><span class="p">,</span> <span class="n">utime</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">tester</span><span class="o">.</span><span class="n">testspec</span><span class="o">.</span><span class="n">unit</span> <span class="o">==</span> <span class="s2">&quot;m&quot;</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compare_list_time</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tester</span><span class="o">.</span><span class="n">testspec</span><span class="o">.</span><span class="n">runtime</span><span class="p">,</span> <span class="n">utime</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">True</span>
+
+    <span class="k">def</span> <span class="nf">_compare_list_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bounds</span><span class="p">,</span> <span class="n">actual</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sees if the actual time integer value lies between the</span>
+<span class="sd">        integer list bounds [min,max].&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">actual</span> <span class="o">&gt;=</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">actual</span> <span class="o">&lt;=</span> <span class="n">bounds</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<div class="viewcode-block" id="ExecutionResult.test"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.ExecutionResult.test">[docs]</a>    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">caseid</span><span class="p">,</span> <span class="n">uresult</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Tests the outcome of this executable using its tester attribute.</span>
+
+<span class="sd">        :arg str caseid: identifier for the specific case to test.</span>
+<span class="sd">        :arg TestResult uresult: the overall result for the test; modified with the</span>
+<span class="sd">          results of outcome testing for `caseid`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#The first thing to check is the contents of the files</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tester</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">caseid</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">uresult</span><span class="p">)</span>
+        <span class="c1">#All that&#39;s left is to check the runtime against its max.</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compare_time</span><span class="p">():</span>
+            <span class="n">uresult</span><span class="o">.</span><span class="n">overtimes</span><span class="p">[</span><span class="n">caseid</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">runtime</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">tester</span><span class="o">.</span><span class="n">testspec</span><span class="o">.</span><span class="n">runtime</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="ValueCompareResult"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.ValueCompareResult">[docs]</a><span class="k">class</span> <span class="nc">ValueCompareResult</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The result of comparing the contents of a file to an explicit</span>
+<span class="sd">    value hard-coded in the testing XML tags.</span>
+
+<span class="sd">    :ivar str path: path to the file whose contents will be checked.</span>
+<span class="sd">    :ivar str value: explicit value to compare the file contents to; is passed</span>
+<span class="sd">      to :func:`eval` before comparison.</span>
+<span class="sd">    :ivar bool equal: `True` if the file contents are identical to `value`.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">equal</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compare_values</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_compare_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Tests the equality of the file contents in path to the</span>
+<span class="sd">        explicit value specified.&quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">False</span>
+
+        <span class="c1">#We only deal with the first line in the file, anything more</span>
+        <span class="c1">#complicated should be handled with file templates.</span>
+        <span class="kn">import</span> <span class="nn">re</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;^\s*#&quot;</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
+                    <span class="k">break</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">eval</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">==</span> <span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="bp">True</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="bp">False</span>
+        
+        <span class="k">return</span> <span class="n">result</span></div>
+
+<div class="viewcode-block" id="OutcomeTester"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.OutcomeTester">[docs]</a><span class="k">class</span> <span class="nc">OutcomeTester</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Performs outcomes tests for a single &#39;test&#39; DocString.</span>
+
+<span class="sd">    :arg testspec: the :class:fortpy.testing.elements.TestSpecification for the &lt;test&gt; tag.</span>
+<span class="sd">    :arg codefolder: the path to the folder that has all the modules from which</span>
+<span class="sd">      the unit tests were built.</span>
+<span class="sd">    :arg comparer: an instance of FileComparer to compare output files</span>
+<span class="sd">      to the model ones.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">testspec</span><span class="p">,</span> <span class="n">codefolder</span><span class="p">,</span> <span class="n">comparer</span><span class="p">,</span> <span class="n">verbose</span><span class="p">,</span> <span class="n">compiler</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">testspec</span> <span class="o">=</span> <span class="n">testspec</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">codefolder</span> <span class="o">=</span> <span class="n">codefolder</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparer</span> <span class="o">=</span> <span class="n">comparer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span> <span class="o">=</span> <span class="n">compiler</span>
+        <span class="sd">&quot;&quot;&quot;Active compiler for the current test whose outcome is being run.&quot;&quot;&quot;</span>
+        
+<div class="viewcode-block" id="OutcomeTester.test"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.OutcomeTester.test">[docs]</a>    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">caseid</span><span class="p">,</span> <span class="n">xresult</span><span class="p">,</span> <span class="n">uresult</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Checks the output of the execution for the specified test specification.</span>
+
+<span class="sd">        :arg xresult: an ExecutionResult instance that has information about the</span>
+<span class="sd">          execution whose outcome is being tested.</span>
+<span class="sd">        :arg uresult: the unittest&#39;s TestResult that holds information from all</span>
+<span class="sd">          executions that were run for different cases.</span>
+<span class="sd">        &quot;&quot;&quot;</span>        
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">testspec</span><span class="o">.</span><span class="n">testable</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="c1">#Compare the files with their model outputs</span>
+        <span class="n">compresults</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">testspec</span><span class="o">.</span><span class="n">targets</span><span class="p">)):</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">testspec</span><span class="o">.</span><span class="n">targets</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">exepath</span><span class="p">,</span> <span class="n">outvar</span><span class="p">,</span> <span class="n">isfile</span><span class="p">,</span> <span class="n">exists</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_get_paths</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">xresult</span><span class="o">.</span><span class="n">folder</span><span class="p">,</span> <span class="n">caseid</span><span class="p">)</span>
+            <span class="c1">#Exists tells us if we have the necessary output to compare with. If we don&#39;t</span>
+            <span class="c1">#we can&#39;t complete the comparison.</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_add_failure</span><span class="p">(</span><span class="n">caseid</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">uresult</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="c1">#The third entry in the tuple identifies it as an explicit value</span>
+            <span class="c1">#comparison as opposed to a file comparison.</span>
+            <span class="k">if</span> <span class="n">isfile</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">outvar</span><span class="o">.</span><span class="n">autoclass</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_compare_file</span><span class="p">(</span><span class="n">exepath</span><span class="p">,</span> <span class="n">outvar</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">codefolder</span><span class="p">,</span> <span class="n">caseid</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="n">result</span><span class="o">.</span><span class="n">common_match</span> <span class="o">&lt;</span> <span class="n">outvar</span><span class="o">.</span><span class="n">tolerance</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_add_failure</span><span class="p">(</span><span class="n">caseid</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">uresult</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">outvar</span><span class="o">.</span><span class="n">autoclass</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_compare_autoclass</span><span class="p">(</span><span class="n">exepath</span><span class="p">,</span> <span class="n">outvar</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">codefolder</span><span class="p">,</span> <span class="n">caseid</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">common_match</span> <span class="o">&lt;</span> <span class="n">outvar</span><span class="o">.</span><span class="n">tolerance</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_add_failure</span><span class="p">(</span><span class="n">caseid</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">uresult</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_compare_var</span><span class="p">(</span><span class="n">exepath</span><span class="p">,</span> <span class="n">outvar</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="bp">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">equal</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_add_failure</span><span class="p">(</span><span class="n">caseid</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">uresult</span><span class="p">)</span>
+            
+            <span class="n">compresults</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+        <span class="c1">#Add the outcome to the results dictionary</span>
+        <span class="n">uresult</span><span class="o">.</span><span class="n">outcomes</span><span class="p">[</span><span class="n">caseid</span><span class="p">]</span> <span class="o">=</span> <span class="n">compresults</span></div>
+
+    <span class="k">def</span> <span class="nf">_add_failure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">caseid</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">uresult</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Adds the specified result as a failure for the caseid.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">caseid</span> <span class="ow">in</span> <span class="n">uresult</span><span class="o">.</span><span class="n">failures</span><span class="p">:</span>
+            <span class="n">uresult</span><span class="o">.</span><span class="n">failures</span><span class="p">[</span><span class="n">caseid</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">uresult</span><span class="o">.</span><span class="n">failures</span><span class="p">[</span><span class="n">caseid</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span> <span class="n">result</span> <span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">_run_compare_var</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exepath</span><span class="p">,</span> <span class="n">outvar</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compares the value of a variable written to an output file with an</span>
+<span class="sd">        explicit value.</span>
+
+<span class="sd">        :arg exepath: the full path to the file created by the unit test executable.</span>
+<span class="sd">        :arg outvar: the TestOutput instance with testing specifications.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ValueCompareResult</span><span class="p">(</span><span class="n">exepath</span><span class="p">,</span> <span class="n">outvar</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_run_compare_autoclass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exepath</span><span class="p">,</span> <span class="n">outvar</span><span class="p">,</span> <span class="n">coderoot</span><span class="p">,</span> <span class="n">caseid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compares an output *folder* from an executable (for a variable saved using</span>
+<span class="sd">        the autoclass feature) with its model output using settings in the doctag.</span>
+
+<span class="sd">        :arg exe: the full path to the output folder from the unit test.</span>
+<span class="sd">        :arg outvar: the TestOutput instance with testing specifications.</span>
+<span class="sd">        :arg coderoot: the full path to the folder that has all the code files.</span>
+<span class="sd">        :arg caseid: the identifier for the specific test case being tested.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#We need to get a list of all the files in the model and test folders</span>
+        <span class="c1">#for the variable and then compare each of them with _run_compare_file.</span>
+        <span class="c1">#Luckily, there are no nested folders, the files are saved linearly and</span>
+        <span class="c1">#the filenames contain the recursive complexity of the variable.</span>
+        <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">walk</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">mkdir</span>
+        <span class="n">modelpath</span> <span class="o">=</span> <span class="n">outvar</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">coderoot</span><span class="p">,</span> <span class="n">caseid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">)</span>
+        <span class="n">mfiles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">xfiles</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">,</span> <span class="n">filenames</span><span class="p">)</span> <span class="ow">in</span> <span class="n">walk</span><span class="p">(</span><span class="n">modelpath</span><span class="p">):</span>
+            <span class="n">mfiles</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
+            <span class="k">break</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">dirpath</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">,</span> <span class="n">filenames</span><span class="p">)</span> <span class="ow">in</span> <span class="n">walk</span><span class="p">(</span><span class="n">exepath</span><span class="p">):</span>
+            <span class="n">xfiles</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">filenames</span><span class="p">)</span>
+            <span class="k">break</span>
+
+        <span class="c1">#Create a directory for all the .compare files of the member variables</span>
+        <span class="c1">#in the auto-classed variable.</span>
+        <span class="n">compath</span> <span class="o">=</span> <span class="n">exepath</span> <span class="o">+</span> <span class="s2">&quot;.compare&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">compath</span><span class="p">):</span>
+            <span class="n">mkdir</span><span class="p">(</span><span class="n">compath</span><span class="p">)</span>
+
+        <span class="c1">#Hopefully we get a one-to-one match, otherwise we have to record the</span>
+        <span class="c1">#set difference as failures.</span>
+        <span class="n">onlym</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">mx</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">summary</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">mfiles</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;_&quot;</span> <span class="ow">or</span> <span class="s2">&quot;.fpy&quot;</span> <span class="ow">in</span> <span class="n">m</span><span class="p">:</span>
+                <span class="c1">#Ignore the files that don&#39;t follow the convention; otherwise the</span>
+                <span class="c1">#statistics will be messed up.</span>
+                <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">xfiles</span><span class="p">:</span>
+                <span class="n">xpath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">exepath</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+                <span class="n">mpath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">modelpath</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+                <span class="c1">#We can&#39;t use the outvar template for autoclass because the contents</span>
+                <span class="c1">#probably all have different types. Instead, we have to detect the</span>
+                <span class="c1">#template from the file headers.</span>
+                <span class="n">mxres</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparer</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">xpath</span><span class="p">,</span> <span class="n">mpath</span><span class="p">,</span> <span class="bp">None</span><span class="p">,</span> <span class="n">outvar</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+                <span class="n">mx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mxres</span><span class="p">)</span>
+                <span class="n">summary</span><span class="p">[</span><span class="n">m</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">mxres</span><span class="o">.</span><span class="n">percent_match</span><span class="p">,</span> <span class="n">mxres</span><span class="o">.</span><span class="n">common_match</span><span class="p">)</span>
+
+                <span class="c1">#Write a comparison report for this particular variable.</span>
+                <span class="n">cpath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">compath</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">cpath</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">mxres</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">print_compare_result</span><span class="p">(</span><span class="n">mxres</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">))</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;The result comparison failed. Check the unit test console output.&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">onlym</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+        <span class="n">onlyx</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">xfiles</span> <span class="k">if</span> <span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;_&quot;</span> <span class="ow">and</span> <span class="s2">&quot;.fpy&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">f</span> <span class="ow">and</span> <span class="n">f</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mfiles</span><span class="p">)]</span>
+
+        <span class="c1">#It turns out to be useful to have a summary file that lists the percentage</span>
+        <span class="c1">#for each file comparison. Otherwise, it is hard to track down where the errors</span>
+        <span class="c1">#have occurred.</span>
+        <span class="kn">from</span> <span class="nn">fortpy.testing.results</span> <span class="kn">import</span> <span class="n">ACResult</span>
+        <span class="n">reltot</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">onlyx</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">onlym</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">ACResult</span><span class="p">(</span><span class="n">mx</span><span class="p">,</span> <span class="n">onlym</span><span class="p">,</span> <span class="n">onlyx</span><span class="p">,</span> <span class="n">outvar</span><span class="o">.</span><span class="n">actolerance</span><span class="p">)</span>
+        <span class="n">slines</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;{0:.2%} success ({1:.2%} common) TOTAL MATCH&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">percent_match</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">common_match</span><span class="p">),</span>
+                  <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;OUTPUT : {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">exepath</span><span class="p">),</span>
+                  <span class="s2">&quot;MODEL  : {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">modelpath</span><span class="p">),</span>
+                  <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;Files in both MODEL and TEST directories ({}/{}):&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="p">),</span> <span class="n">reltot</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">mfile</span><span class="p">,</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">summary</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">slines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;{0} =&gt; {1:.2%} success ({2:.2%} common)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mfile</span><span class="p">,</span> <span class="n">match</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">match</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">onlym</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">slines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">slines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Files only present in the MODEL output ({}/{}):&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">onlym</span><span class="p">),</span> <span class="n">reltot</span><span class="p">))</span>
+            <span class="n">slines</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">onlym</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">onlyx</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">slines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="n">slines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Files only present in the TEST output ({}/{}):&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">onlyx</span><span class="p">),</span> <span class="n">reltot</span><span class="p">))</span>
+            <span class="n">slines</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">onlyx</span><span class="p">)</span>
+
+        <span class="n">sfile</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">compath</span><span class="p">,</span> <span class="s2">&quot;summary&quot;</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sfile</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">slines</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="nf">_run_compare_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exepath</span><span class="p">,</span> <span class="n">outvar</span><span class="p">,</span> <span class="n">coderoot</span><span class="p">,</span> <span class="n">caseid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compares an output file from an executable with its model output using</span>
+<span class="sd">        settings in the doctag.</span>
+
+<span class="sd">        :arg exe: the full path to the output file from the unit test.</span>
+<span class="sd">        :arg outvar: the TestOutput instance with testing specifications.</span>
+<span class="sd">        :arg coderoot: the full path to the folder that has all the code files.</span>
+<span class="sd">        :arg caseid: the identifier for the specific test case being tested.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#First get the comparison results, then analyze them using the tolerances</span>
+        <span class="c1">#etc. from the doctag.</span>
+        <span class="n">targetpath</span> <span class="o">=</span> <span class="n">outvar</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">coderoot</span><span class="p">,</span> <span class="n">caseid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparer</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">exepath</span><span class="p">,</span> <span class="n">targetpath</span><span class="p">,</span> <span class="n">outvar</span><span class="o">.</span><span class="n">template</span><span class="p">,</span> <span class="n">outvar</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+        <span class="c1">#Write the results out to file as a record. If the result is none create</span>
+        <span class="c1">#a file that says so. The default file name is the output file name with</span>
+        <span class="c1">#an extra extension of .compare</span>
+        <span class="n">resultpath</span> <span class="o">=</span> <span class="n">exepath</span> <span class="o">+</span> <span class="s2">&quot;.compare&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">resultpath</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>          
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">print_compare_result</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;The result comparison failed. Check the unit test console output.&quot;</span><span class="p">)</span>
+            
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="nf">_run_get_paths</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">exefolder</span><span class="p">,</span> <span class="n">caseid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets the file paths to the executable output and model output</span>
+<span class="sd">        files that need to be compared. If the model output is not a file</span>
+<span class="sd">        the third entry in the tuple will be False.</span>
+
+<span class="sd">        :arg target: the target file or variable that needs to be compared.</span>
+<span class="sd">        :arg execfolder: the folder in which the executable ran, also where</span>
+<span class="sd">          the output files from the executable reside.</span>
+<span class="sd">        :arg caseid: the identifier for the specific test case that ran.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#In order to run the comparison, we must have an &lt;output&gt; tag to compare</span>
+        <span class="c1">#the target to.</span>
+        <span class="k">if</span> <span class="n">target</span><span class="o">.</span><span class="n">compareto</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">testspec</span><span class="o">.</span><span class="n">outputs</span><span class="p">:</span>
+            <span class="n">outvar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">testspec</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="n">target</span><span class="o">.</span><span class="n">compareto</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Target&#39;s compareto=&#39;{}&#39; &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">compareto</span><span class="p">)</span> <span class="o">+</span> 
+                             <span class="s2">&quot;does not match any &lt;output&gt; tag.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">target</span><span class="o">.</span><span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;.&quot;</span><span class="p">:</span>
+            <span class="n">exe</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">exefolder</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">name</span><span class="p">[</span><span class="mi">2</span><span class="p">::])</span>
+        <span class="k">elif</span> <span class="n">outvar</span><span class="o">.</span><span class="n">autoclass</span><span class="p">:</span>
+            <span class="n">exe</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">exefolder</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">varfile</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">#This is a variable, get the auto-generated filename</span>
+            <span class="n">exe</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">exefolder</span><span class="p">,</span> <span class="n">target</span><span class="o">.</span><span class="n">varfile</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">outvar</span><span class="o">.</span><span class="n">filemode</span><span class="p">:</span>
+            <span class="n">abspath</span> <span class="o">=</span> <span class="n">outvar</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">codefolder</span><span class="p">,</span> <span class="n">caseid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">)</span>
+            <span class="n">exists</span> <span class="o">=</span> <span class="p">((</span><span class="ow">not</span> <span class="n">outvar</span><span class="o">.</span><span class="n">autoclass</span> <span class="ow">and</span> <span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">abspath</span><span class="p">))</span> <span class="ow">or</span>
+                      <span class="p">(</span><span class="n">outvar</span><span class="o">.</span><span class="n">autoclass</span> <span class="ow">and</span> <span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">abspath</span><span class="p">)))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">exists</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">outvar</span><span class="o">.</span><span class="n">autoclass</span><span class="p">:</span>
+                    <span class="n">msg</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Auto-class model output folder {} &quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">abspath</span><span class="p">)</span> <span class="o">+</span>
+                             <span class="s2">&quot;does not exist for case {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">caseid</span><span class="p">))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">msg</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Model output file {} does not exist for case {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">abspath</span><span class="p">,</span> <span class="n">caseid</span><span class="p">))</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">exe</span><span class="p">,</span> <span class="n">outvar</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="n">exists</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">exe</span><span class="p">,</span> <span class="n">outvar</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="TestResult"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.TestResult">[docs]</a><span class="k">class</span> <span class="nc">TestResult</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Represents a set of unit test results.</span>
+
+<span class="sd">    :arg identifier: the `module.method` identifier for this unit test.</span>
+<span class="sd">    :arg testid: the identifier of the `&lt;test&gt;` tag for the specific test that this</span>
+<span class="sd">      result represents.</span>
+<span class="sd">    :ivar cases: a dictionary of :class:`ExecutionResult` objects with detail</span>
+<span class="sd">      on how the system execution went for each case. Key is `caseId`.</span>
+<span class="sd">    :ivar paths: a dictionary of paths to the folders that were executed for each case.</span>
+<span class="sd">      Keys match those in `self.cases`.</span>
+<span class="sd">    :ivar outcomes: a dictionary of :py:class:~`fortpy.testing.results.CompareResult` objects with detail</span>
+<span class="sd">      on how similar the new output files are to the model ones. Keys</span>
+<span class="sd">      are the same caseIds used in `self.cases`.</span>
+<span class="sd">    :ivar compiled: specifies whether the executable associated with</span>
+<span class="sd">      this identifier compiled successfully.</span>
+<span class="sd">    :ivar failures: CompareResult or ValueResult instances that failed the</span>
+<span class="sd">      tests outlined by the relevant test specification. Keys are the</span>
+<span class="sd">      caseIds used by all the other dicts.</span>
+<span class="sd">    :ivar overtimes: a tuple of (actual runtime, desired runtime range) for</span>
+<span class="sd">      tests that were outside of the range for runtime.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="p">,</span> <span class="n">testid</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">identifier</span> <span class="o">=</span> <span class="n">identifier</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">testid</span> <span class="o">=</span> <span class="n">testid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cases</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">paths</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">compiled</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="sd">&quot;&quot;&quot;The full path to the directory containing the compiled executable</span>
+<span class="sd">        to run.&quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">warnings</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">failures</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">overtimes</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="TestResult.clean"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.TestResult.clean">[docs]</a>    <span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">case</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Dereferences the test results&#39; memory to the representations of</span>
+<span class="sd">        the output and only retains the percent and common matches etc. for</span>
+<span class="sd">        aggregate statistics. Should only be called after the *.compare files</span>
+<span class="sd">        have been written out for the test case.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">case</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">[</span><span class="n">case</span><span class="p">],</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">[</span><span class="n">case</span><span class="p">]:</span>
+                    <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="n">result</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">[</span><span class="n">case</span><span class="p">]</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span></div>
+
+        <span class="c1">#Technically, the self.failures dict also has pointers to test result</span>
+        <span class="c1">#instances. But these will also be in the outcomes dictionary, so they</span>
+        <span class="c1">#will have been cleaned already.</span>
+        
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">totaltime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the total amount of time spent running *only* the unit tested</span>
+<span class="sd">        executable for *all* cases in this result.&quot;&quot;&quot;</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">caseid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">paths</span><span class="p">:</span>
+            <span class="n">casetime</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">runtime</span><span class="p">(</span><span class="n">caseid</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">casetime</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">time</span> <span class="o">+=</span> <span class="n">casetime</span>
+
+        <span class="k">if</span> <span class="n">time</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">time</span>
+
+<div class="viewcode-block" id="TestResult.runtime"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.TestResult.runtime">[docs]</a>    <span class="k">def</span> <span class="nf">runtime</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">caseid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets the absolute amount of time spent running *only* the executable</span>
+<span class="sd">        being unit tested for this result.&quot;&quot;&quot;</span>
+        <span class="n">time</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="k">if</span> <span class="n">caseid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">paths</span><span class="p">:</span>
+            <span class="n">timepath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">paths</span><span class="p">[</span><span class="n">caseid</span><span class="p">],</span> <span class="s2">&quot;fpytiming.out&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">timepath</span><span class="p">):</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">timepath</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">time</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+        <span class="k">return</span> <span class="n">time</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">percent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the percent success of the entire unit test.&quot;&quot;&quot;</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">common</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">caseid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">:</span>
+            <span class="n">case</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">[</span><span class="n">caseid</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">case</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">ValueCompareResult</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">equal</span><span class="p">:</span>
+                        <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">case</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="n">total</span> <span class="o">+=</span> <span class="n">result</span><span class="o">.</span><span class="n">percent_match</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">case</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cases</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">total</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cases</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">failure_count</span><span class="p">)</span>
+            
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">common</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the common match percent success.&quot;&quot;&quot;</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">common</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">caseid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">:</span>
+            <span class="n">case</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">outcomes</span><span class="p">[</span><span class="n">caseid</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">case</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">ValueCompareResult</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">equal</span><span class="p">:</span>
+                        <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">case</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                        <span class="n">total</span> <span class="o">+=</span> <span class="n">result</span><span class="o">.</span><span class="n">common_match</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">case</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cases</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">total</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cases</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">failure_count</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">failure_count</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets the number of outcomes that failed because of tolerance</span>
+<span class="sd">        or misformatted or no output files.&quot;&quot;&quot;</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">caseid</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">failures</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">failures</span><span class="p">[</span><span class="n">caseid</span><span class="p">]:</span>
+                <span class="n">total</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">total</span>            </div>
+
+<div class="viewcode-block" id="UnitTester"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.UnitTester">[docs]</a><span class="k">class</span> <span class="nc">UnitTester</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Performs automatic unit testing of individual subroutines and</span>
+<span class="sd">    functions based on XML doctags found in the code files.</span>
+
+<span class="sd">    :arg libraryroot: the path to folder in which to stage the tests.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">libraryroot</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">compare_templates</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">fortpy_templates</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">rerun</span><span class="o">=</span><span class="bp">None</span> <span class="p">,</span> <span class="n">compiler</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">profile</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">quiet</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">nprocs</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parser</span> <span class="o">=</span> <span class="n">CodeParser</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">verbose</span>
+        <span class="kn">from</span> <span class="nn">fortpy.utility</span> <span class="kn">import</span> <span class="n">set_fortpy_templates</span>
+        <span class="n">set_fortpy_templates</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fortpy_templates</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tgenerator</span> <span class="o">=</span> <span class="n">TestGenerator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="p">,</span> <span class="n">libraryroot</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fortpy_templates</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">rerun</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="sd">&quot;&quot;&quot;The full path to the compiler to use for the unit tests.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quiet</span> <span class="o">=</span> <span class="n">quiet</span>
+        <span class="sd">&quot;&quot;&quot;Specifies whether the tester should run in quiet mode, which only prints</span>
+<span class="sd">        essential information for the unit tests to stdout.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">strict</span> <span class="o">=</span> <span class="n">strict</span>
+        <span class="sd">&quot;&quot;&quot;Specifies whether to compile files with *all* warnings enabled.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="n">debug</span> <span class="o">==</span> <span class="bp">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_compiler</span><span class="p">(</span><span class="n">compiler</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">profile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_profiler_exists</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nprocs</span> <span class="o">=</span> <span class="n">nprocs</span>
+        <span class="sd">&quot;&quot;&quot;The number of processors to use for multi-threading test case execution.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#A flag to track whether the generator has already written</span>
+        <span class="c1">#the executables.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_written</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="c1">#The user&#39;s raw value for the compare_templates directory</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_compare_templates</span> <span class="o">=</span> <span class="n">compare_templates</span>
+
+<div class="viewcode-block" id="UnitTester.get_fortpy_version"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.UnitTester.get_fortpy_version">[docs]</a>    <span class="k">def</span> <span class="nf">get_fortpy_version</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fortpath</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Gets the fortpy version number from the first line of the specified file.&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">fortpy.testing.compilers</span> <span class="kn">import</span> <span class="n">get_fortpy_version</span>
+        <span class="k">return</span> <span class="n">get_fortpy_version</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">,</span> <span class="n">fortpath</span><span class="p">)</span> </div>
+
+<div class="viewcode-block" id="UnitTester.tests"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.UnitTester.tests">[docs]</a>    <span class="k">def</span> <span class="nf">tests</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns a dictionary of all the tests that need to be run for the</span>
+<span class="sd">        specified module.executable identifier.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">identifier</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tgenerator</span><span class="o">.</span><span class="n">xtests</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tgenerator</span><span class="o">.</span><span class="n">xtests</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{}</span></div>
+
+<div class="viewcode-block" id="UnitTester.writer"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.UnitTester.writer">[docs]</a>    <span class="k">def</span> <span class="nf">writer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the underlying executable writer that has a list of ordered</span>
+<span class="sd">        method/assignment dependencies.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">identifier</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tgenerator</span><span class="o">.</span><span class="n">xwriters</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tgenerator</span><span class="o">.</span><span class="n">xwriters</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span></div>
+        
+<div class="viewcode-block" id="UnitTester.libraryroot"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.UnitTester.libraryroot">[docs]</a>    <span class="k">def</span> <span class="nf">libraryroot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns the absolute path to the staging directory for the unit tests with</span>
+<span class="sd">        the specified testid.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">identifier</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tgenerator</span><span class="o">.</span><span class="n">xgenerator</span><span class="o">.</span><span class="n">folders</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">tgenerator</span><span class="o">.</span><span class="n">xgenerator</span><span class="o">.</span><span class="n">folders</span><span class="p">[</span><span class="n">identifier</span><span class="p">]</span></div>
+
+    <span class="k">def</span> <span class="nf">_profiler_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">profile</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Tests whether we have gprof available to do the profiling of the methods</span>
+<span class="sd">        to unit test.</span>
+<span class="sd">        </span>
+<span class="sd">        :arg profile: the value specified in the UnitTester constructor.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">profile</span><span class="o">==</span><span class="bp">True</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">fortpy.utility</span> <span class="kn">import</span> <span class="n">which</span>
+            <span class="n">gprof</span> <span class="o">=</span> <span class="n">which</span><span class="p">(</span><span class="s2">&quot;gprof&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">gprof</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+                <span class="n">msg</span><span class="o">.</span><span class="n">err</span><span class="p">(</span><span class="s2">&quot;gprof is required to run profiling with fortpy.&quot;</span><span class="p">)</span>
+                <span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+
+<div class="viewcode-block" id="UnitTester.set_compiler"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.UnitTester.set_compiler">[docs]</a>    <span class="k">def</span> <span class="nf">set_compiler</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">compiler</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sets the compiler to use for the unit testing of this code parser.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">compiler</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span> <span class="o">=</span> <span class="n">compiler</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_compiler_exists</span><span class="p">()</span></div>
+
+    <span class="k">def</span> <span class="nf">_compiler_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Tests whether the specified compiler is available on the machine. If</span>
+<span class="sd">        it isn&#39;t give an error and exit.&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">fortpy.testing.compilers</span> <span class="kn">import</span> <span class="n">compilers</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span> <span class="ow">in</span> <span class="n">compilers</span><span class="p">:</span>
+            <span class="c1">#Overwrite the *name* of the compiler with its full path; since</span>
+            <span class="c1">#fortpy assumes that self.compiler is the name of a valid executable</span>
+            <span class="c1">#this will still work correctly.</span>
+            <span class="n">compiler</span> <span class="o">=</span> <span class="n">compilers</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">]</span><span class="o">.</span><span class="n">path</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">compiler</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span>
+
+        <span class="kn">from</span> <span class="nn">fortpy.utility</span> <span class="kn">import</span> <span class="n">which</span>
+        <span class="k">if</span> <span class="n">which</span><span class="p">(</span><span class="n">compiler</span><span class="p">)</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">msg</span><span class="o">.</span><span class="n">err</span><span class="p">(</span><span class="s2">&quot;compiler {} not found. Exiting.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">))</span>
+            <span class="nb">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        
+<div class="viewcode-block" id="UnitTester.writeall"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.UnitTester.writeall">[docs]</a>    <span class="k">def</span> <span class="nf">writeall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">codefolder</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Writes all the unit test executables that are new or modified</span>
+<span class="sd">        as well as the makefiles for all subroutines in all modules.&quot;&quot;&quot;</span>
+        <span class="c1">#The test generator already loops over all modules in the code</span>
+        <span class="c1">#parser and does all the heavy-lifting. We need to pre-load any</span>
+        <span class="c1">#modules that we are interested in testing. Only those loaded</span>
+        <span class="c1">#when write() is first called will have their tests processed.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_codefolder</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">codefolder</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compare_templates</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">compare_templates</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_compare_templates</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">compare_templates</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_codefolder</span><span class="p">,</span> <span class="s2">&quot;templates/&quot;</span><span class="p">)</span>
+
+        <span class="c1">#We will load all the modules in the code folder specified and</span>
+        <span class="c1">#then run the test generator.</span>
+        <span class="n">files</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">scan_path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_codefolder</span><span class="p">,</span> <span class="n">files</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">filepath</span> <span class="o">=</span> <span class="n">files</span><span class="p">[</span><span class="n">f</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+        <span class="c1">#Now that we have loaded all the codefiles in the path, we can</span>
+        <span class="c1">#generate the unittest executables</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tgenerator</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_codefolder</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_written</span> <span class="o">=</span> <span class="bp">True</span></div>
+
+<div class="viewcode-block" id="UnitTester.runall"><a class="viewcode-back" href="../../../testing.html#fortpy.testing.tester.UnitTester.runall">[docs]</a>    <span class="k">def</span> <span class="nf">runall</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">compiler</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compiles and runs each new or modified unit test executable.</span>
+<span class="sd">        After the run is complete, the outcomes are checked for consistency.</span>
+
+<span class="sd">        :arg compiler: the name of the compiler in &#39;compilers.xml&#39; to use.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#We will likely need a file comparer for the outcomes testing</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comparer</span> <span class="o">=</span> <span class="n">FileComparer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fortpy_templates</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">compare_templates</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_written</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_compiler</span><span class="p">(</span><span class="n">compiler</span><span class="p">)</span>
+
+            <span class="kn">from</span> <span class="nn">fortpy.testing.compilers</span> <span class="kn">import</span> <span class="n">replace</span>
+            <span class="kn">from</span> <span class="nn">fortpy.testing.auxiliary</span> <span class="kn">import</span> <span class="n">generate</span>
+            <span class="kn">from</span> <span class="nn">fortpy.utility</span> <span class="kn">import</span> <span class="n">symlink</span>
+            <span class="kn">from</span> <span class="nn">fortpy.code</span> <span class="kn">import</span> <span class="n">config</span>
+            <span class="c1">#Run them each individually and return a dictionary of all the</span>
+            <span class="c1">#test results</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">fpyauxs</span><span class="o">=</span> <span class="p">[]</span>            
+            <span class="k">for</span> <span class="n">composite_id</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tgenerator</span><span class="o">.</span><span class="n">tests_to_run</span><span class="p">:</span>
+                <span class="n">identifier</span><span class="p">,</span> <span class="n">testid</span> <span class="o">=</span> <span class="n">composite_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">)</span>
+                <span class="c1">#Compile and copy fpy_auxiliary if it isn&#39;t in the identifiers directory yet.</span>
+                <span class="n">source</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">libraryroot</span><span class="p">(</span><span class="n">identifier</span><span class="p">),</span> <span class="n">identifier</span><span class="p">)</span>
+                <span class="n">target</span> <span class="o">=</span> <span class="n">replace</span><span class="p">(</span><span class="n">source</span> <span class="o">+</span> <span class="s2">&quot;.[c]&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">)</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+                    <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">mkdir</span>
+                    <span class="n">mkdir</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span><span class="o">.</span><span class="n">autoclass</span> <span class="ow">and</span> <span class="n">identifier</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">fpyauxs</span><span class="p">:</span>
+                    <span class="n">code</span><span class="p">,</span> <span class="n">success</span><span class="p">,</span> <span class="n">fpytarget</span> <span class="o">=</span> <span class="n">generate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_codefolder</span><span class="p">,</span>
+                                                        <span class="bp">self</span><span class="o">.</span><span class="n">libraryroot</span><span class="p">(</span><span class="n">identifier</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">,</span>
+                                                        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">profile</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">strict</span><span class="p">)</span>
+                    <span class="n">sopath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fpytarget</span><span class="p">,</span> <span class="s2">&quot;fpy_aux.so&quot;</span><span class="p">)</span>
+                    <span class="n">sotarget</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s2">&quot;fpy_aux.so&quot;</span><span class="p">)</span>
+                    <span class="n">mpath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fpytarget</span><span class="p">,</span> <span class="s2">&quot;fpy_auxiliary.mod&quot;</span><span class="p">)</span>
+                    <span class="n">mtarget</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s2">&quot;fpy_auxiliary.mod&quot;</span><span class="p">)</span>
+                    <span class="n">symlink</span><span class="p">(</span><span class="n">sopath</span><span class="p">,</span> <span class="n">sotarget</span><span class="p">)</span>
+                    <span class="n">symlink</span><span class="p">(</span><span class="n">mpath</span><span class="p">,</span> <span class="n">mtarget</span><span class="p">)</span>
+                    <span class="n">fpyauxs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">identifier</span><span class="p">)</span>
+                
+                <span class="n">oneresult</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_single</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="n">testid</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">oneresult</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+                    <span class="n">result</span><span class="p">[</span><span class="n">composite_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">oneresult</span>
+
+            <span class="k">return</span> <span class="n">result</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;you can&#39;t run tests until the executables have been written. Exiting.&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">None</span></div>
+       
+    <span class="k">def</span> <span class="nf">_run_single</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="p">,</span> <span class="n">testid</span><span class="p">,</span> <span class="n">staging</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Runs all unit test cases for the specified identifier.&quot;&quot;&quot;</span>
+        <span class="c1">#Just initialize a result object and populate its properties</span>
+        <span class="c1">#using the various _run_* methods.</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">TestResult</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="n">testid</span><span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">compiled</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_run_compile</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="n">testid</span><span class="p">,</span> <span class="n">staging</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">compiled</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_run_exec</span><span class="p">(</span><span class="n">identifier</span><span class="p">,</span> <span class="n">testid</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tests</span><span class="p">(</span><span class="n">identifier</span><span class="p">)[</span><span class="n">testid</span><span class="p">]</span><span class="o">.</span><span class="n">runchecks</span><span class="p">:</span>
+            <span class="c1">#Only return a test result if the checks were actually run.</span>
+            <span class="k">return</span> <span class="n">result</span>
+        
+    <span class="k">def</span> <span class="nf">_run_compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="p">,</span> <span class="n">testid</span><span class="p">,</span> <span class="n">staging</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compiles the executable that was created for the specified identifier,</span>
+<span class="sd">        returns True if the compile was successful.&quot;&quot;&quot;</span>
+        <span class="c1">#We need to make sure that the fpy_auxiliary .mod and .o files are available</span>
+        <span class="c1">#if the test uses auto-class functionality.</span>
+        <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">path</span>
+        <span class="kn">from</span> <span class="nn">fortpy.testing.compilers</span> <span class="kn">import</span> <span class="n">compile_general</span>          
+        <span class="n">msg</span><span class="o">.</span><span class="n">blank</span><span class="p">()</span>
+        <span class="n">code</span><span class="p">,</span> <span class="n">success</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">compile_general</span><span class="p">(</span><span class="n">staging</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">,</span> <span class="n">testid</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">debug</span><span class="p">,</span>
+                                                <span class="bp">self</span><span class="o">.</span><span class="n">profile</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quiet</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">strict</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">success</span><span class="p">:</span>
+            <span class="c1">#There are 21 lines in the compile.log file when everything runs correctly</span>
+            <span class="c1">#Overwrite code with a bad exit value since we have some other problems.</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="mi">1</span>
+
+            <span class="c1">#If the executable exists, we could still prompt them to run it (in case the</span>
+            <span class="c1">#additional lines were just warnings).</span>
+            <span class="n">exe</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="s2">&quot;{}.x&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">testid</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">exe</span><span class="p">):</span>
+                <span class="n">choice</span> <span class="o">=</span> <span class="nb">raw_input</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Would you still like to run the executable? &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                <span class="n">code</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="s2">&quot;y&quot;</span> <span class="ow">in</span> <span class="n">choice</span> <span class="k">else</span> <span class="n">code</span>
+                <span class="k">if</span> <span class="s2">&quot;n&quot;</span> <span class="ow">in</span> <span class="n">choice</span><span class="p">:</span>
+                    <span class="n">msg</span><span class="o">.</span><span class="n">err</span><span class="p">(</span><span class="s2">&quot;Unit testing terminated by user.&quot;</span><span class="p">)</span>
+                    <span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">msg</span><span class="o">.</span><span class="n">err</span><span class="p">(</span><span class="s2">&quot;Could not compile executable {}.x&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">testid</span><span class="p">))</span>
+                <span class="nb">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">code</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">target</span>
+
+    <span class="k">def</span> <span class="nf">_run_exec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">identifier</span><span class="p">,</span> <span class="n">testid</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Runs the executable for unit test for the specified identifier</span>
+<span class="sd">        for each of the outcomes specified in the doctags.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">tests</span><span class="p">(</span><span class="n">identifier</span><span class="p">)[</span><span class="n">testid</span><span class="p">]</span><span class="o">.</span><span class="n">execute</span><span class="p">:</span>
+            <span class="c1">#We don&#39;t want to carry on with this execution at all. User-specified</span>
+            <span class="c1">#override.</span>
+            <span class="k">return</span>
+
+        <span class="c1">#Get the home path of the executable. A sub-folder for tests</span>
+        <span class="c1">#needs to be created. For tests that have input and output files</span>
+        <span class="c1">#a home/tests/testid.case folder gets created and the source files</span>
+        <span class="c1">#get copied.</span>
+
+        <span class="c1">#Create the folder for staging the tests.</span>
+        <span class="n">tests</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="s2">&quot;tests&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">tests</span><span class="p">):</span>
+            <span class="n">mkdir</span><span class="p">(</span><span class="n">tests</span><span class="p">)</span>
+        
+        <span class="c1">#Now we need determine which tests to run from the outcomes and folder tags.</span>
+        <span class="n">kmodule</span><span class="p">,</span> <span class="n">kmethod</span> <span class="o">=</span> <span class="n">identifier</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+        <span class="n">module</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="n">kmodule</span><span class="p">]</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="n">module</span><span class="o">.</span><span class="n">executables</span><span class="p">[</span><span class="n">kmethod</span><span class="p">]</span>
+
+        <span class="c1">#Get the absolute path to the executable that we created</span>
+        <span class="n">exepath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="s2">&quot;{}.x&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">testid</span><span class="p">))</span>
+
+        <span class="c1">#Since we have already split out all the tests that need to be run and </span>
+        <span class="c1">#we have a &#39;testid&#39; for the current test to run, just run that test.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_run_folder</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tests</span><span class="p">(</span><span class="n">identifier</span><span class="p">)[</span><span class="n">testid</span><span class="p">],</span> <span class="n">tests</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">exepath</span><span class="p">,</span>
+                         <span class="bp">self</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">identifier</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">tests</span><span class="p">(</span><span class="n">identifier</span><span class="p">)[</span><span class="n">testid</span><span class="p">]</span><span class="o">.</span><span class="n">runchecks</span><span class="p">:</span>
+            <span class="k">return</span>
+        
+        <span class="c1">#Now that we have run all of the executables, we can analyze their</span>
+        <span class="c1">#output to see if it matches.</span>
+        <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+        <span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">cases</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">quiet</span> <span class="k">else</span> <span class="n">result</span><span class="o">.</span><span class="n">cases</span>
+        <span class="k">for</span> <span class="n">case</span> <span class="ow">in</span> <span class="n">pbar</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">quiet</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s2">&quot;.&quot;</span> <span class="ow">in</span> <span class="n">case</span><span class="p">:</span>
+                    <span class="n">pbar</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="s2">&quot;Checking {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">case</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]))</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1">#The default case doesn&#39;t have any extra id.</span>
+                    <span class="n">pbar</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="s2">&quot;Checking {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">case</span><span class="p">))</span>
+                
+            <span class="n">xres</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">cases</span><span class="p">[</span><span class="n">case</span><span class="p">]</span>
+            <span class="c1">#This next step generates large representations in memory of all the output</span>
+            <span class="c1">#files that need to be compared. If we don&#39;t clean it up here, then a test</span>
+            <span class="c1">#with thousands of cases could use lots of memory. Or if you have 100 executables</span>
+            <span class="c1">#each with 1000 test cases, then you have 100,000 representations of model and</span>
+            <span class="c1">#actual output files, with their differences, etc.</span>
+            <span class="n">xres</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+
+            <span class="c1">#Now, we should dereference all the test results for this case since we have</span>
+            <span class="c1">#the percent matches and the actual comparisions should be written out to</span>
+            <span class="c1">#*.compare files in the individual test case directories.</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="n">case</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_run_folder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">testspec</span><span class="p">,</span> <span class="n">testsfolder</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">exepath</span><span class="p">,</span> <span class="n">testwriter</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Runs the executable for the sources in the folder doctag.</span>
+
+<span class="sd">        :arg testspec: a TestSpecification instance for this unit test.</span>
+<span class="sd">        :arg testsfolder: the path to the unit tests unique staging folder.</span>
+<span class="sd">        :arg result: a TestResult instance that execution results can be</span>
+<span class="sd">          added to as they complete.</span>
+<span class="sd">        :arg expath: the full path to the executable to run in the folder.</span>
+<span class="sd">        :arg testwriter: the MethodWriter instance that generated the test</span>
+<span class="sd">          that will be run.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#We can use the same outcome tester afterwards for all of the cases.</span>
+        <span class="n">tester</span> <span class="o">=</span> <span class="n">OutcomeTester</span><span class="p">(</span><span class="n">testspec</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_codefolder</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">comparer</span><span class="p">,</span> 
+                               <span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">)</span>
+
+        <span class="c1">#The execution can either be case-based or once-off.</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">okay</span><span class="p">(</span><span class="s2">&quot;Executing {}.x in {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">testspec</span><span class="o">.</span><span class="n">identifier</span><span class="p">,</span> <span class="n">testsfolder</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">testspec</span><span class="o">.</span><span class="n">cases</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">casedict</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">runlist</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">case</span> <span class="ow">in</span> <span class="n">testspec</span><span class="o">.</span><span class="n">cases</span><span class="p">:</span>
+                <span class="c1">#Make a separate directory for the case and copy all its inputs.</span>
+                <span class="n">caseid</span> <span class="o">=</span> <span class="s2">&quot;{}.{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">testspec</span><span class="o">.</span><span class="n">identifier</span><span class="p">,</span> <span class="n">case</span><span class="p">)</span>
+                <span class="n">casepath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">testsfolder</span><span class="p">,</span> <span class="n">caseid</span><span class="p">)</span>
+                <span class="n">casedict</span><span class="p">[</span><span class="n">case</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">caseid</span><span class="p">,</span> <span class="n">casepath</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">caseid</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">cases</span><span class="p">:</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">warnings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Duplicate CASES specified for unit testing:&quot;</span> <span class="o">+</span> 
+                                           <span class="s2">&quot; {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">caseid</span><span class="p">))</span>
+                    <span class="k">continue</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_initialize_testpath</span><span class="p">(</span><span class="n">testspec</span><span class="p">,</span> <span class="n">testwriter</span><span class="p">,</span> <span class="n">casepath</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">caseid</span><span class="p">,</span> <span class="n">case</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+                    <span class="n">msg</span><span class="o">.</span><span class="n">err</span><span class="p">(</span><span class="s2">&quot;Error initializing &#39;{}&#39; in &#39;{}&#39;.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">testspec</span><span class="o">.</span><span class="n">identifier</span><span class="p">,</span> <span class="n">testsfolder</span><span class="p">))</span>
+                    <span class="k">raise</span>
+                <span class="n">runlist</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">casepath</span><span class="p">,</span> <span class="n">exepath</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quiet</span><span class="p">,</span> <span class="n">case</span><span class="p">))</span>
+                
+            <span class="c1">#We need to run the executable multiple times, once for each case</span>
+            <span class="c1">#Each case has input files specified relative to the code folder.</span>
+            <span class="n">execodes</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">nprocs</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">pbar</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">testspec</span><span class="o">.</span><span class="n">cases</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">quiet</span> <span class="k">else</span> <span class="n">testspec</span><span class="o">.</span><span class="n">cases</span>
+                <span class="k">for</span> <span class="n">case</span> <span class="ow">in</span> <span class="n">pbar</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">quiet</span><span class="p">:</span>
+                        <span class="n">pbar</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="s2">&quot;Running {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">case</span><span class="p">))</span>
+                    <span class="n">caseid</span><span class="p">,</span> <span class="n">casepath</span> <span class="o">=</span> <span class="n">casedict</span><span class="p">[</span><span class="n">case</span><span class="p">]</span>
+                    <span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span> <span class="o">=</span> <span class="n">_execute_testpath</span><span class="p">(</span><span class="n">casepath</span><span class="p">,</span> <span class="n">exepath</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quiet</span><span class="p">,</span> <span class="n">case</span><span class="p">)</span>
+                    <span class="n">execodes</span><span class="p">[</span><span class="n">case</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">start_time</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
+                <span class="n">xpool</span> <span class="o">=</span> <span class="n">Pool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nprocs</span><span class="p">)</span>
+                <span class="n">chunks</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">casedict</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">nprocs</span> <span class="c1">#Integer division on purpose.</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">quiet</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">xpool</span><span class="o">.</span><span class="n">imap_unordered</span><span class="p">(</span><span class="n">_parallel_execute</span><span class="p">,</span> <span class="n">runlist</span><span class="p">,</span> <span class="n">chunks</span><span class="p">)):</span>
+                        <span class="n">execodes</span><span class="p">[</span><span class="n">case</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">start_time</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span> <span class="ow">in</span> <span class="n">xpool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">_parallel_execute</span><span class="p">,</span> <span class="n">runlist</span><span class="p">,</span> <span class="n">chunks</span><span class="p">):</span>
+                        <span class="n">execodes</span><span class="p">[</span><span class="n">case</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">start_time</span><span class="p">)</span>
+                
+            <span class="k">for</span> <span class="n">case</span><span class="p">,</span> <span class="n">casevals</span> <span class="ow">in</span> <span class="n">casedict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">caseid</span><span class="p">,</span> <span class="n">casepath</span> <span class="o">=</span> <span class="n">casevals</span>
+                <span class="n">code</span><span class="p">,</span> <span class="n">start_time</span> <span class="o">=</span> <span class="n">execodes</span><span class="p">[</span><span class="n">case</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_finalize_testpath</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">caseid</span><span class="p">,</span> <span class="n">casepath</span><span class="p">,</span> <span class="n">exepath</span><span class="p">,</span> <span class="n">testspec</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span>
+                                        <span class="n">start_time</span><span class="p">,</span> <span class="n">tester</span><span class="p">,</span> <span class="n">case</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1">#Create a folder for this test specification to run in.</span>
+            <span class="n">testpath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">testsfolder</span><span class="p">,</span> <span class="n">testspec</span><span class="o">.</span><span class="n">identifier</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_initialize_testpath</span><span class="p">(</span><span class="n">testspec</span><span class="p">,</span> <span class="n">testwriter</span><span class="p">,</span> <span class="n">testpath</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">testspec</span><span class="o">.</span><span class="n">identifier</span><span class="p">)</span>
+            <span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span> <span class="o">=</span> <span class="n">_execute_testpath</span><span class="p">(</span><span class="n">testpath</span><span class="p">,</span> <span class="n">exepath</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">quiet</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_finalize_testpath</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">testspec</span><span class="o">.</span><span class="n">identifier</span><span class="p">,</span> <span class="n">testpath</span><span class="p">,</span> <span class="n">exepath</span><span class="p">,</span> <span class="n">testspec</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span>
+                                    <span class="n">start_time</span><span class="p">,</span> <span class="n">tester</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_initialize_testpath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">testspec</span><span class="p">,</span> <span class="n">testwriter</span><span class="p">,</span> <span class="n">testpath</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">caseid</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sets up the directories with input files etc. so that the executable</span>
+<span class="sd">        can execute.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">testpath</span><span class="p">):</span>
+            <span class="n">mkdir</span><span class="p">(</span><span class="n">testpath</span><span class="p">)</span>
+
+        <span class="c1">#Copy across all the input files we need to run.</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">testspec</span><span class="o">.</span><span class="n">inputs</span><span class="p">:</span>
+            <span class="n">i</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_codefolder</span><span class="p">,</span> <span class="n">testpath</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">,</span>
+                   <span class="bp">self</span><span class="o">.</span><span class="n">tgenerator</span><span class="o">.</span><span class="n">xgenerator</span><span class="o">.</span><span class="n">libraryroot</span><span class="p">)</span>
+        <span class="c1">#Also copy any assignment file dependencies.</span>
+        <span class="n">testwriter</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_codefolder</span><span class="p">,</span> <span class="n">testpath</span><span class="p">,</span> <span class="n">case</span><span class="p">,</span> <span class="n">testspec</span><span class="o">.</span><span class="n">identifier</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">)</span>
+        <span class="c1">#Clean the testing folder to remove any target variable output files</span>
+        <span class="c1">#from any earlier test runs.</span>
+        <span class="n">testspec</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="n">testpath</span><span class="p">)</span>
+        <span class="n">testwriter</span><span class="o">.</span><span class="n">setup</span><span class="p">(</span><span class="n">testspec</span><span class="o">.</span><span class="n">identifier</span><span class="p">,</span> <span class="n">testpath</span><span class="p">)</span>
+
+        <span class="c1">#If the testspec needs auto-class support, write the case to file.</span>
+        <span class="k">if</span> <span class="n">testspec</span><span class="o">.</span><span class="n">autoclass</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">testpath</span><span class="p">,</span> <span class="s2">&quot;fpy_case&quot;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&quot;{}&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">case</span><span class="p">))</span>
+        
+        <span class="c1">#Save the path to the folder for execution in the result.</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">paths</span><span class="p">[</span><span class="n">caseid</span><span class="p">]</span> <span class="o">=</span> <span class="n">testpath</span>
+
+    <span class="k">def</span> <span class="nf">_finalize_testpath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">caseid</span><span class="p">,</span> <span class="n">testpath</span><span class="p">,</span> <span class="n">exepath</span><span class="p">,</span> <span class="n">testspec</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span>
+                           <span class="n">start_time</span><span class="p">,</span> <span class="n">tester</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Cleans up and sets results for the test that ran.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">case</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">cases</span><span class="p">[</span><span class="n">caseid</span><span class="p">]</span> <span class="o">=</span> <span class="n">ExecutionResult</span><span class="p">(</span><span class="n">testpath</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">clock</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">tester</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">cases</span><span class="p">[</span><span class="n">caseid</span><span class="p">]</span> <span class="o">=</span> <span class="n">ExecutionResult</span><span class="p">(</span><span class="n">testpath</span><span class="p">,</span> <span class="n">code</span><span class="p">,</span> <span class="n">clock</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">tester</span><span class="p">,</span> <span class="n">case</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_write_success</span><span class="p">(</span><span class="n">testpath</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span>
+
+        <span class="c1">#See if we need to run the post-execution profiling</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">profile</span><span class="p">:</span>
+            <span class="n">profiling</span><span class="o">.</span><span class="n">profile</span><span class="p">(</span><span class="n">testpath</span><span class="p">,</span> <span class="n">testspec</span><span class="o">.</span><span class="n">testgroup</span><span class="o">.</span><span class="n">method_fullname</span><span class="p">,</span> 
+                              <span class="n">exepath</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">compiler</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">_write_success</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">testpath</span><span class="p">,</span> <span class="n">code</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Creates a SUCCESS file in the specified testpath if code==0 that has</span>
+<span class="sd">        the time of the last execution. If code != 0, any existing SUCCESS file</span>
+<span class="sd">        is deleted.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">sucpath</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">testpath</span><span class="p">,</span> <span class="s2">&quot;SUCCESS&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">code</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">sucpath</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%c</span><span class="s2">&quot;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">sucpath</span><span class="p">):</span>
+                <span class="n">remove</span><span class="p">(</span><span class="n">sucpath</span><span class="p">)</span></div>
+
+<span class="k">def</span> <span class="nf">_parallel_execute</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">_execute_testpath</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>               
+<span class="k">def</span> <span class="nf">_execute_testpath</span><span class="p">(</span><span class="n">testpath</span><span class="p">,</span> <span class="n">exepath</span><span class="p">,</span> <span class="n">quiet</span><span class="p">,</span> <span class="n">case</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Executes the unit test in the specified testing folder for &#39;case&#39;.&quot;&quot;&quot;</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">clock</span><span class="p">()</span>                              
+    <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">waitpid</span><span class="p">,</span> <span class="n">path</span>
+    <span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
+    <span class="n">dyld</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">exepath</span><span class="p">)</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="s2">&quot;cd {}; DYLD_LIBRARY_PATH={} {} &gt; .fpy.x.out&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">testpath</span><span class="p">,</span> <span class="n">dyld</span><span class="p">,</span> <span class="n">exepath</span><span class="p">)</span>
+    <span class="n">prun</span> <span class="o">=</span> <span class="n">Popen</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">executable</span><span class="o">=</span><span class="s2">&quot;/bin/bash&quot;</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="n">PIPE</span><span class="p">,</span> <span class="n">close_fds</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">waitpid</span><span class="p">(</span><span class="n">prun</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>        
+    <span class="c1">#else: #We don&#39;t need to get these lines since we are purposefully redirecting them.</span>
+    <span class="n">error</span> <span class="o">=</span> <span class="n">prun</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">quiet</span><span class="p">:</span>
+            <span class="n">msg</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;With Executable at {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">exepath</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">msg</span><span class="o">.</span><span class="n">err</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">  &#39;</span><span class="o">+</span><span class="s1">&#39;  &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">error</span><span class="p">))</span>
+    <span class="n">code</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+    <span class="n">prun</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="p">(</span><span class="n">case</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span>
+        
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">fortpy 1.7.5 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2016, Conrad W. Rosenbrock.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.4.
+    </div>
+  </body>
+</html>
