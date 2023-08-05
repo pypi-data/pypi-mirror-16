@@ -1,0 +1,10 @@
+aiodownload/__init__.py,sha256=PMR1SRWzp8l5PZpkd5cbYauQ7tLu6UuK37T74nI-94M,341
+aiodownload/aiodownload.py,sha256=CM4ugtCeFMXsEU7Zi2aqTkRpwOEZzrqsuJAsYwNtZQM,5065
+aiodownload/api.py,sha256=KH_572-8hdXNqrKsEyueGChkVL6TGp2fLpUFg0pqP-0,729
+aiodownload/strategy.py,sha256=pGipdDq3lm5Cpon1ukTF8l8idTT6vJeFzfmAUSCoRJk,1308
+aiodownload-0.1.1.dist-info/DESCRIPTION.rst,sha256=c0AhcfNcn674RGbLW0GtIVFLzgqatsC1luDEdSd0L1g,16
+aiodownload-0.1.1.dist-info/METADATA,sha256=cOjnCfsD5MNJOgVtZwcqkkdphLKAZj_vRW5SOLiM2ak,276
+aiodownload-0.1.1.dist-info/RECORD,,
+aiodownload-0.1.1.dist-info/WHEEL,sha256=R2e8g-hqIL-PW_VJX_j-pidYukYfxHlAbd69xO5VH6E,98
+aiodownload-0.1.1.dist-info/metadata.json,sha256=9GMbBD88IWErQUO86rjFDSO0HopqS6iP1cJ6h_zRVAo,500
+aiodownload-0.1.1.dist-info/top_level.txt,sha256=YxW0BvdrLxC1Ja8515A2ACSd9ZB3Tqk5PH9oKwqZJkY,12
