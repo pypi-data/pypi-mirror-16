@@ -1,0 +1,90 @@
+Metadata-Version: 1.1
+Name: x10_any
+Version: 0.0.4
+Summary: Issue x10 commands via CM17A Firecracker or Mochad (CM15A RF/PL and CM19A RF)
+Home-page: https://github.com/clach04/x10_any
+Author: clach04
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: # x10_any
+        
+        Wrapper module to control X10 devices.
+        
+        [ ![Codeship Status for clach04/x10_any](https://codeship.com/projects/f7535da0-2dd5-0134-789e-12bd9e093a4a/status?branch=master)](https://codeship.com/projects/163630)
+        
+        ### Table of Contents
+        * [Information](#information)
+        * [Getting Started](#getting-started)
+        
+        
+        ## Information
+        
+        Initial focus is supporting:
+          * Mochad (or compatible) servers to control
+              * https://sourceforge.net/projects/mochad/ for CM15A RF (radio frequency) and PL (power line) controller and the CM19A RF controller
+              * https://bitbucket.org/clach04/mochad_firecracker/ works under Windows and Linux and can control CM17A serial Firecracker
+          * CM17A serial Firecracker X10 unit, builtin support fot CM17A over regular serial port. For control via GPIO on Raspberry Pi manually install:
+              * https://bitbucket.org/cdelker/python-x10-firecracker-interface can be used on Raspberry Pi to control GPIO, not (yet) Python 3 compatible and does not support ALL on/off
+        
+        Implemented in pure Python. Known to work with:
+        
+          * Python 2.7
+          * Python 3.5
+        
+        ## Getting Started
+        
+        To get started and install the latest version from
+        [PyPi](https://pypi.python.org/pypi/x10_any/)
+        
+            pip install x10_any
+        
+        If installing/working with a source checkout issue:
+        
+            pip install -r requirements.txt
+        
+        ### Serial Port Permissions under Linux
+        
+        Under Linux most users do not have serial port permissions,
+        either:
+        
+          * give user permission (e.g. add to group "dialout") - RECOMMENDED
+          * run this demo as root - NOT recommended!
+        
+        Giver user dialout (serial port) access:
+        
+            # NOTE requires logout/login to take effect
+            sudo usermod -a -G dialout $USER
+        
+        ### Sample
+        
+        Mochad
+        
+            import x10_any
+            
+            x10_any.default_logger.setLevel(x10_any.logging.DEBUG) # DEBUG
+            
+            dev = x10_any.MochadDriver()
+            dev.x10_command('A', 1, x10_any.ON)
+            dev.x10_command('A', 1, x10_any.OFF)
+        
+        Firecracker
+        
+            import x10_any
+            
+            x10_any.default_logger.setLevel(x10_any.logging.DEBUG) # DEBUG
+            
+            dev = x10_any.FirecrackerDriver()
+            #dev = x10_any.FirecrackerDriver('COM11')
+            #dev = x10_any.FirecrackerDriver('/dev/ttyUSB0')
+            dev.x10_command('A', 1, x10_any.ON)
+            dev.x10_command('A', 1, x10_any.OFF)
+        
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Home Automation
