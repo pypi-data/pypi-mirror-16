@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+treeop/__init__.py
+treeop/applyto.py
+treeop/error.py
+treeop/mapto.py
+treeop/transpose.py
+treeop.egg-info/PKG-INFO
+treeop.egg-info/SOURCES.txt
+treeop.egg-info/dependency_links.txt
+treeop.egg-info/top_level.txt
