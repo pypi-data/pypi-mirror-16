@@ -1,0 +1,42 @@
+Metadata-Version: 2.0
+Name: DPlayer
+Version: 1.0.1
+Summary: A music player
+Home-page: https://github.com/DanislavKirov/DPlayer
+Author: Danislav Kirov
+Author-email: danislav.kirov@gmail.com
+License: GNU GPL v2
+Keywords: music player
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Multimedia :: Sound/Audio :: Players
+Requires-Dist: PyQt5 (==5.6)
+Requires-Dist: mutagen (==1.33.2)
+Requires-Dist: pydub (==0.16.4)
+Requires-Dist: requests (==2.10.0)
+Requires-Dist: sip (==4.18)
+
+# DPlayer
+'One player to rule them all.'
+
+The project represents a music player, or shall I say D(the)Player, written in Python3.5. 
+Functionalities:
+  - Play / Pause / Stop buttons
+  - Next / Previous buttons
+  - Volume / Time sliders
+  - Add song(s) / folder
+  - Remove song(s)
+  - Save / Load / Clear playlist
+  - Remember last listened playlist
+  - Shuflle
+  - Repeat song / playlist
+  - Sort by id3 tags
+  - Search for lyrics online
+  - Search for artist / album info online
+
+
