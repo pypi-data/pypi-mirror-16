@@ -1,0 +1,26 @@
+Metadata-Version: 1.1
+Name: renrensdk
+Version: 1.5
+Summary: Renren Python3 SDK, especially for social network research.
+Home-page: https://github.com/lazydingding/renrensdk
+Author: Luping Yu
+Author-email: lazydingding@gmail.com
+License: Apache
+Download-URL: https://github.com/lazydingding/renrensdk
+Description: This is a Python3 SDK for Renren API, designed for online social network research.
+        
+        You can find docs and source codes at the Github repository:
+        
+        https://github.com/rellik6/renrenpy
+        
+        Please feel free to report any bugs and make suggestions.
+        
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
