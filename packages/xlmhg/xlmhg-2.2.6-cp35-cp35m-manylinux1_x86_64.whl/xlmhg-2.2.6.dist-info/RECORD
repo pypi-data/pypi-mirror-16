@@ -1,0 +1,11 @@
+xlmhg-2.2.6.dist-info/RECORD,,
+xlmhg-2.2.6.dist-info/top_level.txt,sha256=osYafJxINjXWbVF1jkgp5BiInmc7F64BUkFXgKEdKBw,6
+xlmhg-2.2.6.dist-info/METADATA,sha256=iq3qMsi0kBf9Eygp81ZjHR_MyLjE5YIIjvT8lkiyiL0,5733
+xlmhg-2.2.6.dist-info/metadata.json,sha256=Vq0SR-Vjbcv5wd3xU7gcsABvHB2sjuX1g-fn1bUXVIg,1143
+xlmhg-2.2.6.dist-info/WHEEL,sha256=FO-U_qE3v9UVkqkcibgzGqYSuGIvACgOboyXHbsAhvw,109
+xlmhg-2.2.6.dist-info/DESCRIPTION.rst,sha256=WVR7Pm_2mGVrQ1Ey4CyfxwJMO969P69dMvC1faMp8ms,4851
+xlmhg/test.py,sha256=wQsOw5x6UNeMSENakQY3CWP6_4KILBTO1cuB6Dd2IFA,9569
+xlmhg/__init__.py,sha256=ShwawkMEIAWCIa4tfHXDUvq5pB7eM84h4OW7aNPFJfY,279
+xlmhg/mhg.py,sha256=o8vM_25ViHpR6D9jBn-eMMXzy0Q_wYpUuKKc8lOGIWY,11609
+xlmhg/result.py,sha256=lR0hyCcjBi4Bt6ju9zouS0Ql7xssuCMgSXVndBqwsaQ,3754
+xlmhg/mhg_cython.cpython-35m-x86_64-linux-gnu.so,sha256=s83HgSUa1LEYtwHSpZbo8PpsOg4Xgy6U6TGWM8JWMVE,968158
