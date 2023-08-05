@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: gt-py
+Version: 1.0
+Summary: Python library for GovTrack.us API
+Home-page: https://github.com/peixian/gt-py
+Author: Peixian Wang
+Author-email: peixian@driftingicebergs.com
+License: MIT
+Download-URL: https://github.com/peixian/gt-py/archive/1.0.tar.gz
+Description: UNKNOWN
+Keywords: api,python,govtrack,gt
+Platform: UNKNOWN
