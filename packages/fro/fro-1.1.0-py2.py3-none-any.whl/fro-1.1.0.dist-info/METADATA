@@ -1,0 +1,30 @@
+Metadata-Version: 2.0
+Name: fro
+Version: 1.1.0
+Summary: A module for parsing string representations of objects
+Home-page: https://github.com/ethantkoenig/fro
+Author: Ethan Koenig
+Author-email: ethantkoenig@gmail.com
+License: MIT
+Keywords: fro parsing object representations
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Requires-Dist: future
+
+Fro
+===
+
+Fro is a Python module for parsing strings and text into Python objects. It
+offers a concise, declarative, and expressive interface for mapping strings to
+data, abstracting away boilerplate code and making it easy to quickly write
+bug-free parsers.
+
+Fro is compatible with Python 2.7+ and Python 3.x, and can be installed via pip.
+Documentation for the module can be found at `<http://pythonhosted.org/fro>`_.
+
+
