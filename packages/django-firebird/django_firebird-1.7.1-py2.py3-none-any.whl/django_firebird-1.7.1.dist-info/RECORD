@@ -1,0 +1,16 @@
+django_firebird-1.7.1.dist-info/DESCRIPTION.rst,sha256=qbh1knsiQxmrE-b8nrxYRtSsYO89LTWkPpvM3dRMN4s,2969
+django_firebird-1.7.1.dist-info/LICENSE.txt,sha256=woKa0PRCV6-VI2o5rCAM1rrHArjyNw1GpVrSiuQx5oo,1553
+django_firebird-1.7.1.dist-info/METADATA,sha256=XFpvBBS9KLzbehkgtzb2XWWL-oTy0K34WFwAyhgxN-Q,3917
+django_firebird-1.7.1.dist-info/RECORD,,
+django_firebird-1.7.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+django_firebird-1.7.1.dist-info/metadata.json,sha256=hC5lQ4GutHF9I5wilGfWstZoqjbdz7U7yYOMxDUua5c,1042
+django_firebird-1.7.1.dist-info/top_level.txt,sha256=N4Gw4cmu0RmoDDexl12jzkFggSpBGYYdf0HwZenEza4,9
+firebird/__init__.py,sha256=JNGEUCjylfTIfMzEZrJNn125Eipcpj-nwgTDaAhPXs0,102
+firebird/base.py,sha256=wnhk3CS8HSkFTdbmr6plcbf9C5nXlcB6MxLAIlZvdaM,10979
+firebird/client.py,sha256=yOSZge9iBCST0rlnxKLutQ6WbjQkiRXVL-jMnl7L1io,968
+firebird/compiler.py,sha256=NR1DfswqsI1sJSXccdpNQKMTgZyXJwHQSXmUdtuUAjw,2119
+firebird/creation.py,sha256=JwRyftjcv595rYou7ZNRO7JUbsIemTEKhp9NLJBtl5o,6187
+firebird/introspection.py,sha256=U7mNTkqcDlagMyfAIw_Q9Qnk1SoO-BX73m_YDYAj8T4,10209
+firebird/operations.py,sha256=DKbkQMkPwLBP7odHjVkrZ41nrAiF4ReuJTEMLxcMv8E,16380
+firebird/schema.py,sha256=LIzGDAgl86t8Nf8PAb3vUrwrZriVSnTrdv0_PO5AHKo,18420
+firebird/version.py,sha256=bnG5V4dXHCw06EeofQC0BQZGqHWZIbgTKGlHE65wh7A,1317
