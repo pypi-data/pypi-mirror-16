@@ -1,0 +1,5 @@
+-r base.txt
+nose
+django-nose
+mock
+path.py

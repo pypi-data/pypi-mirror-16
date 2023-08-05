@@ -1,0 +1,35 @@
+Metadata-Version: 1.1
+Name: edx-django-release-util
+Version: 0.0.3
+Summary: edx-django-release-util
+Home-page: http://github.com/edx/edx-django-release-util
+Author: edX
+Author-email: oscm@edx.org
+License: AGPL
+Description: # edx-django-release-util
+        Release pipeline utilities for edX independently-deployable applications (IDAs) based on Django.
+        
+        ## Testing
+        To run tests:
+        `python manage.py test`
+        
+        ## Usage
+        To use in a Django application:
+        - Add module to requirements.txt/setup.py as a dependency *or* `pip install -e edx-django-release-util` if you have cloned the repo locally.
+        - Add to `INSTALLED_APPS`:
+        ```python
+        INSTALLED_APPS = (
+            ...
+            'release_util',
+        )
+        ```
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Environment :: Web Environment
+Classifier: Topic :: Internet
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Framework :: Django
