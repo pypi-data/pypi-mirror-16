@@ -1,0 +1,10 @@
+casepro.pods.dummy-0.2.1-py2.7-nspkg.pth,sha256=JlWOOQZMFJw2ktGrhftCcFfcnEvFPS4YSz0zxzIRUmc,687
+casepro/pods/dummy/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+casepro/pods/dummy/plugin.py,sha256=VHS3roMTCFLG_x41Ovyx3vf6T9Yqn8yEbRcUjjdYaHk,442
+casepro.pods.dummy-0.2.1.dist-info/DESCRIPTION.rst,sha256=5vuus0xul7dE78yGsIl32WHpfpSfus_kyyEQHCCumcg,104
+casepro.pods.dummy-0.2.1.dist-info/METADATA,sha256=KHdsQf4P2nbBXlnnw4gJ7fNGn19NHoRJ-JMBPBdDTak,566
+casepro.pods.dummy-0.2.1.dist-info/RECORD,,
+casepro.pods.dummy-0.2.1.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+casepro.pods.dummy-0.2.1.dist-info/metadata.json,sha256=e6s4uwbjzyM31_WZrcdJqdgXwuPGJDITRgB1sboTG6Q,629
+casepro.pods.dummy-0.2.1.dist-info/namespace_packages.txt,sha256=8Ylb1aGVMOOSyV2_plmz5U8VO0VnQGIjCpAYKKUWZ0c,13
+casepro.pods.dummy-0.2.1.dist-info/top_level.txt,sha256=zOwznPaCKmMW1D8ey7zBJ2EswLMdCZvL4I99yOdJxjI,8
