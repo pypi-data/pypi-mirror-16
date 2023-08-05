@@ -1,0 +1,15 @@
+setup.py
+disciple/__init__.py
+disciple.egg-info/PKG-INFO
+disciple.egg-info/SOURCES.txt
+disciple.egg-info/dependency_links.txt
+disciple.egg-info/not-zip-safe
+disciple.egg-info/requires.txt
+disciple.egg-info/top_level.txt
+disciple/contrib/__init__.py
+disciple/dealer/__init__.py
+disciple/dealer/balance.py
+disciple/worker/__init__.py
+disciple/worker/hard.py
+disciple/zoo/__init__.py
+disciple/zoo/drone.py
