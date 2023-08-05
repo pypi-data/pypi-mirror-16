@@ -1,0 +1,15 @@
+telegram_game/__init__.py,sha256=NRtMEY2Nv1v2c1zGXSct9eiZeB93hyH-vRfwbiZ5nkY,84
+telegram_game/api.py,sha256=WSMBF1SM4vbjCP70FDbsPIKE_poiMApXovlkxD-OVVY,8480
+telegram_game/cli.py,sha256=1G0ScOd26oVcLnnp-vz5jFp6sF7GVGZtTY4hq1EiqQQ,911
+telegram_game/dispatcher.py,sha256=Yi1xzOAgL0Rt3E9Oo7HrSH5DJiE26xI41ObtCnIEVH8,2252
+telegram_game/game.py,sha256=5NS9RSzjZ_TEmIQdcPWXfFY8m8N1hGfvOIUPTeTBO_o,1531
+telegram_game/messages.py,sha256=fX8Dq0vDtFM5mBDwWYHDLYI0PqCh9m3Hf0fbmeGUcgs,25
+telegram_game/redis_game.py,sha256=00a6UEwLgPNQrooH_SU_xVgURFIKEWpIFvjofHPUmhE,2311
+telegram_game-0.0.3.dist-info/DESCRIPTION.rst,sha256=_iC8I1kX5pLNl5mm1FymCivud0vC8tlGj9FS515r35M,117
+telegram_game-0.0.3.dist-info/METADATA,sha256=EaieaphIm43oTiUmqTdrbIx7Pc8DJMTPFY6I7VUK5Y8,460
+telegram_game-0.0.3.dist-info/RECORD,,
+telegram_game-0.0.3.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+telegram_game-0.0.3.dist-info/entry_points.txt,sha256=hpGGqKFylSszHWCfgqf3kns8EdZeHrjOz5U-J0Tn4qA,58
+telegram_game-0.0.3.dist-info/metadata.json,sha256=LgcZW8gUpEIUZVrwGm53YOp3U9PC90L6gJM7NntD4Gs,720
+telegram_game-0.0.3.dist-info/pbr.json,sha256=41T8xzOHEGWuB9CcJs1adKGYBw0ZhdrULvIk-v1G-cc,46
+telegram_game-0.0.3.dist-info/top_level.txt,sha256=MsV0OdpiLDKd5G2QNJscJaconq2ezSrzzH5sv2FtQd4,14

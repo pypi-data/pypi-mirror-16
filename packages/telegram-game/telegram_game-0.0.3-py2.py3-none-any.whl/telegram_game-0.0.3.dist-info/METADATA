@@ -1,0 +1,19 @@
+Metadata-Version: 2.0
+Name: telegram-game
+Version: 0.0.3
+Summary: Asyncio telegram bot framework for games
+Home-page: https://github.com/ei-grad/telegram-game
+Author: Andrew Grigorev
+Author-email: andrew@ei-grad.ru
+License: MIT
+Keywords: telegram
+Requires-Dist: aiohttp
+Requires-Dist: click
+Requires-Dist: msgpack-python
+Requires-Dist: redis
+
+telegram-game - bot framework for games built on asyncio
+========================================================
+
+
+
