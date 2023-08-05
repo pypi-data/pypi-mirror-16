@@ -1,0 +1,7 @@
+[console_scripts]
+eh = eh.cli:main
+
+[eh.subject_extensions]
+bash_subject = eh.contrib.subjects.bash
+sample_subject = eh.contrib.subjects.sample
+
