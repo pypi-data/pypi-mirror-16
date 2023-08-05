@@ -1,0 +1,69 @@
+Metadata-Version: 2.0
+Name: eve-neo4j
+Version: 0.1.1
+Summary: Eve Neo4j extension.
+Home-page: https://github.com/Abraxas-Biosystems/eve-neo4j
+Author: Rodrigo Rodriguez
+Author-email: rrodriguez@grupoabraxas.com
+License: MIT license
+Keywords: eve_neo4j
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: Eve
+Requires-Dist: flask-neo4j
+Requires-Dist: py2neo
+
+===============================
+eve-neo4j
+===============================
+
+
+.. image:: https://img.shields.io/pypi/v/eve_neo4j.svg
+        :target: https://pypi.python.org/pypi/eve_neo4j
+
+.. image:: https://travis-ci.org/Abraxas-Biosystems/eve-neo4j.svg?branch=master
+    :target: https://travis-ci.org/Abraxas-Biosystems/eve-neo4j
+
+.. image:: https://readthedocs.org/projects/eve-neo4j/badge/?version=latest
+    :target: http://eve-neo4j.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+.. image:: https://pyup.io/repos/github/abraxas-biosystems/eve-neo4j/shield.svg
+     :target: https://pyup.io/repos/github/abraxas-biosystems/eve-neo4j/
+     :alt: Updates
+
+.. image:: https://pyup.io/repos/github/abraxas-biosystems/eve-neo4j/python-3-shield.svg
+     :target: https://pyup.io/repos/github/abraxas-biosystems/eve-neo4j/
+     :alt: Python 3
+
+Eve Neo4j extension.
+
+
+* Free software: MIT license
+* Documentation: https://eve-neo4j.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+
+
+=======
+History
+=======
+
+0.0.0
+------------------
+
+
