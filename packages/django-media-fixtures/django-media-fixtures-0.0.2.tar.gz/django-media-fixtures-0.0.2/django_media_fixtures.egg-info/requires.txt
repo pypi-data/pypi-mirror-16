@@ -1,0 +1,7 @@
+Django>=1.8
+
+[test]
+coverage
+
+[dev]
+check-manifest
