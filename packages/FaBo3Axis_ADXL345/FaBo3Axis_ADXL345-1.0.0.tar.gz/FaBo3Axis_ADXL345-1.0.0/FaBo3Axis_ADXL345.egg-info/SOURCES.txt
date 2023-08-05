@@ -1,0 +1,8 @@
+README.md
+setup.py
+FaBo3Axis_ADXL345/ADXL345.py
+FaBo3Axis_ADXL345/__init__.py
+FaBo3Axis_ADXL345.egg-info/PKG-INFO
+FaBo3Axis_ADXL345.egg-info/SOURCES.txt
+FaBo3Axis_ADXL345.egg-info/dependency_links.txt
+FaBo3Axis_ADXL345.egg-info/top_level.txt

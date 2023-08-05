@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: FaBo3Axis_ADXL345
+Version: 1.0.0
+Summary: This is a library for the FaBo #201 3AXIS I2C Brick.
+Home-page: https://github.com/FaBoPlatform/FaBo3Axis-ADXL345-Python/
+Author: FaBo
+Author-email: info@fabo.io
+License: Apache License 2.0
+Description: FaBo3Axis-ADXL345-Python
+        ========================
+        
+        How to install.
+        ---------------
+        
+        ::
+        
+            pip install FaBo3Axis_ADXL345
+        
+        FaBo 3AXIS I2C Brick
+        --------------------
+        
+        　`#201 3AXIS I2C Brick <http://fabo.io/201.html>`__
+        
+        ADXL345
+        -------
+        
+        　ADXL345 is 3-Axis Digital Accelerometer sensor.
+        
+        ADXL345 Datasheet
+        ~~~~~~~~~~~~~~~~~
+        
+        　`ADXL345
+        Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/ADXL345.PDF>`__
+        
+        Releases
+        --------
+        
+        -  1.0.0 Initial release.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development
+Classifier: Topic :: System :: Hardware
