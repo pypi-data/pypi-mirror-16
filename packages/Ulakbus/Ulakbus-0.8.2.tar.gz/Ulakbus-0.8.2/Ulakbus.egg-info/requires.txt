@@ -1,0 +1,6 @@
+zengine==0.7.3
+requests
+boto
+reportlab
+six
+lxml
