@@ -1,0 +1,3 @@
+[console_scripts]
+i3theme = i3theme.i3theme:main
+
