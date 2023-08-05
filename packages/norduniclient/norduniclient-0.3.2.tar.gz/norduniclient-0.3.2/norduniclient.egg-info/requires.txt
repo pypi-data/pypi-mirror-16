@@ -1,0 +1,6 @@
+neo4jdb==0.0.9
+
+[testing]
+nose
+coverage
+nosexcover
