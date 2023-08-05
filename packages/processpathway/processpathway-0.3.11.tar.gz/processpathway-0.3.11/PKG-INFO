@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: processpathway
+Version: 0.3.11
+Summary: A nifty little toolkit to create stress-free, frustrationless image processing pathways from your webcam for computer vision experiments. Or observing your cat.
+Home-page: https://www.github.com/chrisvoncsefalvay/processpathway
+Author: Chris von Csefalvay
+Author-email: chris@chrisvoncsefalvay.com
+License: MIT
+Download-URL: https://github.com/chrisvoncsefalvay/processpathway/tarball/0.3.11
+Description: UNKNOWN
+Keywords: image processing,computer vision,opencv
+Platform: UNKNOWN
