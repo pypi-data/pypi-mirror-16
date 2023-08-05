@@ -1,0 +1,164 @@
+CHANGES
+=======
+
+0.0.1
+-----
+
+* Added ability to use textnumber widget in systemchart, fixed textnumber widget actual value detecting
+* Fixed fit text of text number widget
+* First implementation of number widget
+* Fixed positioning of widgets in systemchart
+* Changed systemchart positioning
+* Added progressbar into systemchart widget
+* Test custom SVG icon for isotype chart
+* Fix isotype widget scaling
+* New implementation of charts initializing, fix chart instances store
+* New implementation of system chart positionitiong with resizing
+* Better implementation of center oriented systemchart positioning
+* Implemented center-oriented positioning in system chart
+* Revert "Systemchart widgets positioning changed from center-oriented to top left corner oriented."
+* Systemchart widgets positioning changed from center-oriented to top left corner oriented
+* Fix
+* Fix another type of data
+* Fix float
+* Fix graphite param name
+* Add relative end
+* Fix timetuple
+* Fix imports
+* Use time.mktime
+* Cleanup relative time
+* Fix casts
+* Fix timestamp from datetime
+* Fix numeric widgets
+* Implement relative start
+* Added imagesloaded to systemchart to enforce init system chart immediately after background image load. Load resource calls changed due to leonardo-cms changes
+* Added 1s timeout to systemchart init
+* Fix
+* Fix all type of data
+* Chart update data interval strategy changed
+* Doughnut charts
+* public is set to true
+* Mark default urls as public and fix numeric graphite data
+* Back to noset
+* Grid layouts
+* Donut chart, progress bar
+* Donut chart, progress bar
+* Return expected times
+* Return expected times
+* Fix expected timestamp
+* Fixed sending timestamps in update requests of timeseries chart widgets
+* Radial progress bar
+* Progress bar widget
+* Time axis formats
+* Dynamic value and date formatting
+* Added implementation of sending timestamps on time series charts updates
+* Update numerical data
+* Pushing time formatting from server
+* Adding isotope and text number visualizations
+* JS cleanups
+* Generating params on python side
+* Cleanup
+* Makes cache key unique for custom attributes
+* Use native reverse function
+* Timetable
+* Add name for the default url
+* Use app reverse
+* fix systch
+* Widget cleanups
+* Data updates
+* Added more params from data sources to system chart
+* Fixed positioniong of system chart
+* PEP8 cleanup
+* Fixed getting metrics data in systemchart
+* Switch target to row
+* Break
+* Properly use one target
+* Fix one target
+* First implementation of systemchart
+* Fix gauge data
+* More kwargs
+* Propagate kwargs down to get data
+* Added more parameters to gauge, fixed refresh_interval function
+* Added TimeTableWidget
+* system chart time series
+* system chart added
+* system chart get charts
+* Fixed replace data update strategy in gauge charts
+* Enforced replacing data on gauge charts
+* Fix default data
+* System chart
+* New widgets
+* Properly implement dummy
+* New implementation of most nvd3.js charts
+* Implement dummy for timeseries
+* Complete implementation of new gauge chart
+* Fix dummy format
+* Tune get graphite datum
+* Respect method name
+* Use widget cache
+* Cache with auto clear after update
+* Cache data
+* Add refresh interval property
+* Cleanup
+* Barchart update strategy changed
+* Charts implementation improved
+* Added generic implementation of JS charts
+* Fix data
+* Fix
+* Added data key parameter to barchart
+* Support loading data via ajax
+* Fixed push data bug in barchart
+* FIxed widget id resolving in barchart
+* Added requestData to barchart init call
+* Fixed barchart URL
+* Finished familiarizing of django template engine
+* typo fix
+* Fixed paths to barchart module
+* Fixed callback issue in barchart
+* fixed template
+* Use implemented logic
+* Barchart reimplemented due to multi charts issues
+* Added request data param to barchart
+* Add data slicing
+* Added new implementation of leonardo barchart module
+* Finalized PoC of AJAX loading
+* No csrf exempt
+* Add backend for loading data for widgets
+* Auto reload for all widgets
+* Smarter get_graphite_datum
+* Barchart no float on Y
+* Donut chart support for wildcard metric
+* Slightly better data label
+* Just in case
+* Get graphite datum returns latest not None value
+* Scale donut to widget width
+* Donut charts
+* Graph tuneups
+* merge upstrem
+* Area, bar charts, text number
+* Horizon chart overhaul with some responsivity, tweaks and parametrization TODO: parametrize time range somehow
+* Metric names for horizon chart
+* Horizon chart prototype
+* Line chart with interpolation
+* Pep8 and other cleanups
+* WIP
+* angular gauge
+* angular gauge
+* fixes
+* help text fix
+* fix migrations
+* angular gauge - tron style
+* model cleanups, angular gauge (tron style)
+* initial migrations
+* fixes, migrations
+* angular gauge tron, data sources
+* fix install
+* reqs
+* import
+* fix admin
+* admin
+* gitignore
+* cleanups
+* widgets
+* rel fix
+* Initial commit
