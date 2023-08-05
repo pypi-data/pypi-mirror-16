@@ -1,0 +1,10 @@
+setup.py
+test/test_youtubeTitleParser.py
+youtube_title_parser/__init__.py
+youtube_title_parser/core.py
+youtube_title_parser/helpers.py
+youtube_title_parser.egg-info/PKG-INFO
+youtube_title_parser.egg-info/SOURCES.txt
+youtube_title_parser.egg-info/dependency_links.txt
+youtube_title_parser.egg-info/not-zip-safe
+youtube_title_parser.egg-info/top_level.txt
