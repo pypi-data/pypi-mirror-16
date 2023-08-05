@@ -1,0 +1,104 @@
+{
+  "src/components/EditableDiv.react.js": {
+    "description": "A div for displaying text. The text is editable.",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "text",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "text": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The displayed text of this component."
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "The style of the text.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "editable": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Whether or not this component should be rendered as editable.\nPassed in from renderer.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "valueChanged": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Function that updates the state tree.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/Header.react.js": {
+    "description": "A component that greets a person in a header",
+    "methods": [],
+    "props": {
+      "name": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The name of the person you want to greet"
+      }
+    }
+  },
+  "src/components/InputControl.react.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "value",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "valueChanged": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Function that updates the state tree.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  }
+}
