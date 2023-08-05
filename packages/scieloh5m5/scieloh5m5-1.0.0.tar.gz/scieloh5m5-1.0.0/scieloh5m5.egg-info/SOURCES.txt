@@ -1,0 +1,12 @@
+README.rst
+setup.cfg
+setup.py
+google/__init__.py
+google/h5m5.py
+google/data/__init__.py
+scieloh5m5.egg-info/PKG-INFO
+scieloh5m5.egg-info/SOURCES.txt
+scieloh5m5.egg-info/dependency_links.txt
+scieloh5m5.egg-info/top_level.txt
+tests/__init__.py
+tests/test_h5m5.py
