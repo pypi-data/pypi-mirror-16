@@ -1,0 +1,78 @@
+Metadata-Version: 1.1
+Name: gearthonic
+Version: 0.1.2
+Summary: A simple client to the XML RPC API of Homegear.
+Home-page: https://gitlab.com/wumpitz/gearthonic
+Author: Timo Steidle
+Author-email: mumpitz@wumpitz.de
+License: MIT
+Description: ==========
+        Gearthonic
+        ==========
+        
+        
+        A simple client to the XML RPC API of Homegear.
+        
+        Look at the documentation_ for detailed information.
+        
+        Quickstart
+        ==========
+        
+        Install `gearthonic` via pip::
+        
+            pip install gearthonic
+        
+        Initialise the client::
+        
+            from gearthonic import GearClient
+            gc = GearClient('192.168.1.100', 2001, secure=True)  # 2001 is the default port of the Homegear server
+        
+        Use the predefined methods to make requests to the XML RPC API::
+        
+            gc.device.list_methods()
+            gc.device.get_value(1, 4, 'ACTUAL_TEMPERATURE')
+        
+        Alternatively you can call any method directly via the client::
+        
+            gc.getValue(1, 4, 'ACTUAL_TEMPERATURE')
+        
+        .. _documentation: http://gearthonic.readthedocs.io/en/latest/
+        
+        
+        
+        Documentation
+        -------------
+        
+        The full documentation can be found at http://gearthonic.rtfd.org.
+        
+        
+        
+        Changelog
+        ---------
+        
+        0.1.2 (2016-07-13)
+        ++++++++++++++++++
+        
+        * Fixed broken setup.py.
+        
+        0.1.1 (2016-07-13)
+        ++++++++++++++++++
+        
+        * Added documentation.
+        
+        0.1.0 (2016-07-13)
+        ++++++++++++++++++
+        
+        * Initial release to pypi.
+        
+Keywords: gearthonic
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: PyPy
