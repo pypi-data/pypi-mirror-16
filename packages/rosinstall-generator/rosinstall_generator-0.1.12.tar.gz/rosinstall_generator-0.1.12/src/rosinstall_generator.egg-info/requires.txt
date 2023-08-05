@@ -1,0 +1,6 @@
+argparse
+catkin_pkg >= 0.1.28
+rosdistro >= 0.3.4
+rospkg
+PyYAML
+setuptools
