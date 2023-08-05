@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: awslambdadecorators
+Version: 0.2b2
+Summary: Useful decorators AWS Lambda
+Home-page: https://github.com/hhagblom/lambda-decorators
+Author: Hans Peter Hagblom
+Author-email: hagblom.hp@gmail.com
+License: None
+Description: UNKNOWN
+Platform: UNKNOWN

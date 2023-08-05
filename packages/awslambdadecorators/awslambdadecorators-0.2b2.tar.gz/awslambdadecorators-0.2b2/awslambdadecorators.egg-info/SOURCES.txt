@@ -1,0 +1,12 @@
+setup.py
+awslambdadecorators/__init__.py
+awslambdadecorators/common.py
+awslambdadecorators/csvinput.py
+awslambdadecorators/httpxml_to_s3.py
+awslambdadecorators/s3etag.py
+awslambdadecorators.egg-info/PKG-INFO
+awslambdadecorators.egg-info/SOURCES.txt
+awslambdadecorators.egg-info/dependency_links.txt
+awslambdadecorators.egg-info/not-zip-safe
+awslambdadecorators.egg-info/requires.txt
+awslambdadecorators.egg-info/top_level.txt
