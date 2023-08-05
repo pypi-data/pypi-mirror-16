@@ -1,0 +1,11 @@
+ukmdb_worker/__init__.py,sha256=fyXBsitsdbcOl6ZdQHb1ph1wF0kOm4-yS1z2b0aSyrk,103
+ukmdb_worker/base.py,sha256=pKFV3GTmjTI9Ekcd96BAA9Oali7d4X5Nyywc_pxEH4Q,866
+ukmdb_worker/queues.py,sha256=xZxkShpbV8SFyoed7IQuvo40bf8hQY00Cxfb0XW7nWU,1678
+ukmdb_worker/worker.py,sha256=p1xEqMMohH7vc-4uf3TpN4KLcFOWWAToxXIWUcyD44g,1476
+ukmdb_worker-0.0.2.dist-info/DESCRIPTION.rst,sha256=oVGDHAXIymKE8vWpNZzQIy4qBAYhYy5BdUjjjoELqHI,1016
+ukmdb_worker-0.0.2.dist-info/METADATA,sha256=LKgmydZ4Wv8A2yjVAtripoIgMZHuuoji0InAyL3KYjI,2076
+ukmdb_worker-0.0.2.dist-info/RECORD,,
+ukmdb_worker-0.0.2.dist-info/WHEEL,sha256=6lxp_S3wZGmTBtGMVmNNLyvKFcp7HqQw2Wn4YYk-Suo,110
+ukmdb_worker-0.0.2.dist-info/entry_points.txt,sha256=SIlsh0OUMgCIlQKvWscEY7OBWP-IbumB9SsZPuk-WzY,57
+ukmdb_worker-0.0.2.dist-info/metadata.json,sha256=bE1S78A-g9AdauThv20xFhQEzmSi8Swlx2pMsGntvm0,1306
+ukmdb_worker-0.0.2.dist-info/top_level.txt,sha256=jCfBchpmnJ71xqu7c2Uv78uABH9TKKJdSBN8FzGWL6o,13

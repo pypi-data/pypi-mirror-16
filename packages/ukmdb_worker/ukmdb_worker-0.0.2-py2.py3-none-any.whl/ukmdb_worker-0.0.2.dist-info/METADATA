@@ -1,0 +1,73 @@
+Metadata-Version: 2.0
+Name: ukmdb-worker
+Version: 0.0.2
+Summary: UKMDB Worker processes.
+Home-page: https://github.com/mleist/ukmdb_worker
+Author: Markus Leist
+Author-email: markus@lei.st
+License: GPLv3
+Keywords: ukmdb worker
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: System :: Monitoring
+Classifier: Topic :: System :: Logging
+Classifier: Topic :: Internet :: Log Analysis
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: python-decouple
+Requires-Dist: docopt
+Requires-Dist: schema
+Requires-Dist: celery (>=3.1)
+Requires-Dist: ukmdb-settings
+
+===============================
+UKMDB Worker
+===============================
+
+.. image:: https://img.shields.io/pypi/v/ukmdb_worker.svg
+        :target: https://pypi.python.org/pypi/ukmdb_worker
+
+.. image:: https://img.shields.io/travis/mleist/ukmdb_worker.svg
+        :target: https://travis-ci.org/mleist/ukmdb_worker
+
+.. image:: https://readthedocs.org/projects/ukmdb_worker/badge/?version=latest
+        :target: https://readthedocs.org/projects/ukmdb_worker/?badge=latest
+        :alt: Documentation Status
+
+
+UKMDB Worker processes.
+
+* Free software: GPLv3 license
+* Documentation: https://ukmdb_worker.readthedocs.org.
+
+Features
+--------
+
+* TODO
+
+Credits
+---------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.0.1 (2016-07-13)
+------------------
+
+* First release on PyPI.
+
+
