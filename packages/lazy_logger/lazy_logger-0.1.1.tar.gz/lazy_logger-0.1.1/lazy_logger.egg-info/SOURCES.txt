@@ -1,0 +1,8 @@
+MANIFEST.in
+README.md
+lazy_logger.py
+setup.py
+lazy_logger.egg-info/PKG-INFO
+lazy_logger.egg-info/SOURCES.txt
+lazy_logger.egg-info/dependency_links.txt
+lazy_logger.egg-info/top_level.txt
