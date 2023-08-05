@@ -1,0 +1,17 @@
+MANIFEST.in
+README.rst
+setup.py
+example_data/example_difbin.txt
+example_data/example_output.txt
+popsy/__init__.py
+popsy/pops_record.py
+popsy/process_stream.py
+popsy/read_config.py
+popsy/read_stream.py
+popsy/text.py
+popsy.egg-info/PKG-INFO
+popsy.egg-info/SOURCES.txt
+popsy.egg-info/dependency_links.txt
+popsy.egg-info/not-zip-safe
+popsy.egg-info/requires.txt
+popsy.egg-info/top_level.txt

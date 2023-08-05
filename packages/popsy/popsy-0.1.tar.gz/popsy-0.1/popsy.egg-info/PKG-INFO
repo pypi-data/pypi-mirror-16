@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: popsy
+Version: 0.1
+Summary: Tools for manipulating Handix Scientific POPS data.
+Home-page: http://github.com/gavinmcmeeking/popsy
+Author: Gavin McMeeking
+Author-email: gavin@handixscientific.com
+License: UNKNOWN
+Description: popsy
+        -----
+        
+        To use, do the following.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
