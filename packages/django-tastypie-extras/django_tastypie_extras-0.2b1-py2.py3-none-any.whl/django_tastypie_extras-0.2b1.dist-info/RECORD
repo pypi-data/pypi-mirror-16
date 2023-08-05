@@ -1,0 +1,12 @@
+django_tastypie_extras-0.2b1.dist-info/DESCRIPTION.rst,sha256=7B1bMcjXZ02bLqJceac17LnG3i3jgxI6CX7A2T80ACk,614
+django_tastypie_extras-0.2b1.dist-info/METADATA,sha256=Dqh1o1m1wmZyxB8LKFdLPME9Sj4ex3WSdku3kKaRvTM,1727
+django_tastypie_extras-0.2b1.dist-info/RECORD,,
+django_tastypie_extras-0.2b1.dist-info/WHEEL,sha256=GrqQvamwgBV4nLoJe0vhYRSWzWsx7xjlt74FT0SWYfE,110
+django_tastypie_extras-0.2b1.dist-info/metadata.json,sha256=uG9Htyu0gNKkqeLgyCs1eNXA-16VrpKCgmeMvbIWLAQ,1206
+django_tastypie_extras-0.2b1.dist-info/top_level.txt,sha256=uMhU2m8XcOcO75EecTUfNW-_sOnstYqao9cwmyo-mYE,16
+tastypie_extras/__init__.py,sha256=EtzQ9Fr-fmecJMmMQZASMnsae0PFjKkz1n9o5PNK3ck,186
+tastypie_extras/paginator.py,sha256=zPJgmGUnGk0A-zkS2KX78rBYK6r7KQXCY5cWC3pZDrY,1468
+tastypie_extras/resource.py,sha256=R78OjOtlgnWg04o27frdwUxrOWgSPgXZpce62zOXhTM,4784
+tastypie_extras/resources.py,sha256=R78OjOtlgnWg04o27frdwUxrOWgSPgXZpce62zOXhTM,4784
+tastypie_extras/serializers/__init__.py,sha256=DTo7J8ySPbWKGDEjYezh48rVEBvir2T-IZVYKoGL0gc,438
+tastypie_extras/serializers/csv.py,sha256=YUG_SU-DGm7tWf69YqFqQvu1q5jWvX8-W7PpgsR5GFk,1990
