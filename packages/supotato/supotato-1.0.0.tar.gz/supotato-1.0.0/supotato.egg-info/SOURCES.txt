@@ -1,0 +1,10 @@
+setup.py
+supotato/__init__.py
+supotato/supotato.py
+supotato.egg-info/PKG-INFO
+supotato.egg-info/SOURCES.txt
+supotato.egg-info/dependency_links.txt
+supotato.egg-info/entry_points.txt
+supotato.egg-info/not-zip-safe
+supotato.egg-info/requires.txt
+supotato.egg-info/top_level.txt
