@@ -1,0 +1,38 @@
+Metadata-Version: 1.1
+Name: Products.SiteErrorLog
+Version: 3.0
+Summary: Error log for Zope 2.
+Home-page: http://pypi.python.org/pypi/Products.SiteErrorLog
+Author: Zope Foundation and Contributors
+Author-email: zope-dev@zope.org
+License: ZPL 2.1
+Description: Overview
+        ========
+        
+        SiteErrorLog records errors/exceptions happening anywhere in your Zope.
+        SiteErrorLog recorded errors are not persistent.
+        
+        Changelog
+        =========
+        
+        3.0 (2016-07-19)
+        ----------------
+        
+        - Drop `test` and `zope212` setuptools extras.
+        
+        - Add error event.
+        
+        2.13.2 (2014-02-10)
+        -------------------
+        
+        - Release as a separate package (previously in Zope2).
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Zope Public License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2 :: Only
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Framework :: Zope2

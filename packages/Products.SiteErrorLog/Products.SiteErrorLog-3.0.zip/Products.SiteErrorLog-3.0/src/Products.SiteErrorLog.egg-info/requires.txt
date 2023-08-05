@@ -1,0 +1,9 @@
+setuptools
+AccessControl
+Acquisition
+transaction
+zExceptions
+Zope2
+zope.component
+zope.interface
+zope.event
