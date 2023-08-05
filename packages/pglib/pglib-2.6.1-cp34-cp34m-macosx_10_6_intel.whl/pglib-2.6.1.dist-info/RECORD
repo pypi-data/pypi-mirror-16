@@ -1,0 +1,10 @@
+_pglib.so,sha256=TNDBLRje_ftyhD7J8Ajoo1Il_OwllzcTve6tdCb_1hs,153136
+pglib/__init__.py,sha256=wlsBUZ7i16L2f2Kbdhh9V9IJNUqZImlXQ3i4I2tOVXk,264
+pglib/_version.py,sha256=YN2q41iuvfu6we8Llym8sowwG8Vx9-VaDQxXENU07H8,471
+pglib/asyncpglib.py,sha256=5MqAYpeU4TzHrT9WcUFTcBDVvkdl439NBUeVxgrVS3Q,8468
+pglib-2.6.1.dist-info/DESCRIPTION.rst,sha256=seeaVeDbE5x88DR7fBJqks19eNqnJOvIOLkr1eZZFsw,183
+pglib-2.6.1.dist-info/METADATA,sha256=w0QsVydlIYQSeJ5mwrhoa259I0lPzv3XOCkXasqPp2k,723
+pglib-2.6.1.dist-info/RECORD,,
+pglib-2.6.1.dist-info/WHEEL,sha256=7FpJzmW3cNReOcSkZWCbjxCw6rYg1L_CXO7i7K33NCo,109
+pglib-2.6.1.dist-info/metadata.json,sha256=tTkMn9-vaJuApBvI-eY0L3xhZjMb62dcbbfvlD37acM,699
+pglib-2.6.1.dist-info/top_level.txt,sha256=rXJewZrCvOsJXcpjVMJpMrvKVr-WFITfs81c1qSGOtk,13
