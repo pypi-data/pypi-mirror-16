@@ -1,0 +1,8 @@
+README.rst
+setup.py
+src/PyScoutnet.egg-info/PKG-INFO
+src/PyScoutnet.egg-info/SOURCES.txt
+src/PyScoutnet.egg-info/dependency_links.txt
+src/PyScoutnet.egg-info/top_level.txt
+src/pyscoutnet/__init__.py
+src/pyscoutnet/api.py
