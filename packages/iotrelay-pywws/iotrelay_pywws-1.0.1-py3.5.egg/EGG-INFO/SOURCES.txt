@@ -1,0 +1,12 @@
+LICENSE.rst
+MANIFEST.in
+README.rst
+iotrelay_pywws.py
+setup.cfg
+setup.py
+iotrelay_pywws.egg-info/PKG-INFO
+iotrelay_pywws.egg-info/SOURCES.txt
+iotrelay_pywws.egg-info/dependency_links.txt
+iotrelay_pywws.egg-info/entry_points.txt
+iotrelay_pywws.egg-info/requires.txt
+iotrelay_pywws.egg-info/top_level.txt
