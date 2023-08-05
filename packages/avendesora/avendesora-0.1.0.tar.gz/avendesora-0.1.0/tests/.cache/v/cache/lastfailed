@@ -1,0 +1,6 @@
+{
+  "test_avendesora.py::test_alertscc": true,
+  "test_avendesora.py::test_mb": true,
+  "test_avendesora.py::test_mybank": true,
+  "test_avendesora.py::test_scc": true
+}
