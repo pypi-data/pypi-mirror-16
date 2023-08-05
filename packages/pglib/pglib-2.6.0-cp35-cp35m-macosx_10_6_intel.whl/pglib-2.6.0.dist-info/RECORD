@@ -1,0 +1,10 @@
+_pglib.cpython-35m-darwin.so,sha256=PUe4soLTa5nbraNmXCr31dxk1BuPFSih1rACt7xl6hM,152496
+pglib/__init__.py,sha256=6U5SHV1JIIYiq4bD6wH0WRV-7YG12WapKKJrkUgUJ7k,171
+pglib/asyncpglib.py,sha256=5MqAYpeU4TzHrT9WcUFTcBDVvkdl439NBUeVxgrVS3Q,8468
+pglib/version.py,sha256=5dAa6g4p1FdudDc0hzWRbWgtbGu3wj9nfbb1o5x88RQ,16
+pglib-2.6.0.dist-info/DESCRIPTION.rst,sha256=seeaVeDbE5x88DR7fBJqks19eNqnJOvIOLkr1eZZFsw,183
+pglib-2.6.0.dist-info/METADATA,sha256=Z8fkQ0wj0su-xFYkDzEcuJnQyK-uNMY0aeRGFedOMxI,723
+pglib-2.6.0.dist-info/RECORD,,
+pglib-2.6.0.dist-info/WHEEL,sha256=eUbynpjVKAjn-dj16FC8K29nAkj6iHZBcpPJzLRb2E4,109
+pglib-2.6.0.dist-info/metadata.json,sha256=uCBfx1maq9kkGoMojrlTTnf8rbibwCzaXOgrTuh0GjY,699
+pglib-2.6.0.dist-info/top_level.txt,sha256=rXJewZrCvOsJXcpjVMJpMrvKVr-WFITfs81c1qSGOtk,13
