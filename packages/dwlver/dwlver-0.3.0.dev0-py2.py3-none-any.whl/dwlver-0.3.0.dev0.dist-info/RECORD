@@ -1,0 +1,11 @@
+dwlver/__init__.py,sha256=v_vhMRaJgSnXMUkrAIg96qa-bLLNTGXKTUB_ylk1Myc,111
+dwlver/cli.py,sha256=JwDC9aiU87Wp5LyVD8HlwiaJH4DhBYgx7iC90du7Qs4,191
+dwlver/dwlver.py,sha256=iwhKnzeBJLKxpRVjvzwiRE63_zNpIBfaKLITauVph-0,24
+dwlver/ver.py,sha256=C6AQt5m6tGM3rVLpzRgtEY-9COR7gp476O7tHKkYCQA,23
+dwlver-0.3.0.dev0.dist-info/DESCRIPTION.rst,sha256=EUKeEnjtyleRPVl1R524wQcLUKHSqxxsF2JeVY4yR-4,1185
+dwlver-0.3.0.dev0.dist-info/entry_points.txt,sha256=gkiLfFUcuqfME4ogs-To5t4IT7_3HoLXlxckHM0P8PA,44
+dwlver-0.3.0.dev0.dist-info/METADATA,sha256=dTLqftqNgoyrIbkhNZxN8RL635eZ6tg8RPlgqGH1Uz4,1937
+dwlver-0.3.0.dev0.dist-info/metadata.json,sha256=ZTnOZ10JA-RDA6048jImsvZmLRRJuKArdw74hXcxYwY,1083
+dwlver-0.3.0.dev0.dist-info/RECORD,,
+dwlver-0.3.0.dev0.dist-info/top_level.txt,sha256=CPecwsufGwrVCt48UU-tTdUAu5moCsOE5c_ShKy_yvE,7
+dwlver-0.3.0.dev0.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
