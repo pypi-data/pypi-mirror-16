@@ -1,0 +1,3 @@
+[console_scripts]
+morepath_batching = morepath_batching.__main__:run
+
