@@ -1,0 +1,16 @@
+anvil/__init__.py,sha256=YCgaspoDmy-5IdkwDaxII6GWI6JncTbuMZboRKcjxq4,2321
+anvil/alchemy.py,sha256=kLKpeaRAjVzfQguhzRirLUABtAkIKcAPW-gF76ZSZFM,3024
+anvil/regex.py,sha256=hC_bNwpbY0STPpgqmEE1KtYvpPqnUD3CtWEuTlgq1vU,86
+anvil/server.py,sha256=DcpfTW0A5IZ1YMq4tSn4qCpYYROMzqBo4SP7saZaw8M,18692
+anvil_uplink-0.2.1.dist-info/DESCRIPTION.rst,sha256=eCsSz8mINw9pryiCQL60maxF-J-eASQbctPIRgsNTzU,193
+anvil_uplink-0.2.1.dist-info/METADATA,sha256=h80suusje-3NDor65LBL8uBBRgzpfVjqsNB2PSrXHUU,1122
+anvil_uplink-0.2.1.dist-info/RECORD,,
+anvil_uplink-0.2.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+anvil_uplink-0.2.1.dist-info/metadata.json,sha256=hiba3pi2f55M0lcMJnOqRNqL04Na2yzFhM8nNDXF6B0,1037
+anvil_uplink-0.2.1.dist-info/top_level.txt,sha256=0mMtoZuJbVML91Ln2DmoWrxRr_MJ_FF9NHamCeTf4Rs,20
+google/__init__.py,sha256=8gjhCPZPEUsjwJ4Ndcrku3qNFPXgVztsbdWgQeX1BKc,254
+google/auth.py,sha256=kMKFEnv_L7Q6QXS-ne1lNkRPm28ODsLecLro9dSnYMI,116
+google/drive.py,sha256=jkIDnWl37BOsqEUvgSQQ5hr1twtso6CEpuvcNXut1SU,17063
+google/mail.py,sha256=UhXPee55MfI2VEjlks20i2MTy495tsYls7JGwS4zWqc,592
+google/sheets.py,sha256=jJDMOhLYp3fBuaBc41huSdK0QAXAdEAamX4zkoXc1JI,9856
+tables/__init__.py,sha256=2mOphJ9zihHpN9jNrxP6Eqmk9ms5WcI8W7R5pfgrRC0,774
