@@ -1,0 +1,30 @@
+Metadata-Version: 2.0
+Name: simdict
+Version: 0.1.1
+Summary: This is a simple English - Chinese dictionary
+Home-page: https://github.com/4cat/simdict
+Author: 4cat
+Author-email: 4catcode@gmail.com
+License: MIT
+Keywords: dictionary
+Platform: UNKNOWN
+Requires-Dist: requests (>=2.7.0)
+
+# simdict
+This is a simple English - Chinese dictionary
+
+### Install simdict
+#### via pip
+    pip install simdict
+#### or
+    git clone https://github.com/4cat/simdict.git
+    cd simdict
+    sudo python setup.py install
+
+### Usage
+    simdict word
+
+----
+I just want to try building and distributing packages with Setuptools.
+
+
