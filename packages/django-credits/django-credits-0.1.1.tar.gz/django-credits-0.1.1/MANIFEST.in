@@ -1,0 +1,6 @@
+include LICENSE
+include README.rst
+include django_credits/migrations/*
+include django_credits/static/*
+include django_credits/templates/*
+include django_credits/templatetags/*
