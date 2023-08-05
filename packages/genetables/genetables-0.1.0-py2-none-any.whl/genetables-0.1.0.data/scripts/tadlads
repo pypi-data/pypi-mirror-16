@@ -1,0 +1,173 @@
+#!python
+
+
+# tadlads - compute deltas of TAD/LAD peaks to domain borders and centers
+#
+# Copyright (C) 2016 - Sven E. Templer <sven.templer@gmail.com>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this
+# software and associated documentation files (the "Software"), to deal in the Software
+# without restriction, including without limitation the rights to use, copy, modify,
+# merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+# permit persons to whom the Software is furnished to do so, subject to the following
+# conditions:
+#
+# The above copyright notice and this permission notice shall be included in all copies or
+# substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+# INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+# PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+# LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
+# OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+
+
+### info
+
+
+description = '''
+tadlads - compute deltas of TAD/LAD peaks to domain borders and centers
+
+Copyright (c) 2016 Sven E. Templer <sven.templer@gmail.com>
+
+output:
+  By default the tool ...
+  1) computes the peak centers.
+  2) Extracts the domain centers and borders
+  3) Calculates the upstream (- sign) or downstream (+ sign) differences
+     of each peak to the closest center. In addition, the
+     distance to the borders is calculated either for peak centers that lie
+     outside (- sign) or inside (+ sign) a domain.
+  File format are bed. Peak and domain files are intermediate results.
+  Delta files contain bed information from peak centers (column 1-3), as well
+  as domain borders or centers (columns 4-6). All distances are placed in the
+  last column (7).
+'''
+
+info = '''requirements:
+  bedtools
+  python/pybedtools
+
+plotting:
+  The Rscript 'bin/tadladsplot' from the source code contains an example to produce 
+  density plots of the differences between peak centers and domain borders/centers.
+'''
+
+### arguments
+import argparse
+p = argparse.ArgumentParser(description = description, 
+                            formatter_class = argparse.RawTextHelpFormatter,
+                            epilog = info)
+# input
+p.add_argument('domains', metavar = "domains.bed",
+        help = 'Domain (TAD, LAD) file input, bed format.')
+p.add_argument('peaks', metavar = 'peaks.bed',
+        help = 'Peaks input, bed format.')
+# output options
+p.add_argument('-o', '--output', metavar = 'PREFIX', default = 'tadladout',
+        help = '''Output file prefix (default: tadladout). Output files are as follows:
+* <prefix>_peak_center.bed - ca
+* <prefix>_domain_border.bed
+* <prefix>_domain_center.bed
+* <prefix>_delta2border_inner.bed
+* <prefix>_delta2border_outer.bed
+* <prefix>_delta2center.bed
+''')
+#p.add_argument('-d', '--max-delta', metavar = 'kBP', default = None,
+#        help = 'maximum difference') # for filter after calculation
+
+# testing
+#a_test = ['/beegfs/group_bit/home/STempler/projects/Sara_Wickstroem/SW_JanisTAD/raw_data/total.HindIII.combined.domain', 
+#          '/beegfs/group_bit/home/STempler/projects/Sara_Wickstroem/SW_JanisTAD/raw_data/48-diffpeaks-vim-chr-old.bed']
+#a_test = ['-o', '/beegfs/group_bit/home/STempler/projects/Sara_Wickstroem/SW_JanisTAD/tmp/tadlads',
+#          '/beegfs/group_bit/home/STempler/projects/Sara_Wickstroem/SW_JanisTAD/raw_data/GSE17051_cLAD_regions.bed', 
+#          '/beegfs/group_bit/home/STempler/projects/Sara_Wickstroem/SW_JanisTAD/raw_data/48-diffpeaks-vim-chr-old.bed']
+#a_test = ['--help']
+# parse
+#a = p.parse_args(a_test)
+a = p.parse_args()
+
+import pybedtools
+
+### file paths
+
+pathPeak         = a.peaks
+pathPeakCenter   = a.output + '_peak_center.bed'
+
+pathDomain       = a.domains
+pathDomainBorder = a.output + '_domain_border.bed'
+pathDomainCenter = a.output + '_domain_center.bed'
+
+pathDeltaInner   = a.output + '_delta2border_inner.bed'
+pathDeltaOuter   = a.output + '_delta2border_outer.bed'
+pathDelta        = a.output + '_delta2center.bed'
+
+### calculate peak centers
+filePeak = open(pathPeak, 'r')
+filePeakCenter = open(pathPeakCenter, 'w')
+for line in filePeak.readlines():
+    fields = line.split('\t')
+    center = (int(fields[1]) + int(fields[2])) / 2
+    center = str(center)
+    fields = [fields[0], center, center + '\n']
+    oline = '\t'.join(fields)
+    filePeakCenter.write(oline)
+filePeak.close()
+filePeakCenter.close()
+
+### calculate domain centers
+fileDomain = open(pathDomain, 'r')
+fileDomainCenter = open(pathDomainCenter, 'w')
+for line in fileDomain.readlines():
+    fields = line.split('\t')
+    center = (int(fields[1]) + int(fields[2])) / 2
+    center = str(center)
+    fields = [fields[0], center, center + '\n']
+    oline  = '\t'.join(fields)
+    fileDomainCenter.write(oline)
+fileDomain.close()
+fileDomainCenter.close()
+
+### extract domain borders
+fileDomain = open(pathDomain, 'r')
+fileDomainBorder = open(pathDomainBorder, 'w')
+for line in fileDomain.readlines():
+    fields = line.split('\t')
+    oline1 = [fields[0], fields[1], fields[1] + '\n']
+    oline2 = [fields[0], fields[2], fields[2] + '\n']
+    oline1 = '\t'.join(oline1)
+    oline2 = '\t'.join(oline2)
+    fileDomainBorder.write(oline1 + oline2)
+fileDomain.close()
+fileDomainBorder.close()
+
+### source files
+bedPeakCenter           = pybedtools.BedTool(pathPeakCenter)
+bedDomain               = pybedtools.BedTool(pathDomain)
+bedDomainBorder         = pybedtools.BedTool(pathDomainBorder)
+bedDomainCenter         = pybedtools.BedTool(pathDomainCenter)
+### inner and outer peaks
+bedPeakCenterInner      = bedPeakCenter.intersect(bedDomain) # for regions: wa = True
+bedPeakCenterOuter      = bedPeakCenter.intersect(bedDomain, v = True)
+### peak center - domain border
+bedPeakCenterInnerDelta = bedPeakCenterInner.closest(bedDomainBorder, d = True, t = 'first')
+bedPeakCenterOuterDelta = bedPeakCenterOuter.closest(bedDomainBorder, d = True, t = 'first')
+### peak center - domain center
+bedPeakCenterDelta      = bedPeakCenter.closest(bedDomainCenter, D = 'ref', t = 'first')   
+
+### export
+bedPeakCenterInnerDelta.saveas(pathDeltaInner)
+bedPeakCenterOuterDelta.saveas(pathDeltaOuter)
+bedPeakCenterDelta.saveas(pathDelta)
+
+### remove temporary data
+bedPeakCenter.delete_temporary_history(ask=False)
+bedDomain.delete_temporary_history(ask=False)
+bedDomainBorder.delete_temporary_history(ask=False)
+bedDomainCenter.delete_temporary_history(ask=False)
+bedPeakCenter.delete_temporary_history(ask=False)
+bedPeakCenterOuter.delete_temporary_history(ask=False)
+bedPeakCenterInnerDelta.delete_temporary_history(ask=False)
+bedPeakCenterOuterDelta.delete_temporary_history(ask=False)
+bedPeakCenterDelta.delete_temporary_history(ask=False)

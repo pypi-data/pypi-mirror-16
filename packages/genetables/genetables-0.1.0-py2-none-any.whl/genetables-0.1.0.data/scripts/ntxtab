@@ -1,0 +1,108 @@
+#!python
+
+
+# ntxtab - calculate cross tables for nucleotide composition from fasta files
+#
+# Copyright (C) 2016 - Sven E. Templer <sven.templer@gmail.com>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this
+# software and associated documentation files (the "Software"), to deal in the Software
+# without restriction, including without limitation the rights to use, copy, modify,
+# merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+# permit persons to whom the Software is furnished to do so, subject to the following
+# conditions:
+#
+# The above copyright notice and this permission notice shall be included in all copies or
+# substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+# INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+# PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+# LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
+# OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+
+
+### arguments
+
+
+import argparse
+arg = argparse.ArgumentParser(formatter_class = argparse.ArgumentDefaultsHelpFormatter)
+# input
+arg.add_argument('fasta', metavar = 'FASTA',
+        help = 'A fasta file path or url (ftp, http). Supports gz and bz2 compression.')
+ #       help = 'fasta file, url, or ensembl code (RELEASE#,ORGANISM)')
+#arg.add_argument('-e', '--ensembl', action = 'store_true',
+#        help = 'get fasta from ensembl [!unsupported]')
+# output
+arg.add_argument('-o', '--output', metavar = 'FILE',
+        help = 'Output file path. If None, then stdout is used.')
+arg.add_argument('-w', '--window', metavar = 'N', default = 50000, type = int,
+        help = 'Window size for to calculate tables for.')
+arg.add_argument('-k', '--kmers', metavar = 'N', default = [1, 2], nargs = '+', type = int,
+        help = 'Size(s) of kmers to estimate tables for. Calculated by product (range allowed is 1 to 4).')
+arg.add_argument('-s', '--split-name', action = 'store_false',
+        help = 'Split the sequence header by space, and take only first field as name. A leading ">" is dropped anyways.')
+# parse
+opt = arg.parse_args()
+
+
+### presets
+
+import sys
+import genetables.nucleotides as nt
+import genetables.filereader as fr
+
+streami = fr.FileReader(opt.fasta)
+if opt.output is not None:
+    streamo = open(opt.output, 'w')
+else:
+    streamo = None
+n = 0
+pos = 0
+seq = ''
+
+
+
+## header
+
+out = [ '#chrom', 'start', 'stop', 'window' ]
+for kmer in opt.kmers:
+    out.extend(nt.SeqXTable().generate(kmer))
+out = '\t'.join(out)
+if streamo is None:
+    print out
+else:
+    streamo.write(out + '\n')
+
+
+## tables
+
+for line in streami.stream.readlines():
+    # drop '\n'
+    line = line[:-1]
+    # update header
+    if line[0] == '>':
+        # print remaining window counts
+        if len(seq)>0:
+            n += 1
+            nt.printcount(seq, opt.kmers, head, n, streamo, pos, len(seq) - 1)
+        # drop '>'
+        head = line[1:]
+        if opt.split_name:
+            head = head.split(' ')[0]
+        # reset sequence and window counter
+        n = 0
+        pos = 0
+        seq = ''
+        continue
+    # append next line
+    seq = ''.join([seq, line])
+    # print window counts
+    if len(seq) > opt.window:
+        n += 1
+        nt.printcount(seq[:opt.window], opt.kmers, head, n, streamo, pos, opt.window - 1)
+        pos += opt.window
+        seq = seq[opt.window+1:]
+
+
