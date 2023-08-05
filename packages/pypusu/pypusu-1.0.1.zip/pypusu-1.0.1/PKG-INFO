@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: pypusu
+Version: 1.0.1
+Summary: Python client for PuSuEngine
+Home-page: https://github.com/PuSuEngine/pypusu
+Author: Janne Enberg
+Author-email: janne.enberg@lietu.net
+License: UNKNOWN
+Download-URL: https://github.com/PuSuEngine/pypusu/tarball/v1.0.1
+Description: UNKNOWN
+Keywords: pubsub,publisher,subscriber,messaging
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved
+Classifier: Programming Language :: Python
+Classifier: Topic :: Communications :: Chat
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
