@@ -1,0 +1,9 @@
+tvdb_api
+yowsup2
+pywapi
+pillow
+beautifulsoup4
+typing
+python-telegram-bot
+gTTS
+irc
