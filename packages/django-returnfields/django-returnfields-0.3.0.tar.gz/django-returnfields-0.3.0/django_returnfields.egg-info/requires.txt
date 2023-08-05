@@ -1,0 +1,7 @@
+djangorestframework
+django-aggressivequery
+
+[docs]
+
+[testing]
+tox
