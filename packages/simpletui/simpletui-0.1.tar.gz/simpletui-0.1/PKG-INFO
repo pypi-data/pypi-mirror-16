@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: simpletui
+Version: 0.1
+Summary: A simple python package to create Text User Interfaces in the terminal
+Home-page: https://github.com/KalyanPalepu/simpletui
+Author: Kalyan Palepu
+Author-email: UNKNOWN
+License: MIT
+Description: UNKNOWN
+Keywords: tui console
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2 :: Only
+Classifier: Environment :: Console

@@ -1,0 +1,8 @@
+setup.py
+simpletui/__init__.py
+simpletui/graphics.py
+simpletui/world_io.py
+simpletui.egg-info/PKG-INFO
+simpletui.egg-info/SOURCES.txt
+simpletui.egg-info/dependency_links.txt
+simpletui.egg-info/top_level.txt
