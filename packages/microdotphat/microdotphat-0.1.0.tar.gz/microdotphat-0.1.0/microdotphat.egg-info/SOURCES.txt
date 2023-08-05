@@ -1,0 +1,14 @@
+CHANGELOG.txt
+MANIFEST.in
+README.md
+setup.py
+microdotphat/__init__.py
+microdotphat/__init__.pyc
+microdotphat/font.py
+microdotphat/font.pyc
+microdotphat/matrix.py
+microdotphat/matrix.pyc
+microdotphat.egg-info/PKG-INFO
+microdotphat.egg-info/SOURCES.txt
+microdotphat.egg-info/dependency_links.txt
+microdotphat.egg-info/top_level.txt
