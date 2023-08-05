@@ -1,0 +1,3 @@
+[console_scripts]
+hark_imagestore = hark_imagestore.cli:hark_imagestore
+
