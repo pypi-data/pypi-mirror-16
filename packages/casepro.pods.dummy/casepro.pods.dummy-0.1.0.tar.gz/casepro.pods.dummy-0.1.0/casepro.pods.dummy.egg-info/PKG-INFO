@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: casepro.pods.dummy
+Version: 0.1.0
+Summary: Example casepro data pod returning statically configureddata
+Home-page: http://github.com/praekelt/casepro.pods.dummy
+Author: Praekelt Foundation
+Author-email: dev@praekelt.com
+License: BSD
+Description: casepro.pods.dummy
+        ==================
+        
+        Example casepro data pod returning statically configured data.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Django
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
