@@ -1,0 +1,31 @@
+import sequana
+from sequana import snaketools as sm
+from sequana.snaketools import SequanaConfig, FileFactory
+sm.init("quality_taxon.rules", globals())
+
+# This must be defined before the include 
+configfile: "config.yaml"
+
+
+cfg = SequanaConfig(config)
+
+
+# Connect the sub-pipelines together
+include: sm.modules['quality']
+
+
+# Connect the kraken_contaminant pipeline to the quality pipeline at the output
+# of the cutapdat rule
+config["kraken_input"] = "cutadapt"
+include: sm.modules['kraken']
+expected_output.append(__kraken__output)
+expected_output.append("logs/pipeline_quality.done")
+
+
+rule pipeline_quality_taxon:
+    input:
+        expected_output
+
+onsuccess:
+    sm.plot_stats()
+

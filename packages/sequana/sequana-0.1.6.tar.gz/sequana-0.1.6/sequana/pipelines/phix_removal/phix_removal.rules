@@ -1,0 +1,71 @@
+"""Phix removal pipeline
+
+Author: Thomas Cokelaer
+Affiliation: Institut Pasteur @ 2016
+
+This pipeline is part of Sequana software (sequana.readthedocs.io)
+"""
+
+import sequana
+from sequana import snaketools as sm
+from sequana.snaketools import SequanaConfig, FileFactory
+sm.init("phix_removal.rules", globals())
+
+
+
+# This must be defined before the include 
+configfile: "config.yaml"
+cfg = SequanaConfig(config)
+
+
+# Optional for testing
+if config['fastq_sampling']['do'] is True:
+    include: sm.modules['fastq_sampling']
+    FILE1 = cfg.BASENAME[0]
+    config['samples']['file1'] = "fastq_sampling/%s" % FILE1
+    if cfg.paired:
+        FILE2 = cfg.BASENAME[1]
+        config['samples']['file2'] = "fastq_sampling/%s" % FILE2
+
+
+# Generic include for bwa_mem on the phix reference
+exec(open(sequana.modules["bwa_mem_dynamic"], "r").read())
+include: bwa_mem_dynamic("phix", cfg.DATASET)
+
+# Some specific rules to be included for the phix removal pipeline
+# This will create the mapped and unmapped data in bwa_phix directory
+include: sm.modules['bwa_bam_to_fastq']
+
+# Include the report
+include: sm.modules['report_phix_removal']
+
+# Generic include to run a fastqc and fastq_stats on the raw data
+exec(open(sequana.modules["fastqc"], "r").read())
+exec(open(sequana.modules["fastq_stats"], "r").read())
+
+# Run a fastqc on the raw data and data without phix
+include: fastqc_dynamic("phix", __bwa_bam_to_fastq__output)
+include: fastqc_dynamic("samples", cfg.DATASET)
+
+# Run a fastq_stats run on the following fastq
+include: fastq_stats_dynamic("phix", __bwa_bam_to_fastq__output)
+include: fastq_stats_dynamic("samples", cfg.DATASET)
+
+# Those rules takes a couple of seconds so no need for a cluster
+localrules: dag, conda, all
+
+
+rule all:
+    input: "report/report_phix_removal.html"
+    version: sequana.version
+
+onsuccess:
+    sm.plot_stats()
+
+onerror:
+    print("An error occurred. See message above.")
+
+
+
+
+
