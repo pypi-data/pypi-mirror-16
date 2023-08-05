@@ -1,0 +1,10 @@
+django_tastypie_sorl_thumbnail-0.1.3.dist-info/DESCRIPTION.rst,sha256=hT6-q8UhaSd-qanguYjcLAh7uUP9Cj5sqU0CWcKsh64,1335
+django_tastypie_sorl_thumbnail-0.1.3.dist-info/METADATA,sha256=m9PVA7BOtowX1TwHLSap-AbjGhsgDfaFwZdslsQYG6g,2367
+django_tastypie_sorl_thumbnail-0.1.3.dist-info/RECORD,,
+django_tastypie_sorl_thumbnail-0.1.3.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+django_tastypie_sorl_thumbnail-0.1.3.dist-info/metadata.json,sha256=YG2pKi2bq-WhYjzBFEV306wSN_GsLsEGpRBhyNrc_x0,1133
+django_tastypie_sorl_thumbnail-0.1.3.dist-info/top_level.txt,sha256=vBios_XeqpRi51j8L0Wrk23zg1CDp4CI66Lq7_MRNI4,24
+tastypie_sorl_thumbnail/__init__.py,sha256=H1KeoPB1ROC9jK32dlUduB5Mw8sgEL8yOeRQkt7DDNg,186
+tastypie_sorl_thumbnail/fields.py,sha256=r_YWmo1SsSzYnSvXZ6RtKSyD-H2UlddSNCp1UQ0KzEg,1743
+tastypie_sorl_thumbnail/models.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tastypie_sorl_thumbnail/tests.py,sha256=RkZg0s4hxNukwCUTSg18lylXC78gCxrM1EQrT0qKoWc,1578
