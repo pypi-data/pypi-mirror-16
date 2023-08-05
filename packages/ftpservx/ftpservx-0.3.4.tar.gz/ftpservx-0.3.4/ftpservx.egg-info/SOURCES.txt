@@ -1,0 +1,13 @@
+LICENSE
+README.md
+ftpservx.py
+ftpservx_win_bin.bat
+requirements.txt
+setup.py
+./ftpservx.py
+ftpservx.egg-info/PKG-INFO
+ftpservx.egg-info/SOURCES.txt
+ftpservx.egg-info/dependency_links.txt
+ftpservx.egg-info/not-zip-safe
+ftpservx.egg-info/requires.txt
+ftpservx.egg-info/top_level.txt
