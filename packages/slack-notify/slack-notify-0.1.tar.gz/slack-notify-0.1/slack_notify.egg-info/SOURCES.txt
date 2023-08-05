@@ -1,0 +1,11 @@
+setup.py
+bin/slack-notify
+slack_notify.egg-info/PKG-INFO
+slack_notify.egg-info/SOURCES.txt
+slack_notify.egg-info/dependency_links.txt
+slack_notify.egg-info/not-zip-safe
+slack_notify.egg-info/top_level.txt
+slacknotify/__init__.py
+slacknotify/client.py
+slacknotify/main.py
+slacknotify/web.py
