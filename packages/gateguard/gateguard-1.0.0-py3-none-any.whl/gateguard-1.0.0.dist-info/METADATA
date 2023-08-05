@@ -1,0 +1,33 @@
+Metadata-Version: 2.0
+Name: gateguard
+Version: 1.0.0
+Summary: Schema-based validation package
+Home-page: https://github.com/pyvim/gateguard
+Author: Vitalii Maslov
+Author-email: me@pyvim.com
+License: MIT
+Download-URL: https://github.com/pyvim/gateguard/tarball/master
+Keywords: validate,validation,dict,json,data,protect,schema
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+
+=========
+Gateguard
+=========
+
+Installation
+------------
+`pip install gateguard`
+
+Documentation
+-------------
+`Read The Docs
+<http://gateguard.readthedocs.org>`_
+
+Source code
+-----------
+`Github
+<https://github.com/pyvim/gateguard>`_
+
+
