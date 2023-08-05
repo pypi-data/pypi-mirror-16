@@ -1,0 +1,73 @@
+3theme
+===================
+
+i3theme is a command line application to apply a **Yaml** formated theme to i3wm. The theme format is i3-style "like".
+
+----------
+
+
+#### Example <i>(taken from debian i3-style theme)</i> :
+
+    meta:
+       description: 'Debian theme by lasers'
+    window_colors:
+      focused:
+        border:           '#d70a53'
+        background:       '#d70a53'
+        text:             '#ffffff'
+        indicator:        '#8c0333'
+      focused_inactive:
+        border:           '#333333'
+        background:       '#333333'
+        text:             '#888888'
+        indicator:        '#333333'
+      unfocused:
+        border:           '#333333'
+        background:       '#333333'
+        text:             '#888888'
+        indicator:        '#333333'
+      urgent:
+        border:           '#eb709b'
+        background:       '#eb709b'
+        text:             '#ffffff'
+        indicator:        '#eb709b'
+    bar_colors:
+      separator:          '#444444'
+      background:         '#222222'
+      statusline:         '#666666'
+      focused_workspace:
+        border:           '#d70a53'
+        background:       '#d70a53'
+        text:             '#ffffff'
+      active_workspace:
+        border:           '#333333'
+        background:       '#333333'
+        text:             '#888888'
+      inactive_workspace:
+        border:           '#333333'
+        background:       '#333333'
+        text:             '#888888'
+      urgent_workspace:
+        border:           '#eb709b'
+        background:       '#eb709b'
+        text:             '#ffffff'
+
+
+#### Installation
+
+Use pip to install :
+
+    pip install i3theme
+
+#### Usage example
+
+List avalaible build in theme :
+
+    i3theme -l
+Apply a build in theme:
+
+    i3theme slate
+Use external theme:
+
+    i3theme -f <path-to-theme>
+
