@@ -1,0 +1,42 @@
+Metadata-Version: 1.1
+Name: django-admin-bootstrapped-compatible
+Version: 3.1.7
+Summary: A Bootstrap theme for Django Admin
+Home-page: https://github.com/cesar5792/django-admin-bootstrapped-1.9-compatible
+Author: Riccardo Magliocchetti
+Author-email: riccardo.magliocchetti@gmail.com
+License: BSD License
+Description: django-admin-bootstrapped
+        =========================
+        
+        
+        This is a Django-1.9 compatible version of https://github.com/django-admin-bootstrapped/django-admin-bootstrapped
+        
+        Installation
+        ------------
+        
+        ```bash
+        pip install -e git+git://github.com/cesar57927/django-admin-bootstrapped-1.9-compatible.git@master#egg=django_admin_bootstrapped
+        ```
+         
+         OR
+         
+        ```bash
+        git clone https://github.com/cesar57927/django-admin-bootstrapped-1.9-compatible
+        cd  django-admin-bootstrapped-1.9-compatible
+        pip install -e .
+        ```
+        
+Platform: OS Independent
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
