@@ -1,0 +1,16 @@
+MANIFEST.in
+setup.py
+zirc/__init__.py
+zirc/client.py
+zirc/connection.py
+zirc/errors.py
+zirc/event.py
+zirc/flood.py
+zirc/util.py
+zirc.egg-info/PKG-INFO
+zirc.egg-info/SOURCES.txt
+zirc.egg-info/dependency_links.txt
+zirc.egg-info/not-zip-safe
+zirc.egg-info/requires.txt
+zirc.egg-info/top_level.txt
+zirc/resources/events.json
