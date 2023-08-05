@@ -1,0 +1,53 @@
+Metadata-Version: 1.1
+Name: Avenue
+Version: 0.2.2
+Summary: Avenue: Highway routing.
+Home-page: https://github.com/CorverDevelopment/Avenue/
+Author: Nils Corver
+Author-email: nils@corverdevelopment.nl
+License: MIT
+Description: Avenue: Highway routing.
+        =============================================
+        
+        .. teaser-begin
+        
+        Avenue is a very extensible, but lightweight, routing system.
+        
+        * Free software: MIT license
+        * Documentation: http://documentation.creeer.io/avenue/
+        * Source-code: https://github.com/corverdevelopment/avenue/
+        
+        A quick example:
+        
+        .. code-block:: python
+        
+            from avenue import Avenue
+            
+            router = Avenue()
+        
+            @router.attach(path='/', method='GET')
+            def hello_world():
+                return 'Hallo world!'
+            
+            route = {
+              'path': '/',
+              'method': 'GET,
+            }
+        
+            assert router.solve(**route) == 'Hallo world!'
+        
+        
+Keywords: routing
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
