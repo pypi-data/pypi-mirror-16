@@ -1,0 +1,14 @@
+MANIFEST.in
+readme.md
+readme.rst
+setup.py
+CaTeX.egg-info/PKG-INFO
+CaTeX.egg-info/SOURCES.txt
+CaTeX.egg-info/dependency_links.txt
+CaTeX.egg-info/entry_points.txt
+CaTeX.egg-info/requires.txt
+CaTeX.egg-info/top_level.txt
+catex/__init__.py
+catex/cli.py
+catex/core.py
+catex/version.py
