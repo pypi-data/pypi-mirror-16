@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: faker_cinema
+Version: 0.2.0
+Summary: A cinema industry-specific provider for faker
+Home-page: https://github.com/RangerOfFire/faker-cinema
+Author: Michael Hinstridge
+Author-email: mhinstridge@gmail.com
+License: MIT License
+Download-URL: https://github.com/RangerOfFire/faker-cinema/tarball/release/0.2.0
+Description: UNKNOWN
+Keywords: testing,faker-provider
+Platform: UNKNOWN
