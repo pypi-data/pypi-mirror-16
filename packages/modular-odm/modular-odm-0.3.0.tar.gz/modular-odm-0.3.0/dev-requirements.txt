@@ -1,0 +1,6 @@
+nose
+mock
+tox
+wheel
+invoke>=0.12.0,<0.13.0
+sphinx
