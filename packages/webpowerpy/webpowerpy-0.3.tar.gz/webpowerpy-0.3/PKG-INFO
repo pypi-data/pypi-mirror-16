@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: webpowerpy
+Version: 0.3
+Summary: Python wrapper around WebPower SOAP-v4.2 API
+Home-page: http://github.com/dooplan/webpower/
+Author: Pasqual Guerrero
+Author-email: pasqual.guerrero@gmail.com
+License: GNU General Public License v3.0
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Natural Language :: English
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: Unix
