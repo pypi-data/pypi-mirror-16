@@ -1,0 +1,12 @@
+HISTORY.rst
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+Flask_Multi_Redis.egg-info/PKG-INFO
+Flask_Multi_Redis.egg-info/SOURCES.txt
+Flask_Multi_Redis.egg-info/dependency_links.txt
+Flask_Multi_Redis.egg-info/not-zip-safe
+Flask_Multi_Redis.egg-info/requires.txt
+Flask_Multi_Redis.egg-info/top_level.txt
+flask_multi_redis/__init__.py
