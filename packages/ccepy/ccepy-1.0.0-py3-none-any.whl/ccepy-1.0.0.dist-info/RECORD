@@ -1,0 +1,13 @@
+ccepy/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ccepy/aritmetica_elemental.py,sha256=kqHSFgW1eRVQDYmFpQjVMF_RBP-ZAwRYhF6Iag929VY,18579
+ccepy/cuerpos_finitos.py,sha256=LiO9-D3zbTWLVegN52tmob_4B5Lww9H1Xc2T7tTh0mU,12141
+ccepy/curvas_elipticas.py,sha256=AElAUqC5vgjc-SrvuMy9XwvZk2GAopge95wh-L95sRM,37352
+ccepy/esquemas_criptograficos.py,sha256=ZzKzsabd8Jppev5-9D0Tkdd4mbNBXdIwuOKeV0w5Lww,10255
+ccepy/listado_curvas_elipticas.py,sha256=mj6ID7b4s9QiZbS2w4S_Rd1qstVc08O-dwRJZldyoRA,7782
+ccepy-1.0.0.dist-info/DESCRIPTION.rst,sha256=xw46CJmK54KzVU-pRsllSMyq0Myim-m39Ag7lJa-ZM4,450
+ccepy-1.0.0.dist-info/METADATA,sha256=RIFNCb579io4OQDjD576-G4xbSaeFNmENKpiUEpYh40,1255
+ccepy-1.0.0.dist-info/RECORD,,
+ccepy-1.0.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+ccepy-1.0.0.dist-info/entry_points.txt,sha256=lexK7RzT1xMyCvalZCkEXUV_pXjWKxyNU2NGRfSYmuo,40
+ccepy-1.0.0.dist-info/metadata.json,sha256=hx6CJDR2GMYUJ8cy-ofSOz-FN2r4mjq6K2V60E1-B8w,1110
+ccepy-1.0.0.dist-info/top_level.txt,sha256=RWZv4ghlryfg1--slCHS_92Lhvv3JAnrdsRqYiVz0Fo,6
