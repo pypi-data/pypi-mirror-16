@@ -1,0 +1,15 @@
+functools32
+adage>0.2.0
+packtivity>0.0.1
+cap-schemas
+click
+psutil
+requests[security]>=2.9
+pyyaml
+jsonref
+jsonschema
+jsonpointer>=1.10
+jsonpath_rw
+packtivity
+adage
+jq
