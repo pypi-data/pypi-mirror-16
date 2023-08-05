@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: KIPsupin_doc2yaml
+Version: 0.0.1
+Summary:  教育部臺灣閩南語字詞頻調查工作資料轉換工具
+Home-page: https://github.com/sih4sing5hong5/KIPsupin_doc2yaml
+Author: 薛丞宏
+Author-email: ihcaoe@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/sih4sing5hong5/KIPsupin_doc2yaml
+Description: UNKNOWN
+Keywords: 詞頻,臺語
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Text Processing :: Linguistic
