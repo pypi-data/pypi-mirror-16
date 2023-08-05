@@ -1,0 +1,32 @@
+Metadata-Version: 1.0
+Name: socionics
+Version: 1.0
+Summary: Socionics module
+Home-page: UNKNOWN
+Author: MyrikLD
+Author-email: myrik260138@tut.by
+License: GPLv3
+Description: [EN] Python3 socionics module
+        
+        [RUS] Соционический модуль для python3
+        
+        Usage:
+        
+        	db = Sociodb()
+        
+        	a = Stype("INTP")
+        
+        	b = Stype("INFJ")
+        
+        	print(a.quad())
+        
+        	print(a.name(1))
+        
+        	print(db.otn[a+b])
+        
+        	a.set("INFJ")
+        
+        	print(db.otn[a+"ISFJ"])
+        
+Keywords: соционика,socionics,соционический,socionica,socionic
+Platform: UNKNOWN

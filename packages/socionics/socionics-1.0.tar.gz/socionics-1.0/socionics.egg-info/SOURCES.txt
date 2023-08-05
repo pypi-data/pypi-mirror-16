@@ -1,0 +1,8 @@
+README
+setup.py
+socionics/__init__.py
+socionics/core.py
+socionics.egg-info/PKG-INFO
+socionics.egg-info/SOURCES.txt
+socionics.egg-info/dependency_links.txt
+socionics.egg-info/top_level.txt
