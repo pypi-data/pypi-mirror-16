@@ -1,0 +1,6 @@
+names:
+- kwargs: {daa: true, nmaa: true}
+  name: upower
+  proc: gnome_get
+- name: libsecret
+  proc: gnome_get
