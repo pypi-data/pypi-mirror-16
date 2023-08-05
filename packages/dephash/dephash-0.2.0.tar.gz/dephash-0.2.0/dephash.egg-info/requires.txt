@@ -1,0 +1,5 @@
+click
+hashin
+pip>=8.1.2
+six
+virtualenv
