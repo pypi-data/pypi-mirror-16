@@ -1,0 +1,10 @@
+pyecoplug/__init__.py,sha256=AZYS-Gq581R_Mbs1bIt4vtCbbKsiikRHqJkX02M3kQk,62
+pyecoplug/discovery.py,sha256=K_M92XhTzwGG8ZvjOaFk5M0vEeLCr7cVI1Id_oqAHe0,3584
+pyecoplug/plug.py,sha256=MIFaWJWCbGGl4uiDGPAgXIfjfa0Ufa0sK1yF4mISn48,3945
+pyecoplug-0.0.4.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+pyecoplug-0.0.4.dist-info/METADATA,sha256=6v3TVmY4D7KH_LKVrRijRlM9Q_L9-9DR-Ek82KJHULM,235
+pyecoplug-0.0.4.dist-info/RECORD,,
+pyecoplug-0.0.4.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+pyecoplug-0.0.4.dist-info/metadata.json,sha256=i0c6Nt3Tox0rX-AgVijDBeF9Lcbv93DsJ4jcGLC7slQ,391
+pyecoplug-0.0.4.dist-info/top_level.txt,sha256=HQ3bmnx6VNwX8aUO3Q8XBgCK3iDliYSGIUeVg4IhTj4,10
+pyecoplug-0.0.4.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
