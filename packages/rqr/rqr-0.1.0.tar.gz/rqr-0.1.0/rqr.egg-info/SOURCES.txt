@@ -1,0 +1,13 @@
+README.rst
+setup.py
+rqr/__init__.py
+rqr/main.py
+rqr/requirements.py
+rqr/serializer.py
+rqr/updater.py
+rqr.egg-info/PKG-INFO
+rqr.egg-info/SOURCES.txt
+rqr.egg-info/dependency_links.txt
+rqr.egg-info/entry_points.txt
+rqr.egg-info/requires.txt
+rqr.egg-info/top_level.txt

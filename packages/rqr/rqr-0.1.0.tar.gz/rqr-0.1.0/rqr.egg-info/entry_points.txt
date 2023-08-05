@@ -1,0 +1,3 @@
+[console_scripts]
+rqr = rqr.main:cli
+
