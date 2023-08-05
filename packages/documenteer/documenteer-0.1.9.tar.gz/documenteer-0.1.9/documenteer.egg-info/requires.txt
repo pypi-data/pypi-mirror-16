@@ -1,0 +1,7 @@
+future
+Sphinx
+PyYAML
+sphinx-prompt
+sphinxcontrib-bibtex
+GitPython
+lsst-dd-rtd-theme==0.1.0
