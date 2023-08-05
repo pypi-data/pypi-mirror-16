@@ -1,0 +1,12 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+fifostr/__init__.py
+fifostr/fifostr.py
+fifostr.egg-info/PKG-INFO
+fifostr.egg-info/SOURCES.txt
+fifostr.egg-info/dependency_links.txt
+fifostr.egg-info/requires.txt
+fifostr.egg-info/top_level.txt
