@@ -1,0 +1,15 @@
+ansible==2.1.0.0
+awsebcli==3.1.2
+boto==2.36.0
+demjson==2.2.4
+Fabric==1.10.1
+Importing==1.10
+Jinja2==2.8
+pycrypto==2.6.1
+python-vagrant==0.5.13
+requests==2.5.1
+retrying==1.3.3
+testinfra==1.3.0
+voluptuous==0.8.11
+Werkzeug==0.11.10
+YURL==0.13
