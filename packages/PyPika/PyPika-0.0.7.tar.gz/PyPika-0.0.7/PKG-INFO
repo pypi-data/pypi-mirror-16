@@ -1,0 +1,51 @@
+Metadata-Version: 1.1
+Name: PyPika
+Version: 0.0.7
+Summary: A query builder API for Python
+Home-page: https://github.com/kayak/pypika
+Author: Timothy Heys
+Author-email: theys@kayak.com
+License: UNKNOWN
+Description: pypika - Python Query Builder
+        =============================
+        
+        .. _intro_start:
+        
+        |BuildStatus| |CoverageStatus| |Docs| |PyPi|
+        
+        **PyPika** is a Python API for for building queries.  The motivation behind **PyPika** is to provide a simple syntax for
+        building queries but does not limit the flexibility of handwritten SQL.  Most other querybuilders were built with ORM in
+        mind and are limited to selecting columns and provide only limited join functionality.  **PyPika** was designed around
+        data analysis and provides syntax for building queries with arithmetic, complex expressions, nested functions,
+        subqueries and joins.  It is also easily extended to take full advantage of specific features of SQL database vendors.
+        
+        .. _intro_end:
+        
+        
+        
+        .. _available_badges_start:
+        
+        .. |BuildStatus| image:: https://travis-ci.org/kayak/pypika.svg?branch=master
+           :target: https://travis-ci.org/kayak/pypika
+        .. |CoverageStatus| image:: https://coveralls.io/repos/kayak/pypika/badge.svg?branch=master&service=github
+           :target: https://coveralls.io/github/kayak/pypika?branch=master
+        .. |Docs| image:: https://readthedocs.org/projects/pypika/badge/?version=latest
+           :target: http://pypika.readthedocs.io/en/latest/
+        .. |PyPi| image:: https://img.shields.io/pypi/v/pypika.svg?style=flat
+           :target: https://pypi.python.org/pypi/pypika
+        
+        
+        .. _available_badges_end:
+Keywords: pypika python query builder querybuild sql mysql postgres psql oracle vertica aggregated relational database rdbms business analytics bi data science analysis pandas orm object mapper
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: PL/SQL
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
