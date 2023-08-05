@@ -1,0 +1,3 @@
+[console_scripts]
+listdates = listdates:main
+
