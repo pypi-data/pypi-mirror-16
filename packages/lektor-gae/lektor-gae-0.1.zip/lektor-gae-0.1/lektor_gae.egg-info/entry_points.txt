@@ -1,0 +1,3 @@
+[lektor.plugins]
+gae = lektor_gae:GaePlugin
+
