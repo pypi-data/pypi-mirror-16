@@ -1,0 +1,15 @@
+json_tricks/__init__.py,sha256=02e9sqmcG9Ge_YX7_hCFCbaP5qufqX7d7qAQv1mPogg,689
+json_tricks/comment.py,sha256=SX0flRRGP2ZRIUadNu3bnFoLmKHyvRMRVHZj4r1wCLg,833
+json_tricks/decoders.py,sha256=IBuDlYvBfsgotPBkXJ6VfLKVh4w5i2VgEakPLnKx5e8,4611
+json_tricks/encoders.py,sha256=vkP7vu6UzlPqAM5qtAQzWlbCtMmarbTDV0v4cdxQg7M,4288
+json_tricks/nonp.py,sha256=zR0Ow2TkyHeLKhiwd7ujM3zN5IIlfORKFLJFe7FSIi0,6852
+json_tricks/np.py,sha256=Ag28JRqBQlTEv3_XgTiH5RgqvMJLWJ3i--yu5ilsvJ0,3579
+json_tricks/test_class.py,sha256=D7hbUeWkE-RUBNdpuAZBHaWlmD1hqRDcb58HQtdAthU,557
+json_tricks/test_nonp.py,sha256=2o1UbZo2HEOO4T8BagFQoIGFQT1kD_A_4THFqQVz10o,3846
+json_tricks/test_np.py,sha256=NIvQz1AeGaTDfpN_C5amT7JQbxz7heg-Y7NnEFNMkOU,1534
+json_tricks-3.0.1.dist-info/DESCRIPTION.rst,sha256=GuuepGhdMRQYxuiPPx4EQHn3IXd-ljGXwpEs2hq4nJc,9202
+json_tricks-3.0.1.dist-info/METADATA,sha256=rh5THc9uH_nUVK-6QSi1et1TilIhhDkvSXB_b4NsrOA,10287
+json_tricks-3.0.1.dist-info/RECORD,,
+json_tricks-3.0.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+json_tricks-3.0.1.dist-info/metadata.json,sha256=k5LDXQ73-o5pe7aJ4DlEwNWlDfE3YOaTpXPNC14IvXU,1178
+json_tricks-3.0.1.dist-info/top_level.txt,sha256=cIJdcQJF7Hp1oM4islwmZvJc34kAtMLILDaxF-d5ZHE,12
