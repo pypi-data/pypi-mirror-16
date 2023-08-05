@@ -1,0 +1,4 @@
+pypi-publisher==0.0.4
+coreapi==1.20.0
+-e git+https://github.com/finix-payments/wac@0.24#egg=wac
+iso8601==0.1.11
