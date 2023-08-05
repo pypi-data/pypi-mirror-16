@@ -1,0 +1,10 @@
+COPYING.txt
+MANIFEST.in
+README.txt
+setup.py
+pip_project/__init__.py
+pip_project/fun.py
+pipfun.egg-info/PKG-INFO
+pipfun.egg-info/SOURCES.txt
+pipfun.egg-info/dependency_links.txt
+pipfun.egg-info/top_level.txt
