@@ -1,0 +1,17 @@
+environs
+
+[all]
+environs
+pytest
+pytest-cov
+pytest-flake8
+
+[install]
+environs
+
+[setup]
+
+[tests]
+pytest
+pytest-cov
+pytest-flake8

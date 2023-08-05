@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+environs_serviceurl/__init__.py
+environs_serviceurl/parser.py
+environs_serviceurl.egg-info/PKG-INFO
+environs_serviceurl.egg-info/SOURCES.txt
+environs_serviceurl.egg-info/dependency_links.txt
+environs_serviceurl.egg-info/not-zip-safe
+environs_serviceurl.egg-info/requires.txt
+environs_serviceurl.egg-info/top_level.txt
+test/__init__.py
+test/test_service_url.py
