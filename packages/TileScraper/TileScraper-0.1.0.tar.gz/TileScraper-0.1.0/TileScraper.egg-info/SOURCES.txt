@@ -1,0 +1,9 @@
+README.txt
+setup.cfg
+setup.py
+TileScraper.egg-info/PKG-INFO
+TileScraper.egg-info/SOURCES.txt
+TileScraper.egg-info/dependency_links.txt
+TileScraper.egg-info/top_level.txt
+tilescraper/__init__.py
+tilescraper/tilescraper.py
