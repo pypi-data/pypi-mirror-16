@@ -1,0 +1,4 @@
+click
+python-gnupg
+github3.py
+six
