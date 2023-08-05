@@ -1,0 +1,10 @@
+setup.py
+tapioca_google/__init__.py
+tapioca_google/resource_mapping.py
+tapioca_google/tapioca_google.py
+tapioca_google.egg-info/PKG-INFO
+tapioca_google.egg-info/SOURCES.txt
+tapioca_google.egg-info/dependency_links.txt
+tapioca_google.egg-info/not-zip-safe
+tapioca_google.egg-info/requires.txt
+tapioca_google.egg-info/top_level.txt
