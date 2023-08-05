@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: incor
+Version: 1.0.0
+Summary: INstant COde Runner compiles and executes the programs present in the mentioned folder instantaneously as and when changes are .
+Home-page: https://github.com/lakshmanaram/Incor
+Author: lakshmanaram, srivatsan-ramesh
+Author-email: lakshmanaram.n@gmail.com, sriramesh4@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: Algorithms,Competitive Programming,Automatic,run,compile,execute
+Platform: UNKNOWN
