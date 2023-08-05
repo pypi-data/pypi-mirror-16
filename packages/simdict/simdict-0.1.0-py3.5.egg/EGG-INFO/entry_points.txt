@@ -1,0 +1,3 @@
+[console_scripts]
+simdict = simdict.core:main
+

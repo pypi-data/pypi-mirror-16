@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+simdict/__init__.py
+simdict/core.py
+simdict.egg-info/PKG-INFO
+simdict.egg-info/SOURCES.txt
+simdict.egg-info/dependency_links.txt
+simdict.egg-info/entry_points.txt
+simdict.egg-info/top_level.txt
