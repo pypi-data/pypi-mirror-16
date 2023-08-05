@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: zerolog
+Version: 0.1
+Summary: Minimalist and agnostic log aggregation with zeromq from tcp
+Home-page: https://github.com/TheGhouls/zerolog
+Author: TheGhouls
+Author-email: manu.valette@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: logging,logs,zeromq,rsyslog
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.5
