@@ -1,0 +1,8 @@
+setup.py
+mgab_panda.egg-info/PKG-INFO
+mgab_panda.egg-info/SOURCES.txt
+mgab_panda.egg-info/dependency_links.txt
+mgab_panda.egg-info/entry_points.txt
+mgab_panda.egg-info/top_level.txt
+panda/__init__.py
+panda/__main__.py
