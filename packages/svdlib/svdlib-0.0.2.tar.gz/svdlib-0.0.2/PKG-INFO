@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: svdlib
+Version: 0.0.2
+Summary: supervisor manager
+Home-page: https://github.com/k0st1an/svdlib
+Author: Konstantin Kruglov
+Author-email: kruglovk@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3 :: Only
