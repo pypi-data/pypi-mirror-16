@@ -1,0 +1,26 @@
+Metadata-Version: 1.1
+Name: django-credits
+Version: 0.1
+Summary: A marquee for giving credit to contributors.
+Home-page: https://github.com/rerb/django-credits
+Author: Bob Erb
+Author-email: bob.erb@gmail.com
+License: UNKNOWN
+Description: ==============
+        django-credits
+        ==============
+        
+        A marquee for giving credit to contributors.
+        
+        
+        Quick Start
+        -----------
+        
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Framework :: Django

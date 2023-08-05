@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+django_credits/__init__.py
+django_credits/admin.py
+django_credits/apps.py
+django_credits/models.py
+django_credits.egg-info/PKG-INFO
+django_credits.egg-info/SOURCES.txt
+django_credits.egg-info/dependency_links.txt
+django_credits.egg-info/requires.txt
+django_credits.egg-info/top_level.txt
