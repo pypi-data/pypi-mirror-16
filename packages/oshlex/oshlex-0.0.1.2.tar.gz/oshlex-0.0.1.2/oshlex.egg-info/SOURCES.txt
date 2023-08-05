@@ -1,0 +1,9 @@
+README.rst
+setup.py
+oshlex/__init__.py
+oshlex/config.py
+oshlex/handlers.py
+oshlex.egg-info/PKG-INFO
+oshlex.egg-info/SOURCES.txt
+oshlex.egg-info/dependency_links.txt
+oshlex.egg-info/top_level.txt
