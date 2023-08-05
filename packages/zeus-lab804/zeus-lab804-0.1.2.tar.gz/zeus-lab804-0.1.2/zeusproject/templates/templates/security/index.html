@@ -1,0 +1,16 @@
+{% extends "base.jinja" %}
+
+{% block title %}
+Autenticação
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-xs-4"></div>
+    <div class="col-xs-4">
+		{{ content }}
+        {% block form_content %}{% endblock %}
+    </div>
+    <div class="col-xs-4"></div>
+</div>
+{% endblock %}
