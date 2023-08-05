@@ -1,0 +1,8 @@
+README.rst
+django_cgi_wrap.py
+setup.py
+django_cgi_wrap.egg-info/PKG-INFO
+django_cgi_wrap.egg-info/SOURCES.txt
+django_cgi_wrap.egg-info/dependency_links.txt
+django_cgi_wrap.egg-info/requires.txt
+django_cgi_wrap.egg-info/top_level.txt
