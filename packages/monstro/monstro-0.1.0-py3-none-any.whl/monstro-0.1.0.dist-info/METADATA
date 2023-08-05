@@ -1,0 +1,17 @@
+Metadata-Version: 2.0
+Name: monstro
+Version: 0.1.0
+Summary: Asynchronous web-framework based on Tornado and Motor
+Home-page: https://github.com/pyvim/monstro
+Author: Vitalii Maslov
+Author-email: me@pyvim.com
+License: MIT
+Download-URL: https://github.com/pyvim/monstro/tarball/master
+Keywords: framework,web,tornado,mongodb,motor,server,asynchronous
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+
+UNKNOWN
+
+
