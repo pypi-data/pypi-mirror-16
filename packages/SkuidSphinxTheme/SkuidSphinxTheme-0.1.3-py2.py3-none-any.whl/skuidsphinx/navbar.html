@@ -1,0 +1,14 @@
+<header class="navbar">
+  <a class="navbar-brand" href="{{ pathto(master_doc) }}">
+    <img src="{{ pathto('_static' ~ theme_logo, 1) }}" alt="{{ theme_logo_alt }}">
+  </a>
+
+  <ul class="navbar-nav">
+    <li><a href="/design/index.html">Design</a></li>
+    <li><a href="/api/index.html">API Reference</a></li>
+  </ul>
+
+  {% block navbarsearch %}
+    {% include "navbarsearchbox.html" %}
+  {% endblock %}
+</header>
