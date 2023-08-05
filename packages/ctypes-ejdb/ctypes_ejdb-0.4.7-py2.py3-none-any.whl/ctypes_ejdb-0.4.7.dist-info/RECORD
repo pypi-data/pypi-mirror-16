@@ -1,0 +1,16 @@
+ctypes_ejdb-0.4.7.dist-info/DESCRIPTION.rst,sha256=jQBqBaj9kuy30uxTEmTbWVCkVxSfqemRsUDDcNdbpeQ,3407
+ctypes_ejdb-0.4.7.dist-info/METADATA,sha256=ZV_K4KTFIaXBiwN7ltw1dfW_qu9RKyaQF15ANj3J9sI,4315
+ctypes_ejdb-0.4.7.dist-info/RECORD,,
+ctypes_ejdb-0.4.7.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+ctypes_ejdb-0.4.7.dist-info/entry_points.txt,sha256=1jvq1Vv4MobeZZXn9LN3BKZ006ybxO_OG2BTL6iJOms,44
+ctypes_ejdb-0.4.7.dist-info/metadata.json,sha256=Gm7SX-W1-eqjKFGUAidXZcQfUwSStTrPpJfNbzfdEOk,1194
+ctypes_ejdb-0.4.7.dist-info/top_level.txt,sha256=114nbYqEXw4NVYbRPsTmL8DsbFtWFW4yE3D7PMR7-uU,14
+ejdb/__init__.py,sha256=reuHBQZnxCs3gsCHhWvsTYjcL0jwTJ3VEM7_4SgbdOc,475
+ejdb/api.py,sha256=MfCl0Iab8fwQu0s-BjV6H-G2UBx5OcJa3KgrSRtlFQM,26131
+ejdb/bson.py,sha256=ZH4iEBYc3iOkMEW0k0nGgW8doPYmANOR067Qcxcntgg,10714
+ejdb/c.py,sha256=H-rK0BwfCpsBJN3Kt-_hcwq3Xx14dUqPQoBXRcDIvfA,17734
+ejdb/tc.py,sha256=aPpsBVYj2RDkmS4Ye9tMJJaGyld1ZnbSgMu0CV5VpM0,1616
+ejdb/utils.py,sha256=LFPfQr57nL-cLG_IgVQfoUO9a4GWu4sH24Ug-HLeGD4,4366
+ejdb/cmd/__init__.py,sha256=p5wCbndnsYRuDCXrQ2SxNb5OuvU1fSImPV5rHdBulDo,133
+ejdb/cmd/run.py,sha256=xIPV5RwJ1eCSFB6Deh89HQuBjLeWS3-6q4evZqb7wJk,3648
+ejdb/cmd/stub.py,sha256=lQHjRFS9DarZux42Y-EBaem76YFgwLV9chK8ChakiJ0,300
