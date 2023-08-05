@@ -1,0 +1,10 @@
+setup.py
+calendarBot/__init__.py
+calendarBot/calendarApi.py
+calendarBot/calendarBotSettings.py
+calendarBot/calendarTimer.py
+calendarBot.egg-info/PKG-INFO
+calendarBot.egg-info/SOURCES.txt
+calendarBot.egg-info/dependency_links.txt
+calendarBot.egg-info/requires.txt
+calendarBot.egg-info/top_level.txt
