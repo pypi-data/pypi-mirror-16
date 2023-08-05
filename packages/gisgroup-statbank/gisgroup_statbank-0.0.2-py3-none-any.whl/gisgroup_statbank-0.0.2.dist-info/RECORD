@@ -1,0 +1,13 @@
+gisgroup_statbank-0.0.2.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+gisgroup_statbank-0.0.2.dist-info/METADATA,sha256=wavwqk7HcXawt3LvH11_AmDrZk0N5Ikx5wouLe5s9kk,305
+gisgroup_statbank-0.0.2.dist-info/RECORD,,
+gisgroup_statbank-0.0.2.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+gisgroup_statbank-0.0.2.dist-info/metadata.json,sha256=bYMeNN_kIZSxhZJfp9PiLLoCJJAUxB9bHBo8QopfldA,517
+gisgroup_statbank-0.0.2.dist-info/top_level.txt,sha256=Ibl55uXS2OJfzjvhjP3esCK9OQ8z0p6A48NzYNTxUNo,9
+statbank/__init__.py,sha256=q1xwW1bBaRw7AG54xUwnGsSBQdQPJtgD0AykBpjpk_w,2523
+statbank/config.py,sha256=0aagymr4_lyyXZzXP-350A9C1wTi32_r7lZzwphdu18,145
+statbank/error.py,sha256=2SCQLbw1RkpleMJ0ax1dUZXd3vhpxaFhLbYD4EmsJf8,180
+statbank/request.py,sha256=IIwv3EF_N3vY2VeQdd5Zie2-SWyHUPGnpbYp9sf4bqI,2331
+statbank/resources.py,sha256=xOixJxCo98d0K0bHdU4HV_F05fy7smvdSOx14GPNpsU,2896
+statbank/time.py,sha256=LA1wQT3GADosqztcs7anGNZlOpbPZup_G_U5VRZCa-I,3339
+statbank/url.py,sha256=GJJK4krURj495wn6VW8J1TdyhXZyziKLepzCac1veEg,1250
