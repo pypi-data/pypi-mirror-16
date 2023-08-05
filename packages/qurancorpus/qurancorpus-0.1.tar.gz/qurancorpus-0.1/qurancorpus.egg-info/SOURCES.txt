@@ -1,0 +1,10 @@
+setup.py
+./__init__.py
+./constants.py
+./corpus.py
+qurancorpus.egg-info/PKG-INFO
+qurancorpus.egg-info/SOURCES.txt
+qurancorpus.egg-info/dependency_links.txt
+qurancorpus.egg-info/requires.txt
+qurancorpus.egg-info/top_level.txt
+qurancorpus.egg-info/zip-safe
