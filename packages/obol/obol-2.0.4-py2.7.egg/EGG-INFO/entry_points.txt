@@ -1,0 +1,3 @@
+[console_scripts]
+obol = obol.main:main
+
