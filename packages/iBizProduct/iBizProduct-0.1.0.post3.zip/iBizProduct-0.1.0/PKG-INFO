@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: iBizProduct
+Version: 0.1.0
+Summary: iBizProduct library for python products
+Home-page: https://code.ibizservices.com/lrivera/iBizProduct-Python
+Author: Luis Rivera
+Author-email: lrivera@xelaweb.com
+License: MIT
+Description: iBizProduct Python Library
+        ==========================
+        
+Keywords: library iBizAPI development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
