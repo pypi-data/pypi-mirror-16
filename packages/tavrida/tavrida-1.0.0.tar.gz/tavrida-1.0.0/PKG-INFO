@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: tavrida
+Version: 1.0.0
+Summary: RPC and Pub/Sub over RabbitMQ
+Home-page: https://github.com/sbunatyan/tavrida
+Author: Sergey Bunatyan
+Author-email: sergey@bunatian.ru
+License: UNKNOWN
+Download-URL: https://github.com/sbunatyan/tavrida/tree/1.0.0
+Description: UNKNOWN
+Keywords: amqp,prc,tavrida,rabbitmq
+Platform: UNKNOWN
