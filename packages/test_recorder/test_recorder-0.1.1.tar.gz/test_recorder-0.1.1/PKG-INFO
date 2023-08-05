@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: test_recorder
+Version: 0.1.1
+Summary: A library that help automation QA engineers to solve problems with flaky tests by recording video.
+Home-page: https://github.com/SergeyPirogov/video_recorder_python
+Author: Sergey Pirogov
+Author-email: semen4ik20@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/SergeyPirogov/video_recorder_python/tarball/0.1
+Description: UNKNOWN
+Keywords: testing,logging,video,test automation
+Platform: UNKNOWN
