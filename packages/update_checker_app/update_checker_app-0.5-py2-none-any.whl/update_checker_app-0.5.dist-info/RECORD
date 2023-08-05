@@ -1,0 +1,11 @@
+update_checker_app/__init__.py,sha256=ScD06iJq0XKwNEkfXB1ydNDoXNJiVHn9rcCyzHS7bAo,567
+update_checker_app/controllers.py,sha256=7R79W5qFFS6oBkOWlsxxlZU-IylCiu2LdHGzQIgF7fE,2927
+update_checker_app/helpers.py,sha256=lQ0dIFYr5Y7aOoiblUZkEpkLcEXGMrYSPLB-WMfT0aQ,4068
+update_checker_app/models.py,sha256=u3OTjd4zZFDicEZQ6hfLwEVjwFKoeKPNy7EN0lbZ-gM,3001
+update_checker_app-0.5.dist-info/DESCRIPTION.rst,sha256=nTkPVAld_paL5smJYDBszBetPPyN7HNqmfEnj11eqQ0,213
+update_checker_app-0.5.dist-info/METADATA,sha256=ZdAkdBPki0RDJZvmPzU_7EVwEZUvQMz0ChnY5BXm0NQ,933
+update_checker_app-0.5.dist-info/RECORD,,
+update_checker_app-0.5.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+update_checker_app-0.5.dist-info/entry_points.txt,sha256=o4C7x7poVBTZLY5YlevcOIYY9RbqVufJp-JlPJ5RTK4,64
+update_checker_app-0.5.dist-info/metadata.json,sha256=Ff95sB3Jvc3BjQdHUUdsvBBuDoUhVBu_og1I0aldnuc,1069
+update_checker_app-0.5.dist-info/top_level.txt,sha256=WGu_nkz_3sGvcMX1nZlTgN0Yo5IaHhj-2owZ_eTY2q4,19

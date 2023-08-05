@@ -1,0 +1,3 @@
+[console_scripts]
+update_checker_app = update_checker_app:main
+
