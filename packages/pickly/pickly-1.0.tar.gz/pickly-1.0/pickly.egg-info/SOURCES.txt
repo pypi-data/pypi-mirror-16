@@ -1,0 +1,7 @@
+setup.py
+pickly/__init__.py
+pickly/pickly.py
+pickly.egg-info/PKG-INFO
+pickly.egg-info/SOURCES.txt
+pickly.egg-info/dependency_links.txt
+pickly.egg-info/top_level.txt
