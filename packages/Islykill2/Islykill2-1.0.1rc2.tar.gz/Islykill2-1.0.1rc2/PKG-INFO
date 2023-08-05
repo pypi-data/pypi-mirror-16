@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: Islykill2
+Version: 1.0.1rc2
+Summary: Utility to parse and verify Islykill authentication, using SAML 2.0
+Home-page: https://github.com/sindrig/islykill2/
+Author: Sindri Gudmundsson
+Author-email: sindrigudmundsson@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
