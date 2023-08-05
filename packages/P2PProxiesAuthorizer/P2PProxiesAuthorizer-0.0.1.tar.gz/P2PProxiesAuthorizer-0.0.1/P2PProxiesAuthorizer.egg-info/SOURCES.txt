@@ -1,0 +1,8 @@
+setup.py
+P2PProxiesAuthorizer/__init__.py
+P2PProxiesAuthorizer/__main__.py
+P2PProxiesAuthorizer.egg-info/PKG-INFO
+P2PProxiesAuthorizer.egg-info/SOURCES.txt
+P2PProxiesAuthorizer.egg-info/dependency_links.txt
+P2PProxiesAuthorizer.egg-info/requires.txt
+P2PProxiesAuthorizer.egg-info/top_level.txt
