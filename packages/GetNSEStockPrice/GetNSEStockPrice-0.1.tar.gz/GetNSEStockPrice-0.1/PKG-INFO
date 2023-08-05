@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: GetNSEStockPrice
+Version: 0.1
+Summary: Simple python library that consumes HTTP REST data of sttock prices provided by Google and Yahoo Finance APIs.
+Home-page: https://github.com/rajaram1990/GetNSEStockPrice
+Author: Rajaram Srinivasan
+Author-email: rajaram.1990@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/rajaram1990/GetNSEStockPrice/tarball/0.1
+Description: UNKNOWN
+Keywords: Finance,Stock,NSE,Google,Yahoo,LTP
+Platform: UNKNOWN
