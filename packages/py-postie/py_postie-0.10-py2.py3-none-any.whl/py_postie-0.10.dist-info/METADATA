@@ -1,0 +1,16 @@
+Metadata-Version: 2.0
+Name: py-postie
+Version: 0.10
+Summary: Utility to batch send emails and text messages
+Home-page: http://github.com/itsnauman/postie
+Author: Nauman Ahmad
+Author-email: nauman-ahmad@outlook.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: jinja2
+Requires-Dist: mailthon
+Requires-Dist: twilio
+
+UNKNOWN
+
+
