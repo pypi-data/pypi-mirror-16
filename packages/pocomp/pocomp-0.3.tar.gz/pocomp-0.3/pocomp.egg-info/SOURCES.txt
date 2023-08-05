@@ -1,0 +1,9 @@
+setup.py
+pocomp/__init__.py
+pocomp/pocomp.py
+pocomp.egg-info/PKG-INFO
+pocomp.egg-info/SOURCES.txt
+pocomp.egg-info/dependency_links.txt
+pocomp.egg-info/entry_points.txt
+pocomp.egg-info/requires.txt
+pocomp.egg-info/top_level.txt

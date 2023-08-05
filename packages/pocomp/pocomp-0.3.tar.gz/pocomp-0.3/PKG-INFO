@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: pocomp
+Version: 0.3
+Summary: Simple po files compiler
+Home-page: UNKNOWN
+Author: Andrey Bobrovskiy
+Author-email: lasthitknxx@gmail.com
+License: BSD
+Description: UNKNOWN
+Keywords: po file compiler
+Platform: UNKNOWN
+Requires: polib
