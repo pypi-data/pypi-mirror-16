@@ -1,0 +1,9 @@
+README.txt
+a8e.py
+setup.py
+a8e.egg-info/PKG-INFO
+a8e.egg-info/SOURCES.txt
+a8e.egg-info/dependency_links.txt
+a8e.egg-info/entry_points.txt
+a8e.egg-info/not-zip-safe
+a8e.egg-info/top_level.txt
