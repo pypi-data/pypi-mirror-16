@@ -1,0 +1,11 @@
+where2Go-0.0.4.dist-info/RECORD,,
+where2Go-0.0.4.dist-info/top_level.txt,sha256=NUaE3f9fzB02sQsKgAEVX4u3yOFvl3nreJZqwfd89Xs,9
+where2Go-0.0.4.dist-info/METADATA,sha256=2qrIYm-z1e2tFpKrL8TYwNi2hI6E_T7A0FS1C3tszqE,1470
+where2Go-0.0.4.dist-info/metadata.json,sha256=ibtTk1WHXVou_PWSj0wsoVozA-D346XccyhlSyaEP0w,837
+where2Go-0.0.4.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+where2Go-0.0.4.dist-info/DESCRIPTION.rst,sha256=_2qwszwN0c7Aiip4AYttFJDw-rt6TinkJipQC_m-h8U,779
+where2Go/landmark.py,sha256=G7NX7zRHFIUzrKHAhOq-xjULGhwDOs-lQl_9ATZoSQY,2152
+where2Go/directions_and_durations.py,sha256=j5TYeci9adsOgib9vVLpAmqdfYQetgRORKnqaPr6Wh0,4747
+where2Go/landmarks.db,sha256=nRPXKM50blNaRttcdVFzxywEuuijHh-OkmvdZTQxTPk,5120
+where2Go/db_and_forecast.py,sha256=YXI99fPBSqV4-iaTVJcK9BsB5TjJNS201w9oTYzC2KA,2752
+where2Go/__init__.py,sha256=cmc54IkgTXECLV7EZWi9POGW9_LHatP3dKVWAJOKEec,5151
