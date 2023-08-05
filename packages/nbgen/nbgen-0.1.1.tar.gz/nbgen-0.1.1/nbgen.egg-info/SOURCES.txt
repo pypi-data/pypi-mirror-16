@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+nbgen/__init__.py
+nbgen.egg-info/PKG-INFO
+nbgen.egg-info/SOURCES.txt
+nbgen.egg-info/dependency_links.txt
+nbgen.egg-info/entry_points.txt
+nbgen.egg-info/requires.txt
+nbgen.egg-info/top_level.txt
