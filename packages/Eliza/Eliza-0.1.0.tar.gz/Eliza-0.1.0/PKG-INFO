@@ -1,0 +1,30 @@
+Metadata-Version: 1.1
+Name: Eliza
+Version: 0.1.0
+Summary: Library with common features for Python (Flask) Microservices
+Home-page: https://github.com/redvox/Eliza
+Author: Jens Schaa
+Author-email: jens.schaa@posteo.de
+License: Apache Software License
+Download-URL: https://github.com/redvox/Eliza/tarball/0.1.0
+Description: Eliza
+        -----
+        
+        As we write micro-services, we write micro-tools and as a consequence we end up with multiple small ones.
+        
+        Nevertheless we want to have a consistent look and feel, without bothering to write/provide the same functionality/resources.
+        
+        This library is targeted specifically to developers who want to create lightweight web-based tools based on python and flask.
+        
+        It provides functions that all our tools share (or should share) so that the tool itself can concentrate on its main function and become even smaller.
+        
+Platform: UNKNOWN
+Classifier: b'Development Status :: 4 - Beta'
+Classifier: b'Intended Audience :: Developers'
+Classifier: b'Natural Language :: English'
+Classifier: b'License :: OSI Approved :: Apache Software License'
+Classifier: b'Programming Language :: Python'
+Classifier: b'Programming Language :: Python :: 2.7'
+Classifier: b'Programming Language :: Python :: 3'
+Classifier: b'Programming Language :: Python :: 3.4'
+Classifier: b'Programming Language :: Python :: 3.5'

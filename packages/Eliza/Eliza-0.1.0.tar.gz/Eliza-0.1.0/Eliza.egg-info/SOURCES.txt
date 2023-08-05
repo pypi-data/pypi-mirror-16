@@ -1,0 +1,10 @@
+README.rst
+setup.py
+Eliza.egg-info/PKG-INFO
+Eliza.egg-info/SOURCES.txt
+Eliza.egg-info/dependency_links.txt
+Eliza.egg-info/requires.txt
+Eliza.egg-info/top_level.txt
+eliza/__init__.py
+eliza/config.py
+test/test_config.py
