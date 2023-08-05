@@ -1,0 +1,66 @@
+Metadata-Version: 1.1
+Name: sphinxcontrib-wavedrom
+Version: 1.0.1
+Summary: A sphinx extension that allows generating wavedrom diagrams based on their textual representation
+Home-page: https://github.com/bavovanachte/sphinx-wavedrom
+Author: Bavo Van Achte
+Author-email: bavo.van.achte@gmail.com
+License: MIT license
+Download-URL: https://github.com/bavovanachte/sphinx-wavedrom/tarball/1.0.1
+Description: Sphinx wavedrom extension 
+        =========================
+        
+        A sphinx extension that allows including wavedrom diagrams by using it's text-based representation
+        
+        Wavedrom online editor and tutorial: http://wavedrom.com/
+        
+        Installation
+        ------------
+        
+        The wavedrom extension can be installed using pip:
+        
+        ::
+        	
+        	pip install sphinxcontrib-wavedrom
+        
+        and by adding **'sphinxcontrib.wavedrom'** to the extensions list in your conf.py file.
+        
+        Directives
+        ----------
+        
+        The extension is useable in the form of an extra wavedrom directive, as shown below.
+        
+        ::
+        
+        	.. wavedrom::
+        
+        		{ signal: [
+        		  	{ name: "clk",  wave: "P......" },
+        		  	{ name: "bus",  wave: "x.==.=x", data: ["head", "body", "tail", "data"] },
+        		  	{ name: "wire", wave: "0.1..0." }
+        		]}
+        
+        The extension will not generate an image out of the diagram description itself,
+        but it will surround it with some html and js tags in the final html document
+        that allow the images to be rendered by the browser.
+        
+        Configuration
+        -------------
+        
+        At the moment, the extension does not require any configuration in conf.py.
+        
+        In the future, I hope to make it possible to specify the path to a local js script, 
+        instead of using the one provided on the wavedrom server,
+        
+        Limitations
+        -----------
+        
+        At the moment, the extension requires an active internet connection to work.
+        The generation of the wavedrom images is done based on a JS script, provided by the wavedrom server.
+        
+        Examples
+        --------
+        
+        In the `example` folder, you can find a couple of examples (taken from the wavedrom tutorial), illustration the use of the extension.
+Keywords: sphinx,wavedrom,documentation
+Platform: any
