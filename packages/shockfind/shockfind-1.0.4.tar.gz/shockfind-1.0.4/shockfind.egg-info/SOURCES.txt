@@ -1,0 +1,9 @@
+setup.py
+shockfind/__init__.py
+shockfind/churchkey.py
+shockfind/shockfind.py
+shockfind.egg-info/PKG-INFO
+shockfind.egg-info/SOURCES.txt
+shockfind.egg-info/dependency_links.txt
+shockfind.egg-info/not-zip-safe
+shockfind.egg-info/top_level.txt

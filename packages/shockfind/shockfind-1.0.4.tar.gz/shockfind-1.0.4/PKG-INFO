@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: shockfind
+Version: 1.0.4
+Summary: Find shocks in MHD simulations.
+Home-page: http://web.science.mq.edu.au/~alehmann/shockfind
+Author: Andrew Lehmann
+Author-email: andrew.lehmann@mq.edu.au
+License: Apache
+Description: Check the paper Lehmann, Federrath and Wardle (2016).
+Keywords: MHD shocks ISM
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Scientific/Engineering :: Astronomy
