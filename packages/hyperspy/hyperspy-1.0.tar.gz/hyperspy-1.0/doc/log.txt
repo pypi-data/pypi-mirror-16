@@ -1,0 +1,1 @@
+WARNING: unsupported build info format in '/home/fjd29/Python/hyperspy3/doc/_build/html/.buildinfo', building all
