@@ -1,0 +1,31 @@
+Changelog
+=========
+
+
+1.0.1 (2016-07-18)
+------------------
+
+- Use zindex system from ftw.theming to fix dropdown menues
+  [Kevin Bieri]
+
+
+1.0.0a3 (2016-07-11)
+--------------------
+
+- Introduce transitionend marker on root element.
+  [Kevin Bieri]
+
+
+1.0.0a2 (2016-07-06)
+--------------------
+
+- Fix offcanvas navigation on iOS devices.
+  Rework revealing offcanvas navigation using two additional wrappers.
+  Refactor styling.
+  [Kevin Bieri]
+
+
+1.0.0a1 (2016-07-06)
+--------------------
+
+- Init release
