@@ -1,0 +1,2 @@
+acos-client>=1.3.6
+a10-openstack-lib>=0.1.0
