@@ -1,0 +1,12 @@
+soa/__init__.py,sha256=k6gm6BzOJqQLfyvzPxPIgPQeJlaU0k1tdHPMZhuIemw,1402
+soa/services.py,sha256=YSliLV-xfUSijWtTyTzwH1TUyUbchyBSXzUgH-yfum0,10803
+soa/directory/__init__.py,sha256=VgZ8lEwW-I-rUZc6D5CaBexnF_010SyduVXl7CDIBsw,157
+soa/directory/coap.py,sha256=Wv-I1qhnpgYMOFiJhVoOxXE1pz8SJFQmcpn70AAq8Ys,13962
+soa/directory/directory.py,sha256=hBO50u3FIL_HQ4zsZFNx-zhU8sYCLJy_ue_54iQveCk,7700
+soa/directory/http.py,sha256=lEcU5Y-dlL7Brig7O5luAnD45y9LmTtTV9rtraPygTo,10092
+soa-0.2.0.dist-info/DESCRIPTION.rst,sha256=GOn4uiKEC6gmnzur6-hiTdazqubJ10_94n--CxQiPbw,1397
+soa-0.2.0.dist-info/METADATA,sha256=lEyx7US-jbG_r1opzwaXzrvnyQlnmMAad2H8XgaVbK4,2551
+soa-0.2.0.dist-info/RECORD,,
+soa-0.2.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+soa-0.2.0.dist-info/metadata.json,sha256=yoiOBQNh5H6hjWSg1zZ3nP9IuHwW8v1Z7yL0Il6VF0k,1399
+soa-0.2.0.dist-info/top_level.txt,sha256=eQ-r-7yxI4V-yTKcsEg5ijBfmaNtfmbTEjVi-3r2qzc,4
