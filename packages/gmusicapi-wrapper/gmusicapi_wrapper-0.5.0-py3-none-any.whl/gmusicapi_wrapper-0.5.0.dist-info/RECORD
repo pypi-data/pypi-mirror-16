@@ -1,0 +1,13 @@
+gmusicapi_wrapper/__init__.py,sha256=FzZI7PMujoiH9mPpjuR3bL-PU8_GW4svcbwYiP8s3d0,667
+gmusicapi_wrapper/base.py,sha256=s7lxP6wATqby_CFvE9-Wl-ySfm44Zr6pLldEdfllmaw,7017
+gmusicapi_wrapper/constants.py,sha256=vouge26Yv2Sd0kWobvMUdWgth-lQM_8KEZPls6M5_lM,893
+gmusicapi_wrapper/decorators.py,sha256=jBB3zEj4BaGZrYtIvi6E3VtSRHiojJ5f-NOVYB2Qcz0,490
+gmusicapi_wrapper/mobileclient.py,sha256=w6CiLnfN3axwNOAEVfMfNAzVeUuozByWnFlbmmJPKb4,6742
+gmusicapi_wrapper/musicmanager.py,sha256=u0QeAw3-mnTGZQvyHba69dX0Bi14MxxREndJS0udJFg,11975
+gmusicapi_wrapper/utils.py,sha256=6Cch_IKDFmfbpg9VHxzapAeWbnZlxybf8lTpWwGgGuA,12956
+gmusicapi_wrapper-0.5.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+gmusicapi_wrapper-0.5.0.dist-info/METADATA,sha256=G22Mkf1tc8SU2hhYl5gcMSw7kcPWZE0ey4Te8_zVgv0,543
+gmusicapi_wrapper-0.5.0.dist-info/RECORD,,
+gmusicapi_wrapper-0.5.0.dist-info/WHEEL,sha256=Ds0ba8WsPJtjBPzEMyPOBG3qfPa6B4mlzB-vhzorIZs,97
+gmusicapi_wrapper-0.5.0.dist-info/metadata.json,sha256=_98ZdNEeBcyQijuXaHdY6slYn8Ur3TBIblcYPwj0Mcg,712
+gmusicapi_wrapper-0.5.0.dist-info/top_level.txt,sha256=-zN-dlEFxwQWw5FONP-klnp449RrF70kCXVEG0-4dIU,18
