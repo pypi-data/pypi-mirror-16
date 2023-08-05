@@ -1,0 +1,8 @@
+include AUTHORS
+include README.rst
+recursive-include simple_audit *.html *.mo *.po
+include *.sh
+include Makefile
+include tox.ini
+recursive-include testproject *.py
+recursive-include testproject *.txt
