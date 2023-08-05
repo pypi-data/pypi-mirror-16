@@ -1,0 +1,3 @@
+pip >= 7.0
+cookiecutter >= 1.0
+voc
