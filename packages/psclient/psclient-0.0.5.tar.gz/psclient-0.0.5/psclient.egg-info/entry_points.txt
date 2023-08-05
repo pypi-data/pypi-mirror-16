@@ -1,0 +1,3 @@
+[console_scripts]
+pscli = psclient.main:main
+
