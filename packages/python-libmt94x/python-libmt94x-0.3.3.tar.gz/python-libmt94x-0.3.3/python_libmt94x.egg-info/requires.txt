@@ -1,0 +1,2 @@
+Unidecode<0.5
+pycountry<2.0
