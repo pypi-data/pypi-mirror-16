@@ -1,0 +1,9 @@
+django
+
+[develop]
+jsmin
+rcssmin
+
+[test]
+pytest
+pytest-django
