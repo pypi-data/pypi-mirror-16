@@ -1,0 +1,10 @@
+gateguard-1.1.0.dist-info/top_level.txt,sha256=93Vxbxbv5O-uNGrsgVtYFAOpD4oolthHZawPRhMCfd0,10
+gateguard-1.1.0.dist-info/WHEEL,sha256=-aSo8rHuuPDEFzkcqqQ55pDyCjy25bYMLxSiHWKAOTc,92
+gateguard-1.1.0.dist-info/METADATA,sha256=bZ78ARlbVlBGcH-JBEx88x3OX38MLaM_I8qupBvUoKI,669
+gateguard-1.1.0.dist-info/RECORD,,
+gateguard-1.1.0.dist-info/metadata.json,sha256=okwfjmLITbuFkGBAHuAthzZ1YoGNup44roEvIO3UISs,648
+gateguard-1.1.0.dist-info/DESCRIPTION.rst,sha256=p9G1pGnr__xaMt49TtiLnEQ3p83xX3WLSLvfAukjoXo,236
+gateguard/schema.py,sha256=8qQJXH5ePO5uDxeXFGuo3CblIglJv4fSpIDk0dtkwA8,1118
+gateguard/__init__.py,sha256=v-GgHQyh35LDezZPeUcvrmj5HbAuWo43Hpp4pz0HgRA,595
+gateguard/exceptions.py,sha256=qtdb1OuTHX2NuszfwuZybsqopSI18oeoYBuiiyjUdkE,203
+gateguard/fields.py,sha256=u5-Xn5gFrjhP3eKWVMjp9yInLFYswKBHOBHvNTaUNTE,7563
