@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: subtitle-joiner
+Version: 0.1.0
+Summary: An image merge tool for movie screenshots
+Home-page: https://github.com/TreyCai/SubtitleJoiner/issues
+Author: Trey Cai
+Author-email: imtreywalker@gmail.com
+License: Apache License, Version 2.0
+Download-URL: https://github.com/TreyCai/SubtitleJoiner/issues
+Description: SubtitleJoiner
+        ==============
+        
+        SubtitleJoiner is an image merge tool for movie screenshots.
+        
+        Installation
+        ------------
+        
+            > (sudo) pip install subtitle_joiner
+        
+        TODO
+        -------
+        
+        - top border & bottom border
+        - border color
+        - different subtitle height for each image in subtitle-only mode
+        - default output file
+        - detect the border that is not full black
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX
+Classifier: Topic :: Terminals
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Topic :: Utilities

@@ -1,0 +1,15 @@
+README.rst
+setup.cfg
+setup.py
+joiner/__init__.py
+joiner/__main__.py
+joiner/cli.py
+joiner/const.py
+joiner/help_formatter.py
+joiner/subtitle_joiner.py
+subtitle_joiner.egg-info/PKG-INFO
+subtitle_joiner.egg-info/SOURCES.txt
+subtitle_joiner.egg-info/dependency_links.txt
+subtitle_joiner.egg-info/entry_points.txt
+subtitle_joiner.egg-info/requires.txt
+subtitle_joiner.egg-info/top_level.txt
