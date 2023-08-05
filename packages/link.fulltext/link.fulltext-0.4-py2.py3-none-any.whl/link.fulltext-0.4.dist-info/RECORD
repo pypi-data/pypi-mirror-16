@@ -1,0 +1,10 @@
+link.fulltext-0.4.dist-info/metadata.json,sha256=VGpzzK9cARmnyWvvwPP6pUqm65eqASe5Ky0Q3Fsa7fg,1124
+link.fulltext-0.4.dist-info/METADATA,sha256=mXLQ2Eiafz8OnI1Z1EsneP9UTdLir5wViCp1Rt0-9G8,2300
+link.fulltext-0.4.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+link.fulltext-0.4.dist-info/RECORD,,
+link.fulltext-0.4.dist-info/top_level.txt,sha256=ytLqv9iuo558nsLwQdUCFQzL5yAmc8P7H-YOwCnTI84,5
+link.fulltext-0.4.dist-info/DESCRIPTION.rst,sha256=A0991a2Ouk4ykpYXzC6dvornJeAF_TvmUb07M6Kos-Y,1308
+link/__init__.py,sha256=HxG6SKXp9EDYUDbqYWrOd4VBIl5Le_1DqmOg_C0Zwlc,138
+link/fulltext/__init__.py,sha256=oDjBsc6usEEO0BdFKo-KaXqLENQlFu2F8kPIwzkc1nM,45
+link/fulltext/filter.py,sha256=zRGG7kmkiGTRgOjAmbrajM4yLv-ni8hLfumruMp3iGA,5376
+link/fulltext/feature.py,sha256=9z6Pb3wQNoHaD6cXOqyJGsp90x9jHKrd45amPIHe8fI,413
