@@ -1,0 +1,16 @@
+futures
+thrift
+tornado>=4.3,<5
+opentracing==1.0rc4
+tchannel>=0.25,<1.0
+opentracing_instrumentation>=1.0.1,<1.1
+
+[tests]
+mock==1.0.1
+pytest>=2.7,<3
+pytest-cov
+pytest-timeout
+pytest-tornado
+pytest-benchmark[histogram]>=3.0.0rc1
+flake8==2.1.0
+coveralls
