@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: wayround_org_toxcorebind
+Version: 0.3
+Summary: Python toxcore binding
+Home-page: https://github.com/AnimusPEXUS/wayround_org_toxcorebind
+Author: Alexey Gorshkov
+Author-email: animus@wayround.org
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: POSIX
