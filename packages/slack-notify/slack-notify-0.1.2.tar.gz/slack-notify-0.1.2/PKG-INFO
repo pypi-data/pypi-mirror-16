@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: slack-notify
+Version: 0.1.2
+Summary: Websocket client to connect with slack RTM API
+Home-page: https://github.com/darkSasori/slack-notify
+Author: Lineu Felipe
+Author-email: lineufelipe@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
