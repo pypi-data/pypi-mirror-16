@@ -1,0 +1,4 @@
+gevent
+pyzmq
+kazoo>=1.0
+zmq
