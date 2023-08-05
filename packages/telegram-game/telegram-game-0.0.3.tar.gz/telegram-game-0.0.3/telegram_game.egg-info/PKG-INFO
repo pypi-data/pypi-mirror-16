@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: telegram-game
+Version: 0.0.3
+Summary: Asyncio telegram bot framework for games
+Home-page: https://github.com/ei-grad/telegram-game
+Author: Andrew Grigorev
+Author-email: andrew@ei-grad.ru
+License: MIT
+Description: telegram-game - bot framework for games built on asyncio
+        ========================================================
+        
+        
+Keywords: telegram
+bot
+game
+quest
+adventure
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Games/Entertainment
