@@ -1,0 +1,3 @@
+[console_scripts]
+pdbsync = pdbsync.console_scripts:main
+
