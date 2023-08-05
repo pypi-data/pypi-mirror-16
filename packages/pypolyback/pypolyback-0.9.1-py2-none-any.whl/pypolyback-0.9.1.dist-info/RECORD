@@ -1,0 +1,13 @@
+pypolyback/__init__.py,sha256=BOQFuY0VLjJHjxIBIidh77lLifDnyyPpTubwUxOR3_M,59
+pypolyback/apiobject.py,sha256=NgxU0lyjf_MeLBdxhXJ-UU-XBueGE5JcLZOqrIsFZTA,756
+pypolyback/config.py,sha256=F0Ku0qgW_kjAqL1YZWw0inDnPWqoUlwXMB54lHfvOC0,1210
+pypolyback/log.py,sha256=uO5QnFT7hSkjEk7EHUQ-EmRvcbJaKUaNeeGCYu4AtRw,866
+pypolyback/routes.py,sha256=_bF6gSdcaK6jiHjlDgesyhdDZ6efqqExlcHfE8nZLZ8,14001
+pypolyback/server.py,sha256=4ldiIaEt91epmX-iUeKGfl1hnBO_qTqoEyus5vtCH9k,536
+pypolyback-0.9.1.dist-info/DESCRIPTION.rst,sha256=noR1EJoJjUvExvq5xlt3KjC54p3YkllxaU4Fk0ODFEg,6251
+pypolyback-0.9.1.dist-info/METADATA,sha256=YUOpT0yTynZCUtTZrLJI3lVh0UinCda-W0wSnl2DYlo,6996
+pypolyback-0.9.1.dist-info/RECORD,,
+pypolyback-0.9.1.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+pypolyback-0.9.1.dist-info/entry_points.txt,sha256=102Yjg5CyhkBW7LOlL5oBzlHhA17_oVZHtD_tuAlc3o,56
+pypolyback-0.9.1.dist-info/metadata.json,sha256=9YJP-TzS0yuICCdWmvms1ohbWL4TVvk1NdV1FgIPvDw,1087
+pypolyback-0.9.1.dist-info/top_level.txt,sha256=ShRCSz326jha2Piq1TfpUPMl0-q1Xx16_wpdyW6KWD4,11
