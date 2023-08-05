@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: fakearray
+Version: 1.0.0
+Summary: simulated n-dimensional array data
+Home-page: https://github.com/jasminetstone/fakearray
+Author: jasminetstone
+Author-email: jasminetstone@gmail.com
+License: MIT
+Description: See https://github.com/jasminetstone/fakearray
+Platform: UNKNOWN
