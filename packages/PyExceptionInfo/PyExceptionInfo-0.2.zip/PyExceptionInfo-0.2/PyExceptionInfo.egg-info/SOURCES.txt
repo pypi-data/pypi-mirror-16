@@ -1,0 +1,5 @@
+setup.py
+PyExceptionInfo.egg-info/PKG-INFO
+PyExceptionInfo.egg-info/SOURCES.txt
+PyExceptionInfo.egg-info/dependency_links.txt
+PyExceptionInfo.egg-info/top_level.txt
