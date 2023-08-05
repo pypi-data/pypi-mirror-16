@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: django-compoundqueryset
+Version: 0.1
+Summary: Allows for creation of compound querysets in Django.
+Home-page: https://github.com/brianwawok/django-compoundqueryset
+Author: Brian Wawok
+Author-email: bwawok@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/brianwawok/mypackage/django-compoundqueryset/0.1
+Description: UNKNOWN
+Keywords: django,compound,queryset
+Platform: Any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Framework :: Django
