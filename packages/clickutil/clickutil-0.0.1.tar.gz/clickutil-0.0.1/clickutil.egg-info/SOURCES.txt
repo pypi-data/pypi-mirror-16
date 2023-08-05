@@ -1,0 +1,13 @@
+README.rst
+setup.py
+clickutil/__init__.py
+clickutil/args.py
+clickutil/call.py
+clickutil/debug.py
+clickutil/version.py
+clickutil.egg-info/PKG-INFO
+clickutil.egg-info/SOURCES.txt
+clickutil.egg-info/dependency_links.txt
+clickutil.egg-info/not-zip-safe
+clickutil.egg-info/requires.txt
+clickutil.egg-info/top_level.txt
