@@ -1,0 +1,15 @@
+Changelog
+=========
+
+1.0b2 (2016-07-13)
+------------------
+
+- Bug with page_id mapping. Ensure it is read as string now instead of integer
+  [Izhar Firdaus]
+
+
+1.0b1 (2016-07-13)
+------------------
+
+- Initial fully functional bot framework with hub implementation
+  [Izhar Firdaus]
