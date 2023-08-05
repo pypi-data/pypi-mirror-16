@@ -1,0 +1,11 @@
+# Version 0.2.2
+Get_Count()
+-----------
+get_count() is a wrapper routine for pygame.joystick.get_count()
+
+Dummy Logger
+------------
+if there is no logger configuration file, no logging is done.
+
+# Version 0.2.1
+All examples now use the @classmethod decorater where needed
