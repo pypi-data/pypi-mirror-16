@@ -1,0 +1,73 @@
+Metadata-Version: 1.1
+Name: gviewer
+Version: 1.1.0
+Summary: General Viewer
+Home-page: https://github.com/chhsiao90/gviewer
+Author: chhsiao90
+Author-email: chhsiao90@gmail.com
+License: MIT
+Description: # General Viewer (GViewer)
+        
+        #### Simple, Light Weight, but Powerful 
+        GViewer is a tui(Terminal UI) library that depends on [urwid](https://github.com/urwid/urwid) simplified writing a tui based reporting system.
+        You could just write less code, and the library could help you display the data.
+        
+        
+        ## Installation
+        ```
+        pip install gviewer
+        ```
+        
+        
+        ## Usage
+        #### Data Store
+        - BaseStaticDataStore
+        ```python
+        data_store = BaseStaticDataStore(data)
+        ```
+        - Custom Implementation
+        ```python
+        class CustomDataStore(BasicDataStore):
+            def set_up(self):
+                # your implementation
+        ```
+        
+        #### Displayer
+        ```python
+        class MyDisplayer(BaseDisplayer):
+            def to_summary(self, message):
+                # your implementation
+                # return a str or text markup
+                # reference: http://urwid.org/manual/displayattributes.html#text-markup
+        
+            def get_detail_displayers(self):
+                # your implementation
+                # return an array of tuple that contains detail view title and a function that transform message to detail
+                # return [("title1", self.detail1), ("title2", self.detail2), ("title3", self.any_name_you_want)]
+        
+            def detail1(self, message):
+                # return DetailGroup
+        ```
+        
+        #### GViewer
+        ```python
+        viewer = GViewer(data_store, displayer)
+        viewer.start()
+        ```
+        
+        ## Contribution
+        Please feel free to create issue or create PR
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Environment :: Console
+Classifier: Environment :: Console :: Curses
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Widget Sets
