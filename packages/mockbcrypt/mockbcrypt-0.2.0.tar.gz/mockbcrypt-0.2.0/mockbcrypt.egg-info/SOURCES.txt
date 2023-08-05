@@ -1,0 +1,9 @@
+setup.py
+mockbcrypt/__init__.py
+mockbcrypt/plugin.py
+mockbcrypt.egg-info/PKG-INFO
+mockbcrypt.egg-info/SOURCES.txt
+mockbcrypt.egg-info/dependency_links.txt
+mockbcrypt.egg-info/entry_points.txt
+mockbcrypt.egg-info/requires.txt
+mockbcrypt.egg-info/top_level.txt
