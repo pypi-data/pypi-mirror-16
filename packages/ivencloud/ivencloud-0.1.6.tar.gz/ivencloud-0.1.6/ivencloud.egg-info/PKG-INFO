@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: ivencloud
+Version: 0.1.6
+Summary: connect your device to iven cloud
+Home-page: https://github.com/IvenProductCloud/PythonSDK
+Author: Berk Ozdilek
+Author-email: biozdilek@gmail.com
+License: MIT
+Description: # python SDK
+        # we are on BETA
+        # Coming soon
+Keywords: iven iot
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Development Status :: 3 - Alpha
