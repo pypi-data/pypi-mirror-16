@@ -1,0 +1,10 @@
+<div>
+    <div class="turbopress_tagcloud">
+        <h3>Tags</h3>
+        <a py:for="tag in tags" title="${tag}"
+           class="turbopress_tag btn btn-primary"
+           href="${h.plug_url('turbopress', '/search', params=dict(blog=blog, tags=tag))}">
+            ${tag}
+        </a>
+    </div>
+</div>
