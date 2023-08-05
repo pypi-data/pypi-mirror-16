@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: dummy_data
+Version: 0.0.1
+Summary: Create dummy data dynamically.
+Home-page: http://github.com/deaps/dummy_data
+Author: João Andrade
+Author-email: joaoandrade2@protonmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: dummy files,dummy folders,filesystem
+Platform: UNKNOWN
