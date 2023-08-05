@@ -1,0 +1,10 @@
+README.rst
+setup.py
+foobot/__init__.py
+foobot/api.py
+foobot.egg-info/PKG-INFO
+foobot.egg-info/SOURCES.txt
+foobot.egg-info/dependency_links.txt
+foobot.egg-info/not-zip-safe
+foobot.egg-info/requires.txt
+foobot.egg-info/top_level.txt
