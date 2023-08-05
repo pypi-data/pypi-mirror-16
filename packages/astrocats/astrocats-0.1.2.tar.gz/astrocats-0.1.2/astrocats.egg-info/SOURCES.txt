@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+astrocats/__init__.py
+astrocats/__main__.py
+astrocats/main.py
+astrocats.egg-info/PKG-INFO
+astrocats.egg-info/SOURCES.txt
+astrocats.egg-info/dependency_links.txt
+astrocats.egg-info/requires.txt
+astrocats.egg-info/top_level.txt
