@@ -1,0 +1,9 @@
+circuit/__init__.py,sha256=wuGl3dLYjRNfwF250HL3wpYzk1SAcYnHoU2ti1iB0AA,697
+circuit/_twisted.py,sha256=U-hTnf36bOvXCGaYhANN2436QMKzr6QLBdOZ4aG5wAk,1389
+circuit/breaker.py,sha256=O2wXPma0t4T5em8ODW8RmvJCgYdR70DWQVuk3aV4QvM,5253
+python_circuit-0.1.8.dist-info/DESCRIPTION.rst,sha256=a8bg1junhqrvCdD4eoK8fi1xeeQdreW8LdjugifvHs8,3705
+python_circuit-0.1.8.dist-info/METADATA,sha256=B7sP6jQ7eUB6rsKnlCMYXsoYiCot5jrt7HQqMAUb3Rg,3975
+python_circuit-0.1.8.dist-info/RECORD,,
+python_circuit-0.1.8.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+python_circuit-0.1.8.dist-info/metadata.json,sha256=0Eb9LQfFyFMEW7gdL5_YQuMB1T6rfNL4Ep8hep424OI,532
+python_circuit-0.1.8.dist-info/top_level.txt,sha256=hKP6_3HfpY_BKr0F8rUHd_teq2YLTuipxnPL15oCpig,8
