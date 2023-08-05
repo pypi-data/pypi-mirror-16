@@ -1,0 +1,16 @@
+shopdesk/__init__.py,sha256=JGbs3ikSUsyqMjR1FJAMWM0OXwvN19unlccxlu10yng,258
+shopdesk/main.py,sha256=EA1npODtkkDAFrh_C8PwqRvfzTEmdWExJl6YL898y6Q,697
+shopdesk/scheduler.py,sha256=_epCgOk6g8aINEDB0BY6iPm9kSA03QIazxCsgDuqB3g,4959
+shopdesk/controllers/__init__.py,sha256=R1jOqmoDzL_gHGPABMDTe3IY0m1apOpApKiwHrV_UZs,159
+shopdesk/controllers/admin.py,sha256=mUTMIQeb4ruayhUsdreOffTtKKOuNXWxFbOq1lIQafw,1107
+shopdesk/controllers/base.py,sha256=9lxGBBRr3SdXQKKkGlpf9HeXIwxNWVu4rZ4N1l4bYGI,452
+shopdesk/models/__init__.py,sha256=5t3QNHsr_CPj0qdd4lDTyHh9G_dbFvfjuBtHJm2lfYk,95
+shopdesk/models/order.py,sha256=TsEFCTnSv0fgpisoA4A7o6siQqtb_Fl313gn-k4UVTY,6996
+shopdesk/test/__init__.py,sha256=yMaDcfooNNba5QHQkjQcBHnx0Bo2Z333eLg9XD1x8MI,44
+shopdesk/test/order.py,sha256=LdUTmiiUF0YyBiUICVM3vaHyCol1JeFD4l_4LVQcH5Y,2090
+shopdesk-0.1.1.dist-info/top_level.txt,sha256=iE5X2_2Z7ro4g00iQC_KfRIHr7RevNjY7fu29jm_24c,9
+shopdesk-0.1.1.dist-info/METADATA,sha256=DXcKAJBKsA2UbV24faa5UXbxe8bGwVOOaiHGob9fxZA,961
+shopdesk-0.1.1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+shopdesk-0.1.1.dist-info/metadata.json,sha256=AdUPUTM62Ee_YXtjDQbrO6LZPTS7KmbgifeZonowLUo,1074
+shopdesk-0.1.1.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+shopdesk-0.1.1.dist-info/RECORD,,
