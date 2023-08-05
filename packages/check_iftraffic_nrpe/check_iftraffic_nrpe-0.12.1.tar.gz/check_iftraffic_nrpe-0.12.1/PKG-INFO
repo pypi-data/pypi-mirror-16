@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: check_iftraffic_nrpe
+Version: 0.12.1
+Summary: Nagios NRPE plugin to check Linux network traffic
+Home-page: https://github.com/SamK/check_iftraffic_nrpe.py
+Author: Samuel Krieg
+Author-email: samuel.krieg+github@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/SamK/check_iftraffic_nrpe.py/tarball/0.12.1
+Description: UNKNOWN
+Keywords: nagios,traffic,nrpe,monitoring
+Platform: UNKNOWN
