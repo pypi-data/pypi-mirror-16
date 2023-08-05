@@ -1,0 +1,8 @@
+beautifulsoup4
+html5lib
+lxml
+requests
+nameparser
+csvkit
+pymongo
+clint
