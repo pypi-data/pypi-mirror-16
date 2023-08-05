@@ -1,0 +1,3 @@
+[console_scripts]
+randomaya = randomaya.command_line:main
+
