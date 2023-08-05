@@ -1,0 +1,15 @@
+pronto/__init__.py,sha256=u8ugFdq3Z5LYbIO8Ila5EmWNmXu80aLRy3QXN5neomI,282
+pronto/__main__.py,sha256=rcOKciFbpe8Ktm9uur3bsf3zyUgvQ3f51GZOTUNIpig,901
+pronto/ontology.py,sha256=wO4b3mIRghPUOegwQI1ZDrmfPw9EAovva1IsOijFqj0,8517
+pronto/relationship.py,sha256=2K8d66w04gtZrMoHiw9soN2Oz78SPRLR8B5VZmTkzt0,3202
+pronto/term.py,sha256=uYMtqIIdv5IJGpss-N5aQ3PEbyi4M7G3aNj0wVLMUmY,5726
+pronto/utils.py,sha256=NYs-QKgMdfQ7g7TRPpnZlIEeiWlqUIOmQnhc0Qpul-8,2137
+pronto/parser/__init__.py,sha256=0Z3Bn2_fOfujhkjc4hAf5M3iikiffQnjrRPutHGlPt0,85
+pronto/parser/obo.py,sha256=1E0QvF-6zSaPbZb5BYyxlvu3AZyMKUYLzkVmM9UFUc0,4248
+pronto/parser/owlxml.py,sha256=YiEsJ9EP5BLniGlEVlnvBmeATEV8fRODoHcmD__pEWc,3142
+pronto-0.1.5.dist-info/DESCRIPTION.rst,sha256=RTi5THmQuegIAFKChIuSuCSnZ-vl21Ha-7LurF60vzk,3680
+pronto-0.1.5.dist-info/METADATA,sha256=KJGvbDFF_UlO43mGUNwi_gLRGgdzx2x6MT_8qnNTIPo,4986
+pronto-0.1.5.dist-info/RECORD,,
+pronto-0.1.5.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+pronto-0.1.5.dist-info/metadata.json,sha256=MTo3Horo9vo_w6G-DBq7Vddx8TqFVJtGPDvMEL6flUE,1393
+pronto-0.1.5.dist-info/top_level.txt,sha256=wJneQxTBLRJQDFzpGyne5LvOgyLUYYH6-D9JJx4bFVc,7
