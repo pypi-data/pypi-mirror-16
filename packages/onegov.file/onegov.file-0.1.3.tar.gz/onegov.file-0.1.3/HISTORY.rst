@@ -1,0 +1,32 @@
+Changelog
+---------
+
+0.1.3 (2016-07-20)
+~~~~~~~~~~~~~~~~~~~
+
+- Fixes polymorphic type attribute not working.
+  [href]
+
+0.1.2 (2016-07-20)
+~~~~~~~~~~~~~~~~~~~
+
+- Fixes query not filtering enough for typed collections.
+  [href]
+
+0.1.1 (2016-07-20)
+~~~~~~~~~~~~~~~~~~~
+
+- Fixes query not working correctly for typed collections.
+  [href]
+
+0.1.0 (2016-07-19)
+~~~~~~~~~~~~~~~~~~~
+
+- Adds the ability to detect, find and prevent file duplicates.
+  [href]
+
+0.0.1 (2016-07-14)
+~~~~~~~~~~~~~~~~~~~
+
+- Initial Release
+  [href]
