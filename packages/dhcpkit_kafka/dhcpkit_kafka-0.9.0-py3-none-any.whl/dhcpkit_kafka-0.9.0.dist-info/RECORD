@@ -1,0 +1,12 @@
+dhcpkit_kafka/__init__.py,sha256=b2q7E-CzDznYWG5oYjMKPHJbofD1ifALTWvvLmOJyxg,68
+dhcpkit_kafka/message_registry.py,sha256=KTDhs-Hkbu8D5wsgANhZ5Z6_KFW_pQ_epFoYzhNuKDk,674
+dhcpkit_kafka/messages.py,sha256=AzzY2MYxuz0orx-BAuyPbKPwNsSvaNtCXOlJ58wmXPU,9999
+dhcpkit_kafka/server_extension/__init__.py,sha256=Io9rZ9Z7AEzvRMIKmTeZDkBX5AdXvwH8tPxuWQw6MFI,4671
+dhcpkit_kafka/server_extension/config.py,sha256=qo0_m6A0sZbeyHk8uLkPilB2sME_g40gOKFFujP9-0s,1167
+dhcpkit_kafka-0.9.0.dist-info/DESCRIPTION.rst,sha256=fvIS5Kmx11Phs6ic5dmtjPuJCwsfUF25w9LKPLhL6Fk,938
+dhcpkit_kafka-0.9.0.dist-info/METADATA,sha256=wPY2Tf6oqSLmV6ECEVCPNMjXhwTvRU-67sH3Q2z9hZU,2166
+dhcpkit_kafka-0.9.0.dist-info/RECORD,,
+dhcpkit_kafka-0.9.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+dhcpkit_kafka-0.9.0.dist-info/entry_points.txt,sha256=YxoBvv_qvH2yQACMbMqE1tJDdmMhIS0DOrDjOCRcSa4,143
+dhcpkit_kafka-0.9.0.dist-info/metadata.json,sha256=FQq7fawlS2H17vPHfJ-o1xrdtDsQN_5nzuZNJ3RFLDc,1478
+dhcpkit_kafka-0.9.0.dist-info/top_level.txt,sha256=03Lr0m2RQ1S0wfaFs7lEWAyXE7GfV9EPw5qFmYxjiUA,14
