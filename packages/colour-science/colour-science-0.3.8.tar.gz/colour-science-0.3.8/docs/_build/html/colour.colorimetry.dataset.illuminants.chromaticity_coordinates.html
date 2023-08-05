@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>colour.colorimetry.dataset.illuminants.chromaticity_coordinates Module &mdash; Colour 0.3.8 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.3.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Colour 0.3.8 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-colour.colorimetry.dataset.illuminants.chromaticity_coordinates">
+<span id="colour-colorimetry-dataset-illuminants-chromaticity-coordinates-module"></span><h1>colour.colorimetry.dataset.illuminants.chromaticity_coordinates Module<a class="headerlink" href="#module-colour.colorimetry.dataset.illuminants.chromaticity_coordinates" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="illuminants-chromaticity-coordinates">
+<h2>Illuminants Chromaticity Coordinates<a class="headerlink" href="#illuminants-chromaticity-coordinates" title="Permalink to this headline">¶</a></h2>
+<p>Defines <em>CIE</em> illuminants chromaticity coordinates for the
+<em>CIE 1931 2 Degree Standard Observer</em> and
+<em>CIE 1964 10 Degree Standard Observer</em>.</p>
+<p>The following <em>CIE</em> illuminants are available:</p>
+<ul class="simple">
+<li>CIE Standard Illuminant A</li>
+<li>CIE Illuminant B</li>
+<li>CIE Illuminant C</li>
+<li>CIE Illuminant D Series (D50, D55, D60, D65, D75)</li>
+<li>CIE Illuminant E</li>
+<li>Illuminants F Series (F1, F10, F11, F12, F2, F3, F4, F5, F6, F7, F8, F9,
+FL3.1, FL3.10, FL3.11, FL3.12, FL3.13, FL3.14, FL3.15, FL3.2, FL3.3, FL3.4,
+FL3.5, FL3.6, FL3.7, FL3.8, FL3.9)</li>
+<li>High Pressure Discharge Lamps (HP1, HP2, HP3, HP4, HP5)</li>
+</ul>
+<p>The following other illuminants are available:</p>
+<ul class="simple">
+<li>DCI-P3 (<em>CIE 1931 2 Degree Standard Observer</em> only) <a class="footnote-reference" href="#id4" id="id1">[2]</a></li>
+</ul>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://nbviewer.jupyter.org/github/colour-science/colour-notebooks/blob/master/notebooks/colorimetry/illuminants.ipynb">Illuminants IPython Notebook</a></p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">DCI-P3 illuminant has no associated spectral power distribution. DCI has no
+official reference spectral measurement for this whitepoint. The closest
+matching spectral power distribution is Kinoton 75P projector.</p>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><em>CIE</em> illuminants with chromaticity coordinates not defined in the
+reference <a class="footnote-reference" href="#id3" id="id2">[1]</a> have been calculated using their relative spectral power
+distributions and the
+<a class="reference internal" href="colour.colorimetry.tristimulus.html#colour.colorimetry.tristimulus.spectral_to_XYZ" title="colour.colorimetry.tristimulus.spectral_to_XYZ"><code class="xref py py-func docutils literal"><span class="pre">colour.colorimetry.tristimulus.spectral_to_XYZ()</span></code></a> definition.</li>
+</ul>
+<p class="rubric">References</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[1]</a></td><td>Wikipedia. (n.d.). White points of standard illuminants. Retrieved
+February 24, 2014, from <a class="reference external" href="http://en.wikipedia.org/wiki/Standard_illuminant#White_points_of_standard_illuminants">http://en.wikipedia.org/wiki/Standard_illuminant#White_points_of_standard_illuminants</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[2]</a></td><td>Digital Cinema Initiatives. (2007). Digital Cinema System
+Specification - Version 1.1. Retrieved from
+<a class="reference external" href="http://www.dcimovies.com/archives/spec_v1_1/DCI_DCinema_System_Spec_v1_1.pdf">http://www.dcimovies.com/archives/spec_v1_1/DCI_DCinema_System_Spec_v1_1.pdf</a></td></tr>
+</tbody>
+</table>
+<dl class="data">
+<dt id="colour.colorimetry.dataset.illuminants.chromaticity_coordinates.ILLUMINANTS_CIE_1931_2_DEGREE_STANDARD_OBSERVER">
+<code class="descclassname">colour.colorimetry.dataset.illuminants.chromaticity_coordinates.</code><code class="descname">ILLUMINANTS_CIE_1931_2_DEGREE_STANDARD_OBSERVER</code><em class="property"> = CaseInsensitiveMapping({u'FL3.8': (0.381975430932882, 0.383175751200444), u'FL3.9': (0.349855549259596, 0.359085170364603), u'D75': (0.29902, 0.31485), u'FL3.2': (0.380772448760695, 0.373351208240419), u'FL3.3': (0.315280437134339, 0.343854575741321), u'FL3.1': (0.440673532892235, 0.403295963187334), u'DCI-P3': (0.314, 0.351), u'FL3.7': (0.438423069326842, 0.404527421193698), u'FL3.4': (0.442906984842085, 0.404320323453706), u'FL3.5': (0.374896547314724, 0.367153489582687), u'FL3.14': (0.344721182547363, 0.36093483446078), u'D50': (0.3457, 0.3585), u'FL3.15': (0.312658804223872, 0.328726847670453), u'HP4': (0.381167337458579, 0.379718304902536), u'FL3.10': (0.345503926000482, 0.355950519329186), u'D55': (0.33242, 0.34743), u'FL3.12': (0.437673627957706, 0.403665046312088), u'FL3.13': (0.383051043791068, 0.372441409042997), u'HP3': (0.430229454588196, 0.407513947069155), u'HP2': (0.477790101185585, 0.415837783979245), u'HP1': (0.53299914700395, 0.414951320868626), u'HP5': (0.377583057157757, 0.371347698500182), u'FL3.11': (0.32450879474655, 0.343367135557962), u'A': (0.44757, 0.40745), u'C': (0.31006, 0.31616), u'B': (0.34842, 0.35161), u'E': (0.3333333333333333, 0.3333333333333333), u'FL3.6': (0.348802245464947, 0.359996476463088), u'F12': (0.43695, 0.40441), u'F10': (0.34609, 0.35986), u'F11': (0.38052, 0.37713), u'D60': (0.32168, 0.33767), u'D65': (0.3127, 0.329), u'F1': (0.3131, 0.33727), u'F2': (0.37208, 0.37529), u'F3': (0.4091, 0.3943), u'F4': (0.44018, 0.40329), u'F5': (0.31379, 0.34531), u'F6': (0.3779, 0.38835), u'F7': (0.31292, 0.32933), u'F8': (0.34588, 0.35875), u'F9': (0.37417, 0.37281)})</em><a class="headerlink" href="#colour.colorimetry.dataset.illuminants.chromaticity_coordinates.ILLUMINANTS_CIE_1931_2_DEGREE_STANDARD_OBSERVER" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CIE</em> illuminant chromaticity coordinates for
+<em>CIE 1931 2 Degree Standard Observer</em>.</p>
+<p>ILLUMINANTS_CIE_1931_2_DEGREE_STANDARD_OBSERVER : CaseInsensitiveMapping</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.colorimetry.dataset.illuminants.chromaticity_coordinates.ILLUMINANTS_CIE_1964_10_DEGREE_STANDARD_OBSERVER">
+<code class="descclassname">colour.colorimetry.dataset.illuminants.chromaticity_coordinates.</code><code class="descname">ILLUMINANTS_CIE_1964_10_DEGREE_STANDARD_OBSERVER</code><em class="property"> = CaseInsensitiveMapping({u'FL3.8': (0.387588931999771, 0.376305569410173), u'FL3.9': (0.354688990710449, 0.353445033593383), u'D75': (0.29968, 0.3174), u'FL3.2': (0.386924116672933, 0.365756034732821), u'FL3.3': (0.321176986855865, 0.340501092654981), u'FL3.1': (0.449830684010003, 0.390231404321266), u'FL3.6': (0.351976478983504, 0.361094432889677), u'FL3.7': (0.444309208810922, 0.396791387314871), u'FL3.4': (0.448121275113995, 0.397077112142482), u'FL3.5': (0.377814166608895, 0.36662576696306), u'FL3.14': (0.347255078638291, 0.36680824250418), u'D50': (0.34773, 0.35952), u'FL3.15': (0.314613997909246, 0.333377149377113), u'HP4': (0.385193641123543, 0.368275479241015), u'FL3.10': (0.3493447923344, 0.354984421140869), u'D55': (0.33411, 0.34877), u'FL3.12': (0.442252080438001, 0.401220551071252), u'FL3.13': (0.386275268780817, 0.374283190950586), u'HP3': (0.435560034503954, 0.398801084399711), u'HP2': (0.482647330648721, 0.410815644179685), u'HP1': (0.543334600247307, 0.405289298480431), u'HP5': (0.380316415606638, 0.366617114797851), u'FL3.11': (0.32926797569512, 0.338865386643537), u'A': (0.45117, 0.40594), u'C': (0.31039, 0.31905), u'B': (0.3498, 0.3527), u'E': (0.3333333333333333, 0.3333333333333333), u'F12': (0.44256, 0.39717), u'F10': (0.3509, 0.35444), u'F11': (0.38541, 0.37123), u'D60': (0.322957407931312, 0.339135835524579), u'D65': (0.31382, 0.331), u'F1': (0.31811, 0.33559), u'F2': (0.37925, 0.36733), u'F3': (0.41761, 0.38324), u'F4': (0.4492, 0.39074), u'F5': (0.31975, 0.34246), u'F6': (0.3866, 0.37847), u'F7': (0.31569, 0.3296), u'F8': (0.34902, 0.35939), u'F9': (0.37829, 0.37045)})</em><a class="headerlink" href="#colour.colorimetry.dataset.illuminants.chromaticity_coordinates.ILLUMINANTS_CIE_1964_10_DEGREE_STANDARD_OBSERVER" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>CIE</em> illuminant chromaticity coordinates for
+<em>CIE 1964 10 Degree Standard Observer</em>.</p>
+<p>ILLUMINANTS_CIE_1964_10_DEGREE_STANDARD_OBSERVER : CaseInsensitiveMapping</p>
+</dd></dl>
+
+<dl class="data">
+<dt id="colour.colorimetry.dataset.illuminants.chromaticity_coordinates.ILLUMINANTS">
+<code class="descclassname">colour.colorimetry.dataset.illuminants.chromaticity_coordinates.</code><code class="descname">ILLUMINANTS</code><em class="property"> = CaseInsensitiveMapping({u'CIE 1931 2 Degree Standard Observer': CaseInsensitiveMapping({u'FL3.8': (0.381975430932882, 0.383175751200444), u'FL3.9': (0.349855549259596, 0.359085170364603), u'D75': (0.29902, 0.31485), u'FL3.2': (0.380772448760695, 0.373351208240419), u'FL3.3': (0.315280437134339, 0.343854575741321), u'FL3.1': (0.440673532892235, 0.403295963187334), u'DCI-P3': (0.314, 0.351), u'FL3.7': (0.438423069326842, 0.404527421193698), u'FL3.4': (0.442906984842085, 0.404320323453706), u'FL3.5': (0.374896547314724, 0.367153489582687), u'FL3.14': (0.344721182547363, 0.36093483446078), u'D50': (0.3457, 0.3585), u'FL3.15': (0.312658804223872, 0.328726847670453), u'HP4': (0.381167337458579, 0.379718304902536), u'FL3.10': (0.345503926000482, 0.355950519329186), u'D55': (0.33242, 0.34743), u'FL3.12': (0.437673627957706, 0.403665046312088), u'FL3.13': (0.383051043791068, 0.372441409042997), u'HP3': (0.430229454588196, 0.407513947069155), u'HP2': (0.477790101185585, 0.415837783979245), u'HP1': (0.53299914700395, 0.414951320868626), u'HP5': (0.377583057157757, 0.371347698500182), u'FL3.11': (0.32450879474655, 0.343367135557962), u'A': (0.44757, 0.40745), u'C': (0.31006, 0.31616), u'B': (0.34842, 0.35161), u'E': (0.3333333333333333, 0.3333333333333333), u'FL3.6': (0.348802245464947, 0.359996476463088), u'F12': (0.43695, 0.40441), u'F10': (0.34609, 0.35986), u'F11': (0.38052, 0.37713), u'D60': (0.32168, 0.33767), u'D65': (0.3127, 0.329), u'F1': (0.3131, 0.33727), u'F2': (0.37208, 0.37529), u'F3': (0.4091, 0.3943), u'F4': (0.44018, 0.40329), u'F5': (0.31379, 0.34531), u'F6': (0.3779, 0.38835), u'F7': (0.31292, 0.32933), u'F8': (0.34588, 0.35875), u'F9': (0.37417, 0.37281)}), u'CIE 1964 10 Degree Standard Observer': CaseInsensitiveMapping({u'FL3.8': (0.387588931999771, 0.376305569410173), u'FL3.9': (0.354688990710449, 0.353445033593383), u'D75': (0.29968, 0.3174), u'FL3.2': (0.386924116672933, 0.365756034732821), u'FL3.3': (0.321176986855865, 0.340501092654981), u'FL3.1': (0.449830684010003, 0.390231404321266), u'FL3.6': (0.351976478983504, 0.361094432889677), u'FL3.7': (0.444309208810922, 0.396791387314871), u'FL3.4': (0.448121275113995, 0.397077112142482), u'FL3.5': (0.377814166608895, 0.36662576696306), u'FL3.14': (0.347255078638291, 0.36680824250418), u'D50': (0.34773, 0.35952), u'FL3.15': (0.314613997909246, 0.333377149377113), u'HP4': (0.385193641123543, 0.368275479241015), u'FL3.10': (0.3493447923344, 0.354984421140869), u'D55': (0.33411, 0.34877), u'FL3.12': (0.442252080438001, 0.401220551071252), u'FL3.13': (0.386275268780817, 0.374283190950586), u'HP3': (0.435560034503954, 0.398801084399711), u'HP2': (0.482647330648721, 0.410815644179685), u'HP1': (0.543334600247307, 0.405289298480431), u'HP5': (0.380316415606638, 0.366617114797851), u'FL3.11': (0.32926797569512, 0.338865386643537), u'A': (0.45117, 0.40594), u'C': (0.31039, 0.31905), u'B': (0.3498, 0.3527), u'E': (0.3333333333333333, 0.3333333333333333), u'F12': (0.44256, 0.39717), u'F10': (0.3509, 0.35444), u'F11': (0.38541, 0.37123), u'D60': (0.322957407931312, 0.339135835524579), u'D65': (0.31382, 0.331), u'F1': (0.31811, 0.33559), u'F2': (0.37925, 0.36733), u'F3': (0.41761, 0.38324), u'F4': (0.4492, 0.39074), u'F5': (0.31975, 0.34246), u'F6': (0.3866, 0.37847), u'F7': (0.31569, 0.3296), u'F8': (0.34902, 0.35939), u'F9': (0.37829, 0.37045)}), u'cie_10_1964': CaseInsensitiveMapping({u'FL3.8': (0.387588931999771, 0.376305569410173), u'FL3.9': (0.354688990710449, 0.353445033593383), u'D75': (0.29968, 0.3174), u'FL3.2': (0.386924116672933, 0.365756034732821), u'FL3.3': (0.321176986855865, 0.340501092654981), u'FL3.1': (0.449830684010003, 0.390231404321266), u'FL3.6': (0.351976478983504, 0.361094432889677), u'FL3.7': (0.444309208810922, 0.396791387314871), u'FL3.4': (0.448121275113995, 0.397077112142482), u'FL3.5': (0.377814166608895, 0.36662576696306), u'FL3.14': (0.347255078638291, 0.36680824250418), u'D50': (0.34773, 0.35952), u'FL3.15': (0.314613997909246, 0.333377149377113), u'HP4': (0.385193641123543, 0.368275479241015), u'FL3.10': (0.3493447923344, 0.354984421140869), u'D55': (0.33411, 0.34877), u'FL3.12': (0.442252080438001, 0.401220551071252), u'FL3.13': (0.386275268780817, 0.374283190950586), u'HP3': (0.435560034503954, 0.398801084399711), u'HP2': (0.482647330648721, 0.410815644179685), u'HP1': (0.543334600247307, 0.405289298480431), u'HP5': (0.380316415606638, 0.366617114797851), u'FL3.11': (0.32926797569512, 0.338865386643537), u'A': (0.45117, 0.40594), u'C': (0.31039, 0.31905), u'B': (0.3498, 0.3527), u'E': (0.3333333333333333, 0.3333333333333333), u'F12': (0.44256, 0.39717), u'F10': (0.3509, 0.35444), u'F11': (0.38541, 0.37123), u'D60': (0.322957407931312, 0.339135835524579), u'D65': (0.31382, 0.331), u'F1': (0.31811, 0.33559), u'F2': (0.37925, 0.36733), u'F3': (0.41761, 0.38324), u'F4': (0.4492, 0.39074), u'F5': (0.31975, 0.34246), u'F6': (0.3866, 0.37847), u'F7': (0.31569, 0.3296), u'F8': (0.34902, 0.35939), u'F9': (0.37829, 0.37045)}), u'cie_2_1931': CaseInsensitiveMapping({u'FL3.8': (0.381975430932882, 0.383175751200444), u'FL3.9': (0.349855549259596, 0.359085170364603), u'D75': (0.29902, 0.31485), u'FL3.2': (0.380772448760695, 0.373351208240419), u'FL3.3': (0.315280437134339, 0.343854575741321), u'FL3.1': (0.440673532892235, 0.403295963187334), u'DCI-P3': (0.314, 0.351), u'FL3.7': (0.438423069326842, 0.404527421193698), u'FL3.4': (0.442906984842085, 0.404320323453706), u'FL3.5': (0.374896547314724, 0.367153489582687), u'FL3.14': (0.344721182547363, 0.36093483446078), u'D50': (0.3457, 0.3585), u'FL3.15': (0.312658804223872, 0.328726847670453), u'HP4': (0.381167337458579, 0.379718304902536), u'FL3.10': (0.345503926000482, 0.355950519329186), u'D55': (0.33242, 0.34743), u'FL3.12': (0.437673627957706, 0.403665046312088), u'FL3.13': (0.383051043791068, 0.372441409042997), u'HP3': (0.430229454588196, 0.407513947069155), u'HP2': (0.477790101185585, 0.415837783979245), u'HP1': (0.53299914700395, 0.414951320868626), u'HP5': (0.377583057157757, 0.371347698500182), u'FL3.11': (0.32450879474655, 0.343367135557962), u'A': (0.44757, 0.40745), u'C': (0.31006, 0.31616), u'B': (0.34842, 0.35161), u'E': (0.3333333333333333, 0.3333333333333333), u'FL3.6': (0.348802245464947, 0.359996476463088), u'F12': (0.43695, 0.40441), u'F10': (0.34609, 0.35986), u'F11': (0.38052, 0.37713), u'D60': (0.32168, 0.33767), u'D65': (0.3127, 0.329), u'F1': (0.3131, 0.33727), u'F2': (0.37208, 0.37529), u'F3': (0.4091, 0.3943), u'F4': (0.44018, 0.40329), u'F5': (0.31379, 0.34531), u'F6': (0.3779, 0.38835), u'F7': (0.31292, 0.32933), u'F8': (0.34588, 0.35875), u'F9': (0.37417, 0.37281)})})</em><a class="headerlink" href="#colour.colorimetry.dataset.illuminants.chromaticity_coordinates.ILLUMINANTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aggregated <em>CIE</em> illuminants chromaticity coordinates.</p>
+<dl class="docutils">
+<dt>ILLUMINANTS</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">CaseInsensitiveMapping</span><dd><strong>{&#8216;CIE 1931 2 Degree Standard Observer&#8217;,
+&#8216;CIE 1964 10 Degree Standard Observer&#8217;}</strong></dd>
+</dl>
+<p>Aliases:</p>
+<ul class="simple">
+<li>&#8216;cie_2_1931&#8217;: &#8216;CIE 1931 2 Degree Standard Observer&#8217;</li>
+<li>&#8216;cie_10_1964&#8217;: &#8216;CIE 1964 10 Degree Standard Observer&#8217;</li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/Colour_Logo_Small_001.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">colour.colorimetry.dataset.illuminants.chromaticity_coordinates Module</a><ul>
+<li><a class="reference internal" href="#illuminants-chromaticity-coordinates">Illuminants Chromaticity Coordinates</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/colour.colorimetry.dataset.illuminants.chromaticity_coordinates.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2013-2016, Colour Developers.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/colour.colorimetry.dataset.illuminants.chromaticity_coordinates.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
