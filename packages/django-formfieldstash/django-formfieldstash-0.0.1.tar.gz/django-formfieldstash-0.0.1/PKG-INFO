@@ -1,0 +1,65 @@
+Metadata-Version: 1.1
+Name: django-formfieldstash
+Version: 0.0.1
+Summary: formfieldstash
+Home-page: http://github.com/benzkji/django-formfieldstash
+Author: Ben Stähli
+Author-email: bnzk@bnzk.ch
+License: BSD
+Description: django-formfieldstash
+        *****************
+        
+        .. image:: https://travis-ci.org/benzkji/django-formfieldstash.svg
+            :target: https://travis-ci.org/benzkji/django-formfieldstash
+        
+        show/hide modelform fields, depending on current value of a dropdown in the form. without page reload.
+        this is a pure javascript solution, using a modeladminmixin approach.
+        
+        Installation
+        ------------
+        
+        To get the latest stable release from PyPi
+        
+        .. code-block:: bash
+        
+            pip install django-formfieldstash
+        
+        Add ``formfieldstash`` to your ``INSTALLED_APPS``
+        
+        .. code-block:: python
+        
+            INSTALLED_APPS = (
+                ...,
+                'formfieldstash',
+            )
+        
+        formfieldstash does not need it's own database tables, so no need to migrate.
+        
+        
+        Usage
+        ------------
+        
+        Have a look at ``formfieldstash/tests/test_app/admin.py`` for some examples.
+        
+        .. code-block:: python
+        
+            NOPE
+            from formfieldstash.admin import assaavdsvad
+        
+            class TestModel(models.Model):
+                file = FolderlessFileField(blank=True, null=True)
+        
+        
+        Contribute
+        ------------
+        
+        Fork and code. Either run `tox` for complete tests, or `python manage.py test --settings=formfieldstash.tests.settings_test`
+        
+Platform: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP
