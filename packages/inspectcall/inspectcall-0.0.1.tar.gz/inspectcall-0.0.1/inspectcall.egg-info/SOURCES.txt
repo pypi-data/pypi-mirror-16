@@ -1,0 +1,11 @@
+README.rst
+setup.py
+inspectcall/__init__.py
+inspectcall/reflection.py
+inspectcall/version.py
+inspectcall/wrapping.py
+inspectcall.egg-info/PKG-INFO
+inspectcall.egg-info/SOURCES.txt
+inspectcall.egg-info/dependency_links.txt
+inspectcall.egg-info/not-zip-safe
+inspectcall.egg-info/top_level.txt
