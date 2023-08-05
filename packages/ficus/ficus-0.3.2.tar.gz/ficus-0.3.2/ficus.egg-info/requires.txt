@@ -1,0 +1,3 @@
+nose
+matplotlib>=1.0
+nose-capturestderr
