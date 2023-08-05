@@ -1,0 +1,7 @@
+altugstestpackage.py
+setup.cfg
+setup.py
+altugstestpackage.egg-info/PKG-INFO
+altugstestpackage.egg-info/SOURCES.txt
+altugstestpackage.egg-info/dependency_links.txt
+altugstestpackage.egg-info/top_level.txt
