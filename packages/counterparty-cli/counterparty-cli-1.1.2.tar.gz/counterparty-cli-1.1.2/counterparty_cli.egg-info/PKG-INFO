@@ -1,0 +1,33 @@
+Metadata-Version: 1.1
+Name: counterparty-cli
+Version: 1.1.2
+Summary: Counterparty Protocol Command-Line Interface
+Home-page: http://counterparty.io
+Author: Counterparty Developers
+Author-email: dev@counterparty.io
+License: MIT
+Download-URL: https://github.com/CounterpartyXCP/counterparty-cli/releases/tag/v1.1.2
+Description: [![Latest Version](https://pypip.in/version/counterparty-cli/badge.svg)](https://pypi.python.org/pypi/counterparty-cli/)
+        [![Supported Python versions](https://pypip.in/py_versions/counterparty-cli/badge.svg)](https://pypi.python.org/pypi/counterparty-cli/)
+        [![License](https://pypip.in/license/counterparty-cli/badge.svg)](https://pypi.python.org/pypi/counterparty-cli/)
+        [![Slack Status](http://slack.counterparty.io/badge.svg)](http://slack.counterparty.io)
+        
+        `counterparty-cli` is a command line interface for [`counterparty-lib`](https://github.com/CounterpartyXCP/counterparty-lib).
+        
+        For installation and configuration instructions, see the [`counterparty-lib README`](https://github.com/CounterpartyXCP/counterparty-lib), as well as the [Official Project Documentation](http://counterparty.io/docs/).
+        
+Keywords: counterparty,bitcoin
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Office/Business :: Financial
+Classifier: Topic :: System :: Distributed Computing
+Provides: counterpartycli
