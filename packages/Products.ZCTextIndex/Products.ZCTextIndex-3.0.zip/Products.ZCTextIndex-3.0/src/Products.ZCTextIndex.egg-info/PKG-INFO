@@ -1,0 +1,110 @@
+Metadata-Version: 1.1
+Name: Products.ZCTextIndex
+Version: 3.0
+Summary: Full text indexing for ZCatalog / Zope 2.
+Home-page: http://pypi.python.org/pypi/Products.ZCTextIndex
+Author: Zope Foundation and Contributors
+Author-email: zope-dev@zope.org
+License: ZPL 2.1
+Description: Overview
+        ========
+        
+        This distribution contains a full text indexing facility for Zope 2 and more
+        specifically for Products.ZCatalog.
+        
+        This product is a replacement for the full text indexing facility of
+        Products.ZCatalog.
+        
+        Advantages of using ZCTextIndex:
+        
+        - A new query language, supporting both explicit and implicit Boolean
+          operators, parentheses, globbing, and phrase searching.  Apart from
+          explicit operators and globbing, the syntax is roughly the same as
+          that popularized by Google.
+        
+        - A more refined scoring algorithm, resulting in better selectiveness:
+          it's much more likely that you'll find the document you are looking
+          for among the first few highest-ranked results.
+        
+        - Actually, ZCTextIndex gives you a choice of two scoring algorithms
+          from recent literature: the Cosine ranking from the Managing
+          Gigabytes book, and Okapi from more recent research papers.  Okapi
+          usually does better, so it is the default (but your milage may
+          vary).
+        
+        - A redesigned Lexicon, using a pipeline architecture to split the
+          input text into words.  This makes it possible to mix and match
+          pipeline components, e.g. you can choose between an HTML-aware
+          splitter and a plain text splitter, and additional components can be
+          added to the pipeline for case folding, stopword removal, and other
+          features.  Enough example pipeline components are provided to get
+          you started, and it is very easy to write new components.
+        
+        Changelog
+        =========
+        
+        3.0 (2016-07-18)
+        ----------------
+        
+        - Replace stopper and okascore C implementations with pure-Python.
+        
+        - Remove HelpSys pages.
+        
+        - Remove various internal test helper modules.
+        
+        - Remove old-style interface modules, use the interfaces module instead.
+        
+        - Update to ZODB 4.x as direct dependency. Which drops ZODB3 support.
+        
+        2.13.5 (2014-02-19)
+        -------------------
+        
+        - Add `getIndexQueryNames` method to index to comply with extended interface.
+        
+        2.13.4 (2012-12-03)
+        -------------------
+        
+        - Fixed problem where the index was not reindexed if the new value was an empty
+          string leading to inconsistence between the object attribute (that is empty)
+          and the index that still contains the old indexed value.
+        
+        2.13.3 (2011-07-28)
+        -------------------
+        
+        - Fixed problem in reindex document optimization, which could lead to negative
+          document counts when reindexing unchanged documents.
+        
+        2.13.2 (2011-05-04)
+        -------------------
+        
+        - Avoid changing data, if the indexed values stayed the same.
+        
+        2.13.1 (2010-10-02)
+        -------------------
+        
+        - Changed word id creation algorithm in Lexicon. Instead of relying on an
+          increasing length counter, we use a number from a randomized range. This
+          avoids conflict errors while adding new words in multiple parallel
+          transactions. Inspired by code from ``enfold.fixes``.
+        
+        - Lexicon: Added clear method.
+        
+        - Lexicon: Removed BBB code for instances created with Zope < 2.6.2.
+        
+        - Added missing namespace_packages declaration to setup.py.
+        
+        2.13.0 (2010-06-19)
+        -------------------
+        
+        - Released as separate package.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 6 - Mature
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Zope2
+Classifier: License :: OSI Approved :: Zope Public License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2 :: Only
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: Implementation :: CPython

@@ -1,0 +1,11 @@
+setuptools
+AccessControl
+Acquisition
+BTrees
+transaction
+Persistence
+Products.ZCatalog
+zExceptions
+Zope2 >= 2.13.0dev
+ZODB
+zope.interface
