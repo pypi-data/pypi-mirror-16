@@ -1,0 +1,8 @@
+setup.py
+disciple/__init__.py
+disciple.egg-info/PKG-INFO
+disciple.egg-info/SOURCES.txt
+disciple.egg-info/dependency_links.txt
+disciple.egg-info/not-zip-safe
+disciple.egg-info/requires.txt
+disciple.egg-info/top_level.txt
