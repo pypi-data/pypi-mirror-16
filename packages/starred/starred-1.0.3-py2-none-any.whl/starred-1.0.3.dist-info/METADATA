@@ -1,0 +1,41 @@
+Metadata-Version: 2.0
+Name: starred
+Version: 1.0.3
+Summary: GitHub starred: make your own awesome lists page by GitHub star!
+Home-page: https://github.com/maguowei/starred
+Author: maguowei
+Author-email: imaguowei@gmail.com
+License: The MIT License (MIT)
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: click (==6.6)
+Requires-Dist: github3.py (==1.0.0a4)
+
+Starred
+-----
+
+Easy to Setup
+`````````````
+
+Install:
+.. code:: bash
+    $ pip install starred
+    $ starred --username maguowei --sort > README.md
+
+Links
+`````
+
+* `website <https://github.com/maguowei/starred>`_
+
+
+
