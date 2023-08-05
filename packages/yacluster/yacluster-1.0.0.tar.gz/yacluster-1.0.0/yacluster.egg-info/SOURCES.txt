@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+requirements-development.txt
+setup.cfg
+setup.py
+tests.py
+yacluster.py
+yacluster.egg-info/PKG-INFO
+yacluster.egg-info/SOURCES.txt
+yacluster.egg-info/dependency_links.txt
+yacluster.egg-info/top_level.txt
