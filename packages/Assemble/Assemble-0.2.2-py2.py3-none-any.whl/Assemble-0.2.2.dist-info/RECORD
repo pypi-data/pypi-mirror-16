@@ -1,0 +1,12 @@
+Assemble-0.2.2.dist-info/DESCRIPTION.rst,sha256=3Iy2K63n5PNur9tu9538nqJTj9NpW06OnwiwSTnHJuo,2118
+Assemble-0.2.2.dist-info/METADATA,sha256=UdK08pnTdk98ScVNk0UB1PXPykxM0C7uX9pE0keM7t8,3130
+Assemble-0.2.2.dist-info/RECORD,,
+Assemble-0.2.2.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+Assemble-0.2.2.dist-info/entry_points.txt,sha256=sVM1d-5ZE8YDTWlshPzx24Vc_s26Dab6cj8dFmTo9WQ,54
+Assemble-0.2.2.dist-info/metadata.json,sha256=WZ33g_IlrY9xAmJqekg7TaiXUKDa3dGf-iIIKuwD7wc,1260
+Assemble-0.2.2.dist-info/top_level.txt,sha256=ozopoQuiRtzpgbYslcOa8FV6aDmnrkjtJQI7QqrlMV8,9
+assemble/__init__.py,sha256=i687Ztac6laiNGRhwfeEA5Nox0zWEOVMHQUeZzCmWmI,551
+assemble/assemble.py,sha256=Qb3a7xXLQfDurBdyx2_w4_YKjxrYHcuUB4iucKH-hXA,17645
+assemble/cli.py,sha256=l1NTJBEEPDzl3P_PIjqlgLlzYyfeHPOnPmcMo-zHdIQ,10869
+assemble/requirements.py,sha256=ZaRZKMqDRg5aQeZghXcEQFOS57INz26Ew7mtpwA0Pzc,3175
+assemble/utils.py,sha256=lXqIObsLVu6L7sQPttRujK7EHp__Nqd0UJ7uy7joRuE,2862
