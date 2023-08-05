@@ -1,0 +1,17 @@
+formtools_addons/__init__.py,sha256=EfEXENZaUkQkeOgoM6ZA1qsN1YU6oeuwtV9G1DFBtCo,328
+formtools_addons/models.py,sha256=iwhKnzeBJLKxpRVjvzwiRE63_zNpIBfaKLITauVph-0,24
+formtools_addons/middleware.py,sha256=2OWjD0wAHgLxUtInf9XpN9nCRnRiCuNm8Ja2FCmOz7s,1715
+formtools_addons/templates/formtools_addons/wizard/wizard_form.html,sha256=bF-fgXNWImd8oRNIvhswM2wY5NBpUT0J9AYIssukod8,719
+formtools_addons/static/formtools_addons/js/wizardapi.js,sha256=YjoXY1_K-B2ykUVBjN2xDm8rrqNQNNZ18lv_OfrFZkM,13823
+formtools_addons/static/formtools_addons/templates/directives/wizardapi/wizard.html,sha256=8Udma9QnO5oty_9Kiif6OcxH-zV9x7G3D0B06PhLcec,1135
+formtools_addons/static/formtools_addons/css/formtools_addons.css,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+formtools_addons/wizard/__init__.py,sha256=Zr_8Dq0yby5GcrC0PSfpv9wv5A2PRLLxBa3H2Sp6oJM,64
+formtools_addons/wizard/views/wizardapi.py,sha256=gvwPQPu7GJladqsVZ80k8ixbyMssox92Mq_VrzD6gPI,14872
+formtools_addons/wizard/views/__init__.py,sha256=jFYDl4ZYdZCz-UKmEhGuwT1d-kSObdIHAJ7AGTVR8V8,124
+formtools_addons/wizard/views/multipleformwizard.py,sha256=nuSaKMmv5vLvLgLkO3IVckPUl8nmGTlyE-MXgYhQyjA,27830
+django_formtools_addons-0.1.11.dist-info/DESCRIPTION.rst,sha256=jqYcmi_EFmro48Who9m39rtMVF5F1yaTnWu0pnLf9IU,6299
+django_formtools_addons-0.1.11.dist-info/metadata.json,sha256=zTJYPJFNW2ewFpmOdHE5ZXGb1ra0WP28YHL5ZxnoA6w,1072
+django_formtools_addons-0.1.11.dist-info/METADATA,sha256=wOawIPicOuWpY2X-eSYCwsUHrwGNp8PuwcP62bBGjUM,7266
+django_formtools_addons-0.1.11.dist-info/RECORD,,
+django_formtools_addons-0.1.11.dist-info/top_level.txt,sha256=pRhMg5WeJNk7PhhueOkzsXPAOOe3pNGJd__wfgorb4Q,17
+django_formtools_addons-0.1.11.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
