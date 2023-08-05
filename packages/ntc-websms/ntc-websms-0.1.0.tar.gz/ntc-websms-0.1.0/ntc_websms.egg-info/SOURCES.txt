@@ -1,0 +1,15 @@
+CHANGES.txt
+MANIFEST.in
+README.rst
+requirements.txt
+setup.py
+ntc_websms.egg-info/PKG-INFO
+ntc_websms.egg-info/SOURCES.txt
+ntc_websms.egg-info/dependency_links.txt
+ntc_websms.egg-info/requires.txt
+ntc_websms.egg-info/top_level.txt
+src/meet
+src/ntc_websms/__init__.py
+src/ntc_websms/__main__.py
+src/ntc_websms/_version.py
+src/ntc_websms/meet.py
