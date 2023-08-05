@@ -1,0 +1,42 @@
+environment:
+  matrix:
+    - PYTHON: "C:\\Python34"
+      REQUIREMENTS: "lowest"
+    - PYTHON: "C:\\Python34"
+      REQUIREMENTS: "release"
+    - PYTHON: "C:\\Python34"
+      REQUIREMENTS: "dev"
+    - PYTHON: "C:\\Python35"
+      REQUIREMENTS: "lowest"
+    - PYTHON: "C:\\Python35"
+      REQUIREMENTS: "release"
+    - PYTHON: "C:\\Python35"
+      REQUIREMENTS: "dev"
+    - PYTHON: "C:\\Python34"
+      GF256_WITHOUT_SPEEDUPS: "1"
+    - PYTHON: "C:\\Python35"
+      GF256_WITHOUT_SPEEDUPS: "1"
+
+install:
+  - "%PYTHON%\\python.exe -m pip install -U pip"
+  - "%PYTHON%\\python.exe -m pip install -r dev-requirements.txt"
+  - ps: if ($REQUIREMENTS -eq "lowest") {
+          %PYTHON%\\python.exe -m pip install cffi==1.7.0
+        } elseif ($REQUIREMENTS -eq "release") {
+          %PYTHON%\\python.exe -m pip install cffi>=1.7.0
+        } elseif ($REQUIREMENTS -eq "dev") {
+          %PYTHON%\\python.exe -m pip install -e hg+https://bitbucket.org/cffi/cffi#egg=cffi
+        } else { }
+  - '%PYTHON%\\python.exe -c "import gf256; print(gf256._speedups)"'
+
+# Deactivate automated build system.
+build: off
+
+test_script:
+  - "%PYTHON%\\Scripts\\py.test.exe"
+  - "%PYTHON%\\python.exe setup.py check --strict --metadata --restructuredtext"
+  - "%PYTHON%\\Scripts\\check-manifest.exe"
+  - "%PYTHON%\\Scripts\\sphinx-build.exe -W -b html docs docs/_build/html"
+  - "%PYTHON%\\Scripts\\sphinx-build.exe -W -b doctest docs docs/_build/doctest"
+  - "%PYTHON%\\Scripts\\flake8.exe ."
+  - "%PYTHON%\\Scripts\\isort.exe --check-only --diff --recursive ."
