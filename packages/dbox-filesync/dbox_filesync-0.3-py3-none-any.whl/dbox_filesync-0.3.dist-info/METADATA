@@ -1,0 +1,14 @@
+Metadata-Version: 2.0
+Name: dbox-filesync
+Version: 0.3
+Summary: Encapsulation of dropbox module for simple file synchronization
+Home-page: UNKNOWN
+Author: Erik Stenlund
+Author-email: erikstenlund0810@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: dropbox
+
+UNKNOWN
+
+
