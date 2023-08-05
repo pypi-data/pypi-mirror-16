@@ -1,0 +1,9 @@
+README.rst
+setup.py
+easyshell/__init__.py
+easyshell/_python_completer.py
+easyshell/easyshell.py
+easyshell.egg-info/PKG-INFO
+easyshell.egg-info/SOURCES.txt
+easyshell.egg-info/dependency_links.txt
+easyshell.egg-info/top_level.txt
