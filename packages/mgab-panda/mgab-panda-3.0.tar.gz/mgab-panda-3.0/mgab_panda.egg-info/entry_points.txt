@@ -1,0 +1,3 @@
+[console_scripts]
+mgabpanda = panda.__main__:_main
+
