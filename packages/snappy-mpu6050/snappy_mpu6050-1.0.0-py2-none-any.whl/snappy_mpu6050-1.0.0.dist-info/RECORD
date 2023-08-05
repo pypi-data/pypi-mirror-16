@@ -1,0 +1,10 @@
+snappy_mpu6050/__init__.py,sha256=Fxd_GBrV2nu3PYd5zFgVudc4vVx1spmqLMZXaJ3dNBc,19
+snappy_mpu6050/_version.py,sha256=7c6NPwGGqhP-MJy8hvNgOm6D5XPao5LZFAUF5H0QC6g,127
+snappy_mpu6050/i2c.py,sha256=3pmUSvpGjEaT2Ub4V99MQxrfR4mN153uThJvD7I31fo,3460
+snappy_mpu6050-1.0.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+snappy_mpu6050-1.0.0.dist-info/METADATA,sha256=3XDEeeULHRfYdZ4CcYbBgXwvo1RTfl67naC530WbHgQ,579
+snappy_mpu6050-1.0.0.dist-info/RECORD,,
+snappy_mpu6050-1.0.0.dist-info/WHEEL,sha256=90z-L1FjHEv_g8pMPaPbaXuhBIvSlvYObRaa122x8ag,97
+snappy_mpu6050-1.0.0.dist-info/metadata.json,sha256=NfmrX8gsCemctVQMjTkRf4gqwNBBJ9AH6OnxzvmspfI,677
+snappy_mpu6050-1.0.0.dist-info/pbr.json,sha256=eUKfUfF1KWn5boMfYQKtlWPB_AtkoQFTlqKhOAfd8nA,47
+snappy_mpu6050-1.0.0.dist-info/top_level.txt,sha256=W4I8_S8RMfcjwNgn8cQB97AssaP_TppEZ85qjjsHJrg,15
