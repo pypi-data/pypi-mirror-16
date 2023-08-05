@@ -1,0 +1,26 @@
+Metadata-Version: 2.0
+Name: pynini
+Version: 0.4.1
+Summary: Pynini is a fast, simple and standalone "flat" or "static" HTML generator.
+Home-page: https://github.com/daffidilly/pynini
+Author: Daffidilly
+Author-email: daffidilly.opensource@gmail.com
+License: Apache2
+Keywords: templates html development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: Jinja2 (>=2.8)
+Requires-Dist: PyYAML (>=3.11)
+Requires-Dist: mistune (>=0.7.3)
+Requires-Dist: pyaml (>=15.8.2)
+
+Read more at https://github.com/daffidilly/pynini
+
+
