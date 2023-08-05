@@ -1,0 +1,3 @@
+[console_scripts]
+ukm_worker = ukmdb_worker.worker:main
+
