@@ -1,0 +1,7 @@
+docopt
+fcsparser
+natsort
+pandas
+pathlib
+pyyaml
+scipy

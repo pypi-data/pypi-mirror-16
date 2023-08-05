@@ -1,0 +1,69 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.py
+docs/Makefile
+docs/conf.py
+docs/index.rst
+fcmcmp/__init__.py
+fcmcmp/__meta__.py
+fcmcmp/experiments.py
+fcmcmp/processing.py
+fcmcmp.egg-info/PKG-INFO
+fcmcmp.egg-info/SOURCES.txt
+fcmcmp.egg-info/dependency_links.txt
+fcmcmp.egg-info/not-zip-safe
+fcmcmp.egg-info/requires.txt
+fcmcmp.egg-info/top_level.txt
+tests/.coverage
+tests/.coveragerc
+tests/pytest.ini
+tests/test_experiments.py
+tests/test_processing.py
+tests/.cache/v/cache/lastfailed
+tests/dummy_data/.20160212_mg1655_controls.yml.swp
+tests/dummy_data/.abbreviate_channel.yml.swp
+tests/dummy_data/ambiguous_header.yml
+tests/dummy_data/ambiguous_well.yml
+tests/dummy_data/empty_experiment.yml
+tests/dummy_data/empty_file.yml
+tests/dummy_data/external_reference.yml
+tests/dummy_data/missing_label.yml
+tests/dummy_data/missing_wells.yml
+tests/dummy_data/multiple_experiments.yml
+tests/dummy_data/nonexistent_well.yml
+tests/dummy_data/plate_1.py
+tests/dummy_data/plate_1.yml
+tests/dummy_data/specify_both_plates.yml
+tests/dummy_data/specify_plate_1.yml
+tests/dummy_data/undefined_plate.yml
+tests/dummy_data/unspecified_plate.yml
+tests/dummy_data/plate_1/96 Well - U bottom/Specimen_001_A1_A01_001.fcs
+tests/dummy_data/plate_1/96 Well - U bottom/Specimen_001_C1_C01_003.fcs
+tests/dummy_data/plate_1/96 Well - U bottom/Specimen_002_B1_B01_002.fcs
+tests/dummy_data/plate_1/96 Well - U bottom/Specimen_002_C1_C01_004.fcs
+tests/dummy_data/plate_2/96 Well - U bottom/Specimen_001_A1_A01_001.fcs
+tests/dummy_data/plate_2/96 Well - U bottom/Specimen_001_C1_C01_003.fcs
+tests/dummy_data/plate_2/96 Well - U bottom/Specimen_002_B1_B01_002.fcs
+tests/dummy_data/plate_2/96 Well - U bottom/Specimen_002_C1_C01_004.fcs
+tests/htmlcov/_home_kale_research_projects_201511_sgrna_sensor_scripts_facs_fcm_helper_fcm_helper___init___py.html
+tests/htmlcov/_home_kale_research_projects_201511_sgrna_sensor_scripts_facs_fcm_helper_fcm_helper_experiments_py.html
+tests/htmlcov/_home_kale_research_projects_201511_sgrna_sensor_scripts_facs_fcmcmp_fcmcmp___init___py.html
+tests/htmlcov/_home_kale_research_projects_201511_sgrna_sensor_scripts_facs_fcmcmp_fcmcmp___meta___py.html
+tests/htmlcov/_home_kale_research_projects_201511_sgrna_sensor_scripts_facs_fcmcmp_fcmcmp_experiments_py.html
+tests/htmlcov/_home_kale_research_projects_201511_sgrna_sensor_scripts_facs_fcmcmp_fcmcmp_processing_py.html
+tests/htmlcov/_home_kale_research_software_libraries_fcmcmp_fcmcmp___init___py.html
+tests/htmlcov/_home_kale_research_software_libraries_fcmcmp_fcmcmp___meta___py.html
+tests/htmlcov/_home_kale_research_software_libraries_fcmcmp_fcmcmp_experiments_py.html
+tests/htmlcov/_home_kale_research_software_libraries_fcmcmp_fcmcmp_processing_py.html
+tests/htmlcov/coverage_html.js
+tests/htmlcov/index.html
+tests/htmlcov/jquery.debounce.min.js
+tests/htmlcov/jquery.hotkeys.js
+tests/htmlcov/jquery.isonscreen.js
+tests/htmlcov/jquery.min.js
+tests/htmlcov/jquery.tablesorter.min.js
+tests/htmlcov/keybd_closed.png
+tests/htmlcov/keybd_open.png
+tests/htmlcov/status.json
+tests/htmlcov/style.css
