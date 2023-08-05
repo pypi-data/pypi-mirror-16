@@ -1,0 +1,11 @@
+multidict/__init__.py,sha256=o8wAj3tDwUnZmTsk7BMmvs6UPcfGHgnE7FIvCqw5-g4,1151
+multidict/_multidict.cpython-34m.so,sha256=o0WpFUi_KM-Tl_RtF7ho9Rl0m5NpwviM4SqSY6erPj4,890819
+multidict/_multidict.c,sha256=ql6OpTrkOQAXwTFLzbOpDpHE764NoFwXCS14stc-7z0,667774
+multidict/_multidict_py.py,sha256=HD0wc797Q8kS1WamWYINYkwxQQkIjRuTJ1RLKYvggck,10235
+multidict/_multidict.pyx,sha256=IDhx2kXieImIIFvGWsS8_Yiclz3NgWMI24x_W2CznBw,18388
+multidict-1.2.0.dist-info/RECORD,,
+multidict-1.2.0.dist-info/top_level.txt,sha256=-euDElkk5_qkmfIJ7WiqCab02ZlSFZWynejKg59qZQQ,10
+multidict-1.2.0.dist-info/METADATA,sha256=MfnLY5O7s8PhGZiy5IR5NbQKvPjeiE68zOAevLuB1Jk,2180
+multidict-1.2.0.dist-info/metadata.json,sha256=ZCYpb007fLE-vTRUXcyAWunm4HMZO0i4hmbPpqhNk_0,728
+multidict-1.2.0.dist-info/WHEEL,sha256=-w08owRQVnrIufLHviE4y_7bILmDe7DWyhErUpfJkB0,109
+multidict-1.2.0.dist-info/DESCRIPTION.rst,sha256=nIbM88miMue76nyWmmmHHGznZHECc4ePx0-PUZ5hYPU,1646
