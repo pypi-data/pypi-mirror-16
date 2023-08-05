@@ -1,0 +1,76 @@
+Metadata-Version: 1.1
+Name: formiko
+Version: 1.0.1
+Summary: Formiko is reStructuredText and MarkDown editor and live previewer.
+Home-page: https://github.com/ondratu/formiko
+Author: Ondrej Tuma
+Author-email: mcbig@zeropage.cz
+License: BSD
+Description: Formiko
+        =======
+        
+        :author: Ondřej Tůma <mcbig@zeropage.cz>
+        
+        Formiko is reStructuredText and MarkDown editor and live previewer. It is written in Python with Gtk3, GtkSourceView and Webkit. Use Docutils and recommonmark Common Mark parser.
+        
+        Features:
+        ---------
+        * GtkSourceView based editor with syntax highlighting
+        * possible use Vim editor
+        * vertical or horizontal window splitting
+        * preview mode
+        
+        It support these parsers and writers:
+        
+        * Docutils reStructuredText parser - http://docutils.sourceforge.net
+        * Common Mark parser - https://github.com/rtfd/recommonmark
+        * Docutils HTML4, S5/HTML slide show and PEP HTML writer - http://docutils.sourceforge.net
+        * Tiny HTML writer - https://github.com/ondratu/docutils-tinyhtmlwriter
+        * Yet another HTML writer - https://github.com/masayuko/docutils-htmlwriter
+        * HTML 5 writer - https://github.com/Kozea/docutils-html5-writer
+        
+        Requirements:
+        -------------
+        * python 2.7 or 3
+        * GTK+3
+        * gobject-introspection
+        * PyGObject
+        * Webkit
+        * GtkSourceView
+        
+        recommended:
+        ~~~~~~~~~~~~
+        
+        * docutils - reStrucured support
+        * recommonmark - for Common Mark support
+        
+        optionally:
+        ~~~~~~~~~~~
+        
+        * docutils-tinyhtmlwriter
+        * docutils-htmlwriter
+        * docutils-html5-writer
+        * vim-gtk or vim-gnome
+Keywords: doc,html,rst,docutils,md,markdown,editor
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: X11 Applications :: GTK
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Documentation
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Text Editors :: Documentation
+Classifier: Topic :: Text Editors :: Text Processing
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Text Processing :: Markup
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Classifier: Topic :: Utilities
+Requires: docutils (>= 0.12)
+Requires: python_gi
+Requires: webkit
+Requires: gtksourceview
