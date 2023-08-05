@@ -1,0 +1,14 @@
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+competitiveDl/__init__.py
+competitiveDl/main.py
+competitiveDl/util.py
+competitive_dl.egg-info/PKG-INFO
+competitive_dl.egg-info/SOURCES.txt
+competitive_dl.egg-info/dependency_links.txt
+competitive_dl.egg-info/entry_points.txt
+competitive_dl.egg-info/requires.txt
+competitive_dl.egg-info/top_level.txt
