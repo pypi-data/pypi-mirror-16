@@ -1,0 +1,9 @@
+README
+setup.cfg
+setup.py
+negotiator/__init__.py
+negotiator/negotiator.py
+negotiator_3k.egg-info/PKG-INFO
+negotiator_3k.egg-info/SOURCES.txt
+negotiator_3k.egg-info/dependency_links.txt
+negotiator_3k.egg-info/top_level.txt
