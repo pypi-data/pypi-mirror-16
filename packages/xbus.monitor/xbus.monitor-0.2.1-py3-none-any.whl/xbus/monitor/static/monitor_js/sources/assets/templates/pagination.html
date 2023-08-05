@@ -1,0 +1,27 @@
+<% if (collection.state.totalPages !== null && collection.state.totalPages > 1) { %>
+
+<div class="pagination">
+
+<button type="button" class="btn btn-default"
+    <% if (!collection.hasPreviousPage()) { %>
+        disabled="disabled"
+    <% } %>
+    onclick="switchToPrevPage()">&lt;</button>
+
+<% _.each(page_indexes, function(page_index) { %>
+    <button type="button" class="btn btn-default
+        <% if (page_index === collection.state.currentPage) { %>
+            active
+        <% } %>
+        " onclick="switchPage(<%= page_index %>)"><%= page_index %></button>
+<% }); %>
+
+<button type="button" class="btn btn-default"
+    <% if (!collection.hasNextPage()) { %>
+        disabled="disabled"
+    <% } %>
+    onclick="switchToNextPage()">&gt;</button>
+
+</div>
+
+<% } %>

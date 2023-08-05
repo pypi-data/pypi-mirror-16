@@ -1,0 +1,162 @@
+<div class="row">
+    <div id="breadcrumb" class="col-md-12">
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Xbus</a></li>
+            <li><a href="#/<%= name %>">Envelopes</a></li>
+            <% if(model) { %>
+                <% if(editing) { %>
+                    <li><a href="#/<%= name %>/<%= model.id %>/edit">Edit</a></li>
+                <% } else { %>
+                    <li><a href="#/<%= name %>/<%= model.id %>">View</a></li>
+                <% } %>
+            <% } else { %>
+                <li><a href="#/<%= name %>/create">Create</a></li>
+            <% }%>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-name">
+                    <span><%= model ? (editing ? 'Edit' : 'View') : 'New' %> Envelope</span>
+                </div>
+                <div class="box-icons">
+                    <a class="collapse-link"> <i class="fa fa-chevron-up"></i>
+                    </a> <a class="expand-link"> <i class="fa fa-expand"></i>
+                    </a> <a class="close-link"> <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="no-move"></div>
+            </div>
+            <div class="box-content">
+                <form class="form-inline record-form" role="form">
+                    <% if (model) { %>
+                        <div style="margin-bottom: 12px;">
+                            <label>ID</label>
+                            <%= model.escape('id') %>
+                        </div>
+                    <% } %>
+                    <% if (model && model.get('state') === 'fail') { %>
+                        <a href="#" class="btn btn-primary"
+                            onclick="replay_envelope('<%= model.id %>'); return false;">Replay this envelope</a>
+                    <% } %>
+                    <fieldset>
+                        <div class="form-group">
+                            <label>Emitter</label>
+                            <input name="emitter_id" type="hidden"
+                                value="<%= model ? model.getRelation('emitter_id').keyContents : '' %>"
+                                class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>State</label>
+                            <input name="state" type="text"
+                                value="<%= model ? model.escape('state') : '' %>"
+                                class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Posted date</label>
+                            <input name="posted_date" type="date"
+                                value="<%= model ? model.escape('posted_date') : '' %>"
+                                class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Done date</label>
+                            <input name="done_date" type="date"
+                                value="<%= model ? model.escape('done_date') : '' %>"
+                                class="form-control" />
+                        </div>
+                    </fieldset>
+
+                    <% if (model) { %>
+
+                        <h3>Errors</h3>
+                        <% if (_.size(model.get('errors').models) > 0) { %>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>State</th>
+                                        <th>Items</th>
+                                        <th>Message</th>
+                                        <th>Error date</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% _.each(model.get('errors').models, function(error) { %>
+                                    <tr <%=
+                                        error.get('state') === 'corrected' ? 'class="success"' :
+                                        error.get('state') === 'won_t_fix' ? 'class="danger"' :
+                                    '' %>>
+                                        <td><%= error.escape('state') %></td>
+                                        <td><%= error.escape('items') %></td>
+                                        <td><%= error.escape('message') %></td>
+                                        <td><%= error.escape('error_date') %></td>
+                                        <td><a href="#/event_error/<%= error.id %>">View</a></td>
+                                    </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                        <% } else { %>
+                            <p>No error.</p>
+                        <% } %>
+
+                        <h3>Events</h3>
+                        <% if (_.size(model.get('events').models) > 0) { %>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>State</th>
+                                        <th>Started date</th>
+                                        <th>Done date</th>
+                                        <th>Estimated items</th>
+                                        <th>Sent items</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% _.each(model.get('events').models, function(event) { %>
+                                    <tr <%=
+                                        event.get('state') === 'corrected' ? 'class="success"' :
+                                        event.get('state') === 'won_t_fix' ? 'class="danger"' :
+                                    '' %>>
+                                        <td><%= event.escape('state') %></td>
+                                        <td><%= event.escape('started_date') %></td>
+                                        <td><%= event.escape('done_date') %></td>
+                                        <td><%= event.escape('estimated_items') %></td>
+                                        <td><%= event.escape('sent_items') %></td>
+                                        <td><a href="#/event/<%= event.id %>">View</a></td>
+                                    </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
+                        <% } else { %>
+                            <p>No event.</p>
+                        <% } %>
+
+                    <% } %>
+
+                    <% if(editing) { %>
+                        <hr />
+                        <button type="submit" class="btn btn-primary"><%= model ? 'Update' : 'Create' %></button>
+                        <% if(model) { %>
+                            <input type="hidden" name="id" value="<%= model.id %>" />
+                            <button class="btn btn-danger delete">Delete</button>
+                        <% }; %>
+                    <% }; %>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // <![CDATA[
+
+    prepareForm('.record-form', <%= editing %>);
+    select2ify('emitter_id', 'emitter', 'login');
+
+    // ]]>
+</script>
