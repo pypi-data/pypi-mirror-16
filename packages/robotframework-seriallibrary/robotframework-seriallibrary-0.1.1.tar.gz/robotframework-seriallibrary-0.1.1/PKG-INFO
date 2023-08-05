@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: robotframework-seriallibrary
+Version: 0.1.1
+Summary: Robot Framework test library for serial connection
+Home-page: https://github.com/whosaysni/SerialLibrary
+Author: Yasushi Masuda
+Author-email: whosaysni@gmail.com
+License: Apache License 2.0
+Description: ====================================
+        SerialLibrary for Robot Framework
+        ====================================
+        
+        This is a serial port test library for Robot Framework.
+        
+        
+Keywords: robotframework testing testautomation serial
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Testing
