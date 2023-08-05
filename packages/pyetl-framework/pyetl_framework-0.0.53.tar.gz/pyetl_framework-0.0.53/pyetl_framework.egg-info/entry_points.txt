@@ -1,0 +1,4 @@
+[console_scripts]
+pyetl_worker = pyetl_framework:run_worker
+pyetl_flask = pyetl_framework:run_flask
+

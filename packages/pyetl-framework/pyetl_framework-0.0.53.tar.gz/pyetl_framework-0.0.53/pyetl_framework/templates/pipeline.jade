@@ -1,0 +1,8 @@
+extends ./layout.jade
+
+block title
+  |pyetl - #{pipeline.name}
+
+block content
+  h2 #{pipeline.name} Pipeline
+    a.btn.btn-success.pull-right(href="/pipelines/#{pipeline.name}/start", role="button") Run Pipeline
