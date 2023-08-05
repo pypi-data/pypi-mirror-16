@@ -1,0 +1,14 @@
+axsemantics_cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+axsemantics_cli/content_project.py,sha256=7jBF1WhvZqNWQRRcnwTOPSCTwMUBmmnU3qUHG2UxqkE,2567
+axsemantics_cli/excel_upload.py,sha256=yjj-i9V3qJTtC09KT4ETAI5DBD-kGXOOnNoCEcSdUaQ,4915
+axsemantics_cli/main.py,sha256=YtWkPb81SM_B9zDf_iLAt5VT-HNn9O6VoBLTW9dqiow,1239
+axsemantics_cli/mapping_helpers.py,sha256=l4QS_jMWNqcmxr88TnAIzSQv9QE_iiDr5kjVoDzCLXc,690
+axsemantics_cli/setdefault.py,sha256=aE1jJMT8Rv1aqeVIbc9DY693HKhSamWoSu8aeYn1iGU,303
+axsemantics_cli/training.py,sha256=OqObo6Q19HYoqAJUB0cytgV96YO1L7Iz4E9Ypa1JezA,2908
+axsemantics_cli-0.1.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+axsemantics_cli-0.1.0.dist-info/METADATA,sha256=84qzH3k_AE6jXRYjNfNslu8NidB19sttD4PDLtmaYT4,558
+axsemantics_cli-0.1.0.dist-info/RECORD,,
+axsemantics_cli-0.1.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+axsemantics_cli-0.1.0.dist-info/entry_points.txt,sha256=O4T4xQZ0kQwZk9PRecrQEI3ED8ID1BJgDIxQIUw9ww4,76
+axsemantics_cli-0.1.0.dist-info/metadata.json,sha256=cWjaGpYjVG56cCr9wWZ_FWCLb6ShJwll8vi04YDUOOg,847
+axsemantics_cli-0.1.0.dist-info/top_level.txt,sha256=bQ6uoKBrD4s9X717OjNOXb79S3-KIOEOx7R9t6nH1dY,16
