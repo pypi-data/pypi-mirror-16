@@ -1,0 +1,12 @@
+setup.cfg
+setup.py
+py_wrapi/__init__.py
+py_wrapi/helpers.py
+py_wrapi/sently_resource_mapping.py
+py_wrapi/sently_wrapper.py
+py_wrapi.egg-info/PKG-INFO
+py_wrapi.egg-info/SOURCES.txt
+py_wrapi.egg-info/dependency_links.txt
+py_wrapi.egg-info/not-zip-safe
+py_wrapi.egg-info/requires.txt
+py_wrapi.egg-info/top_level.txt
