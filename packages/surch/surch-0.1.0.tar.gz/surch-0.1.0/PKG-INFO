@@ -1,0 +1,13 @@
+Metadata-Version: 1.0
+Name: surch
+Version: 0.1.0
+Summary: Search strings in Github repositories or organizations
+Home-page: https://github.com/cloudify-cosmo/surch
+Author: Gigaspaces
+Author-email: cosmo-admin@gigaspaces.com
+License: LICENSE
+Description: Surch
+        =====
+        
+        See `Official Github Repo <https://github.com/cloudify-cosmo/surch>`_.
+Platform: linux

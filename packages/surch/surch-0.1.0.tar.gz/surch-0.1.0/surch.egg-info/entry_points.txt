@@ -1,0 +1,3 @@
+[console_scripts]
+surch = surch.surch:main
+
