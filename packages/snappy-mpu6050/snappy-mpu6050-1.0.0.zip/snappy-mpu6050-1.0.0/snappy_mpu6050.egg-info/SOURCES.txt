@@ -1,0 +1,10 @@
+README.rst
+setup.py
+snappy_mpu6050/__init__.py
+snappy_mpu6050/_version.py
+snappy_mpu6050/i2c.py
+snappy_mpu6050.egg-info/PKG-INFO
+snappy_mpu6050.egg-info/SOURCES.txt
+snappy_mpu6050.egg-info/dependency_links.txt
+snappy_mpu6050.egg-info/pbr.json
+snappy_mpu6050.egg-info/top_level.txt
