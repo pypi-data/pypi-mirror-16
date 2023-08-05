@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: botlab
+Version: 0.1.2
+Summary: Tool to ease the development of telegram bots
+Home-page: https://github.com/aivel/botlab
+Author: Max(TrickOrTreat)
+Author-email: x@x.x
+License: MIT
+Download-URL: https://github.com/aivel/botlab/tarball/0.1.2
+Description: UNKNOWN
+Keywords: telegram,bot,api
+Platform: UNKNOWN
