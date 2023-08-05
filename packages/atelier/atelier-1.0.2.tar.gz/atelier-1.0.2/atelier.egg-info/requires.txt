@@ -1,0 +1,8 @@
+Sphinx
+invoke
+argh
+future
+Babel
+unipath
+python_dateutil
+gitpython
