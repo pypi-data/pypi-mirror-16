@@ -1,0 +1,3 @@
+[console_scripts]
+khan = khan.main:main
+
