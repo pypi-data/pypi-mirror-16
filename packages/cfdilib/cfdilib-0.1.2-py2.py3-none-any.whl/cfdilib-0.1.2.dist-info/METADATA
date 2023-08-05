@@ -1,0 +1,63 @@
+Metadata-Version: 2.0
+Name: cfdilib
+Version: 0.1.2
+Summary: Library to manage xml CDFI from python and sign with several pacs.
+Home-page: https://github.com/vauxoo/cfdilib
+Author: Vauxoo OpenSource Specialists.
+Author-email: mexico@vauxoo.com
+License: ISCL
+Keywords: cfdilib
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: ISC License (ISCL)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+
+=======================
+Xml documents generator
+=======================
+
+.. image:: https://travis-ci.com/Vauxoo/cfdilib.svg?token=VAty1EWicYm2yKQxZptp&branch=master
+    :target: https://travis-ci.com/Vauxoo/cfdilib
+
+
+Library to xml documents based on XSD files to manage situations where you need to sign such
+documents with a third party, then given a simple dictionary and a jinja2 template you will be
+able to generate such documents with almos 0 logic..
+
+* Free software: Vauxoo Licence
+* Documentation: https://vauxoo.github.io/cfdilib
+
+Features
+--------
+
+* TODO
+
+Credits
+---------
+
+Designed by: Nhomar Hernández <nhomar@vauxoo.com>
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.1.0 (2016-1-22)
+------------------
+
+* First release on PyPI.
+
+
