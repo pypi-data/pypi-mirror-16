@@ -1,0 +1,4 @@
+flask>=0.11.1
+flask-script>=2.0.5
+tornado>=4.3
+sh>=1.11

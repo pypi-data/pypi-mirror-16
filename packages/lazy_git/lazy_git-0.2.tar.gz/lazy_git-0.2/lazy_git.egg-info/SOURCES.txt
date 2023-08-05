@@ -1,0 +1,15 @@
+Dockerfile
+LICENSE
+MANIFEST.in
+README.md
+environment.yml
+setup.py
+lazy_git/__init__.py
+lazy_git/default_settings.py
+lazy_git.egg-info/PKG-INFO
+lazy_git.egg-info/SOURCES.txt
+lazy_git.egg-info/dependency_links.txt
+lazy_git.egg-info/requires.txt
+lazy_git.egg-info/top_level.txt
+lazy_git/api/__init__.py
+lazy_git/api/browse_api.py
