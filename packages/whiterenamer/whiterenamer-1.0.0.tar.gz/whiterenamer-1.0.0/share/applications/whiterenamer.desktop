@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=whiterenamer
+Terminal=false
+Icon=/usr/share/pixmaps/whiterenamer.png
+Exec=/usr/bin/whiterenamer
+Categories=Accessories
