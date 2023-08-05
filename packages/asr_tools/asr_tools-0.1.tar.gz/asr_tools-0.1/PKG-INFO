@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: asr_tools
+Version: 0.1
+Summary: Automatic speech recognition tools.
+Home-page: https://github.com/belambert/asr-tools
+Author: Ben Lambert
+Author-email: ben@benjaminlambert.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: automatic speech recognition,speech recognition,asr
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: BSD License
