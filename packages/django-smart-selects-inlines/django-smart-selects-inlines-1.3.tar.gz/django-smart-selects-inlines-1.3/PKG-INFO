@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: django-smart-selects-inlines
+Version: 1.3
+Summary: Django fork of django-smart-selects that fixes inlines.
+Home-page: https://github.com/azoughbi/smart_selects
+Author: Ahmad Alzoughbi
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
