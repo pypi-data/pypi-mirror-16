@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+requirements.txt
+setup.py
+python2_utmp.egg-info/PKG-INFO
+python2_utmp.egg-info/SOURCES.txt
+python2_utmp.egg-info/dependency_links.txt
+python2_utmp.egg-info/entry_points.txt
+python2_utmp.egg-info/requires.txt
+python2_utmp.egg-info/top_level.txt
+utmp/__init__.py
+utmp/__main__.py
+utmp/reader.py
