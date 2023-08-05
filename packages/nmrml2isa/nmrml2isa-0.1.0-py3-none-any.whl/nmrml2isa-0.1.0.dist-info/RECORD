@@ -1,0 +1,15 @@
+nmrml2isa/__init__.py,sha256=WhDR5iWnvYdFtJX0h4_3gjGBjLo9TVNPcWRa54VRyUs,97
+nmrml2isa/isa.py,sha256=Jllpke-A1quyafjrbQGSt0hKKrYTjuskTPg944dmbMI,5751
+nmrml2isa/nmrCV.owl,sha256=qclcQLniMcIMk0pIU-veRrxFDCJZOeU_tiSPjQsmKtU,377598
+nmrml2isa/nmrml.py,sha256=tWq-8PtxyM20VwuzvJS6K-EvL4Hv9hzUOouj8n8KT8M,18276
+nmrml2isa/parsing.py,sha256=6LmXsF2tSDJXQVCLVbDVSCM8THWI06qOU_vWzfMfwwE,5630
+nmrml2isa/default/a_nmrML.txt,sha256=e5l8x-mQbw1ADsKAc_9GJeLqCGs5WvXXH8GQfA5UB0k,4163
+nmrml2isa/default/i_nmrML.txt,sha256=942lkEhUycd43Ob7evjV5kgu53-SGRmbdBMLISORpd8,4818
+nmrml2isa/default/s_nmrML.txt,sha256=XbBqdmKKb1PInYBUIBmURoSCfHMIg0AcGAZplmSkdyc,488
+nmrml2isa-0.1.0.dist-info/DESCRIPTION.rst,sha256=pHQa2ItDuIJ7W8BKKy8fkfq-XvvAA2USnDE3TvcBmA0,2647
+nmrml2isa-0.1.0.dist-info/METADATA,sha256=svTnd1y2SHpIK_WhKF-wZnszc14ZPCwY_GPA6ezh8V0,3536
+nmrml2isa-0.1.0.dist-info/RECORD,,
+nmrml2isa-0.1.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+nmrml2isa-0.1.0.dist-info/entry_points.txt,sha256=s0A-YLS7_mbmp3ASRHoYuJcMDzRbA0FoPWY-aLZcA64,53
+nmrml2isa-0.1.0.dist-info/metadata.json,sha256=Rd0UrdTYcbTvxSVCF7R412fSHKLRkysl0OQoFfFd--s,1228
+nmrml2isa-0.1.0.dist-info/top_level.txt,sha256=mxO-6gNLrde4UofwKFFiNVps-cfZnV4r8b5_VzNDQBs,19
