@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: jupynbimp
+Version: 0.1
+Summary: import jupyter notebooks as modules
+Home-page: http://github.com/dcal12/jupynbimp
+Author: Doug Callaway
+Author-email: DCAL12@users.noreply.github.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

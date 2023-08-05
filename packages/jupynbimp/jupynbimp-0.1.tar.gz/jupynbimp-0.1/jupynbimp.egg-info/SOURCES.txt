@@ -1,0 +1,7 @@
+setup.py
+jupynbimp/__init__.py
+jupynbimp.egg-info/PKG-INFO
+jupynbimp.egg-info/SOURCES.txt
+jupynbimp.egg-info/dependency_links.txt
+jupynbimp.egg-info/not-zip-safe
+jupynbimp.egg-info/top_level.txt
