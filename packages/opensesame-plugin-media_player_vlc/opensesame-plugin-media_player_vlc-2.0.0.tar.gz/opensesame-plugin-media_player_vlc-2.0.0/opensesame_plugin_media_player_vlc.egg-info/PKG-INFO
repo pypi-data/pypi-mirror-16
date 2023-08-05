@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: opensesame-plugin-media-player-vlc
+Version: 2.0.0
+Summary: Media player plugin for OpenSesame, based on VLC player
+Home-page: https://github.com/dschreij/media_player_vlc
+Author: Daniel Schreij
+Author-email: dschreij@gmail.com
+License: GPL3
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: Console
+Classifier: Topic :: Documentation :: Sphinx
+Classifier: Topic :: Multimedia :: Sound/Audio
+Classifier: Topic :: Multimedia :: Sound/Audio :: Players
+Classifier: Topic :: Multimedia :: Video :: Display
+Classifier: Topic :: Software Development :: Libraries :: pygame
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
