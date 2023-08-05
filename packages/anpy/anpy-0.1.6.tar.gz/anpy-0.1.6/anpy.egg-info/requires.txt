@@ -1,0 +1,6 @@
+pathlib
+Click
+requests
+beautifulsoup4
+xmltodict
+html5lib
