@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: corpus-downloader
+Version: 0.1.1
+Summary: A downloader for textual corpora, for use in digital humanities, corpus linguistics, and natural language processing.
+Home-page: https://github.com/DH-Box/corpus-downloader
+Author: Jonathan Reeve
+Author-email: jon.reeve@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/DH-Box/corpus-downloader/tarball/0.1.1
+Description: UNKNOWN
+Keywords: nlp,text-analysis,corpora
+Platform: UNKNOWN
