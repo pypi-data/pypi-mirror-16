@@ -1,0 +1,56 @@
+Metadata-Version: 1.1
+Name: faff
+Version: 0.1.6
+Summary: Make build tool substitute written in Python.
+Home-page: https://github.com/mojzu/faff
+Author: mojzu
+Author-email: mail@mojzu.net
+License: Public Domain
+Description: ====
+        Faff
+        ====
+        
+        .. image:: https://img.shields.io/pypi/v/faff.svg?style=flat-square
+            :target: https://pypi.python.org/pypi/faff
+        
+        .. image:: https://img.shields.io/pypi/status/faff.svg?style=flat-square
+            :target: https://pypi.python.org/pypi/faff
+        
+        .. image:: https://img.shields.io/pypi/l/faff.svg?style=flat-square
+            :target: https://pypi.python.org/pypi/faff
+        
+        .. image:: https://img.shields.io/travis/mojzu/faff/master.svg?style=flat-square
+            :target: http://travis-ci.org/mojzu/faff
+        
+        .. image:: https://img.shields.io/coveralls/mojzu/faff.svg?style=flat-square
+            :target: https://coveralls.io/github/mojzu/faff
+        
+        Faff is a Make build tool substitute written in Python.
+        
+        ------------
+        Installation
+        ------------
+        
+        **Note:** If installing for development, refer to developer documentation.
+        
+        TODO
+        
+        ----------
+        Quickstart
+        ----------
+        
+        TODO
+        
+        -------------
+        Documentation
+        -------------
+        
+        TODO
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: Public Domain
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Software Development :: Build Tools
