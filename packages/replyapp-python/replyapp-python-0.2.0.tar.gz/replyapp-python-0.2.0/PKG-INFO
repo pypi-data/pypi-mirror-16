@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: replyapp-python
+Version: 0.2.0
+Summary: Python 3 api wrapper for replyapp.io
+Home-page: https://github.com/Blitzen/replyapp-python
+Author: Jordan Clark
+Author-email: jordan@blitzen.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
