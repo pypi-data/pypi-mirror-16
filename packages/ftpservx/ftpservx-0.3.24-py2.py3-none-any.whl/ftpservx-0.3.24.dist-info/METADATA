@@ -1,0 +1,24 @@
+Metadata-Version: 2.0
+Name: ftpservx
+Version: 0.3.24
+Summary: ftpservx - Fast to run and cross-platform FTP-server. Based on PySide or PyQt4 and pyftpdlib. Licensed by GPL3.
+Home-page: https://github.com/1-0/ftpservx
+Author: 1_0
+Author-email: 1_0@usa.com
+License: GPL3
+Keywords: FTP-server,pyside,pyqt4
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: X11 Applications :: Qt
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: System :: Networking
+Requires-Dist: PySide
+Requires-Dist: pyftpdlib
+
+ftpservx - Fast to run and cross-platform FTP-server. Based on PySide or PyQt4 and pyftpdlib. Licensed by GPL3. Licensed by GPL3.
+
+
