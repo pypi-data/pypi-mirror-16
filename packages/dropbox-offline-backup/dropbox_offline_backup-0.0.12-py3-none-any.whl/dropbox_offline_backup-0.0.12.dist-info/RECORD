@@ -1,0 +1,10 @@
+dropbox_offline_backup-0.0.12.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+dropbox_offline_backup-0.0.12.dist-info/METADATA,sha256=Iy5Z873eF8jDki264ZbMP95JfycztZmwkPuJvCaaJuo,275
+dropbox_offline_backup-0.0.12.dist-info/RECORD,,
+dropbox_offline_backup-0.0.12.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+dropbox_offline_backup-0.0.12.dist-info/entry_points.txt,sha256=dwfs7jA3o7Uj-zpfglptHca0Hb5Ua02O5ceV04kcJTg,55
+dropbox_offline_backup-0.0.12.dist-info/metadata.json,sha256=LRemC-hlWXOISF95ihGgz7Jl-7A4P0lH8M0l_kATciY,647
+dropbox_offline_backup-0.0.12.dist-info/top_level.txt,sha256=iiv4UUbMPUyFkapT6PtjrZySV9QSKSe0PqbtIRJuy-g,14
+dropboxbackup/__init__.py,sha256=VC3W8NhRqMxm5tiVXuB6_vb5iUQ3BCPucyo7Lxo5jeA,897
+dropboxbackup/backup.py,sha256=iInXJrOsd3UWT61O2Z7UHNBTX638oFsGgFY-YHDYYww,4635
+dropboxbackup/config.py,sha256=hkEMN_LVPMY9mSCLXr5q3B2R0ZtPxOMOC7Joxos7HbQ,1706
