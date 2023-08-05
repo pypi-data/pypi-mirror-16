@@ -1,0 +1,5 @@
+PyAutoIt
+easygui==0.97.4
+openpyxl
+matplotlib
+NumPy
