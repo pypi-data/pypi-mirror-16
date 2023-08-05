@@ -1,0 +1,11 @@
+libcloud_api/__init__.py,sha256=sOGCXl25YnmPxAIp8PmvO0qoa0zGC08CSPWfBlR2jfs,112
+libcloud_api/__main__.py,sha256=NzYPZmPnmy7sBF3Uddj9rdz4DRA-kHNfk3pUzcfkopg,675
+libcloud_api/api.py,sha256=0fzM6B712eC89Nc8Iwvq5FLtBObU7rWQKPyU3ALmN_8,2626
+libcloud_api/config.py,sha256=KaX_M9v_IPwmds43lgFVrtOrkMvfICffpf36fyeApZA,1420
+libcloud_api/utils.py,sha256=7h8Zzz_MZ78YUx63WQlCjY9lAqwqvYS2GOQhlYtQHmo,1308
+libcloud_api-0.2.0.dist-info/DESCRIPTION.rst,sha256=6BG9mw4LWQXuL4zZiAxMRSJYh-oZ4am2YOCgEwHGuM0,1036
+libcloud_api-0.2.0.dist-info/METADATA,sha256=ibwFf_8UUGmgaNZwo9_PTVauCrLx4KpPSF5_adL9UxI,1843
+libcloud_api-0.2.0.dist-info/metadata.json,sha256=IH85o4l1mnzhn7dRMx3Q-K-pSzxe3ox3KqF6hy6gWAU,917
+libcloud_api-0.2.0.dist-info/RECORD,,
+libcloud_api-0.2.0.dist-info/top_level.txt,sha256=EEkfdO0IhR3A2KWrupIwdIyo34ifkdiDHuemgZHMuJU,13
+libcloud_api-0.2.0.dist-info/WHEEL,sha256=6lxp_S3wZGmTBtGMVmNNLyvKFcp7HqQw2Wn4YYk-Suo,110
