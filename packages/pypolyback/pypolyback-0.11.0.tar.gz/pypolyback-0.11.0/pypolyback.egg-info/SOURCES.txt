@@ -1,0 +1,16 @@
+LICENSE.txt
+MANIFEST.in
+setup.cfg
+setup.py
+pypolyback/__init__.py
+pypolyback/apiobject.py
+pypolyback/config.py
+pypolyback/log.py
+pypolyback/routes.py
+pypolyback/server.py
+pypolyback.egg-info/PKG-INFO
+pypolyback.egg-info/SOURCES.txt
+pypolyback.egg-info/dependency_links.txt
+pypolyback.egg-info/entry_points.txt
+pypolyback.egg-info/requires.txt
+pypolyback.egg-info/top_level.txt
