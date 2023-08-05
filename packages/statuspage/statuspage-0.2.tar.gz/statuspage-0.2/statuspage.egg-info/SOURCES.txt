@@ -1,0 +1,9 @@
+setup.py
+statuspage.py
+statuspage.egg-info/PKG-INFO
+statuspage.egg-info/SOURCES.txt
+statuspage.egg-info/dependency_links.txt
+statuspage.egg-info/entry_points.txt
+statuspage.egg-info/not-zip-safe
+statuspage.egg-info/requires.txt
+statuspage.egg-info/top_level.txt
