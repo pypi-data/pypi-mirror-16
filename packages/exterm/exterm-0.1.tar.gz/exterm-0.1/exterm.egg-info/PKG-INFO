@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: exterm
+Version: 0.1
+Summary: A simple terminal library
+Home-page: UNKNOWN
+Author: Alex Tan
+Author-email: alex.jz.tan@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: curses miniterm exterm
+Platform: UNKNOWN

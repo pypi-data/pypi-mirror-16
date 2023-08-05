@@ -1,0 +1,15 @@
+MANIFEST.in
+requirements.txt
+setup.py
+exterm/__init__.py
+exterm/cfg.py
+exterm/history.py
+exterm/term.py
+exterm/version.py
+exterm.egg-info/PKG-INFO
+exterm.egg-info/SOURCES.txt
+exterm.egg-info/dependency_links.txt
+exterm.egg-info/entry_points.txt
+exterm.egg-info/top_level.txt
+exterm/tools/__init__.py
+exterm/tools/miniterm.py

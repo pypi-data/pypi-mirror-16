@@ -1,0 +1,3 @@
+[console_scripts]
+miniterm = exterm.tools.miniterm:main
+
