@@ -1,0 +1,14 @@
+setup.py
+NegaPosiAnalyzer/__init__.py
+NegaPosiAnalyzer/__main__.py
+NegaPosiAnalyzer/evaluate.py
+NegaPosiAnalyzer.egg-info/PKG-INFO
+NegaPosiAnalyzer.egg-info/SOURCES.txt
+NegaPosiAnalyzer.egg-info/dependency_links.txt
+NegaPosiAnalyzer.egg-info/requires.txt
+NegaPosiAnalyzer.egg-info/top_level.txt
+NegaPosiAnalyzer/dictionary/CREDIT.txt
+NegaPosiAnalyzer/dictionary/pn.csv.m3.120408.trim
+NegaPosiAnalyzer/dictionary/wago.121808.pn
+test/test_code_format.py
+test/test_function_specification.py

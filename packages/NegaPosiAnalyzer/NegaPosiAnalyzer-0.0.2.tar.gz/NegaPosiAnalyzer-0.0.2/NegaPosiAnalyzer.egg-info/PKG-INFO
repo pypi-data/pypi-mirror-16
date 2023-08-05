@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: NegaPosiAnalyzer
+Version: 0.0.2
+Summary: 日本語文章のネガティブ・ポジティブ度を測定する
+Home-page: https://github.com/uehara1414/NegaPosiAnalyzer.git
+Author: Akiya Furukawa
+Author-email: akiya.noface@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
