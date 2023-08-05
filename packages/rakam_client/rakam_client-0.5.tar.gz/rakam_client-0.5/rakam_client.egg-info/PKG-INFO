@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: rakam-client
+Version: 0.5
+Summary: Rakam API Documentation
+Home-page: https://github.com/rakam-io/rakam-python-client
+Author: UNKNOWN
+Author-email: contact@rakam.io
+License: UNKNOWN
+Description:     An analytics platform API that lets you create your own analytics services.
+            
+Keywords: Swagger,Rakam API Documentation
+Platform: UNKNOWN
