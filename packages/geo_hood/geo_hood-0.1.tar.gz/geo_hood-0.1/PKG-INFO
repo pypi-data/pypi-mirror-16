@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: geo_hood
+Version: 0.1
+Summary: Preprocessing geographic consumer data for P&G\s hadoop cluster
+Home-page: http://github.com/robenalt/geo_hood
+Author: Cody Hanson
+Author-email: cjohnhanson@uchicago.edu
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
