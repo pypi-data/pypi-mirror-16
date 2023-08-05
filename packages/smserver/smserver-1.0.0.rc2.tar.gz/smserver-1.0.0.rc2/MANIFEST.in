@@ -1,0 +1,5 @@
+include *.md
+include scripts/*
+include cfg/*.yml*
+include smserver/_fallback_conf/*.yml*
+
