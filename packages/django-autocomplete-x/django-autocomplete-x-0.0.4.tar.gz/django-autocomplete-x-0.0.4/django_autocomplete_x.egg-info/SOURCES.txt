@@ -1,0 +1,10 @@
+setup.py
+django_autocomplete/__init__.py
+django_autocomplete/urls.py
+django_autocomplete/views.py
+django_autocomplete/widgets.py
+django_autocomplete_x.egg-info/PKG-INFO
+django_autocomplete_x.egg-info/SOURCES.txt
+django_autocomplete_x.egg-info/dependency_links.txt
+django_autocomplete_x.egg-info/not-zip-safe
+django_autocomplete_x.egg-info/top_level.txt
