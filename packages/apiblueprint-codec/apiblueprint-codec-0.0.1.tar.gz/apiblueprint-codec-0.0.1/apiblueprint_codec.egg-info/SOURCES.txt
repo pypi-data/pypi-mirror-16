@@ -1,0 +1,7 @@
+MANIFEST.in
+setup.py
+apiblueprint_codec/__init__.py
+apiblueprint_codec.egg-info/PKG-INFO
+apiblueprint_codec.egg-info/SOURCES.txt
+apiblueprint_codec.egg-info/dependency_links.txt
+apiblueprint_codec.egg-info/top_level.txt
