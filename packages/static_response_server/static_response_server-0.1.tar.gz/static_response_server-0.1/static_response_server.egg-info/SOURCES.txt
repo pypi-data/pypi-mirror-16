@@ -1,0 +1,14 @@
+MANIFEST.in
+setup.py
+server/__init__.py
+server/server.py
+server/app/error/404.html
+server/app/person/index.html.get
+static_response_server.egg-info/PKG-INFO
+static_response_server.egg-info/SOURCES.txt
+static_response_server.egg-info/dependency_links.txt
+static_response_server.egg-info/entry_points.txt
+static_response_server.egg-info/not-zip-safe
+static_response_server.egg-info/requires.txt
+static_response_server.egg-info/top_level.txt
+test/test_main.py

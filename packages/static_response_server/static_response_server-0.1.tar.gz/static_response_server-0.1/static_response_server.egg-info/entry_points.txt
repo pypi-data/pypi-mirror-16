@@ -1,0 +1,3 @@
+[console_scripts]
+static-response-server = server.server:start
+
