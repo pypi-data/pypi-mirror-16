@@ -1,0 +1,65 @@
+Metadata-Version: 2.0
+Name: sopython-eridu
+Version: 0.3.0
+Summary: Project Cradle library for accessing historic SO content.
+Home-page: https://github.com/ffisegydd/eridu
+Author: Keiron J. Pizzey
+Author-email: kjpizzey@gmail.com
+License: BSD license
+Keywords: eridu
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Requires-Dist: Click (>=6.0)
+Requires-Dist: requests (==2.10.0)
+Requires-Dist: schedule (==0.3.2)
+
+===============================
+eridu
+===============================
+
+
+.. image:: https://img.shields.io/pypi/v/sopython-eridu.svg
+        :target: https://pypi.python.org/pypi/sopython-eridu
+
+
+Project Cradle library for accessing historic SO content.
+
+
+* Free software: BSD license
+
+
+Features
+--------
+
+* TODO
+
+
+
+=======
+History
+=======
+
+0.3.0 (2016-07-08)
+------------------
+
+* Added Docker support.
+
+0.2.0 (2016-07-08)
+------------------
+
+* Implemented basic eridu logic to access SE.
+* Added CLI that will get content on a set schedule.
+
+0.1.0 (2016-07-07)
+------------------
+
+* First release on PyPI.
+
+

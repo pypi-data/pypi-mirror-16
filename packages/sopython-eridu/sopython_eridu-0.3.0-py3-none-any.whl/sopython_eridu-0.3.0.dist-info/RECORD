@@ -1,0 +1,11 @@
+eridu/__init__.py,sha256=eUlt_6jcoBhphqxC7Z28TOg3ZPgDKzQpG143MmTk7UU,215
+eridu/config.py,sha256=-FYpTHm5czQ4ub_5Y2naXZQpCgVOE7V5u-Ucs0UT_oM,1203
+eridu/core.py,sha256=0_n3mbJo4kJK5XXlaXTLNC9qLR7gJddZ9befb5i_pYI,3184
+eridu/logger.py,sha256=Ytq6Adxfz0G3HFIbLH25NC8SyUiZcQMteovU7lraLUQ,260
+sopython_eridu-0.3.0.dist-info/DESCRIPTION.rst,sha256=0yNc1pz5gByDnxG6KPn5q2LQ7hyc_nGP7rLrIaIMGvw,609
+sopython_eridu-0.3.0.dist-info/METADATA,sha256=0CoF6u3eMXIiCuBcoMld02hsIlUrXfnHljaEmLm8KKE,1376
+sopython_eridu-0.3.0.dist-info/RECORD,,
+sopython_eridu-0.3.0.dist-info/WHEEL,sha256=Ds0ba8WsPJtjBPzEMyPOBG3qfPa6B4mlzB-vhzorIZs,97
+sopython_eridu-0.3.0.dist-info/entry_points.txt,sha256=8gOJoTkdNBjcnMkt3gn-fYoNQHJP0GZyBfdW1WUEh-M,42
+sopython_eridu-0.3.0.dist-info/metadata.json,sha256=JoS0AWoWgrydI63DnIYGQzllFrkHvXEkvfWd2etBhIs,1088
+sopython_eridu-0.3.0.dist-info/top_level.txt,sha256=qdYXYKCDUh9yqf1qiSu9H2eacsUEiimZhi29tq-nCEc,6
