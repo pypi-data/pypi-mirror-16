@@ -1,0 +1,63 @@
+CHANGES
+=======
+
+1.2.2
+-----
+
+* Wait all children, not only the first one
+* improve logging
+
+1.2.1
+-----
+
+* pep8 fix
+* re-handles signal during service init
+
+1.2.0
+-----
+
+* Don't call terminate twice on double child sigterm
+* handles signal during service init
+* docs: fix example
+
+1.1.0
+-----
+
+* release: Allow to pass version
+* Allow to pass args and kwargs for services
+
+1.0.3
+-----
+
+* Fix worker_id in tests
+
+1.0.2
+-----
+
+* Start worker_id at 0
+
+1.0.1
+-----
+
+* Add systemd notify support
+* Run atexit hooks
+* Some code deduplication
+* Remove hardcoded version
+
+1.0.0
+-----
+
+* Fix release script
+* Fix tox and pep8
+* Fix release script
+* Build universal wheel
+* Fix release script
+* create travis conf
+* Remove constraints stuffs
+* Set version
+* Better exception naming
+* remove useless code
+* Don't raise exception in default Service impl
+* More tests
+* Add some tests
+* Initial Ccotyledon Commit
