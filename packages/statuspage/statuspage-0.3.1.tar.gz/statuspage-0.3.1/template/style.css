@@ -1,0 +1,184 @@
+/* Base
+// –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+img {
+	max-width: 100%;
+}
+.wrapper {
+	position: relative;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+}
+
+
+/* Sections
+// –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.container {
+	/*border-top: .1rem solid #d1d1d1;*/
+	padding-top: 7.5rem;
+	padding-bottom: 7.5rem;
+	margin-bottom: 0;
+	max-width: 80.0rem;
+}
+
+/* Footer
+// –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.footer .container {
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
+.footer p{
+    font-size: 1.3rem;
+}
+
+
+/* Navbar
+// –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.navigation {
+	left: 0;
+	max-width: 100%;
+	position: fixed;
+	right: 0;
+	top: 0;
+	max-width: 100vw;
+	z-index: 99;
+}
+/* Re-overiding the width 100% declaration to match size of% based container */
+.navigation .container {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.navigation {
+	background: #f4f5f6;
+	border-bottom: .1rem solid #d1d1d1;
+	display: block;
+	height: 5.2rem;
+	width: 100%;
+}
+
+.navigation .img {
+	position: relative;
+	top: .3rem;
+	height: 2.0rem;
+}
+.navigation .title,
+.navigation-title {
+	color: #606c76;
+	display: inline;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	line-height: 5.2rem;
+	font-size: 1.6rem;
+	padding: 0;
+	position: relative;
+	text-decoration: none;
+}
+
+
+
+.panel{
+    color: white;
+    padding: 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: .5rem;
+    margin-bottom: 20px;
+}
+
+.panel.operational, .label.operational{
+    background-color: #0DE877;
+}
+
+.panel.degraded.performance, .label.degraded.performance{
+    background-color: #FFA500;
+}
+
+.panel.investigating, .label.investigating{
+    background-color: #1192FC;
+}
+
+.panel.major.outage, .label.major.outage{
+    background-color: #FF4D4D;
+}
+
+.label.system{
+    background-color: #171717;
+}
+
+ul.systems{
+    border: .1rem solid #e1e1e1;
+    border-radius: .5rem;
+}
+
+ul.systems > li{
+    list-style: none;
+    border-bottom: .1rem solid #e1e1e1;
+    padding: 15px;
+    margin-bottom: 0;
+}
+
+ul.systems > li:last-child{
+    border: none;
+}
+
+.systems .status{
+    float: right;
+}
+
+.status.operational{
+    color: #0DE877;
+}
+
+.status.degraded.performance{
+    color: #FFA500;
+}
+
+.status.investigating{
+     color: #1192FC;
+}
+
+.status.major.outage{
+    color: #FF4D4D;
+}
+
+hr{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-top: .3rem solid #f4f5f6;
+}
+
+h4{
+    padding-top: 3rem;
+}
+
+.incident .title{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#main{
+    padding-top: 8.5rem;
+}
+
+.label{
+    border-radius: .4rem;
+    color: white;
+    padding: 0.4rem 0.6rem;
+    font-size: 1.5rem;
+    font-weight:bold;
+    margin-left: .5rem;
+}
+
+.incident{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.incident .date{
+    font-size: 2rem;
+    font-weight: bold;
+}
