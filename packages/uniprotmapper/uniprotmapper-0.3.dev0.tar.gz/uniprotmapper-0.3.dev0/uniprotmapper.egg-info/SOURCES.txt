@@ -1,0 +1,9 @@
+MANIFEST.in
+README.md
+setup.py
+uniprotmapper/__init__.py
+uniprotmapper/mapper.py
+uniprotmapper.egg-info/PKG-INFO
+uniprotmapper.egg-info/SOURCES.txt
+uniprotmapper.egg-info/dependency_links.txt
+uniprotmapper.egg-info/top_level.txt
