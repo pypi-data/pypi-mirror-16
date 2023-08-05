@@ -1,0 +1,11 @@
+include README.rst ChangeLog.rst requirements.txt LICENSE
+recursive-include data/decks *
+recursive-include data/inputs *
+include data/oonideckgen.1
+include data/ooniprobe.1
+include data/oonireport.1
+include data/ooniresources.1
+include data/ooniprobe.conf.sample
+include data/configs/lepidopter-ooniprobe.conf
+include data/configs/lepidopter-oonireport.conf
+include ooni/settings.ini
