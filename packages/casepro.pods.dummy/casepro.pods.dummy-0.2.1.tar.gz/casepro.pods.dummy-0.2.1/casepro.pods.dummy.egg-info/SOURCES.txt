@@ -1,0 +1,12 @@
+README.rst
+setup.py
+casepro/__init__.py
+casepro.pods.dummy.egg-info/PKG-INFO
+casepro.pods.dummy.egg-info/SOURCES.txt
+casepro.pods.dummy.egg-info/dependency_links.txt
+casepro.pods.dummy.egg-info/namespace_packages.txt
+casepro.pods.dummy.egg-info/not-zip-safe
+casepro.pods.dummy.egg-info/top_level.txt
+casepro/pods/__init__.py
+casepro/pods/dummy/__init__.py
+casepro/pods/dummy/plugin.py
