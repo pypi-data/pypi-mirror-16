@@ -1,0 +1,10 @@
+idflow/__init__.py,sha256=_wyNJ9toGIaSdt8z583dyMIoXni23h7bIG410j6qBFY,166
+idflow/docker.py,sha256=vj-0IWswhC6WOSUUOryzp4J-eDjtXY-kL73PG6quh9E,5006
+idflow/flow.py,sha256=xYwFFjkLtAH_xSSAwA1pGXtPerfqp8ST_ZErNc_USSQ,2568
+idflow/utils.py,sha256=-hIoN30CY5sAfatvmrbzHghmTgftdddFTpPX7DuwjTI,3322
+invoke_docker_flow-0.0.13.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+invoke_docker_flow-0.0.13.dist-info/METADATA,sha256=0RzrCrrM8yvrCqxxTklIbP8mqizb17gahnBBIzoStr0,1152
+invoke_docker_flow-0.0.13.dist-info/RECORD,,
+invoke_docker_flow-0.0.13.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+invoke_docker_flow-0.0.13.dist-info/metadata.json,sha256=ZleWAaBQYRRk67ZfURo_k-9wn9sfNcfrtK2wdAlFEbE,1190
+invoke_docker_flow-0.0.13.dist-info/top_level.txt,sha256=Fp68kdbkJVjzv-zY6RmZFHDMRPTARch2PWycnhuKD1c,7
