@@ -1,0 +1,37 @@
+# -*- coding: UTF-8 -*-
+#!/usr/bin/python
+
+import sys
+import time
+import os
+
+from py_tat_morphan.morphan import Morphan
+
+print('Tatar Language Morphological Analyser v1.02')
+print('===========================================')
+
+tatmorphan = Morphan()
+if len(sys.argv) > 1:
+    print("Analysing '%s' file" % sys.argv[1])
+    try:
+        with open(sys.argv[1], 'r') as stream:
+            text = stream.read().decode('UTF-8')
+        st = time.time()
+        result = tatmorphan.process_text(text)
+        dt = int(time.time() - st)
+
+        lexunit = int(len(result.split('\n'))/2)
+        if not os.path.exists('analysed/'):
+            os.makedirs('analysed/')
+        with open('analysed/' + sys.argv[1].split('/')[-1], 'w') as stream:
+            stream.write(result.encode('UTF-8'))
+        print('Done')
+        print('Time to analyse text: %s sec.' % dt)
+        print('Lexical units: %s' % lexunit)
+        print('Lexical units per second: %s' % (lexunit/(dt)))
+        s = 'Not recognized: %s (%s' % (result.count('NR'), int(result.count('NR')*100/lexunit))
+        print(s + '%)')
+    except:
+        print('Error')
+else:
+    print('Provide textfile to analyse!')
