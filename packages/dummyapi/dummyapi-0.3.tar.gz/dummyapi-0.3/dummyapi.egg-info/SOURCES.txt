@@ -1,0 +1,6 @@
+setup.py
+dummyapi/__init__.py
+dummyapi.egg-info/PKG-INFO
+dummyapi.egg-info/SOURCES.txt
+dummyapi.egg-info/dependency_links.txt
+dummyapi.egg-info/top_level.txt
