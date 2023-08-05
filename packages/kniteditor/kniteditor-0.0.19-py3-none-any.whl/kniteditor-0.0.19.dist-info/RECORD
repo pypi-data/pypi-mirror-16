@@ -1,0 +1,14 @@
+kniteditor/AYABKnitter.py,sha256=TutpYAqvaZjFG5lu_ATWKO5OTlqvv4ol07btUupsO-4,430
+kniteditor/EditorWindow.py,sha256=1N4QV-G5nc4dLaKrDAZqbDePgTuhqzjIrXIVmsBPQ50,1066
+kniteditor/InstructionSVGWidgetCache.py,sha256=F5lg5n5KraKMhilhQ-hsdC3eqGQ_BJxIN5v49s2X9kY,2247
+kniteditor/KnittingPatternWidget.py,sha256=9cH5_Pw678Cg7sVKZgmrOBBJXgn4kZwZwLyntTtSvcs,3257
+kniteditor/__init__.py,sha256=olLBEc2oi6d2wX2TFbz4BUp31na5H-iNtSPmFknKjFI,172
+kniteditor/__main__.py,sha256=RnKlCJhWcfShYsJMbw5DRTwFyxU6rsU4WjIJ-hgEK1E,255
+kniteditor/test/conftest.py,sha256=tOnk4KO5D5MwrdcW3v6p5hcoLn5YLvOS4HootL_XCb4,246
+kniteditor/test/test_can_import.py,sha256=QrveU5mwcsOEYHUzecGeBdgatQ091nf6MMxS1v7L87g,177
+kniteditor-0.0.19.dist-info/top_level.txt,sha256=XGWhlNA8r9MStNfAi15XZiqjzdlOZMV6JbNppWX_4Ow,11
+kniteditor-0.0.19.dist-info/METADATA,sha256=oPGhcBHf1xJzw9TI-w0bNvjtqB5mLwLCRZs9pqKdIok,2937
+kniteditor-0.0.19.dist-info/DESCRIPTION.rst,sha256=bGLeYC4gbwcjdIWSemsnHE8SBQCwotAv78dWAsAcRgc,1913
+kniteditor-0.0.19.dist-info/metadata.json,sha256=x0avEuWjwQu7KZp8_KzrgUwBhRk3ds39r81WnmBgqPo,1894
+kniteditor-0.0.19.dist-info/WHEEL,sha256=-aSo8rHuuPDEFzkcqqQ55pDyCjy25bYMLxSiHWKAOTc,92
+kniteditor-0.0.19.dist-info/RECORD,,
