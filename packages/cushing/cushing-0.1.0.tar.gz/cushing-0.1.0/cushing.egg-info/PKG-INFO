@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: cushing
+Version: 0.1.0
+Summary: A CI/CD Build pipeline DSL
+Home-page: http://github.com/adamar/cushing
+Author: adamar
+Author-email: none@none.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
