@@ -1,0 +1,16 @@
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+soa/__init__.py
+soa/services.py
+soa.egg-info/PKG-INFO
+soa.egg-info/SOURCES.txt
+soa.egg-info/dependency_links.txt
+soa.egg-info/requires.txt
+soa.egg-info/top_level.txt
+soa/directory/__init__.py
+soa/directory/coap.py
+soa/directory/directory.py
+soa/directory/http.py
