@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: taco.py
+Version: 0.1a0
+Summary: Simple converter of table-like data in YAML format to some common data typeslike pdf or docx.
+Home-page: http://github.com/antonlukyanov/taco
+Author: Anton Lukyanov
+Author-email: anton.lukyanov@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
