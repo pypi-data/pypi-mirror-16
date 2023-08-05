@@ -1,0 +1,17 @@
+setup.py
+GApi4Term/__init__.py
+GApi4Term/gapi
+GApi4Term/commands/__init__.py
+GApi4Term/commands/accounts.py
+GApi4Term/commands/email.py
+GApi4Term/commands/parser.py
+GApi4Term/commands/utils.py
+GApi4Term/core/__init__.py
+GApi4Term/core/configstore.py
+GApi4Term/core/gmail.py
+GApi4Term/core/oauth.py
+gapi4term.egg-info/PKG-INFO
+gapi4term.egg-info/SOURCES.txt
+gapi4term.egg-info/dependency_links.txt
+gapi4term.egg-info/requires.txt
+gapi4term.egg-info/top_level.txt
