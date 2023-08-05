@@ -1,0 +1,36 @@
+# coding: utf-8
+from __future__ import print_function
+import sys
+
+import sqlitefts as fts
+
+import pytest
+from jajp_common import *  # noqa
+mecab = pytest.importorskip('natto')
+
+
+class MeCabTokenizer(fts.Tokenizer):
+    def __init__(self):
+        self.tagger = mecab.MeCab()
+
+    def tokenize(self, text):
+        p = 0
+        m = self.tagger.parseToNode(text)
+        while m:
+            l = m.length
+            d = m.rlength - l
+            start = p + d
+            p = start + l
+            if l:
+                yield self.m.surface, start, start + l
+            m = m.next
+
+
+@pytest.fixture
+def name():
+    return 'mecab'
+
+
+@pytest.fixture
+def t():
+    return MeCabTokenizer()
