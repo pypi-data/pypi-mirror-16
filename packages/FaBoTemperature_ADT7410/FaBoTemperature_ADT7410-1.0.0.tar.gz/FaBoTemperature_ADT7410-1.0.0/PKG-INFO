@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: FaBoTemperature_ADT7410
+Version: 1.0.0
+Summary: This is a library for the FaBo Temperature I2C Brick.
+Home-page: https://github.com/FaBoPlatform/FaBoTemperature-ADT7410-Python
+Author: FaBo
+Author-email: info@fabo.io
+License: Apache License 2.0
+Description: FaBoTemperature-ADT7410-Python
+        ==============================
+        
+        How to install.
+        ---------------
+        
+        ::
+        
+            pip install FaBoTemperature_ADT7410
+        
+        FaBo Temperature I2C Brick
+        --------------------------
+        
+        　`#207 Temperature I2C Brick <http://fabo.io/207.html>`__
+        
+        ADT7410
+        -------
+        
+        　ADT7410 is 16-Bit Digital I2C Temperature Sensor.
+        
+        ADT7410 Datasheet
+        ~~~~~~~~~~~~~~~~~
+        
+        　`ADT7410
+        Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/ADT7410.pdf>`__
+        
+        Releases
+        --------
+        
+        -  1.0.0 Initial release.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development
+Classifier: Topic :: System :: Hardware

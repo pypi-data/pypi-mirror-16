@@ -1,0 +1,7 @@
+setup.py
+FaBoTemperature_ADT7410/ADT7410.py
+FaBoTemperature_ADT7410/__init__.py
+FaBoTemperature_ADT7410.egg-info/PKG-INFO
+FaBoTemperature_ADT7410.egg-info/SOURCES.txt
+FaBoTemperature_ADT7410.egg-info/dependency_links.txt
+FaBoTemperature_ADT7410.egg-info/top_level.txt
