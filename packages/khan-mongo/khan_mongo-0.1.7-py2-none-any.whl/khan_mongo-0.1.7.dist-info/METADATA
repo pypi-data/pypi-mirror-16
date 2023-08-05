@@ -1,0 +1,69 @@
+Metadata-Version: 2.0
+Name: khan-mongo
+Version: 0.1.7
+Summary: 'hack day'
+Home-page: https://github.com/otherpirate/khan
+Author: Mauro Andre Murari
+Author-email: mauro_murari@hotmail.com
+License: MIT license
+Keywords: khan
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: PTable (==0.9.2)
+Requires-Dist: PyYAML (==3.11)
+Requires-Dist: Sphinx (==1.4.4)
+Requires-Dist: bumpversion (==0.5.3)
+Requires-Dist: coverage (==4.1)
+Requires-Dist: flake8 (==2.6.0)
+Requires-Dist: pip (==8.1.2)
+Requires-Dist: pymongo (==3.2.2)
+Requires-Dist: python-dateutil (==2.5.3)
+Requires-Dist: tox (==2.3.1)
+Requires-Dist: watchdog (==0.8.3)
+Requires-Dist: wheel (==0.29.0)
+
+# Khan is a unix "top" clone for MongoDB, inspired by Innotop and Motop.
+
+Khan presents a real time list of queries running in a given MongoDB instance and information about the replication status.
+
+## Dependencies
+
+  * Python >= 3.5
+  * MongoDB >= 3.0
+
+## Installation
+
+
+```sh
+pip install khan-mongo
+```
+
+## Usage
+
+```sh
+khan --host <host> [--port <port>] --database <AdminDatabase> -u <user> -p <password> -m [queries|replication]
+```
+
+`-m queries` Show current ops
+
+`-m replication` Show replication status/info
+
+## Support
+
+Please [open an issue](https://github.com/globocom/khan/issues) for support.
+
+## Contributing
+
+Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/globocom/mongo-top/compare/).
+
+
