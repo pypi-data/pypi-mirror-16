@@ -1,0 +1,23 @@
+<script type="text/x-template" id="charts-route-template">
+  <div>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default" title="Toggle chart updates" @click="toggleUpdates">
+        <span class="glyphicon" aria-hidden="true"
+              :class="[chartUpdatesEnabled ? 'glyphicon-pause' : 'glyphicon-play']"></span>
+      </button>
+      <button type="button" class="btn btn-danger" title="Clear history" @click="clearHistory">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+      </button>
+    </div>
+    <br/><br/>
+    <div class="display-options">
+      <select v-model="selectedKey" title="Data type to display" @change="setSelectedChartKey">
+        <option v-for="key in keys" :value="key">
+          {{ key }}
+        </option>
+      </select>
+    </div>
+    <br/><br/>
+    <comb-chart :key="selectedKey"></comb-chart>
+  </div>
+</script>

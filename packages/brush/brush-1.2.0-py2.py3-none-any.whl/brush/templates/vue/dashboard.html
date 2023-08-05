@@ -1,0 +1,22 @@
+<script type="text/x-template" id="dashboard-route-template">
+  <div class="display-options">
+    <select v-model="displayType" @change="setDisplayType">
+      <option v-for="dtype in displayTypes" :value="dtype.value">
+        {{ dtype.text }}
+      </option>
+    </select>
+    <select v-if="displayType != 'single'" v-model="displayOption" @change="setDisplayOption"
+            title="Number of previous measurements to use in calculation">
+      <option v-for="opt in displayOptions" :value="opt.value">
+        {{ opt.text }}
+      </option>
+    </select>
+  </div>
+  <current-value name="Offset" :value="offsetFreq"
+                 :lockable="true" :locked="offsetLocked"></current-value>
+  <current-value name="Repetition rate" :value="reprateFreq"
+                 :lockable="true" :locked="reprateLocked"></current-value>
+  <template v-for="n in counters">
+    <current-value :name="`Counter ${n}`" :value="counterFreq(n)"></current-value>
+  </template>
+</script>

@@ -1,0 +1,11 @@
+<script type="text/x-template" id="app-template">
+  <div class="app">
+    <navbar></navbar>
+    <div class="container">
+      <div class="alert alert-danger" v-if="serverUnreachable">
+        Server not reachable!
+      </div>
+      <router-view></router-view>
+    </div>
+  </div>
+</script>

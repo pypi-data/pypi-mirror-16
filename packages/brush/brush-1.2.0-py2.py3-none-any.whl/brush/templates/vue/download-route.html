@@ -1,0 +1,33 @@
+<script type="text/x-template" id="download-route-template">
+  <form>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="datetime-start">Start</label>
+          <input type="text" class="form-control" id="datetime-start" placeholder="Start" v-model="start">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="datetime-end">End</label>
+          <input type="text" class="form-control" id="datetime-end" placeholder="Stop" v-model="end">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="download-keys">Data keys</label>
+          <select multiple class="form-control" id="download-keys" v-model="selectedKeys">
+            <option v-for="key in availableKeys">{{ key }}</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <button class="btn btn-default" type="button" @click="download" :disabled="downloadDisabled">
+            Download
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</script>
