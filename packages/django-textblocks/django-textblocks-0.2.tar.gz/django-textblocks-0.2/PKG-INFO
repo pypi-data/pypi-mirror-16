@@ -1,0 +1,49 @@
+Metadata-Version: 1.1
+Name: django-textblocks
+Version: 0.2
+Summary: UNKNOWN
+Home-page: http://github.com/fabiangermann/django-textblocks/
+Author: Fabian Germann
+Author-email: fg@feinheit.ch
+License: UNKNOWN
+Description: ==========
+        Textblocks
+        ==========
+        
+        Installation
+        ============
+        
+        1. Add ``textblocks`` and optionally ``modeltranslation`` to
+           ``INSTALLED_APPS``
+        2. Add an entry for ``textblocks`` to your ``MIGRATION_MODULES``
+           (textblocks cannot ship its own migrations because the exact schema
+           depends on your ``LANGUAGES`` setting) and create an empty Python
+           module (folder with an empty ``__init__.py`` file).
+        3. Run ``./manage.py makemigrations textblocks`` and ``./manage.py migrate``
+        
+        
+        Usage
+        =====
+        
+        1. Load templatetags ``{% load textblock_tags %}``
+        2. Add ``textblock`` tags with unique identifiers and format
+           (``text/plain`` or ``text/html``)::
+        
+              {% textblock "introduction" "text/plain" %}
+        
+        Text blocks with identifiers that do not exist in the database yet will
+        automatically be created.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
