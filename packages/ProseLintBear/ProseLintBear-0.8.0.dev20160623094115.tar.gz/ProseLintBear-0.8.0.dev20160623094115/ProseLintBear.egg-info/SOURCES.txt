@@ -1,0 +1,5 @@
+setup.py
+ProseLintBear.egg-info/PKG-INFO
+ProseLintBear.egg-info/SOURCES.txt
+ProseLintBear.egg-info/dependency_links.txt
+ProseLintBear.egg-info/top_level.txt
