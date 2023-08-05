@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: wswrapper
+Version: 0.0.0
+Summary: Wrapps a socket.socket object to handle the RFC6455 websocket protocol
+Home-page: https://github.com/Zaeb0s/ws-wrapper
+Author: Christoffer Zakrisson
+Author-email: christoffer_zakrisson@hotmail.com
+License: MIT
+Description: Descriptions can be found in the markdown `README
+        <https://github.com/Zaeb0s/ws-wrapper/blob/master/README.md>`_.
+        
+Keywords: wrapper,websocket,socket,RFC6455,wrap
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: MIT License
