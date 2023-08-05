@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: Flask-FIDO-U2F
+Version: 0.3.0
+Summary: A Flask plugin that adds FIDO U2F support.
+Home-page: https://github.com/herrjemand/flask-fido-u2f
+Author: Ackermann Yuriy
+Author-email: ackermann.yuriy@gmail.com
+License: MIT
+Description: 
+        Flask-FIDO-U2F
+        -------------
+        
+        Flask plugin to simplify usage and management of U2F devices.
+        
+Platform: any
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
