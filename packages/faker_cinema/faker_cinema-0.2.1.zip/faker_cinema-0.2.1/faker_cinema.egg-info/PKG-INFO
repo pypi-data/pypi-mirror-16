@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: faker-cinema
+Version: 0.2.1
+Summary: A cinema industry-specific provider for faker
+Home-page: https://github.com/RangerOfFire/faker-cinema
+Author: Michael Hinstridge
+Author-email: mhinstridge@gmail.com
+License: MIT License
+Download-URL: https://github.com/RangerOfFire/faker-cinema/tarball/release/0.2.1
+Description: UNKNOWN
+Keywords: testing,faker-provider
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: License :: OSI Approved :: MIT License
