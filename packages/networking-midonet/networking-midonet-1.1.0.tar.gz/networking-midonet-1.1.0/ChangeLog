@@ -1,0 +1,448 @@
+CHANGES
+=======
+
+1.1.0
+-----
+
+* tox_install: Add an explicit BRANCH_NAME
+* Clarify our use of Text(length) and explicitly restrict it to mysql
+* devstackgaterc: Skip a few known broken test cases
+* Add a sanity check for MANIFEST.in
+* Update MANIFEST.in
+* Adds rally support
+* tox_install: Fix "already installed" test
+* upgrade.rst: Redo stevedore entry point change correctly
+* devstack plugin: Explicitly requires tox
+* Enable subnet_allocation extension
+* plugin_v1: Sort the list of extensions
+* add_router_interface: Don't remove the pre-existing port on failure
+* Fix argument order for assertEqual to (expected, observed)
+* Introduce stevedore aliases for service plugins
+* upgrade.rst: cosmetical updates
+* Use stevedore entry point instead of module path for core plugin
+* Enable FWaaS on gate for v2
+* Enable LBaaS on gate
+* Remove retry decorators in plugins
+
+1.0.0
+-----
+
+* tox_install: Switch to stable/liberty
+* Stop doing any magic cloning of neutron during CI
+* Updated from global requirements
+* .gitreview: Set defaultbranch
+* devstack: Set midolman log level to DEBUG
+* README.rst: Replace URL of package site
+* l3: Stop mimicing a core plugin
+* devstack: Exclude a few known-broken tests on gate
+* devstack: Enable midonet metadata proxy for v2 and ml2 jobs on gate
+* devstack: Chown egg-info so that later "tox -e genconfig" is possible
+* Ensure LOGDIR to align with devstack-gate
+* plugin_v2: Deal with the lack of portsecurity DB rows
+* Hang the devref index on the main index
+* Rely on pbr to define the version of the library
+* Document repos for packages
+* plugin_v2: Tighten network_type validation a bit
+* Replace deprecated wiki links
+* Use https to link to *.midonet.org
+* Some notes about Neutron agents
+* Update a note about midonet-db-manage retirement
+* Add 'uplink' type driver
+* README.rst: Mention FWaaS configuration
+* Remove "new" argument from n_rpc.create_connection
+* README.rst: Remove HACKING section
+* README.rst: Move unit test description into a separate rst file
+* README.rst: Remove package.sh section
+* Tag the alembic migration for Liberty
+* Replace v2015.09 with v5.0
+* README.rst: Recommend deb/rpm rather than setup.py install
+* Update How to install section
+* Revert "Retire midonet-db-manage"
+* test-requirements: Add testscenarios
+* Some upgrade notes
+* Removing the package scripts
+* Add references to SG callbacks to avoid GC
+* devstack: Configure nova for midonet metadata proxy
+* Move v1-only code from plugin.py to plugin_v1.py
+* Remove midonet.neutron.common.utils as it's now empty
+* Remove an unused decorator, retry_on_error
+* Remove an unused decorator, handle_api_error
+* Remove an unused global, PLURAL_NAME_MAP
+* devstack: FWaaS support
+* FWaaS: Specify the extension path
+* devstack: Avoid modifying ERROR_ON_CLONE
+* MidoNet FWaaS plugin
+* Listen alternative topic for state reports
+* plugin_v2: Add revisit comment about metadata proxy
+* test_midonet_plugin: Update plugin path after decomposition phase2
+* Update documentation after plugin decomposition phase2
+* tox.ini: Fix cover by giving the source directory explicitly
+* .coveragerc: Fix module path
+* Enable tempest tests for lbaas when enabled
+* Plugin decomposition phase2
+* Generate config file example
+* Remove the white-list of tests for py34
+* Enable more tests for py34
+* Make ZOOM the default for devstack
+* Fix unit tests
+* tox.ini: Add an env for coverage
+* Retire midonet-db-manage
+* migration: Drop downgrade
+* Fix the sphinx build path in .gitignore file
+* Change ignore-errors to ignore_errors
+* Run check_migration during "tox -e pep8"
+* Removed unused test dependency: discover
+* Fix missing value types for log message
+* devstack: Export LOGDIR as well
+* Adapt LB unit tests to the new service providers management
+* Allow py34 to run tests individually
+* test_midonet_plugin_ml2: Ensure that ml2 options are registered
+* Define VIF_TYPE_MIDONET in networking-midonet repo
+* Set the supported extensions correctly
+* Override api_extensions_path in unit tests
+* Add missing 'ext-gw-mode' extension to v1
+* Move ML2 util methods from common util
+* tests: Do not skip IPv6 tests
+* Remove enable_plugin for LBaaS
+* devstack: midonet embedded metadata proxy support
+* Add filter for midonet networking types
+* Add Midonet ML2 Mechanism/Type Driver
+* Remove duplicate code to load client
+* make devstack up-to-date for Liberty
+* Set Q_L3_ROUTER_PER_TENANT to True
+* doc: Hook devstack/README.rst into doc build
+* README.rst: Fix some markup and typos
+* tox.ini: Add docs to envlist
+* tox.ini: Add docs target
+* devstack/settings: Stop tweaking the list of enabled services
+* Move the router and fip handlers to l3 service
+* Update documentation after create_fake_uplink_l2
+* Add devstackgaterc to manage gate tests
+* Format the list items in README.rst
+* tox.ini: Enable some of tests for py34
+* Set up Q_PLUGIN earlier
+* Configure only cluster or API in devstack plugin
+* tox.ini: Disable python3 tests failing due to Routes < 2.0
+* add stub file for midonet ml2 mech driver
+* Fix python3 job
+* Allow users to run 'tox -epy34'
+* Update version for Liberty
+* tox.ini: Remove PYTHONHASHSEED=0
+* tox.ini: Remove py26 env
+* Switch requirements to neutron master
+* Upgrade version to Liberty!
+
+2015.1.0
+--------
+
+* Add check against gw port with no IP
+* Add port-security extension support
+* devstack/plugin.sh: Don't launch midonet services too early
+* Add epoch :1 on packaging
+* Call create_fake_uplink_l2.sh from devstack
+* Remove old REST to ZOOM from devstack
+* Pin the oslo.i18n version for kilo
+* devstack/README.rst: Fix a note on MIDONET_CREATE_FAKE_UPLINK
+* devstack: Allow to specify plugin_v2 in local.conf
+* plugin.sh: Run delete_fake_uplink.sh before running unmido.sh
+* Enable VNC by default in local.conf.sample
+* Fix packaging issue by removing ${python:Depends}
+* Validate subnet for pool/vip properly
+* Remove inappropriate 'self' params
+* remove 'self' arg from update_vip
+* Add delete_network retres for v2
+* Use UPLINK net type instead of LOCAL
+* delete_network: Retry on DBDeadlock as well
+* Provide metadata RPCs
+* Split Midonet Plugin into legacy and new arch
+* Retry net deletion on NetworkInUse
+* Add python-oslo and python-babel as dependencies
+* Improve error handling for create operations
+* Fix an obvious typo in cluster get_agent()
+* Update URLs after the move from stackforge/ to openstack/
+* Update .gitreview after the move from stackforge/ to openstack/
+* Provide better V2 configs in devstack
+* Add non *py files in the package
+* set MIDO_DB_USER/MIDO_DB_PASSWORD in devstack
+* Enable 'Allowed Address Pairs' extension
+* Add provider extension support
+* Switch USE_CLUSTER to USE_NEW_STACK
+* Set the supported extensions in __init__
+* Improve local.conf sample for devstack
+* devstack/settings: Do not configure passwords here
+* Make extensions configurable
+* devstack/README.rst: Improve instructions and mention wiki
+* devstack/plugin.sh: Source functions on "unstack" phase as well
+* Replace MIDONET_ENABLE_Q_SVC_ONLY with sample conf
+* Mention skipping uplink config
+* Fix devstack README on LBaaS setup
+* Use mysqlconnector as the sqlalchemy driver
+* Implement LBaaS MidoNet driver
+* Pin version to 2015.1.0
+* Neutron-server dependencies pin version
+* Setting 3-version number value
+* create/delete fake uplink by config
+* Return correct default for get_agent(s)
+* Implement configurable MN client
+* Set USE_CLUSTER variable in devstack
+* Change log level from INFO to DEBUG
+* Configure API-based plugin unit tests
+* Update devstack default to only use IPv4
+* remove unsupported extensions
+* Clean up migration scripts
+* Add python-midonetclient dependency on debs
+* Proper lbaas VIP create validation
+* Minor fixes for API-based plugin
+* Add API based plugin option
+* Refactor portbinding
+* remove routedserviceinsertion extension
+* Create the uplink for API mode
+* Add midonetlclient package as a requirement
+* Conform to OpenStack logging standards
+* Export database variables
+* move tasks to after the dictionary updates
+* Fix UT module imports
+* Add port binding database table
+* Deprecate `package.sh`
+* Add the package builder script for debs
+* Avoid the .centos. suffix on %dist
+* Don't copy source rpm
+* Create the package_rpm script
+* Add dynamic routing tables
+* Add the structure to build debs
+* %prep should use source name
+* Minor fixes for port binding spec
+* Update spec for packaging
+* Avoid pbr to modify version to 'dev'
+* Update MANIFEST.in
+* Add to new version numbers
+* Add the spec to build the package
+
+2015.1.0b4
+----------
+
+* Gateway device management API spec
+* Uplink network spec
+* Port Binding spec
+* L2GW spec
+* Extra Route spec
+* Add data-version-list command
+* Remove the cluster extension
+* Add agent ext support in plugin
+* Implement midonet-db-manage data-show
+* Fix typos in data version spec
+* Add data sync cli wrappers
+* Add data sync tables to neutron db
+* Dynamic Routing spec
+* Spec for data version
+* Extra route extension support
+* Add the port create task in the correct place
+* Fix the mixin and extension alias order
+* Use enable_service nova for nova stuff
+* Don't install nova's rootwrap file in light mode
+* Support extra_dhcp_opts extension
+* Replace oslo-incubator references
+* Try to pass the gate
+* Fix devstack light
+* Agent neutron extension API spec
+* Remove unneeded header line
+* Add unit tests for agent membership
+* Migrate to the cluster-based arch
+* DevMido: disable uplink script
+* Add db util commands
+* Introduce MIDONET_ENABLE_Q_SVC_ONLY
+* Spec for task management
+* change agent_membership table name to use plural
+* Remove unused task classes
+* Fix a wrong use of here documents
+* Fix minor issues
+* Add last-processed-task table
+* Fix the db name for agent membership
+* Don't let modify tempest options
+* Update the agent member extension spec
+* Add all the default settings to 'settings'
+* Add agent-membership extension
+* Add CONFIG task on startup
+* Add migration script to create agent membership
+* modify task table to use string for types
+* Move devstack config functions to plugin
+* Agent membership API spec
+* Fix 'package.sh' for new setup.cfg
+* Fix compatibility with upstream for root_helper
+* Remove foreign key constraint from port binding
+* Add port binding table to neutron DB
+* Use development version of PMC
+* Fix name parsing based on regex
+* Move the pip_install to 'stack' stage
+* A weird character (\xc2) made env module fail
+* Add devstack plugin
+* Prepare the project for openstack gates
+* Renamig the package to networking-midonet
+* Update regex in package.sh to allow more digits
+* Infer router instead of requiring it in pool creation
+* Fix pep8 import errors
+* Fix pep8 errors
+* Switch from sqlalchemy to oslo.db exception
+* Separate flush/import into 2 different commands
+* Add tenant_id to midonet_tasks
+* Remove unused repair SQL command
+* Remove the old config file
+* Convert the plugin code to mixin class
+* Fix tox warning related to logging
+* Move router service insertion extension to midonet
+* Handle more cases of DB deadlock with retries
+* Retry on DB deadlock timeout errors
+* Fix import for LB
+* Add the task table entry for each operation
+* Install files to correct location for RPM
+* rename imports to use oslo
+* Move network and port locks to separate locks
+* Add git short sha1 to timestamp
+* Use timestamp based packagename always with -t
+* Support timestamp based package names for nightlies
+* Update revision string for rpm packages
+* Add revision string in deb package
+* Fix version string to use '+' instead of '-'
+* Bump version to 2015.1
+* Handle new tag scheme in the packaging script
+* Fix jsonutils import
+* Add lb methods to flush
+* Package RPM and DEB using setuptools
+* Add console script to setup.py
+* Revert "Use pbr for building"
+* Add LB data types to data_type table
+* Remove 'Router Interface' from tasks
+* include cluster dictionary in create_cluster
+* midonet-db-manage script
+* Use pbr for building
+* Missing __init__.py files
+* HEAD file for alembic migration
+* Fix the revision of migration script
+* Fix pep8 errors
+* Update package meta information
+* Update the repository URL and version in setup.py
+* Update versioning
+* Point to gerrithub in .gitreview
+* Add rebuild midonet extension
+* Run neutron-ns-metadata-proxy in isolated networks
+* Add FLUSH operation
+* Add db task write functionality
+* Add task migration scripts
+* Use downstream config module
+* Use config from midonet module
+* Add API handlers for TunnelZones and TunnelZone Hosts
+* Add API handlers for DHCP subnets and their hosts
+* Set FIP status in response
+* Fix FIP status inconsistency
+* Add API handlers for system state
+* Add API handlers for routers
+* Add API handlers for port groups and their ports
+* Add API handlers for routing tables
+* Add API handlers for ports to MidonetPluginV2
+* Add API handler for licenses
+* Add API handler for hosts to MidonetPluginV2
+* Add API handler for IP address groups and their addresses
+* Support RHEL7 in RPM pacakge
+* Make the packaging script consistent with PMC's
+* Remove unused capabilities in RPM and DEB packages
+* Add API handlers for bridges to MiodnetPluginV2
+* Add API handlers for chains and ruels to MiodnetPluginV2
+* Add abc support to generate_methods
+* Add python-midonetclient to the package's dependency
+* Add API handlers of BGPs to MidonetPluginV2
+* Modify generate_methods to accept predefined alias
+* Add missing attributes and extensions of BGPs
+* Add more tests of generate_methods
+* Change the subnet ext into a midonet extension
+* Correct binding delete function signature
+* Add underscore support to generate_methods
+* Change Vxlan, Bindings to sub-resources
+* Add unit tests for generate_methods
+* More cleanup in README
+* Fix typo in README
+* Update README with more info
+* Change route Extension name to routing_table
+* Rename the midonet_port extension to port
+* Add an abstract class for tunnel zones
+* Add Midonet License extension
+* Fix flake8 warnings
+* Add tunnelzone extension
+* Add Tunnel Zone and Tunnel Zone Host API handlers
+* Modify generete_methods to support nested resources
+* Modify generate_methods to take vargs
+* Add Midonet Vtep Extension
+* Add Ip Addr Group Midonet extension
+* Add Midonet Port Group Extension
+* Add Bgp Midonet Extension
+* Change midonet network extension to bridge
+* Add midonet router extension
+* Add Midonet route extension
+* Add Midonet chain-rule Extension
+* Fix API handler generator to support GET appropriately
+* Add Midonet Port Extension
+* Modify the core plugin to load extensions
+* Add skeleton of a decorator for API handler mixins
+* Modify README.rst
+* Set default vnic_type in port
+* Use the new MidonetClient object
+* Add subnet (DHCP Subnet) extension
+* Add system status extension
+* Midonet Network extension
+* Move utilities in the core plugin to the util module
+* Add host extension
+* Catch up with the upstream change in dhcp driver
+* Configure 'api_extensions_path' in midonet plugin
+* Move extensions directory
+* Fix the network deletion error
+* Migrate unit tests
+* Add the test infrastructure
+* Add .gitreview for Midokura gerrit
+* A proper gitignore
+* Make it compatible with upstream Neutron
+* Update copyrights
+* Fix the version number
+* Add meta files for the project
+* Create README.md
+* Add package script
+* Add Load Balancer API handlers
+* Move source code under midonet directory
+* Add sync to port and network deletion
+* Repair quota database table if it doesn't exist
+* Add 'quotas' to supported extensions
+* Add scheduler to Midonet plugin
+* Floating IP support
+* L3 external gateway mode support
+* router interface add/remove support
+* New MidoNet router API support
+* SG API support
+* Enable bulk creation
+* Add new MidoNet port API support
+* network/subnet new API support
+* Use save_and_reraise_exception when reraise exception
+* Replaces network:* strings by constants
+* Update License Headers to replace Nicira with VMware
+* Replace binding:capabilities with binding:vif_details
+* Plugins should call __init__ of db_base_plugin for db.configure
+* Remove release_lease from the DHCP driver interface
+* Midonet plugin: Fix source NAT
+* Fix misspells
+* Move MidonetInterfaceDriver and use mm-ctl
+* Do not add DHCP info to subnet if DHCP is disabled
+* Added check on plugin.supported_extension_aliases
+* MidoNet: Added support for the admin_state_up flag
+* Midonet to support port association at floating IP creation
+* Use correct device_manager member in dhcp driver
+* Add port bindings to ports created in Midonet
+* Disassociate floating IPs from port on terminate
+* Add a route to reach the MD server when a subnet is created
+* MidoNet plugin, clean up dhcp entries correctly
+* Add host routes and dns nameservers to Midonet DHCP
+* Change hard coded numbers to constants in security group tests
+* Do not apply security groups to logical ports
+* Adds support for L3 routing/NAT as a service plugin
+* add missing comma to supported alias string list
+* Fix message i18n error
+* Implement MidoNet Neutron plugin for Havana
+* Fixes typos in midonet_lib.py
+* Fixing some typos found during translation
+* Rename Quantum to Neutron
