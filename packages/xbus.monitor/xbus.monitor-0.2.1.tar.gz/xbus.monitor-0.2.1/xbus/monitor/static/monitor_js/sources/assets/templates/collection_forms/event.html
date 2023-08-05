@@ -1,0 +1,195 @@
+<div class="row">
+    <div id="breadcrumb" class="col-md-12">
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Xbus</a></li>
+            <li><a href="#/<%= name %>">Events</a></li>
+            <% if(model) { %>
+                <% if(editing) { %>
+                    <li><a href="#/<%= name %>/<%= model.id %>/edit">Edit</a></li>
+                <% } else { %>
+                    <li><a href="#/<%= name %>/<%= model.id %>">View</a></li>
+                <% } %>
+            <% } else { %>
+                <li><a href="#/<%= name %>/create">Create</a></li>
+            <% }%>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-name">
+                    <span><%= model ? (editing ? 'Edit' : 'View') : 'New' %> Event</span>
+                </div>
+                <div class="box-icons">
+                    <a class="collapse-link"> <i class="fa fa-chevron-up"></i>
+                    </a> <a class="expand-link"> <i class="fa fa-expand"></i>
+                    </a> <a class="close-link"> <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="no-move"></div>
+            </div>
+            <div class="box-content">
+                <form class="form-inline record-form" role="form">
+                    <fieldset>
+                        <div class="form-group">
+                            <label>Envelope</label>
+                            <input name="envelope_id" type="hidden"
+                                value="<%= model ? model.getRelation('envelope_id').keyContents : '' %>"
+                                class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Execution state</label>
+                            <input name="execution_state" type="text"
+                                   value="<%= model ? model.escape('execution_state') : '' %>"
+                                   class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Emitter</label>
+                            <input name="emitter_id" type="hidden"
+                                value="<%= model ? model.getRelation('emitter_id').keyContents : '' %>"
+                                class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label>
+                            <input name="type_id" type="hidden"
+                                value="<%= model ? model.getRelation('type_id').keyContents : '' %>"
+                                class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Started date</label>
+                            <input name="started_date" type="datetime"
+                                value="<%= model ? model.escape('started_date') : '' %>"
+                                class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Done date</label>
+                            <input name="done_date" type="datetime"
+                                value="<%= model ? model.escape('done_date') : '' %>"
+                                class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Estimated items</label>
+                            <input name="estimated_items" type="text"
+                                value="<%= model ? model.escape('estimated_items') : '' %>"
+                                class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>Sent items</label>
+                            <input name="sent_items" type="text"
+                                value="<%= model ? model.escape('sent_items') : '' %>"
+                                class="form-control" />
+                        </div>
+                        <% if (model) { %>
+                        <div class="form-group">
+                            <label>Tracking state</label>
+                            <input name="tracking_state" type="text"
+                                   value="<%= model.escape('tracking_state') %>"
+                                   class="form-control" />
+                        </div>
+                        <% if (model.getRelation('responsible_id') && model.getRelation('responsible_id').keyContents) { %>
+                        <div class="form-group">
+                            <label>Responsible</label>
+                            <input name="responsible_id" type="hidden"
+                                   value="<%= model.getRelation('responsible_id').keyContents %>"
+                                   class="form-control" />
+                        </div>
+                        <% } %>
+                        <% } %>
+                    </fieldset>
+                    <% if(editing) { %>
+                        <hr />
+                        <button type="submit" class="btn btn-primary"><%= model ? 'Update' : 'Create' %></button>
+                        <% if(model) { %>
+                            <input type="hidden" name="id" value="<%= model.id %>" />
+                            <button class="btn btn-danger delete">Delete</button>
+                        <% }; %>
+                    <% }; %>
+                </form>
+
+                <% if (model) { %>
+                    <% if (_.size(model.get('consumer_inactivities')) > 0) { %>
+                    <hr />
+                    <h3>Inactive consumers</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Consumer</th>
+                                <th>Was unavailable</th>
+                                <th>Retry event</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <% _.each(model.get('consumer_inactivities'), function(item) { %>
+                            <tr <%= item['retry_event_id'] ? 'class="success"' : '' %>>
+                                <%
+                                    var inactive_role = load('role', item['role_id'])
+                                %>
+                                <td><%= inactive_role ? inactive_role.get('login') : '&nbsp;' %></td>
+                                <td><%= item['was_unavailable'] %></td>
+                                <td><%= item['retry_event_id'] %></td>
+                            </tr>
+                        <% }); %>
+                        </tbody>
+                    </table>
+                    <% } %>
+                    <hr />
+                    <h3>Tracking</h3>
+                    <p>
+                        <a href="#/event_tracking/create?event_id=<%= model.escape('id') %>">
+                            <i class="fa fa-plus"></i>
+                            Add a comment / Change the state
+                        </a>
+                    </p>
+                    <% if (_.size(model.get('tracking').models) > 0) { %>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Date</th>
+                                    <th>State change</th>
+                                    <th>Comment</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% _.each(model.get('tracking').models, function(item) { %>
+                                <tr <%=
+                                    item.get('new_state') === 'corrected' ? 'class="success"' :
+                                    item.get('new_state') === 'won_t_fix' ? 'class="danger"' :
+                                '' %>>
+                                    <td><%= item.escape('user_name') %></td>
+                                    <td><%= item.escape('date') %></td>
+                                    <td><%= item.escape('new_state') %></td>
+                                    <td><%= item.escape('comment') %></td>
+                                    <td><a href="#/event_tracking/<%= item.id %>">View</a></td>
+                                </tr>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    <% } else { %>
+                        <p>No change yet.</p>
+                    <% } %>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // <![CDATA[
+
+    prepareForm('.record-form', <%= editing %>);
+    select2ify('envelope_id', 'envelope', 'id');
+    select2ify('type_id', 'event_type', 'name');
+    select2ify('emitter_id', 'emitter', 'login');
+    select2ify('responsible_id', 'user', 'display_name');
+    <% if (model) { %>
+        select2ify('responsible_id', 'user', 'display_name');
+    <% } %>
+
+    // ]]>
+</script>

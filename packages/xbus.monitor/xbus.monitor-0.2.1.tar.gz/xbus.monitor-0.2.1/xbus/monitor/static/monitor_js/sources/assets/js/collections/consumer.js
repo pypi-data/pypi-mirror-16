@@ -1,0 +1,3 @@
+registerCollection({
+    name: 'consumer'
+});
