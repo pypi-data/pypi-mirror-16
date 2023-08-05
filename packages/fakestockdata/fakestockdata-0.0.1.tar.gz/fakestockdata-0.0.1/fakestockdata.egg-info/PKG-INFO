@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: fakestockdata
+Version: 0.0.1
+Summary: Generate CSV data for stocks
+Home-page: http://github.com/mrocklin/fakestockdata/
+Author: Matthew Rocklin
+Author-email: mrocklin@gmail.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN
