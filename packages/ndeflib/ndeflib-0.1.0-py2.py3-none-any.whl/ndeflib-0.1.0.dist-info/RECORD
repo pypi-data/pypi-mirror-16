@@ -1,0 +1,14 @@
+ndef/__init__.py,sha256=FHWl6KSpQv6HFMR3ah0AYhT6wQzp3u8NFmhP6G_vRpw,5810
+ndef/deviceinfo.py,sha256=H_TKqeslI429yGHt8t2X0Gsh-bV1raSZlayQP8tfHuU,8471
+ndef/handover.py,sha256=JhQXZrEvG6ba1_1-qh6lHwMLLPnx8TPkY8LuVt27wWg,32965
+ndef/message.py,sha256=IAvwiwY9MdvGsm9vwtFkKPTOEFNt1iYx1D88vIEC7I4,5962
+ndef/record.py,sha256=yWxLj-WIVLuZsxOJoGFD0E8Lyc5fv42To4X9_sywnZU,26639
+ndef/smartposter.py,sha256=kW_VxdMAIam0HhibVW_xKxkH7FyvV-aTBmw_HizNUVM,16424
+ndef/text.py,sha256=ZuvwxdqCJL_0TCxrpo_qhQ8SyrIU-7i_w70H88N2ZKM,4343
+ndef/uri.py,sha256=3ADA4ZND98YY3OWXy-MuuMlYa-lT_zj9PTqPh2WF-cQ,5422
+ndeflib-0.1.0.dist-info/DESCRIPTION.rst,sha256=YSqlIJLztZJ9j7moQ-ouUIRshN12YUfRF41whzwuZy8,1532
+ndeflib-0.1.0.dist-info/METADATA,sha256=1yEPjRcMt_DhLmo2LnZz8lQO_sCv-uRgAw7bbhUnstA,2536
+ndeflib-0.1.0.dist-info/RECORD,,
+ndeflib-0.1.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+ndeflib-0.1.0.dist-info/metadata.json,sha256=K_1CXXRU9DWDP7qi7SX-rQJNfVhCFFa3Wg-G6_EfZRU,1091
+ndeflib-0.1.0.dist-info/top_level.txt,sha256=DDyBDNKbHvUK6pgilFSnwbYxT4A7oYQ2sY6AGSZ0Yvk,5
