@@ -1,0 +1,21 @@
+Metadata-Version: 2.0
+Name: codon
+Version: 0.0.1
+Summary: Non-Stationary Codon Model Fitting
+Home-page: UNKNOWN
+Author: Ben Kaehler
+Author-email: benjamin.kaehler@anu.edu.au
+License: ['GPLv3 or any later version']
+Keywords: biology,genomics,statistics,phylogeny,evolution,bioinformatics
+Platform: any
+Requires-Dist: numpy
+Requires-Dist: click
+Requires-Dist: cogent
+Provides-Extra: mongodb
+Requires-Dist: pymongo; extra == 'mongodb'
+Provides-Extra: mpi
+Requires-Dist: mpi4py; extra == 'mpi'
+
+Extends PyCogent to Fit Non-Stationary Codon Models. Provides CLIs for doing the same.
+
+
