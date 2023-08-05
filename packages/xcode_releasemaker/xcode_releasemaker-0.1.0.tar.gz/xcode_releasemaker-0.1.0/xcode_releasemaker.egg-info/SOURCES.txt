@@ -1,0 +1,9 @@
+setup.py
+bin/releasemaker
+releasemaker/__init__.py
+releasemaker/metadata.py
+releasemaker/releasemaker.py
+xcode_releasemaker.egg-info/PKG-INFO
+xcode_releasemaker.egg-info/SOURCES.txt
+xcode_releasemaker.egg-info/dependency_links.txt
+xcode_releasemaker.egg-info/top_level.txt
