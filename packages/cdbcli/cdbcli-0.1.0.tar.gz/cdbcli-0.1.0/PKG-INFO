@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: cdbcli
+Version: 0.1.0
+Summary: Interactive command line shell for CouchDB
+Home-page: https://github.com/kevinjqiu/cdbcli
+Author: Kevin J. Qiu
+Author-email: kevin@idempotent.ca
+License: UNKNOWN
+Description: cdbcli
+        ======
+        
+        .. image:: https://img.shields.io/pypi/v/cdbcli.svg
+            :target: https://pypi.python.org/pypi/cdbcli
+            :alt: Latest PyPI version
+        
+        .. image:: https://travis-ci.org/kevinjqiu/cdbcli.png
+           :target: https://travis-ci.org/kevinjqiu/cdbcli
+           :alt: Latest Travis CI build status
+        
+        The interactive CLI for CouchDB
+        
+        Usage
+        -----
+        
+        This tool allows you to traverse a CouchDB database as if it were a file system. Basic file system commands are implemented such as ``ls``, ``cd``
+        
+        Installation
+        ------------
+        
+            pip install cdbcli
+        
+        Requirements
+        ^^^^^^^^^^^^
+        
+        Licence
+        -------
+        
+        Authors
+        -------
+        
+        `cdbcli` was written by `Kevin J. Qiu <kevin@idempotent.ca>`_.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
