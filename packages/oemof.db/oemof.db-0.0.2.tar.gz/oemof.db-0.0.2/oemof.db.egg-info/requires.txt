@@ -1,0 +1,5 @@
+sqlalchemy >= 1.0
+keyring >= 4.0
+keyrings.alt
+shapely
+psycopg2
