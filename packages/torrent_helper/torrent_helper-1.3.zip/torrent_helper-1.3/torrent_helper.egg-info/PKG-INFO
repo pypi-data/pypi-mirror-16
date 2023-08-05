@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: torrent-helper
+Version: 1.3
+Summary: CLI tool for torrent download
+Home-page: https://github.com/prateekM59/torrent_helper
+Author: Prateek Mahajan
+Author-email: prateekmahajan59@gmail.com
+License: MIT
+Description: A CLI/CMD tool that lets you search and download torrent without opening browser and bittorent client.
+Keywords: utorrent helper torrent helper CLI downloader windows
+Platform: UNKNOWN

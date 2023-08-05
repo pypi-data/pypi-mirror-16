@@ -1,0 +1,10 @@
+setup.py
+torrent_helper/__init__.py
+torrent_helper/command_line.py
+torrent_helper/tpb.py
+torrent_helper.egg-info/PKG-INFO
+torrent_helper.egg-info/SOURCES.txt
+torrent_helper.egg-info/dependency_links.txt
+torrent_helper.egg-info/entry_points.txt
+torrent_helper.egg-info/not-zip-safe
+torrent_helper.egg-info/top_level.txt
