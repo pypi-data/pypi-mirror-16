@@ -1,0 +1,5 @@
+numpy
+pandas
+pygeobase
+pygeogrids
+netCDF4
