@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        datacli=datacli.__main__.cli
+    

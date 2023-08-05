@@ -1,0 +1,11 @@
+setup.cfg
+setup.py
+datacli/__init__.py
+datacli/__main__.py
+datacli/completer.py
+datacli.egg-info/PKG-INFO
+datacli.egg-info/SOURCES.txt
+datacli.egg-info/dependency_links.txt
+datacli.egg-info/entry_points.txt
+datacli.egg-info/requires.txt
+datacli.egg-info/top_level.txt
