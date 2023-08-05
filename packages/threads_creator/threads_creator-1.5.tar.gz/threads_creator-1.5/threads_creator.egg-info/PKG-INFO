@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: threads-creator
+Version: 1.5
+Summary: A tool to help you build multiply spider
+Home-page: https://github.com/ecmadao/threads-creator
+Author: ecmadao
+Author-email: wlec@outlook.com
+License: MIT
+Description: UNKNOWN
+Keywords: spider,thread
+Platform: any
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
