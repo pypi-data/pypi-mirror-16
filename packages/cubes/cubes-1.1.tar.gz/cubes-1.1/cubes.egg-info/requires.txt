@@ -1,0 +1,21 @@
+python-dateutil
+jsonschema
+expressions>=0.2.3
+
+[all]
+cubes[sql]
+cubes[slicer]
+cubes[html]
+
+[dev]
+cubes[all]
+sphinx
+
+[html]
+jinja
+
+[slicer]
+werkzeug
+
+[sql]
+sqlalchemy>= 0.9.0
