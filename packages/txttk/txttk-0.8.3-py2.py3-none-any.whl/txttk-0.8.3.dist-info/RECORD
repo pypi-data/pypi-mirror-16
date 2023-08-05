@@ -1,0 +1,12 @@
+txttk/__init__.py,sha256=oUfYKATuafXueNEcQfa600WpyF6ak7zj3y3io19micg,484
+txttk/_version.py,sha256=Qc1Oq_jxC4CP1LjN8ybxU5LB-Gz71BjQ9y6fDsZjwcg,471
+txttk/feature.py,sha256=iqEhkgYs-NFOXnvqCRHd0MH_VwAQACVNuUpETmOBBHU,3461
+txttk/nlptools.py,sha256=WucnEasgDxR4wuaHJKHIt-TZn6XM-mmvXHDG4fk-aCI,5710
+txttk/retools.py,sha256=J5VrjMk6FfwTJKVBvFnrxqiVKLPwg1n8Z2MLyRbxInA,5717
+txttk/txttk.py,sha256=5ULDuCkKGiT1PHiAf87CvF9WbTu19EbYRGsVpTN2SWw,156
+txttk-0.8.3.dist-info/DESCRIPTION.rst,sha256=j9NNU3Cpm_xkX7vnZlbaptMG-2CS8JKGJwySXkD2Tyc,835
+txttk-0.8.3.dist-info/METADATA,sha256=1L2QacnjPOktVjeNYOlKKlgrs-48qnx_gFMHZ-NrZKY,1573
+txttk-0.8.3.dist-info/RECORD,,
+txttk-0.8.3.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+txttk-0.8.3.dist-info/metadata.json,sha256=Qzsh0fEwdiKCegCPyJy0GDrbHDUQTHR3ZP8LIePINTs,895
+txttk-0.8.3.dist-info/top_level.txt,sha256=d--HzSVxu_YuuGPS2NVcw4P6WsP3YB0h5-12Z8YspQI,6
