@@ -1,0 +1,14 @@
+wikicreator/__init__.py,sha256=Xr2Cd3XTCblYukeKIDiNxi4iRygVsHsOHO_8fdnxx_M,111
+wikicreator/cli.py,sha256=TVT6c_HO6EOE4tbvh4yONG9tBBoWVTek1xNy1wbdz1I,6301
+wikicreator/wikicreator_test.py,sha256=iwhKnzeBJLKxpRVjvzwiRE63_zNpIBfaKLITauVph-0,24
+wikicreator/data/sidebar.css,sha256=t19geXPBMQUDL_XBb2xNMQV-jrgy8_YfW0DDpShW30M,1589
+wikicreator/data/wikitemplate.html,sha256=S2WvLGdPgw6OkBeiKQanfkPtnlnvgd5CfAS3d8TZFZ8,3449
+wikicreator-0.4.0.data/data/wikicreator/sidebar.css,sha256=t19geXPBMQUDL_XBb2xNMQV-jrgy8_YfW0DDpShW30M,1589
+wikicreator-0.4.0.data/data/wikicreator/wikitemplate.html,sha256=S2WvLGdPgw6OkBeiKQanfkPtnlnvgd5CfAS3d8TZFZ8,3449
+wikicreator-0.4.0.dist-info/DESCRIPTION.rst,sha256=nvXHJD1DNdpgdVbs7DrnCzNp5OBU9vyZWcmGx_A14AU,1310
+wikicreator-0.4.0.dist-info/METADATA,sha256=_b5LLiXHNrnq8ucKbZpK4Hg3a-w0ikiizMnlXtYLidg,2312
+wikicreator-0.4.0.dist-info/RECORD,,
+wikicreator-0.4.0.dist-info/WHEEL,sha256=GrqQvamwgBV4nLoJe0vhYRSWzWsx7xjlt74FT0SWYfE,110
+wikicreator-0.4.0.dist-info/entry_points.txt,sha256=7I7Hod_xWZJGS1nRjY0pC-7vn4zVPsWAdOPVuBwnF3k,54
+wikicreator-0.4.0.dist-info/metadata.json,sha256=1ILE6sxVycjZ77IboSR9KSPmAEZJtuoDYv-BNHi1xHw,1284
+wikicreator-0.4.0.dist-info/top_level.txt,sha256=wjZ0lyMewcFAI84BZBbnFsrCfelS8eS27MuQ_6tUoyE,12
