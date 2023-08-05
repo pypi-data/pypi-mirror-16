@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+classbasedmodule.py
+setup.py
+classbasedmodule.egg-info/PKG-INFO
+classbasedmodule.egg-info/SOURCES.txt
+classbasedmodule.egg-info/dependency_links.txt
+classbasedmodule.egg-info/not-zip-safe
+classbasedmodule.egg-info/top_level.txt
