@@ -1,0 +1,11 @@
+quadriga/__init__.py,sha256=lB2B-hDyjUMNnoqADnpE3FjQ63UjdSdjsjJGSEQ1gBc,17951
+quadriga/auth.py,sha256=lJzG-vuQc6hm8YJ4o0IyZ9w_p5EKiwauIZZmT5KYghM,2219
+quadriga/private.py,sha256=4v_WeFTXcT5mG0pCSxvUdAVU5C1v7ugbAeolC3UXsoc,7758
+quadriga/public.py,sha256=LIzdB456x_TJERWgCX98_5Om8numHqK3qaOq8lw1YQM,2110
+quadrigacx-0.6.0.dist-info/DESCRIPTION.rst,sha256=_6Kn-7JzyBxK9Lgm7subT73PclZH-hmocenbtf3slkk,10256
+quadrigacx-0.6.0.dist-info/METADATA,sha256=50IgDwdKwvu_w0FfnEBsKoO-fptdu7cAXIvS51pd6Ws,10895
+quadrigacx-0.6.0.dist-info/RECORD,,
+quadrigacx-0.6.0.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+quadrigacx-0.6.0.dist-info/entry_points.txt,sha256=As8haoeqLtji0n0k5rulsREiBF6bY6CbXdystJdsTE4,67
+quadrigacx-0.6.0.dist-info/metadata.json,sha256=RlImHUrOseQEYPiyVEDucg_avuVi-chSdNOQTZCn4Mk,1015
+quadrigacx-0.6.0.dist-info/top_level.txt,sha256=eo92za6O-OxphGoM5a4iWe3NSND7wA0HNoxWEPQYEyw,9
