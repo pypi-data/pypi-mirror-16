@@ -1,0 +1,3 @@
+numpy
+matplotlib
+fisx>=1.0.8
