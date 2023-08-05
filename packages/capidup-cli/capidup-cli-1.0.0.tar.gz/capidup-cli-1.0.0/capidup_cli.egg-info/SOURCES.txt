@@ -1,0 +1,11 @@
+CHANGELOG.rst
+MANIFEST.in
+README.rst
+capidupcli.py
+setup.py
+capidup_cli.egg-info/PKG-INFO
+capidup_cli.egg-info/SOURCES.txt
+capidup_cli.egg-info/dependency_links.txt
+capidup_cli.egg-info/entry_points.txt
+capidup_cli.egg-info/requires.txt
+capidup_cli.egg-info/top_level.txt
