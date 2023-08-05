@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        hirosql=hirosql.main:cli
+    
