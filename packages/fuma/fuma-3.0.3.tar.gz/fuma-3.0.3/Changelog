@@ -1,0 +1,344 @@
+2016-07-08  Youri Hoogstrate
+	
+	* Version 3.0.3: API Changes, only useful for tools depending on FuMa as lib
+
+2016-04-07  Youri Hoogstrate
+	
+	* Version 3.0.2: Suppresses a warning that occurs in some installations
+
+2016-04-05  Youri Hoogstrate
+	
+	* Version 3.0.1: Added a simple break statement ensures that the output is
+	  in the order of the number of datasets in which a fusion gene is being
+	  found.
+	  
+	  The logging function now does not skip the 100.0% which was caused in some
+	  cases occured due to a rounding artefact.
+
+2016-04-01  Youri Hoogstrate
+	 
+	* Version 3.0.0: The core has been rewritte because it needed to use much
+	  less memory for a large number of datasets. Initially the code created
+	  sub datasets, because it was expected to export them time-wise and it was
+	  very handy for running unit tests and for creating the summary output.
+	  This resulted in a very high memory consumption for a large number of
+	  experiments (not with respect to the number of total Fusion genes).
+	  The rewritten code consumes memory in relation to the total number of
+	  Fusion objects. However, for the summary output we still use the legacy
+	  code and for the list output we make use of the new code.
+	  
+	  FuMa now starts with a n*n (num Fusion objects in all experiments)
+	  triangular matrix in which it compares all fusions with any other fusion
+	  gene. If they are considered identical, a MergedFusion object will be
+	  stored for the next iteration. Otherwise, at the end of the iteration,
+	  all non matched fusion genes will be exported to file.
+	  
+	  For the remaining MergedFusion genes, FuMa will create a m (number of
+	  MergedFusion objects) * n square matrix and compare whether the Fusion
+	  genes matches the Merged fusion genes. Again, if they are identical,
+	  they will be kept for the next iteration (these MergedFusion objects
+	  will contain 3, 4 or more original Fusion objects each) and those that
+	  are not being matched will be exported to file. For those that will be
+	  kept for the next iteration, 'duplicates' will be removed. If no matched
+	  objects remain, FuMa is finished.
+	  
+	  Because of this update, for analysis with a low number of samples and a
+	  high number of fusion genes, FuMa may have become (quite) a bit slower. 
+	  However, we believe the cost of some extra running time is much and much
+	  more desired than the exponential memory requirements.
+	  
+	
+		Important:
+		We have also found and resolved a small bug. In older versions of FuMa,
+		indexing was chromosome-name based. Therefore matching two fusion genes
+		only happened when they were annotated upon the same chr name. If you
+		would have a fusion gene A-B (both on chr1) and fusion A-B (both on
+		chr2), the old versions would consider these distinct whereas the new
+		version of FuMa considers these identical.
+		
+		Important 2:
+		We have found another minor bug. In rare situations where no fusion
+		gene was matched, the original fusion genes were not reported but
+		such that the number of input files did not equal the number of
+		output files (test_OverlapComplex 08_b and 09_05 and many in test 10).
+		This bug has been resolved in v3.
+
+2016-03-16  Youri Hoogstrate
+	
+	* Version 2.12.3: Bugfix.
+
+2016-03-16  Youri Hoogstrate
+	
+	* Version 2.12.2: Removal of unused 'sequence' and 'transition
+	  sequence' variables within the Fusion object, to reduce memory.
+
+2016-03-15  Youri Hoogstrate
+	
+	* Version 2.12.1: Another reuction of memory footprint - from
+	  linear scale (as the number of samples increase) to chunk-wise.
+	
+	* Changed verbosity settings, requires the --verbose argument to get
+	  a detailed output.
+
+2016-03-14  Youri Hoogstrate
+	
+	* Version 2.12.0: Huge reduction of memory footprint - from
+	  exponential to linear scale as the number of samples increase.
+	  Also the pruning system works very efficient and the memory does
+	  not increase too much after a large number of iterations with
+	  many samples.
+
+2016-03-14  Youri Hoogstrate
+	
+	* Version 2.11.8: Reduction of memort footprint
+
+2016-03-14  Youri Hoogstrate
+	
+	* Version 2.11.7: Reduction of memort footprint
+
+2016-03-11  Youri Hoogstrate
+	
+	* Version 2.11.6: Added support for JAFFA
+
+2016-03-11  Youri Hoogstrate
+	
+	* Version 2.11.5: Added utility to create appropriate BED files from GTF files
+
+2016-03-11  Youri Hoogstrate
+	
+	* Version 2.11.4: Reduces memory footprint for high number of samples
+
+2015-02-08  Youri Hoogstrate
+	
+	* Version 2.11.3: Fixes support for EricScript
+	
+	  - Addresses an installation issue with numpy
+	  
+	  - More convenient way of throwing exceptions if files are being parsed improperly
+
+2015-02-07  Youri Hoogstrate
+	
+	* Version 2.11.2: Support for SOAPFuse and EricScript
+
+2016-02-05  Youri Hoogstrate
+
+	* Small fix to a utility
+
+2016-02-02  Youri Hoogstrate
+
+	* Small changes to the utilities and the export-to CG function
+
+2015-11-27  Youri Hoogstrate
+
+	* Small change in the __str__ function of Fusion genes to print
+	  the genomic strand information
+
+2015-11-20  Youri Hoogstrate
+	
+	* Version 2.11.0
+	
+	* Added column to list output to indicate whether long genes are
+	  spanning the fusion gene
+	
+	* Added --long-gene-size argument (default: 200000bp)
+	
+	* Added --no-strand-specific-matching argument (not default)
+	
+	* Added --no-acceptor-donor-order-specific-matching (default)
+	
+	* Updated corresponding test cases
+
+2015-10-13  Youri Hoogstrate
+	
+	* Version 2.10.1: List output had on tab at each line too much
+
+2015-10-08  Youri Hoogstrate
+	
+	* Version 2.10.0: Added overlap baded matching
+	  - Dropped the --egm argument
+	  - Added the -m argument to choose between egm, subset and overlap
+	    based matching
+	
+	* Added --overlap-based-matching argument
+	
+	* Added --strand-specific-matching argument
+	
+	* Added many test cases
+	
+	* Updated manual 
+	
+	* Many code cleanups (args passed through op many places as
+	configuration variable)
+	  - Fixes a bug such that FuMa now uses consistently the same
+	    settings for duplication removal as well as matching
+	
+	* Added support for STAR Fusion format
+	
+	* Added support for TopHat Fusions HTML output format
+
+2015-08-26  Youri Hoogstrate
+	
+	* Version 2.9.2: Support for StarFusion
+
+2015-08-12  Youri Hoogstrate
+	
+	* Version 2.9.1: Support for Chimera prettyPrint format
+	
+	* Test case for parsing Chimera prettyPrint file
+	
+	* Added FusionDetectionExperiment::__getitem__
+
+2015-08-07  Youri Hoogstrate
+	
+	* Version 2.9.0: Support for strand-specific-matching
+	
+	* Test case for strand specific matching
+	
+	* Code cleanup
+
+2015-07-13  Youri Hoogstrate
+	
+	* Small fix in parsing empty fusioncatcher output files
+
+2015-06-19  Youri Hoogstrate
+	
+	* List output is sorted, to ensure consistent output.
+	
+	* Updated the test framework and README and travis-ci.
+
+2015-05-05  Youri Hoogstrate
+	
+	* Version 2.8.0: Added "Exact Gene-list Matching" (EGM).
+
+2015-04-08  Youri Hoogstrate
+	
+	* Version 2.7.3: Fixed loggin issue in "fusioncatcher-to-CG".
+	
+	* More correct format description in error handling.
+
+2015-04-08  Youri Hoogstrate
+	
+	* Version 2.7.2: Fixed a column issue in the ChimeraScan parser that
+	  affects conversion with "chimerascan-relative-bedpe-to-CG".
+
+2015-04-02  Youri Hoogstrate
+	
+	* Version 2.7.1: Added "fuma-list-to-boolean-list" binary to convert
+	  the output format.
+
+2015-04-01  Youri Hoogstrate
+	
+	* Version 2.7.0: Added the "--formats" argument.
+	
+	* Added a new logging scheme.
+	
+	* Updated README.
+	
+	* Separated CLI code from the executable.
+	
+	* Added ChimeraScan conversion executable to installer
+
+2015-03-16  Youri Hoogstate
+	
+	* Version 2.6.6 (beta): Several fixed in 
+	  "chimerascan-relative-bedpe-to-CG".
+
+2015-03-16  Youri Hoogstate
+	
+	* Version 2.6.5 (beta): Fixed "defuse-clusters-to-CG" and
+	  "fusioncatcher-to-CG".
+
+2015-03-16  Youri Hoogstate
+	
+	* Version 2.6.4 (beta): Fixed "defuse-clusters-to-CG" by using
+	  correct class reference.
+
+2015-03-05  Youri Hoogstate
+	
+	* Version 2.6.3 (beta): Added exception handling.
+
+2015-03-05  Youri Hoogstate
+	
+	* Version 2.6.2 (beta): Fixed issue that crashes the exoport type
+	  summary, introduced after exporting 'list' type output.
+	
+	* Changed expectation of unit tests to the subset matching behaviour
+	  introduced since version 2.5.0.
+	
+	* Added two functional tests to the test unit.
+
+2015-03-02  Youri Hoogstate
+	
+	* Version 2.6.1 (beta): Fixed some settings in the Fusion object
+	  that allows 'list' type output.
+
+2015-03-02  Youri Hoogstate
+	
+	* Version 2.6.0 (beta): Added the 'list' output type which seems to
+	  be the most natural way of representing the results.
+
+2015-02-19  Youri Hoogstate
+	
+	* Version 2.5.2 (beta): Added Reader for 1-2-3-SV.
+
+2015-01-22  Youri Hoogstate
+	
+	* Version 2.5.1 (beta): Added code that supports different types of
+	  matching, used for benchmarking.
+
+2015-01-19  Youri Hoogstate
+	
+	* Version 2.5.0 (beta): The match function returns only the subset 
+	  of the matching gene lists to avoid 'gene set growing'.
+
+2015-01-14  Youri Hoogstate
+	
+	* Version 2.4.2 (beta): Changed defuse output parser from 1 based to
+	  0 based.
+
+2015-01-14  Youri Hoogstate
+	
+	* Version 2.4.1 (beta): Support for the 'RelatedJunctions'-column in
+	  the output for the "-f extensive" argument.
+
+2015-01-09  Youri Hoogstate
+	
+	* Version 2.4.0 (beta): Fixed the "-f extensive" argument.
+
+2015-01-09  Youri Hoogstate
+	
+	* Version 2.3.3 (beta): Added code to read files from FusionMap.
+
+2014-12-01  Youri Hoogstrate
+	
+	*  Version 2.3.2 (beta): Added code to read files from OncoFuse.
+
+2014-11-11  Youri Hoogstrate
+	
+	*  Version 2.3.1 (beta): Added indexing code for FusionCatcher
+	   reference files and added conversion scripts for interim files
+	   that describe fusions relative to gene-ids.
+	
+	*  Exporting a FusionDetectionExperiment to CompleteGenomics format
+	   now accepts "-" for stdout.
+
+2014-11-05  Youri Hoogstrate
+	
+	*  Version 2.3.0 (beta): Added support for the FusionCatcher
+	   "final-list_candidate-fusion-genes.txt" files.
+
+2014-09-30  Youri Hoogstrate
+	
+	*  Version 2.2.0 (beta): Added support for the RNA-STAR
+	   "Chimeric.out.junction" files.
+
+2014-09-22  Youri Hoogstrate
+	
+	*  Version 2.1.0 (beta): many bugfixes to the fuma binary (to make it
+	   compatible with all 2.* changes.
+	*  Added a parser for Tophat Fusion post's "result.txt"
+
+2014-09-21  Youri Hoogstrate
+	
+	*  Version 2.0.0 (beta) got released. Rewrote many code and added unit
+	   tests.
