@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+idealista/__init__.py
+idealista/__init__.pyc
+idealista/api.py
+idealista_api_python.egg-info/PKG-INFO
+idealista_api_python.egg-info/SOURCES.txt
+idealista_api_python.egg-info/dependency_links.txt
+idealista_api_python.egg-info/top_level.txt
