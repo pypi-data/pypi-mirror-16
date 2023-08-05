@@ -1,0 +1,3 @@
+[rinoh.typefaces]
+tex gyre termes = rinoh_typeface_texgyretermes:typeface
+
