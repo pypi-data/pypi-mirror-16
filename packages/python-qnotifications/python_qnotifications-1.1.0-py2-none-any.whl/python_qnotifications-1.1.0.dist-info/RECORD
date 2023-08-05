@@ -1,0 +1,10 @@
+QNotifications/QNotification.py,sha256=S_61FwTZe8vywfd8hh_LS7P0R-X3eMXA0axiOySN2uE,6776
+QNotifications/QNotificationArea.py,sha256=XtDgEVbTTwuQ31euqF6WXQ8wOvKCe6X2wfDe_AZZM4A,9460
+QNotifications/__init__.py,sha256=RLBgTfF3i5PQgKvko1SpaYmBfEB0EdL4aIQwygKF3VQ,869
+QNotifications/abstractions.py,sha256=zFa93-d3N_SJ8HtTO-LMEMoHDiyQoCBYNaR5bi6EIZE,1499
+python_qnotifications-1.1.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+python_qnotifications-1.1.0.dist-info/METADATA,sha256=oo8gJwRxmsJA_qesgS5N-TOUv6YdI-FJQFoLFc05NI4,730
+python_qnotifications-1.1.0.dist-info/RECORD,,
+python_qnotifications-1.1.0.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+python_qnotifications-1.1.0.dist-info/metadata.json,sha256=gHbWEoLXXj3RY5Y7JxHP2E7HzfksvmevR_peC9bT0T4,856
+python_qnotifications-1.1.0.dist-info/top_level.txt,sha256=Ez9jX_z-5_4hG3nwAewXOnfP4qrYlAvLLJ5o4Er6qoE,15
