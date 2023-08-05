@@ -1,0 +1,29 @@
+Metadata-Version: 1.1
+Name: ccepy
+Version: 1.0.0
+Summary: Criptografía con Curvas Elípticas con Python
+Home-page: https://github.com/ranea/ccepy
+Author: Adrian Ranea
+Author-email: adrianranea@gmail.com
+License: MIT
+Description: Criptografía con Curvas Elípticas con Python
+        ============================================
+        
+        ccepy es una biblioteca para python 3 que permite trabajar con
+        el grupo de puntos de una curva elíptica y desarrollar protocolos 
+        criptográficos basados en curvas elípticas. También permite hacer
+        con cuerpos finitos y con enteros módulo un primo.
+        
+        Para más informacion, puede consultar la documentación `aquí 
+        <https://ranea.github.io/ccepy//>`_.
+        
+Keywords: criptografía con curvas elípticas
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Security :: Cryptography
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
