@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: pyshapelib
+Version: 0.0.1
+Summary: Python bindings for shapelib and extent to process shp/dbf
+Home-page: https://pypi.python.org/pypi/pyshapelib
+Author: Bernhard Herzog, firewzy
+Author-email: bh@intevation.de
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
