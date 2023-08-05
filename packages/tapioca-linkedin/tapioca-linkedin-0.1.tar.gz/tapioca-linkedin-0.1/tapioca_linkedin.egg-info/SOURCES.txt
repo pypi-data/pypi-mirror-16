@@ -1,0 +1,10 @@
+setup.py
+tapioca_linkedin/__init__.py
+tapioca_linkedin/resource_mapping.py
+tapioca_linkedin/tapioca_linkedin.py
+tapioca_linkedin.egg-info/PKG-INFO
+tapioca_linkedin.egg-info/SOURCES.txt
+tapioca_linkedin.egg-info/dependency_links.txt
+tapioca_linkedin.egg-info/not-zip-safe
+tapioca_linkedin.egg-info/requires.txt
+tapioca_linkedin.egg-info/top_level.txt
