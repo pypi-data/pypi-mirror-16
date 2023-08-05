@@ -1,0 +1,11 @@
+djangomailup/__init__.py,sha256=XSSzezWUvRWm1xCP3w0G4nrCr5iup7_PDfzKUOXUKiQ,384
+djangomailup/client.py,sha256=MacnqCNgD5VJOLF7Tjv7v6YP1MRcRVZwyl3svmvyZCI,2206
+djangomailup/conf.py,sha256=Fq15RV6a9rpOlig0m5Mkt1nY_9kkvQVTm9487bEBzC0,676
+djangomailup/decoders.py,sha256=C6VgHBSxZdlAi6BHSp6hWkXdxHxkh1jLV1sletJ2hiA,451
+djangomailup/models.py,sha256=iwhKnzeBJLKxpRVjvzwiRE63_zNpIBfaKLITauVph-0,24
+djangomailup-0.1.1.dist-info/DESCRIPTION.rst,sha256=lCTqblhkRFeMk9rQawD-rdI9T19hseWj-SiD5PNuN2Y,2458
+djangomailup-0.1.1.dist-info/METADATA,sha256=afsXTt1SnIeKG3gLQdu6WOi-yx_ECpKQSVf_0kuGTRI,3399
+djangomailup-0.1.1.dist-info/RECORD,,
+djangomailup-0.1.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+djangomailup-0.1.1.dist-info/metadata.json,sha256=2yqiqkhqxeAt0_8J_1Ejo96hoQLEz_I64pGMuvzafA8,1061
+djangomailup-0.1.1.dist-info/top_level.txt,sha256=y-fHq_00rmAkhFZhpSYUHE1JK6M52waa4YCpzUzA6dI,13
