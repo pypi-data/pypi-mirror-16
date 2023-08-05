@@ -1,0 +1,341 @@
+{
+  "src/components/Dropdown.react.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "value",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "renderOptions",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "valueChanged": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Function that updates the state tree.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "options": {
+        "type": {
+          "name": "arrayOf",
+          "value": {
+            "name": "shape",
+            "value": {
+              "value": {
+                "name": "string",
+                "required": true
+              },
+              "label": {
+                "name": "string",
+                "required": true
+              }
+            }
+          }
+        },
+        "required": false,
+        "description": "Options",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Selected value",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/EditableDiv.react.js": {
+    "description": "A div for displaying text. The text is editable.",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "text",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "text": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The displayed text of this component."
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "The style of the text.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "editable": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Whether or not this component should be rendered as editable.\nPassed in from renderer.",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "valueChanged": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Function that updates the state tree.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/Header.react.js": {
+    "description": "A component that greets a person in a header",
+    "methods": [],
+    "props": {
+      "name": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The name of the person you want to greet"
+      }
+    }
+  },
+  "src/components/InputControl.react.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "value",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "valueChanged": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Function that updates the state tree.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Initial input value",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/components/Label.react.js": {
+    "description": "A component that prints a label value",
+    "methods": [],
+    "props": {
+      "value": {
+        "type": {
+          "name": "string"
+        },
+        "required": true,
+        "description": "The value of the label"
+      }
+    }
+  },
+  "src/components/PlotlyGraph.react.js": {
+    "description": "",
+    "methods": [
+      {
+        "name": "plot",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "props",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "bindEvents",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "bindClick": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Set to `true` if this graph should emit click events",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "clickData": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Data from latest click event",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "bindHover": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Set to `true` if this graph should emit hover events",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "hoverData": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Data from latest hover event",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "data": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "Plotly `figure.data` array. See schema:\nhttps://api.plot.ly/v2/plot-schema?sha1=",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "layout": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Plotly `figure.layout` object. See schema:\nhttps://api.plot.ly/v2/plot-schema?sha1=",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "height": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Height of graph, e.g. 600, '600px' or '100%'",
+        "defaultValue": {
+          "value": "'600px'",
+          "computed": false
+        }
+      },
+      "width": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "string"
+            },
+            {
+              "name": "number"
+            }
+          ]
+        },
+        "required": false,
+        "description": "Width of graph, e.g. 600, '600px' or '100%'",
+        "defaultValue": {
+          "value": "'100%'",
+          "computed": false
+        }
+      },
+      "valueChanged": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Function that updates the state tree.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
+  }
+}
