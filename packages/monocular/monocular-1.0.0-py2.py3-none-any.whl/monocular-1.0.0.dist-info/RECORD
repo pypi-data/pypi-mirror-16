@@ -1,0 +1,17 @@
+monocular/__init__.py,sha256=FIj9YYZXXShzzT8HWNpUL38xhQFBB9VOi-JKEF2_j4I,3172
+monocular/api.py,sha256=a_Le3s9kRX8Abk3OGOxxTjynk9lesAIdsxCGlcO4ov0,5410
+monocular/background_subtractors.py,sha256=F9cTJirs2F29r3Cvufao9GolZGdBvnYVRBM3ZLuuW-g,2070
+monocular/config.py,sha256=MP68IYheO5KnpIlH-J1NF5ZY9spDKrHc7boyB87yfSA,310
+monocular/data_buckets.py,sha256=59RJz7tjNjx1lII-A13ubblUKScAyxwYhS1_bYo0C04,1246
+monocular/detectors.py,sha256=54i3VXuI95V6YZU5-t1niX58R7YdzxJsjXd3455o6Zw,1720
+monocular/face_identifiers.py,sha256=P9-riue6fQEmcAJPhx5Gj541rfQY5wtqux2bMeeGV2g,2188
+monocular/images.py,sha256=XP_EYqSsDzNrJWiwzYeCCSQBSFonCXWzHVf9NxGfWLU,5792
+monocular/util.py,sha256=TusvYtO9WSeMXIC2XJqOOP6j5jmFVYgP7LRAu5nDOGM,1299
+monocular/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+monocular/tests/test_monocular.py,sha256=eOwaUB6JAwf2IsSRndOwco1_w2UhNXIzHoDCtsJpHx4,8464
+monocular-1.0.0.dist-info/DESCRIPTION.rst,sha256=MtO3mp3br5FnT2UA3ykSKYqGRxSlGWDknQK2M3y9bjE,9856
+monocular-1.0.0.dist-info/METADATA,sha256=2m2KbFklwuQSfTOAiNkQ47wM5fkmw2gJIhH7O-SEyRQ,10179
+monocular-1.0.0.dist-info/RECORD,,
+monocular-1.0.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+monocular-1.0.0.dist-info/metadata.json,sha256=vIOnzo6gDSf_w4AVq7B7IuU-EW2tRY678jMNmrQ_aBA,551
+monocular-1.0.0.dist-info/top_level.txt,sha256=NBLVwAG4hgRY-uy_LBhhI3HuyoieEb56a5bxPR_V5eE,10
