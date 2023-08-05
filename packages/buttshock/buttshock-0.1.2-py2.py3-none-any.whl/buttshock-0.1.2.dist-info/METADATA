@@ -1,0 +1,26 @@
+Metadata-Version: 2.0
+Name: buttshock
+Version: 0.1.2
+Summary: Python Libraries for Estim Unit (ErosTek ET312, Erostek ET232, Estim Systems 2B) Control
+Home-page: http://github.com/metafetish/buttshock-py
+Author: qDot
+Author-email: kyle@machul.is
+License: BSD License
+Download-URL: http://pypi.python.org/packages/source/b/buttshock
+Keywords: estim,buttshock,teledildonics,electrostim
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: System :: Hardware :: Hardware Drivers
+
+Python Libraries for Estim Unit (ErosTek ET312, Erostek ET232, Estim Systems 2B) Control. Provides protocol implementations for serial communications, as well as utility functions for easily accessing features of estim equipment.
+
+
