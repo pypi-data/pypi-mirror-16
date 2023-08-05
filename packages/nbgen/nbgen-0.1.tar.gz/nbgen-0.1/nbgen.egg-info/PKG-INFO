@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: nbgen
+Version: 0.1
+Summary: Generates a Jupyter Notebook and slides from your data
+Home-page: https://github.com/ewjoachim/nbgen
+Author: Joachim Jablon
+Author-email: ewjoachim@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: jupyter,notebook,generation,slides
+Platform: UNKNOWN
