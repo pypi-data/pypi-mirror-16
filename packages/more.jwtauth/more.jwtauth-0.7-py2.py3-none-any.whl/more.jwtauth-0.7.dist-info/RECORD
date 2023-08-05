@@ -1,0 +1,16 @@
+more.jwtauth-0.7-py2.7-nspkg.pth,sha256=laAO74mS7ugWYvZwQewTe3kKUo-HLj4iKOKFOTuf1Mg,299
+more/jwtauth/__init__.py,sha256=-tam62UCmQF766bnrjshoyh-vQ1dg8umLLM0Y7USmWM,52
+more/jwtauth/main.py,sha256=Qse9151_Q2VaH7e9JxpDjsYL4pOsR9AF4CZECkNjeOY,11377
+more/jwtauth/tests/test_cryptography.py,sha256=dIkoF8MHBvNiD2U68P9X6d1Pv05MzyTgEN6RmAeaWk0,4720
+more/jwtauth/tests/test_jwtauth.py,sha256=wHjI97-pL8VZujy15zh9VgievXGQVrgtckkpkogoiuc,14638
+more/jwtauth/tests/keys/testkey_ec,sha256=21TfYoHpr1hpA_KVbNrypZSPPr6D6fdD71OBRj4P-QE,361
+more/jwtauth/tests/keys/testkey_ec.pub,sha256=UQVL0t3UcpMcBsQp8v8gZ0ogcs9L67qAB4HyCzc1esw,268
+more/jwtauth/tests/keys/testkey_rsa,sha256=Et9A4pxfFcX8VrYAFowVpQZw3Ms_6OqYtayUxrm1IFA,1679
+more/jwtauth/tests/keys/testkey_rsa.pub,sha256=svpb4S2KXgZwG5Sl4smrhszmsJ1AKHKI8Jk3s7rakn0,401
+more.jwtauth-0.7.dist-info/DESCRIPTION.rst,sha256=OZf5lCTcTMf7JtayYgRNVC6KUeMN8x7tZfSwxikSKo4,11350
+more.jwtauth-0.7.dist-info/METADATA,sha256=CKZaGPwMxEg1qkoNjz_90uqlrEdFSl02vqPT4U2Eut0,12503
+more.jwtauth-0.7.dist-info/RECORD,,
+more.jwtauth-0.7.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+more.jwtauth-0.7.dist-info/metadata.json,sha256=T-USxZxv1kh3svOsNBzu-5MeKzcGyYBK3r1kI7YKGn8,1216
+more.jwtauth-0.7.dist-info/namespace_packages.txt,sha256=I5YJnGwIT6S5vqyfDVLPO-nPjUcEDvEniD1TK1eQzXQ,5
+more.jwtauth-0.7.dist-info/top_level.txt,sha256=I5YJnGwIT6S5vqyfDVLPO-nPjUcEDvEniD1TK1eQzXQ,5
