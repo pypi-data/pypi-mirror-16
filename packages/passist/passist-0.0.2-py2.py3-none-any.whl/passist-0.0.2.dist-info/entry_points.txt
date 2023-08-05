@@ -1,0 +1,3 @@
+[console_scripts]
+passist = passist:main
+
