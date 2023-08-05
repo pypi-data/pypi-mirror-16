@@ -1,0 +1,14 @@
+Metadata-Version: 2.0
+Name: django-modelforms
+Version: 0.1.1
+Summary: Improvements to django.forms.ModelForm
+Home-page: UNKNOWN
+Author: Gary Reynolds
+Author-email: gary.reynolds@touchtechnology.com.au
+License: BSD
+Platform: UNKNOWN
+Requires-Dist: django (>=1.7)
+
+UNKNOWN
+
+
