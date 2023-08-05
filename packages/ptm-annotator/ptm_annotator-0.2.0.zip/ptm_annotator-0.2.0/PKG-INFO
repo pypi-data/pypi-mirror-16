@@ -1,0 +1,64 @@
+Metadata-Version: 1.1
+Name: ptm_annotator
+Version: 0.2.0
+Summary: PTM-annotator is an open source cross-platform Python library to annotate and graphically analyze PTM search results.
+Home-page: https://github.com/gtg269c/ptm-annotator
+Author: Amin A Momin
+Author-email: momin.amin@gmail.com
+License: ISCL
+Description: ===============================
+        ptm-annotator
+        ===============================
+        
+        .. image:: https://img.shields.io/pypi/v/ptm-annotator.svg
+                :target: https://pypi.python.org/pypi/ptm-annotator
+        
+        .. image:: https://img.shields.io/travis/gtg269c/ptm-annotator.svg
+                :target: https://travis-ci.org/gtg269c/ptm-annotator
+        
+        .. image:: https://readthedocs.org/projects/ptm-annotator/badge/?version=latest
+                :target: https://readthedocs.org/projects/ptm-annotator/?badge=latest
+                :alt: Documentation Status
+        
+        
+        ptmannotator is an open source cross-platform Python library to annotate and graphically analyze PTM search results.
+        
+        * Free software: ISC license
+        * Documentation: https://ptm-annotator.readthedocs.org.
+        
+        Features
+        --------
+        
+        * TODO
+        
+        Credits
+        ---------
+        
+        This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+        
+        .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+        .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+        
+        
+        =======
+        History
+        =======
+        
+        0.1.0 (2016-05-08)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: ptm_annotator
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: ISC License (ISCL)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
