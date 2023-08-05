@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+setup.py
+wswrapper/RFC6455.py
+wswrapper/__init__.py
+wswrapper/httpParser.py
+wswrapper/version
+wswrapper/wrapper.py
+wswrapper.egg-info/PKG-INFO
+wswrapper.egg-info/SOURCES.txt
+wswrapper.egg-info/dependency_links.txt
+wswrapper.egg-info/requires.txt
+wswrapper.egg-info/top_level.txt
