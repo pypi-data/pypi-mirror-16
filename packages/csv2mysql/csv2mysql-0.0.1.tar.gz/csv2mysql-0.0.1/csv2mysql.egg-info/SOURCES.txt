@@ -1,0 +1,10 @@
+setup.py
+csv2mysql/__init__.py
+csv2mysql/__main__.py
+csv2mysql/csv2mysql.py
+csv2mysql.egg-info/PKG-INFO
+csv2mysql.egg-info/SOURCES.txt
+csv2mysql.egg-info/dependency_links.txt
+csv2mysql.egg-info/entry_points.txt
+csv2mysql.egg-info/requires.txt
+csv2mysql.egg-info/top_level.txt
