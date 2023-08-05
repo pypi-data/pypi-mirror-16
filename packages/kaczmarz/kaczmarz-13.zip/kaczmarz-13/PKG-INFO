@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: kaczmarz
+Version: 13
+Summary: Simulations and visualizations of the Kaczmarz algorithm on various classifications of linear systems
+Home-page: https://github.com/lightningleaf/kaczmarz
+Author: lightningleaf
+Author-email: lightningleaf0@gmail.com
+License: None
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.5
