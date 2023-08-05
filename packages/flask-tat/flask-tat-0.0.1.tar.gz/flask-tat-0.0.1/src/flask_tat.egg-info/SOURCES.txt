@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+VERSION
+requirements.txt
+setup.py
+src/flask_tat.py
+src/flask_tat.egg-info/PKG-INFO
+src/flask_tat.egg-info/SOURCES.txt
+src/flask_tat.egg-info/dependency_links.txt
+src/flask_tat.egg-info/requires.txt
+src/flask_tat.egg-info/top_level.txt
+src/flask_tat.egg-info/zip-safe
