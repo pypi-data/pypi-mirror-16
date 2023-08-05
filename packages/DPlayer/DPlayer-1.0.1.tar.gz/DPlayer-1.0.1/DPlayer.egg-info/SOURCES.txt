@@ -1,0 +1,30 @@
+README.rst
+setup.py
+DPlayer.egg-info/PKG-INFO
+DPlayer.egg-info/SOURCES.txt
+DPlayer.egg-info/dependency_links.txt
+DPlayer.egg-info/requires.txt
+DPlayer.egg-info/top_level.txt
+dplayer/__init__.py
+dplayer/core.py
+dplayer/ui.py
+dplayer/icons/Clear playlist.png
+dplayer/icons/Find info.png
+dplayer/icons/Find lyrics.png
+dplayer/icons/Load playlist.png
+dplayer/icons/Save playlist.png
+dplayer/icons/addFiles.png
+dplayer/icons/addFolder.png
+dplayer/icons/logo.png
+dplayer/icons/mute.png
+dplayer/icons/next.png
+dplayer/icons/pause.png
+dplayer/icons/play.png
+dplayer/icons/previous.png
+dplayer/icons/repeatPlaylist.png
+dplayer/icons/repeatSong.png
+dplayer/icons/shuffle.png
+dplayer/icons/stop.png
+dplayer/icons/volumeMax.png
+dplayer/icons/volumeMiddle.png
+dplayer/icons/volumeMin.png
