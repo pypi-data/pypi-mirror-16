@@ -1,0 +1,17 @@
+.gitignore
+.travis.yml
+MANIFEST.in
+README.md
+build-env.yml
+circos.py
+examples.ipynb
+requirements.txt
+setup.py
+Circos.egg-info/PKG-INFO
+Circos.egg-info/SOURCES.txt
+Circos.egg-info/dependency_links.txt
+Circos.egg-info/requires.txt
+Circos.egg-info/top_level.txt
+test_graphs/07 inter-subtype interactions.pkl
+test_graphs/Test Graph Generator.ipynb
+test_graphs/interval_network.pkl

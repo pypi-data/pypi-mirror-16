@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: Circos
+Version: 1.3
+Summary: Circos plots in Python!
+Home-page: http://github.com/ericmjl/Circos
+Author: Eric J. Ma, Justin Zabilansky, Jon Charest
+Author-email: ericmajinglong@gmail.com
+License: MIT
+Description: # Circos
+        
+        A utility for making circos plots in matplotlib.
+        
+        URL: circos.ca
+        
+        ## Changelog
+        
+        Version 1.2:
+        
+        1. Fixed `setup.py` script.
+Keywords: network visualization,matplotlib,circos
+Platform: UNKNOWN
+Classifier: Topic :: Scientific/Engineering :: Visualization
