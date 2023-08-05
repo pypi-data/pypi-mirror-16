@@ -1,0 +1,7 @@
+pyslot>=2.0.0,<3
+
+[csodium]
+csodium>=0.0.1
+
+[pysodium]
+pysodium>=0.6.9

@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: azmq
+Version: 1.0.1
+Summary: An asyncio-native implementation of ZMTP (ZMQ).
+Home-page: http://ereOn.github.io/azmq
+Author: Julien Kauffmann
+Author-email: julien.kauffmann@freelan.org
+License: UNKNOWN
+Description: AZMQ is an implementation of ZMTP (the protocol behind ZMQ) using native Python
+        3 asyncio sockets.
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Development Status :: 5 - Production/Stable
