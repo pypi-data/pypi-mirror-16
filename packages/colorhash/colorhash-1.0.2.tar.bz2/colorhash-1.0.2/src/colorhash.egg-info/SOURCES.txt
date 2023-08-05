@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+tox.ini
+src/colorhash.py
+src/colorhash.egg-info/PKG-INFO
+src/colorhash.egg-info/SOURCES.txt
+src/colorhash.egg-info/dependency_links.txt
+src/colorhash.egg-info/top_level.txt
+test/test_colorhash.py
+test/test_doctests.py
