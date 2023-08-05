@@ -1,0 +1,6 @@
+recursive-include collective *
+recursive-include docs *
+global-exclude *pyc
+include *
+exclude .installed.cfg
+prune collective/plonefinder/browser/elm/elm-stuff
