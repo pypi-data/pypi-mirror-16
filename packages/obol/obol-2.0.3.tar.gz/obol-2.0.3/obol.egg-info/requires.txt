@@ -1,0 +1,4 @@
+python-ldap
+ldif3
+retrying
+cliff

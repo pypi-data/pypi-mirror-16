@@ -1,0 +1,12 @@
+README.rst
+setup.py
+obol/__init__.py
+obol/group.py
+obol/main.py
+obol/user.py
+obol.egg-info/PKG-INFO
+obol.egg-info/SOURCES.txt
+obol.egg-info/dependency_links.txt
+obol.egg-info/entry_points.txt
+obol.egg-info/requires.txt
+obol.egg-info/top_level.txt
