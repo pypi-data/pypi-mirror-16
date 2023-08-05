@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: Flask-JWE
+Version: 0.0.4
+Summary: Add Flask Support for JWE Requests
+Home-page: http://github.com/netkicorp/flask-jwe
+Author: Netki Opensource
+Author-email: opensource@netki.com
+License: BSD3
+Description: 
+        Flask-JWE
+        -------------
+        
+        Flask extension that support JWE request/response exchanges as defined in RFC 7515 (JWS), RFC 7516 (JWE), RFC 7517 (JWK) and RFC 7518 (JWA)
+        
+        https://www.ietf.org/id/draft-ietf-httpbis-encryption-encoding-00.txt
+        
+Platform: any
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
