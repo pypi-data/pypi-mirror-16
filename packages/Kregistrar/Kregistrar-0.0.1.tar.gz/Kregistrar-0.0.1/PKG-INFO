@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: Kregistrar
+Version: 0.0.1
+Summary: Monitor of training progress of Deep Learning models built on TensorFlow & Theano
+Home-page: https://github.com/adatao/Kregistrar
+Author: Arimo, Inc.
+Author-email: info@arimo.com
+License: MIT License
+Description: Monitor of training progress of Deep Learning models built on TensorFlow & Theano
+Keywords: Deep Learning Keras Tensorflow Theano
+Platform: UNKNOWN
