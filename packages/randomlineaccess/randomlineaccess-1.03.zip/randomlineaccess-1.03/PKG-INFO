@@ -1,0 +1,28 @@
+Metadata-Version: 1.1
+Name: randomlineaccess
+Version: 1.03
+Summary: Fast access to text files by line number.
+Home-page: https://github.com/brycedrennan/random-line-access
+Author: Bryce Drennan
+Author-email: random-line-access@brycedrennan.org
+License: MIT
+Download-URL: https://github.com/brycedrennan/random-line-access/tarball/1.03
+Description: 
+        Quickly access arbitrary line numbers in a text file. A well tested library for Python 3.
+        
+        For example:
+        
+            with IndexedOpen('big_text_file.txt') as f:
+                print(f[35234:35300])  # happens fast
+        
+        Does this by creating index files on demand of the locations of lines in a file.  The first call to a file is slow but subsequent calls are
+        very quick.
+        
+Keywords: linecache,random access,text file,indexing
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Text Processing :: Indexing
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
