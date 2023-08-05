@@ -1,0 +1,52 @@
+Metadata-Version: 1.1
+Name: poshsplice
+Version: 0.1.1
+Summary: Poshsplice makes your splicing events fancy (posh) by annotating them!
+Home-page: https://github.com/olgabot/poshsplice
+Author: Olga Botvinnik
+Author-email: olga.botvinnik@gmail.com
+License: BSD
+Description: ===============================
+        PoshSplice
+        ===============================
+        
+        .. image:: https://img.shields.io/travis/olgabot/poshsplice.svg
+                :target: https://travis-ci.org/olgabot/poshsplice
+        
+        .. image:: https://img.shields.io/pypi/v/poshsplice.svg
+                :target: https://pypi.python.org/pypi/poshsplice
+        
+        
+        Python Boilerplate contains all the boilerplate you need to create a Python package.
+        
+        * Free software: BSD license
+        * Documentation: https://poshsplice.readthedocs.org.
+        
+        Features
+        --------
+        
+        * TODO
+        
+        
+        
+        
+        History
+        -------
+        
+        0.1.0 (2015-01-11)
+        ---------------------
+        
+        * First release on PyPI.
+        
+Keywords: poshsplice
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
