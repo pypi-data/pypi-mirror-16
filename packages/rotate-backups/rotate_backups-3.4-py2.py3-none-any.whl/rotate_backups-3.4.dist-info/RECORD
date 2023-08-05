@@ -1,0 +1,10 @@
+rotate_backups/__init__.py,sha256=X_DtNgLIV6ThP4YgmAdS6vGxZVovBRCnwYG9GPLHzEc,27813
+rotate_backups/cli.py,sha256=f96Qcmp6nfOMQazKXN8tADVQHgFWeho55ZylajLSGVI,10243
+rotate_backups/tests.py,sha256=XqwteqMH1YlTESAAZIHFJSHW2caiW0CWgs-ZW-H8puI,19051
+rotate_backups-3.4.dist-info/DESCRIPTION.rst,sha256=4w8J6aTt37cz5P9EFXOai-V0ImHbVhaVJcIPsv_4rIc,12520
+rotate_backups-3.4.dist-info/METADATA,sha256=pDLQszT6ZyWCqCg7aSIDryHFvNRHqTdg0IlMJ1rHDmo,14123
+rotate_backups-3.4.dist-info/RECORD,,
+rotate_backups-3.4.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+rotate_backups-3.4.dist-info/entry_points.txt,sha256=nclCzwR4uzDvrVTHCZt3CYqOk_9z0YvyRVRykBqKEeQ,60
+rotate_backups-3.4.dist-info/metadata.json,sha256=Yvj1OmI2ERN0bbOato01xHqO2S-ppufXUBKEJ5e3298,1714
+rotate_backups-3.4.dist-info/top_level.txt,sha256=uSKZwZeCgzj7KrqF8J5rSY7-aROE_sBSFskedQZSgFE,15
