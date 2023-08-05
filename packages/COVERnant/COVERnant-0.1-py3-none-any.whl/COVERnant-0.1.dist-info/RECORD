@@ -1,0 +1,14 @@
+COVERnant-0.1.data/scripts/covernant,sha256=IbjIQaYam5l_vrffJJNbhImM5ziBXT1KnH-Bew122FA,4886
+COVERnant-0.1.dist-info/DESCRIPTION.rst,sha256=XdAwiRs9p22wKRd_SqIYYU1ZvZrETZyLyUmUlN0VZNQ,71
+COVERnant-0.1.dist-info/METADATA,sha256=Ig-ktSqdFF1fnpaSz_fBMqQ5TYv9tQlSnuyyv5fZWgI,750
+COVERnant-0.1.dist-info/RECORD,,
+COVERnant-0.1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+COVERnant-0.1.dist-info/metadata.json,sha256=Fm86xqX5z9AbpkNiPZesF8ERT_8pzcXg0sK0Dzw4b4Y,838
+COVERnant-0.1.dist-info/top_level.txt,sha256=N-rIxbk_sCVrFQMtsiTpvvRmuHzP3AmNq8d1gIB0g3g,13
+covernantlib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+covernantlib/bedtowiggle.py,sha256=6LWKXhK-QYlqNggaePspPADGU2dzwM0v8Cfkha--DPE,2355
+covernantlib/coveragecalculator.py,sha256=7ypvOUBEX3A6RiFOEOg062EXj9diBfNJS3wSUiK8-Q8,4957
+covernantlib/extract.py,sha256=KnJeruQvEWvCiyEtTzIoty5IqLs0dDeBTTbLuK9ghtI,7991
+covernantlib/plotmatrix.py,sha256=y5BcloQeAQYUQQxH5XsETp904_1Y6yQcDJuqwjlC1q0,1774
+covernantlib/ratio.py,sha256=FlxG1YORfX-sBygg0sFRYgN1j_y1c7Fnve6kV0TjXZc,13783
+covernantlib/wiggle.py,sha256=TuIRClM9rRSzwg-HOEA_ADgr0Ua-2X-iLlVZoKBf9tA,2703
