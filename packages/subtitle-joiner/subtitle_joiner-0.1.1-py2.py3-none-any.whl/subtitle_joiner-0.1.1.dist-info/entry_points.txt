@@ -1,0 +1,3 @@
+[console_scripts]
+joiner = joiner.__main__:main
+
