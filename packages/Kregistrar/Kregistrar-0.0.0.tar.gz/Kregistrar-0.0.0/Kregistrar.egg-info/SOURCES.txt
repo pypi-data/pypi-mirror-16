@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+Kregistrar/__init__.py
+Kregistrar.egg-info/PKG-INFO
+Kregistrar.egg-info/SOURCES.txt
+Kregistrar.egg-info/dependency_links.txt
+Kregistrar.egg-info/requires.txt
+Kregistrar.egg-info/top_level.txt
