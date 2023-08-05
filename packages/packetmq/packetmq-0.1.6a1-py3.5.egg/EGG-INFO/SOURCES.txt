@@ -1,0 +1,8 @@
+setup.py
+packetmq/__init__.py
+packetmq/packet.py
+packetmq/packetprotocol.py
+packetmq.egg-info/PKG-INFO
+packetmq.egg-info/SOURCES.txt
+packetmq.egg-info/dependency_links.txt
+packetmq.egg-info/top_level.txt
