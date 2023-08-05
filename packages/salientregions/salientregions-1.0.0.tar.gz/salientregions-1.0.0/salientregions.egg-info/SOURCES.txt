@@ -1,0 +1,17 @@
+setup.cfg
+setup.py
+salientregions/__init__.py
+salientregions/binarization.py
+salientregions/binarydetector.py
+salientregions/detectors.py
+salientregions/helpers.py
+salientregions.egg-info/PKG-INFO
+salientregions.egg-info/SOURCES.txt
+salientregions.egg-info/dependency_links.txt
+salientregions.egg-info/top_level.txt
+tests/__init__.py
+tests/context.py
+tests/test_binarizers.py
+tests/test_binary_detector.py
+tests/test_detectors.py
+tests/test_helpers.py
