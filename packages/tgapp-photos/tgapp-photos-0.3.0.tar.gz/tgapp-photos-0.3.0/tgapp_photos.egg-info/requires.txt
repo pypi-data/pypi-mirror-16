@@ -1,0 +1,5 @@
+TurboGears2 >= 2.3.0
+tgext.pluggable
+sprox
+tgext.datahelpers
+tgext.crud > 0.3.13
