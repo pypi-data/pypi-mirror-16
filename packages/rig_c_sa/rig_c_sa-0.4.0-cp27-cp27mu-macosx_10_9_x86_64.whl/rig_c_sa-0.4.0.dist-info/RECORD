@@ -1,0 +1,15 @@
+_rig_c_sa.so,sha256=J7acI4Oog1S5-NrrU_kQ_kNEw929JWiavs_7lZk8LRI,30212
+rig_c_sa/__init__.py,sha256=xvQIFGLHRRRBT6UnQfKdRmaeHZKAzo4V9iL5ck3qo5w,96
+rig_c_sa/cffi_compile.py,sha256=gND91GWjXCKMFRKvCQymZKIlRZLUls87L71juBJxb24,2484
+rig_c_sa/sa.c,sha256=qSJal8HUF8rcMcfxm4SAg-D9eOVWdQV2NczlYk0RJDE,19916
+rig_c_sa/sa.h,sha256=C8UC2kqD5Bro2Zn2boGV9nULgI-F0WMRpdPRMG3GqtI,18457
+rig_c_sa/version.py,sha256=42STGor_9nKYXumfeV5tiyD_M8VdcddX7CEexmibPBk,22
+rig_c_sa/usort/defs.c,sha256=mJbwDzTm_seT6gZ9T_1RfZm265k6QLe4nRb5CIWY7Zw,929
+rig_c_sa/usort/u1_sort.c,sha256=j7P0ty3p1EMGFXDTKNe7qv3v6ZPylzbCNLE0NH4atX4,754
+rig_c_sa/usort/u1_sort.h,sha256=GqSW2r3mC3a3OY0JZ_XwfLfqnyQavyOw2uAjAUyoIUI,166
+rig_c_sa-0.4.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+rig_c_sa-0.4.0.dist-info/METADATA,sha256=xY7VsUHC6OSDscwbHklrQQLgTZn3YSL_AZthH20zdBM,1006
+rig_c_sa-0.4.0.dist-info/RECORD,,
+rig_c_sa-0.4.0.dist-info/WHEEL,sha256=4DAy4pcZblnZrmWTKf60V4wOd5xYOed5FyEc-LnFXgA,111
+rig_c_sa-0.4.0.dist-info/metadata.json,sha256=3NCb8nt7LWc39MW07STy8ispViJE1PmrMDdcGGky8pY,1114
+rig_c_sa-0.4.0.dist-info/top_level.txt,sha256=NUVdumgVMIj9MX8UOy7sKmB0M3HE7CmHNgOpdbPTQ54,19
