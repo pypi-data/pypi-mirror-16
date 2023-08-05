@@ -1,0 +1,9 @@
+README.rst
+setup.py
+ipld/__init__.py
+ipld/ipld.py
+ipld.egg-info/PKG-INFO
+ipld.egg-info/SOURCES.txt
+ipld.egg-info/dependency_links.txt
+ipld.egg-info/requires.txt
+ipld.egg-info/top_level.txt
