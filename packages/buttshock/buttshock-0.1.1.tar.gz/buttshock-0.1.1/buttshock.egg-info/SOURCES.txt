@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+buttshock/__init__.py
+buttshock/base.py
+buttshock/comm.py
+buttshock/emulator.py
+buttshock.egg-info/PKG-INFO
+buttshock.egg-info/SOURCES.txt
+buttshock.egg-info/dependency_links.txt
+buttshock.egg-info/top_level.txt
+examples/et312-key-reset.py
