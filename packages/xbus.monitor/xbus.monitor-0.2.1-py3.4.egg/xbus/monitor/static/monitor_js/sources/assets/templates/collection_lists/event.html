@@ -1,0 +1,68 @@
+<div class="row">
+    <div id="breadcrumb" class="col-md-12">
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Xbus</a></li>
+            <li><a href="#/<%= name %>">Events</a></li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="box-name">
+                    <i class="fa fa-list"></i> <span>Events</span>
+                </div>
+                <div class="box-icons">
+                    <a class="collapse-link"> <i class="fa fa-chevron-up"></i>
+                    </a> <a class="expand-link"> <i class="fa fa-expand"></i>
+                    </a> <a class="close-link"> <i class="fa fa-times"></i>
+                    </a>
+                </div>
+                <div class="no-move"></div>
+            </div>
+            <div class="box-content">
+                <% if (_.size(models) > 0) { %>
+                    <%= pagination %>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Envelope</th>
+                                <th>Emitter</th>
+                                <th>Type</th>
+                                <th>Execution state</th>
+                                <th>Started date</th>
+                                <th>Done date</th>
+                                <th>Sent items</th>
+                                <th>Tracking state</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% _.each(models, function(model) { %>
+                            <tr title="Event ID: <%= model.escape('id') %>" <%=
+                                model.get('state') === 'corrected' ? 'class="success"' :
+                                model.get('state') === 'won_t_fix' ? 'class="danger"' :
+                            '' %>>
+                                <td><%= model.escape('envelope_id') %></td>
+                                <td><%= model.escape('emitter_login') %></td>
+                                <td><%= model.escape('type_name') %></td>
+                                <td><%= model.escape('execution_state') %></td>
+                                <td><%= model.escape('started_date') %></td>
+                                <td><%= model.escape('done_date') %></td>
+                                <td><%= model.escape('sent_items') %></td>
+                                <td><%= model.escape('tracking_state') %></td>
+                                <td><a href="#/<%= rel_name %>/<%= model.id %>">View</a></td>
+                            </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                    <%= pagination %>
+                <% } else { %>
+                    <p>No element found.</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
