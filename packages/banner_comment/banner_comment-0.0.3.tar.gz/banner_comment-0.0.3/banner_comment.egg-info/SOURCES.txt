@@ -1,0 +1,8 @@
+MANIFEST.in
+README.md
+setup.py
+banner_comment/__init__.py
+banner_comment.egg-info/PKG-INFO
+banner_comment.egg-info/SOURCES.txt
+banner_comment.egg-info/dependency_links.txt
+banner_comment.egg-info/top_level.txt
