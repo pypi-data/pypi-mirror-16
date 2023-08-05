@@ -1,0 +1,4 @@
+pygithub-redux
+click
+jinja2
+tqdm
