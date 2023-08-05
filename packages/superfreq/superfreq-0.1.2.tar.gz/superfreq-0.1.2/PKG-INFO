@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: superfreq
+Version: 0.1.2
+Summary: Orbital frequency analysis (Astropy affiliated package)
+Home-page: http://adrian.pw/superfreq
+Author: Adrian M. Price-Whelan
+Author-email: adrn@astro.columbia.edu
+License: MIT
+Description: 
+        This is an Astropy affiliated package.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Cython
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: Topic :: Scientific/Engineering :: Physics
