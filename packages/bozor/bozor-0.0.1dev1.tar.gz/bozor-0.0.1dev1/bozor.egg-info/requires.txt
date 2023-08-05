@@ -1,0 +1,10 @@
+botor>=0.0.1dev8
+inflection
+
+[docs]
+
+
+[tests]
+
+
+[dev]
