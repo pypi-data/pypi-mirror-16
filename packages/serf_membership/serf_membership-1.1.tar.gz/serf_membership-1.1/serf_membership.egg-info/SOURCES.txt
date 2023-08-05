@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+serf_membership/__init__.py
+serf_membership/client.py
+serf_membership.egg-info/PKG-INFO
+serf_membership.egg-info/SOURCES.txt
+serf_membership.egg-info/dependency_links.txt
+serf_membership.egg-info/requires.txt
+serf_membership.egg-info/top_level.txt
