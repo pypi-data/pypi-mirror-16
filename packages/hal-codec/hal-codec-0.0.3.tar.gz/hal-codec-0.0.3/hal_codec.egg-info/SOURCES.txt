@@ -1,0 +1,8 @@
+setup.py
+hal_codec/__init__.py
+hal_codec.egg-info/PKG-INFO
+hal_codec.egg-info/SOURCES.txt
+hal_codec.egg-info/dependency_links.txt
+hal_codec.egg-info/entry_points.txt
+hal_codec.egg-info/top_level.txt
+hal_codec/__pycache__/__init__.cpython-35.pyc
