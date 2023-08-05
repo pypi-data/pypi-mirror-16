@@ -1,0 +1,13 @@
+Program Aciklama
+-----------------
+Bu modul ile programlarinize basit bir sekilde banner ekleyebilirsiniz.
+Ayrica programlarinizi renklendirebilirsiniz.
+
+
+Program Kullanim
+-----------------
+esbanner.esLogo("Programci Ismi", "Program Ismi", "Program Aciklama")
+
+yada
+
+esbanner.esLogo("Programci Ismi", "Program Ismi", "Program Aciklama", "clear")
