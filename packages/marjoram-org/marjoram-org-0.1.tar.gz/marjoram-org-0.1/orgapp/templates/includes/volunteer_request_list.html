@@ -1,0 +1,10 @@
+{% if volunteer_list %}
+    Number of requests: {{ volunteer_list|length }}
+{% endif %}
+
+{% for vol in volunteer_list %}
+    {% if vol.group }
+    <h3>Group name: {{ vol.group }}</h3>
+    <i><b>Volunteeer:</i></b> {{ vol.name }}<br>
+
+{% endfor %}

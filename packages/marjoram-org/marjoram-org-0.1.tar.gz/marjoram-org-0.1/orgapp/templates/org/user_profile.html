@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ object.name }}
+{{ object.email }}
+<a href="{% url 'account_settings' pk=object.pk %}">Edit profile</a>
+
+{{ object.phone }}
+{% endblock %}

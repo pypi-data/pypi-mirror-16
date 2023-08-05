@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-8">
+    <h3>Your Organizations</h3>
+    <a class="btn btn-success pull-right" role="button" href="{% url 'create_organization' %}">Create</a>
+    <br>
+    <section>
+      <br>
+      {% for obj in object_list %}
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{ obj.name }}</h3>
+        </div>
+        <div class="panel-body">
+          {{ obj.description }}
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Phone:</strong> {{ obj.phone }}</li>
+          <li class="list-group-item"><strong>Email:</strong> {{ obj.email }}</li>
+          <li class="list-group-item"><strong>Address:</strong> {{ obj.address }}</li>
+          <li class="list-group-item"><strong>Max Volunteers:</strong> {{ obj.max_volunteers }}</li>
+          <li class="list-group-item"><strong>Min Volunteers:</strong> {{ obj.min_volunteers }}</li>
+          <li class="list-group-item"><a href="{% url 'organization_profile' pk=obj.pk %}">View Profile</a></li>
+        </ul>
+      </div>
+      {% endfor %}
+    </section><br>
+  </div>
+    <div class="col-md-4">
+      <h3 href="#">Volunteer Requests <span class="badge">42</span></h3>
+      <br>
+      {% include "includes/volunteer_request_list.html" %}
+    </div> {# column div #}
+</div>
+{% endblock %}

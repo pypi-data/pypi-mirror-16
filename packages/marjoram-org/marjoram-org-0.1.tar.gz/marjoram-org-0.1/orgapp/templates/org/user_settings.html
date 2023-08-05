@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <form action="." method="POST" class="padding">
+    {% csrf_token %} {{ noodle_form.as_p }}
+    <br>
+    {{ formset.management_form }}
+        {{ formset.as_p }}
+    <button type="submit" class="btn btn-primary">done</button>
+    <a href="#" onclick="window.history.back(); return false;" title="Cancel" class="btn btn-secondary">history</a>
+
+</form>
+
+  {% endblock %}
