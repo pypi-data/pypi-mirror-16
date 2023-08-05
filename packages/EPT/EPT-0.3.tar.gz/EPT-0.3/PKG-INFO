@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: EPT
+Version: 0.3
+Summary: Use tor as proxy to bypass IP limit querys
+Home-page: https://github.com/mthbernardes/EternalProxyTor
+Author: Matheus Bernardes
+Author-email: mthbernardes@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/mthbernardes/EternalProxyTor/tarball/0.3
+Description: UNKNOWN
+Keywords: requests,proxy,tor
+Platform: UNKNOWN
