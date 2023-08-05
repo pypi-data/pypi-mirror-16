@@ -1,0 +1,9 @@
+altugssecondtest.py
+extra.txt
+libobnext-mqtt.dylib
+setup.cfg
+setup.py
+altugssecondtest.egg-info/PKG-INFO
+altugssecondtest.egg-info/SOURCES.txt
+altugssecondtest.egg-info/dependency_links.txt
+altugssecondtest.egg-info/top_level.txt
