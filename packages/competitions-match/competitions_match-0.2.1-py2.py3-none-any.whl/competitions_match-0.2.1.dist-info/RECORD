@@ -1,0 +1,14 @@
+competitions_match-0.2.1-py2.7-nspkg.pth,sha256=9SLoCjuVpUC3lK9-iCgx_lY17UkSIwNkuyzWq_w2rrs,323
+competitions/match/Match.py,sha256=TdZvtPpPuzrvnhR3LV6guNjRHG4-H4A2tXWuDFOvjWo,2837
+competitions/match/__init__.py,sha256=NS6bFR9n9DfaQ_DCvABb1JliLPQ6i_HZYMYf3RNqR88,1695
+competitions/match/default/SimpleMatch.py,sha256=UgJSMSk8Y18HG5Dft0FI0Uc5EA3bGpnIYgarJ_Zdo6s,3552
+competitions/match/default/TestMatch.py,sha256=OMRLYnDoYyMftML3xoulzfBLBR_OHXcTgCPqkJVyc2E,2706
+competitions/match/default/__init__.py,sha256=2ek73sBiGDjOzeSYxkpzngaRsYe9NU_5GMjUuxksaS0,765
+competitions_match-0.2.1.dist-info/entry_points.txt,sha256=2w1B3BIPERU7m5M44iuZaUIPzJDFhONY2tqMmzpHdig,167
+competitions_match-0.2.1.dist-info/METADATA,sha256=jT9Cc97fa8dK502sbyvCuV0dF1oQm_htzO94iEwG5-M,1685
+competitions_match-0.2.1.dist-info/DESCRIPTION.rst,sha256=fGlGio_NP5WbcOt4Exv1EkWSSC2aIpyLoy1-C-e-Liw,1050
+competitions_match-0.2.1.dist-info/RECORD,,
+competitions_match-0.2.1.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+competitions_match-0.2.1.dist-info/top_level.txt,sha256=rvFA9GjmB9bPCU378_7XiN1AmcIyq2WtsRS6uH5Tye4,13
+competitions_match-0.2.1.dist-info/namespace_packages.txt,sha256=rvFA9GjmB9bPCU378_7XiN1AmcIyq2WtsRS6uH5Tye4,13
+competitions_match-0.2.1.dist-info/metadata.json,sha256=u8FusYE3VIz4l2Z9syg6fOGXYI0z1T4JXbaZYyh3jLQ,991
