@@ -1,0 +1,30 @@
+Metadata-Version: 1.1
+Name: lazy-logger
+Version: 0.1.0
+Summary: provide a better logging
+Home-page: https://github.com/Python-Logging-For-Human/ezlogging
+Author: lazy_logger
+Author-email: tim.yellow@gmail.com
+License: MIT
+Description: [![Build Status](https://travis-ci.org/Python-Logging-For-Human/ezlogging.svg?branch=master)](https://travis-ci.org/Python-Logging-For-Human/ezlogging)
+        
+        # ezlogging
+        
+        ezlogging
+        
+        https://paper.dropbox.com/doc/Logging-For-Human-0hgb3uUWhAgi4kJcU3r5X
+        
+        
+        
+        # test
+        py.test --capture=sys
+        
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Utilities
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
