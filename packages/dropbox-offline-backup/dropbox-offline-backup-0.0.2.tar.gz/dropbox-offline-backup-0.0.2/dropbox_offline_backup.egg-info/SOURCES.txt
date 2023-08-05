@@ -1,0 +1,7 @@
+setup.py
+dropbox_offline_backup.egg-info/PKG-INFO
+dropbox_offline_backup.egg-info/SOURCES.txt
+dropbox_offline_backup.egg-info/dependency_links.txt
+dropbox_offline_backup.egg-info/entry_points.txt
+dropbox_offline_backup.egg-info/requires.txt
+dropbox_offline_backup.egg-info/top_level.txt
