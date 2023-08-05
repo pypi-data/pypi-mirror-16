@@ -1,0 +1,11 @@
+sigopt_sklearn/__init__.py,sha256=VwuO8TUmfliRWEb5pTUMot0tKVqaLEws8BnBbrJ2wFw,85
+sigopt_sklearn/ensemble.py,sha256=AVujvR-P19nprg49lJtXUPnUwBdZz_2mu54mkA6C7_M,2879
+sigopt_sklearn/search.py,sha256=CzIHnQ8MnUUY1mF79EwST5mdHo8UY97PMVJddAwDl5M,14475
+sigopt_sklearn/sklearn_fit.py,sha256=v5k2snTTQfYh6i1FNJY3v0Apnk8KN66XjJ-seo6RXnc,4725
+sigopt_sklearn/version.py,sha256=jdm9rjC6zwDcCObFf_WHmwlkxSsobA7ZFSzRP96J_7E,74
+sigopt_sklearn-1.2.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+sigopt_sklearn-1.2.0.dist-info/METADATA,sha256=7FMNbv4aHXnkZdqIzwhl6Jb9ElEORj66WglEd9ZrPlk,698
+sigopt_sklearn-1.2.0.dist-info/metadata.json,sha256=kGlSVfNbuDC02XckZA3hC9qgQwv5PrCPfn6UWJilGgo,803
+sigopt_sklearn-1.2.0.dist-info/RECORD,,
+sigopt_sklearn-1.2.0.dist-info/top_level.txt,sha256=Hm2vq3X65On25yM1ImpGPFHaW1b8d-N4W7eaZ82yo_A,15
+sigopt_sklearn-1.2.0.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
