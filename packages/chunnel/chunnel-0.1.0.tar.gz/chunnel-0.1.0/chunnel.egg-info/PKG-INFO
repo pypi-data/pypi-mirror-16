@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: chunnel
+Version: 0.1.0
+Summary: Phoenix channels client library
+Home-page: https://github.com/obmarg/chunnel
+Author: Graeme Coupar
+Author-email: grambo@grambo.me.uk
+License: UNKNOWN
+Description: 
+        Chunnel
+        -----
+        
+        A python client for phoenix channels.
+        
+        See the README at https://github.com/obmarg/chunnel for more details.
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
