@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: rdtsc
+Version: 0.2.1
+Summary: Cycle timer wrapping the Intel x86 RTDSC instruction
+Home-page: https://github.com/Roguelazer/rdtsc
+Author: James Brown
+Author-email: Roguelazer@gmail.com
+License: ISC
+Description: UNKNOWN
+Keywords: performance
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: ISC License (ISCL)

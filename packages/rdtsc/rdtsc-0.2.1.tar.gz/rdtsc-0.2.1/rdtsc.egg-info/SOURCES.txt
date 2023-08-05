@@ -1,0 +1,10 @@
+MANIFEST.in
+setup.py
+rdtsc.egg-info/PKG-INFO
+rdtsc.egg-info/SOURCES.txt
+rdtsc.egg-info/dependency_links.txt
+rdtsc.egg-info/not-zip-safe
+rdtsc.egg-info/top_level.txt
+src/rdtsc.c
+src/rdtsc/__init__.py
+src/rdtsc/rdtsc.dylib
