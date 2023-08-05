@@ -1,0 +1,33 @@
+Changelog
+=========
+
+1.0.1 (2016-07-07)
+------------------
+
+- documentation [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- fix field icon [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- rename readme [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+-  [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- [ci skip] [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+
+
+1.0 (2016-07-06)
+----------------
+
+- fix manifest [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- metadata [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- add PFG as requirement [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- PFG field with jquery.filer for multiple file upload [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- initial package structure using ZopeSkel archetype template [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
+- initial package structure using ZopeSkel [Mikel Larreategi <mlarreategi@codesyntax.com>]
+
