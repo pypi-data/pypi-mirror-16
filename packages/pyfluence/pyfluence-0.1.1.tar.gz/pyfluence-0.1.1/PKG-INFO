@@ -1,0 +1,16 @@
+Metadata-Version: 1.0
+Name: pyfluence
+Version: 0.1.1
+Summary: Confluence REST API client for Python
+Home-page: https://github.com/kshehadeh/pyfluence
+Author: Karim Shehadeh
+Author-email: karim@iwonderdesigns.com
+License: MIT
+Description: This library lets you view, edit, delete entities in an instance of Atlassian Confluence using its REST API
+        
+Keywords: confluence development rest api atlassian
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
