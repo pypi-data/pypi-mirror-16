@@ -1,0 +1,3 @@
+[lektor.plugins]
+preview-markdown = lektor_preview_markdown:PreviewMarkdownPlugin
+

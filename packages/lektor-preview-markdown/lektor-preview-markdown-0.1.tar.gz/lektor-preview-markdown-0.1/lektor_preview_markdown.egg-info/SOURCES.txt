@@ -1,0 +1,8 @@
+lektor_preview_markdown.py
+setup.cfg
+setup.py
+lektor_preview_markdown.egg-info/PKG-INFO
+lektor_preview_markdown.egg-info/SOURCES.txt
+lektor_preview_markdown.egg-info/dependency_links.txt
+lektor_preview_markdown.egg-info/entry_points.txt
+lektor_preview_markdown.egg-info/top_level.txt

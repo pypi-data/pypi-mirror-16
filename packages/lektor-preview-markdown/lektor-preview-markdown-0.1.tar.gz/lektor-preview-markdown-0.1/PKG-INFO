@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: lektor-preview-markdown
+Version: 0.1
+Summary: Adds filter to trim a Markdown post to a specified length.
+Home-page: https://github.com/briancappello/lektor-preview-markdown.git
+Author: Brian Cappello
+Author-email: briancappello@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
