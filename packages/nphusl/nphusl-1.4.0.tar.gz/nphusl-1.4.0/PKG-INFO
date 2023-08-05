@@ -1,0 +1,60 @@
+Metadata-Version: 1.1
+Name: nphusl
+Version: 1.4.0
+Summary: A HUSL color space conversion library that works with numpy
+Home-page: https://github.com/TadLeonard/husl-numpy
+Author: Tad Leonard
+Author-email: tadfleonard@gmail.com
+License: MIT
+Download-URL: https://github.com/TadLeonard/husl-numpy/archive/1.4.0.tar.gz
+Description: 
+        HUSL color space conversion
+        ===========================
+        
+        A color space conversion library that works with numpy. See
+        http://husl-colors.org to learn about the HUSL color space.
+        
+        
+        Features
+        --------
+        
+        1. Fast conversion to RGB from HUSL and vice versa. Convert a 1080p image to
+        HUSL in less than a second.
+        2. Seamless performance improvements with `NumExpr`, `Cython`, and `OpenMP`
+        (whichever's available).
+        3. Flexible `numpy` arrays as inputs and outputs. Plays nicely with `OpenCV`,
+        `MoviePy`, etc.
+        
+        Installation
+        ------------
+        
+        1. `virtualenv env -p python3`
+        2. `source env/bin/activate`
+        3. `pip install numpy`
+        4. (optional) `pip install Cython`  (or NumExpr, but Cython is preferred)
+        5. `pip install git+https://github.com/TadLeonard/husl-numpy.git`
+        
+        Basic usage
+        -----------
+        
+        * `to_rgb(hsl)` Convert HUSL array to RGB integer array
+        * `to_husl(rgb)` Convert RGB integer array or grayscale float array to HUSL
+        * array
+        * `to_hue(rgb)` Convert RGB integer array or grayscale float array to array of
+        * hue values
+        
+        More
+        ====
+        
+        See https://github.com/TadLeonard/husl-numpy for complete documentation.
+        
+Keywords: husl hsl color conversion rgb image processing
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Multimedia
+Classifier: Topic :: Multimedia :: Graphics
