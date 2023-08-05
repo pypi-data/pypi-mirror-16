@@ -1,0 +1,15 @@
+LICENSE.txt
+MANIFEST.in
+README.txt
+setup.py
+examples/helmholtz_coil.py
+examples/maxwell_coil.py
+examples/single_loop.py
+loopfield/__init__.py
+loopfield/_loopfield.py
+loopfield/plot.py
+loopfield.egg-info/PKG-INFO
+loopfield.egg-info/SOURCES.txt
+loopfield.egg-info/dependency_links.txt
+loopfield.egg-info/requires.txt
+loopfield.egg-info/top_level.txt
