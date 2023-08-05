@@ -1,0 +1,6 @@
+intdictmodule.c
+setup.py
+intdict.egg-info/PKG-INFO
+intdict.egg-info/SOURCES.txt
+intdict.egg-info/dependency_links.txt
+intdict.egg-info/top_level.txt

@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: intdict
+Version: 0.0.1
+Summary: Peloton Cycle's insanely fast integer dictionary
+Home-page: https://github.com/pelotoncycle/peloton_bloomfilters
+Author: Adam DePrince
+Author-email: adam@pelotoncycle.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
