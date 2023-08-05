@@ -1,0 +1,10 @@
+README.rst
+setup.cfg
+setup.py
+scrapy_hcf/__init__.py
+scrapy_hcf/middleware.py
+scrapy_hcf.egg-info/PKG-INFO
+scrapy_hcf.egg-info/SOURCES.txt
+scrapy_hcf.egg-info/dependency_links.txt
+scrapy_hcf.egg-info/requires.txt
+scrapy_hcf.egg-info/top_level.txt
