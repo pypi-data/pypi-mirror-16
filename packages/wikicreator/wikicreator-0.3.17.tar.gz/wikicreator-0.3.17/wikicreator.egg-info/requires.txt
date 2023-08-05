@@ -1,0 +1,6 @@
+Click>=6.0
+PyYAML
+beautifulsoup4
+Jinja2
+markdown
+requests
