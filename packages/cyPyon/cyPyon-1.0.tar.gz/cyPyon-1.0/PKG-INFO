@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: cyPyon
+Version: 1.0
+Summary: A parser for Python Object Notation (PYON), written in Cython.
+Home-page: https://github.com/cferko/cyPyon
+Author: Darin McGill
+Author-email: darin@x5e.com
+License: UNKNOWN
+Download-URL: https://github.com/cferko/cyPyon/tarball/1.0
+Description: UNKNOWN
+Keywords: pyon,serialization,parser
+Platform: UNKNOWN
