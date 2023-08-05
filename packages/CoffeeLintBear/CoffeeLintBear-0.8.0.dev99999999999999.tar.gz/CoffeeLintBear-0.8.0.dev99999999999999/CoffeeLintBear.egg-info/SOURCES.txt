@@ -1,0 +1,5 @@
+setup.py
+CoffeeLintBear.egg-info/PKG-INFO
+CoffeeLintBear.egg-info/SOURCES.txt
+CoffeeLintBear.egg-info/dependency_links.txt
+CoffeeLintBear.egg-info/top_level.txt
