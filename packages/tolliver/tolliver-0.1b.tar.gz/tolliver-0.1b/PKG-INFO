@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: tolliver
+Version: 0.1b
+Summary: An application for dialing in CNC hole tolerances
+Home-page: https://github.com/castirony/tolliver
+Author: CastIrony
+Author-email: bergamot@gmail.com
+License: MIT
+Download-URL: https://github.com/castirony/tolliver/tarball/0.1b
+Description: UNKNOWN
+Keywords: cnc,tolerance
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Manufacturing
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Utilities
+Requires: docopt
+Requires: cerberus
+Requires: ezdxf
