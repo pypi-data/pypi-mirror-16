@@ -1,0 +1,15 @@
+MANIFEST.in
+setup.cfg
+setup.py
+versioneer.py
+qrisk/__init__.py
+qrisk/_version.py
+qrisk/stats.py
+qrisk.egg-info/PKG-INFO
+qrisk.egg-info/SOURCES.txt
+qrisk.egg-info/dependency_links.txt
+qrisk.egg-info/pbr.json
+qrisk.egg-info/requires.txt
+qrisk.egg-info/top_level.txt
+qrisk/tests/__init__.py
+qrisk/tests/test_stats.py
