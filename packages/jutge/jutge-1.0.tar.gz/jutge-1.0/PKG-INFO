@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: jutge
+Version: 1.0
+Summary: Simple functions to read input from Python for problems in Jutge.org.
+Home-page: https://github.com/jutge-org/jutge-python
+Author: Jordi Petit
+Author-email: jpetit@cs.upc.edu
+License: UNKNOWN
+Download-URL: https://github.com/jutge-org/jutge-python/tarball/1.0
+Description: UNKNOWN
+Keywords: jutge,jutge.org
+Platform: UNKNOWN
