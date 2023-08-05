@@ -1,0 +1,61 @@
+Metadata-Version: 2.0
+Name: CaTeX
+Version: 0.0.3
+Summary: CaTeX Concatenates LateX documents.
+Home-page: https://github.com/Alexis-benoist/catex
+Author: Alexis Benoist
+Author-email: alexis@benoist.it
+License: Apache License 2.0
+Keywords: latex
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: click (==6.6)
+
+CaTeX
+=====
+
+``TLDR``: ``CaTeX`` ``C``\ oncatenates L\ ``ateX`` documents.
+
+Install
+-------
+
+Run in the terminal:
+
+::
+
+    $ pip install catex
+
+Done!
+
+Use
+---
+
+To concatenate ``first_doc.tex`` and ``second_doc.tex``, just run:
+
+::
+
+    $ catex -i first_doc.tex second_doc.tex -o output.tex
+
+If no output file is selected then the output will be displayed in
+std\_out.
+
+Test
+----
+
+Run ``py.test``.
+
+Contribute
+----------
+
+You can use Github's issues to provide feedback and report bugs.
+
+Tested pull requests are welcome.
+
+
