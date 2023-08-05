@@ -1,0 +1,10 @@
+jupyter_spark/__init__.py,sha256=k4CMcBsaHYpljkUjuj1a62r2WaiXF0ydFZgaEViq23o,951
+jupyter_spark/handlers.py,sha256=d4wn1GZgPVNtaGRNXlFNoC1KM4NrZm3X8m10gXA_gCs,1230
+jupyter_spark/spark.py,sha256=0Aue7nh3L3UlMjaejDqFrYmkLCZtSzehiTnlwD55Q80,2149
+jupyter_spark/static/extension.js,sha256=orQJqZ2y1W43_0mSoAabVtB30DlOCi8kAQ-yFJE2_B0,9936
+jupyter_spark-0.3.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+jupyter_spark-0.3.0.dist-info/METADATA,sha256=YA2BOCz2KEMx7Emk0Wao4-DhHntpTyoZqIm207lDzhs,446
+jupyter_spark-0.3.0.dist-info/RECORD,,
+jupyter_spark-0.3.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+jupyter_spark-0.3.0.dist-info/metadata.json,sha256=kzaof1nckWiWyiRV806FcBm6lzV37UaCAXGHNEY_lTg,610
+jupyter_spark-0.3.0.dist-info/top_level.txt,sha256=cBAsnNZenY0WGVAtCqjkau0soOHhnmiEUedQ8tXnSag,14
