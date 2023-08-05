@@ -1,0 +1,20 @@
+{% extends widget.get_base_template %}
+{% load static from staticfiles %}
+
+{% block content %}
+<div id="angular_gauge_{{ widget.fe_identifier }}" class="angular-gauge-tron"></div>
+<script type="text/javascript">
+$(function(){
+    leonardo.fn.loadResource({src:'{% static "vis/js/charts/gauge_area.js" %}',callback: function(){
+      leonardo.charts.gauge_area.create({
+        chartSelector:"#angular_gauge_{{ widget.fe_identifier }}",
+        containerSelector:"#{{ widget.fe_identifier }}",
+        url: "/data/data/",
+        requestData:{widget_id:$("#angular_gauge_{{ widget.fe_identifier }}").closest("div.leonardo-widget").attr('id')},
+        updateInterval:{{ widget.refresh_interval }} * 1000,
+        label: 'Angular',
+        data_source: "{{ widget.get_data }}"});
+    }});
+});
+</script>
+{% endblock %}
