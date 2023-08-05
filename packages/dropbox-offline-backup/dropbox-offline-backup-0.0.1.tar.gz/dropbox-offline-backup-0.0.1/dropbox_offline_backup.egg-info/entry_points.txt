@@ -1,0 +1,3 @@
+[console_scripts]
+dropboxbackup = src:main
+
