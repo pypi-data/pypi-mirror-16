@@ -1,0 +1,9 @@
+numpy
+click
+cogent
+
+[mongodb]
+pymongo
+
+[mpi]
+mpi4py
