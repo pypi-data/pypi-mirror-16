@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: sdpt3glue
+Version: 0.9.0
+Summary: Glue code for solving semidefinite programs in Cvxpy format using the SDPT3 package for Matlab.
+Home-page: https://github.com/discardthree/PySDPT3glue
+Author: Trish Gillett-Kawamoto
+Author-email: discardthree@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Mathematics
