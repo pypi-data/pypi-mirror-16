@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>thorn.django.signals &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for thorn.django.signals</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    thorn.django.signals</span>
+<span class="sd">    ====================</span>
+
+<span class="sd">    Django signal dispatchers.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">attrgetter</span>
+
+<span class="kn">from</span> <span class="nn">django.core.exceptions</span> <span class="k">import</span> <span class="n">ObjectDoesNotExist</span>
+
+<span class="kn">from</span> <span class="nn">thorn.generic.signals</span> <span class="k">import</span> <span class="n">signal_dispatcher</span>
+
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="k">import</span> <span class="n">serialize_model</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;dispatch_on_create&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dispatch_on_change&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dispatch_on_delete&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dispatch_on_m2m_add&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dispatch_on_m2m_remove&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dispatch_on_m2m_clear&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">signal_handler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dispatcher</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dispatcher</span> <span class="o">=</span> <span class="n">dispatcher</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sender</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;sender&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fun</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dispatcher</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+            <span class="n">sender</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">sender</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">fun</span>
+
+
+<div class="viewcode-block" id="dispatch_on_create"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_create">[docs]</a><span class="k">class</span> <span class="nc">dispatch_on_create</span><span class="p">(</span><span class="n">signal_dispatcher</span><span class="p">):</span>
+
+<div class="viewcode-block" id="dispatch_on_create.setup_signals"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_create.setup_signals">[docs]</a>    <span class="k">def</span> <span class="nf">setup_signals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;django.db.models.signals.post_save&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">}</span></div>
+
+<div class="viewcode-block" id="dispatch_on_create.should_dispatch"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_create.should_dispatch">[docs]</a>    <span class="k">def</span> <span class="nf">should_dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">created</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="n">raw</span> <span class="ow">and</span> <span class="n">created</span></div></div>
+
+
+<div class="viewcode-block" id="dispatch_on_change"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_change">[docs]</a><span class="k">class</span> <span class="nc">dispatch_on_change</span><span class="p">(</span><span class="n">signal_dispatcher</span><span class="p">):</span>
+
+<div class="viewcode-block" id="dispatch_on_change.setup_signals"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_change.setup_signals">[docs]</a>    <span class="k">def</span> <span class="nf">setup_signals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;django.db.models.signals.pre_save&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_pre_save</span><span class="p">,</span>
+            <span class="s1">&#39;django.db.models.signals.post_save&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">,</span>
+        <span class="p">}</span></div>
+
+<div class="viewcode-block" id="dispatch_on_change.on_pre_save"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_change.on_pre_save">[docs]</a>    <span class="k">def</span> <span class="nf">on_pre_save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_transitions</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">raw</span> <span class="ow">and</span> <span class="n">instance</span><span class="o">.</span><span class="n">pk</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">instance</span><span class="o">.</span><span class="n">_previous_version</span> <span class="o">=</span> <span class="n">sender</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">instance</span><span class="o">.</span><span class="n">pk</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">ObjectDoesNotExist</span><span class="p">:</span>
+                <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="dispatch_on_change.should_dispatch"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_change.should_dispatch">[docs]</a>    <span class="k">def</span> <span class="nf">should_dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">created</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="n">raw</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">created</span></div></div>
+
+
+<div class="viewcode-block" id="dispatch_on_delete"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_delete">[docs]</a><span class="k">class</span> <span class="nc">dispatch_on_delete</span><span class="p">(</span><span class="n">signal_dispatcher</span><span class="p">):</span>
+
+<div class="viewcode-block" id="dispatch_on_delete.setup_signals"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_delete.setup_signals">[docs]</a>    <span class="k">def</span> <span class="nf">setup_signals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;django.db.models.signals.post_delete&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">}</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">dispatch_on_m2m_change</span><span class="p">(</span><span class="n">signal_dispatcher</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fun</span><span class="p">,</span> <span class="n">related_field</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">dispatch_on_m2m_change</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">related_field</span> <span class="o">=</span> <span class="n">related_field</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">actions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">setup_actions</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">setup_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{}</span>
+
+    <span class="k">def</span> <span class="nf">setup_signals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;django.db.models.signals.m2m_changed&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">on_m2m_change</span><span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">prepare_sender</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sender</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">attrgetter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">related_field</span><span class="p">)(</span><span class="n">sender</span><span class="p">)</span><span class="o">.</span><span class="n">through</span>
+
+    <span class="k">def</span> <span class="nf">context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">pk_set</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;instance&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="o">.</span><span class="n">pk</span><span class="p">,</span>
+            <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="n">serialize_model</span><span class="p">(</span><span class="n">model</span><span class="p">),</span>
+            <span class="s1">&#39;pk_set&#39;</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">pk_set</span><span class="p">)),</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">on_m2m_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sender</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">handler</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">actions</span><span class="p">[</span><span class="n">action</span><span class="p">]</span>
+        <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">handler</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="n">sender</span><span class="o">=</span><span class="n">sender</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="dispatch_on_m2m_add"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_m2m_add">[docs]</a><span class="k">class</span> <span class="nc">dispatch_on_m2m_add</span><span class="p">(</span><span class="n">dispatch_on_m2m_change</span><span class="p">):</span>
+
+<div class="viewcode-block" id="dispatch_on_m2m_add.setup_actions"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_m2m_add.setup_actions">[docs]</a>    <span class="k">def</span> <span class="nf">setup_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;post_add&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="dispatch_on_m2m_remove"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_m2m_remove">[docs]</a><span class="k">class</span> <span class="nc">dispatch_on_m2m_remove</span><span class="p">(</span><span class="n">dispatch_on_m2m_change</span><span class="p">):</span>
+
+<div class="viewcode-block" id="dispatch_on_m2m_remove.setup_actions"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_m2m_remove.setup_actions">[docs]</a>    <span class="k">def</span> <span class="nf">setup_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;post_remove&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">}</span></div></div>
+
+
+<div class="viewcode-block" id="dispatch_on_m2m_clear"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_m2m_clear">[docs]</a><span class="k">class</span> <span class="nc">dispatch_on_m2m_clear</span><span class="p">(</span><span class="n">dispatch_on_m2m_change</span><span class="p">):</span>
+
+<div class="viewcode-block" id="dispatch_on_m2m_clear.setup_actions"><a class="viewcode-back" href="../../../reference/thorn.django.signals.html#thorn.django.signals.dispatch_on_m2m_clear.setup_actions">[docs]</a>    <span class="k">def</span> <span class="nf">setup_actions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;post_clear&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="p">}</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../../../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

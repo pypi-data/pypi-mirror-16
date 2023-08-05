@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Optimization and Performance &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="index.html" />
+    <link rel="next" title="Configuration" href="configuration.html" />
+    <link rel="prev" title="Dispatch" href="dispatch.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="dispatch.html" title="Dispatch"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="optimization-and-performance">
+<span id="optimization-guide"></span><h1>Optimization and Performance<a class="headerlink" href="#optimization-and-performance" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#celery" id="id1">Celery</a></li>
+</ul>
+</div>
+<div class="section" id="celery">
+<h2><a class="toc-backref" href="#id1">Celery</a><a class="headerlink" href="#celery" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="eventlet-gevent">
+<h3>Eventlet/Gevent<a class="headerlink" href="#eventlet-gevent" title="Permalink to this headline">¶</a></h3>
+<p>By far the best way to deploy Thorn for optimal web request performance
+is to use the Celery eventlet/gevent pools.  Which one you choose does not
+matter much, but some will prefer one over the other.</p>
+<p>To start a Celery worker with the eventlet/gevent pool set the
+<code class="xref std std-option docutils literal"><span class="pre">-P</span></code> option:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> celery -A proj worker -l info -P eventlet -c 1000
+</pre></div>
+</div>
+<p>The <code class="xref std std-option docutils literal"><span class="pre">-c</span> <span class="pre">1000</span></code> tells the worker to use up to one
+thousand green-threads for task execution.</p>
+<p>Note that this will only start one OS process, so to take advantage of
+multiple CPUs or CPU-cores you need to start multiple processes.</p>
+<p>This can be achived by using the <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal"><span class="pre">CELERYD_NODES</span></code> option to the Celery
+generic-init.d script, or by manually starting <strong class="program">celery multi</strong>,
+for example if you have four CPU-cores you may want to start four worker
+instances, with a thousand green-threads each:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> celery multi start <span class="m">4</span> -A proj -P eventlet -c 1000
+<span class="gp">$</span> celery multi restart <span class="m">4</span> -A proj -P eventlet -c 1000
+<span class="gp">$</span> celery multi stop <span class="m">4</span> -A proj -P eventlet -c 1000
+</pre></div>
+</div>
+<div class="section" id="eventlet-asynchronous-dns-lookups">
+<h4>Eventlet: Asynchronous DNS lookups<a class="headerlink" href="#eventlet-asynchronous-dns-lookups" title="Permalink to this headline">¶</a></h4>
+<p>To use the Celery eventlet pool you should make sure to install the
+<a class="reference external" href="https://pypi.python.org/pypi/dnspython/">dnspython</a> library, to enable asynchronous DNS lookups:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install dnspython
+</pre></div>
+</div>
+</div>
+<div class="section" id="task-retry-settings">
+<h4>Task retry settings<a class="headerlink" href="#task-retry-settings" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="prefetch-multiplier">
+<h3>Prefetch multiplier<a class="headerlink" href="#prefetch-multiplier" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="dispatch.html"
+                        title="previous chapter">Dispatch</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="configuration.html"
+                        title="next chapter">Configuration</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/userguide/optimization.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuration"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="dispatch.html" title="Dispatch"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

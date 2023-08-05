@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Introduction &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="index.html" />
+    <link rel="next" title="Getting Started" href="getting-started/index.html" />
+    <link rel="prev" title="Copyright" href="copyright.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="getting-started/index.html" title="Getting Started"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="copyright.html" title="Copyright"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Thorn 1.3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <a class="reference internal image-reference" href="_images/thorn_banner_text.png"><img alt="_images/thorn_banner_text.png" src="_images/thorn_banner_text.png" style="width: 600px; height: 207px;" /></a>
+<p><strong>Python Webhook and Event Framework</strong></p>
+<div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Version:</th><td class="field-body">1.3.0</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Web:</th><td class="field-body"><a class="reference external" href="http://thorn.readthedocs.io/">http://thorn.readthedocs.io/</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Download:</th><td class="field-body"><a class="reference external" href="http://pypi.python.org/pypi/thorn/">http://pypi.python.org/pypi/thorn/</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Source:</th><td class="field-body"><a class="reference external" href="http://github.com/robinhood/thorn/">http://github.com/robinhood/thorn/</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Keywords:</th><td class="field-body">event driven, webhooks, callback, http, django</td>
+</tr>
+</tbody>
+</table>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#about" id="id7">About</a></li>
+<li><a class="reference internal" href="#what-are-webhooks" id="id8">What are webhooks?</a><ul>
+<li><a class="reference internal" href="#in-use" id="id9">In use</a></li>
+<li><a class="reference internal" href="#example" id="id10">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#what-do-i-need" id="id11">What do I need?</a></li>
+<li><a class="reference internal" href="#quick-start" id="id12">Quick Start</a></li>
+<li><a class="reference internal" href="#alternatives" id="id13">Alternatives</a></li>
+<li><a class="reference internal" href="#installation" id="id14">Installation</a><ul>
+<li><a class="reference internal" href="#installing-the-stable-version" id="id15">Installing the stable version</a></li>
+<li><a class="reference internal" href="#downloading-and-installing-from-source" id="id16">Downloading and installing from source</a></li>
+<li><a class="reference internal" href="#using-the-development-version" id="id17">Using the development version</a><ul>
+<li><a class="reference internal" href="#with-pip" id="id18">With pip</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#getting-help" id="id19">Getting Help</a><ul>
+<li><a class="reference internal" href="#mailing-list" id="id20">Mailing list</a></li>
+<li><a class="reference internal" href="#irc" id="id21">IRC</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bug-tracker" id="id22">Bug tracker</a></li>
+<li><a class="reference internal" href="#contributing" id="id23">Contributing</a></li>
+<li><a class="reference internal" href="#license" id="id24">License</a></li>
+</ul>
+</div>
+<div class="section" id="about">
+<h2><a class="toc-backref" href="#id7">About</a><a class="headerlink" href="#about" title="Permalink to this headline">¶</a></h2>
+<p>Thorn is a webhook framework for Python, focusing on flexibility and
+ease of use, both when getting started and when maintaining a production
+system.</p>
+<p>The goal is for webhooks to thrive on the web, by providing Python projects
+with an easy solution to implement them and keeping a repository of patterns
+evolved by the Python community.</p>
+<ul>
+<li><p class="first"><strong>Simple</strong></p>
+<blockquote>
+<div><p>Add webhook capabilities to your database models using a single
+decorator, including filtering for specific changes to the model.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Flexible</strong></p>
+<blockquote>
+<div><p>All Thorn components are pluggable, reusable and extendable.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><strong>Scalable</strong></p>
+<blockquote>
+<div><p>Thorn can perform millions of HTTP requests every second by taking
+advantage of <a class="reference external" href="http://celeryproject.org/">Celery</a> for asynchronous processing.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="what-are-webhooks">
+<h2><a class="toc-backref" href="#id8">What are webhooks?</a><a class="headerlink" href="#what-are-webhooks" title="Permalink to this headline">¶</a></h2>
+<p>A webhook is a fancy name for an HTTP callback.</p>
+<p>Users and other services can subscribe to events happening in your system
+by registering a URL to be called whenever the event occurs.</p>
+<p>The canonical example would be GitHub where you can register URLs to be
+called whenever a new change is committed to your repository, a new
+bugtracker issue is created, someone publishes a comment, and so on.</p>
+<p>Another example is communication between internal systems, traditionally
+dominated by complicated message consumer daemons, using webhooks
+is an elegant and REST friendly way to implement event driven systems,
+requiring only a web-server (and optimally a separate service to dispatch
+the HTTP callback requests).</p>
+<p>Webhooks are also composable, so you can combine multiple HTTP callbacks
+to form complicated workflows, executed as events happen across multiple
+systems.</p>
+<div class="section" id="in-use">
+<h3><a class="toc-backref" href="#id9">In use</a><a class="headerlink" href="#in-use" title="Permalink to this headline">¶</a></h3>
+<p>Notable examples of webhooks in use are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Site</strong></td>
+<td><strong>Documentation</strong></td>
+</tr>
+<tr class="row-even"><td>Github</td>
+<td><a class="reference external" href="https://developer.github.com/webhooks/">https://developer.github.com/webhooks/</a></td>
+</tr>
+<tr class="row-odd"><td>Stripe</td>
+<td><a class="reference external" href="https://stripe.com/docs/webhooks">https://stripe.com/docs/webhooks</a></td>
+</tr>
+<tr class="row-even"><td>PayPal</td>
+<td><a class="reference external" href="http://bit.ly/1TbDtvj">http://bit.ly/1TbDtvj</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="example">
+<h3><a class="toc-backref" href="#id10">Example</a><a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>This example adds four webhook events to the Article model of
+an imaginary blog engine:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">thorn</span> <span class="kn">import</span> <span class="n">ModelEvent</span><span class="p">,</span> <span class="n">model_reverser</span><span class="p">,</span> <span class="n">webhook_model</span>
+
+<span class="nd">@webhook_model</span><span class="p">(</span>
+    <span class="n">on_create</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.created&#39;</span><span class="p">)</span>
+    <span class="n">on_change</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.changed&#39;</span><span class="p">),</span>
+    <span class="n">on_delete</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.removed&#39;</span><span class="p">),</span>
+    <span class="n">on_publish</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span>
+        <span class="s1">&#39;article.published&#39;</span><span class="p">,</span>
+        <span class="n">state__eq</span><span class="o">=</span><span class="s1">&#39;PUBLISHED&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dispatches_on_change</span><span class="p">(),</span>
+    <span class="n">reverse</span><span class="o">=</span><span class="n">model_reverser</span><span class="p">(</span><span class="s1">&#39;article:detail&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;uuid&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="k">pass</span>  <span class="c1"># ...</span>
+</pre></div>
+</div>
+<p>Users can now subscribe to the four events individually, or all of them
+by subscribing to <code class="docutils literal"><span class="pre">article.*</span></code>, and will be notified every time
+an article is created, changed, removed or published:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> curl -X POST                                                      <span class="se">\</span>
+<span class="gp">&gt;</span> -H <span class="s2">&quot;Authorization: Bearer &lt;secret login token&gt;&quot;</span>                   <span class="se">\</span>
+<span class="gp">&gt;</span> -H <span class="s2">&quot;Content-Type: application/json&quot;</span>                               <span class="se">\</span>
+<span class="gp">&gt;</span> -d <span class="s1">&#39;{&quot;event&quot;: &quot;article.*&quot;, &quot;url&quot;: &quot;https://e.com/h/article?u=1&quot;}&#39;</span> <span class="se">\</span>
+<span class="gp">&gt;</span> http://example.com/hooks/
+</pre></div>
+</div>
+<p>The API is expressive, so may require you to learn more about the arguments
+to understand it fully.  Luckily it&#8217;s all described in the
+<a class="reference internal" href="userguide/events.html#events-guide"><span class="std std-ref">Events Guide</span></a> for you to consult after reading
+the quick start tutorial.</p>
+</div>
+</div>
+<div class="section" id="what-do-i-need">
+<h2><a class="toc-backref" href="#id11">What do I need?</a><a class="headerlink" href="#what-do-i-need" title="Permalink to this headline">¶</a></h2>
+<div class="sidebar">
+<p class="first sidebar-title">Version Requirements</p>
+<p class="sidebar-subtitle">Thorn version 1.0 runs on</p>
+<ul class="last simple">
+<li>Python (2.7, 3.4, 3.5)</li>
+<li>PyPy (5.1.1)</li>
+<li>Jython (2.7).</li>
+</ul>
+</div>
+<p>Thorn currently only supports <a class="reference external" href="http://djangoproject.com/">Django</a>, and an API for subscribing to events
+is only provided for <a class="reference external" href="http://www.django-rest-framework.org">Django REST Framework</a>.</p>
+<p>Extending Thorn is simple so you can also contribute support
+for your favorite frameworks.</p>
+<p>For dispatching web requests we recommend using <a class="reference external" href="http://celeryproject.org/">Celery</a>, but you
+can get started immediately by dispatching requests locally.</p>
+<p>Using <a class="reference external" href="http://celeryproject.org/">Celery</a> for dispatching requests will require a message transport
+like <a class="reference external" href="http://rabbitmq.com">RabbitMQ</a> or <a class="reference external" href="http://redis.io">Redis</a>.</p>
+<p>You can also write custom dispatchers if you have an idea for efficient
+payload delivery, or just want to reuse a technology you already deploy in
+production.</p>
+</div>
+<div class="section" id="quick-start">
+<h2><a class="toc-backref" href="#id12">Quick Start</a><a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h2>
+<p>Go immediately to the <a class="reference internal" href="getting-started/django.html#django-guide"><span class="std std-ref">Django Integration</span></a> guide to get started using
+Thorn in your Django projects.</p>
+<p>If you are using a different web framework, please consider contributing
+to the project by implementing a new environment type.</p>
+</div>
+<div class="section" id="alternatives">
+<h2><a class="toc-backref" href="#id13">Alternatives</a><a class="headerlink" href="#alternatives" title="Permalink to this headline">¶</a></h2>
+<p>Thorn was inspired by multiple Python projects:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/pydanny/dj-webhooks">dj-webhooks</a></li>
+<li><a class="reference external" href="https://github.com/zapier/django-rest-hooks">django-rest-hooks</a></li>
+<li><a class="reference external" href="https://github.com/ask/durian/">durian</a></li>
+</ul>
+</div>
+<div class="section" id="installation">
+<span id="id2"></span><h2><a class="toc-backref" href="#id14">Installation</a><a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installing-the-stable-version">
+<h3><a class="toc-backref" href="#id15">Installing the stable version</a><a class="headerlink" href="#installing-the-stable-version" title="Permalink to this headline">¶</a></h3>
+<p>You can install thorn either via the Python Package Index (PyPI)
+or from source.</p>
+<p>To install using <cite>pip</cite>,:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install -U thorn
+</pre></div>
+</div>
+</div>
+<div class="section" id="downloading-and-installing-from-source">
+<span id="installing-from-source"></span><h3><a class="toc-backref" href="#id16">Downloading and installing from source</a><a class="headerlink" href="#downloading-and-installing-from-source" title="Permalink to this headline">¶</a></h3>
+<p>Download the latest version of thorn from
+<a class="reference external" href="http://pypi.python.org/pypi/thorn/">http://pypi.python.org/pypi/thorn/</a></p>
+<p>You can install it by doing the following,:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> tar xvfz thorn-0.0.0.tar.gz
+<span class="gp">$</span> <span class="nb">cd</span> thorn-0.0.0
+<span class="gp">$</span> python setup.py build
+<span class="gp">#</span> python setup.py install
+</pre></div>
+</div>
+<p>The last command must be executed as a privileged user if
+you are not currently using a virtualenv.</p>
+</div>
+<div class="section" id="using-the-development-version">
+<span id="installing-from-git"></span><h3><a class="toc-backref" href="#id17">Using the development version</a><a class="headerlink" href="#using-the-development-version" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="with-pip">
+<h4><a class="toc-backref" href="#id18">With pip</a><a class="headerlink" href="#with-pip" title="Permalink to this headline">¶</a></h4>
+<p>You can install the latest snapshot of thorn using the following
+pip command:</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="gp">$</span> pip install https://github.com/robinhood/thorn/zipball/master#egg<span class="o">=</span>thorn
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="getting-help">
+<span id="id3"></span><h2><a class="toc-backref" href="#id19">Getting Help</a><a class="headerlink" href="#getting-help" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mailing-list">
+<span id="id4"></span><h3><a class="toc-backref" href="#id20">Mailing list</a><a class="headerlink" href="#mailing-list" title="Permalink to this headline">¶</a></h3>
+<p>For discussions about the usage, development, and future of Thorn,
+please join the <a class="reference external" href="https://groups.google.com/forum/#!forum/thorn-users">thorn-users</a> mailing list.</p>
+</div>
+<div class="section" id="irc">
+<span id="irc-channel"></span><h3><a class="toc-backref" href="#id21">IRC</a><a class="headerlink" href="#irc" title="Permalink to this headline">¶</a></h3>
+<p>Come chat with us on IRC. The <strong>#thorn</strong> channel is located at the <a class="reference external" href="http://freenode.net">Freenode</a>
+network.</p>
+</div>
+</div>
+<div class="section" id="bug-tracker">
+<span id="id5"></span><h2><a class="toc-backref" href="#id22">Bug tracker</a><a class="headerlink" href="#bug-tracker" title="Permalink to this headline">¶</a></h2>
+<p>If you have any suggestions, bug reports or annoyances please report them
+to our issue tracker at <a class="reference external" href="https://github.com/robinhood/thorn/issues/">https://github.com/robinhood/thorn/issues/</a></p>
+</div>
+<div class="section" id="contributing">
+<span id="contributing-short"></span><h2><a class="toc-backref" href="#id23">Contributing</a><a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h2>
+<p>Development of <cite>Thorn</cite> happens at GitHub: <a class="reference external" href="https://github.com/robinhood/thorn">https://github.com/robinhood/thorn</a></p>
+<p>You are highly encouraged to participate in the development
+of <cite>thorn</cite>. If you don&#8217;t like GitHub (for some reason) you&#8217;re welcome
+to send regular patches.</p>
+<p>Be sure to also read the <a class="reference external" href="http://thorn.readthedocs.io/en/latest.html">Contributing to Thorn</a> section in the
+documentation.</p>
+</div>
+<div class="section" id="license">
+<span id="id6"></span><h2><a class="toc-backref" href="#id24">License</a><a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>This software is licensed under the <cite>New BSD License</cite>. See the <code class="file docutils literal"><span class="pre">LICENSE</span></code>
+file in the top distribution directory for the full license text.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="copyright.html"
+                        title="previous chapter">Copyright</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="getting-started/index.html"
+                        title="next chapter">Getting Started</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/introduction.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="getting-started/index.html" title="Getting Started"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="copyright.html" title="Copyright"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Thorn 1.3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

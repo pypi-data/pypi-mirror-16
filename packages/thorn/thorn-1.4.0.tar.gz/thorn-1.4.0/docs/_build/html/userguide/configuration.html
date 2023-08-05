@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuration &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="index.html" />
+    <link rel="next" title="Extending" href="extending.html" />
+    <link rel="prev" title="Optimization and Performance" href="optimization.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="extending.html" title="Extending"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="optimization.html" title="Optimization and Performance"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="configuration">
+<span id="configuration-guide"></span><h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#reference" id="id1">Reference</a></li>
+</ul>
+</div>
+<div class="section" id="reference">
+<h2><a class="toc-backref" href="#id1">Reference</a><a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="thorn-chunksize">
+<span id="std:setting-THORN_CHUNKSIZE"></span><h3><code class="docutils literal"><span class="pre">THORN_CHUNKSIZE</span></code><a class="headerlink" href="#thorn-chunksize" title="Permalink to this headline">¶</a></h3>
+<p>Used by the <a class="reference external" href="https://pypi.python.org/pypi/Celery/">Celery</a> dispatcher to decide how many HTTP requests
+each task will perform.</p>
+<p>Default is 10.</p>
+</div>
+<div class="section" id="thorn-codecs">
+<span id="std:setting-THORN_CODECS"></span><h3><code class="docutils literal"><span class="pre">THORN_CODECS</span></code><a class="headerlink" href="#thorn-codecs" title="Permalink to this headline">¶</a></h3>
+<p>Can be used to configure new webhook serializers, or modify existing
+serializers:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">THORN_CODECS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;application/json&#39;</span><span class="p">:</span> <span class="n">serialize_json</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="thorn-subscribers">
+<span id="std:setting-THORN_SUBSCRIBERS"></span><h3><code class="docutils literal"><span class="pre">THORN_SUBSCRIBERS</span></code><a class="headerlink" href="#thorn-subscribers" title="Permalink to this headline">¶</a></h3>
+<p>This setting enables you to add static event subscribers
+that are not stored in the database.</p>
+<p>This is useful for e.g hardcoded webhooks between internal systems.</p>
+<p>The value of this setting should be a mapping between event names
+and subscribers, where subscribers can be:</p>
+<ul class="simple">
+<li>a URL or a list of URLs.</li>
+<li>a dict configured subscriber supported by
+<code class="xref py py-meth docutils literal"><span class="pre">from_dict()</span></code>, or a list of these.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">THORN_SUBSCRIBERS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;user.on_create&#39;</span><span class="p">:</span> <span class="s1">&#39;https://example.com/e/on_user_created&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;address.on_change&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://foo.example.com/e/address_change&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;content_type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="s1">&#39;balance.negative&#39;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">&#39;http://accounts.example.com/e/on_negative_balance&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;http://metrics.example.com/e/on_negative_balance&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The value here can also be a callback function that returns more subscribers:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># can be generator, or just return list</span>
+<span class="k">def</span> <span class="nf">address_change_subscribers</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">sender</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">subscribers_for</span><span class="p">(</span><span class="s1">&#39;address.change&#39;</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">url</span>
+
+<span class="n">THORN_SUBSCRIBERS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;address.on_change&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">address_change_subscribers</span><span class="p">],</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="thorn-dispatcher">
+<span id="std:setting-THORN_DISPATCHER"></span><h3><code class="docutils literal"><span class="pre">THORN_DISPATCHER</span></code><a class="headerlink" href="#thorn-dispatcher" title="Permalink to this headline">¶</a></h3>
+<p>The dispatcher backend to use, can be one of the built-in aliases:
+<cite>&#8220;default&#8221;</cite>, <cite>&#8220;celery&#8221;</cite>, or <cite>&#8220;disabled&#8221;</cite>,
+or it can be the fully qualified path to a dispatcher backend class,
+e.g. <cite>&#8220;proj.dispatchers:Dispatcher&#8221;</cite>.</p>
+<p>Default is <cite>&#8220;default&#8221;</cite>.</p>
+</div>
+<div class="section" id="thorn-event-choices">
+<span id="std:setting-THORN_EVENT_CHOICES"></span><h3><code class="docutils literal"><span class="pre">THORN_EVENT_CHOICES</span></code><a class="headerlink" href="#thorn-event-choices" title="Permalink to this headline">¶</a></h3>
+<p>Optional configuration option to restrict the event destination
+choices for the Subscriber model.</p>
+</div>
+<div class="section" id="thorn-hmac-signer">
+<span id="std:setting-THORN_HMAC_SIGNER"></span><h3><code class="docutils literal"><span class="pre">THORN_HMAC_SIGNER</span></code><a class="headerlink" href="#thorn-hmac-signer" title="Permalink to this headline">¶</a></h3>
+<p>Specify the path to a custom HMAC signing function, taking
+the arguments <code class="docutils literal"><span class="pre">(digest_method,</span> <span class="pre">secret,</span> <span class="pre">message)</span></code>.</p>
+<p>The recommended value for this setting is:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="s2">&quot;thorn.utils.hmac:sign&quot;</span>
+</pre></div>
+</div>
+<p>but for compatibility reasons the default is an HMAC signer
+using the <a class="reference external" href="https://pypi.python.org/pypi/itsdangerous/">itsdangerous</a> library:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="s2">&quot;thorn.utils.hmac:compat_sign&quot;</span>
+</pre></div>
+</div>
+<p>The compat version generates a signature that is difficult
+for users of non-Python languages to verify, so you&#8217;re highly
+discouraged form using the default signer.</p>
+</div>
+<div class="section" id="thorn-drf-permission-classes">
+<span id="std:setting-THORN_DRF_PERMISSION_CLASSES"></span><h3><code class="docutils literal"><span class="pre">THORN_DRF_PERMISSION_CLASSES</span></code><a class="headerlink" href="#thorn-drf-permission-classes" title="Permalink to this headline">¶</a></h3>
+<p>List of permission classes to add to the Django Rest Framework views.</p>
+</div>
+<div class="section" id="thorn-event-timeout">
+<span id="std:setting-THORN_EVENT_TIMEOUT"></span><h3><code class="docutils literal"><span class="pre">THORN_EVENT_TIMEOUT</span></code><a class="headerlink" href="#thorn-event-timeout" title="Permalink to this headline">¶</a></h3>
+<p>HTTP request timeout used as default when dispatching events,
+in seconds int/float.</p>
+<p>Default is 3.0 seconds.</p>
+</div>
+<div class="section" id="thorn-retry">
+<span id="std:setting-THORN_RETRY"></span><h3><code class="docutils literal"><span class="pre">THORN_RETRY</span></code><a class="headerlink" href="#thorn-retry" title="Permalink to this headline">¶</a></h3>
+<p>Enable/disable retry of HTTP requests that times out or returns an error respons.</p>
+<p>Enabled by default.</p>
+</div>
+<div class="section" id="thorn-retry-delay">
+<span id="std:setting-THORN_RETRY_DELAY"></span><h3><code class="docutils literal"><span class="pre">THORN_RETRY_DELAY</span></code><a class="headerlink" href="#thorn-retry-delay" title="Permalink to this headline">¶</a></h3>
+<p>Time in seconds (int/float) to wait between retries.  Default is one minute.</p>
+</div>
+<div class="section" id="thorn-retry-max">
+<span id="std:setting-THORN_RETRY_MAX"></span><h3><code class="docutils literal"><span class="pre">THORN_RETRY_MAX</span></code><a class="headerlink" href="#thorn-retry-max" title="Permalink to this headline">¶</a></h3>
+<p>Maximum number of retries before giving up.  Default is 10.</p>
+<p>Note that subscriptions are currently not cancelled if exceeding the maximum
+retry amount.</p>
+</div>
+<div class="section" id="thorn-recipient-validators">
+<span id="std:setting-THORN_RECIPIENT_VALIDATORS"></span><h3><code class="docutils literal"><span class="pre">THORN_RECIPIENT_VALIDATORS</span></code><a class="headerlink" href="#thorn-recipient-validators" title="Permalink to this headline">¶</a></h3>
+<p>List of default validator functions to validate recipient URLs.</p>
+<p>Individual events can override this using the <code class="docutils literal"><span class="pre">recipient_validators</span></code>
+argument.</p>
+<p>The default set of validators will validate that:</p>
+<ul>
+<li><p class="first">That the IP address of the recipient is not on a local network.</p>
+<blockquote>
+<div><div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>This only applies to IP addresses reserved for internal
+use, such as 127.0.0.1, and 192.168.0.0/16.</p>
+<p class="last">If you have private networks on a public IP address you can
+block them by using the <a class="reference internal" href="../reference/thorn.validators.html#thorn.validators.block_cidr_network" title="thorn.validators.block_cidr_network"><code class="xref py py-func docutils literal"><span class="pre">block_cidr_network()</span></code></a>
+validator.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">The scheme of the recipient is either HTTP or HTTPS.</p>
+</li>
+<li><p class="first">The port of the recipient is either 80, or 443.</p>
+</li>
+</ul>
+<p>This is expressed in configuration as:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">THORN_RECIPIENT_VALIDATORS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">validators</span><span class="o">.</span><span class="n">block_internal_ips</span><span class="p">(),</span>
+    <span class="n">validators</span><span class="o">.</span><span class="n">ensure_protocol</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="s1">&#39;https&#39;</span><span class="p">),</span>
+    <span class="n">validators</span><span class="o">.</span><span class="n">ensure_port</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">443</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>More validators can be found in the API reference for the
+<a class="reference internal" href="../reference/thorn.validators.html#module-thorn.validators" title="thorn.validators"><code class="xref py py-mod docutils literal"><span class="pre">thorn.validators</span></code></a> module.</p>
+</div>
+<div class="section" id="thorn-subscriber-model">
+<span id="std:setting-THORN_SUBSCRIBER_MODEL"></span><h3><code class="docutils literal"><span class="pre">THORN_SUBSCRIBER_MODEL</span></code><a class="headerlink" href="#thorn-subscriber-model" title="Permalink to this headline">¶</a></h3>
+<p>Specify a custom subscriber model as a fully qualified path.
+E.g. for Django the default is <code class="docutils literal"><span class="pre">&quot;thorn.django.models:Subscriber&quot;</span></code>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="optimization.html"
+                        title="previous chapter">Optimization and Performance</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="extending.html"
+                        title="next chapter">Extending</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/userguide/configuration.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="extending.html" title="Extending"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="optimization.html" title="Optimization and Performance"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

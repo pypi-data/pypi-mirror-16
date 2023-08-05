@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Changelog &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="index.html" />
+    <link rel="next" title="Contributing" href="contributing.html" />
+    <link rel="prev" title="thorn.funtests.tasks" href="reference/thorn.funtests.tasks.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="contributing.html" title="Contributing"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="reference/thorn.funtests.tasks.html" title="thorn.funtests.tasks"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Thorn 1.3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="version-1-3-0">
+<span id="id1"></span><h2>1.3.0<a class="headerlink" href="#version-1-3-0" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">release-date:</th><td class="field-body">2016-07-07 07:40 P.M PDT</td>
+</tr>
+<tr class="field-even field"><th class="field-name">release-by:</th><td class="field-body">Ask Solem</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p class="first">New and improved method for HMAC signing.</p>
+<blockquote>
+<div><p>The new method must be enabled manually by setting:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">THORN_HMAC_SIGNER</span> <span class="o">=</span> <span class="s1">&#39;thorn.utils.hmac:sign&#39;</span>
+</pre></div>
+</div>
+<p>It turns out itsdangerous did not do what we expected it to,
+instead it does this:</p>
+<ul>
+<li><p class="first">The secret key is transformed into:</p>
+<blockquote>
+<div><div class="highlight-python"><div class="highlight"><pre><span></span> <span class="n">key</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">salt</span> <span class="o">+</span> <span class="s1">&#39;signer&#39;</span> <span class="o">+</span> <span class="n">HMAC_SECRET</span><span class="p">)</span>
+<span class="c1"># strip = from beginning and end of the base64 string</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">If you don’t specify a salt, which we don’t, there is a
+default salt(!) which is:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>“itsdangerous.Signer”
+</pre></div>
+</div>
+</li>
+<li><p class="first">The extra &#8220;signer&#8221; in the key transformation is there as the default
+key_derivation method is called “django-concat”.</p>
+</li>
+<li><p class="first">The final signature is encoded using “urlsafe_b64encode&#8221;</p>
+<blockquote>
+<div><p>So in Python to recreate the signature using the built-in hmac
+library you would have to do:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">import</span> <span class="nn">hmac</span>
+<span class="kn">from</span> <span class="nn">base64</span> <span class="kn">import</span> <span class="n">urlsafe_b64encode</span>
+
+<span class="c1"># everything hardcoded to SHA256 here</span>
+
+<span class="k">def</span> <span class="nf">create_signature</span><span class="p">(</span><span class="n">secret_key</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span>
+        <span class="s1">&#39;itsdangerous.Signer&#39;</span> <span class="o">+</span> <span class="s1">&#39;signer&#39;</span> <span class="o">+</span> <span class="n">secret_key</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+    <span class="n">digest</span> <span class="o">=</span> <span class="n">hmac</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">digestmod</span><span class="o">=</span><span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">)</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">urlsafe_b64encode</span><span class="p">(</span><span class="n">digest</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which is much more complicated than what we can expect of users.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>You&#8217;re highly encouraged to enable the new HMAC method, but sadly
+it&#8217;s not backwards compatible.</p>
+<p>We have also included new examples for verifying HMAC signatures
+in Django, Ruby, and PHP in the documentation.</p>
+</div></blockquote>
+</li>
+<li><p class="first">New <a class="reference internal" href="userguide/configuration.html#std:setting-THORN_SUBSCRIBER_MODEL"><code class="xref std std-setting docutils literal"><span class="pre">THORN_SUBSCRIBER_MODEL</span></code></a> setting.</p>
+</li>
+<li><p class="first">New <a class="reference internal" href="userguide/configuration.html#std:setting-THORN_HMAC_SIGNER"><code class="xref std std-setting docutils literal"><span class="pre">THORN_HMAC_SIGNER</span></code></a> setting.</p>
+</li>
+<li><p class="first">Requirements: Tests now depends on <a class="reference external" href="https://pypi.python.org/pypi/case/">case</a> 1.2.2</p>
+</li>
+<li><p class="first">JSON: Make sure simplejson does not convert <a class="reference external" href="https://docs.python.org/dev/library/decimal.html#decimal.Decimal" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">Decimal</span></code></a>
+to <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">float</span></code></a>.</p>
+</li>
+<li><p class="first">class:<cite>~thorn.events.ModelEvent</cite>: name can now be a string format.</p>
+<blockquote>
+<div><p>Contributed by Flavio Curella.</p>
+<p>The format expands using the model instance affected, e.g:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">on_created</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;created.{.occasion}&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>means the format will expand into <code class="docutils literal"><span class="pre">instance.occasion</span></code>.</p>
+<p>Subclasses of <a class="reference internal" href="reference/thorn.events.html#thorn.events.ModelEvent" title="thorn.events.ModelEvent"><code class="xref py py-class docutils literal"><span class="pre">ModelEvent</span></code></a> can override how the name is
+expanded by defining the <code class="docutils literal"><span class="pre">_get_name</span></code> method.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="version-1-2-1">
+<span id="id2"></span><h2>1.2.1<a class="headerlink" href="#version-1-2-1" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">release-date:</th><td class="field-body">2016-06-06 06:30 P.M PDT</td>
+</tr>
+<tr class="field-even field"><th class="field-name">release-by:</th><td class="field-body">Ask Solem</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Celery: Forward event signal context to the tasks.</li>
+</ul>
+</div>
+<div class="section" id="version-1-2-0">
+<span id="id3"></span><h2>1.2.0<a class="headerlink" href="#version-1-2-0" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">release-date:</th><td class="field-body">2016-06-02 01:00 P.M PDT</td>
+</tr>
+<tr class="field-even field"><th class="field-name">release-by:</th><td class="field-body">Ask Solem</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p class="first">Event: Adds <code class="docutils literal"><span class="pre">request_data</span></code> option.</p>
+<blockquote>
+<div><p>This enables you to inject additional data into the webhook payload,
+used for integration with quirky HTTP endpoints.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Event: Adds <code class="docutils literal"><span class="pre">allow_keepalive</span></code> option.</p>
+<blockquote>
+<div><p>HTTP connections will not be reused for an event if this flag is set to
+False.  Keepalive is enabled by default.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Event: Adds <code class="docutils literal"><span class="pre">subscribers</span></code> argument that can be used to add
+default subscribers for the event.</p>
+<blockquote>
+<div><p>This argument can hold the same values as the <a class="reference internal" href="userguide/configuration.html#std:setting-THORN_SUBSCRIBERS"><code class="xref std std-setting docutils literal"><span class="pre">THORN_SUBSCRIBERS</span></code></a>
+setting.</p>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>Decorator: <code class="docutils literal"><span class="pre">model.webhook_events</span></code> is now a UserDict proxy</dt>
+<dd><p class="first last">to <code class="docutils literal"><span class="pre">model.webhook_events.events</span></code>.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Subscriber: <code class="xref py py-class docutils literal"><span class="pre">thorn.generic.models.AbstractSubscribers</span></code> is a
+new abstract interface for subscriber models.</p>
+<blockquote>
+<div><p>This should be used if you want to check if an object is a subscriber
+in <a class="reference external" href="https://docs.python.org/dev/library/functions.html#isinstance" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">isinstance()</span></code></a> checks.</p>
+</div></blockquote>
+</li>
+<li><dl class="first docutils">
+<dt>Q: <code class="docutils literal"><span class="pre">now__*</span></code> operators now properly handles the case when there&#8217;s</dt>
+<dd><p class="first last">no previous version of the object.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Django: <a class="reference external" href="http://django.readthedocs.io/en/latest/ref/signals.html#django.db.models.signals.pre_save" title="(in Django v1.11)"><code class="xref py py-data docutils literal"><span class="pre">django.db.models.signals.pre_save</span></code></a> signal handler
+now ignores <code class="xref py py-exc docutils literal"><span class="pre">ObjectDoesNotExist</span></code> errors.</p>
+</li>
+<li><p class="first">Events: Adds new <code class="docutils literal"><span class="pre">prepare_recipient_validators</span></code> method, enabling
+subclasses to e.g. set default validators.</p>
+</li>
+<li><p class="first">Windows: Unit test suite now passing on win32/win64.</p>
+</li>
+<li><p class="first">Module <code class="docutils literal"><span class="pre">thorn.models</span></code> renamed to <a class="reference internal" href="reference/thorn.generic.models.html#module-thorn.generic.models" title="thorn.generic.models"><code class="xref py py-mod docutils literal"><span class="pre">thorn.generic.models</span></code></a>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="version-1-1-0">
+<span id="id4"></span><h2>1.1.0<a class="headerlink" href="#version-1-1-0" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">release-date:</th><td class="field-body">2016-05-23 12:00 P.M PDT</td>
+</tr>
+<tr class="field-even field"><th class="field-name">release-by:</th><td class="field-body">Ask Solem</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p class="first">Fixed installation on Python 3</p>
+<blockquote>
+<div><p>Fix contributed by Josh Drake.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Now depends on</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="https://pypi.python.org/pypi/itsdangerous/">itsdangerous</a></li>
+<li><a class="reference external" href="https://pypi.python.org/pypi/ipaddress/">ipaddress</a> (Python 2.7)</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Security: Now provides HMAC signing by default.</p>
+<blockquote>
+<div><p>The Subscriber model has a new <code class="docutils literal"><span class="pre">hmac_secret</span></code> field
+which subscribers can provide to set the secret key for
+communication.  A default secret will be created if none is provided,
+and can be found in the response of the subscribe endpoint.</p>
+<p>The signed HMAC message found in the <code class="docutils literal"><span class="pre">Hook-HMAC</span></code> HTTP header
+can then be used to verify the sender of the webhook.</p>
+<p>An example Django webhook consumer verifying the signature
+can be found in the <a class="reference internal" href="getting-started/django.html#django-example-consumer"><span class="std std-ref">Django guide</span></a>.</p>
+<p>Thanks to Timothy Fitz for suggestions.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Security: No longer dispatches webhooks to internal networks.</p>
+<blockquote>
+<div><p>This means Thorn will refuse to deliver webhooks to
+networks considered internal, like <code class="docutils literal"><span class="pre">fd00::/8</span></code>, <code class="docutils literal"><span class="pre">10.0.0.0/8</span></code>,
+<code class="docutils literal"><span class="pre">172.16.0.0/12</span></code>, <code class="docutils literal"><span class="pre">192.168.0.0/16</span></code> and <code class="docutils literal"><span class="pre">127.0.0.1</span></code></p>
+<p>This behavior can be changed globally using the
+<a class="reference internal" href="userguide/configuration.html#std:setting-THORN_RECIPIENT_VALIDATORS"><code class="xref std std-setting docutils literal"><span class="pre">THORN_RECIPIENT_VALIDATORS</span></code></a> setting, or on an per-event basis
+using the <code class="docutils literal"><span class="pre">recipient_validators</span></code> argument to <code class="xref py py-class docutils literal"><span class="pre">event</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Security: Now only dispatches to HTTP and HTTPS URLs by default.</p>
+<blockquote>
+<div><p>This behavior can be changed globally using the
+<a class="reference internal" href="userguide/configuration.html#std:setting-THORN_RECIPIENT_VALIDATORS"><code class="xref std std-setting docutils literal"><span class="pre">THORN_RECIPIENT_VALIDATORS</span></code></a> setting, or on an per-event basis
+using the <code class="docutils literal"><span class="pre">recipient_validators</span></code> argument to <code class="xref py py-class docutils literal"><span class="pre">event</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Security: Now only dispatches to ports 80 and 443 by default.</p>
+<blockquote>
+<div><p>This behavior can be changed globally using the
+<a class="reference internal" href="userguide/configuration.html#std:setting-THORN_RECIPIENT_VALIDATORS"><code class="xref std std-setting docutils literal"><span class="pre">THORN_RECIPIENT_VALIDATORS</span></code></a> setting, or on an per-event basis
+using the <code class="docutils literal"><span class="pre">recipient_validators</span></code> argument to <code class="xref py py-class docutils literal"><span class="pre">event</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Security: Adds recipient validators</p>
+<blockquote>
+<div><p>You can now validate the recipient URL by providing a list
+of validators in the <code class="docutils literal"><span class="pre">recipient_validators</span></code> argument to
+<a class="reference internal" href="reference/thorn.html#thorn.Event" title="thorn.Event"><code class="xref py py-class docutils literal"><span class="pre">Event</span></code></a>.</p>
+<p>The default list of validators is provided by the
+new <a class="reference internal" href="userguide/configuration.html#std:setting-THORN_RECIPIENT_VALIDATORS"><code class="xref std std-setting docutils literal"><span class="pre">THORN_RECIPIENT_VALIDATORS</span></code></a> setting.</p>
+<p>Thanks to Edmond Wong for reviewing, and Timothy Fitz for suggestions.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Django: Now properly supports custom user models by using
+<code class="docutils literal"><span class="pre">UserModel.get_username()</span></code>.</p>
+<blockquote>
+<div><p>Fix contributed by Josh Drake.</p>
+</div></blockquote>
+</li>
+<li><p class="first">ModelEvent: Adds new many-to-many signal dispatcher types</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">dispatches_on_m2m_add(related_field)</span></code></p>
+<blockquote>
+<div><p>Sent when a new object is added to a many-to-many relation.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">dispatches_on_m2m_remove(related_field)</span></code></p>
+<blockquote>
+<div><p>Sent when an object is removed from a many-to-many relation.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">dispatches_on_m2m_clear(related_field)</span></code></p>
+<blockquote>
+<div><p>Sent when a many-to-many relation is cleared.</p>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Example</strong></p>
+<p>In this blog article model, events are sent whenever a new
+tag is added or removed:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nd">@webhook_model</span><span class="p">(</span>
+    <span class="n">on_add_tag</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span>
+        <span class="s1">&#39;article.tagged&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dispatches_on_m2m_add</span><span class="p">(</span><span class="s1">&#39;tags&#39;</span><span class="p">),</span>
+    <span class="n">on_remove_tag</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span>
+        <span class="s1">&#39;article.untagged&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dispatches_on_m2m_remove</span><span class="p">(</span><span class="s1">&#39;tags&#39;</span><span class="p">),</span>
+    <span class="n">on_clear_tags</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span>
+        <span class="s1">&#39;article.tags_cleared&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dispatches_on_m2m_clear</span><span class="p">(</span><span class="s1">&#39;tags&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ManyToManyField</span><span class="p">(</span><span class="n">Tag</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Tag</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">article.tagged</span></code> webhook is sent when:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">python_tag</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">Tag</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;python&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">article</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">python_tag</span><span class="p">)</span>  <span class="c1"># &lt;-- dispatches with this line</span>
+</pre></div>
+</div>
+<p>and the <code class="docutils literal"><span class="pre">article.untagged</span></code> webhook is sent when:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">article</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">python_tag</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>finally, the <code class="docutils literal"><span class="pre">article.tags_cleared</span></code> event is sent when:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">article</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Documentation fixes contributed by:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Matthew Brener</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="version-1-0-0">
+<span id="id5"></span><h2>1.0.0<a class="headerlink" href="#version-1-0-0" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">release-date:</th><td class="field-body">2016-05-13 10:10 A.M PDT</td>
+</tr>
+<tr class="field-even field"><th class="field-name">release-by:</th><td class="field-body">Ask Solem</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Initial release :o)</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="reference/thorn.funtests.tasks.html"
+                        title="previous chapter">thorn.funtests.tasks</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="contributing.html"
+                        title="next chapter">Contributing</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/changelog.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="contributing.html" title="Contributing"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="reference/thorn.funtests.tasks.html" title="thorn.funtests.tasks"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Thorn 1.3.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

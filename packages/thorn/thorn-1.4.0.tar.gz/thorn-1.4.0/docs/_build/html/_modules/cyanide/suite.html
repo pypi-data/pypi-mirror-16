@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>cyanide.suite &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for cyanide.suite</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">celery</span>
+<span class="kn">import</span> <span class="nn">cyanide</span>
+
+<span class="kn">import</span> <span class="nn">inspect</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">socket</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">traceback</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span><span class="p">,</span> <span class="n">defaultdict</span><span class="p">,</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">count</span><span class="p">,</span> <span class="n">cycle</span>
+
+<span class="kn">from</span> <span class="nn">celery.exceptions</span> <span class="k">import</span> <span class="ne">TimeoutError</span>
+<span class="kn">from</span> <span class="nn">celery.five</span> <span class="k">import</span> <span class="n">items</span><span class="p">,</span> <span class="n">monotonic</span><span class="p">,</span> <span class="nb">range</span><span class="p">,</span> <span class="n">values</span>
+<span class="kn">from</span> <span class="nn">celery.utils</span> <span class="k">import</span> <span class="n">timeutils</span>
+<span class="kn">from</span> <span class="nn">celery.utils.debug</span> <span class="k">import</span> <span class="n">blockdetection</span>
+<span class="kn">from</span> <span class="nn">celery.utils.imports</span> <span class="k">import</span> <span class="n">qualname</span>
+<span class="kn">from</span> <span class="nn">celery.utils.text</span> <span class="k">import</span> <span class="n">pluralize</span><span class="p">,</span> <span class="n">truncate</span>
+<span class="kn">from</span> <span class="nn">celery.utils.term</span> <span class="k">import</span> <span class="n">colored</span>
+<span class="kn">from</span> <span class="nn">kombu.utils</span> <span class="k">import</span> <span class="n">retry_over_time</span>
+
+<span class="kn">from</span> <span class="nn">.fbi</span> <span class="k">import</span> <span class="n">FBI</span>
+<span class="kn">from</span> <span class="nn">.tasks</span> <span class="k">import</span> <span class="n">marker</span><span class="p">,</span> <span class="n">_marker</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">celery.platforms</span> <span class="k">import</span> <span class="n">isatty</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">celery.utils</span> <span class="k">import</span> <span class="n">isatty</span>
+
+<span class="n">BANNER</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">Cyanide v</span><span class="si">{version}</span><span class="s2"> [celery </span><span class="si">{celery_version}</span><span class="s2">]</span>
+
+<span class="si">{platform}</span><span class="s2"></span>
+
+<span class="s2">[config]</span>
+<span class="s2">.&gt; app:    </span><span class="si">{app}</span><span class="s2"></span>
+<span class="s2">.&gt; broker: </span><span class="si">{conninfo}</span><span class="s2"></span>
+<span class="s2">.&gt; suite: </span><span class="si">{suite}</span><span class="s2"></span>
+
+<span class="s2">[toc: </span><span class="si">{total}</span><span class="s2"> </span><span class="si">{TESTS}</span><span class="s2"> total]</span>
+<span class="si">{toc}</span><span class="s2"></span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">F_PROGRESS</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="si">{0.index:2d}</span><span class="s2">: </span><span class="si">{0.test.__name__:&lt;36}</span><span class="s2"> </span><span class="si">{status}</span><span class="s2"> </span><span class="se">\</span>
+<span class="s2">(</span><span class="si">{0.iteration}</span><span class="s2">/</span><span class="si">{0.total_iterations}</span><span class="s2">) rep#</span><span class="si">{0.repeats}</span><span class="s2"> runtime: </span><span class="se">\</span>
+<span class="si">{runtime}</span><span class="s2">/</span><span class="si">{elapsed}</span><span class="se">\</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">E_STILL_WAITING</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">Still waiting for </span><span class="si">{0}</span><span class="s2">. Trying again </span><span class="si">{when}</span><span class="s2">: </span><span class="si">{exc!r}</span><span class="se">\</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">Progress</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Progress&#39;</span><span class="p">,</span> <span class="p">(</span>
+    <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;iteration&#39;</span><span class="p">,</span> <span class="s1">&#39;total_iterations&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;index&#39;</span><span class="p">,</span> <span class="s1">&#39;repeats&#39;</span><span class="p">,</span> <span class="s1">&#39;runtime&#39;</span><span class="p">,</span> <span class="s1">&#39;elapsed&#39;</span><span class="p">,</span> <span class="s1">&#39;completed&#39;</span><span class="p">,</span>
+<span class="p">))</span>
+
+
+<span class="n">Inf</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;Inf&#39;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">assert_equal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{0!r}</span><span class="s1"> != </span><span class="si">{1!r}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">StopSuite</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">Sentinel</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">humanize_seconds</span><span class="p">(</span><span class="n">secs</span><span class="p">,</span> <span class="n">prefix</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">now</span><span class="o">=</span><span class="s1">&#39;now&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">timeutils</span><span class="o">.</span><span class="n">humanize_seconds</span><span class="p">(</span><span class="n">secs</span><span class="p">,</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">sep</span><span class="p">,</span> <span class="n">now</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="n">now</span> <span class="ow">and</span> <span class="n">secs</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{prefix}{sep}{0:.2f}</span><span class="s1"> seconds&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="nb">float</span><span class="p">(</span><span class="n">secs</span><span class="p">),</span> <span class="n">prefix</span><span class="o">=</span><span class="n">prefix</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="n">sep</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+
+<span class="k">def</span> <span class="nf">pstatus</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">runtime</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">-</span> <span class="n">p</span><span class="o">.</span><span class="n">runtime</span><span class="p">,</span> <span class="s1">&#39;.4f&#39;</span><span class="p">)</span>
+    <span class="n">elapsed</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">-</span> <span class="n">p</span><span class="o">.</span><span class="n">elapsed</span><span class="p">,</span> <span class="s1">&#39;.4f&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">F_PROGRESS</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">p</span><span class="p">,</span>
+        <span class="n">status</span><span class="o">=</span><span class="n">status</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="n">runtime</span><span class="o">=</span><span class="n">humanize_seconds</span><span class="p">(</span><span class="n">runtime</span><span class="p">,</span> <span class="n">now</span><span class="o">=</span><span class="n">runtime</span><span class="p">),</span>
+        <span class="n">elapsed</span><span class="o">=</span><span class="n">humanize_seconds</span><span class="p">(</span><span class="n">elapsed</span><span class="p">,</span> <span class="n">now</span><span class="o">=</span><span class="n">elapsed</span><span class="p">),</span>
+    <span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Speaker</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">gap</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gap</span> <span class="o">=</span> <span class="n">gap</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_noise</span> <span class="o">=</span> <span class="n">monotonic</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">gap</span> <span class="o">*</span> <span class="mi">2</span>
+
+    <span class="k">def</span> <span class="nf">beep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">now</span> <span class="o">=</span> <span class="n">monotonic</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">now</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_noise</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gap</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">last_noise</span> <span class="o">=</span> <span class="n">now</span>
+
+    <span class="k">def</span> <span class="nf">emit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\a</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Meter</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">cursor</span><span class="o">=</span><span class="s1">&#39;/-</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">end</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cursor</span> <span class="o">=</span> <span class="n">cycle</span><span class="p">(</span><span class="n">cursor</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">emit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">s</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">s</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cursor</span><span class="p">),</span>
+              <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">revert</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+
+<span class="k">def</span> <span class="nf">testgroup</span><span class="p">(</span><span class="o">*</span><span class="n">funs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">OrderedDict</span><span class="p">((</span><span class="n">fun</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">fun</span><span class="p">)</span> <span class="k">for</span> <span class="n">fun</span> <span class="ow">in</span> <span class="n">funs</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Suite</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">,</span>
+                 <span class="n">block_timeout</span><span class="o">=</span><span class="mi">30</span> <span class="o">*</span> <span class="mi">60</span><span class="p">,</span> <span class="n">no_color</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                 <span class="n">stdout</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stderr</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">app</span> <span class="o">=</span> <span class="n">app</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="k">if</span> <span class="n">stdout</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">stdout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span> <span class="k">if</span> <span class="n">stderr</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">stderr</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">isatty</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">):</span>
+            <span class="n">no_color</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">colored</span> <span class="o">=</span> <span class="n">colored</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="ow">not</span> <span class="n">no_color</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">connerrors</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">connection</span><span class="p">()</span><span class="o">.</span><span class="n">recoverable_connection_errors</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">block_timeout</span> <span class="o">=</span> <span class="n">block_timeout</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">progress</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speaker</span> <span class="o">=</span> <span class="n">Speaker</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fbi</span> <span class="o">=</span> <span class="n">FBI</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">init_groups</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">teardown</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">print</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stdout</span> <span class="k">if</span> <span class="n">file</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">file</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colored</span><span class="o">.</span><span class="n">red</span><span class="p">(</span><span class="n">message</span><span class="p">),</span> <span class="n">file</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">warn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colored</span><span class="o">.</span><span class="n">cyan</span><span class="p">(</span><span class="n">message</span><span class="p">),</span> <span class="n">file</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">init_groups</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">acc</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">_is_descriptor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+                <span class="n">meth</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">groups</span> <span class="o">=</span> <span class="n">meth</span><span class="o">.</span><span class="n">__func__</span><span class="o">.</span><span class="n">__testgroup__</span>
+                <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                    <span class="k">pass</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+                        <span class="n">acc</span><span class="p">[</span><span class="n">g</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">meth</span><span class="p">)</span>
+        <span class="c1"># sort the tests by the order in which they are defined in the class</span>
+        <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">values</span><span class="p">(</span><span class="n">acc</span><span class="p">):</span>
+            <span class="n">g</span><span class="p">[:]</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span><span class="o">.</span><span class="n">__func__</span><span class="o">.</span><span class="n">__testsort__</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">groups</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">testgroup</span><span class="p">(</span><span class="o">*</span><span class="n">tests</span><span class="p">))</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">tests</span> <span class="ow">in</span> <span class="n">items</span><span class="p">(</span><span class="n">acc</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="n">numtests</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">list_all</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span>
+            <span class="n">diag</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">no_join</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">no_join</span> <span class="o">=</span> <span class="n">no_join</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fbi</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="n">diag</span><span class="p">)</span>
+        <span class="n">tests</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filtertests</span><span class="p">(</span><span class="n">group</span><span class="p">,</span> <span class="n">names</span><span class="p">)[</span><span class="n">offset</span><span class="p">:</span><span class="n">numtests</span> <span class="ow">or</span> <span class="kc">None</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">list_all</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">testlist</span><span class="p">(</span><span class="n">tests</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">banner</span><span class="p">(</span><span class="n">tests</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;+enable worker task events...&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">enable_events</span><span class="p">()</span>
+        <span class="n">it</span> <span class="o">=</span> <span class="n">count</span><span class="p">()</span> <span class="k">if</span> <span class="n">repeat</span> <span class="o">==</span> <span class="n">Inf</span> <span class="k">else</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">repeat</span><span class="p">)</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
+            <span class="n">marker</span><span class="p">(</span>
+                <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> (repetition </span><span class="si">{1}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">colored</span><span class="o">.</span><span class="n">bold</span><span class="p">(</span><span class="s1">&#39;suite start&#39;</span><span class="p">),</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+                <span class="s1">&#39;+&#39;</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">test</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tests</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">runtest</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">iterations</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">marker</span><span class="p">(</span>
+                <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> (repetition </span><span class="si">{1}</span><span class="s1">)&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">colored</span><span class="o">.</span><span class="n">bold</span><span class="p">(</span><span class="s1">&#39;suite end&#39;</span><span class="p">),</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+                <span class="s1">&#39;+&#39;</span><span class="p">,</span>
+            <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">assert_equal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">assert_equal</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">filtertests</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group</span><span class="p">,</span> <span class="n">names</span><span class="p">):</span>
+        <span class="n">tests</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">groups</span><span class="p">[</span><span class="n">group</span><span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">([</span><span class="n">tests</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span><span class="p">]</span> <span class="k">if</span> <span class="n">names</span>
+                    <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">values</span><span class="p">(</span><span class="n">tests</span><span class="p">)))</span>
+        <span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s1">&#39;Unknown test name: </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">exc</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">testlist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tests</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;,</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="s1">&#39;.&gt; </span><span class="si">{0}</span><span class="s1">) </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tests</span><span class="p">)</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">banner</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tests</span><span class="p">):</span>
+        <span class="n">app</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span>
+        <span class="k">return</span> <span class="n">BANNER</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">app</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">:0x</span><span class="si">{1:x}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">main</span> <span class="ow">or</span> <span class="s1">&#39;__main__&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">app</span><span class="p">)),</span>
+            <span class="n">version</span><span class="o">=</span><span class="n">cyanide</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span>
+            <span class="n">celery_version</span><span class="o">=</span><span class="n">celery</span><span class="o">.</span><span class="n">VERSION_BANNER</span><span class="p">,</span>
+            <span class="n">conninfo</span><span class="o">=</span><span class="n">app</span><span class="o">.</span><span class="n">connection</span><span class="p">()</span><span class="o">.</span><span class="n">as_uri</span><span class="p">(),</span>
+            <span class="n">platform</span><span class="o">=</span><span class="n">platform</span><span class="o">.</span><span class="n">platform</span><span class="p">(),</span>
+            <span class="n">toc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">testlist</span><span class="p">(</span><span class="n">tests</span><span class="p">),</span>
+            <span class="n">TESTS</span><span class="o">=</span><span class="n">pluralize</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tests</span><span class="p">),</span> <span class="s1">&#39;test&#39;</span><span class="p">),</span>
+            <span class="n">total</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">tests</span><span class="p">),</span>
+            <span class="n">suite</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">qualname</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">runtest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fun</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">repeats</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="s1">&#39;__iterations__&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> <span class="n">n</span>
+        <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;[[[</span><span class="si">{0}</span><span class="s1">(</span><span class="si">{1}</span><span class="s1">)]]]&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">fun</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">repeats</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> #</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="n">repeats</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+        <span class="k">with</span> <span class="n">blockdetection</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">block_timeout</span><span class="p">):</span>
+            <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">fbi</span><span class="o">.</span><span class="n">investigation</span><span class="p">():</span>
+                <span class="n">runtime</span> <span class="o">=</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="n">monotonic</span><span class="p">()</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">failed</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">progress</span> <span class="o">=</span> <span class="n">Progress</span><span class="p">(</span>
+                    <span class="n">fun</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">repeats</span><span class="p">,</span> <span class="n">elapsed</span><span class="p">,</span> <span class="n">runtime</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">_marker</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="n">pstatus</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">progress</span><span class="p">))</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+                        <span class="n">runtime</span> <span class="o">=</span> <span class="n">monotonic</span><span class="p">()</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">progress</span> <span class="o">=</span> <span class="n">Progress</span><span class="p">(</span>
+                            <span class="n">fun</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">repeats</span><span class="p">,</span> <span class="n">runtime</span><span class="p">,</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+                        <span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">execute_test</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span>
+
+                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                    <span class="n">failed</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">beep</span><span class="p">()</span>
+                    <span class="k">raise</span>
+                <span class="k">finally</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">failed</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> </span><span class="si">{1}</span><span class="s1"> iterations in </span><span class="si">{2}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                            <span class="s1">&#39;failed after&#39;</span> <span class="k">if</span> <span class="n">failed</span> <span class="k">else</span> <span class="s1">&#39;completed&#39;</span><span class="p">,</span>
+                            <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">humanize_seconds</span><span class="p">(</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">-</span> <span class="n">elapsed</span><span class="p">),</span>
+                        <span class="p">),</span> <span class="n">file</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stderr</span> <span class="k">if</span> <span class="n">failed</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">failed</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">progress</span> <span class="o">=</span> <span class="n">Progress</span><span class="p">(</span>
+                            <span class="n">fun</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">repeats</span><span class="p">,</span> <span class="n">runtime</span><span class="p">,</span> <span class="n">elapsed</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">execute_test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fun</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">fun</span><span class="p">()</span>
+            <span class="k">except</span> <span class="n">StopSuite</span><span class="p">:</span>
+                <span class="k">raise</span>
+            <span class="k">except</span> <span class="ne">AssertionError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">on_test_error</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="s1">&#39;FAILED&#39;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">on_test_error</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="s1">&#39;ERROR&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">print</span><span class="p">(</span><span class="n">pstatus</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">progress</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">colored</span><span class="o">.</span><span class="n">green</span><span class="p">(</span><span class="s1">&#39;OK&#39;</span><span class="p">)))</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">teardown</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">on_test_error</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exc</span><span class="p">,</span> <span class="n">status</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s1">&#39;-&gt; </span><span class="si">{0!r}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">exc</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">traceback</span><span class="o">.</span><span class="n">format_exc</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">pstatus</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">progress</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">colored</span><span class="o">.</span><span class="n">red</span><span class="p">(</span><span class="n">status</span><span class="p">)))</span>
+
+    <span class="k">def</span> <span class="nf">missing_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">res</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">r</span> <span class="k">if</span> <span class="n">res</span><span class="o">.</span><span class="n">id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">res</span><span class="o">.</span><span class="n">backend</span><span class="o">.</span><span class="n">_cache</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">wait_for</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fun</span><span class="p">,</span> <span class="n">catch</span><span class="p">,</span>
+                 <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;thing&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(),</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{},</span> <span class="n">errback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">max_retries</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">interval_start</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">interval_step</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                 <span class="n">interval_max</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">emit_warning</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+        <span class="n">meter</span> <span class="o">=</span> <span class="n">Meter</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">on_error</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">intervals</span><span class="p">,</span> <span class="n">retries</span><span class="p">):</span>
+            <span class="n">interval</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">intervals</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">emit_warning</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">E_STILL_WAITING</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">desc</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="n">humanize_seconds</span><span class="p">(</span><span class="n">interval</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">),</span> <span class="n">exc</span><span class="o">=</span><span class="n">exc</span><span class="p">,</span>
+                <span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">meter</span><span class="o">.</span><span class="n">emit</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">errback</span><span class="p">:</span>
+                <span class="n">errback</span><span class="p">(</span><span class="n">exc</span><span class="p">,</span> <span class="n">interval</span><span class="p">,</span> <span class="n">retries</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">interval</span>
+
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">retry_over_time</span><span class="p">(</span>
+            <span class="n">fun</span><span class="p">,</span> <span class="n">catch</span><span class="p">,</span>
+            <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kwargs</span><span class="p">,</span>
+            <span class="n">errback</span><span class="o">=</span><span class="n">on_error</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="n">max_retries</span><span class="p">,</span>
+            <span class="n">interval_start</span><span class="o">=</span><span class="n">interval_start</span><span class="p">,</span> <span class="n">interval_step</span><span class="o">=</span><span class="n">interval_step</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">options</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">ensure_not_for_a_while</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fun</span><span class="p">,</span> <span class="n">catch</span><span class="p">,</span>
+                               <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;thing&#39;</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+                               <span class="n">interval_start</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">interval_step</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span>
+                               <span class="n">interval_max</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">emit_warning</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                               <span class="o">**</span><span class="n">options</span><span class="p">):</span>
+        <span class="n">meter</span> <span class="o">=</span> <span class="n">Meter</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait_for</span><span class="p">(</span>
+                <span class="n">fun</span><span class="p">,</span> <span class="n">catch</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">desc</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="n">max_retries</span><span class="p">,</span>
+                <span class="n">interval_start</span><span class="o">=</span><span class="n">interval_start</span><span class="p">,</span> <span class="n">interval_step</span><span class="o">=</span><span class="n">interval_step</span><span class="p">,</span>
+                <span class="n">interval_max</span><span class="o">=</span><span class="n">interval_max</span><span class="p">,</span> <span class="n">emit_warning</span><span class="o">=</span><span class="n">emit_warning</span><span class="p">,</span>
+                <span class="n">errback</span><span class="o">=</span><span class="n">meter</span><span class="o">.</span><span class="n">emit</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="n">catch</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="s1">&#39;Should not have happened: </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">desc</span><span class="p">))</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="n">meter</span><span class="o">.</span><span class="n">revert</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">retry_over_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">retry_over_time</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">join</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">propagate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">max_retries</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">no_join</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="n">received</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">def</span> <span class="nf">on_result</span><span class="p">(</span><span class="n">task_id</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+            <span class="n">received</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">task_id</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_retries</span><span class="p">)</span> <span class="k">if</span> <span class="n">max_retries</span> <span class="k">else</span> <span class="n">count</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+            <span class="n">received</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">callback</span><span class="o">=</span><span class="n">on_result</span><span class="p">,</span> <span class="n">propagate</span><span class="o">=</span><span class="n">propagate</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">except</span> <span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">,</span> <span class="ne">TimeoutError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+                <span class="n">waiting_for</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">missing_results</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">beep</span><span class="p">()</span>
+                <span class="n">marker</span><span class="p">(</span>
+                    <span class="s1">&#39;Still waiting for </span><span class="si">{0}</span><span class="s1">/</span><span class="si">{1}</span><span class="s1">: [</span><span class="si">{2}</span><span class="s1">]: </span><span class="si">{3!r}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                        <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">received</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">),</span>
+                        <span class="n">truncate</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">waiting_for</span><span class="p">)),</span> <span class="n">exc</span><span class="p">),</span> <span class="s1">&#39;!&#39;</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">fbi</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">waiting_for</span><span class="p">)</span>
+            <span class="k">except</span> <span class="bp">self</span><span class="o">.</span><span class="n">connerrors</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">speaker</span><span class="o">.</span><span class="n">beep</span><span class="p">()</span>
+                <span class="n">marker</span><span class="p">(</span><span class="s1">&#39;join: connection lost: </span><span class="si">{0!r}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">exc</span><span class="p">),</span> <span class="s1">&#39;!&#39;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="n">StopSuite</span><span class="p">(</span><span class="s1">&#39;Test failed: Missing task results&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">dump_progress</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pstatus</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">progress</span><span class="p">)</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">progress</span> <span class="k">else</span> <span class="s1">&#39;No test running&#39;</span>
+
+    <span class="k">def</span> <span class="nf">inspect</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">app</span><span class="o">.</span><span class="n">control</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">query_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">reply</span> <span class="ow">in</span> <span class="n">items</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">inspect</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span><span class="o">.</span><span class="n">query_task</span><span class="p">(</span><span class="n">ids</span><span class="p">)</span> <span class="ow">or</span> <span class="p">[]):</span>
+            <span class="k">yield</span> <span class="n">reply</span>
+
+    <span class="k">def</span> <span class="nf">query_task_states</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+        <span class="n">states</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">hostname</span><span class="p">,</span> <span class="n">reply</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_tasks</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">task_id</span><span class="p">,</span> <span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="ow">in</span> <span class="n">items</span><span class="p">(</span><span class="n">reply</span><span class="p">):</span>
+                <span class="n">states</span><span class="p">[</span><span class="n">state</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">task_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">states</span>
+
+    <span class="k">def</span> <span class="nf">assert_accepted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                        <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;waiting for tasks to be accepted&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">policy</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">assert_task_worker_state</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_accepted</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">interval</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">desc</span><span class="p">,</span> <span class="o">**</span><span class="n">policy</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">assert_received</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+                        <span class="n">desc</span><span class="o">=</span><span class="s1">&#39;waiting for tasks to be received&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">policy</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">assert_task_worker_state</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_accepted</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="n">interval</span><span class="p">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">desc</span><span class="p">,</span> <span class="o">**</span><span class="n">policy</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">assert_task_worker_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fun</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">**</span><span class="n">policy</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">wait_for</span><span class="p">(</span>
+            <span class="n">partial</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">true_or_raise</span><span class="p">,</span> <span class="n">fun</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">interval</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">Sentinel</span><span class="p">,),</span> <span class="o">**</span><span class="n">policy</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">is_received</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ids_matches_state</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;reserved&#39;</span><span class="p">,</span> <span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="s1">&#39;ready&#39;</span><span class="p">],</span> <span class="n">ids</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">is_accepted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ids_matches_state</span><span class="p">([</span><span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="s1">&#39;ready&#39;</span><span class="p">],</span> <span class="n">ids</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_ids_matches_state</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expected_states</span><span class="p">,</span> <span class="n">ids</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+        <span class="n">states</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">query_task_states</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">all</span><span class="p">(</span>
+            <span class="nb">any</span><span class="p">(</span><span class="n">t</span> <span class="ow">in</span> <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="p">[</span><span class="n">states</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">expected_states</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">ids</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">true_or_raise</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fun</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">fun</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">res</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">Sentinel</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">res</span>
+
+<span class="n">_creation_counter</span> <span class="o">=</span> <span class="n">count</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="testcase"><a class="viewcode-back" href="../../reference/thorn.funtests.base.html#thorn.funtests.base.testcase">[docs]</a><span class="k">def</span> <span class="nf">testcase</span><span class="p">(</span><span class="o">*</span><span class="n">groups</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">groups</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;@testcase requires at least one group name&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_mark_as_case</span><span class="p">(</span><span class="n">fun</span><span class="p">):</span>
+        <span class="n">fun</span><span class="o">.</span><span class="n">__testgroup__</span> <span class="o">=</span> <span class="n">groups</span>
+        <span class="n">fun</span><span class="o">.</span><span class="n">__testsort__</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">_creation_counter</span><span class="p">)</span>
+        <span class="n">fun</span><span class="o">.</span><span class="n">__iterations__</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;iterations&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">fun</span>
+
+    <span class="k">return</span> <span class="n">_mark_as_case</span></div>
+
+
+<span class="k">def</span> <span class="nf">_is_descriptor</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">attr</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">cattr</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">__class__</span><span class="p">,</span> <span class="n">attr</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">ismethod</span><span class="p">(</span><span class="n">cattr</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">cattr</span><span class="p">,</span> <span class="s1">&#39;__get__&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

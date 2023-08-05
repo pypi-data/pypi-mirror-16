@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>thorn.validators &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="index.html" />
+    <link rel="next" title="thorn.exceptions" href="thorn.exceptions.html" />
+    <link rel="prev" title="thorn.request" href="thorn.request.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.exceptions.html" title="thorn.exceptions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="thorn.request.html" title="thorn.request"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="thorn-validators">
+<h1>thorn.validators<a class="headerlink" href="#thorn-validators" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-thorn.validators"></span><dl class="function">
+<dt id="thorn.validators.ensure_protocol">
+<code class="descclassname">thorn.validators.</code><code class="descname">ensure_protocol</code><span class="sig-paren">(</span><em>*allowed</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/validators.html#ensure_protocol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.validators.ensure_protocol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only allow recipient URLs using specific protocols.</p>
+<dl class="docutils">
+<dt>Example:</dt>
+<dd>ensure_protocol(&#8216;https&#8217;, &#8216;<a class="reference external" href="http://">http://</a>&#8216;)</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="thorn.validators.ensure_port">
+<code class="descclassname">thorn.validators.</code><code class="descname">ensure_port</code><span class="sig-paren">(</span><em>*allowed</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/validators.html#ensure_port"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.validators.ensure_port" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="thorn.validators.block_internal_ips">
+<code class="descclassname">thorn.validators.</code><code class="descname">block_internal_ips</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/validators.html#block_internal_ips"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.validators.block_internal_ips" title="Permalink to this definition">¶</a></dt>
+<dd><p>Block recipient URLs that have an internal IP address.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This does not check for <em>private</em> networks, it will only
+make sure the IP address is not in a reserved private block
+(e.g. 192.168.0.1/24).</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="thorn.validators.block_cidr_network">
+<code class="descclassname">thorn.validators.</code><code class="descname">block_cidr_network</code><span class="sig-paren">(</span><em>*blocked_networks</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/validators.html#block_cidr_network"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.validators.block_cidr_network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Block recipient URLs from a list of CIDR networks.</p>
+<p>Example:</p>
+<blockquote>
+<div>block_cidr_network(&#8216;192.168.0.0/24&#8217;, &#8216;132.34.23.0/24&#8217;)</div></blockquote>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="thorn.request.html"
+                        title="previous chapter">thorn.request</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="thorn.exceptions.html"
+                        title="next chapter">thorn.exceptions</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference/thorn.validators.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.exceptions.html" title="thorn.exceptions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="thorn.request.html" title="thorn.request"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

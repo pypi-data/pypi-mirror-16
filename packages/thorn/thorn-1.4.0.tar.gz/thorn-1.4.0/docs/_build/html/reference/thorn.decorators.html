@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>thorn.decorators &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="index.html" />
+    <link rel="next" title="thorn.events" href="thorn.events.html" />
+    <link rel="prev" title="thorn.app" href="thorn.app.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.events.html" title="thorn.events"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="thorn.app.html" title="thorn.app"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="thorn-decorators">
+<h1>thorn.decorators<a class="headerlink" href="#thorn-decorators" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#thorn-webhook-decorators" id="id1">thorn.webhook.decorators</a></li>
+</ul>
+</div>
+<span class="target" id="module-thorn.decorators"></span><div class="section" id="thorn-webhook-decorators">
+<h2><a class="toc-backref" href="#id1">thorn.webhook.decorators</a><a class="headerlink" href="#thorn-webhook-decorators" title="Permalink to this headline">¶</a></h2>
+<p>Webhook decorators.</p>
+<dl class="class">
+<dt id="thorn.decorators.webhook_model">
+<em class="property">class </em><code class="descclassname">thorn.decorators.</code><code class="descname">webhook_model</code><span class="sig-paren">(</span><em>on_create=None</em>, <em>on_change=None</em>, <em>on_delete=None</em>, <em>reverse=None</em>, <em>sender_field=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/decorators.html#webhook_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.decorators.webhook_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorates models to send webhooks based changes to that model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>on_create</strong> &#8211; Event to dispatch whenever an instance of
+this model is created (<code class="docutils literal"><span class="pre">post_save</span></code>).</li>
+<li><strong>on_change</strong> &#8211; Event to dispatch whenever an instance of
+this model is changed (<code class="docutils literal"><span class="pre">post_save</span></code>).</li>
+<li><strong>on_delete</strong> &#8211; Event to dispatch whenever an instance of
+this model is deleted (<code class="docutils literal"><span class="pre">post_delete</span></code>).</li>
+<li><strong>on_$event</strong> &#8211; Additional user defined events.,</li>
+<li><strong>sender_field</strong> &#8211; <p>Default field used as a sender for events, e.g. <code class="docutils literal"><span class="pre">&quot;account.user&quot;</span></code>,
+will use <code class="docutils literal"><span class="pre">instance.account.user</span></code>.</p>
+<p>Individual events can override the sender field user.</p>
+</li>
+<li><strong>reverse</strong> &#8211; <p>A <a class="reference internal" href="thorn.reverse.html#thorn.reverse.model_reverser" title="thorn.reverse.model_reverser"><code class="xref py py-class docutils literal"><span class="pre">thorn.reverse.model_reverser</span></code></a> instance (or any callable
+taking an model instance as argument), that describes how to get
+the URL for an instance of this model.</p>
+<p>Individual events can override the reverser used.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<p>Simple article model, where the URL reference is retrieved
+by <code class="docutils literal"><span class="pre">reverse('article-detail',</span> <span class="pre">kwargs={'uuid':</span> <span class="pre">article.uuid})</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nd">@webhook_model</span><span class="p">(</span>
+    <span class="n">on_create</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.created&#39;</span><span class="p">),</span>
+    <span class="n">on_change</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.changed&#39;</span><span class="p">),</span>
+    <span class="n">on_delete</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.removed&#39;</span><span class="p">),</span>
+    <span class="n">on_deactivate</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span>
+        <span class="s1">&#39;article.deactivate&#39;</span><span class="p">,</span> <span class="n">deactivated__eq</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">reverse</span><span class="o">=</span><span class="n">model_reverser</span><span class="p">(</span><span class="s1">&#39;article-detail&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;uuid&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">uuid</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">UUIDField</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The URL may not actually exist after deletion, so maybe we want
+to point the reference to something else in that special case,
+like a category that can be reversed by doing
+<code class="docutils literal"><span class="pre">reverse('category-detail',</span> <span class="pre">args=[article.category.name])</span></code>.</p>
+<p>We can do that by having the <code class="docutils literal"><span class="pre">on_delete</span></code> event override
+the reverser used for that event only:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nd">@webhook_model</span><span class="p">(</span>
+    <span class="n">on_create</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.created&#39;</span><span class="p">),</span>
+    <span class="n">on_change</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.changed&#39;</span><span class="p">),</span>
+    <span class="n">on_delete</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span>
+        <span class="s1">&#39;article.removed&#39;</span><span class="p">,</span>
+        <span class="n">reverse</span><span class="o">=</span><span class="n">model_reverser</span><span class="p">(</span><span class="s1">&#39;category-detail&#39;</span><span class="p">,</span> <span class="s1">&#39;category.name&#39;</span><span class="p">),</span>
+    <span class="p">),</span>
+
+    <span class="n">on_hipri_delete</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span>
+        <span class="s1">&#39;article.internal_delete&#39;</span><span class="p">,</span> <span class="n">priority__gte</span><span class="o">=</span><span class="mf">30.0</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">dispatches_on_delete</span><span class="p">(),</span>
+
+    <span class="n">reverse</span><span class="o">=</span><span class="n">model_reverser</span><span class="p">(</span><span class="s1">&#39;article-detail&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;uuid&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">uuid</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">UUIDField</span><span class="p">()</span>
+    <span class="n">category</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="thorn.decorators.webhook_model.connect_events">
+<code class="descname">connect_events</code><span class="sig-paren">(</span><em>events</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/decorators.html#webhook_model.connect_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.decorators.webhook_model.connect_events" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.decorators.webhook_model.contribute_to_event">
+<code class="descname">contribute_to_event</code><span class="sig-paren">(</span><em>event</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/decorators.html#webhook_model.contribute_to_event"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.decorators.webhook_model.contribute_to_event" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.decorators.webhook_model.data">
+<code class="descname">data</code><a class="headerlink" href="#thorn.decorators.webhook_model.data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.decorators.webhook_model.update_events">
+<code class="descname">update_events</code><span class="sig-paren">(</span><em>events</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/decorators.html#webhook_model.update_events"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.decorators.webhook_model.update_events" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="thorn.app.html"
+                        title="previous chapter">thorn.app</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="thorn.events.html"
+                        title="next chapter">thorn.events</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference/thorn.decorators.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.events.html" title="thorn.events"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="thorn.app.html" title="thorn.app"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

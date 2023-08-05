@@ -1,0 +1,882 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Events &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="index.html" />
+    <link rel="next" title="Subscribers" href="subscribers.html" />
+    <link rel="prev" title="User Guide" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="subscribers.html" title="Subscribers"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="User Guide"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="events">
+<span id="events-guide"></span><h1>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="id5">Introduction</a><ul>
+<li><a class="reference internal" href="#defining-events" id="id6">Defining events</a></li>
+<li><a class="reference internal" href="#naming-events" id="id7">Naming events</a></li>
+<li><a class="reference internal" href="#sending-events" id="id8">Sending events</a></li>
+<li><a class="reference internal" href="#timeouts-and-retries" id="id9">Timeouts and retries</a></li>
+<li><a class="reference internal" href="#serialization" id="id10">Serialization</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#model-events" id="id11">Model events</a><ul>
+<li><a class="reference internal" href="#message-format" id="id12">Message format</a></li>
+<li><a class="reference internal" href="#decorating-models" id="id13">Decorating models</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#modelevent-objects" id="id14"><code class="docutils literal"><span class="pre">ModelEvent</span> <span class="pre">objects</span></code></a><ul>
+<li><a class="reference internal" href="#signal-dispatch" id="id15">Signal dispatch</a></li>
+<li><a class="reference internal" href="#modifying-event-payloads" id="id16">Modifying event payloads</a></li>
+<li><a class="reference internal" href="#event-senders" id="id17">Event senders</a></li>
+<li><a class="reference internal" href="#url-references" id="id18">URL references</a></li>
+<li><a class="reference internal" href="#filtering" id="id19">Filtering</a></li>
+<li><a class="reference internal" href="#sending-model-events-manually" id="id20">Sending model events manually</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#security" id="id21">Security</a></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id5">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>An event can be anything happening in your system that something external
+wants to be notified about.</p>
+<p>The most basic type of event is the <a class="reference internal" href="../reference/thorn.events.html#thorn.events.Event" title="thorn.events.Event"><code class="xref py py-class docutils literal"><span class="pre">Event</span></code></a> class,
+from which other more complicated types of events can be built.  The basic
+event does not have any protocol specification, so any payload is
+accepted.</p>
+<p>An <a class="reference internal" href="../reference/thorn.events.html#thorn.events.Event" title="thorn.events.Event"><code class="xref py py-class docutils literal"><span class="pre">Event</span></code></a> is decoupled from subscribers and dispatchers and
+simply describes an event that can be subscribed to and dispatched to subscribers.</p>
+<p>In this guide we will first be describing the basic event building
+blocks, so that you understand how they work, then move on to the API
+you are most likely to be using: the <code class="docutils literal"><span class="pre">ModelEvent</span></code> class and <code class="docutils literal"><span class="pre">&#64;webhook_model</span></code>
+decorator used to associate events with database models.</p>
+<div class="section" id="defining-events">
+<span id="events-basics-defining"></span><h3><a class="toc-backref" href="#id6">Defining events</a><a class="headerlink" href="#defining-events" title="Permalink to this headline">¶</a></h3>
+<p>Say you would like to define an event that dispatches whenever
+a new user is created, you can do so by creating a new
+<a class="reference internal" href="../reference/thorn.events.html#thorn.events.Event" title="thorn.events.Event"><code class="xref py py-class docutils literal"><span class="pre">Event</span></code></a> object, giving it a name and assigning
+it to a variable:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">thorn</span> <span class="kn">import</span> <span class="n">Event</span>
+
+<span class="n">on_user_created</span> <span class="o">=</span> <span class="n">Event</span><span class="p">(</span><span class="s1">&#39;user.created&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Currently this event is merely defined, and won&#8217;t be dispatched under any
+circumstance unless you manually do so by calling <code class="docutils literal"><span class="pre">on_user_created.send()</span></code>.</p>
+<p>Since the event name is <code class="docutils literal"><span class="pre">user.created</span></code> it&#8217;s easy to imagine this being
+sent from something like a web view responsible for creating users,
+or whenever a user model is changed.</p>
+</div>
+<div class="section" id="naming-events">
+<h3><a class="toc-backref" href="#id7">Naming events</a><a class="headerlink" href="#naming-events" title="Permalink to this headline">¶</a></h3>
+<p>Subscribers can filter events by simple pattern matching, so event names should
+normally be composed out of a category name and an event name, separated by
+a single dot:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>&quot;category.name&quot;
+</pre></div>
+</div>
+<p>A subscription to <code class="docutils literal"><span class="pre">&quot;user.*&quot;</span></code> will match events <code class="docutils literal"><span class="pre">&quot;user.created&quot;</span></code>,
+<code class="docutils literal"><span class="pre">&quot;user.changed&quot;</span></code>, and <code class="docutils literal"><span class="pre">&quot;user.removed&quot;</span></code>; while a subscription to
+<code class="docutils literal"><span class="pre">&quot;*.created&quot;</span></code> will match <code class="docutils literal"><span class="pre">&quot;user.created&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;article.created&quot;</span></code>, and so
+on.</p>
+</div>
+<div class="section" id="sending-events">
+<span id="events-basics-sending"></span><h3><a class="toc-backref" href="#id8">Sending events</a><a class="headerlink" href="#sending-events" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">userapp</span> <span class="kn">import</span> <span class="n">events</span>
+<span class="kn">from</span> <span class="nn">userapp.models</span> <span class="kn">import</span> <span class="n">User</span>
+
+
+<span class="k">def</span> <span class="nf">create_user</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">)</span>
+    <span class="n">events</span><span class="o">.</span><span class="n">on_user_created</span><span class="o">.</span><span class="n">send</span><span class="p">({</span>
+        <span class="s1">&#39;uuid&#39;</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">uuid</span><span class="p">,</span>
+        <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="n">user</span><span class="o">.</span><span class="n">username</span><span class="p">,</span>
+        <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;http://mysite/users/{0}/&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">uuid</span><span class="p">),</span>
+    <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="timeouts-and-retries">
+<span id="events-basics-timeouts"></span><h3><a class="toc-backref" href="#id9">Timeouts and retries</a><a class="headerlink" href="#timeouts-and-retries" title="Permalink to this headline">¶</a></h3>
+<p>Dispatching an event will ultimately mean performing one or more HTTP requests
+if there are subscribers attached to that event.</p>
+<p>Many HTTP requests will be quick, but some of them will be problematic,
+especially if you let arbitrary users register external URL callbacks.</p>
+<p>A web server taking too long to respond can be handled by setting a socket
+timeout such that an error is raised.  This timeout error can be combined
+with retries to retry at a later time when the web server is hopefully under
+less strain.</p>
+<p>Slow HTTP requests is usually fine when using the Celery dispatcher,
+merely blocking that process/thread from doing other work,
+but when dispatching directly from a web server process it can be
+deadly, especially if the timeout settings are not tuned properly.</p>
+<p>The default timeout for web requests related to an event is configured by the
+<a class="reference internal" href="configuration.html#std:setting-THORN_EVENT_TIMEOUT"><code class="xref std std-setting docutils literal"><span class="pre">THORN_EVENT_TIMEOUT</span></code></a> setting, and is set to 3 seconds by default.</p>
+<p>Individual events can override the default timeout by providing
+either a <code class="docutils literal"><span class="pre">timeout</span></code> argument when creating the event:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">on_user_created</span> <span class="o">=</span> <span class="n">Event</span><span class="p">(</span><span class="s1">&#39;user.created&#39;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">10.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or as an argument to the <a class="reference internal" href="../reference/thorn.events.html#thorn.events.Event.send" title="thorn.events.Event.send"><code class="xref py py-meth docutils literal"><span class="pre">send()</span></code></a> method:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">on_user_created</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In addition to the web server being slow to respond, there are other intermittent
+problems that can occur, such as a 500 (Internal Server Error) response, or
+even a 404 (Resource Not Found).</p>
+<p>The right way to deal with these errors is to retry performing the HTTP
+request at a later time and this is configured by the event retry policy settings:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">on_user_created</span> <span class="o">=</span> <span class="n">Event</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s1">&#39;user.created&#39;</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">retry</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">retry_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">retry_delay</span><span class="o">=</span><span class="mf">60.0</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The values used here also happen to be the default setting, and can be
+configured for all events using the <a class="reference internal" href="configuration.html#std:setting-THORN_RETRY"><code class="xref std std-setting docutils literal"><span class="pre">THORN_RETRY</span></code></a>,
+<a class="reference internal" href="configuration.html#std:setting-THORN_RETRY_MAX"><code class="xref std std-setting docutils literal"><span class="pre">THORN_RETRY_MAX</span></code></a> and <a class="reference internal" href="configuration.html#std:setting-THORN_RETRY_DELAY"><code class="xref std std-setting docutils literal"><span class="pre">THORN_RETRY_DELAY</span></code></a> settings.</p>
+</div>
+<div class="section" id="serialization">
+<span id="events-serialization"></span><h3><a class="toc-backref" href="#id10">Serialization</a><a class="headerlink" href="#serialization" title="Permalink to this headline">¶</a></h3>
+<p>Events are always serialized using the <a class="reference external" href="http://www.json.org">json</a> serialization format <a class="footnote-reference" href="#id3" id="id1">[*]</a>,
+which means the data you provide in the webhook payload must be representable
+in <em>json</em> or an error will be raised.</p>
+<p>The built-in data types supported by <em>json</em> are:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">int</span></code></li>
+<li><code class="docutils literal"><span class="pre">float</span></code></li>
+<li><code class="docutils literal"><span class="pre">string</span></code></li>
+<li><code class="docutils literal"><span class="pre">dictionary</span></code></li>
+<li><code class="docutils literal"><span class="pre">list</span></code></li>
+</ul>
+<p>In addition Thorn adds the capability to serialize the following Python types:</p>
+<ul>
+<li><p class="first"><a class="reference external" href="https://docs.python.org/dev/library/datetime.html#datetime.datetime" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">datetime.datetime</span></code></a>: converted to <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> string.</p>
+</li>
+<li><p class="first"><a class="reference external" href="https://docs.python.org/dev/library/datetime.html#datetime.date" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">datetime.date</span></code></a>: converted to <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> string.</p>
+</li>
+<li><p class="first"><a class="reference external" href="https://docs.python.org/dev/library/datetime.html#datetime.time" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">datetime.time</span></code></a>: converted to <a class="reference external" href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> string.</p>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="https://docs.python.org/dev/library/decimal.html#decimal.Decimal" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">decimal.Decimal</span></code></a>:</dt>
+<dd><p class="first last">converted to string as the <em>json</em> float type is unreliable.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><a class="reference external" href="https://docs.python.org/dev/library/uuid.html#uuid.UUID" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">uuid.UUID</span></code></a>: converted to string.</p>
+</li>
+<li><dl class="first docutils">
+<dt><code class="xref py py-class docutils literal"><span class="pre">django.utils.functional.Promise</span></code>:</dt>
+<dd><p class="first last">if <a class="reference external" href="https://pypi.python.org/pypi/django/">django</a> is installed, converted to string.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="model-events">
+<span id="events-model"></span><h2><a class="toc-backref" href="#id11">Model events</a><a class="headerlink" href="#model-events" title="Permalink to this headline">¶</a></h2>
+<p>In most cases your events will actually be related to a database model being
+created, changed, or deleted, which is why Thorn comes with a convenience event
+type just for this purpose, and even a decorator to easily add
+webhook-capabilities to your database models.</p>
+<p>This is the <a class="reference internal" href="../reference/thorn.html#thorn.ModelEvent" title="thorn.ModelEvent"><code class="xref py py-class docutils literal"><span class="pre">thorn.ModelEvent</span></code></a> event type, and the
+<a class="reference internal" href="../reference/thorn.html#thorn.webhook_model" title="thorn.webhook_model"><code class="xref py py-class docutils literal"><span class="pre">&#64;webhook_model()</span></code></a> decorator.</p>
+<p>We will be giving an example in a moment, but first we will discuss the
+message format for model events.</p>
+<div class="section" id="message-format">
+<span id="events-model-message-format"></span><h3><a class="toc-backref" href="#id12">Message format</a><a class="headerlink" href="#message-format" title="Permalink to this headline">¶</a></h3>
+<p>The model events have a standard message format specification, which is really
+more of a header with arbitrary data attached.</p>
+<p>An example model event message serialized by <a class="reference external" href="http://www.json.org">json</a> would look like this:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span> <span class="s2">&quot;(str)event_name&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;(URL)model_location&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;sender&quot;</span><span class="p">:</span> <span class="s2">&quot;(User pk)optional_sender&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;event specific data&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">}}</span>
+</pre></div>
+</div>
+<p>The most important part here is <code class="docutils literal"><span class="pre">ref</span></code>, which is optional
+but lets you link back to the resource affected by the event.</p>
+<p>We will discuss reversing models to provide the <code class="docutils literal"><span class="pre">ref</span></code> later in this chapter.</p>
+</div>
+<div class="section" id="decorating-models">
+<span id="events-model-decorator"></span><h3><a class="toc-backref" href="#id13">Decorating models</a><a class="headerlink" href="#decorating-models" title="Permalink to this headline">¶</a></h3>
+<p>The easiest way to add webhook-capabilities to your models is by using
+the <code class="xref py py-class docutils literal"><span class="pre">&#64;webhook_model()</span></code> decorator.</p>
+<p>Here&#8217;s an example decorating a Django ORM model:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="kn">from</span> <span class="nn">thorn</span> <span class="kn">import</span> <span class="n">ModelEvent</span><span class="p">,</span> <span class="n">model_reverser</span><span class="p">,</span> <span class="n">webhook_model</span>
+
+
+<span class="nd">@webhook_model</span><span class="p">(</span>
+    <span class="n">on_create</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.created&#39;</span><span class="p">),</span>
+    <span class="n">on_change</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.changed&#39;</span><span class="p">),</span>
+    <span class="n">on_delete</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.removed&#39;</span><span class="p">),</span>
+    <span class="n">on_publish</span><span class="o">=</span><span class="n">ModelEvent</span><span class="p">(</span>
+        <span class="s1">&#39;article.published&#39;</span><span class="p">,</span> <span class="n">state__now_eq</span><span class="o">=</span><span class="s1">&#39;PUBLISHED&#39;</span><span class="p">,</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">dispatches_on_change</span><span class="p">(),</span>
+    <span class="n">reverse</span><span class="o">=</span><span class="n">model_reverser</span><span class="p">(</span><span class="s1">&#39;article:detail&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;uuid&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">uuid</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">UUIDField</span><span class="p">()</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;PENDING&#39;</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">webhook_payload</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">,</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition-why-is-this-example-using-django admonition">
+<p class="first admonition-title">Why is this example using Django?</p>
+<p>Rest assured that Thorn is not a Django-specific library
+and should be flexible enough to integrate with any framework,
+but we have to use something for these generic examples,
+and Django is the only framework currently supported.</p>
+<p class="last">Please get in touch if you want to add support for additional
+frameworks, it&#8217;s not as tricky as it sounds and we can help!</p>
+</div>
+<p>The arguments to this decorator is probably a bit confusing at first,
+but how expressive this interface is will be apparent once you learn more
+about them.</p>
+<p>So let&#8217;s discuss the decorator arguments one by one:</p>
+<ol class="arabic">
+<li><p class="first"><code class="docutils literal"><span class="pre">on_create=ModelEvent('article.created')</span></code></p>
+<blockquote>
+<div><p>Here we specify an event to be sent every time a new object of this
+model type is created.</p>
+<p>The webhook model decorator can accept an arbitrary number of custom
+events, but there are three types of events the decorator already knows how to
+dispatch: <code class="docutils literal"><span class="pre">on_create</span></code>, <code class="docutils literal"><span class="pre">on_change</span></code> and <code class="docutils literal"><span class="pre">on_delete</span></code>.  For any additional
+events you are required to specify the dispatch mechanism (see later
+explanation of the <code class="docutils literal"><span class="pre">on_publish</span></code> argument).</p>
+<p>The name <code class="docutils literal"><span class="pre">&quot;article.created&quot;</span></code> here is the event name that subscribers can
+use to subscribe to this event.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">on_change=ModelEvent('article.changed')</span></code></p>
+<blockquote>
+<div><p>Just like <code class="docutils literal"><span class="pre">on_create</span></code> and <code class="docutils literal"><span class="pre">on_delete</span></code> the decorator does not need
+to know when an <code class="docutils literal"><span class="pre">on_change</span></code> event is to be dispatched: it will be sent
+whenever an object of this model type is changed.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">on_delete=ModelEvent('article.deleted')</span></code></p>
+<blockquote>
+<div><p>I&#8217;m sure you can guess what this one does already! This event will
+be sent whenever an object of this model type is deleted.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">on_publish=ModelEvent('article.published',</span> <span class="pre">state__now_eq='PUBLISHED')</span></code></p>
+<blockquote>
+<div><p>Here we define a custom event type with an active filter.</p>
+<p>The filter (<code class="docutils literal"><span class="pre">state__now_eq='PUBLISHED'</span></code>) in combination with the specified
+dispatch type (<code class="docutils literal"><span class="pre">.dispatched_on_change</span></code>) means the event will only be
+sent when 1) an Article is changed and 2) the updated state changed
+from something else to <code class="docutils literal"><span class="pre">&quot;PUBLISHED&quot;</span></code>.</p>
+<p>The decorator will happily accept any argument starting with <code class="docutils literal"><span class="pre">on_</span></code>
+as an event associated with this model, and any argument to
+<a class="reference internal" href="../reference/thorn.html#thorn.ModelEvent" title="thorn.ModelEvent"><code class="xref py py-class docutils literal"><span class="pre">ModelEvent</span></code></a> ending with <code class="docutils literal"><span class="pre">__eq</span></code>, <code class="docutils literal"><span class="pre">__ne</span></code>, <code class="docutils literal"><span class="pre">__gt</span></code>,
+<code class="docutils literal"><span class="pre">__gte</span></code>, <code class="docutils literal"><span class="pre">__lt</span></code>, <code class="docutils literal"><span class="pre">__lte</span></code>,  <code class="docutils literal"><span class="pre">__is</span></code>, <code class="docutils literal"><span class="pre">__is_not</span></code>, <code class="docutils literal"><span class="pre">__contains</span></code>,
+<code class="docutils literal"><span class="pre">__startswith</span></code> or <code class="docutils literal"><span class="pre">__endswith</span></code> will be regarded as a filter argument.</p>
+<p>You can even use <code class="docutils literal"><span class="pre">Q</span></code> objects to create elaborate boolean structures,
+which is described in detail in the <a class="reference internal" href="#events-model-filtering"><span class="std std-ref">Filtering</span></a>
+section.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">reverse=model_reverser('article.detail',</span> <span class="pre">uuid='uuid')</span></code></p>
+<blockquote>
+<div><p>This tells the decorator how to get the canonical URL of an object of
+this model type, which is used as the <code class="docutils literal"><span class="pre">ref</span></code> field in the webhook
+<a class="reference internal" href="#events-model-message-format"><span class="std std-ref">message payload</span></a>.</p>
+<p>In this case the reverser, when using Django, will translate directly
+into:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;article.detail&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;uuid&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="o">.</span><span class="n">uuid</span><span class="p">})</span>
+<span class="go">http://example.com/article/3d90c42c-d61e-4579-ab8f-733d955529ad/</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="#events-model-reverse"><span class="std std-ref">URL references</span></a> for more examples of model reversers.</p>
+</div></blockquote>
+</li>
+</ol>
+<div class="admonition-django-signals-and-bulk-updates admonition">
+<p class="first admonition-title">Django signals and bulk updates</p>
+<p class="last">A limitation with database signals in Django is that signals are not
+dispatched for bulk operations (<code class="docutils literal"><span class="pre">objects.delete()</span></code>/
+<code class="docutils literal"><span class="pre">objects.update()</span></code>), so you need to dispatch events manually when
+you use this functionality.</p>
+</div>
+</div>
+</div>
+<div class="section" id="modelevent-objects">
+<span id="events-model-event"></span><h2><a class="toc-backref" href="#id14"><code class="docutils literal"><span class="pre">ModelEvent</span> <span class="pre">objects</span></code></a><a class="headerlink" href="#modelevent-objects" title="Permalink to this headline">¶</a></h2>
+<p>This section describes the <a class="reference internal" href="../reference/thorn.html#thorn.ModelEvent" title="thorn.ModelEvent"><code class="xref py py-class docutils literal"><span class="pre">ModelEvent</span></code></a> objects used
+with the <a class="reference internal" href="../reference/thorn.html#thorn.webhook_model" title="thorn.webhook_model"><code class="xref py py-class docutils literal"><span class="pre">&#64;webhook_model()</span></code></a> decorator
+in greater detail.</p>
+<div class="section" id="signal-dispatch">
+<span id="events-model-signals"></span><h3><a class="toc-backref" href="#id15">Signal dispatch</a><a class="headerlink" href="#signal-dispatch" title="Permalink to this headline">¶</a></h3>
+<p>A model event will usually be dispatched in reaction to a signal <a class="footnote-reference" href="#id4" id="id2">[†]</a>,
+on Django this means connecting to the
+<a class="reference external" href="http://django.readthedocs.io/en/latest/ref/signals.html#django.db.models.signals.post_save" title="(in Django v1.11)"><code class="xref py py-data docutils literal"><span class="pre">post_save</span></code></a> and
+<a class="reference external" href="http://django.readthedocs.io/en/latest/ref/signals.html#django.db.models.signals.post_delete" title="(in Django v1.11)"><code class="xref py py-data docutils literal"><span class="pre">post_delete</span></code></a> signals.</p>
+<p>There are three built-in signal dispatch handlers:</p>
+<ol class="arabic">
+<li><p class="first">Send when a new model object is created:</p>
+<blockquote>
+<div><div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dispatches_on_create</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Send when an existing model object is changed:</p>
+<blockquote>
+<div><div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dispatches_on_change</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Send when an existing model object is deleted:</p>
+<blockquote>
+<div><div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dispatches_on_delete</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Send when a many-to-many relation is added</p>
+<blockquote>
+<div><div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dispatches_on_m2m_add</span><span class="p">(</span><span class="s1">&#39;tags&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Argument is the related field name, and in this example
+tags is defined on the model as <code class="docutils literal"><span class="pre">tags</span> <span class="pre">=</span> <span class="pre">ManyToManyField(Tag)</span></code>.
+The event will dispatch whenever <code class="docutils literal"><span class="pre">Model.tags.add(related_object)</span></code>
+happens.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Send when a many-to-many relation is removed</p>
+<blockquote>
+<div><div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dispatches_on_m2m_remove</span><span class="p">(</span><span class="s1">&#39;tags&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Argument is the related field name, and in this example
+tags is defined on the model as <code class="docutils literal"><span class="pre">tags</span> <span class="pre">=</span> <span class="pre">ManyToManyField(Tag)</span></code>.
+The event will dispatch whenever <code class="docutils literal"><span class="pre">Model.tags.remove(related_object)</span></code>
+happens.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Send when a many-to-many field is cleared</p>
+<blockquote>
+<div><div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">dispatches_on_m2m_clear</span><span class="p">(</span><span class="s1">&#39;tags&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Argument is the related field name, and in this example
+tags is defined on the model as <code class="docutils literal"><span class="pre">tags</span> <span class="pre">=</span> <span class="pre">ManyToManyField(Tag)</span></code>.
+The event will dispatch whenever <code class="docutils literal"><span class="pre">Model.tags.clear()</span></code>
+happens.</p>
+</div></blockquote>
+</li>
+</ol>
+<p>All of these will only be sent when the transaction is committed, or by other
+means the changes are final in the database.</p>
+<p>The webhook model decorator treats the <code class="docutils literal"><span class="pre">on_create</span></code>, <code class="docutils literal"><span class="pre">on_change</span></code>, and
+<code class="docutils literal"><span class="pre">on_delete</span></code> arguments specially so that you don&#8217;t have to specify
+the dispatch mechanism for these, but that is not true for any custom
+events you specify by using the <code class="docutils literal"><span class="pre">on_</span></code> argument prefix to
+<a class="reference internal" href="../reference/thorn.html#thorn.webhook_model" title="thorn.webhook_model"><code class="xref py py-class docutils literal"><span class="pre">webhook_model</span></code></a>.</p>
+</div>
+<div class="section" id="modifying-event-payloads">
+<span id="events-model-payload"></span><h3><a class="toc-backref" href="#id16">Modifying event payloads</a><a class="headerlink" href="#modifying-event-payloads" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal"><span class="pre">data</span></code> field part of the resulting
+<a class="reference internal" href="#events-model-message-format"><span class="std std-ref">model event message</span></a> will be empty
+by default, but you can define a special method on your model class
+to populate this with data relevant for the event.</p>
+<p>This callback must be named <code class="docutils literal"><span class="pre">webhook_payload</span></code>, takes no arguments,
+and can return anything as long as it&#8217;s json-serializable:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">uuid</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">UUIDField</span><span class="p">()</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;PENDING&#39;</span><span class="p">)</span>
+    <span class="n">body</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">webhook_payload</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">,</span>
+            <span class="s1">&#39;state&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">,</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">[:</span><span class="mi">1024</span><span class="p">],</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+<p>You should carefully consider what you include in the payload to make sure
+your messages are as small and lean as possible, so in this case we truncate
+the body of the article to save space.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>Do we have to include the article body at all?</p>
+<p>Remember that the webhook message will include the <code class="docutils literal"><span class="pre">ref</span></code> field
+containing a URL pointing back to the affected resource,
+so the recipient can request the full contents of the article
+if they want to.</p>
+<p class="last">Including the body will be a question of how many of your subscribers
+will require the full article text.  If the majority of them will, including
+the body will save them from having to perform an extra HTTP request, but if
+not, you have drastically increased the size of your messages.</p>
+</div>
+</div>
+<div class="section" id="event-senders">
+<span id="events-model-senders"></span><h3><a class="toc-backref" href="#id17">Event senders</a><a class="headerlink" href="#event-senders" title="Permalink to this headline">¶</a></h3>
+<p>If your model is associated with a user and you want subscribers
+to filter based on the owner/author/etc. of the model instance,
+you can include the <code class="docutils literal"><span class="pre">sender_field</span></code> argument:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="kn">import</span> <span class="n">get_user_model</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+
+<span class="nd">@webhook_model</span><span class="p">(</span>
+    <span class="n">sender_field</span><span class="o">=</span><span class="s1">&#39;author.account.user&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">author</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Author</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Author</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">account</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Account</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">Account</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">get_user_model</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="url-references">
+<span id="events-model-reverse"></span><h3><a class="toc-backref" href="#id18">URL references</a><a class="headerlink" href="#url-references" title="Permalink to this headline">¶</a></h3>
+<p>To be able to provide a URL reference back to your model object
+the event needs to know how to call <code class="xref py py-func docutils literal"><span class="pre">django.core.urlresolvers.reverse()</span></code>
+(or equivalent in your web framework) and what arguments to use.</p>
+<p>This is where the <a class="reference internal" href="../reference/thorn.html#thorn.model_reverser" title="thorn.model_reverser"><code class="xref py py-class docutils literal"><span class="pre">model_reverser</span></code></a> helper comes in,
+which simply describes how to turn an instance of your model into the
+arguments used for <em>reverse</em>.</p>
+<p>The signature of <a class="reference internal" href="../reference/thorn.html#thorn.model_reverser" title="thorn.model_reverser"><code class="xref py py-class docutils literal"><span class="pre">model_reverser</span></code></a> is:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">model_reverser</span><span class="p">(</span><span class="n">view_name</span><span class="p">,</span> <span class="o">*</span><span class="n">reverse_args</span><span class="p">,</span> <span class="o">**</span><span class="n">reverse_kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The positional arguments will be the names of attributes to take from the
+model instance, and the same for keyword arguments.</p>
+<p>So if we imagine that the REST API view of our article app is included
+like this:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^article/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span>
+    <span class="s1">&#39;apps.article.urls&#39;</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="s1">&#39;article&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>and the URL routing table of the Article app looks like this:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^$&#39;</span><span class="p">,</span>
+        <span class="n">views</span><span class="o">.</span><span class="n">ArticleList</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;list&#39;</span><span class="p">),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;^(?P&lt;uuid&gt;[0-9a-fA-F-]+)/$&#39;</span><span class="p">,</span>
+        <span class="n">views</span><span class="o">.</span><span class="n">ArticleDetail</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;detail&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>We can see that to get the URL of a specific article we need
+1) the name of the view (<code class="docutils literal"><span class="pre">article:detail</span></code>), and
+2) a named <em>uuid</em> keyword argument:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">article</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;f3f2b22b-8630-412a-a320-5b2644ed723a&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;article:detail&#39;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;uuid&#39;</span><span class="p">:</span> <span class="n">article</span><span class="o">.</span><span class="n">uuid</span><span class="p">})</span>
+<span class="go">http://example.com/article/f3f2b22b-8630-412a-a320-5b2644ed723a/</span>
+</pre></div>
+</div>
+<p>So to define a reverser for this model we can use:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">model_reverser</span><span class="p">(</span><span class="s1">&#39;article:detail&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;uuid&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">uuid='uuid'</span></code> here means take the <code class="docutils literal"><span class="pre">uuid</span></code> argument from the
+identically named field on the instance (<code class="docutils literal"><span class="pre">article.uuid</span></code>).</p>
+<p>Any attribute name is accepted as a value, and even nested attributes
+are supported:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">model_reverser</span><span class="p">(</span><span class="s1">&#39;broker:position&#39;</span><span class="p">,</span>
+               <span class="n">account</span><span class="o">=</span><span class="s1">&#39;user.profile.account&#39;</span><span class="p">)</span>
+<span class="c1">#               ^^ will be taken from instance.user.profile.account</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filtering">
+<span id="events-model-filtering"></span><h3><a class="toc-backref" href="#id19">Filtering</a><a class="headerlink" href="#filtering" title="Permalink to this headline">¶</a></h3>
+<p>Model events can filter models by matching attributes on the model instance.</p>
+<p>The most simple filter would be to match a single field only:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.changed&#39;</span><span class="p">,</span> <span class="n">state__eq</span><span class="o">=</span><span class="s1">&#39;PUBLISHED&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and this will basically transform into the predicate:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">instance</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;PUBLISHED&#39;</span><span class="p">:</span>
+    <span class="n">send_event</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This may not be what you want since it will always match even if the
+value was already set to <code class="docutils literal"><span class="pre">&quot;PUBLISHED&quot;</span></code> before.   To only match
+on the transition from some other value to <code class="docutils literal"><span class="pre">&quot;PUBLISHED&quot;</span></code> you can use
+<code class="docutils literal"><span class="pre">now_eq</span></code> instead:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.changed&#39;</span><span class="p">,</span> <span class="n">state__now_eq</span><span class="o">=</span><span class="s1">&#39;PUBLISHED&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>which will transform into the predicate:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">old_value</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="s1">&#39;state&#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="s1">&#39;PUBLISHED&#39;</span> <span class="ow">and</span>
+        <span class="n">instance</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;PUBLISHED&#39;</span><span class="p">):</span>
+    <span class="n">send_event</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition-transitions-and-performance admonition">
+<p class="first admonition-title">Transitions and performance</p>
+<p class="last">Using the <code class="docutils literal"><span class="pre">now_*</span></code> operators means Thorn will have to
+fetch the old object from the database before the new version is saved,
+so an extra database hit is required every time you save an instance
+of that model.</p>
+</div>
+<p>You can combine as many filters as you want:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.changed&#39;</span><span class="p">,</span>
+           <span class="n">state__eq</span><span class="o">=</span><span class="s1">&#39;PUBLISHED&#39;</span><span class="p">,</span>
+           <span class="n">title__startswith</span><span class="p">(</span><span class="s1">&#39;The&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In this case the filters form an <strong>AND</strong> relationship and will only continue
+if all of the filters match:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">instance</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;PUBLISHED&#39;</span> <span class="ow">and</span> <span class="n">instance</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;The&#39;</span><span class="p">):</span>
+    <span class="n">send_event</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If you want an <code class="docutils literal"><span class="pre">OR</span></code> relationship or to combine boolean gates, you will
+have to use <a class="reference internal" href="../reference/thorn.html#thorn.Q" title="thorn.Q"><code class="xref py py-class docutils literal"><span class="pre">Q</span></code></a> objects:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">thorn</span> <span class="kn">import</span> <span class="n">ModelEvent</span><span class="p">,</span> <span class="n">Q</span>
+
+
+<span class="n">ModelEvent</span><span class="p">(</span>
+    <span class="s1">&#39;article.changed&#39;</span><span class="p">,</span>
+    <span class="n">Q</span><span class="p">(</span><span class="n">state__eq</span><span class="o">=</span><span class="s1">&#39;PUBLISHED&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="n">Q</span><span class="p">(</span><span class="n">state__eq</span><span class="o">=</span><span class="s1">&#39;PREVIEW&#39;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also negate filters using the <code class="docutils literal"><span class="pre">~</span></code> operator:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ModelEvent</span><span class="p">(</span>
+    <span class="s1">&#39;article.changed&#39;</span><span class="p">,</span>
+    <span class="p">(</span>
+        <span class="n">Q</span><span class="p">(</span><span class="n">state__eq</span><span class="o">=</span><span class="s1">&#39;PUBLISHED&#39;</span><span class="p">)</span> <span class="o">|</span>
+        <span class="n">Q</span><span class="p">(</span><span class="n">state__eq</span><span class="o">=</span><span class="s1">&#39;PREVIEW&#39;</span><span class="p">)</span> <span class="o">&amp;</span>
+        <span class="o">~</span><span class="n">Q</span><span class="p">(</span><span class="n">title__startswith</span><span class="p">(</span><span class="s1">&#39;The&#39;</span><span class="p">))</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Which as our final example will translate into the following pseudo-code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">instance</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;The&#39;</span><span class="p">)</span> <span class="ow">and</span>
+        <span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;PUBLISHED&#39;</span> <span class="ow">or</span> <span class="n">instance</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="s1">&#39;PREVIEW&#39;</span><span class="p">)):</span>
+    <span class="n">send_event</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Thorn will happily accept Django&#8217;s <code class="xref py py-class docutils literal"><span class="pre">Q</span></code> objects,
+so you don&#8217;t have to import Q from Thorn when you already have one from
+Django.</p>
+</div>
+<p>Note that you are always required to specify <code class="docutils literal"><span class="pre">__eq</span></code> when specifying filters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.created&#39;</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="s1">&#39;PUBLISHED&#39;</span><span class="p">)</span>      <span class="c1"># &lt;--- DOES NOT WORK</span>
+
+<span class="n">ModelEvent</span><span class="p">(</span><span class="s1">&#39;article.created&#39;</span><span class="p">,</span> <span class="n">state__eq</span><span class="o">=</span><span class="s1">&#39;PUBLISHED&#39;</span><span class="p">)</span>  <span class="c1"># &lt;-- OK! :o)</span>
+</pre></div>
+</div>
+<div class="section" id="supported-operators">
+<span id="events-model-filtering-operators"></span><h4>Supported operators<a class="headerlink" href="#supported-operators" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Operator</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">eq=B</span></code></td>
+<td>value equal to B (<code class="docutils literal"><span class="pre">__eq=True</span></code> tests for truth)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">now_eq=B</span></code></td>
+<td>value equal to B and was previously not equal to B</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">ne=B</span></code></td>
+<td>value not equal to B (<code class="docutils literal"><span class="pre">__eq=False</span></code> tests for falsiness)</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">now_ne=B</span></code></td>
+<td>value now not equal to B, but was previously equal to B</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">gt=B</span></code></td>
+<td>value is greater than B: <code class="docutils literal"><span class="pre">A</span> <span class="pre">&gt;</span> <span class="pre">B</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">now_gt=B</span></code></td>
+<td>value is greater than B, but was previously less than B</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">gte=B</span></code></td>
+<td>value is greater than or equal to B: <code class="docutils literal"><span class="pre">A</span> <span class="pre">&gt;=</span> <span class="pre">B</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">now_gte=B</span></code></td>
+<td>value greater or equal to B, previously less or equal</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">lt=B</span></code></td>
+<td>value is less than B: <code class="docutils literal"><span class="pre">A</span> <span class="pre">&lt;</span> <span class="pre">B</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">now_lt=B</span></code></td>
+<td>value is less than B, previously greater than B</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">lte=B</span></code></td>
+<td>value is less than or equal to B: <code class="docutils literal"><span class="pre">A</span> <span class="pre">&lt;=</span> <span class="pre">B</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">now_lte=B</span></code></td>
+<td>value less or equal to B, previously greater or equal.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">is=B</span></code></td>
+<td>test for object identity: <code class="docutils literal"><span class="pre">A</span> <span class="pre">is</span> <span class="pre">B</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">now_is=B</span></code></td>
+<td>value is now identical, but was not previously</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">is_not=B</span></code></td>
+<td>negated object identity: <code class="docutils literal"><span class="pre">A</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">B</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">now_is_not=B</span></code></td>
+<td>value is no longer identical, but was previously</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">in={B,</span> <span class="pre">…}</span></code></td>
+<td>value is a member of set: <code class="docutils literal"><span class="pre">A</span> <span class="pre">in</span> <span class="pre">{B,</span> <span class="pre">…}</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">now_in={B,</span> <span class="pre">…}</span></code></td>
+<td>value is now member of set, but was not before</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">not_in={B,</span> <span class="pre">…}</span></code></td>
+<td>value is not a member of set: <code class="docutils literal"><span class="pre">A</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">{B,</span> <span class="pre">…}</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">now_not_in={B,</span> <span class="pre">…}</span></code></td>
+<td>value is not a member of set, but was before</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">contains=B</span></code></td>
+<td>value contains element B: <code class="docutils literal"><span class="pre">B</span> <span class="pre">in</span> <span class="pre">A</span></code></td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">now_contains=B</span></code></td>
+<td>value now contains element B, but did not previously</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">startswith=B</span></code></td>
+<td>string starts with substring B</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">now_startswith=B</span></code></td>
+<td>string now startswith B, but did not previously</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">endswith=B</span></code></td>
+<td>string ends with substring B</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">now_endswith=B</span></code></td>
+<td>string now ends with B, but did not previously</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tips">
+<h4>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><p class="first">Test for truth/falsiness</p>
+<blockquote>
+<div><p>There are two special cases for the <code class="docutils literal"><span class="pre">eq</span></code> operator: <code class="docutils literal"><span class="pre">__eq=True</span></code> and
+<code class="docutils literal"><span class="pre">_eq=False</span></code> is functionally equivalent to <code class="docutils literal"><span class="pre">if</span> <span class="pre">A</span></code> and <code class="docutils literal"><span class="pre">if</span> <span class="pre">not</span> <span class="pre">A</span></code>
+so any true-ish or false-ish value will be a match.</p>
+<p>Similarly with <code class="docutils literal"><span class="pre">ne</span></code> the cases <code class="docutils literal"><span class="pre">__ne=True</span></code> and <code class="docutils literal"><span class="pre">__ne=False</span></code> are special
+and translates to <code class="docutils literal"><span class="pre">if</span> <span class="pre">not</span> <span class="pre">A</span></code> and <code class="docutils literal"><span class="pre">if</span> <span class="pre">A</span></code> respectively.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Use <code class="docutils literal"><span class="pre">A__is=None</span></code> for testing that <code class="docutils literal"><span class="pre">A</span> <span class="pre">is</span> <span class="pre">None</span></code></p>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">contains</span></code> is not limited to strings!</p>
+<blockquote>
+<div><p>This operator supports any object supporting the <code class="docutils literal"><span class="pre">__contains__</span></code> protocol
+so in addition to strings it can also be used for sets, lists, tuples,
+dictionaries and other containers.  E.g.: <code class="docutils literal"><span class="pre">B</span> <span class="pre">in</span> <span class="pre">{1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4}</span></code>.</p>
+</div></blockquote>
+</li>
+<li><p class="first">The transition operators (<code class="docutils literal"><span class="pre">__now_*</span></code>) may affect Django database performance.</p>
+<blockquote>
+<div><p>Django signals does provide a way to get the previous value of a database
+row when saving an object, so Thorn is required to manually re-fetch the
+object from the database shortly before the object is saved.</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="sending-model-events-manually">
+<h3><a class="toc-backref" href="#id20">Sending model events manually</a><a class="headerlink" href="#sending-model-events-manually" title="Permalink to this headline">¶</a></h3>
+<p>The webhook model decorator will add a new <code class="docutils literal"><span class="pre">webhook_events</span></code> attribute
+to your model that can be used to access the individual model events:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">on_create</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">webhook_events</span><span class="o">.</span><span class="n">events</span><span class="p">[</span><span class="s1">&#39;on_create&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>With this you can send the event manually just like any other
+<a class="reference internal" href="../reference/thorn.html#thorn.Event" title="thorn.Event"><code class="xref py py-class docutils literal"><span class="pre">Event</span></code></a>:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">on_create</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">instance</span><span class="o">=</span><span class="n">article</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">article</span><span class="o">.</span><span class="n">webhook_payload</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>There&#8217;s also <code class="docutils literal"><span class="pre">.send_from_instance</span></code> which just takes a model instance as
+argument and will send the event as if a signal was triggered:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">on_create</span><span class="o">.</span><span class="n">send_from_instance</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The payload will then look like:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;event&quot;</span><span class="p">:</span> <span class="s2">&quot;article.created&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;http://example.com/article/5b841406-60d6-4ca0-b45e-72a9847391fb/&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;sender&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;The Mighty Bear&quot;</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[*]</a></td><td>Thorn can easily be extended to support additional serialization
+formats.  If this is something you would like to work on then
+please create an issue on the <a class="reference external" href="https://github.com/robinhood/thorn/issues/">Github issue tracker</a> or
+otherwise get in touch with the project.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[†]</a></td><td>By signals we mean an implementation of the <a class="reference external" href="https://en.wikipedia.org/wiki/Observer_pattern">Observer Pattern</a>,
+such as <a class="reference external" href="http://django.readthedocs.io/en/latest/topics/signals.html#django.dispatch.Signal" title="(in Django v1.11)"><code class="xref py py-class docutils literal"><span class="pre">django.dispatch.Signal</span></code></a>,
+<a class="reference external" href="http://docs.celeryproject.org/en/master/internals/reference/celery.utils.dispatch.html#celery.utils.dispatch.Signal" title="(in Celery v4.0)"><code class="xref py py-class docutils literal"><span class="pre">celery.utils.dispatch.Signal</span></code></a>, or <a class="reference external" href="https://pypi.python.org/pypi/blinker/">blinker</a> (used by
+Flask).</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="security">
+<h2><a class="toc-backref" href="#id21">Security</a><a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h2>
+<p>The REST Hooks project has an excellent guide on security and webhooks
+here: <a class="reference external" href="http://resthooks.org/docs/security/">http://resthooks.org/docs/security/</a></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">User Guide</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="subscribers.html"
+                        title="next chapter">Subscribers</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/userguide/events.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="subscribers.html" title="Subscribers"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="User Guide"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

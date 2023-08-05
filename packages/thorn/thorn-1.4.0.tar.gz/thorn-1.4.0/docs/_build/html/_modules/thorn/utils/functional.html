@@ -1,0 +1,424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>thorn.utils.functional &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for thorn.utils.functional</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    thorn.utils.functional</span>
+<span class="sd">    ======================</span>
+
+<span class="sd">    Functional-style utilities.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">import</span> <span class="nn">operator</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">deque</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">six</span> <span class="k">import</span> <span class="n">string_types</span>
+
+<span class="kn">from</span> <span class="nn">celery.utils</span> <span class="k">import</span> <span class="n">cached_property</span>
+<span class="kn">from</span> <span class="nn">celery.utils.functional</span> <span class="k">import</span> <span class="n">is_list</span><span class="p">,</span> <span class="n">maybe_list</span>
+<span class="kn">from</span> <span class="nn">celery.utils.imports</span> <span class="k">import</span> <span class="n">symbol_by_name</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">django.db.models.query</span> <span class="k">import</span> <span class="n">Q</span> <span class="k">as</span> <span class="n">_Q_</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>  <span class="c1"># pragma: no cover</span>
+    <span class="kn">from</span> <span class="nn">.django.query_utils</span> <span class="k">import</span> <span class="n">Q</span> <span class="k">as</span> <span class="n">_Q_</span>  <span class="c1"># noqa</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;groupbymax&#39;</span><span class="p">,</span> <span class="s1">&#39;Q&#39;</span><span class="p">]</span>
+
+<span class="n">E_FILTER_FIELD_MISSING_OP</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="s2">filter field argument </span><span class="si">{0!r}</span><span class="s2"> not allowed: did you mean &#39;</span><span class="si">{0}</span><span class="s2">__eq&#39;?</span><span class="se">\</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">not_contains</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;``not_contains(a, b) -&gt; b not in a``&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">b</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">a</span>
+
+
+<span class="k">def</span> <span class="nf">startswith</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;``startswith(a, b) -&gt; a.startswith(b)``&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">endswith</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;``endswith(a, b) -&gt; a.endswith(b)``&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">reverse_n</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">tup</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Reverse n first elements in a tuple.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">tup</span><span class="p">[:</span><span class="n">N</span><span class="p">]))</span> <span class="o">+</span> <span class="n">tup</span><span class="p">[</span><span class="n">N</span><span class="p">:]</span> <span class="k">if</span> <span class="n">N</span> <span class="k">else</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">tup</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">negate</span><span class="p">(</span><span class="n">fun</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return function negating the value of a boolean function.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">negated</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="ow">not</span> <span class="n">fun</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">negated</span>
+
+
+<span class="k">def</span> <span class="nf">reverse_arguments</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns transformed function where the first N arguments are</span>
+<span class="sd">    reversed.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_inner</span><span class="p">(</span><span class="n">fun</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">reversed</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">fun</span><span class="p">(</span><span class="o">*</span><span class="n">reverse_n</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">args</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">reversed</span>
+    <span class="k">return</span> <span class="n">_inner</span>
+
+
+<span class="k">def</span> <span class="nf">traverse_subscribers</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">stream</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="n">it</span><span class="p">])</span>
+    <span class="k">while</span> <span class="n">stream</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">maybe_list</span><span class="p">(</span><span class="n">stream</span><span class="o">.</span><span class="n">popleft</span><span class="p">()):</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">string_types</span><span class="p">)</span> <span class="ow">and</span> <span class="n">node</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">):</span>
+                <span class="n">node</span> <span class="o">=</span> <span class="n">symbol_by_name</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">Callable</span><span class="p">):</span>
+                <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">is_list</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+                <span class="n">stream</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">node</span><span class="p">:</span>
+                <span class="k">yield</span> <span class="n">node</span>
+
+
+<span class="k">def</span> <span class="nf">wrap_transition</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">did_change</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Transforms operator into a transition operator, i.e. one that</span>
+<span class="sd">    only returns true if the ``did_change`` operator also returns true.</span>
+
+<span class="sd">    E.g. ``wrap_transition(operator.eq, operator.ne)`` returns function</span>
+<span class="sd">    with signature ``(new_value, needle, old_value)`` and only returns</span>
+<span class="sd">    true if new_value is equal to needle, but old_value was not equal</span>
+<span class="sd">    to needle.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">compare</span><span class="p">(</span><span class="n">new_value</span><span class="p">,</span> <span class="n">needle</span><span class="p">,</span> <span class="n">old_value</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">did_change</span><span class="p">(</span><span class="n">old_value</span><span class="p">,</span> <span class="n">needle</span><span class="p">)</span> <span class="ow">and</span> <span class="n">op</span><span class="p">(</span><span class="n">new_value</span><span class="p">,</span> <span class="n">needle</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">compare</span>
+
+
+<div class="viewcode-block" id="groupbymax"><a class="viewcode-back" href="../../../reference/thorn.utils.functional.html#thorn.groupbymax">[docs]</a><span class="k">def</span> <span class="nf">groupbymax</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="nb">max</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">eq</span><span class="p">,</span> <span class="n">sentinel</span><span class="o">=</span><span class="nb">object</span><span class="p">()):</span>
+    <span class="sd">&quot;&quot;&quot;Given an iterator emitting items in sorted order, this will</span>
+<span class="sd">    group items together based on the key function, and produces</span>
+<span class="sd">    one list for each group.</span>
+
+<span class="sd">    :param it: Iterator emitting item in order.</span>
+<span class="sd">    :param max: Maximum size of any group (mandatory).</span>
+<span class="sd">    :keyword key: Function used to compare items.</span>
+<span class="sd">        Defaults to :func:`operator.eq` matching values exactly.</span>
+
+<span class="sd">    Examples:</span>
+
+<span class="sd">    .. code-block:: pycon</span>
+
+<span class="sd">        &gt;&gt;&gt; x = [&#39;A&#39;, &#39;A&#39;, &#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;D&#39;, &#39;E&#39;]</span>
+<span class="sd">        &gt;&gt;&gt; list(groupbymax(x, 3))</span>
+<span class="sd">        [[&#39;A&#39;, &#39;A&#39;, &#39;A&#39;], [&#39;A&#39;], [&#39;B&#39;], [&#39;C&#39;], [&#39;D&#39;, &#39;D&#39;], [&#39;E&#39;]]</span>
+
+<span class="sd">        # NOTE: Not technically sorted, but similar items appear in the</span>
+<span class="sd">        # order we&#39;re matching for.</span>
+<span class="sd">        &gt;&gt;&gt; x = [(&#39;foo:A&#39;, &#39;foo:B&#39;, &#39;bar:C&#39;, &#39;baz:D&#39;, &#39;baz:E&#39;, &#39;baz:F&#39;]</span>
+<span class="sd">        &gt;&gt;&gt; list(groupbymax(x, 10,</span>
+<span class="sd">        ...     key=lambda a, b: a.split(&#39;:&#39;)[0] == b.split(&#39;:&#39;)[0]))</span>
+<span class="sd">        [[&#39;foo:A&#39;, &#39;foo:B&#39;], [&#39;bar:C&#39;], [&#39;baz:D&#39;, &#39;baz:E&#39;, &#39;baz:F&#39;]]</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">it</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">it</span><span class="p">:</span>
+        <span class="n">buf</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">nxt</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">it</span><span class="p">,</span> <span class="n">sentinel</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">nxt</span> <span class="ow">is</span> <span class="n">sentinel</span> <span class="ow">or</span> <span class="p">(</span>
+                    <span class="ow">not</span> <span class="n">key</span><span class="p">(</span><span class="n">nxt</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="nb">max</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="p">[</span><span class="n">item</span><span class="p">]</span> <span class="o">+</span> <span class="n">buf</span> <span class="k">if</span> <span class="n">buf</span> <span class="k">else</span> <span class="p">[</span><span class="n">item</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">nxt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">sentinel</span><span class="p">:</span>
+                    <span class="k">yield</span> <span class="p">[</span><span class="n">nxt</span><span class="p">]</span>
+                <span class="k">break</span>
+            <span class="n">buf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nxt</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Q"><a class="viewcode-back" href="../../../reference/thorn.utils.functional.html#thorn.Q">[docs]</a><span class="k">class</span> <span class="nc">Q</span><span class="p">(</span><span class="n">_Q_</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Object query node.</span>
+
+<span class="sd">    This class works like :class:`django.db.models.Q`, but is used for</span>
+<span class="sd">    filtering regular Python objects instead of database rows.</span>
+
+<span class="sd">    **Examples**</span>
+
+<span class="sd">    - Match object with ``last_name`` attribute set to &quot;Costanza&quot;::</span>
+
+<span class="sd">        Q(last_name__eq=&quot;Costanza&quot;)</span>
+
+<span class="sd">    - Match object with ``author.last_name`` attribute set to &quot;Benes&quot;::</span>
+
+<span class="sd">        Q(author__last_name__eq=&quot;Benes&quot;)</span>
+
+<span class="sd">    - You are not allowed to specify any key without an operator,</span>
+<span class="sd">      event though the following would be fine using Django`s Q objects::</span>
+
+<span class="sd">        Q(author__last_name=&quot;Benes&quot;)   # &lt;-- ERROR, will raise ValueError</span>
+
+<span class="sd">    - Attributes can be nested arbitrarily deep::</span>
+
+<span class="sd">        Q(a__b__c__d__e__f__g__x__gt=3.03)</span>
+
+<span class="sd">    - The special ``*__eq=True`` means &quot;match any *true-ish* value&quot;::</span>
+
+<span class="sd">        Q(author__account__is_staff__eq=True)</span>
+
+<span class="sd">    - Similarly the ``*__eq=False`` means &quot;match any *false-y*&quot; value&quot;::</span>
+
+<span class="sd">        Q(author__account__is_disabled=False)</span>
+
+<span class="sd">    See :ref:`events-model-filtering-operators`.</span>
+
+<span class="sd">    :returns: :class:`collections.Callable`, to match an object with</span>
+<span class="sd">      the given predicates, call the return value with the object to match:</span>
+<span class="sd">      ``Q(x__eq==808)(obj)``.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1">#: The gate decides the boolean operator of this tree node.</span>
+    <span class="c1">#: A node can either be *OR* (``a | b``), or an *AND* note (``a &amp; b``).</span>
+    <span class="c1">#: - Default is *AND*.</span>
+    <span class="n">gates</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">_Q_</span><span class="o">.</span><span class="n">OR</span><span class="p">:</span> <span class="nb">any</span><span class="p">,</span>
+        <span class="n">_Q_</span><span class="o">.</span><span class="n">AND</span><span class="p">:</span> <span class="nb">all</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c1">#: If the node is negated (``~a`` / ``a.negate()``), branch will be True,</span>
+    <span class="c1">#: and we reverse the query into a ``not a`` one.</span>
+    <span class="n">branches</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="kc">True</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">not_</span><span class="p">,</span>
+        <span class="kc">False</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">truth</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="c1">#: Mapping of opcode to binary operator function: ``f(a, b)``.</span>
+    <span class="c1">#: Operators may return any true-ish or false-y value.</span>
+    <span class="n">operators</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;eq&#39;</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">eq</span><span class="p">,</span>
+        <span class="s1">&#39;now_eq&#39;</span><span class="p">:</span> <span class="n">wrap_transition</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">eq</span><span class="p">,</span> <span class="n">operator</span><span class="o">.</span><span class="n">ne</span><span class="p">),</span>
+        <span class="s1">&#39;ne&#39;</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">ne</span><span class="p">,</span>
+        <span class="s1">&#39;now_ne&#39;</span><span class="p">:</span> <span class="n">wrap_transition</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">ne</span><span class="p">,</span> <span class="n">operator</span><span class="o">.</span><span class="n">ne</span><span class="p">),</span>
+        <span class="s1">&#39;gt&#39;</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">gt</span><span class="p">,</span>
+        <span class="s1">&#39;now_gt&#39;</span><span class="p">:</span> <span class="n">wrap_transition</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">gt</span><span class="p">,</span> <span class="n">operator</span><span class="o">.</span><span class="n">lt</span><span class="p">),</span>
+        <span class="s1">&#39;lt&#39;</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">lt</span><span class="p">,</span>
+        <span class="s1">&#39;now_lt&#39;</span><span class="p">:</span> <span class="n">wrap_transition</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">lt</span><span class="p">,</span> <span class="n">operator</span><span class="o">.</span><span class="n">gt</span><span class="p">),</span>
+        <span class="s1">&#39;gte&#39;</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">ge</span><span class="p">,</span>
+        <span class="s1">&#39;now_gte&#39;</span><span class="p">:</span> <span class="n">wrap_transition</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">ge</span><span class="p">,</span> <span class="n">operator</span><span class="o">.</span><span class="n">le</span><span class="p">),</span>
+        <span class="s1">&#39;lte&#39;</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">le</span><span class="p">,</span>
+        <span class="s1">&#39;now_lte&#39;</span><span class="p">:</span> <span class="n">wrap_transition</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">le</span><span class="p">,</span> <span class="n">operator</span><span class="o">.</span><span class="n">ge</span><span class="p">),</span>
+        <span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="n">reverse_arguments</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="n">operator</span><span class="o">.</span><span class="n">contains</span><span class="p">),</span>
+        <span class="s1">&#39;now_in&#39;</span><span class="p">:</span> <span class="n">wrap_transition</span><span class="p">(</span>
+            <span class="n">reverse_arguments</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="n">operator</span><span class="o">.</span><span class="n">contains</span><span class="p">),</span>
+            <span class="n">reverse_arguments</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="n">not_contains</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;not_in&#39;</span><span class="p">:</span> <span class="n">reverse_arguments</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="n">not_contains</span><span class="p">),</span>
+        <span class="s1">&#39;now_not_in&#39;</span><span class="p">:</span> <span class="n">wrap_transition</span><span class="p">(</span>
+            <span class="n">reverse_arguments</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="n">not_contains</span><span class="p">),</span>
+            <span class="n">reverse_arguments</span><span class="p">(</span><span class="mi">2</span><span class="p">)(</span><span class="n">operator</span><span class="o">.</span><span class="n">contains</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;is&#39;</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">is_</span><span class="p">,</span>
+        <span class="s1">&#39;now_is&#39;</span><span class="p">:</span> <span class="n">wrap_transition</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">is_</span><span class="p">,</span> <span class="n">operator</span><span class="o">.</span><span class="n">is_not</span><span class="p">),</span>
+        <span class="s1">&#39;is_not&#39;</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">is_not</span><span class="p">,</span>
+        <span class="s1">&#39;now_is_not&#39;</span><span class="p">:</span> <span class="n">wrap_transition</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">is_not</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">_</span><span class="p">:</span> <span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">),</span>
+        <span class="s1">&#39;contains&#39;</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">contains</span><span class="p">,</span>
+        <span class="s1">&#39;now_contains&#39;</span><span class="p">:</span> <span class="n">wrap_transition</span><span class="p">(</span>
+            <span class="n">operator</span><span class="o">.</span><span class="n">contains</span><span class="p">,</span> <span class="n">negate</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">contains</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="s1">&#39;not&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">_</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">not_</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+        <span class="s1">&#39;true&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">_</span><span class="p">:</span> <span class="n">operator</span><span class="o">.</span><span class="n">truth</span><span class="p">(</span><span class="n">x</span><span class="p">),</span>
+        <span class="s1">&#39;startswith&#39;</span><span class="p">:</span> <span class="n">startswith</span><span class="p">,</span>
+        <span class="s1">&#39;now_startswith&#39;</span><span class="p">:</span> <span class="n">wrap_transition</span><span class="p">(</span><span class="n">startswith</span><span class="p">,</span> <span class="n">negate</span><span class="p">(</span><span class="n">startswith</span><span class="p">)),</span>
+        <span class="s1">&#39;endswith&#39;</span><span class="p">:</span> <span class="n">endswith</span><span class="p">,</span>
+        <span class="s1">&#39;now_endswith&#39;</span><span class="p">:</span> <span class="n">wrap_transition</span><span class="p">(</span><span class="n">endswith</span><span class="p">,</span> <span class="n">negate</span><span class="p">(</span><span class="n">endswith</span><span class="p">)),</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="c1"># NOT?( AND|OR(...) )</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">branches</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">negated</span><span class="p">](</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gate</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">stack</span><span class="p">)</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="Q.compile"><a class="viewcode-back" href="../../../reference/thorn.utils.functional.html#thorn.Q.compile">[docs]</a>    <span class="k">def</span> <span class="nf">compile</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fields</span><span class="p">):</span>
+        <span class="c1"># this does not traverse the tree, but compiles the nodes</span>
+        <span class="c1"># in ``self.children`` only.  The nodes below will be compiled</span>
+        <span class="c1"># and cached when they are called.</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">compile_node</span><span class="p">(</span><span class="n">field</span><span class="p">)</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">]</span></div>
+
+<div class="viewcode-block" id="Q.compile_node"><a class="viewcode-back" href="../../../reference/thorn.utils.functional.html#thorn.Q.compile_node">[docs]</a>    <span class="k">def</span> <span class="nf">compile_node</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">field</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Compiles node into a cached function that performs the match.</span>
+
+<span class="sd">        :returns: unary :class:`collections.Callable` taking the object</span>
+<span class="sd">          to match.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># can embed other Q objects</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">field</span>
+
+        <span class="c1"># convert Django Q objects in-place.</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">field</span><span class="p">,</span> <span class="n">_Q_</span><span class="p">):</span>
+            <span class="n">field</span><span class="o">.</span><span class="n">__class__</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">field</span>
+
+        <span class="c1"># or it&#39;s a key, value pair.</span>
+        <span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span> <span class="o">=</span> <span class="n">field</span>
+        <span class="n">lhs</span><span class="p">,</span> <span class="n">opcode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_statement</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span>
+
+        <span class="c1"># this creates the new matching function to be added to the stack.</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">compile_op</span><span class="p">(</span><span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">opcode</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Q.prepare_statement"><a class="viewcode-back" href="../../../reference/thorn.utils.functional.html#thorn.Q.prepare_statement">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_statement</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">):</span>
+        <span class="n">lhs</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">opcode</span> <span class="o">=</span> <span class="n">lhs</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">&#39;__&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">opcode</span> <span class="ow">or</span> <span class="n">opcode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">operators</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">E_FILTER_FIELD_MISSING_OP</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">lhs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">lhs</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;__&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare_opcode</span><span class="p">(</span><span class="n">opcode</span><span class="p">,</span> <span class="n">rhs</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Q.prepare_opcode"><a class="viewcode-back" href="../../../reference/thorn.utils.functional.html#thorn.Q.prepare_opcode">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_opcode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">O</span><span class="p">,</span> <span class="n">rhs</span><span class="p">):</span>
+        <span class="c1"># eq=True and friends are special, as they should match any</span>
+        <span class="c1"># true-ish value (__bool__), not check for equality.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">O</span> <span class="o">==</span> <span class="s1">&#39;eq&#39;</span> <span class="ow">and</span> <span class="n">rhs</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">)</span> <span class="ow">or</span> <span class="n">O</span> <span class="o">==</span> <span class="s1">&#39;ne&#39;</span> <span class="ow">and</span> <span class="n">rhs</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;true&#39;</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">O</span> <span class="o">==</span> <span class="s1">&#39;eq&#39;</span> <span class="ow">and</span> <span class="n">rhs</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">or</span> <span class="n">O</span> <span class="o">==</span> <span class="s1">&#39;ne&#39;</span> <span class="ow">and</span> <span class="n">rhs</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;not&#39;</span>
+        <span class="k">return</span> <span class="n">O</span></div>
+
+<div class="viewcode-block" id="Q.compile_op"><a class="viewcode-back" href="../../../reference/thorn.utils.functional.html#thorn.Q.compile_op">[docs]</a>    <span class="k">def</span> <span class="nf">compile_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">opcode</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_compile_op</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">apply_trans_op</span> <span class="k">if</span> <span class="s1">&#39;now&#39;</span> <span class="ow">in</span> <span class="n">opcode</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_op</span><span class="p">,</span>
+            <span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">opcode</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_compile_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apply</span><span class="p">,</span> <span class="n">lhs</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">opcode</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">partial</span><span class="p">(</span>
+            <span class="n">apply</span><span class="p">,</span>
+            <span class="n">operator</span><span class="o">.</span><span class="n">attrgetter</span><span class="p">(</span><span class="n">lhs</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">operators</span><span class="p">[</span><span class="n">opcode</span><span class="p">],</span> <span class="n">rhs</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span>
+        <span class="p">)</span>
+
+<div class="viewcode-block" id="Q.apply_op"><a class="viewcode-back" href="../../../reference/thorn.utils.functional.html#thorn.Q.apply_op">[docs]</a>    <span class="k">def</span> <span class="nf">apply_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">getter</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="c1"># compiled nodes end up being partial versions of this method,</span>
+        <span class="c1"># with the getter, op and rhs arguments already set.</span>
+        <span class="k">return</span> <span class="n">op</span><span class="p">(</span><span class="n">getter</span><span class="p">(</span><span class="n">obj</span><span class="p">),</span> <span class="n">rhs</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Q.apply_trans_op"><a class="viewcode-back" href="../../../reference/thorn.utils.functional.html#thorn.Q.apply_trans_op">[docs]</a>    <span class="k">def</span> <span class="nf">apply_trans_op</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">getter</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="c1"># transition op  (e.g. now_eq) only matches if the</span>
+        <span class="c1"># value differs from the previous version.</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">apply_op</span><span class="p">(</span>
+            <span class="n">getter</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_from_prev_version</span><span class="p">(</span><span class="n">getter</span><span class="p">,</span> <span class="n">obj</span><span class="p">),</span>
+        <span class="p">)</span></div>
+
+    <span class="k">def</span> <span class="nf">_get_from_prev_version</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">getter</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">prev</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">_previous_version</span>
+        <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+            <span class="k">pass</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">getter</span><span class="p">(</span><span class="n">prev</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">gate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">gates</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">connector</span><span class="p">]</span>
+
+    <span class="nd">@cached_property</span>
+<div class="viewcode-block" id="Q.stack"><a class="viewcode-back" href="../../../reference/thorn.utils.functional.html#thorn.Q.stack">[docs]</a>    <span class="k">def</span> <span class="nf">stack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># the stack is cached on first call.</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">children</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../../../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

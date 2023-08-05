@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dispatch &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="index.html" />
+    <link rel="next" title="Optimization and Performance" href="optimization.html" />
+    <link rel="prev" title="Subscribers" href="subscribers.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="optimization.html" title="Optimization and Performance"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="subscribers.html" title="Subscribers"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="dispatch">
+<span id="dispatch-guide"></span><h1>Dispatch<a class="headerlink" href="#dispatch" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title first">Table of Contents:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="id1">Introduction</a></li>
+<li><a class="reference internal" href="#http-client" id="id2">HTTP Client</a></li>
+<li><a class="reference internal" href="#http-headers" id="id3">HTTP Headers</a></li>
+<li><a class="reference internal" href="#https-ssl-requests" id="id4">HTTPS/SSL Requests</a></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id1">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>As soon as you call <code class="docutils literal"><span class="pre">event.send</span></code> the webhook will be dispatched
+by performing HTTP requests to all the subscriber URL&#8217;s matching the
+event.</p>
+<p>The dispatch mechanism is configurable, and even supports pluggable
+backends.</p>
+<p>There are three built-in dispatcher backends available:</p>
+<ul>
+<li><p class="first"><code class="docutils literal"><span class="pre">&quot;default&quot;</span></code></p>
+<blockquote>
+<div><p>Dispatch requests directly in the current process.</p>
+<p>In a web server the HTTP request will not complete until
+all of the Webhook requests have finished, so this is only
+suited for use in small installations and in development
+environments.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">&quot;disabled&quot;</span></code></p>
+<blockquote>
+<div><p>Does not dispatch requests at all, useful for development.</p>
+</div></blockquote>
+</li>
+<li><p class="first"><code class="docutils literal"><span class="pre">&quot;celery&quot;</span></code></p>
+<blockquote>
+<div><p>Dispatch requests by sending a single <a class="reference external" href="https://pypi.python.org/pypi/Celery/">Celery</a> task for every
+event.  The task will then be received by a worker which will
+start sending requests in batches to subscribers.</p>
+<p>Since performing HTTP requests are entirely I/O bound, routing
+these tasks to workers running the <a class="reference external" href="https://pypi.python.org/pypi/eventlet/">eventlet</a> or <a class="reference external" href="https://pypi.python.org/pypi/gevent/">gevent</a>
+pools are recommended (see <a class="reference internal" href="optimization.html#optimization-guide"><span class="std std-ref">Optimization and Performance</span></a>).</p>
+<p>The HTTP requests are also sorted by URL so that requests for the
+same domain have a high chance of being routed to the same process,
+to benefit from connection keep-alive settings, etc.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>To configure the dispatcher used you need to change the
+<a class="reference internal" href="configuration.html#std:setting-THORN_DISPATCHER"><code class="xref std std-setting docutils literal"><span class="pre">THORN_DISPATCHER</span></code></a> setting.</p>
+</div>
+<div class="section" id="http-client">
+<h2><a class="toc-backref" href="#id2">HTTP Client</a><a class="headerlink" href="#http-client" title="Permalink to this headline">¶</a></h2>
+<p>Thorn uses the <a class="reference external" href="https://pypi.python.org/pypi/requests/">requests</a> library to perform HTTP requests,
+and will reuse a single <a class="reference external" href="http://requests.readthedocs.io/en/latest/api/#requests.Session" title="(in Requests v2.10.0)"><code class="xref py py-class docutils literal"><span class="pre">Session</span></code></a> for every thread/process.</p>
+</div>
+<div class="section" id="http-headers">
+<span id="dispatch-http-headers"></span><h2><a class="toc-backref" href="#id3">HTTP Headers</a><a class="headerlink" href="#http-headers" title="Permalink to this headline">¶</a></h2>
+<p>Thorn will provide the endpoints with standard HTTP header values</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><strong>Header</strong></td>
+<td><strong>Description</strong></td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">Hook-Event</span></code></td>
+<td>Name of the event that triggered this delivery.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Hook-Delivery</span></code></td>
+<td>Unique id for this delivery.</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">Hook-HMAC</span></code></td>
+<td>HMAC digest that can be used to verify the sender</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Hook-Subscription</span></code></td>
+<td>Subscription UUID (can be used to cancel/modify)</td>
+</tr>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">User-Agent</span></code></td>
+<td>User agent string, including Thorn and client version.</td>
+</tr>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">Content-Type</span></code></td>
+<td>Delivery content type (e.g. application/json).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="https-ssl-requests">
+<h2><a class="toc-backref" href="#id4">HTTPS/SSL Requests</a><a class="headerlink" href="#https-ssl-requests" title="Permalink to this headline">¶</a></h2>
+<p>Thorn supports using <code class="docutils literal"><span class="pre">https://</span></code> URLs as callbacks, but for that to work
+the destination web server must be properly configured for HTTPS and have
+a valid server certificate.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="subscribers.html"
+                        title="previous chapter">Subscribers</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="optimization.html"
+                        title="next chapter">Optimization and Performance</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/userguide/dispatch.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="optimization.html" title="Optimization and Performance"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="subscribers.html" title="Subscribers"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>thorn.generic.models &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="index.html" />
+    <link rel="next" title="thorn.generic.signals" href="thorn.generic.signals.html" />
+    <link rel="prev" title="thorn.dispatch.celery" href="thorn.dispatch.celery.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.generic.signals.html" title="thorn.generic.signals"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="thorn.dispatch.celery.html" title="thorn.dispatch.celery"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="thorn-generic-models">
+<h1>thorn.generic.models<a class="headerlink" href="#thorn-generic-models" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#thorn-models" id="id1">thorn.models</a></li>
+</ul>
+</div>
+<span class="target" id="module-thorn.generic.models"></span><div class="section" id="thorn-models">
+<h2><a class="toc-backref" href="#id1">thorn.models</a><a class="headerlink" href="#thorn-models" title="Permalink to this headline">¶</a></h2>
+<p>Generic base model mixins.</p>
+<dl class="class">
+<dt id="thorn.generic.models.AbstractSubscriber">
+<em class="property">class </em><code class="descclassname">thorn.generic.models.</code><code class="descname">AbstractSubscriber</code><a class="reference internal" href="../_modules/thorn/generic/models.html#AbstractSubscriber"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.generic.models.AbstractSubscriber" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="thorn.generic.models.AbstractSubscriber.as_dict">
+<code class="descname">as_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/generic/models.html#AbstractSubscriber.as_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.generic.models.AbstractSubscriber.as_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dictionary representation of Subscriber.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.generic.models.AbstractSubscriber.content_type">
+<code class="descname">content_type</code><a class="headerlink" href="#thorn.generic.models.AbstractSubscriber.content_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>MIME-type to use for web requests made to the subscriber <a class="reference internal" href="#thorn.generic.models.AbstractSubscriber.url" title="thorn.generic.models.AbstractSubscriber.url"><code class="xref py py-attr docutils literal"><span class="pre">url</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.generic.models.AbstractSubscriber.event">
+<code class="descname">event</code><a class="headerlink" href="#thorn.generic.models.AbstractSubscriber.event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Event pattern this subscriber is subscribed to (e.g. <code class="docutils literal"><span class="pre">article.*</span></code>).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.generic.models.AbstractSubscriber.from_dict">
+<code class="descname">from_dict</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/generic/models.html#AbstractSubscriber.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.generic.models.AbstractSubscriber.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create subscriber from dictionary representation.</p>
+<p>Accept the same arguments as <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#dict" title="(in Python v3.6)"><code class="xref py py-class docutils literal"><span class="pre">dict</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.generic.models.AbstractSubscriber.hmac_digest">
+<code class="descname">hmac_digest</code><a class="headerlink" href="#thorn.generic.models.AbstractSubscriber.hmac_digest" title="Permalink to this definition">¶</a></dt>
+<dd><p>HMAC digest type (e.g. <code class="docutils literal"><span class="pre">&quot;sha512&quot;</span></code>).</p>
+<p>The value used must be a member of <a class="reference external" href="https://docs.python.org/dev/library/hashlib.html#hashlib.algorithms_available" title="(in Python v3.6)"><code class="xref py py-data docutils literal"><span class="pre">hashlib.algorithms_available</span></code></a>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.generic.models.AbstractSubscriber.hmac_secret">
+<code class="descname">hmac_secret</code><a class="headerlink" href="#thorn.generic.models.AbstractSubscriber.hmac_secret" title="Permalink to this definition">¶</a></dt>
+<dd><p>HMAC secret key, of arbitrary length.</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="thorn.generic.models.AbstractSubscriber.register">
+<em class="property">classmethod </em><code class="descname">register</code><span class="sig-paren">(</span><em>other</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/generic/models.html#AbstractSubscriber.register"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.generic.models.AbstractSubscriber.register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.generic.models.AbstractSubscriber.sign">
+<code class="descname">sign</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/generic/models.html#AbstractSubscriber.sign"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.generic.models.AbstractSubscriber.sign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sign (HMAC) message using <a class="reference internal" href="#thorn.generic.models.AbstractSubscriber.hmac_secret" title="thorn.generic.models.AbstractSubscriber.hmac_secret"><code class="xref py py-attr docutils literal"><span class="pre">hmac_secret</span></code></a> and the current
+<a class="reference internal" href="#thorn.generic.models.AbstractSubscriber.hmac_digest" title="thorn.generic.models.AbstractSubscriber.hmac_digest"><code class="xref py py-attr docutils literal"><span class="pre">hmac_digest</span></code></a> type.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.generic.models.AbstractSubscriber.url">
+<code class="descname">url</code><a class="headerlink" href="#thorn.generic.models.AbstractSubscriber.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destination URL to dispatch this event.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.generic.models.AbstractSubscriber.user">
+<code class="descname">user</code><a class="headerlink" href="#thorn.generic.models.AbstractSubscriber.user" title="Permalink to this definition">¶</a></dt>
+<dd><p>User filter: when set only dispatch if the event sender matches.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.generic.models.AbstractSubscriber.user_ident">
+<code class="descname">user_ident</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/generic/models.html#AbstractSubscriber.user_ident"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.generic.models.AbstractSubscriber.user_ident" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <a class="reference internal" href="#thorn.generic.models.AbstractSubscriber.user" title="thorn.generic.models.AbstractSubscriber.user"><code class="xref py py-attr docutils literal"><span class="pre">user</span></code></a> identity, must be json serializable like a
+database primary key.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.generic.models.AbstractSubscriber.uuid">
+<code class="descname">uuid</code><a class="headerlink" href="#thorn.generic.models.AbstractSubscriber.uuid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unique identifier.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thorn.generic.models.SubscriberModelMixin">
+<em class="property">class </em><code class="descclassname">thorn.generic.models.</code><code class="descname">SubscriberModelMixin</code><a class="reference internal" href="../_modules/thorn/generic/models.html#SubscriberModelMixin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.generic.models.SubscriberModelMixin" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="thorn.generic.models.SubscriberModelMixin.as_dict">
+<code class="descname">as_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/generic/models.html#SubscriberModelMixin.as_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.generic.models.SubscriberModelMixin.as_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="thorn.generic.models.SubscriberModelMixin.from_dict">
+<em class="property">classmethod </em><code class="descname">from_dict</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/generic/models.html#SubscriberModelMixin.from_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.generic.models.SubscriberModelMixin.from_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.generic.models.SubscriberModelMixin.sign">
+<code class="descname">sign</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/generic/models.html#SubscriberModelMixin.sign"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.generic.models.SubscriberModelMixin.sign" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="thorn.dispatch.celery.html"
+                        title="previous chapter">thorn.dispatch.celery</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="thorn.generic.signals.html"
+                        title="next chapter">thorn.generic.signals</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference/thorn.generic.models.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.generic.signals.html" title="thorn.generic.signals"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="thorn.dispatch.celery.html" title="thorn.dispatch.celery"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

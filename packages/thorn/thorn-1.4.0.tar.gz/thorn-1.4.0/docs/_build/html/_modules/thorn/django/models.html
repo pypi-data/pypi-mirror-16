@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>thorn.django.models &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for thorn.django.models</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    thorn.django.models</span>
+<span class="sd">    ===================</span>
+
+<span class="sd">    Django models required to dispatch webhook events.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">uuid</span> <span class="k">import</span> <span class="n">uuid4</span>
+
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="k">import</span> <span class="n">settings</span> <span class="k">as</span> <span class="n">django_settings</span>
+<span class="kn">from</span> <span class="nn">django.db</span> <span class="k">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="k">import</span> <span class="n">text</span>
+<span class="kn">from</span> <span class="nn">django.utils.encoding</span> <span class="k">import</span> <span class="n">python_2_unicode_compatible</span>
+<span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="k">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+
+<span class="kn">from</span> <span class="nn">thorn.conf</span> <span class="k">import</span> <span class="n">event_choices</span><span class="p">,</span> <span class="n">MIME_JSON</span><span class="p">,</span> <span class="n">MIME_URLFORM</span>
+<span class="kn">from</span> <span class="nn">thorn.generic.models</span> <span class="k">import</span> <span class="n">AbstractSubscriber</span><span class="p">,</span> <span class="n">SubscriberModelMixin</span>
+<span class="kn">from</span> <span class="nn">thorn.utils.hmac</span> <span class="k">import</span> <span class="n">random_secret</span>
+
+<span class="kn">from</span> <span class="nn">.managers</span> <span class="k">import</span> <span class="n">SubscriberManager</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Subscriber&#39;</span><span class="p">]</span>
+
+<span class="c1">#: max size when indexing InnoDB utf8mb4</span>
+<span class="c1">#: reportedly this is caused by MySQL being purposefully and irreversibly</span>
+<span class="c1">#: brain-damaged: https://code.djangoproject.com/ticket/18392</span>
+<span class="n">CHAR_MAX_LENGTH</span> <span class="o">=</span> <span class="mi">190</span>
+
+<span class="n">CONTENT_TYPES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">MIME_JSON</span><span class="p">,</span>
+    <span class="n">MIME_URLFORM</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<span class="c1"># Django migrations cannot handle partial objects, ugh...</span>
+<span class="k">def</span> <span class="nf">random_secret64</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random_secret</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span>
+
+
+<span class="nd">@AbstractSubscriber</span><span class="o">.</span><span class="n">register</span>
+<span class="nd">@python_2_unicode_compatible</span>
+<div class="viewcode-block" id="Subscriber"><a class="viewcode-back" href="../../../reference/thorn.django.models.html#thorn.django.models.Subscriber">[docs]</a><span class="k">class</span> <span class="nc">Subscriber</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">,</span> <span class="n">SubscriberModelMixin</span><span class="p">):</span>
+    <span class="n">objects</span> <span class="o">=</span> <span class="n">SubscriberManager</span><span class="p">()</span>
+
+    <span class="n">uuid</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">UUIDField</span><span class="p">(</span>
+        <span class="n">_</span><span class="p">(</span><span class="s1">&#39;UUID&#39;</span><span class="p">),</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">uuid4</span><span class="p">,</span> <span class="n">editable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="n">help_text</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;Unique identifier for this subscriber.&#39;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">event</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">_</span><span class="p">(</span><span class="s1">&#39;event&#39;</span><span class="p">),</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="n">CHAR_MAX_LENGTH</span><span class="p">,</span>
+        <span class="n">choices</span><span class="o">=</span><span class="n">event_choices</span><span class="p">(),</span>
+        <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">help_text</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;Name of event to connect with&#39;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="n">url</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">URLField</span><span class="p">(</span>
+        <span class="n">_</span><span class="p">(</span><span class="s1">&#39;URL&#39;</span><span class="p">),</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="n">CHAR_MAX_LENGTH</span><span class="p">,</span>
+        <span class="n">db_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">help_text</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;Callback URL&#39;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span>
+        <span class="n">django_settings</span><span class="o">.</span><span class="n">AUTH_USER_MODEL</span><span class="p">,</span>
+        <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(app_label)s</span><span class="s1">_</span><span class="si">%(class)s</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">hmac_secret</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span>
+        <span class="n">_</span><span class="p">(</span><span class="s1">&#39;HMAC Secret&#39;</span><span class="p">),</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">random_secret64</span><span class="p">,</span>
+        <span class="n">help_text</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;Specify HMAC secret for endpoints to verify&#39;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="n">hmac_digest</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">_</span><span class="p">(</span><span class="s1">&#39;HMAC Digest Type&#39;</span><span class="p">),</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
+        <span class="n">choices</span><span class="o">=</span><span class="p">[</span>
+            <span class="p">(</span><span class="s1">&#39;SHA512&#39;</span><span class="p">,</span> <span class="s1">&#39;sha512&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s1">&#39;SHA256&#39;</span><span class="p">,</span> <span class="s1">&#39;sha256&#39;</span><span class="p">),</span>
+            <span class="p">(</span><span class="s1">&#39;SHA1&#39;</span><span class="p">,</span> <span class="s1">&#39;sha1&#39;</span><span class="p">),</span>
+        <span class="p">],</span>
+        <span class="n">default</span><span class="o">=</span><span class="s1">&#39;sha256&#39;</span><span class="p">,</span>
+        <span class="n">help_text</span><span class="o">=</span><span class="n">_</span><span class="p">(</span><span class="s1">&#39;Specify HMAC digest type (use sha256 if uncertain)&#39;</span><span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="n">content_type</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span>
+        <span class="n">_</span><span class="p">(</span><span class="s1">&#39;content type&#39;</span><span class="p">),</span>
+        <span class="n">max_length</span><span class="o">=</span><span class="n">CHAR_MAX_LENGTH</span><span class="p">,</span>
+        <span class="n">choices</span><span class="o">=</span><span class="nb">zip</span><span class="p">(</span><span class="n">CONTENT_TYPES</span><span class="p">,</span> <span class="n">CONTENT_TYPES</span><span class="p">),</span>
+        <span class="n">default</span><span class="o">=</span><span class="n">MIME_JSON</span><span class="p">,</span>
+        <span class="n">help_text</span><span class="o">=</span><span class="s1">&#39;Desired content type for requests to this callback.&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span>
+        <span class="n">_</span><span class="p">(</span><span class="s1">&#39;created at&#39;</span><span class="p">),</span> <span class="n">editable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">auto_now_add</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">updated_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span>
+        <span class="n">_</span><span class="p">(</span><span class="s1">&#39;updated_at&#39;</span><span class="p">),</span> <span class="n">editable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">auto_now</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">verbose_name</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s1">&#39;subscriber&#39;</span><span class="p">)</span>
+        <span class="n">verbose_name_plural</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s1">&#39;subscriber&#39;</span><span class="p">)</span>
+        <span class="c1"># ordering by hostname for ability to optimize for keepalive.</span>
+        <span class="n">ordering</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="s1">&#39;-created_at&#39;</span><span class="p">]</span>
+        <span class="n">get_latest_by</span> <span class="o">=</span> <span class="s1">&#39;updated_at&#39;</span>
+        <span class="n">unique_together</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">,</span> <span class="s1">&#39;event&#39;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Subscriber.user_ident"><a class="viewcode-back" href="../../../reference/thorn.django.models.html#thorn.django.models.Subscriber.user_ident">[docs]</a>    <span class="k">def</span> <span class="nf">user_ident</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">pk</span></div>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> -&gt; </span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">event</span><span class="p">,</span> <span class="n">text</span><span class="o">.</span><span class="n">Truncator</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">chars</span><span class="p">(</span><span class="mi">43</span><span class="p">),</span>
+        <span class="p">)</span></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../../../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

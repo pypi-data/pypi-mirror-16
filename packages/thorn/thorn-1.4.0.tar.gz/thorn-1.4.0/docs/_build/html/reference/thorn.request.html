@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>thorn.request &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="index.html" />
+    <link rel="next" title="thorn.validators" href="thorn.validators.html" />
+    <link rel="prev" title="thorn.reverse" href="thorn.reverse.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.validators.html" title="thorn.validators"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="thorn.reverse.html" title="thorn.reverse"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="thorn-request">
+<h1>thorn.request<a class="headerlink" href="#thorn-request" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#thorn-webhook-request" id="id1">thorn.webhook.request</a></li>
+</ul>
+</div>
+<span class="target" id="module-thorn.request"></span><div class="section" id="thorn-webhook-request">
+<h2><a class="toc-backref" href="#id1">thorn.webhook.request</a><a class="headerlink" href="#thorn-webhook-request" title="Permalink to this headline">¶</a></h2>
+<p>Webhook HTTP requests.</p>
+<dl class="class">
+<dt id="thorn.request.Request">
+<em class="property">class </em><code class="descclassname">thorn.request.</code><code class="descname">Request</code><span class="sig-paren">(</span><em>event</em>, <em>data</em>, <em>sender</em>, <em>subscriber</em>, <em>id=None</em>, <em>on_success=None</em>, <em>on_error=None</em>, <em>timeout=None</em>, <em>on_timeout=None</em>, <em>retry=None</em>, <em>retry_max=None</em>, <em>retry_delay=None</em>, <em>headers=None</em>, <em>user_agent=None</em>, <em>app=None</em>, <em>recipient_validators=None</em>, <em>allow_keepalive=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/request.html#Request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.request.Request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Webhook HTTP request</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>event</strong> &#8211; Name of event.</li>
+<li><strong>data</strong> &#8211; Event payload.</li>
+<li><strong>sender</strong> &#8211; Sender of event (or <code class="xref py py-const docutils literal"><span class="pre">None</span></code>).</li>
+<li><strong>subscriber</strong> &#8211; Subscriber to dispatch the request for.</li>
+<li><strong>on_success</strong> &#8211; Optional callback called if the HTTP request
+succeeds.  Must take single argument: <code class="docutils literal"><span class="pre">request</span></code>.</li>
+<li><strong>on_timeout</strong> &#8211; Optional callback called if the HTTP request
+times out. Must have signature: <code class="docutils literal"><span class="pre">(request,</span> <span class="pre">exc)</span></code>.</li>
+<li><strong>on_error</strong> &#8211; Optional callback called if the HTTP request
+fails.  Must have signature: <code class="docutils literal"><span class="pre">(request,</span> <span class="pre">exc)</span></code>.</li>
+<li><strong>headers</strong> &#8211; Additional HTTP headers to send with the request.</li>
+<li><strong>user_agent</strong> &#8211; Set custom HTTP user agent.</li>
+<li><strong>recipient_validators</strong> &#8211; List of serialized recipient validators.</li>
+<li><strong>allow_keepalive</strong> &#8211; Allow reusing session for this HTTP request.
+Enabled by default.</li>
+<li><strong>retry</strong> &#8211; Retry in the event of timeout/failure?
+Disabled by default.</li>
+<li><strong>retry_max</strong> &#8211; Maximum number of times to retry before giving up.
+Default is 3.</li>
+<li><strong>retry_delay</strong> &#8211; Delay between retries in seconds int/float.
+Default is 60 seconds.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="thorn.request.Request.Session">
+<em class="property">class </em><code class="descname">Session</code><a class="headerlink" href="#thorn.request.Request.Session" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Requests session.</p>
+<p>Provides cookie persistence, connection-pooling, and configuration.</p>
+<p>Basic Usage:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/get&#39;</span><span class="p">)</span>
+<span class="go">&lt;Response [200]&gt;</span>
+</pre></div>
+</div>
+<p>Or as a context manager:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">as</span> <span class="n">s</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">s</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://httpbin.org/get&#39;</span><span class="p">)</span>
+<span class="go">&lt;Response [200]&gt;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="thorn.request.Request.Session.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Closes all adapters and as such the session</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.Session.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a DELETE request. Returns <code class="xref py py-class docutils literal"><span class="pre">Response</span></code> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.Session.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a GET request. Returns <code class="xref py py-class docutils literal"><span class="pre">Response</span></code> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.Session.get_adapter">
+<code class="descname">get_adapter</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.get_adapter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the appropriate connection adapter for the given URL.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.Session.head">
+<code class="descname">head</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.head" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a HEAD request. Returns <code class="xref py py-class docutils literal"><span class="pre">Response</span></code> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.Session.merge_environment_settings">
+<code class="descname">merge_environment_settings</code><span class="sig-paren">(</span><em>url</em>, <em>proxies</em>, <em>stream</em>, <em>verify</em>, <em>cert</em><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.merge_environment_settings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the environment and merge it with some settings.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.Session.mount">
+<code class="descname">mount</code><span class="sig-paren">(</span><em>prefix</em>, <em>adapter</em><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.mount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a connection adapter to a prefix.</p>
+<p>Adapters are sorted in descending order by key length.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.Session.options">
+<code class="descname">options</code><span class="sig-paren">(</span><em>url</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.options" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a OPTIONS request. Returns <code class="xref py py-class docutils literal"><span class="pre">Response</span></code> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.Session.patch">
+<code class="descname">patch</code><span class="sig-paren">(</span><em>url</em>, <em>data=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.patch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a PATCH request. Returns <code class="xref py py-class docutils literal"><span class="pre">Response</span></code> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>data</strong> &#8211; (optional) Dictionary, bytes, or file-like object to send in the body of the <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.Session.post">
+<code class="descname">post</code><span class="sig-paren">(</span><em>url</em>, <em>data=None</em>, <em>json=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a POST request. Returns <code class="xref py py-class docutils literal"><span class="pre">Response</span></code> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>data</strong> &#8211; (optional) Dictionary, bytes, or file-like object to send in the body of the <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>json</strong> &#8211; (optional) json to send in the body of the <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.Session.prepare_request">
+<code class="descname">prepare_request</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.prepare_request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a <code class="xref py py-class docutils literal"><span class="pre">PreparedRequest</span></code> for
+transmission and returns it. The <code class="xref py py-class docutils literal"><span class="pre">PreparedRequest</span></code> has settings
+merged from the <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> instance and those of the
+<code class="xref py py-class docutils literal"><span class="pre">Session</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> &#8211; <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> instance to prepare with this
+session&#8217;s settings.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.Session.put">
+<code class="descname">put</code><span class="sig-paren">(</span><em>url</em>, <em>data=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a PUT request. Returns <code class="xref py py-class docutils literal"><span class="pre">Response</span></code> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>data</strong> &#8211; (optional) Dictionary, bytes, or file-like object to send in the body of the <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>**kwargs</strong> &#8211; Optional arguments that <code class="docutils literal"><span class="pre">request</span></code> takes.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.Session.request">
+<code class="descname">request</code><span class="sig-paren">(</span><em>method</em>, <em>url</em>, <em>params=None</em>, <em>data=None</em>, <em>headers=None</em>, <em>cookies=None</em>, <em>files=None</em>, <em>auth=None</em>, <em>timeout=None</em>, <em>allow_redirects=True</em>, <em>proxies=None</em>, <em>hooks=None</em>, <em>stream=None</em>, <em>verify=None</em>, <em>cert=None</em>, <em>json=None</em><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>, prepares it and sends it.
+Returns <code class="xref py py-class docutils literal"><span class="pre">Response</span></code> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>method</strong> &#8211; method for the new <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>url</strong> &#8211; URL for the new <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> object.</li>
+<li><strong>params</strong> &#8211; (optional) Dictionary or bytes to be sent in the query
+string for the <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>data</strong> &#8211; (optional) Dictionary, bytes, or file-like object to send
+in the body of the <a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>json</strong> &#8211; (optional) json to send in the body of the
+<a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>headers</strong> &#8211; (optional) Dictionary of HTTP Headers to send with the
+<a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>cookies</strong> &#8211; (optional) Dict or CookieJar object to send with the
+<a class="reference internal" href="#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>.</li>
+<li><strong>files</strong> &#8211; (optional) Dictionary of <code class="docutils literal"><span class="pre">'filename':</span> <span class="pre">file-like-objects</span></code>
+for multipart encoding upload.</li>
+<li><strong>auth</strong> &#8211; (optional) Auth tuple or callable to enable
+Basic/Digest/Custom HTTP Auth.</li>
+<li><strong>timeout</strong> (<em>float or tuple</em>) &#8211; (optional) How long to wait for the server to send
+data before giving up, as a float, or a <a class="reference external" href="http://requests.readthedocs.io/en/latest/user/advanced/#timeouts" title="(in Requests v2.10.0)"><span class="xref std std-ref">(connect timeout,
+read timeout)</span></a> tuple.</li>
+<li><strong>allow_redirects</strong> (<a class="reference external" href="https://docs.python.org/dev/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) &#8211; (optional) Set to True by default.</li>
+<li><strong>proxies</strong> &#8211; (optional) Dictionary mapping protocol or protocol and
+hostname to the URL of the proxy.</li>
+<li><strong>stream</strong> &#8211; (optional) whether to immediately download the response
+content. Defaults to <code class="docutils literal"><span class="pre">False</span></code>.</li>
+<li><strong>verify</strong> &#8211; (optional) whether the SSL cert will be verified.
+A CA_BUNDLE path can also be provided. Defaults to <code class="docutils literal"><span class="pre">True</span></code>.</li>
+<li><strong>cert</strong> &#8211; (optional) if String, path to ssl client cert file (.pem).
+If Tuple, (&#8216;cert&#8217;, &#8216;key&#8217;) pair.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://requests.readthedocs.io/en/latest/api/#requests.Response" title="(in Requests v2.10.0)">requests.Response</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.Session.send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>request</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#thorn.request.Request.Session.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a given PreparedRequest.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.annotate_headers">
+<code class="descclassname">Request.</code><code class="descname">annotate_headers</code><span class="sig-paren">(</span><em>extra_headers</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/request.html#Request.annotate_headers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.request.Request.annotate_headers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.request.Request.app">
+<code class="descclassname">Request.</code><code class="descname">app</code><em class="property"> = None</em><a class="headerlink" href="#thorn.request.Request.app" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.as_dict">
+<code class="descclassname">Request.</code><code class="descname">as_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/request.html#Request.as_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.request.Request.as_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary representation of this request
+suitable for serialization.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.request.Request.connection_errors">
+<code class="descclassname">Request.</code><code class="descname">connection_errors</code><em class="property"> = (&lt;class 'requests.exceptions.ConnectionError'&gt;,)</em><a class="headerlink" href="#thorn.request.Request.connection_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tuple of exceptions considered a connection error.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.request.Request.default_headers">
+<code class="descclassname">Request.</code><code class="descname">default_headers</code><a class="headerlink" href="#thorn.request.Request.default_headers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.dispatch">
+<code class="descclassname">Request.</code><code class="descname">dispatch</code><span class="sig-paren">(</span><em>session=None</em>, <em>propagate=False</em>, <em>close_session=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/request.html#Request.dispatch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.request.Request.dispatch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.handle_connection_error">
+<code class="descclassname">Request.</code><code class="descname">handle_connection_error</code><span class="sig-paren">(</span><em>exc</em>, <em>propagate=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/request.html#Request.handle_connection_error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.request.Request.handle_connection_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.handle_timeout_error">
+<code class="descclassname">Request.</code><code class="descname">handle_timeout_error</code><span class="sig-paren">(</span><em>exc</em>, <em>propagate=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/request.html#Request.handle_timeout_error"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.request.Request.handle_timeout_error" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.request.Request.headers">
+<code class="descclassname">Request.</code><code class="descname">headers</code><a class="reference internal" href="../_modules/thorn/request.html#Request.headers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.request.Request.headers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.request.Request.recipient_validators">
+<code class="descclassname">Request.</code><code class="descname">recipient_validators</code><a class="reference internal" href="../_modules/thorn/request.html#Request.recipient_validators"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.request.Request.recipient_validators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.request.Request.response">
+<code class="descclassname">Request.</code><code class="descname">response</code><em class="property"> = None</em><a class="headerlink" href="#thorn.request.Request.response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Holds the response after the HTTP request is performed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.sign_request">
+<code class="descclassname">Request.</code><code class="descname">sign_request</code><span class="sig-paren">(</span><em>subscriber</em>, <em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/request.html#Request.sign_request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.request.Request.sign_request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.request.Request.timeout_errors">
+<code class="descclassname">Request.</code><code class="descname">timeout_errors</code><em class="property"> = (&lt;class 'requests.exceptions.Timeout'&gt;,)</em><a class="headerlink" href="#thorn.request.Request.timeout_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tuple of exceptions considered a timeout error.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.request.Request.urlident">
+<code class="descclassname">Request.</code><code class="descname">urlident</code><a class="reference internal" href="../_modules/thorn/request.html#Request.urlident"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.request.Request.urlident" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to order HTTP requests by URL.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.request.Request.user_agent">
+<code class="descclassname">Request.</code><code class="descname">user_agent</code><em class="property"> = u'Mozilla/5.0 (compatible; thorn/1.3.0; python-requests/2.10.0)'</em><a class="headerlink" href="#thorn.request.Request.user_agent" title="Permalink to this definition">¶</a></dt>
+<dd><p>HTTP User-Agent header.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.request.Request.validate_recipient">
+<code class="descclassname">Request.</code><code class="descname">validate_recipient</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/request.html#Request.validate_recipient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.request.Request.validate_recipient" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.request.Request.value">
+<code class="descclassname">Request.</code><code class="descname">value</code><a class="headerlink" href="#thorn.request.Request.value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="thorn.reverse.html"
+                        title="previous chapter">thorn.reverse</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="thorn.validators.html"
+                        title="next chapter">thorn.validators</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference/thorn.request.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.validators.html" title="thorn.validators"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="thorn.reverse.html" title="thorn.reverse"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

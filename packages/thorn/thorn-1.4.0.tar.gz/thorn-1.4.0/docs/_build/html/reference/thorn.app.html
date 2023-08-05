@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>thorn.app &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="index.html" />
+    <link rel="next" title="thorn.decorators" href="thorn.decorators.html" />
+    <link rel="prev" title="thorn" href="thorn.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.decorators.html" title="thorn.decorators"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="thorn.html" title="thorn"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="thorn-app">
+<h1>thorn.app<a class="headerlink" href="#thorn-app" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="module-thorn.app"></span><dl class="class">
+<dt id="thorn.app.Thorn">
+<em class="property">class </em><code class="descclassname">thorn.app.</code><code class="descname">Thorn</code><span class="sig-paren">(</span><em>dispatcher=None</em>, <em>set_as_current=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/app.html#Thorn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="thorn.app.Thorn.Dispatcher">
+<code class="descname">Dispatcher</code><a class="reference internal" href="../_modules/thorn/app.html#Thorn.Dispatcher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.Dispatcher" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.Event">
+<code class="descname">Event</code><a class="reference internal" href="../_modules/thorn/app.html#Thorn.Event"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.Event" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.ModelEvent">
+<code class="descname">ModelEvent</code><a class="reference internal" href="../_modules/thorn/app.html#Thorn.ModelEvent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.ModelEvent" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.Request">
+<code class="descname">Request</code><a class="reference internal" href="../_modules/thorn/app.html#Thorn.Request"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.Request" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.Settings">
+<code class="descname">Settings</code><a class="reference internal" href="../_modules/thorn/app.html#Thorn.Settings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.Settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.Subscriber">
+<code class="descname">Subscriber</code><a class="headerlink" href="#thorn.app.Thorn.Subscriber" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.Subscribers">
+<code class="descname">Subscribers</code><a class="headerlink" href="#thorn.app.Thorn.Subscribers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.app.Thorn.autodetect_env">
+<code class="descname">autodetect_env</code><span class="sig-paren">(</span><em>apply=&lt;operator.methodcaller object&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/app.html#Thorn.autodetect_env"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.autodetect_env" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.config">
+<code class="descname">config</code><a class="headerlink" href="#thorn.app.Thorn.config" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.dispatcher">
+<code class="descname">dispatcher</code><a class="reference internal" href="../_modules/thorn/app.html#Thorn.dispatcher"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.dispatcher" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.dispatchers">
+<code class="descname">dispatchers</code><em class="property"> = {u'default': u'thorn.dispatch.base:Dispatcher', u'celery': u'thorn.dispatch.celery:Dispatcher', u'disabled': u'thorn.dispatch.disabled:Dispatcher'}</em><a class="headerlink" href="#thorn.app.Thorn.dispatchers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.env">
+<code class="descname">env</code><a class="reference internal" href="../_modules/thorn/app.html#Thorn.env"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.env" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.environments">
+<code class="descname">environments</code><em class="property"> = set([u'thorn.environment.django:DjangoEnv'])</em><a class="headerlink" href="#thorn.app.Thorn.environments" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.event_cls">
+<code class="descname">event_cls</code><em class="property"> = u'thorn.events:Event'</em><a class="headerlink" href="#thorn.app.Thorn.event_cls" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.hmac_sign">
+<code class="descname">hmac_sign</code><a class="reference internal" href="../_modules/thorn/app.html#Thorn.hmac_sign"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.hmac_sign" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.model_event_cls">
+<code class="descname">model_event_cls</code><em class="property"> = u'thorn.events:ModelEvent'</em><a class="headerlink" href="#thorn.app.Thorn.model_event_cls" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.model_reverser">
+<code class="descname">model_reverser</code><a class="reference internal" href="../_modules/thorn/app.html#Thorn.model_reverser"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.model_reverser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.request_cls">
+<code class="descname">request_cls</code><em class="property"> = u'thorn.request:Request'</em><a class="headerlink" href="#thorn.app.Thorn.request_cls" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.reverse">
+<code class="descname">reverse</code><a class="headerlink" href="#thorn.app.Thorn.reverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.app.Thorn.set_current">
+<code class="descname">set_current</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/app.html#Thorn.set_current"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.set_current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.app.Thorn.set_default">
+<code class="descname">set_default</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/app.html#Thorn.set_default"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.set_default" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.settings">
+<code class="descname">settings</code><a class="reference internal" href="../_modules/thorn/app.html#Thorn.settings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.settings_cls">
+<code class="descname">settings_cls</code><em class="property"> = u'thorn.conf:Settings'</em><a class="headerlink" href="#thorn.app.Thorn.settings_cls" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.signals">
+<code class="descname">signals</code><a class="headerlink" href="#thorn.app.Thorn.signals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.app.Thorn.subclass_with_self">
+<code class="descname">subclass_with_self</code><span class="sig-paren">(</span><em>Class</em>, <em>name=None</em>, <em>attribute=u'app'</em>, <em>reverse=None</em>, <em>keep_reduce=False</em>, <em>**kw</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/app.html#Thorn.subclass_with_self"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.subclass_with_self" title="Permalink to this definition">¶</a></dt>
+<dd><p>Subclass an app-compatible class by setting its app attribute
+to this instance.</p>
+<p>App-compatible means the class has an &#8216;app&#8217; attribute providing
+the default app, e.g.: <code class="docutils literal"><span class="pre">class</span> <span class="pre">Foo(object):</span> <span class="pre">app</span> <span class="pre">=</span> <span class="pre">None</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>Class</strong> &#8211; The class to subclass.</li>
+<li><strong>name</strong> &#8211; Custom name for the target subclass.</li>
+<li><strong>attribute</strong> &#8211; Name of the attribute holding the app.
+Default is <code class="docutils literal"><span class="pre">&quot;app&quot;</span></code>.</li>
+<li><strong>reverse</strong> &#8211; Reverse path to this object used for pickling
+purposes.  E.g. for <code class="docutils literal"><span class="pre">app.AsyncResult</span></code> use <code class="docutils literal"><span class="pre">&quot;AsyncResult&quot;</span></code>.</li>
+<li><strong>keep_reduce</strong> &#8211; If enabled a custom <code class="docutils literal"><span class="pre">__reduce__</span></code> implementation
+will not be provided.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.app.Thorn.webhook_model">
+<code class="descname">webhook_model</code><a class="reference internal" href="../_modules/thorn/app.html#Thorn.webhook_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.app.Thorn.webhook_model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="thorn.html"
+                        title="previous chapter">thorn</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="thorn.decorators.html"
+                        title="next chapter">thorn.decorators</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference/thorn.app.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.decorators.html" title="thorn.decorators"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="thorn.html" title="thorn"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

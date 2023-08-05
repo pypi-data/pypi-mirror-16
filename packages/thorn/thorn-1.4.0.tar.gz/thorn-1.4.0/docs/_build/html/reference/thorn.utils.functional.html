@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>thorn.utils.functional &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="index.html" />
+    <link rel="next" title="thorn.utils.hmac" href="thorn.utils.hmac.html" />
+    <link rel="prev" title="thorn.utils.compat" href="thorn.utils.compat.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.utils.hmac.html" title="thorn.utils.hmac"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="thorn.utils.compat.html" title="thorn.utils.compat"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="thorn-utils-functional">
+<h1>thorn.utils.functional<a class="headerlink" href="#thorn-utils-functional" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#id1" id="id2">thorn.utils.functional</a></li>
+</ul>
+</div>
+<span class="target" id="module-thorn.utils.functional"></span><div class="section" id="id1">
+<h2><a class="toc-backref" href="#id2">thorn.utils.functional</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Functional-style utilities.</p>
+<dl class="function">
+<dt id="thorn.utils.functional.groupbymax">
+<code class="descclassname">thorn.utils.functional.</code><code class="descname">groupbymax</code><span class="sig-paren">(</span><em>it</em>, <em>max</em>, <em>key=&lt;built-in function eq&gt;</em>, <em>sentinel=&lt;object object&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/utils/functional.html#groupbymax"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.utils.functional.groupbymax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given an iterator emitting items in sorted order, this will
+group items together based on the key function, and produces
+one list for each group.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>it</strong> &#8211; Iterator emitting item in order.</li>
+<li><strong>max</strong> &#8211; Maximum size of any group (mandatory).</li>
+<li><strong>key</strong> &#8211; Function used to compare items.
+Defaults to <a class="reference external" href="https://docs.python.org/dev/library/operator.html#operator.eq" title="(in Python v3.6)"><code class="xref py py-func docutils literal"><span class="pre">operator.eq()</span></code></a> matching values exactly.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;E&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">groupbymax</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="go">[[&#39;A&#39;, &#39;A&#39;, &#39;A&#39;], [&#39;A&#39;], [&#39;B&#39;], [&#39;C&#39;], [&#39;D&#39;, &#39;D&#39;], [&#39;E&#39;]]</span>
+
+<span class="go"># NOTE: Not technically sorted, but similar items appear in the</span>
+<span class="go"># order we&#39;re matching for.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;foo:A&#39;</span><span class="p">,</span> <span class="s1">&#39;foo:B&#39;</span><span class="p">,</span> <span class="s1">&#39;bar:C&#39;</span><span class="p">,</span> <span class="s1">&#39;baz:D&#39;</span><span class="p">,</span> <span class="s1">&#39;baz:E&#39;</span><span class="p">,</span> <span class="s1">&#39;baz:F&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">groupbymax</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">b</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="go">[[&#39;foo:A&#39;, &#39;foo:B&#39;], [&#39;bar:C&#39;], [&#39;baz:D&#39;, &#39;baz:E&#39;, &#39;baz:F&#39;]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="thorn.utils.functional.Q">
+<em class="property">class </em><code class="descclassname">thorn.utils.functional.</code><code class="descname">Q</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/utils/functional.html#Q"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.utils.functional.Q" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object query node.</p>
+<p>This class works like <a class="reference external" href="http://django.readthedocs.io/en/latest/ref/models/querysets.html#django.db.models.Q" title="(in Django v1.11)"><code class="xref py py-class docutils literal"><span class="pre">django.db.models.Q</span></code></a>, but is used for
+filtering regular Python objects instead of database rows.</p>
+<p><strong>Examples</strong></p>
+<ul>
+<li><p class="first">Match object with <code class="docutils literal"><span class="pre">last_name</span></code> attribute set to &#8220;Costanza&#8221;:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">Q</span><span class="p">(</span><span class="n">last_name__eq</span><span class="o">=</span><span class="s2">&quot;Costanza&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Match object with <code class="docutils literal"><span class="pre">author.last_name</span></code> attribute set to &#8220;Benes&#8221;:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">Q</span><span class="p">(</span><span class="n">author__last_name__eq</span><span class="o">=</span><span class="s2">&quot;Benes&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">You are not allowed to specify any key without an operator,
+event though the following would be fine using Django`s Q objects:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">Q</span><span class="p">(</span><span class="n">author__last_name</span><span class="o">=</span><span class="s2">&quot;Benes&quot;</span><span class="p">)</span>   <span class="c1"># &lt;-- ERROR, will raise ValueError</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Attributes can be nested arbitrarily deep:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">Q</span><span class="p">(</span><span class="n">a__b__c__d__e__f__g__x__gt</span><span class="o">=</span><span class="mf">3.03</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">The special <code class="docutils literal"><span class="pre">*__eq=True</span></code> means &#8220;match any <em>true-ish</em> value&#8221;:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">Q</span><span class="p">(</span><span class="n">author__account__is_staff__eq</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Similarly the <code class="docutils literal"><span class="pre">*__eq=False</span></code> means &#8220;match any <em>false-y</em>&#8221; value&#8221;:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">Q</span><span class="p">(</span><span class="n">author__account__is_disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>See <a class="reference internal" href="../userguide/events.html#events-model-filtering-operators"><span class="std std-ref">Supported operators</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><code class="xref py py-class docutils literal"><span class="pre">collections.Callable</span></code>, to match an object with
+the given predicates, call the return value with the object to match:
+<code class="docutils literal"><span class="pre">Q(x__eq==808)(obj)</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="thorn.utils.functional.Q.apply_op">
+<code class="descname">apply_op</code><span class="sig-paren">(</span><em>getter</em>, <em>op</em>, <em>rhs</em>, <em>obj</em>, <em>*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/utils/functional.html#Q.apply_op"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.utils.functional.Q.apply_op" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.utils.functional.Q.apply_trans_op">
+<code class="descname">apply_trans_op</code><span class="sig-paren">(</span><em>getter</em>, <em>op</em>, <em>rhs</em>, <em>obj</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/utils/functional.html#Q.apply_trans_op"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.utils.functional.Q.apply_trans_op" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.utils.functional.Q.branches">
+<code class="descname">branches</code><em class="property"> = {False: &lt;built-in function truth&gt;, True: &lt;built-in function not_&gt;}</em><a class="headerlink" href="#thorn.utils.functional.Q.branches" title="Permalink to this definition">¶</a></dt>
+<dd><p>If the node is negated (<code class="docutils literal"><span class="pre">~a</span></code> / <code class="docutils literal"><span class="pre">a.negate()</span></code>), branch will be True,
+and we reverse the query into a <code class="docutils literal"><span class="pre">not</span> <span class="pre">a</span></code> one.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.utils.functional.Q.compile">
+<code class="descname">compile</code><span class="sig-paren">(</span><em>fields</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/utils/functional.html#Q.compile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.utils.functional.Q.compile" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.utils.functional.Q.compile_node">
+<code class="descname">compile_node</code><span class="sig-paren">(</span><em>field</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/utils/functional.html#Q.compile_node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.utils.functional.Q.compile_node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compiles node into a cached function that performs the match.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">unary <code class="xref py py-class docutils literal"><span class="pre">collections.Callable</span></code> taking the object
+to match.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.utils.functional.Q.compile_op">
+<code class="descname">compile_op</code><span class="sig-paren">(</span><em>lhs</em>, <em>rhs</em>, <em>opcode</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/utils/functional.html#Q.compile_op"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.utils.functional.Q.compile_op" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.utils.functional.Q.gate">
+<code class="descname">gate</code><a class="headerlink" href="#thorn.utils.functional.Q.gate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.utils.functional.Q.gates">
+<code class="descname">gates</code><em class="property"> = {u'AND': &lt;built-in function all&gt;, u'OR': &lt;built-in function any&gt;}</em><a class="headerlink" href="#thorn.utils.functional.Q.gates" title="Permalink to this definition">¶</a></dt>
+<dd><p>The gate decides the boolean operator of this tree node.
+A node can either be <em>OR</em> (<code class="docutils literal"><span class="pre">a</span> <span class="pre">|</span> <span class="pre">b</span></code>), or an <em>AND</em> note (<code class="docutils literal"><span class="pre">a</span> <span class="pre">&amp;</span> <span class="pre">b</span></code>).
+- Default is <em>AND</em>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.utils.functional.Q.operators">
+<code class="descname">operators</code><em class="property"> = {u'gt': &lt;built-in function gt&gt;, u'is': &lt;built-in function is_&gt;, u'now_eq': &lt;function compare&gt;, u'now_endswith': &lt;function compare&gt;, u'endswith': &lt;function endswith&gt;, u'now_gt': &lt;function compare&gt;, u'in': &lt;function reversed&gt;, u'eq': &lt;built-in function eq&gt;, u'now_ne': &lt;function compare&gt;, u'gte': &lt;built-in function ge&gt;, u'contains': &lt;built-in function contains&gt;, u'ne': &lt;built-in function ne&gt;, u'lt': &lt;built-in function lt&gt;, u'now_not_in': &lt;function compare&gt;, u'startswith': &lt;function startswith&gt;, u'now_lt': &lt;function compare&gt;, u'now_lte': &lt;function compare&gt;, u'now_gte': &lt;function compare&gt;, u'not': &lt;function &lt;lambda&gt;&gt;, u'true': &lt;function &lt;lambda&gt;&gt;, u'not_in': &lt;function reversed&gt;, u'is_not': &lt;built-in function is_not&gt;, u'now_in': &lt;function compare&gt;, u'now_is': &lt;function compare&gt;, u'now_is_not': &lt;function compare&gt;, u'lte': &lt;built-in function le&gt;, u'now_contains': &lt;function compare&gt;, u'now_startswith': &lt;function compare&gt;}</em><a class="headerlink" href="#thorn.utils.functional.Q.operators" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mapping of opcode to binary operator function: <code class="docutils literal"><span class="pre">f(a,</span> <span class="pre">b)</span></code>.
+Operators may return any true-ish or false-y value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.utils.functional.Q.prepare_opcode">
+<code class="descname">prepare_opcode</code><span class="sig-paren">(</span><em>O</em>, <em>rhs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/utils/functional.html#Q.prepare_opcode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.utils.functional.Q.prepare_opcode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.utils.functional.Q.prepare_statement">
+<code class="descname">prepare_statement</code><span class="sig-paren">(</span><em>lhs</em>, <em>rhs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/utils/functional.html#Q.prepare_statement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.utils.functional.Q.prepare_statement" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.utils.functional.Q.stack">
+<code class="descname">stack</code><a class="reference internal" href="../_modules/thorn/utils/functional.html#Q.stack"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.utils.functional.Q.stack" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="thorn.utils.compat.html"
+                        title="previous chapter">thorn.utils.compat</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="thorn.utils.hmac.html"
+                        title="next chapter">thorn.utils.hmac</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference/thorn.utils.functional.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.utils.hmac.html" title="thorn.utils.hmac"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="thorn.utils.compat.html" title="thorn.utils.compat"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

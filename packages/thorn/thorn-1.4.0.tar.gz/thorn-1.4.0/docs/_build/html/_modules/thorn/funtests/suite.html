@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>thorn.funtests.suite &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../../../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Module code" href="../../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for thorn.funtests.suite</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    thorn.funtests.suite</span>
+<span class="sd">    =================================</span>
+
+<span class="sd">    Functional test suite.</span>
+
+<span class="sd">    Instructions</span>
+<span class="sd">    ------------</span>
+
+<span class="sd">    #. Start the celery worker:</span>
+
+<span class="sd">    .. code-block:: console</span>
+
+<span class="sd">        $ celery -A thorn.funtests worker -l info -P eventlet -c 1000</span>
+
+<span class="sd">    #. Start the development web server:</span>
+
+<span class="sd">        .. code-block:: console</span>
+
+<span class="sd">            $ (cd testproj; python manage.py runserver)</span>
+
+<span class="sd">    #. Then execute the functional test suite:</span>
+
+<span class="sd">        .. code-block:: console</span>
+
+<span class="sd">            $ celery -A thorn.funtests cyanide</span>
+
+
+<span class="sd">    For a list of tests that you can select see:</span>
+
+<span class="sd">    .. code-block:: console</span>
+
+<span class="sd">        $ celery -A thorn.funtests cyanide -l</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">celery.utils.imports</span> <span class="k">import</span> <span class="n">qualname</span>
+
+<span class="kn">from</span> <span class="nn">testapp.models</span> <span class="k">import</span> <span class="n">Article</span><span class="p">,</span> <span class="n">Tag</span>
+
+<span class="kn">from</span> <span class="nn">.base</span> <span class="k">import</span> <span class="n">WebhookSuite</span><span class="p">,</span> <span class="n">event_url</span><span class="p">,</span> <span class="n">testcase</span>
+
+<span class="n">EVENT1_REF</span> <span class="o">=</span> <span class="s1">&#39;hardcoded1&#39;</span>
+<span class="n">EVENT1_URL</span> <span class="o">=</span> <span class="n">event_url</span><span class="p">(</span><span class="s1">&#39;article.changed&#39;</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="n">EVENT1_REF</span><span class="p">)</span>
+<span class="n">EVENT2_REF</span> <span class="o">=</span> <span class="s1">&#39;hardcoded2&#39;</span>
+<span class="n">EVENT2_URL</span> <span class="o">=</span> <span class="n">event_url</span><span class="p">(</span><span class="s1">&#39;article.changed&#39;</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="n">EVENT2_REF</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="callback_subscribers"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.callback_subscribers">[docs]</a><span class="k">def</span> <span class="nf">callback_subscribers</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">sender</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="n">EVENT1_URL</span><span class="p">,</span>
+        <span class="n">EVENT2_URL</span><span class="p">,</span>
+    <span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="Default"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default">[docs]</a><span class="k">class</span> <span class="nc">Default</span><span class="p">(</span><span class="n">WebhookSuite</span><span class="p">):</span>
+
+    <span class="nd">@testcase</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="Default.endpoints"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default.endpoints">[docs]</a>    <span class="k">def</span> <span class="nf">endpoints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">sub1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s1">&#39;article.created&#39;</span><span class="p">)</span>
+        <span class="n">sub2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s1">&#39;article.changed&#39;</span><span class="p">)</span>
+        <span class="n">subs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_subscriptions</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="n">sub1</span> <span class="ow">in</span> <span class="n">subs</span>
+        <span class="k">assert</span> <span class="n">sub2</span> <span class="ow">in</span> <span class="n">subs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unsubscribe</span><span class="p">(</span><span class="n">sub1</span><span class="p">[</span><span class="s1">&#39;subscription&#39;</span><span class="p">])</span>
+        <span class="n">subs2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_subscriptions</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="n">sub1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">subs2</span>
+        <span class="k">assert</span> <span class="n">sub2</span> <span class="ow">in</span> <span class="n">subs2</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unsubscribe</span><span class="p">(</span><span class="n">sub2</span><span class="p">[</span><span class="s1">&#39;subscription&#39;</span><span class="p">])</span>
+        <span class="n">subs3</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">list_subscriptions</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="n">sub1</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">subs3</span>
+        <span class="k">assert</span> <span class="n">sub2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">subs3</span></div>
+
+    <span class="nd">@testcase</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="Default.subscribe_to_article_created"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default.subscribe_to_article_created">[docs]</a>    <span class="k">def</span> <span class="nf">subscribe_to_article_created</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s1">&#39;article.created&#39;</span><span class="p">):</span>
+        <span class="n">sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s1">&#39;article.created&#39;</span><span class="p">)</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="s1">&#39;The quick brown fox&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_article_event_received</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">sub</span><span class="p">)</span></div>
+
+    <span class="nd">@testcase</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="Default.subscribe_to_article_changed"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default.subscribe_to_article_changed">[docs]</a>    <span class="k">def</span> <span class="nf">subscribe_to_article_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s1">&#39;article.changed&#39;</span><span class="p">):</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="s1">&#39;The quick brown fox&#39;</span><span class="p">)</span>
+        <span class="n">sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="n">Article</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">author</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">user</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;The lazy dog&#39;</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_article_event_received</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">sub</span><span class="p">)</span></div>
+
+    <span class="nd">@testcase</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="Default.subscribe_to_article_published"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default.subscribe_to_article_published">[docs]</a>    <span class="k">def</span> <span class="nf">subscribe_to_article_published</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s1">&#39;article.published&#39;</span><span class="p">):</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="s1">&#39;The quick brown fox&#39;</span><span class="p">)</span>
+        <span class="n">sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="s1">&#39;PUBLISHED&#39;</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_article_event_received</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">sub</span><span class="p">)</span></div>
+
+    <span class="nd">@testcase</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="Default.subscribe_to_article_removed"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default.subscribe_to_article_removed">[docs]</a>    <span class="k">def</span> <span class="nf">subscribe_to_article_removed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s1">&#39;article.removed&#39;</span><span class="p">):</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="s1">&#39;The quick brown fox&#39;</span><span class="p">)</span>
+        <span class="n">sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="n">rev</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reverse_article</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_article_event_received</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">sub</span><span class="p">,</span> <span class="n">reverse</span><span class="o">=</span><span class="n">rev</span><span class="p">)</span></div>
+
+    <span class="nd">@testcase</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="Default.subscribe_to_tag_added"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default.subscribe_to_tag_added">[docs]</a>    <span class="k">def</span> <span class="nf">subscribe_to_tag_added</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s1">&#39;article.tag_added&#39;</span><span class="p">):</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="s1">&#39;The quick brown fox&#39;</span><span class="p">)</span>
+        <span class="n">tag</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">Tag</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;kids&#39;</span><span class="p">)</span>
+        <span class="n">sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_article_event_received</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">sub</span><span class="p">)</span></div>
+
+    <span class="nd">@testcase</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="Default.subscribe_to_tag_removed"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default.subscribe_to_tag_removed">[docs]</a>    <span class="k">def</span> <span class="nf">subscribe_to_tag_removed</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s1">&#39;article.tag_removed&#39;</span><span class="p">):</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="s1">&#39;The quick brown fox&#39;</span><span class="p">)</span>
+        <span class="n">tag</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">Tag</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;kids&#39;</span><span class="p">)</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+        <span class="n">sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_article_event_received</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">sub</span><span class="p">)</span></div>
+
+    <span class="nd">@testcase</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="Default.subscribe_to_tag_all_cleared"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default.subscribe_to_tag_all_cleared">[docs]</a>    <span class="k">def</span> <span class="nf">subscribe_to_tag_all_cleared</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s1">&#39;article.tag_all_cleared&#39;</span><span class="p">):</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="s1">&#39;The quick brown fox&#39;</span><span class="p">)</span>
+        <span class="n">tag1</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">Tag</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;kids&#39;</span><span class="p">)</span>
+        <span class="n">tag2</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">Tag</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get_or_create</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;fun&#39;</span><span class="p">)</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tag1</span><span class="p">)</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">tag2</span><span class="p">)</span>
+        <span class="n">sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_article_event_received</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">sub</span><span class="p">)</span></div>
+
+    <span class="nd">@testcase</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<div class="viewcode-block" id="Default.hundred_subscribers"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default.hundred_subscribers">[docs]</a>    <span class="k">def</span> <span class="nf">hundred_subscribers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s1">&#39;article.created&#39;</span><span class="p">):</span>
+        <span class="n">subs</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">rest</span><span class="o">=</span><span class="s1">&#39;&amp;n=</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="s1">&#39;The Boring Bear&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_article_event_received</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">subs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">n</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span></div>
+
+    <span class="nd">@testcase</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="Default.sender_mismatch_does_not_dispatch"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default.sender_mismatch_does_not_dispatch">[docs]</a>    <span class="k">def</span> <span class="nf">sender_mismatch_does_not_dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s1">&#39;article.changed&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_login</span><span class="p">(</span><span class="s1">&#39;test2&#39;</span><span class="p">,</span> <span class="s1">&#39;test2&#39;</span><span class="p">)</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="s1">&#39;The Boring Bear&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;The Mighty Duck&#39;</span>
+        <span class="n">article</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_webhook_not_received</span><span class="p">()</span></div>
+
+    <span class="nd">@testcase</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="Default.unsubscribe_does_not_dispatch"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default.unsubscribe_does_not_dispatch">[docs]</a>    <span class="k">def</span> <span class="nf">unsubscribe_does_not_dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s1">&#39;article.created&#39;</span><span class="p">):</span>
+        <span class="n">sub</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="s1">&#39;Angry Bots&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_article_event_received</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">sub</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unsubscribe</span><span class="p">(</span><span class="n">sub</span><span class="p">[</span><span class="s1">&#39;subscription&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="s1">&#39;Funky Bots&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assert_webhook_not_received</span><span class="p">()</span></div>
+
+    <span class="nd">@testcase</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="Default.subscriber_setting"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default.subscriber_setting">[docs]</a>    <span class="k">def</span> <span class="nf">subscriber_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s1">&#39;article.changed&#39;</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">worker_subscribe_to</span><span class="p">(</span>
+                <span class="s1">&#39;article.changed&#39;</span><span class="p">,</span> <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_event_url</span><span class="p">(</span><span class="n">event</span><span class="p">)):</span>
+            <span class="n">article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="s1">&#39;Lazy Babies&#39;</span><span class="p">)</span>
+            <span class="n">article</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Hazy Babies&#39;</span>
+            <span class="n">article</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assert_article_event_received</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span></div>
+
+    <span class="nd">@testcase</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="viewcode-block" id="Default.subscriber_callback_setting"><a class="viewcode-back" href="../../../reference/thorn.funtests.suite.html#thorn.funtests.suite.Default.subscriber_callback_setting">[docs]</a>    <span class="k">def</span> <span class="nf">subscriber_callback_setting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s1">&#39;article.changed&#39;</span><span class="p">):</span>
+        <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">worker_subscribe_to</span><span class="p">(</span>
+                <span class="s1">&#39;article.changed&#39;</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">qualname</span><span class="p">(</span><span class="n">callback_subscribers</span><span class="p">)):</span>
+            <span class="n">article</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_article</span><span class="p">(</span><span class="s1">&#39;A brown fox&#39;</span><span class="p">)</span>
+            <span class="n">article</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;A red fox&#39;</span>
+            <span class="n">article</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assert_article_event_received</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="n">EVENT1_REF</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assert_article_event_received</span><span class="p">(</span><span class="n">article</span><span class="p">,</span> <span class="n">event</span><span class="p">,</span> <span class="n">ref</span><span class="o">=</span><span class="n">EVENT2_REF</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../../index.html">
+              <img class="logo" src="../../../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../../../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

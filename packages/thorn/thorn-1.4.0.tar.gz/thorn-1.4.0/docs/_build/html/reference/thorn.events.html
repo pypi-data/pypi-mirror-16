@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>thorn.events &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../index.html" />
+    <link rel="up" title="API Reference" href="index.html" />
+    <link rel="next" title="thorn.reverse" href="thorn.reverse.html" />
+    <link rel="prev" title="thorn.decorators" href="thorn.decorators.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.reverse.html" title="thorn.reverse"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="thorn.decorators.html" title="thorn.decorators"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">API Reference</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="thorn-events">
+<h1>thorn.events<a class="headerlink" href="#thorn-events" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#thorn-webhook-events" id="id1">thorn.webhook.events</a></li>
+</ul>
+</div>
+<span class="target" id="module-thorn.events"></span><div class="section" id="thorn-webhook-events">
+<h2><a class="toc-backref" href="#id1">thorn.webhook.events</a><a class="headerlink" href="#thorn-webhook-events" title="Permalink to this headline">¶</a></h2>
+<p>User-defined webhook events.</p>
+<dl class="class">
+<dt id="thorn.events.Event">
+<em class="property">class </em><code class="descclassname">thorn.events.</code><code class="descname">Event</code><span class="sig-paren">(</span><em>name</em>, <em>timeout=None</em>, <em>dispatcher=None</em>, <em>retry=None</em>, <em>retry_max=None</em>, <em>retry_delay=None</em>, <em>app=None</em>, <em>recipient_validators=None</em>, <em>subscribers=None</em>, <em>request_data=None</em>, <em>allow_keepalive=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#Event"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.Event" title="Permalink to this definition">¶</a></dt>
+<dd><p>Webhook Event.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; Name of this event.
+Namespaces can be dot-separated, and if so subscribers can glob-match
+based on the parts in the name (e.g. <code class="docutils literal"><span class="pre">&quot;order.created&quot;</span></code>).</li>
+<li><strong>timeout</strong> &#8211; Default request timeout for this event.</li>
+<li><strong>retry</strong> &#8211; Enable/disable retries when dispatching this event fails
+(disabled by default).</li>
+<li><strong>retry_max</strong> &#8211; Max number of retries (3 by default).</li>
+<li><strong>retry_delay</strong> &#8211; Delay between retries (60 seconds by default).</li>
+<li><strong>recipient_validators</strong> &#8211; <p>List of functions validating the recipient
+URL string.  Functions must return False if the URL is blocked.
+Default is to only allow HTTP and HTTPS, with respective reserved
+ports 80 and 443, and to block internal IP networks, and can
+be changed using the <a class="reference internal" href="../userguide/configuration.html#std:setting-THORN_RECIPIENT_VALIDATORS"><code class="xref std std-setting docutils literal"><span class="pre">THORN_RECIPIENT_VALIDATORS</span></code></a> setting:</p>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="n">recipient_validators</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">thorn</span><span class="o">.</span><span class="n">validators</span><span class="o">.</span><span class="n">block_internal_ips</span><span class="p">(),</span>
+    <span class="n">thorn</span><span class="o">.</span><span class="n">validators</span><span class="o">.</span><span class="n">ensure_protocol</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">,</span> <span class="s1">&#39;https&#39;</span><span class="p">),</span>
+    <span class="n">thorn</span><span class="o">.</span><span class="n">validators</span><span class="o">.</span><span class="n">ensure_port</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">443</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>WARNING: <a class="reference internal" href="thorn.validators.html#thorn.validators.block_internal_ips" title="thorn.validators.block_internal_ips"><code class="xref py py-func docutils literal"><span class="pre">block_internal_ips()</span></code></a> will only
+test for reserved internal networks, and not private networks
+with a public IP address.  You can block those using
+<a class="reference internal" href="thorn.validators.html#thorn.validators.block_cidr_network" title="thorn.validators.block_cidr_network"><code class="xref py py-class docutils literal"><span class="pre">block_cidr_network</span></code></a>.</p>
+</li>
+<li><strong>subscribers</strong> &#8211; Additional subscribers, as a list of URLs,
+subscriber model objects, or callback functions returning these</li>
+<li><strong>request_data</strong> &#8211; Optional mapping of extra data to inject into
+event payloads,</li>
+<li><strong>allow_keepalive</strong> &#8211; Flag to disable HTTP connection keepalive
+for this event only.  Keepalive is enabled by default.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="thorn.events.Event.allow_keepalive">
+<code class="descname">allow_keepalive</code><em class="property"> = True</em><a class="headerlink" href="#thorn.events.Event.allow_keepalive" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.events.Event.app">
+<code class="descname">app</code><em class="property"> = None</em><a class="headerlink" href="#thorn.events.Event.app" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.events.Event.dispatcher">
+<code class="descname">dispatcher</code><a class="headerlink" href="#thorn.events.Event.dispatcher" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.Event.prepare_payload">
+<code class="descname">prepare_payload</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#Event.prepare_payload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.Event.prepare_payload" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.Event.prepare_recipient_validators">
+<code class="descname">prepare_recipient_validators</code><span class="sig-paren">(</span><em>validators</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#Event.prepare_recipient_validators"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.Event.prepare_recipient_validators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.events.Event.prepared_recipient_validators">
+<code class="descname">prepared_recipient_validators</code><a class="reference internal" href="../_modules/thorn/events.html#Event.prepared_recipient_validators"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.Event.prepared_recipient_validators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.events.Event.recipient_validators">
+<code class="descname">recipient_validators</code><em class="property"> = None</em><a class="headerlink" href="#thorn.events.Event.recipient_validators" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.Event.send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>data</em>, <em>sender=None</em>, <em>on_success=None</em>, <em>on_error=None</em>, <em>timeout=None</em>, <em>on_timeout=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#Event.send"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.Event.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send event to all subscribers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> &#8211; Event payload (must be json serializable).</li>
+<li><strong>sender</strong> &#8211; Optional event sender, as a
+<a class="reference external" href="http://django.readthedocs.io/en/latest/ref/contrib/auth.html#django.contrib.auth.models.User" title="(in Django v1.11)"><code class="xref py py-class docutils literal"><span class="pre">User</span></code></a> instance.</li>
+<li><strong>timeout</strong> &#8211; Specify custom HTTP request timeout
+overriding the <a class="reference internal" href="../userguide/configuration.html#std:setting-THORN_EVENT_TIMEOUT"><code class="xref std std-setting docutils literal"><span class="pre">THORN_EVENT_TIMEOUT</span></code></a> setting.</li>
+<li><strong>on_success</strong> &#8211; Callback called for each HTTP request
+if the request succeeds.  Must take single
+<a class="reference internal" href="thorn.request.html#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> argument.</li>
+<li><strong>on_timeout</strong> &#8211; Callback called for each HTTP request
+if the request times out.  Takes two arguments:
+a <a class="reference internal" href="thorn.request.html#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a>, and the time out
+exception instance.</li>
+<li><strong>on_error</strong> &#8211; Callback called for each HTTP request
+if the request fails.  Takes two arguments:
+a <a class="reference internal" href="thorn.request.html#thorn.request.Request" title="thorn.request.Request"><code class="xref py py-class docutils literal"><span class="pre">Request</span></code></a> argument, and
+the error exception instance.</li>
+<li><strong>context</strong> &#8211; Extra context to pass to subscriber callbacks</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.events.Event.subscribers">
+<code class="descname">subscribers</code><a class="headerlink" href="#thorn.events.Event.subscribers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="thorn.events.ModelEvent">
+<em class="property">class </em><code class="descclassname">thorn.events.</code><code class="descname">ModelEvent</code><span class="sig-paren">(</span><em>name</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Event related to model changes.</p>
+<p>This event type follows a specific payload format:</p>
+<div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;event&quot;</span><span class="p">:</span> <span class="s2">&quot;(str)event_name&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;(URL)model_location&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;sender&quot;</span><span class="p">:</span> <span class="s2">&quot;(User pk)optional_sender&quot;</span><span class="p">,</span>
+ <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;event specific data&quot;</span><span class="p">:</span> <span class="s2">&quot;value&quot;</span><span class="p">}}</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; Name of event.</li>
+<li><strong>reverse</strong> &#8211; A function that takes a model instance and returns
+the canonical URL for that resource.</li>
+<li><strong>sender_field</strong> &#8211; Field used as a sender for events, e.g. <code class="docutils literal"><span class="pre">&quot;account.user&quot;</span></code>,
+will use <code class="docutils literal"><span class="pre">instance.account.user</span></code>.</li>
+<li><strong>$field__$op</strong> &#8211; <p>Optional filter arguments to filter the model
+instances to dispatch for.  These keyword arguments
+can be defined just like the arguments to a Django query set,
+the only difference being that you have to specify an operator
+for every field: this means <code class="docutils literal"><span class="pre">last_name=&quot;jerry&quot;</span></code> does not work,
+and you have to use <code class="docutils literal"><span class="pre">last_name__eq=&quot;jerry&quot;</span></code> instead.</p>
+<p>See <a class="reference internal" href="thorn.utils.functional.html#thorn.utils.functional.Q" title="thorn.utils.functional.Q"><code class="xref py py-class docutils literal"><span class="pre">Q</span></code></a> for more information.</p>
+</li>
+<li><strong>signal_dispatcher</strong> &#8211; Custom
+<code class="xref py py-class docutils literal"><span class="pre">signal_dispatcher</span></code> used to
+connect this event to a model signal.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="thorn.events.ModelEvent.connect_model">
+<code class="descname">connect_model</code><span class="sig-paren">(</span><em>model</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.connect_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.connect_model" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.ModelEvent.dispatches_on_change">
+<code class="descname">dispatches_on_change</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.dispatches_on_change"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.dispatches_on_change" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.ModelEvent.dispatches_on_create">
+<code class="descname">dispatches_on_create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.dispatches_on_create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.dispatches_on_create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.ModelEvent.dispatches_on_delete">
+<code class="descname">dispatches_on_delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.dispatches_on_delete"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.dispatches_on_delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.ModelEvent.dispatches_on_m2m_add">
+<code class="descname">dispatches_on_m2m_add</code><span class="sig-paren">(</span><em>related_field</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.dispatches_on_m2m_add"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.dispatches_on_m2m_add" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.ModelEvent.dispatches_on_m2m_clear">
+<code class="descname">dispatches_on_m2m_clear</code><span class="sig-paren">(</span><em>related_field</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.dispatches_on_m2m_clear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.dispatches_on_m2m_clear" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.ModelEvent.dispatches_on_m2m_remove">
+<code class="descname">dispatches_on_m2m_remove</code><span class="sig-paren">(</span><em>related_field</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.dispatches_on_m2m_remove"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.dispatches_on_m2m_remove" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.ModelEvent.instance_data">
+<code class="descname">instance_data</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.instance_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.instance_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get event data from <code class="docutils literal"><span class="pre">instance.webhook_payload()</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.ModelEvent.instance_sender">
+<code class="descname">instance_sender</code><span class="sig-paren">(</span><em>instance</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.instance_sender"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.instance_sender" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get event <code class="docutils literal"><span class="pre">sender</span></code> from model instance.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.ModelEvent.on_signal">
+<code class="descname">on_signal</code><span class="sig-paren">(</span><em>instance</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.on_signal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.on_signal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.ModelEvent.send">
+<code class="descname">send</code><span class="sig-paren">(</span><em>instance</em>, <em>data=None</em>, <em>sender=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.send"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send event for model <code class="docutils literal"><span class="pre">instance</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> &#8211; Event specific data.</td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference internal" href="#thorn.events.Event.send" title="thorn.events.Event.send"><code class="xref py py-meth docutils literal"><span class="pre">Event.send()</span></code></a> for more arguments supported.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.ModelEvent.send_from_instance">
+<code class="descname">send_from_instance</code><span class="sig-paren">(</span><em>instance</em>, <em>context={}</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.send_from_instance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.send_from_instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.ModelEvent.should_dispatch">
+<code class="descname">should_dispatch</code><span class="sig-paren">(</span><em>instance</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.should_dispatch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.should_dispatch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="thorn.events.ModelEvent.signal_dispatcher">
+<code class="descname">signal_dispatcher</code><a class="headerlink" href="#thorn.events.ModelEvent.signal_dispatcher" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="thorn.events.ModelEvent.to_message">
+<code class="descname">to_message</code><span class="sig-paren">(</span><em>data</em>, <em>instance=None</em>, <em>sender=None</em>, <em>ref=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/thorn/events.html#ModelEvent.to_message"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#thorn.events.ModelEvent.to_message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="thorn.decorators.html"
+                        title="previous chapter">thorn.decorators</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="thorn.reverse.html"
+                        title="next chapter">thorn.reverse</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference/thorn.events.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="thorn.reverse.html" title="thorn.reverse"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="thorn.decorators.html" title="thorn.decorators"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >API Reference</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>

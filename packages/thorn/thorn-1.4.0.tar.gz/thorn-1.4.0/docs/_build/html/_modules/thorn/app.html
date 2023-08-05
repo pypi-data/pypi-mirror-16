@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>thorn.app &mdash; Thorn 1.3.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/thorn.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="copyright" title="Copyright" href="../../copyright.html" />
+    <link rel="top" title="Thorn 1.3.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for thorn.app</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span><span class="p">,</span> <span class="n">unicode_literals</span>
+
+<span class="kn">from</span> <span class="nn">operator</span> <span class="k">import</span> <span class="n">attrgetter</span><span class="p">,</span> <span class="n">methodcaller</span>
+
+<span class="kn">from</span> <span class="nn">celery.utils</span> <span class="k">import</span> <span class="n">cached_property</span>
+<span class="kn">from</span> <span class="nn">celery.utils.imports</span> <span class="k">import</span> <span class="n">symbol_by_name</span>
+<span class="kn">from</span> <span class="nn">celery.utils.functional</span> <span class="k">import</span> <span class="n">first</span>
+
+<span class="kn">from</span> <span class="nn">.</span> <span class="k">import</span> <span class="n">_state</span>
+<span class="kn">from</span> <span class="nn">.utils.compat</span> <span class="k">import</span> <span class="n">bytes_if_py2</span>
+
+
+<span class="k">def</span> <span class="nf">_unpickle_appattr</span><span class="p">(</span><span class="n">reverse_name</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">attrgetter</span><span class="p">(</span><span class="n">reverse_name</span><span class="p">)(</span><span class="n">_state</span><span class="o">.</span><span class="n">current_app</span><span class="p">())(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Thorn"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn">[docs]</a><span class="k">class</span> <span class="nc">Thorn</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">event_cls</span> <span class="o">=</span> <span class="s1">&#39;thorn.events:Event&#39;</span>
+    <span class="n">model_event_cls</span> <span class="o">=</span> <span class="s1">&#39;thorn.events:ModelEvent&#39;</span>
+    <span class="n">settings_cls</span> <span class="o">=</span> <span class="s1">&#39;thorn.conf:Settings&#39;</span>
+    <span class="n">request_cls</span> <span class="o">=</span> <span class="s1">&#39;thorn.request:Request&#39;</span>
+
+    <span class="n">dispatchers</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="s1">&#39;thorn.dispatch.base:Dispatcher&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;celery&#39;</span><span class="p">:</span> <span class="s1">&#39;thorn.dispatch.celery:Dispatcher&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;disabled&#39;</span><span class="p">:</span> <span class="s1">&#39;thorn.dispatch.disabled:Dispatcher&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">environments</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;thorn.environment.django:DjangoEnv&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dispatcher</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">set_as_current</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dispatcher</span> <span class="o">=</span> <span class="n">dispatcher</span>
+        <span class="k">if</span> <span class="n">set_as_current</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_current</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Thorn.set_current"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.set_current">[docs]</a>    <span class="k">def</span> <span class="nf">set_current</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">_state</span><span class="o">.</span><span class="n">set_current_app</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Thorn.set_default"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.set_default">[docs]</a>    <span class="k">def</span> <span class="nf">set_default</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">_state</span><span class="o">.</span><span class="n">set_default_app</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Thorn.autodetect_env"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.autodetect_env">[docs]</a>    <span class="k">def</span> <span class="nf">autodetect_env</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">apply</span><span class="o">=</span><span class="n">methodcaller</span><span class="p">(</span><span class="s1">&#39;autodetect&#39;</span><span class="p">)):</span>
+        <span class="k">return</span> <span class="n">first</span><span class="p">(</span><span class="n">apply</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="n">symbol_by_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">environments</span><span class="p">))()</span></div>
+
+    <span class="k">def</span> <span class="nf">_get_dispatcher</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dispatcher</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">dispatcher</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">dispatcher</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">THORN_DISPATCHER</span>
+        <span class="k">return</span> <span class="n">symbol_by_name</span><span class="p">(</span><span class="n">dispatcher</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatchers</span><span class="p">)</span>
+
+    <span class="nd">@cached_property</span>
+<div class="viewcode-block" id="Thorn.dispatcher"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.dispatcher">[docs]</a>    <span class="k">def</span> <span class="nf">dispatcher</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Dispatcher</span><span class="p">()</span></div>
+
+    <span class="nd">@cached_property</span>
+<div class="viewcode-block" id="Thorn.Dispatcher"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.Dispatcher">[docs]</a>    <span class="k">def</span> <span class="nf">Dispatcher</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">subclass_with_self</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_dispatcher</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_dispatcher</span><span class="p">))</span></div>
+
+    <span class="nd">@cached_property</span>
+<div class="viewcode-block" id="Thorn.hmac_sign"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.hmac_sign">[docs]</a>    <span class="k">def</span> <span class="nf">hmac_sign</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">symbol_by_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">THORN_HMAC_SIGNER</span><span class="p">)</span></div>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">config</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">config</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Subscriber</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">Subscriber</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">Subscribers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">Subscribers</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">signals</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">signals</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">reverse</span>
+
+    <span class="nd">@cached_property</span>
+<div class="viewcode-block" id="Thorn.Settings"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.Settings">[docs]</a>    <span class="k">def</span> <span class="nf">Settings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">subclass_with_self</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">settings_cls</span><span class="p">)</span></div>
+
+    <span class="nd">@cached_property</span>
+<div class="viewcode-block" id="Thorn.settings"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.settings">[docs]</a>    <span class="k">def</span> <span class="nf">settings</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">Settings</span><span class="p">()</span></div>
+
+    <span class="nd">@cached_property</span>
+<div class="viewcode-block" id="Thorn.env"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.env">[docs]</a>    <span class="k">def</span> <span class="nf">env</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">autodetect_env</span><span class="p">()</span></div>
+
+    <span class="nd">@cached_property</span>
+<div class="viewcode-block" id="Thorn.Event"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.Event">[docs]</a>    <span class="k">def</span> <span class="nf">Event</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">subclass_with_self</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">event_cls</span><span class="p">)</span></div>
+
+    <span class="nd">@cached_property</span>
+<div class="viewcode-block" id="Thorn.ModelEvent"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.ModelEvent">[docs]</a>    <span class="k">def</span> <span class="nf">ModelEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">subclass_with_self</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model_event_cls</span><span class="p">)</span></div>
+
+    <span class="nd">@cached_property</span>
+<div class="viewcode-block" id="Thorn.webhook_model"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.webhook_model">[docs]</a>    <span class="k">def</span> <span class="nf">webhook_model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">symbol_by_name</span><span class="p">(</span><span class="s1">&#39;thorn.decorators.webhook_model&#39;</span><span class="p">)</span></div>
+
+    <span class="nd">@cached_property</span>
+<div class="viewcode-block" id="Thorn.model_reverser"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.model_reverser">[docs]</a>    <span class="k">def</span> <span class="nf">model_reverser</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">symbol_by_name</span><span class="p">(</span><span class="s1">&#39;thorn.reverse.model_reverser&#39;</span><span class="p">)</span></div>
+
+    <span class="nd">@cached_property</span>
+<div class="viewcode-block" id="Thorn.Request"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.Request">[docs]</a>    <span class="k">def</span> <span class="nf">Request</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">subclass_with_self</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request_cls</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Thorn.subclass_with_self"><a class="viewcode-back" href="../../reference/thorn.app.html#thorn.Thorn.subclass_with_self">[docs]</a>    <span class="k">def</span> <span class="nf">subclass_with_self</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Class</span><span class="p">,</span>
+                           <span class="n">name</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">attribute</span><span class="o">=</span><span class="s1">&#39;app&#39;</span><span class="p">,</span>
+                           <span class="n">reverse</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keep_reduce</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Subclass an app-compatible class by setting its app attribute</span>
+<span class="sd">        to this instance.</span>
+
+<span class="sd">        App-compatible means the class has an &#39;app&#39; attribute providing</span>
+<span class="sd">        the default app, e.g.: ``class Foo(object): app = None``.</span>
+
+<span class="sd">        :param Class: The class to subclass.</span>
+<span class="sd">        :keyword name: Custom name for the target subclass.</span>
+<span class="sd">        :keyword attribute: Name of the attribute holding the app.</span>
+<span class="sd">            Default is ``&quot;app&quot;``.</span>
+<span class="sd">        :keyword reverse: Reverse path to this object used for pickling</span>
+<span class="sd">            purposes.  E.g. for ``app.AsyncResult`` use ``&quot;AsyncResult&quot;``.</span>
+<span class="sd">        :keyword keep_reduce: If enabled a custom ``__reduce__`` implementation</span>
+<span class="sd">           will not be provided.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">Class</span> <span class="o">=</span> <span class="n">symbol_by_name</span><span class="p">(</span><span class="n">Class</span><span class="p">)</span>
+        <span class="n">reverse</span> <span class="o">=</span> <span class="n">reverse</span> <span class="k">if</span> <span class="n">reverse</span> <span class="k">else</span> <span class="n">Class</span><span class="o">.</span><span class="n">__name__</span>
+
+        <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">_unpickle_appattr</span><span class="p">,</span> <span class="p">(</span><span class="n">reverse</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__reduce_keys__</span><span class="p">())</span>
+
+        <span class="n">attrs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">({</span><span class="n">attribute</span><span class="p">:</span> <span class="bp">self</span><span class="p">},</span>
+                     <span class="n">__module__</span><span class="o">=</span><span class="n">Class</span><span class="o">.</span><span class="n">__module__</span><span class="p">,</span>
+                     <span class="n">__doc__</span><span class="o">=</span><span class="n">Class</span><span class="o">.</span><span class="n">__doc__</span><span class="p">,</span>
+                     <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">keep_reduce</span><span class="p">:</span>
+            <span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;__reduce__&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">__reduce__</span>
+
+        <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">bytes_if_py2</span><span class="p">(</span><span class="n">name</span> <span class="ow">or</span> <span class="n">Class</span><span class="o">.</span><span class="n">__name__</span><span class="p">),</span> <span class="p">(</span><span class="n">Class</span><span class="p">,),</span> <span class="n">attrs</span><span class="p">)</span></div></div>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/logo.png" alt="Logo"/>
+            </a></p><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/robinhood/thorn" data-icon="octicon-star" data-style="mega" data-count-href="/robinhood/thorn/stargazers" data-count-api="/repos/robinhood/thorn#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star Thorn on GitHub">Star</a>
+<a class="github-button" href="https://github.com/robinhood/thorn/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/robinhood/thorn#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue robinhood/thorn on GitHub">Issue</a>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">Thorn 1.3.0 documentation</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; <a href="../../copyright.html">Copyright</a> 2016, Robinhood Markets.
+    </div>
+  </body>
+</html>
