@@ -1,0 +1,9 @@
+README.rst
+setup.py
+rpi_devices/__init__.py
+rpi_devices/devices.py
+rpi_devices.egg-info/PKG-INFO
+rpi_devices.egg-info/SOURCES.txt
+rpi_devices.egg-info/dependency_links.txt
+rpi_devices.egg-info/requires.txt
+rpi_devices.egg-info/top_level.txt
