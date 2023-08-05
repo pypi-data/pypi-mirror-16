@@ -1,0 +1,17 @@
+HISTORY.md
+LICENSE
+MANIFEST.in
+NOTICE
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+indiesquare/__init__.py
+indiesquare/address.py
+indiesquare/xcp_token.py
+indiesquare.egg-info/PKG-INFO
+indiesquare.egg-info/SOURCES.txt
+indiesquare.egg-info/dependency_links.txt
+indiesquare.egg-info/not-zip-safe
+indiesquare.egg-info/requires.txt
+indiesquare.egg-info/top_level.txt
