@@ -1,0 +1,12 @@
+README.rst
+setup.py
+wpxredisorm/__init__.py
+wpxredisorm/manager.py
+wpxredisorm/migrate.py
+wpxredisorm/redisOrm.py
+wpxredisorm/test.py
+wpxredisorm.egg-info/PKG-INFO
+wpxredisorm.egg-info/SOURCES.txt
+wpxredisorm.egg-info/dependency_links.txt
+wpxredisorm.egg-info/top_level.txt
+wpxredisorm.egg-info/zip-safe
