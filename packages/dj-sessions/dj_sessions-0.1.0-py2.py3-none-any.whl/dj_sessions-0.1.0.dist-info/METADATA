@@ -1,0 +1,93 @@
+Metadata-Version: 2.0
+Name: dj-sessions
+Version: 0.1.0
+Summary: Enhanced session traciking for Django
+Home-page: https://gitlab.com/pydanny/dj-sessions
+Author: Daniel and Audrey Roy Greenfeld
+Author-email: pydanny@gmail.com
+License: Apache Software License 2.0
+Keywords: dj-sessions
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.8
+Classifier: Framework :: Django :: 1.9
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: django-model-utils (>=2.0)
+
+=============================
+dj-sessions
+=============================
+
+.. image:: https://badge.fury.io/py/dj-sessions.png
+    :target: https://badge.fury.io/py/dj-sessions
+
+.. image:: https://travis-ci.org/pydanny/dj-sessions.png?branch=master
+    :target: https://travis-ci.org/pydanny/dj-sessions
+
+Enhanced session traciking for Django
+
+Documentation
+-------------
+
+The full documentation is at https://dj-sessions.readthedocs.org.
+
+Quickstart
+----------
+
+Install dj-sessions::
+
+    pip install dj-sessions
+
+Then use it in a project::
+
+    import djsessions
+
+Features
+--------
+
+* TODO
+
+Running Tests
+--------------
+
+Does the code actually work?
+
+::
+
+    source <YOURVIRTUALENV>/bin/activate
+    (myenv) $ pip install -r requirements_test.txt
+    (myenv) $ python runtests.py
+
+Credits
+---------
+
+Tools used in rendering this package:
+
+*  Cookiecutter_
+*  `cookiecutter-djangopackage`_
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`cookiecutter-djangopackage`: https://github.com/pydanny/cookiecutter-djangopackage
+
+
+
+
+History
+-------
+
+0.1.0 (2016-07-06)
+++++++++++++++++++
+
+* First release on PyPI.
+
+
