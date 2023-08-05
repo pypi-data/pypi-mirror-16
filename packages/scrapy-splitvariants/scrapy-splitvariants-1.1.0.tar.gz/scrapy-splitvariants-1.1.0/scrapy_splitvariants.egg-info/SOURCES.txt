@@ -1,0 +1,10 @@
+README.rst
+setup.cfg
+setup.py
+scrapy_splitvariants/__init__.py
+scrapy_splitvariants/middleware.py
+scrapy_splitvariants.egg-info/PKG-INFO
+scrapy_splitvariants.egg-info/SOURCES.txt
+scrapy_splitvariants.egg-info/dependency_links.txt
+scrapy_splitvariants.egg-info/requires.txt
+scrapy_splitvariants.egg-info/top_level.txt
