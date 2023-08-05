@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: cmsplugin-rst
+Version: 0.2
+Summary: Restructured Text plugin for Django CMS.
+Home-page: https://github.com/pakal/cmsplugin-rst
+Author: Pascal Chambon
+Author-email: pythoniks@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
