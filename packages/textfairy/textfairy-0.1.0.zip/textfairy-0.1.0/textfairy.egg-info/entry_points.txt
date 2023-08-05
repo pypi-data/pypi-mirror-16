@@ -1,0 +1,3 @@
+[console_scripts]
+textfairy = textfairy.cli:main
+
