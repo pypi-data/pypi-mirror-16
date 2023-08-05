@@ -1,0 +1,9 @@
+extends ./layout.jade
+
+block title
+  |pyetl - #{pipeline.name}
+
+block content
+  h2
+    | #{pipeline.name} Pipeline
+    a.btn.btn-success(href="/pipelines/#{pipeline['class_name']}/start" role="button">Run Pipeline</a>
