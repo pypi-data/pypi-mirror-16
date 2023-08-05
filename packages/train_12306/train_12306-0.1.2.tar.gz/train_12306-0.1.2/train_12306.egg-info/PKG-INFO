@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: train-12306
+Version: 0.1.2
+Summary: simple python application to get 12306 tickets
+Home-page: https://github.com/ecmadao/Spider-12306
+Author: ecmadao
+Author-email: wlec@outlook.com
+License: MIT
+Description: UNKNOWN
+Platform: any
