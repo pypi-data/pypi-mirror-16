@@ -1,0 +1,27 @@
+Metadata-Version: 1.1
+Name: serf_membership
+Version: 1.0
+Summary: This is very simle script for election a leader (primary) from all members tagget with specific role.
+Home-page: https://github.com/mignev/serf-membership
+Author: Marian Ignev
+Author-email: m@ignev.net
+License: UNKNOWN
+Description: Serf Membership
+        =======
+        
+        This is very simle script for election a leader (primary) from all members tagget with specific role.
+        
+        #Copyright
+        Copyright (c) 2016 Marian Ignev. See LICENSE for further details.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: POSIX :: BSD
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: System :: Shells
+Classifier: Topic :: Utilities
