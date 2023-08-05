@@ -1,0 +1,15 @@
+Metadata-Version: 2.0
+Name: sncli
+Version: 0.1.2
+Summary: Simplenote Command Line Interface
+Home-page: https://github.com/insanum/sncli
+Author: Eric Davis
+Author-email: edavis@insanum.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires: urwid
+Requires: requests
+
+UNKNOWN
+
+
