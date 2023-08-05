@@ -1,0 +1,13 @@
+link.json-0.8.dist-info/metadata.json,sha256=dgooJNSiRKUARod49qPw1XZzAc2xbf4fiPVy6WNQBPw,1148
+link.json-0.8.dist-info/METADATA,sha256=zbm7wFN2p8Q35VkmzeyqVaUTGeftEfsWtNc-_R7tyzY,1270
+link.json-0.8.dist-info/WHEEL,sha256=-aSo8rHuuPDEFzkcqqQ55pDyCjy25bYMLxSiHWKAOTc,92
+link.json-0.8.dist-info/RECORD,,
+link.json-0.8.dist-info/top_level.txt,sha256=ytLqv9iuo558nsLwQdUCFQzL5yAmc8P7H-YOwCnTI84,5
+link.json-0.8.dist-info/DESCRIPTION.rst,sha256=QI9ehcT54hmj85aTOzw8gsP-a_gJhNGuaxeA9dOzr1Y,227
+link/__init__.py,sha256=HxG6SKXp9EDYUDbqYWrOd4VBIl5Le_1DqmOg_C0Zwlc,138
+link/json/collection.py,sha256=T5oauk5NtAufdvQSFI_zpBkQNOni0SiGofzwg6xMfoM,5275
+link/json/schema.py,sha256=qpPxCipjDPHlSxgiq_3hjw8MUpFz0-x1LOMQFZ8yTf0,1831
+link/json/transform.py,sha256=-Vq0XfA_JVvZvePk_EE25ENzlLQILFkcOOyTPEE6lSQ,2759
+link/json/__init__.py,sha256=VcizxQcY8OEZi7Sab33_QQod5tBqxjsvDG4VH8Zk0sM,75
+link/json/exceptions.py,sha256=_Xb9xtvVcbnGkD2KSf6JUI_-l137FMVeOFO3WAMWSO4,303
+link/json/resolver.py,sha256=_jzpJoWxuZ1NzuGr5tSmhbtkUw_E2EbEg6uyRiK7n4s,1405
