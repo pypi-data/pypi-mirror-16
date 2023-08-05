@@ -1,0 +1,14 @@
+cheqlist/__init__.py,sha256=HvUOtD3dLUcLiCHO1QbzVSK5vjGIN7_dz7K_MwT28ec,3851
+cheqlist/__main__.py,sha256=jI8xfPj_N-fTTsA_LF-d11x_ijAGfpgsOD5c7PxLwHE,1099
+cheqlist/app.py,sha256=jpyoDLQUCAdxTfI-Tsw8eS0Wes_HnQ8jfALKwbENITk,17513
+cheqlist/utils.py,sha256=1H1S80h2K5IRNAjSMK-JOVhAVWpuBB-tSX0JZVWPQz4,2591
+cheqlist/data/cheqlist.ini.skel,sha256=BofSK0hP_zXKxk_rkBBFCABUwUC7CW4Mi6L5ITx1NLk,96
+cheqlist-0.2.0.data/data/share/applications/cheqlist.desktop,sha256=EisOdtupOOI5ZG1_5-Jso0344mghOfAQFAJsUstBnX4,427
+cheqlist-0.2.0.data/data/share/mime/packages/cheqlist.xml,sha256=zuFHj5MwYVSswY9v3YSYhw8M980G5xx2x7ACGXvIK7Y,307
+cheqlist-0.2.0.dist-info/DESCRIPTION.rst,sha256=IabrwYM--6_JjhogtvUm0jmOd3iEFcloFnxxJrvFUpQ,2280
+cheqlist-0.2.0.dist-info/METADATA,sha256=NzLXwtnRq36GudpoeIjsrsTTxntTIB22q1jnvJnqDvk,3062
+cheqlist-0.2.0.dist-info/RECORD,,
+cheqlist-0.2.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+cheqlist-0.2.0.dist-info/entry_points.txt,sha256=dCNwrjbLaQCEVYlzWyE3uT_WRBuR9ubwMGOsnaC3nww,49
+cheqlist-0.2.0.dist-info/metadata.json,sha256=lRjP9exjrGFD117N0uJ9pcA3u07ttCahoV9YjlOWMQE,1064
+cheqlist-0.2.0.dist-info/top_level.txt,sha256=B7rjvaGtTHsqsZs5Hb5pnVlP1ByP7ulLacqMSPF0i9w,9
