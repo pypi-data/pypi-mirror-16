@@ -1,0 +1,11 @@
+hdf5plugin/__init__.py,sha256=NXQ5KMz6gTv6KtWU4wns-m4IWJyrMicHstyyvKjqRvA,2467
+hdf5plugin/VS2008/x64/H5Zlz4.dll,sha256=dar6gUNJKDv0LypN4wXes9CK-AWesdC-n_8hS98n19Q,11776
+hdf5plugin/VS2008/x86/H5Zlz4.dll,sha256=qdUCLqzqIxj5_fHzneVEnZT7E_3-RljkDRza5P2PDX0,10752
+hdf5plugin/VS2015/x64/H5Zlz4.dll,sha256=vlbd7pn5aDguBdQDsrAooYT3bIpPZxmOYNSXagbVVrQ,11776
+hdf5plugin/VS2015/x86/H5Zlz4.dll,sha256=nChcHVU5IzolAHbOtliJj_WtJRNJWgAiWCPDL65B3Ew,12800
+hdf5plugin-1.0.0.dist-info/DESCRIPTION.rst,sha256=F2BnlkXId4vw42Or1nk5oPFT2kBfXIc0m0s77TIyWOE,113
+hdf5plugin-1.0.0.dist-info/METADATA,sha256=TboVi4RqAAkEdwD_MgUPqPbsfbvo8MDVZGBlouqJixY,902
+hdf5plugin-1.0.0.dist-info/RECORD,,
+hdf5plugin-1.0.0.dist-info/WHEEL,sha256=5f-Lb0dq-Ei5P75pgK065AnrFl2dK_ZqskZBpCbWERA,116
+hdf5plugin-1.0.0.dist-info/metadata.json,sha256=HVTVs321WwKAG2M4aZfFHUnXSBj-M5MkH5NeyXUEExg,805
+hdf5plugin-1.0.0.dist-info/top_level.txt,sha256=jAEIrQv1oLDBJ_KZTG5Ah8w4TcQahNlN52faR_PcG24,11
