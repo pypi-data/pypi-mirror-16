@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: sqlent
+Version: 0.1
+Summary: Fluent Sql builder inspired by Knex
+Home-page: https://github.com/insipidish/sqlent
+Author: insipidish
+Author-email: insipidish@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
