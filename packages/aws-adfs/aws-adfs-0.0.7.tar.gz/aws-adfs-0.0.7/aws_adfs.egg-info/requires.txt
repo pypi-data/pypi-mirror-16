@@ -1,0 +1,5 @@
+lxml
+click
+boto3
+requests
+configparser
