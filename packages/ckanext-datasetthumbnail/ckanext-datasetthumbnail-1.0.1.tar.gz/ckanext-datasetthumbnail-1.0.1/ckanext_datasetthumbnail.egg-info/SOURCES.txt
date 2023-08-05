@@ -1,0 +1,17 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+ckanext/__init__.py
+ckanext/datasetthumbnail/__init__.py
+ckanext/datasetthumbnail/plugin.py
+ckanext/datasetthumbnail/tests/__init__.py
+ckanext/datasetthumbnail/tests/helpers.py
+ckanext/datasetthumbnail/tests/test_plugin.py
+ckanext_datasetthumbnail.egg-info/PKG-INFO
+ckanext_datasetthumbnail.egg-info/SOURCES.txt
+ckanext_datasetthumbnail.egg-info/dependency_links.txt
+ckanext_datasetthumbnail.egg-info/entry_points.txt
+ckanext_datasetthumbnail.egg-info/pbr.json
+ckanext_datasetthumbnail.egg-info/requires.txt
+ckanext_datasetthumbnail.egg-info/top_level.txt

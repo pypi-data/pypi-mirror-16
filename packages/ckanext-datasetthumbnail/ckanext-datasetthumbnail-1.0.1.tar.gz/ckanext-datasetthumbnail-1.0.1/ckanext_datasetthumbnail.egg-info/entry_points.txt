@@ -1,0 +1,6 @@
+
+        [ckan.plugins]
+        datasetthumbnail=ckanext.datasetthumbnail.plugin:DatasetthumbnailPlugin
+	[babel.extractors]
+	ckan = ckan.lib.extract:extract_ckan
+    
