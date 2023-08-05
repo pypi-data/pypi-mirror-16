@@ -1,0 +1,5 @@
+appdirs
+future
+sqlalchemy
+icalendar
+configparser
