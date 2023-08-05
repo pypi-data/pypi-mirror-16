@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.py
+finwic/__init__.py
+finwic/command_line.py
+finwic.egg-info/PKG-INFO
+finwic.egg-info/SOURCES.txt
+finwic.egg-info/dependency_links.txt
+finwic.egg-info/entry_points.txt
+finwic.egg-info/not-zip-safe
+finwic.egg-info/requires.txt
+finwic.egg-info/top_level.txt
