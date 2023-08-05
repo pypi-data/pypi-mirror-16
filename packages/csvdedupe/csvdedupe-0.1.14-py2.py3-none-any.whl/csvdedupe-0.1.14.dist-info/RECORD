@@ -1,0 +1,11 @@
+csvdedupe/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+csvdedupe/csvdedupe.py,sha256=3cuiRs8OCJ-p0a3IYxwxaKM8ep_nNf9Fk1QWzpoc34w,5898
+csvdedupe/csvhelpers.py,sha256=dtH4yjkGGdk9OTdb_VBjDo9Ehs_6BA9L4bcD-Chhhlc,9506
+csvdedupe/csvlink.py,sha256=5rmLCjonF91eCAVCyMmKew8C56rVrBHEX0wqrMo6SDI,7045
+csvdedupe-0.1.14.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+csvdedupe-0.1.14.dist-info/METADATA,sha256=_E_oR24Y6mgWioxDECdIcMFNuNWChhKKaeE2d_u1IuI,321
+csvdedupe-0.1.14.dist-info/RECORD,,
+csvdedupe-0.1.14.dist-info/WHEEL,sha256=GrqQvamwgBV4nLoJe0vhYRSWzWsx7xjlt74FT0SWYfE,110
+csvdedupe-0.1.14.dist-info/entry_points.txt,sha256=37fSYjd7yJuCtAbbe9MfSEAIgBdCTIICN0zhwe_nOYU,119
+csvdedupe-0.1.14.dist-info/metadata.json,sha256=EWHBc2TulfHBSiuZUz4fZDGQl97n4PfC5lXs0DEfQCM,748
+csvdedupe-0.1.14.dist-info/top_level.txt,sha256=8NPTaXetZ-h5usqlwHhohJsLtkeJrhn1HXaFEaPxb4g,10
