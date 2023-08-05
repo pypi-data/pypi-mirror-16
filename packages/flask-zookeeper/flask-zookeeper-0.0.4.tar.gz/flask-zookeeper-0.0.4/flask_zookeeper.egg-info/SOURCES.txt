@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+VERSION
+flask_zookeeper.py
+requirements.txt
+setup.py
+flask_zookeeper.egg-info/PKG-INFO
+flask_zookeeper.egg-info/SOURCES.txt
+flask_zookeeper.egg-info/dependency_links.txt
+flask_zookeeper.egg-info/requires.txt
+flask_zookeeper.egg-info/top_level.txt
+flask_zookeeper.egg-info/zip-safe
