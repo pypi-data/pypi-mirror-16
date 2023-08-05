@@ -1,0 +1,13 @@
+setup.cfg
+setup.py
+bwa_pe_tool/__init__.py
+bwa_pe_tool/__main__.py
+bwa_pe_tool/main.py
+bwa_pe_tool.egg-info/PKG-INFO
+bwa_pe_tool.egg-info/SOURCES.txt
+bwa_pe_tool.egg-info/dependency_links.txt
+bwa_pe_tool.egg-info/requires.txt
+bwa_pe_tool.egg-info/top_level.txt
+bwa_pe_tool/tools/__init__.py
+bwa_pe_tool/tools/bwa_aln.py
+bwa_pe_tool/tools/bwa_mem.py
