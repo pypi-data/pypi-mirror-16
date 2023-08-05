@@ -1,0 +1,21 @@
+{
+  "name": "my_component",
+  "version": "0.0.0",
+  "homepage": "https://github.com/morepath/morepath_static",
+  "authors": [
+    "Morepath developers <morepath@googlegroups.com>"
+  ],
+  "main": "main.js",
+  "dependencies": {
+    "jquery": "2.1.1"
+  },
+  "license": "BSD",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

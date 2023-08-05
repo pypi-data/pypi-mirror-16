@@ -1,0 +1,3 @@
+[console_scripts]
+morepath_static = morepath_static.__main__:run
+
