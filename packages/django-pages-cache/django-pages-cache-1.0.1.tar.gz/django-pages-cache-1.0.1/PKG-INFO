@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: django-pages-cache
+Version: 1.0.1
+Summary: Django package memcache util
+Home-page: https://github.com/SHENOISZ/django-pages-cache
+Author: SHENOISZ
+Author-email: marcelo.net.system@gmail.com
+License: BSD
+Description: Django-pages-cache
+        
+Keywords: cache,memcache,memcached,pages cache,django cache
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Framework :: Django
