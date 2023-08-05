@@ -1,0 +1,3 @@
+[encrypter_pictures]
+encrypter_pictures = encrypter_pictures.__main__:main
+

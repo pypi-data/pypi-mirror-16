@@ -1,0 +1,30 @@
+Metadata-Version: 1.1
+Name: encrypter_pictures
+Version: 1.0.2
+Summary: System wich cat a image and crip and decript it with rsa.
+Home-page: https://github.com/TiagoAssuncao/encrypter_pictures
+Author: Tiago Assuncao
+Author-email: tiago@sof2u.com
+License: UNKNOWN
+Description: # Encrypter Pictures
+        ***
+        
+        System wich cat a jpg image and crip and decript it with rsa.
+        ## Technology Stack
+        * Python 3.4
+        * Pillow
+        * PyQt5
+        
+        ## Installation Guide
+        `pip3 install ecrypter_pictures`<br><br>
+        
+        
+        **This software works just with .jpg files
+        
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries
