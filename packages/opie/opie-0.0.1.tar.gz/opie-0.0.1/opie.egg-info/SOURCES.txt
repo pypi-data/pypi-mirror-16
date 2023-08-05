@@ -1,0 +1,16 @@
+opie.py
+setup.py
+commands/backup.py
+commands/eject.py
+commands/pack.py
+commands/restore.py
+helpers/__init__.py
+helpers/backups.py
+helpers/op1.py
+helpers/u.py
+opie.egg-info/PKG-INFO
+opie.egg-info/SOURCES.txt
+opie.egg-info/dependency_links.txt
+opie.egg-info/entry_points.txt
+opie.egg-info/requires.txt
+opie.egg-info/top_level.txt
