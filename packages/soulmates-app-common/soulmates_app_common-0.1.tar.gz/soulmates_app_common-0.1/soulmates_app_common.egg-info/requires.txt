@@ -1,0 +1,2 @@
+django >1.9, <2.0
+cloudinary==1.4.0

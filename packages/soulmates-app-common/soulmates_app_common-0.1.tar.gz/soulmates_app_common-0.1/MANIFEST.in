@@ -1,0 +1,5 @@
+include LICENSE
+include README.rst
+recursive-include myblog/static *
+recursive-include myblog/templates *
+recursive-include docs *
