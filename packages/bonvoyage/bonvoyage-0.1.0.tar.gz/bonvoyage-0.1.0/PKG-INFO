@@ -1,0 +1,52 @@
+Metadata-Version: 1.1
+Name: bonvoyage
+Version: 0.1.0
+Summary: Transform percentage-based units into a 2d space to evaluate changes in distribution with both magnitude and direction.
+Home-page: https://github.com/olgabot/bonvoyage
+Author: Olga Botvinnik
+Author-email: olga.botvinnik@gmail.com
+License: BSD
+Description: ===============================
+        Bon Voyage
+        ===============================
+        
+        .. image:: https://travis-ci.org/YeoLab/bonvoyage.svg?branch=master
+            :target: https://travis-ci.org/YeoLab/bonvoyage
+        
+        .. image:: https://img.shields.io/pypi/v/bonvoyage.svg
+                :target: https://pypi.python.org/pypi/bonvoyage
+        
+        
+        Transform percentage-based units into a 2d space to evaluate changes in distribution with both magnitude and direction.
+        
+        * Free software: BSD license
+        * Documentation: https://bonvoyage.readthedocs.org.
+        
+        Features
+        --------
+        
+        * TODO
+        
+        
+        
+        
+        History
+        -------
+        
+        0.1.0 (2015-09-15)
+        ---------------------
+        
+        * First release on PyPI.
+        
+Keywords: bonvoyage
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
