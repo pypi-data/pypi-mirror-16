@@ -1,0 +1,25 @@
+Metadata-Version: 2.0
+Name: py-status-checker
+Version: 0.1.1
+Summary: A very simple package for checking the status of a service and its components
+Home-page: https://github.com/timmartin19/pystatuschecker
+Author: Tim Martin
+Author-email: tim@timmartin.me
+License: MIT license
+Keywords: status_checker
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+
+UNKNOWN
+
+
