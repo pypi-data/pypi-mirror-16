@@ -1,0 +1,13 @@
+python-dateutil
+
+[calendar]
+GooCalendar
+
+[cdecimal]
+cdecimal
+
+[simplejson]
+simplejson
+
+[timezone]
+pytz
