@@ -1,0 +1,9 @@
+setup.py
+javascriptwebscraper/__init__.py
+javascriptwebscraper/__main__.py
+javascriptwebscraper.egg-info/PKG-INFO
+javascriptwebscraper.egg-info/SOURCES.txt
+javascriptwebscraper.egg-info/dependency_links.txt
+javascriptwebscraper.egg-info/entry_points.txt
+javascriptwebscraper.egg-info/requires.txt
+javascriptwebscraper.egg-info/top_level.txt

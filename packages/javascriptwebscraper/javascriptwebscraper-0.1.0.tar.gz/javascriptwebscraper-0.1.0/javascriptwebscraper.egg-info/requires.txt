@@ -1,0 +1,7 @@
+pyzmq
+vexbot
+vexmessage
+selenium
+
+[dev]
+flake8
