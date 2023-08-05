@@ -1,0 +1,13 @@
+pytest_html/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pytest_html/extras.py,sha256=9DI_enkVCJCPtNzfLw5kBZ0QE5VX2QBodU2qWlD2cBo,786
+pytest_html/plugin.py,sha256=TWkJOGzibf4u4rs1ZNn8oAjLKucu9mo_5E37fLBAkzI,12468
+pytest_html/resources/main.js,sha256=AePDbBZpVwxrXtk2RvhKLFbEGzb4f82l4Uy67Kw1dUY,5568
+pytest_html/resources/style.css,sha256=7Yl3Zdiuz13pupnwTLIOf9J3IYUfLbViuIufajvq4a8,2277
+pytest_html-1.9.0.dist-info/DESCRIPTION.rst,sha256=6aAsMHEqzWNiZ5XqQ2IRjz84EWEaMvn-aS5QdWQYIPY,3581
+pytest_html-1.9.0.dist-info/METADATA,sha256=Qd_5L5bbZYsTTQOQemgTsaVa590LICUZNZeCO_qfGfo,4760
+pytest_html-1.9.0.dist-info/RECORD,,
+pytest_html-1.9.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+pytest_html-1.9.0.dist-info/entry_points.txt,sha256=cSCHw61ry3DyGORsUfPit9HkoLrJ6NVUWFnqwxl3-_M,38
+pytest_html-1.9.0.dist-info/metadata.json,sha256=RKGW_qHCGTGFzsTlYXjFalazVvA30Tn4FB-l2Fca2TQ,1345
+pytest_html-1.9.0.dist-info/pbr.json,sha256=VawYDQ4WRv_177Vm20UjfwP6oMH3ut2ogjzjsplYl-k,47
+pytest_html-1.9.0.dist-info/top_level.txt,sha256=c_-AA4MeK8keEgsAWYrcVGWXGFwSpqBH3wiQBN2c9yE,12
