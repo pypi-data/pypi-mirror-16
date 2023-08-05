@@ -1,0 +1,3 @@
+[console_scripts]
+goods = run:get_train_args
+
