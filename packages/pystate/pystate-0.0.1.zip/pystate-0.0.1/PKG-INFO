@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: pystate
+Version: 0.0.1
+Summary: Python package for co-routine base state machines.
+Home-page: https://github.com/lwanger/pystate
+Author: Len Wanger
+Author-email: len_wanger@hotmail.com
+License: License :: OSI Approved :: MIT License
+Description: UNKNOWN
+Keywords: state machine,coroutine,co-routine
+Platform: UNKNOWN
+Classifier: License :: Freely Distributable
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.5
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Intended Audience :: Developers
