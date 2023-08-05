@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+ekomi/__init__.py
+ekomi/__init__.pyc
+ekomi/api.py
+ekomi_api_python.egg-info/PKG-INFO
+ekomi_api_python.egg-info/SOURCES.txt
+ekomi_api_python.egg-info/dependency_links.txt
+ekomi_api_python.egg-info/requires.txt
+ekomi_api_python.egg-info/top_level.txt
