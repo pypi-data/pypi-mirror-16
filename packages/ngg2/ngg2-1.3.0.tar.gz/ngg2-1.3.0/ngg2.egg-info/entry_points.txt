@@ -1,0 +1,3 @@
+[console_scripts]
+ngg2 = ngg2.__main__:run
+

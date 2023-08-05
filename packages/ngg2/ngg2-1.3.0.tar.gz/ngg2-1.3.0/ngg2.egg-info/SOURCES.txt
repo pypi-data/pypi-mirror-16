@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+ngg2/__init__.py
+ngg2/__main__.py
+ngg2.egg-info/PKG-INFO
+ngg2.egg-info/SOURCES.txt
+ngg2.egg-info/dependency_links.txt
+ngg2.egg-info/entry_points.txt
+ngg2.egg-info/requires.txt
+ngg2.egg-info/top_level.txt
