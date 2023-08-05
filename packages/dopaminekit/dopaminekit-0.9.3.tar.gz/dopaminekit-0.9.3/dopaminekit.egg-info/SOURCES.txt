@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+dopaminekit/__init__.py
+dopaminekit/dopaminekit.py
+dopaminekit.egg-info/PKG-INFO
+dopaminekit.egg-info/SOURCES.txt
+dopaminekit.egg-info/dependency_links.txt
+dopaminekit.egg-info/entry_points.txt
+dopaminekit.egg-info/top_level.txt
+dopaminekit.egg-info/zip-safe
