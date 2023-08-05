@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: loopfield
+Version: 1.0.2
+Summary: Current loop magnetic field calculator
+Home-page: http://github.com/tedyapo/fieldloop
+Author: Ted Yapo
+Author-email: ted.yapo@zednaughtlabs.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Visualization
