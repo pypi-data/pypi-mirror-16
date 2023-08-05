@@ -1,0 +1,7 @@
+pygeocoder
+
+[test]
+coverage
+
+[dev]
+check-manifest
