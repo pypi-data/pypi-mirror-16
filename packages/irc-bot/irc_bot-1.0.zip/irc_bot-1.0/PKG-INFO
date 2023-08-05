@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: irc_bot
+Version: 1.0
+Summary: A small library to create an IRC bot. Uses asyncore to ensure compatibility with Python 2.7.
+Home-page: https://github.com/cvium/irc_bot
+Author: Claus Vium
+Author-email: clausvium@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/cvium/irc_bot/tarball/1.0
+Description: UNKNOWN
+Keywords: irc,bot
+Platform: UNKNOWN
