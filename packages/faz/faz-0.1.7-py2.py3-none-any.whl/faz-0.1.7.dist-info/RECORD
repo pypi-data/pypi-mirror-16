@@ -1,0 +1,12 @@
+faz-0.1.7.dist-info/RECORD,,
+faz-0.1.7.dist-info/entry_points.txt,sha256=u5IwpAesRJnLQcHpaE6h-M6kLe9Ti27Kcazn9g8pfwI,39
+faz-0.1.7.dist-info/METADATA,sha256=q7-0pElEjOg1DcjhfxJApJvuiydbm3E4tBRqv4C2diM,4927
+faz-0.1.7.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+faz-0.1.7.dist-info/metadata.json,sha256=CiFxHdgqdeDInMq91vr4E0r3HswZFWFv4331IBoZjTI,1281
+faz-0.1.7.dist-info/top_level.txt,sha256=Aga_X8lKdK4iwsDpOtG1eK5_FstS-0cM3fHw0yTGu_M,4
+faz-0.1.7.dist-info/DESCRIPTION.rst,sha256=ZJghv3GKSK5O8-fBDyJQ9sDvrDt8wrLgAGICaQ-cUJ4,3952
+faz/task.py,sha256=9URyvNrNAUIa8ID901MqGlPSpkv7NpX5ef6EhptAK4o,7931
+faz/__init__.py,sha256=c-kfyfceKig3W84bLL2Q5HKi_Fv_jop6V-PS-3kHq5k,164
+faz/graph.py,sha256=vHkS6581K8qpAcX0OWbWiwIHUPVf3NMG-bBmJI2V5AM,3039
+faz/main.py,sha256=lN0GVMfvotaNevn5mReUzkb696_4xvtz1gvNFY6GswQ,2469
+faz/parser.py,sha256=nu3qHKcPcSxlFaIoAl8e1zOgE23g3iE-wgnATFcYk3E,3068
