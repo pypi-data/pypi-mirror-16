@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.py
+sequence_aligner/__init__.py
+sequence_aligner/fasta_parser.py
+sequence_aligner/main.py
+sequence_aligner/sequence_aligner.py
+sequence_aligner/tools.py
+sequence_aligner.egg-info/PKG-INFO
+sequence_aligner.egg-info/SOURCES.txt
+sequence_aligner.egg-info/dependency_links.txt
+sequence_aligner.egg-info/entry_points.txt
+sequence_aligner.egg-info/top_level.txt
