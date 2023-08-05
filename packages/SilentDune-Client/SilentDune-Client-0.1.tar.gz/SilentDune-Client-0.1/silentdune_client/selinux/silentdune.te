@@ -1,0 +1,120 @@
+policy_module(silentdune, 1.1.1)
+
+########################################
+#
+# Declarations
+#
+
+type silentdune_t;
+type silentdune_exec_t;
+init_daemon_domain(silentdune_t, silentdune_exec_t)
+
+type silentdune_initrc_exec_t;
+init_script_file(silentdune_initrc_exec_t)
+
+type silentdune_etc_rw_t;
+files_config_file(silentdune_etc_rw_t)
+
+type silentdune_var_log_t;
+logging_log_file(silentdune_var_log_t)
+
+type silentdune_tmp_t;
+files_tmp_file(silentdune_tmp_t)
+
+type silentdune_tmpfs_t;
+files_tmpfs_file(silentdune_tmpfs_t)
+
+type silentdune_var_run_t;
+files_pid_file(silentdune_var_run_t)
+
+type silentdune_unit_file_t;
+systemd_unit_file(silentdune_unit_file_t)
+
+########################################
+#
+# Local policy
+#
+
+allow silentdune_t self:capability { dac_override net_admin };
+dontaudit silentdune_t self:capability sys_tty_config;
+allow silentdune_t self:fifo_file rw_fifo_file_perms;
+allow silentdune_t self:unix_stream_socket { accept listen };
+allow silentdune_t self:udp_socket create_socket_perms;
+
+manage_dirs_pattern(silentdune_t, silentdune_etc_rw_t, silentdune_etc_rw_t)
+manage_files_pattern(silentdune_t, silentdune_etc_rw_t, silentdune_etc_rw_t)
+manage_lnk_files_pattern(silentdune_t, silentdune_etc_rw_t, silentdune_etc_rw_t)
+
+allow silentdune_t silentdune_var_log_t:file append_file_perms;
+allow silentdune_t silentdune_var_log_t:file create_file_perms;
+allow silentdune_t silentdune_var_log_t:file read_file_perms;
+allow silentdune_t silentdune_var_log_t:file setattr_file_perms;
+logging_log_filetrans(silentdune_t, silentdune_var_log_t, file)
+
+manage_files_pattern(silentdune_t, silentdune_tmp_t, silentdune_tmp_t)
+files_tmp_filetrans(silentdune_t, silentdune_tmp_t, file)
+allow silentdune_t silentdune_tmp_t:file mmap_file_perms;
+
+manage_files_pattern(silentdune_t, silentdune_tmpfs_t, silentdune_tmpfs_t)
+fs_tmpfs_filetrans(silentdune_t, silentdune_tmpfs_t, file)
+allow silentdune_t silentdune_tmpfs_t:file mmap_file_perms;
+
+manage_files_pattern(silentdune_t, silentdune_var_run_t, silentdune_var_run_t)
+files_pid_filetrans(silentdune_t, silentdune_var_run_t, file)
+can_exec(silentdune_t, silentdune_var_run_t)
+
+kernel_read_network_state(silentdune_t)
+kernel_read_system_state(silentdune_t)
+kernel_rw_net_sysctls(silentdune_t)
+
+corecmd_exec_bin(silentdune_t)
+corecmd_exec_shell(silentdune_t)
+
+dev_read_urand(silentdune_t)
+dev_search_sysfs(silentdune_t)
+
+domain_use_interactive_fds(silentdune_t)
+
+files_dontaudit_access_check_tmp(silentdune_t)
+files_dontaudit_list_tmp(silentdune_t)
+
+fs_getattr_xattr_fs(silentdune_t)
+fs_dontaudit_all_access_check(silentdune_t)
+
+auth_use_nsswitch(silentdune_t)
+
+logging_send_syslog_msg(silentdune_t)
+
+sysnet_dns_name_resolve(silentdune_t)
+
+optional_policy(`
+	dbus_system_domain(silentdune_t, silentdune_exec_t)
+
+	optional_policy(`
+		devicekit_dbus_chat_power(silentdune_t)
+	')
+
+	optional_policy(`
+		policykit_dbus_chat(silentdune_t)
+	')
+
+	optional_policy(`
+		networkmanager_dbus_chat(silentdune_t)
+	')
+')
+
+optional_policy(`
+	gnome_read_generic_data_home_dirs(silentdune_t)
+')
+
+optional_policy(`
+	iptables_domtrans(silentdune_t)
+')
+
+optional_policy(`
+	modutils_domtrans_insmod(silentdune_t)
+')
+
+optional_policy(`
+	networkmanager_read_state(silentdune_t)
+')

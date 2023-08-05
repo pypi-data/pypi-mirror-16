@@ -1,0 +1,5 @@
+six
+requests>=2.8.0
+cryptography>=1.2.1
+setuptools>=18.0.1
+python-dateutil>=1.5
