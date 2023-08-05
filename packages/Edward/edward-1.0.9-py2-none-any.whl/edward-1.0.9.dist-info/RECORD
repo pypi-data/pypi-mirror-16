@@ -1,0 +1,16 @@
+edward/__init__.py,sha256=tzAp3aqJFOgixM3Hp2TBjIwN6Xm_prRICW_82gPNSrQ,729
+edward/criticisms.py,sha256=UqW1YcyU0z5SZyOyRAQ7mU3_x5oAgGwai5aI_zL3XYE,14253
+edward/data.py,sha256=r8yPOM5qNfO4UE9TBCYXlfjpbQjjNh3MUVcvTh_m4ac,2305
+edward/inferences.py,sha256=uF7NZMm-ByqCs-phcTxkS958iNtmf-V00g_w_vBMFJg,21315
+edward/util.py,sha256=exlpOwNesemG3ndJk8ADY0UW_aqSjKcJ9nqbrxV0fPQ,9892
+edward/models/__init__.py,sha256=2ybqfMWwxvUGipK0Wl88bNYjJVRnEGXS9Ka8gmu77DM,187
+edward/models/distributions.py,sha256=vnmQ6sXeF1H-HKWlL_rhmM5R6ouYsTsFBTpQhcRK1qk,17251
+edward/models/models.py,sha256=9blaNElFlpOpySe6RC97bgqOfnuf3k6BP2GJAAGXkEk,12325
+edward/stats/__init__.py,sha256=8m_xsVgGnbzx--vSOnNsAGDHL9UjbI5Tcn_qsnWEnBU,151
+edward/stats/distributions.py,sha256=MxJ9kw3Y90iLomTgZUtppSVzjmwA5AbttP87-NJWvco,54038
+edward-1.0.9.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+edward-1.0.9.dist-info/METADATA,sha256=el3381B9Kzv6lrZpBUAkL2sii9Eb4L9rHWovxqkVADk,879
+edward-1.0.9.dist-info/RECORD,,
+edward-1.0.9.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+edward-1.0.9.dist-info/metadata.json,sha256=msPaj8iqvv9p2Ig4Vtve2LqD5pGKXtGlc1wWWVgWJXs,988
+edward-1.0.9.dist-info/top_level.txt,sha256=3uly7J59pZK9rkukJKt2ZWPxOimeBEc1WM04pu5uJjU,7
