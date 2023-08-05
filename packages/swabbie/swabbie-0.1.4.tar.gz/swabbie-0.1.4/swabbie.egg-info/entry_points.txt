@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        swabbie=swabbie.run:cli
+    

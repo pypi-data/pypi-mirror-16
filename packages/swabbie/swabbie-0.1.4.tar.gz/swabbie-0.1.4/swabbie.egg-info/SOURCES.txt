@@ -1,0 +1,16 @@
+README.rst
+setup.cfg
+setup.py
+swabbie/__init__.py
+swabbie/run.py
+swabbie.egg-info/PKG-INFO
+swabbie.egg-info/SOURCES.txt
+swabbie.egg-info/dependency_links.txt
+swabbie.egg-info/entry_points.txt
+swabbie.egg-info/requires.txt
+swabbie.egg-info/top_level.txt
+swabbie/utils/__init__.py
+swabbie/utils/clean.py
+swabbie/utils/command.py
+swabbie/utils/list.py
+swabbie/utils/reference.py
