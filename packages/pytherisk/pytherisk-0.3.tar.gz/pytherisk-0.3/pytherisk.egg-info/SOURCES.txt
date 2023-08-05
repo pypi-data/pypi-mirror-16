@@ -1,0 +1,7 @@
+pytherisk.py
+setup.py
+pytherisk.egg-info/PKG-INFO
+pytherisk.egg-info/SOURCES.txt
+pytherisk.egg-info/dependency_links.txt
+pytherisk.egg-info/requires.txt
+pytherisk.egg-info/top_level.txt
