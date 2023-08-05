@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: gici_settings
+Version: 0.0.2
+Summary: gici settings
+Home-page: http://gici.co.il
+Author: Amit Yogev
+Author-email: amit.yogev90gmail.com
+License: Apache License Version 2.0
+Description: UNKNOWN
+Platform: Any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Testing
