@@ -1,0 +1,9 @@
+decorator
+requests
+
+[dev]
+check-manifest
+
+[test]
+coverage
+mock
