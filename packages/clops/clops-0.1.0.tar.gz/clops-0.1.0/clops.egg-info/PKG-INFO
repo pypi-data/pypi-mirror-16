@@ -1,0 +1,59 @@
+Metadata-Version: 1.1
+Name: clops
+Version: 0.1.0
+Summary: A Python library to parse command line options.
+Home-page: https://bitbucket.org/danawscott/clops
+Author: Dana Scott
+Author-email: danawscott0@gmail.com
+License: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Description: Installation
+        """"""""""""
+        
+        ::
+        
+            pip install clops
+        
+        Usage
+        """""
+        
+        ::
+        
+            #! /usr/bin/env python3
+            """Sample module docstring.
+        
+            Args:
+                foo: The number of foos.
+                bar: The number of bars.
+                baz: The number of bazs.
+        
+            """
+            from clops import cli
+        
+        
+            _defaults = {
+                foo: 1,
+                bar: 2,
+                baz: 3,
+            }
+        
+            @cli.UpdateDict(_defaults, __doc__)
+            def main():
+                pass
+        
+        
+            if __name__ == '__main__':
+                main()
+        
+Keywords: cli options
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: User Interfaces
+Classifier: Topic :: Utilities

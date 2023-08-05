@@ -1,0 +1,10 @@
+COPYING.txt
+MANIFEST.in
+README.txt
+setup.py
+clops/__init__.py
+clops/cli.py
+clops.egg-info/PKG-INFO
+clops.egg-info/SOURCES.txt
+clops.egg-info/dependency_links.txt
+clops.egg-info/top_level.txt
