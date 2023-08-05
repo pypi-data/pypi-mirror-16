@@ -1,0 +1,12 @@
+from py_tat_morphan.morphan import Morphan
+
+print('Tatar Language Morphological Analyser Lookup v1.02')
+print('==================================================')
+
+tatmorphan = Morphan()
+while True:
+    try:
+        word = raw_input('>> ')
+        print(tatmorphan.analyse(word))
+    except KeyboardInterrupt:
+        break
