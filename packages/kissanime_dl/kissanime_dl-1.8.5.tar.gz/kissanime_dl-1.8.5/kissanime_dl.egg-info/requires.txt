@@ -1,0 +1,4 @@
+requests==2.10.0
+lxml>=3.5.0
+js2py==0.37
+pycryptodome==3.4
