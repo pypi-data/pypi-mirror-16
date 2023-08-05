@@ -1,0 +1,6 @@
+numpy
+pandas
+pygeobase
+pygeogrids
+netCDF4
+pynetcf>=0.1.8
