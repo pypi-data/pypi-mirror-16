@@ -1,0 +1,7 @@
+markdown
+pyyaml
+gitpython
+progress
+yapsy
+munch
+dotmap
