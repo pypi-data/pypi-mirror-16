@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: pytocl
+Version: 0.1.1
+Summary: Converts Python functions to OpenCL functions
+Home-page: https://github.com/ToraxXx/pytocl
+Author: Robin Kahlow (Toraxxx)
+Author-email: xtremegosugaming@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: any
+Requires: numpy
+Requires: pyopencl
