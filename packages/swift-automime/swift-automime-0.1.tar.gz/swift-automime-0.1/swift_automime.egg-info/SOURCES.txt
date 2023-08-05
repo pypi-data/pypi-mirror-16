@@ -1,0 +1,9 @@
+setup.py
+automime/__init__.py
+automime/middleware.py
+swift_automime.egg-info/PKG-INFO
+swift_automime.egg-info/SOURCES.txt
+swift_automime.egg-info/dependency_links.txt
+swift_automime.egg-info/entry_points.txt
+swift_automime.egg-info/requires.txt
+swift_automime.egg-info/top_level.txt

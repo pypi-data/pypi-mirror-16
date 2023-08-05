@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: swift-automime
+Version: 0.1
+Summary: Openstack Swift auto content encoding middleware
+Home-page: https://github.com/cschwede/swift-automime
+Author: Christian Schwede
+Author-email: cschwede@redhat.com
+License: Apache License (2.0)
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Environment :: No Input/Output (Daemon)

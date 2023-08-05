@@ -1,0 +1,3 @@
+[paste.filter_factory]
+swift-automime = automime.middleware:filter_factory
+
