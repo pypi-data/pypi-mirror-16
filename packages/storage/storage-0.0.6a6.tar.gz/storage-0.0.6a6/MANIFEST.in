@@ -1,0 +1,13 @@
+include MANIFEST
+include Makefile
+include AUTHORS
+include CHANGES
+include LICENSE
+include requirements.txt
+recursive-include docs *.bat
+recursive-include docs *.html
+recursive-include docs *.py
+recursive-include docs *.rst
+recursive-include docs Makefile
+recursive-include tests *.py
+prune private_tests
