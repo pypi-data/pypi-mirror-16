@@ -1,0 +1,31 @@
+Metadata-Version: 2.0
+Name: hark
+Version: 1.0.0.dev2
+Summary: a simple virtual machine management tool
+Home-page: https://hark-project.net
+Author: Cera Davies
+Author-email: ceralena.davies@gmail.com
+License: GNU Affero General Public License v3 (GPLv3)
+Keywords: virtualization development OS
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Framework :: Pytest
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: BSD :: FreeBSD
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: click (==6.6)
+Requires-Dist: requests (==2.10.0)
+
+UNKNOWN
+
+
