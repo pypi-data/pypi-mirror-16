@@ -1,0 +1,8 @@
+README.rst
+cmtimer.py
+setup.cfg
+setup.py
+cmtimer.egg-info/PKG-INFO
+cmtimer.egg-info/SOURCES.txt
+cmtimer.egg-info/dependency_links.txt
+cmtimer.egg-info/top_level.txt
