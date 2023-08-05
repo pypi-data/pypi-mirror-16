@@ -1,0 +1,22 @@
+CHANGES
+=======
+
+0.1.3
+-----
+
+* Created help and updated readme
+* Fixed bash subject markdown due to mdv bug
+
+0.1.1
+-----
+
+* Changed the way that subjects are loaded and made
+
+0.1.0
+-----
+
+* Renamed project to eh
+* Set version to 0.1.0
+* Added bash contrib subject
+* Initial commit
+* Initial commit
