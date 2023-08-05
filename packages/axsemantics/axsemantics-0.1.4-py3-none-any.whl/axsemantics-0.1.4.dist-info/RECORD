@@ -1,0 +1,14 @@
+axsemantics/__init__.py,sha256=6DUrPU2AXO-v4Ul1mH81-ISEaT6wjQ4nLNN3BUEDGYQ,366
+axsemantics/base.py,sha256=rAu4WA_ukM8nrFHom1rCmiGJQPDSuym_NV3CovNCQbQ,6019
+axsemantics/constants.py,sha256=Won9j9owwwwZ6BndcnYKmG-6RN-zi_cqto6YuNU_SDo,227
+axsemantics/errors.py,sha256=kTiIBjHOxdWhMRqGpV2dwQ6mqGDUyWbUxg86MLRnq70,1107
+axsemantics/mixins.py,sha256=VrlTtLnvEnER9WInlSNeZLEmT1j_5EsMGgOhbIGZ2_M,1950
+axsemantics/net.py,sha256=Ih9JHxdcOvM5pg_ciC7wkcYkJtEPBBdDXHMk7VD75MM,4827
+axsemantics/resources.py,sha256=9X1otpqTCCMFQ6WYrEq1LsPOkOVU-wR8tMtHEMCIA64,5339
+axsemantics/utils.py,sha256=uWUulRB3d3c1UbawP7aR6bnDYMEH2Fsl90B3rM1BMyk,3146
+axsemantics-0.1.4.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+axsemantics-0.1.4.dist-info/METADATA,sha256=dOCAL2hoPFZMoABCA_-E3k_2cc-W7H6c028u5KMg5L0,564
+axsemantics-0.1.4.dist-info/RECORD,,
+axsemantics-0.1.4.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+axsemantics-0.1.4.dist-info/metadata.json,sha256=9M-Od9f-gCy-f1wzIsA3JMgFYjT4CrjUI5gd5r62CnE,736
+axsemantics-0.1.4.dist-info/top_level.txt,sha256=FmbGPoW6W1rtJREjoU3BgaHj01V6_HVmytylL2EnjhY,12
