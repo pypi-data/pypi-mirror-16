@@ -1,0 +1,12 @@
+setup.cfg
+setup.py
+ica/__init__.py
+ica/demo.py
+ica/ica.py
+ica/ica_gpu.py
+ica/test.py
+ica.egg-info/PKG-INFO
+ica.egg-info/SOURCES.txt
+ica.egg-info/dependency_links.txt
+ica.egg-info/requires.txt
+ica.egg-info/top_level.txt

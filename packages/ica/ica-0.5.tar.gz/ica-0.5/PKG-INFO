@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: ica
+Version: 0.5
+Summary: Independent component analysis with INFOMAX algorithm
+Home-page: https://github.com/alvarouc/ica/
+Author: Alvaro Ulloa
+Author-email: alvarouc@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/alvarouc/ica/tarball/0.5
+Description: UNKNOWN
+Keywords: infomax,ica,independent component analysis
+Platform: UNKNOWN
