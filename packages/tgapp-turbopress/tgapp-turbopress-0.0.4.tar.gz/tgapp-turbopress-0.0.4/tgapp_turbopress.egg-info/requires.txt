@@ -1,0 +1,21 @@
+TurboGears2 >= 2.3.0
+formencode
+webhelpers
+tw2.forms
+tw2.jquery
+tgext.pluggable
+tgext.datahelpers
+tgext.ajaxforms >= 0.3.0
+tgext.crud
+sprox >= 0.9.1
+beaker
+
+[testing]
+WebTest >= 1.2.3
+nose
+coverage
+ming
+sqlalchemy < 1.0.99
+zope.sqlalchemy
+repoze.who
+kajiki
