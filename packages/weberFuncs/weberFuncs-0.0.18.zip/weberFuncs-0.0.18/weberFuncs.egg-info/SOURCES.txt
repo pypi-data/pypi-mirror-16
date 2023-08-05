@@ -1,0 +1,12 @@
+README.rst
+setup.cfg
+setup.py
+weberFuncs/CSendSMTPMail.py
+weberFuncs/WyfPublicFuncs.py
+weberFuncs/__init__.py
+weberFuncs.egg-info/PKG-INFO
+weberFuncs.egg-info/SOURCES.txt
+weberFuncs.egg-info/dependency_links.txt
+weberFuncs.egg-info/not-zip-safe
+weberFuncs.egg-info/requires.txt
+weberFuncs.egg-info/top_level.txt
