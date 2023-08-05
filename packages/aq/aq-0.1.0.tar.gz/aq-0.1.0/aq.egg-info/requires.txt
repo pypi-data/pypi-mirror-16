@@ -1,0 +1,11 @@
+boto3
+docopt
+pyparsing
+tabulate
+prompt_toolkit
+pygments
+six
+
+[dev]
+
+[test]
