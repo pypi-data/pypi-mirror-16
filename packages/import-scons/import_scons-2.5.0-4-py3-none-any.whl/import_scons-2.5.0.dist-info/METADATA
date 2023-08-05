@@ -1,0 +1,13 @@
+Metadata-Version: 2.0
+Name: import_scons
+Version: 2.5.0
+Sumary: SCons repackaged to be importable.
+Home-Page: http://www.scons.org/
+Author: Daniel Holth
+Author-email: dholth@fastmail.fm
+License: MIT
+Keywords: packaging
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: future
