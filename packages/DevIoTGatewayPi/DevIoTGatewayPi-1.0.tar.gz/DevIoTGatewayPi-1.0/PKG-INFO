@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: DevIoTGatewayPi
+Version: 1.0
+Summary: Quickly help user to build DevIot Gateway service for Pi
+Home-page: https://github.com/tingxin/DevIoT_Pi_SDK
+Author: Tingxin Xu
+Author-email: tingxxxu@cisco.com
+License: UNKNOWN
+Download-URL: https://github.com/tingxin/DevIoT_Pi_SDK/tree/master/DevIoTGatewayPi
+Description: UNKNOWN
+Keywords: Gateway,DevIot,Cisco
+Platform: UNKNOWN
