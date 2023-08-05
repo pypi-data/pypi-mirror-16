@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: pystl
+Version: 0.0.1
+Summary: Simple Python package to write STL files for 3D printing.
+Home-page: UNKNOWN
+Author: Len Wanger
+Author-email: len_wanger@hotmail.com
+License: PSF
+Description: UNKNOWN
+Keywords: STL stereolithography,3D printing
+Platform: UNKNOWN
+Classifier: License :: Freely Distributable
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Multimedia :: Graphics :: 3D Modeling
