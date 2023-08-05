@@ -1,0 +1,9 @@
+setuptools
+tornado
+rdflib>=4.0
+rdflib-jsonld
+pycurl
+pyparsing
+simplejson
+futures
+python-dateutil
