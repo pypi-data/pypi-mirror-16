@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: urlparse4
+Version: 0.1
+Summary: Performance-focused replacement for Python's urlparse module
+Home-page: https://github.com/commonsearch/urlparse4
+Author: Common Search contributors
+Author-email: contact@commonsearch.org
+License: Apache License, Version 2.0
+Description: UNKNOWN
+Keywords: urlparse,urlsplit,urljoin,url,parser,urlparser,parsing,gurl,cython,faster,speed,performance
+Platform: any
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Other Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries
