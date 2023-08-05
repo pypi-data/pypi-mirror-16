@@ -1,0 +1,7 @@
+recursive-include dreq *.py *.html
+include LICENSE
+include README.rst
+include dreq.xml
+include dreq2Defn.xml
+include requirements.txt
+include runtests.sh

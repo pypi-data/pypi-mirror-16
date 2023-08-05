@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: dreq
+Version: 0.2.0.1
+Summary: dreq is a light weight python client for interacting with the data request.
+Home-page: https://github.com/Prodiguer/prodiguer-dreq
+Author: Mark A. Greenslade
+Author-email: momipsl@ipsl.jussieu.fr
+License: GPL
+Description: prodiguer-dreq
+        ===============
+        
+        Light weight python client for interacting with the data request.
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: License :: OSI Approved :: CEA CNRS Inria Logiciel Libre License, version 2.1 (CeCILL-2.1)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
