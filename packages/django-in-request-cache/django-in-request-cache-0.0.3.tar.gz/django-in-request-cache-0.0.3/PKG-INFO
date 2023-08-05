@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: django-in-request-cache
+Version: 0.0.3
+Summary: Django cache stored in django request
+Home-page: https://github.com/mojeto/django-in-request-cache
+Author: Jan Nakladal
+Author-email: mojeto1@gmail.com
+License: UNKNOWN
+Description: # django-in-request-cache
+        Django cache stored in django request [![Build Status](https://travis-ci.org/mojeto/django-in-request-cache.svg?branch=master)](https://travis-ci.org/mojeto/django-in-request-cache)
+        
+        ## License
+        
+        * [MIT](/LICENSE?raw=true)
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
