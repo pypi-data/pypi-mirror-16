@@ -1,0 +1,2 @@
+pytz>dev
+case>=1.2.2
