@@ -1,0 +1,12 @@
+flask_fido_u2f.py
+setup.cfg
+setup.py
+Flask_FIDO_U2F.egg-info/PKG-INFO
+Flask_FIDO_U2F.egg-info/SOURCES.txt
+Flask_FIDO_U2F.egg-info/dependency_links.txt
+Flask_FIDO_U2F.egg-info/requires.txt
+Flask_FIDO_U2F.egg-info/top_level.txt
+Flask_FIDO_U2F.egg-info/zip-safe
+test/test_api.py
+test/test_configuration.py
+test/test_injections.py
