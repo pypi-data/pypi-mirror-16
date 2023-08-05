@@ -1,0 +1,1 @@
+A DP 'Read' client based on a configuration template.
