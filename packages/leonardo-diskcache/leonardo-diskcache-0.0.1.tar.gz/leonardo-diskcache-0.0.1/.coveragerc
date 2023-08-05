@@ -1,0 +1,5 @@
+[run]
+source = leonardo_diskcache
+omit =
+    *migrations*
+    leonardo_diskcache/__init__.py
