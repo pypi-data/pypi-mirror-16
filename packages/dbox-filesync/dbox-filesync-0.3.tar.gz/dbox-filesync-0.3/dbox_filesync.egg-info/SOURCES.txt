@@ -1,0 +1,8 @@
+README.rst
+dbox_filesync.py
+setup.py
+dbox_filesync.egg-info/PKG-INFO
+dbox_filesync.egg-info/SOURCES.txt
+dbox_filesync.egg-info/dependency_links.txt
+dbox_filesync.egg-info/requires.txt
+dbox_filesync.egg-info/top_level.txt
