@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: pyrm114
+Version: 0.32
+Summary: Python wrapper for CRM114 classifier
+Home-page: https://github.com/errcHuang/pyrm114
+Author: Eric Huang
+Author-email: eric.huanghg@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/errcHuang/pyrm114/tarball/0.1
+Description: UNKNOWN
+Keywords: machine,learning,crm114,pyrm114,python,wrapper
+Platform: UNKNOWN
