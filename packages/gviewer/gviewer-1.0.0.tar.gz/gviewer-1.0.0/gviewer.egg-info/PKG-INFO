@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: gviewer
+Version: 1.0.0
+Summary: General Viewer
+Home-page: https://github.com/chhsiao90/gviewer
+Author: chhsiao90
+Author-email: chhsiao90@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Environment :: Console
+Classifier: Environment :: Console :: Curses
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Security
+Classifier: Topic :: Internet
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: Proxy Servers
+Classifier: Topic :: Software Development :: Testing
