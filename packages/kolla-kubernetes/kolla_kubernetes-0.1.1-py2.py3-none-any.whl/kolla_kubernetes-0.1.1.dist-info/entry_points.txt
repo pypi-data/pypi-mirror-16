@@ -1,0 +1,11 @@
+[console_scripts]
+kolla-kubernetes = kolla_kubernetes.cmd.shell:main
+
+[kolla_kubernetes.cli]
+bootstrap = kolla_kubernetes.cli.service:Bootstrap
+kill = kolla_kubernetes.cli.service:Kill
+resource = kolla_kubernetes.cli.service:Resource
+resource-map = kolla_kubernetes.cli.service:ResourceMap
+resource-template = kolla_kubernetes.cli.service:ResourceTemplate
+run = kolla_kubernetes.cli.service:Run
+
