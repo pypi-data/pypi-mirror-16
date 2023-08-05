@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: PyScoutnet
+Version: 1.0.0
+Summary: Access to the Scoutnet.de REST-API
+Home-page: https://bitbucket.org/janbrohl/pyscoutnet
+Author: Jan Brohl
+Author-email: janbrohl@t-online.de
+License: Simplified BSD see license.txt
+Download-URL: https://bitbucket.org/janbrohl/pyscoutnet/downloads/PyScoutnet-1.0.0.zip
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires: requests
