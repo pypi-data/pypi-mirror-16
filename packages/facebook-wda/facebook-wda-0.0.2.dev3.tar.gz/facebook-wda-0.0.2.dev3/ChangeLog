@@ -1,0 +1,28 @@
+CHANGES
+=======
+
+* fix documentation, add some props
+* do some fix
+* update desc
+
+0.0.1
+-----
+
+* wow, update again, this is the last today
+* update document
+* add the rest api
+* fix json
+* make doc looks beautiful
+* add with operation
+* fix travis setting
+* update password
+* add travis badge
+* add travis
+* add screenshot and selector
+* add selector
+* add tap and session close
+* add session, and home function, wrap python requests functions
+* update but not implement except status
+* initial first release
+* init project
+* Initial commit
