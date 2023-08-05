@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+DWDocumentDB.egg-info/PKG-INFO
+DWDocumentDB.egg-info/SOURCES.txt
+DWDocumentDB.egg-info/dependency_links.txt
+DWDocumentDB.egg-info/requires.txt
+DWDocumentDB.egg-info/top_level.txt
+dwdocumentdb/__init__.py
