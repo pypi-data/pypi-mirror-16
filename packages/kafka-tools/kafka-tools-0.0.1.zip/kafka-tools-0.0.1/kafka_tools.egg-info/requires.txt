@@ -1,0 +1,9 @@
+paramiko
+kazoo
+pex
+
+[dev]
+check-manifest
+
+[test]
+coverage
