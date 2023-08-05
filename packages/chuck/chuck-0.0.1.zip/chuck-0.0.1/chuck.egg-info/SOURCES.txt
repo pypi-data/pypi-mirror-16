@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.py
+chuck/__init__.py
+chuck.egg-info/PKG-INFO
+chuck.egg-info/SOURCES.txt
+chuck.egg-info/dependency_links.txt
+chuck.egg-info/pbr.json
+chuck.egg-info/requires.txt
+chuck.egg-info/top_level.txt
+chuck/osc/OSC.py
+chuck/osc/__init__.py
+chuck/osc/oscAPI.py
