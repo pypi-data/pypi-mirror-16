@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: zipdump
+Version: 0.1
+Summary: Analyze zipfile, either local, or from url
+Home-page: https://github.com/nlitsme/zipdump
+Author: Willem Hengeveld
+Author-email: itsme@xs4all.nl
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python

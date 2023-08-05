@@ -1,0 +1,10 @@
+README.md
+setup.py
+urlstream.py
+zipdump.py
+zipdump.egg-info/PKG-INFO
+zipdump.egg-info/SOURCES.txt
+zipdump.egg-info/dependency_links.txt
+zipdump.egg-info/entry_points.txt
+zipdump.egg-info/not-zip-safe
+zipdump.egg-info/top_level.txt
