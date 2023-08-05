@@ -1,0 +1,22 @@
+Metadata-Version: 2.0
+Name: stdgif
+Version: 0.1.0
+Summary: Display gifs it the terminal with ANSI-escape sequences
+Home-page: https://github.com/thcipriani/stdgif
+Author: Tyler Cipriani
+Author-email: tyler@tylercipriani.com
+License: GNU GPLv3
+Keywords: gif ansi ascii
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Requires-Dist: Pillow
+Requires-Dist: requests
+Requires-Dist: wheel
+
+UNKNOWN
+
+
