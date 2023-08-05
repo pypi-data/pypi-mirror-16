@@ -1,0 +1,1 @@
+{"extensions": {"python.details": {"contacts": [{"email": "the10se1ucgo@gmail.com", "name": "10se1ucgo", "role": "author"}], "document_names": {"description": "DESCRIPTION.rst"}}}, "generator": "bdist_wheel (0.29.0)", "license": "Apache License, Version 2.0", "metadata_version": "2.0", "name": "cue-sdk", "summary": "Python wrapper for the CUE SDK", "version": "2.1.0"}
