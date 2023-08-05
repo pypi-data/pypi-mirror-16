@@ -1,0 +1,16 @@
+Metadata-Version: 2.0
+Name: flask-shell-bpython
+Version: 0.0.1
+Summary: Replace the default `flask shell` command with a similar command running BPython.
+Home-page: http://github.com/jacquerie/flask-shell-bpython
+Author: Jacopo Notarstefano
+Author-email: jacopo.notarstefano@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: bpython (>=0.15)
+Requires-Dist: click
+Requires-Dist: flask (>=0.11)
+
+UNKNOWN
+
+
