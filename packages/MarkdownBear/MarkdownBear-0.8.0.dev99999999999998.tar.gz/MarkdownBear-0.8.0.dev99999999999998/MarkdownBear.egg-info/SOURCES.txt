@@ -1,0 +1,5 @@
+setup.py
+MarkdownBear.egg-info/PKG-INFO
+MarkdownBear.egg-info/SOURCES.txt
+MarkdownBear.egg-info/dependency_links.txt
+MarkdownBear.egg-info/top_level.txt
