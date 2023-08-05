@@ -1,0 +1,11 @@
+README.rst
+setup.py
+bookmaker/__init__.py
+bookmaker/lib.py
+bookmaker/mkbook.py
+bookmaker/pdflib.py
+bookmaker/testscript.py
+bookmaker.egg-info/PKG-INFO
+bookmaker.egg-info/SOURCES.txt
+bookmaker.egg-info/dependency_links.txt
+bookmaker.egg-info/top_level.txt
