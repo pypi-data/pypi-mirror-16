@@ -1,0 +1,15 @@
+edward/__init__.py,sha256=fYd2OjQNovOGEL9Z7U6qvMHQXlJWDRAKWC2p54Jyoa8,667
+edward/criticisms.py,sha256=X8V6XTrZI9635RuqjEKXOxAehn8tRe2OLJL1zucGJBg,14412
+edward/inferences.py,sha256=AhOp91trJr-Ygv_JzORLcCyLd0dVqrMmxGS5c-Lzh2c,22271
+edward/util.py,sha256=-uZNjH1scsJstbF20XJvLnJWrUy1OGgmxZ--I9DMNlc,10448
+edward/models/__init__.py,sha256=6qBK2ufvOHugK8H3wVJ_OGWUY0vCT1D61V5UwXy5SVY,190
+edward/models/models.py,sha256=cRou_vaGOj9JVUQYygkiwRQ1lfZ11u9MMjydxQg7WjE,13185
+edward/models/random_variables.py,sha256=xQiB83zC05QVoFY5Y8hycGJWupcxVlAP4DvpxFh6KHE,16873
+edward/stats/__init__.py,sha256=8m_xsVgGnbzx--vSOnNsAGDHL9UjbI5Tcn_qsnWEnBU,151
+edward/stats/distributions.py,sha256=MxJ9kw3Y90iLomTgZUtppSVzjmwA5AbttP87-NJWvco,54038
+edward-1.1.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+edward-1.1.0.dist-info/METADATA,sha256=OPvQXfCQMp0PFtmJQxHWlcHcipid07tOQNImitFjFsQ,959
+edward-1.1.0.dist-info/RECORD,,
+edward-1.1.0.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+edward-1.1.0.dist-info/metadata.json,sha256=HhYCtK0cmHFBCOHn72V6SH6Fv_4jD4o4cRJRDbCcO24,1047
+edward-1.1.0.dist-info/top_level.txt,sha256=3uly7J59pZK9rkukJKt2ZWPxOimeBEc1WM04pu5uJjU,7
