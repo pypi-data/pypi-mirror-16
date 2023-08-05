@@ -1,0 +1,12 @@
+fullstop/__init__.py,sha256=Rv392pC8G2n7Tc618Nma3LSn51HAIrvFyW71YUgShp8,23
+fullstop/__main__.py,sha256=rIs5v-zAdQvGgnuYOg7UFwPJ1AB_j-NddNtaxlRQMPg,69
+fullstop/api.py,sha256=JqoJvJ05v3KwRtDg21h5odRho-DBmL21TCVguJPGx14,430
+fullstop/cli.py,sha256=0QNzFSKXBaBqhBlnVvkQa7rXnOGkqOy6GaRtQ9szWs4,10132
+fullstop/time.py,sha256=093OueBDBs5dcPig1jXJgGN1nJ9_6erihrhvrAzFoPA,1889
+stups_fullstop-1.0.28.dist-info/DESCRIPTION.rst,sha256=M-D_SJDeAoBddh6H_0Il8Qp5pp36wlkiBintSnHfxbQ,1283
+stups_fullstop-1.0.28.dist-info/METADATA,sha256=XllvpQcAmJ9_CUz1vYLG4rRmwJT5deShgFOMY_gCIVE,2190
+stups_fullstop-1.0.28.dist-info/RECORD,,
+stups_fullstop-1.0.28.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+stups_fullstop-1.0.28.dist-info/entry_points.txt,sha256=E7d-9qealLGAFq-xgKm1Pbuaxn94GupGmxiGh52T_JM,48
+stups_fullstop-1.0.28.dist-info/metadata.json,sha256=blQhYYys7sylRdCpfahdmPAxCt-0hwa1lJF1AeNT1Js,1247
+stups_fullstop-1.0.28.dist-info/top_level.txt,sha256=kREhEBbafKmd5MlU3EdEsv3ue3fWdq65sHhhiZERjro,9
