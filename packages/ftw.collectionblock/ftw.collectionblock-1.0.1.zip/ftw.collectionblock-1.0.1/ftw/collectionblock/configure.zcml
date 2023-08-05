@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="ftw.collectionblock">
+
+    <include package=".browser" />
+    <include package=".contents" />
+    <include file="permissions.zcml" />
+    <include file="resources.zcml" zcml:condition="installed ftw.theming" />
+    <include file="lawgiver.zcml" zcml:condition="installed ftw.lawgiver" />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="ftw.collectionblock"
+        directory="profiles/default"
+        description="Collection block (add-on for ftw.simplelayout)"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+
+</configure>
