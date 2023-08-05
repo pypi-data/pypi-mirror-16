@@ -1,0 +1,14 @@
+ndex/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ndex/client.py,sha256=2fwZFjg7XrX5abu7lACC4kDIb0e0anNHFWP-X-qJK38,14201
+ndex/create_aspect.py,sha256=JUO3w0XErMEl_x0D6mQjROFz90CsmB42aPVA_aarBO0,3528
+ndex/networkn.py,sha256=nn6siv4yx0FlLZ7uCc3WbwmK8MoMOOa1jN3EH2lvaoI,20781
+ndex/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ndex/test/scratchtests.py,sha256=qEU4AAVWHhdMRx_ADpP6PxpXNewUc4WDgnv_e4Ve9Hw,612
+ndex/test/test_networkn.py,sha256=4LzmsjN6RKK9lsAxJ56bWN1p9WVoWd3EBuK8s9qxa0I,801
+ndex-3.0.7.dist-info/DESCRIPTION.rst,sha256=KdphngvqMgzs_-ObXPbt-Ea4f9QqEv8IXjjpH7Rl_k0,194
+ndex-3.0.7.dist-info/METADATA,sha256=HR0zALZGfBKsXYE95TLIIHB18i-bIa8r1eCA_2h9liU,980
+ndex-3.0.7.dist-info/RECORD,,
+ndex-3.0.7.dist-info/WHEEL,sha256=JTb7YztR8fkPg6aSjc571Q4eiVHCwmUDlX8PhuuqIIE,92
+ndex-3.0.7.dist-info/metadata.json,sha256=t5S11l9dkKyV8eff00VFzILZFeOCmOdX-Sr6NnUPiKc,939
+ndex-3.0.7.dist-info/pbr.json,sha256=hCo687Mw3xYOkN-ara-pMPCV7SNDHF1Gzrcg9bA7NTM,47
+ndex-3.0.7.dist-info/top_level.txt,sha256=tLTeevjKL7Sp2yTZsC1Bio7E0QFra6MuKTSt1DGXU9U,5
