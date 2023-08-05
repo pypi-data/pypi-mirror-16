@@ -1,0 +1,6 @@
+setuptools
+kombu
+requests
+beaker
+morepath
+PyYAML

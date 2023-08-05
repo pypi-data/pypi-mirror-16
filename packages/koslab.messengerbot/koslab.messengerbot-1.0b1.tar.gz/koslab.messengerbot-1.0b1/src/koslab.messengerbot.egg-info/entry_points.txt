@@ -1,0 +1,3 @@
+[console_scripts]
+messengerbot_hub=koslab.messengerbot.scripts:start_hub
+
