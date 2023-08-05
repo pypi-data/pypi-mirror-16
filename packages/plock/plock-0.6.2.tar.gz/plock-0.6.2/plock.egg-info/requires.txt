@@ -1,0 +1,5 @@
+configparser
+sh
+tmp
+virtualenv
+zc.buildout
