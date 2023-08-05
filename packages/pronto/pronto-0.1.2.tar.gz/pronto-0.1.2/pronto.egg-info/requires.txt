@@ -1,0 +1,5 @@
+lxml
+
+[doc]
+Sphinx
+sphinx-rtd-theme
