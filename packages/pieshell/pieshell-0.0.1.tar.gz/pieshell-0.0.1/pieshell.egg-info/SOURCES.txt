@@ -1,0 +1,11 @@
+setup.py
+pieshell/__init__.py
+pieshell/cmdline.py
+pieshell/iterio.py
+pieshell/pipe.py
+pieshell/shell.py
+pieshell.egg-info/PKG-INFO
+pieshell.egg-info/SOURCES.txt
+pieshell.egg-info/dependency_links.txt
+pieshell.egg-info/entry_points.txt
+pieshell.egg-info/top_level.txt
