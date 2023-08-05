@@ -1,0 +1,14 @@
+pronto/__init__.py,sha256=cphmjCVrtPVP5s2XUU_Q2KyIOT-lBBUqpvrbVZpKWGU,441
+pronto/ontology.py,sha256=F2h6i0iTMsCCyX_9_RBFdJABPeI2nAc9irksjSLKEfI,10031
+pronto/relationship.py,sha256=ldGIlMspE2sk9VPjMjEl8W1V5h9HHUXCTKu5n5Mttfs,4832
+pronto/term.py,sha256=2MKJ9hRVO6ooPa7KOHLpKlHfh7BAdBqu5TI7J2O69QE,6009
+pronto/utils.py,sha256=O_-Y97f4i9XgvcGys-QcP1AiV9_lrFywjkVurwXMqsE,4876
+pronto/parser/__init__.py,sha256=1IOSgTJr9IM7qhGbi4A9EV08vQF_4l4PsRV77A_6yFU,1443
+pronto/parser/obo.py,sha256=lRegSuLp03KUGaZ96CCoNca6-BO52AepIUgOTjeXU8I,5301
+pronto/parser/owl.py,sha256=FTrSgZi-iVvM8h5gKmGJzNciOv3h1_XqDV98aW-5nuE,4253
+pronto-0.1.9.dist-info/DESCRIPTION.rst,sha256=H3HdVM0U-JK9VVWIg24JVVVCssAOiwprU60EpnNqtpE,3917
+pronto-0.1.9.dist-info/METADATA,sha256=znyth9NiQUxAdfOMxnCN0Ox3iGhLO7UGtU-oJTtGd3I,5313
+pronto-0.1.9.dist-info/RECORD,,
+pronto-0.1.9.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+pronto-0.1.9.dist-info/metadata.json,sha256=o0AR1wj-SrruHiTP9f1URJXb6AGyIi4cK3loDy0dNAQ,1427
+pronto-0.1.9.dist-info/top_level.txt,sha256=wJneQxTBLRJQDFzpGyne5LvOgyLUYYH6-D9JJx4bFVc,7
