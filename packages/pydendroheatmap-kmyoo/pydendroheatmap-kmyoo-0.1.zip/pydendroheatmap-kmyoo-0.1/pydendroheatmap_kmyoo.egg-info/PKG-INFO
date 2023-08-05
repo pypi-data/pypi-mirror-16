@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: pydendroheatmap-kmyoo
+Version: 0.1
+Summary: Tool for creating heatmaps, where rows and columns are organized by hierarchical clusters
+Home-page: https://github.com/kaniblu/dhm/
+Author: Kang Min Yoo
+Author-email: kaniblurous@gmail.com
+License: MIT
+Description: Tool for creating heatmaps, where rows and columns are organized by hierarchical clusters as seen in https://github.com/themantalope/dendroheatmap, which is based onhttp://code.activestate.com/recipes/578175-hierarchical-clustering-heatmap-python/
+Keywords: dendroheatmap dendrogram heatmap
+Platform: UNKNOWN

@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+dendroheatmap/__init__.py
+dendroheatmap/dendroheatmap.py
+pydendroheatmap_kmyoo.egg-info/PKG-INFO
+pydendroheatmap_kmyoo.egg-info/SOURCES.txt
+pydendroheatmap_kmyoo.egg-info/dependency_links.txt
+pydendroheatmap_kmyoo.egg-info/requires.txt
+pydendroheatmap_kmyoo.egg-info/top_level.txt
+pydendroheatmap_kmyoo.egg-info/zip-safe
