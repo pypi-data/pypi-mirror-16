@@ -1,0 +1,3 @@
+[console_scripts]
+cloudhealth = cloudhealth.cli:_cloudhealth
+
