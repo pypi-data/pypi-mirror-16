@@ -1,0 +1,4 @@
+#!/usr/bin/python3.5
+# EASY-INSTALL-SCRIPT: 'mutagen==1.33.1','mid3v2'
+__requires__ = 'mutagen==1.33.1'
+__import__('pkg_resources').run_script('mutagen==1.33.1', 'mid3v2')

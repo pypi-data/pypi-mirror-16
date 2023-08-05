@@ -1,0 +1,4 @@
+#!/usr/bin/python2.7
+# EASY-INSTALL-SCRIPT: 'permission==0.0.0','permission'
+__requires__ = 'permission==0.0.0'
+__import__('pkg_resources').run_script('permission==0.0.0', 'permission')

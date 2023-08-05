@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+# EASY-INSTALL-SCRIPT: 'abraxas==1.7','main.py'
+__requires__ = 'abraxas==1.7'
+__import__('pkg_resources').run_script('abraxas==1.7', 'main.py')

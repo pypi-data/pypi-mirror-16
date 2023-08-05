@@ -1,0 +1,4 @@
+#!/usr/bin/python3.5
+# EASY-INSTALL-SCRIPT: 'fixdisplays==1.0','fixdisplays'
+__requires__ = 'fixdisplays==1.0'
+__import__('pkg_resources').run_script('fixdisplays==1.0', 'fixdisplays')

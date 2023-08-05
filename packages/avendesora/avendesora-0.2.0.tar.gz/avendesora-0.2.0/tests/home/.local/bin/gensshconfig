@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+# EASY-INSTALL-SCRIPT: 'sshconfig==1.0.0','gensshconfig'
+__requires__ = 'sshconfig==1.0.0'
+__import__('pkg_resources').run_script('sshconfig==1.0.0', 'gensshconfig')

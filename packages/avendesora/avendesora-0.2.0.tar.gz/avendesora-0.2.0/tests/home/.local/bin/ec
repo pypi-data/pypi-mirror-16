@@ -1,0 +1,4 @@
+#!/usr/bin/python3.5
+# EASY-INSTALL-SCRIPT: 'engineering-calculator==1.1.11','ec'
+__requires__ = 'engineering-calculator==1.1.11'
+__import__('pkg_resources').run_script('engineering-calculator==1.1.11', 'ec')
