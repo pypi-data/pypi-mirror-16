@@ -1,0 +1,12 @@
+staps/__init__.py,sha256=CnAGcgC8-dYSNeqwuq1YbzrsNvBFcgueEhUsWgBhP00,1196
+staps/__main__.py,sha256=JjcukBB0FJ1KDOsYEiWNaH3Barq_26OJvcx7LAkdO70,1313
+staps/cli.py,sha256=-T-LY32Uv8kRzQRcAljRenyFCj5v442bpsoi95mnHRQ,3734
+staps/index.html,sha256=yg03L9J7bm9rIEwwPI8mklwJ2S6ziDEbBjYsPncorPE,1944
+staps/server.py,sha256=XRkf3RRieRaWXeJNECXGbaQiHroRjsnO8MQc8iD9LRE,5728
+staps-0.1.6.dist-info/DESCRIPTION.rst,sha256=KPWBXri9gQV0VUYLAnfbk5aBIo2xLVJmjIQ_97eou0E,1758
+staps-0.1.6.dist-info/METADATA,sha256=LVkQaopbVDZJaxNyqJqOKkcGejL3Xy8JHttFF0-4Jus,2579
+staps-0.1.6.dist-info/RECORD,,
+staps-0.1.6.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+staps-0.1.6.dist-info/entry_points.txt,sha256=5SDSUr40bFWrYOPG6HrZt1iQ4ccBxqKfxz6xfsNgCJ8,51
+staps-0.1.6.dist-info/metadata.json,sha256=dsqU0qetVSp6dvQRKuoLB6IMs5FEMHFuoZ5-j0W0eRI,1120
+staps-0.1.6.dist-info/top_level.txt,sha256=QQkOH3_wW0-OZChJkfQB3QFcWo4roNiDeIhLNxCCvNY,6
