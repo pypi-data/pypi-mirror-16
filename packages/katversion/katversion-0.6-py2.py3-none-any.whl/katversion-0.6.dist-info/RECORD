@@ -1,0 +1,11 @@
+katversion/__init__.py,sha256=f6waFTpB1d3k9Y_3H5KmXa8YzJZ7WRtLQDlQxf0SbCI,886
+katversion/build.py,sha256=cN3TuXjWroUIfNg97LXhzbv6GkKluIFCyBNVQKLOqZk,5722
+katversion/version.py,sha256=y_tz67TTga6jx-EhCYNpJy2cK7Vg8mW18ZO2IWBgQCc,11519
+katversion-0.6.data/scripts/kat-get-version.py,sha256=Vs5PSuO-HQpsVysqKO09DbeBXm3U3qB_ipcN9GDDC9o,1451
+katversion-0.6.dist-info/DESCRIPTION.rst,sha256=QZzRc4UoybjPXGQkOgI3wch9qNc5WoKOdX2J6xdjEZE,2514
+katversion-0.6.dist-info/METADATA,sha256=JgCoXWXiIgmPaG1e8yrwXCMTbDk8dlCJ5B2YSHoNAw0,3586
+katversion-0.6.dist-info/RECORD,,
+katversion-0.6.dist-info/WHEEL,sha256=GrqQvamwgBV4nLoJe0vhYRSWzWsx7xjlt74FT0SWYfE,110
+katversion-0.6.dist-info/entry_points.txt,sha256=PmqKTLLvgi3P8dpSRfZdp2zgZhF6ntunGm-8FlA7NXs,79
+katversion-0.6.dist-info/metadata.json,sha256=oD3EW6iu5rS67P9PZzaQ7y1y2Z7J2t-_pMbg511Gx7o,1396
+katversion-0.6.dist-info/top_level.txt,sha256=SK3ogA4CFuIMsJ9xAGsWxmwDifFItFLQ2XKjYCvQ7Bc,11
