@@ -1,0 +1,15 @@
+_oalib.pyd,sha256=O0gD8-sDnE05vnGz3cQgsiIqag25hfU_iTByDWmVRkg,3451392
+oalib.py,sha256=2B8A1M7mT12UhzKIA6VVG33MZW7vpAMK-XDG-PhsG-w,358886
+OApackage-2.2.9.data/scripts/example_python_testing.py,sha256=rAzjQxvNOLZxZZRVr96ee64pGqh-x2oq4rSOrhR7Ox4,809
+OApackage-2.2.9.dist-info/DESCRIPTION.rst,sha256=21jgNmS4B0BSyR_stadpH-ZfoD6ukNZNK62yiMtHnIE,2647
+OApackage-2.2.9.dist-info/METADATA,sha256=u4kdLfqN9rIrvX6I5dizExgqQEt9qw1E6WNGWeqJbk0,3548
+OApackage-2.2.9.dist-info/RECORD,,
+OApackage-2.2.9.dist-info/WHEEL,sha256=Jmq6HlU3-gun8Kdi3LY3f3pFZ0JqJ7Bn8GbGn_XfX0M,106
+OApackage-2.2.9.dist-info/metadata.json,sha256=Sj8p622r8bSIB3dv41NN11HaOamQMED4I8Q5Kjfaf1A,1044
+OApackage-2.2.9.dist-info/top_level.txt,sha256=ypwtg40ESUDzQxWsMcr4evTWdaCyC_qgKbFdNQDIooE,23
+oapackage/Doptim.py,sha256=srh65AEWKdJ2P_mAiVjvFfynG_z35IbAvsR7Qht9c0k,18873
+oapackage/__init__.py,sha256=Hoz4ao18cNDasrZMba1M5sFl98G2AphnaowBk6g1Vfs,2434
+oapackage/graphtools.py,sha256=_RmI62SN1NzbOkKxVsz6xJEIl8KFS-FhvumFP4h4dFc,6906
+oapackage/markup.py,sha256=U-Yia118ihrm6O7ECP3QcM_lZbl8OSWjcSufIdiwFgQ,20993
+oapackage/oahelper.py,sha256=45Qe6uyobkIwU17IIPjkjFPBaMOvbhHeb5AyY8TXkJE,33743
+oapackage/scanf.py,sha256=OtmNnqzVYezBBuV3TyeSYCL9uNU8X6uCY2Oi1CHpugA,28847
