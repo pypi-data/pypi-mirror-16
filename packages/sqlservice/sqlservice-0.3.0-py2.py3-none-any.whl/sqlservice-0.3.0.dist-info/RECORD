@@ -1,0 +1,16 @@
+sqlservice/__init__.py,sha256=FFU0oHmVFRLis-IEXxwxv-WX6Xedo9jo7MVbi0FUVlM,333
+sqlservice/__pkg__.py,sha256=T0SIbHeQ6VZVced3e4ooTreUyeOgmkF1Zc2AA-St4OU,303
+sqlservice/_compat.py,sha256=NSlAlw2RxZLgNsUdfwAf6lZN33p-5opQyOb2uM-2dis,840
+sqlservice/client.py,sha256=jgc-go1OrPL2KOGAnh1pn1zCdzpgxEkjDkd75enwpqI,18645
+sqlservice/core.py,sha256=moWpCd6MHIHetOBBbegL-K0CJzuCLtxcePhvNcRC9-A,10650
+sqlservice/event.py,sha256=t22Ptwl_7E3ERZQgTaCyAxQ5Cu5YZ9TY_n4m1ULwP4k,6033
+sqlservice/model.py,sha256=hI5L4cNsopuHxvfiS0txocjQ8DUd0HYcgcS9lPMi_gE,9354
+sqlservice/query.py,sha256=RXdDhaZAZuZYGXZgSY1CanryYU-AtXpkSNdkGu2kUow,5727
+sqlservice/service.py,sha256=_4l5n0aB7wgYlFoNMIsCduVPVsYx9MS619ahi54kvSs,4933
+sqlservice/utils.py,sha256=8lELgy4qE2-qdc7-hd29208oxWKgN7xJCDD1o7gfzGU,998
+sqlservice-0.3.0.dist-info/DESCRIPTION.rst,sha256=Okg2YD_VPA_N-HM-SWqgXEo0GVkyfraktdkAGcWF474,10840
+sqlservice-0.3.0.dist-info/METADATA,sha256=JIikPCDrkp6wqEw-rhnCKy57gZFoZX2UXA8CDoXu078,11920
+sqlservice-0.3.0.dist-info/RECORD,,
+sqlservice-0.3.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+sqlservice-0.3.0.dist-info/metadata.json,sha256=CJguCBOiWe6Kskqw9hQxS-OeKFm-jW6rbkc9empazKc,1188
+sqlservice-0.3.0.dist-info/top_level.txt,sha256=ctgc6jAehOzigwQWmZLjU2gf2K1P7rRxqI4_J0IhdX4,11
