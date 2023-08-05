@@ -1,0 +1,5 @@
+<script type="text/ecmascript" xlink:href="jquery.js"/>
+<script type="text/ecmascript" xlink:href="jquery.svg.js"/>
+<script type="text/ecmascript" xlink:href="jquery.svgdom.js"/>
+<script type="text/ecmascript" xlink:href="mcviz_navigable.js"/>
+

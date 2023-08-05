@@ -1,0 +1,28 @@
+MCViz
+=====
+...because a graph is worth a thousand lists.
+
+Please see our [Wiki](https://github.com/mcviz/mcviz/wiki) for a quick start guide and screenshots.
+
+![An image of an example graph](https://github.com/mcviz/mcviz/wiki/ex6.png)
+
+Preface
+-------
+
+Welcome! `MCViz` was started at the _European School of High Energy Physics 2010_,
+during a `pythia` lecture where a couple of confused students were staring at a
+list of a thousand particles particicpating in a 
+[QCD](http://en.wikipedia.org/wiki/Quantum_chromodynamics) event.
+
+"What does this *look* like?!", we asked ourselves. We realised in short order 
+that a few simple instructions to the excellent [graphviz](http://graphviz.org), 
+we could see the connections between everything before our eyes.
+
+.. very quickly we found ourselves knee-deep in ideas and desire to explore the
+beautiful mess infront of us. `MCViz` is the result of our exploration.
+
+`MCViz` is intended to be a tool for novices to have a quick play around in, or 
+for more serious users and people who need to explore generator information
+to make sense of what is going on.
+
+Now go to [Wiki](https://github.com/mcviz/mcviz/wiki) for a quick start!

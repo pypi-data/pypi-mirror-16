@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: mcviz
+Version: 2014.12.21
+Summary: mcviz
+Home-page: http://mcviz.net
+Author: Johannes Ebke and Peter Waller
+Author-email: dev@mcviz.net
+License: Affero GPLv3
+Description: `MCViz` is intended to be a tool for novices to have a quick play 
+        around in, or for more serious users and people who need to explore 
+        generator information to make sense of what is going on.
+Keywords: mcviz hep montecarlo hepmc graphviz svg visualization
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
