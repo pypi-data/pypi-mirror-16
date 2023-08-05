@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: web_gamepad
+Version: 0.1.10
+Summary: Gamepad controller library based on lightweight AsyncIO web server
+Home-page: https://github.com/peterzdeb/WebGamepad
+Author: Petro Zdeb
+Author-email: peterzdeb@gmail.com
+License: Apache License, Version 2.0
+Description: UNKNOWN
+Platform: UNKNOWN
