@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: simple-engine-core
+Version: 0.1
+Summary: Reads in HTML, reads out JSON
+Home-page: https://github.com/apizzimenti/simple-engine-core.git
+Author: Anthony Pizzimenti
+Author-email: pizzimentianthony@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
