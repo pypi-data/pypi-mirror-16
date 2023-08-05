@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: fuma
+Version: 3.0.1
+Summary: Fusion Matcher
+Home-page: https://github.com/yhoogstrate/fuma
+Author: Youri Hoogstrate
+Author-email: UNKNOWN
+License: GNU General Public License v3 (GPLv3)
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
