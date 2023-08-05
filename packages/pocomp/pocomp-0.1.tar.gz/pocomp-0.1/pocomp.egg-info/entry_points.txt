@@ -1,0 +1,3 @@
+[console_scripts]
+pocomp = pocomp:main
+
