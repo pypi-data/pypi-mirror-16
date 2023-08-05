@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: my_funky_package
+Version: 0.5
+Summary: A random test lib
+Home-page: https://github.com/UmutOrman/mypackage
+Author: Umut Orman
+Author-email: umutormans@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/UmutOrman/mypackage/tarball/0.1
+Description: UNKNOWN
+Keywords: testing,logging,example
+Platform: UNKNOWN
