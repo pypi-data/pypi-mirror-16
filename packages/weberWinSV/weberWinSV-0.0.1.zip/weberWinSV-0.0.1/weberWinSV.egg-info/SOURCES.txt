@@ -1,0 +1,10 @@
+README.rst
+setup.cfg
+setup.py
+weberWinSV/WeberWinSV.py
+weberWinSV/__init__.py
+weberWinSV.egg-info/PKG-INFO
+weberWinSV.egg-info/SOURCES.txt
+weberWinSV.egg-info/dependency_links.txt
+weberWinSV.egg-info/not-zip-safe
+weberWinSV.egg-info/top_level.txt
