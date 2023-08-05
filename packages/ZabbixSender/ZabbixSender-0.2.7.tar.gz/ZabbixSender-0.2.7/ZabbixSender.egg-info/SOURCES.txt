@@ -1,0 +1,12 @@
+CHANGELOG.rst
+MANIFEST.in
+README.rst
+ez_setup.py
+setup.py
+ZabbixSender/ZabbixPacket.py
+ZabbixSender/ZabbixSender.py
+ZabbixSender/__init__.py
+ZabbixSender.egg-info/PKG-INFO
+ZabbixSender.egg-info/SOURCES.txt
+ZabbixSender.egg-info/dependency_links.txt
+ZabbixSender.egg-info/top_level.txt
