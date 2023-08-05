@@ -1,0 +1,7 @@
+setup.py
+statlorem.py
+statlorem.egg-info/PKG-INFO
+statlorem.egg-info/SOURCES.txt
+statlorem.egg-info/dependency_links.txt
+statlorem.egg-info/requires.txt
+statlorem.egg-info/top_level.txt
