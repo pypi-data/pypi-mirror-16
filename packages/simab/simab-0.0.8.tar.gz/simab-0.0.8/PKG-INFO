@@ -1,0 +1,26 @@
+Metadata-Version: 1.1
+Name: simab
+Version: 0.0.8
+Summary: Simple Multi-Armed Bandit Simulator
+Home-page: https://github.com/AkihikoITOH/simab
+Author: Akihiko ITOH
+Author-email: itoh.akihiko.5@facebook.com
+License: MIT
+Description: 
+        simab - Simple Multi-Armed Bandit Simulator
+        -------------------------------------------
+        
+        
+Keywords: MAB,Multi-Armed Bandit,Machine Learning,Reinforcement Learning
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content :: CGI Tools/Libraries
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
