@@ -1,0 +1,63 @@
+Metadata-Version: 1.1
+Name: wcloud
+Version: 0.0.1
+Summary: Command line tool to generate wordclouds.
+Home-page: https://github.com/neocortex/wcloud
+Author: Rafael Schultze-Kraft
+Author-email: skraftr@gmail.com
+License: MIT license
+Description: ===============================
+        wCloud
+        ===============================
+        
+        
+        .. image:: https://img.shields.io/pypi/v/wcloud.svg
+                :target: https://pypi.python.org/pypi/wcloud
+        
+        .. image:: https://img.shields.io/travis/neocortex/wcloud.svg
+                :target: https://travis-ci.org/neocortex/wcloud
+        
+        .. image:: https://readthedocs.org/projects/wcloud/badge/?version=latest
+                :target: https://wcloud.readthedocs.io/en/latest/?badge=latest
+                :alt: Documentation Status
+        
+        .. image:: https://pyup.io/repos/github/neocortex/wcloud/shield.svg
+             :target: https://pyup.io/repos/github/neocortex/wcloud/
+             :alt: Updates
+        
+        
+        Command line tool to generate wordclouds.
+        
+        
+        * Free software: MIT license
+        * Documentation: https://wcloud.readthedocs.io.
+        
+        
+        Features
+        --------
+        
+        * TODO
+        
+        
+        =======
+        History
+        =======
+        
+        0.0.1 (2016-07-20)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: wcloud
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
