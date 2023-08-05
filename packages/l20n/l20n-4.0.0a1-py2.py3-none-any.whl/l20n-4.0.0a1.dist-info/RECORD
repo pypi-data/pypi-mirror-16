@@ -1,0 +1,11 @@
+l20n/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+l20n/format/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+l20n/format/ast.py,sha256=QeYs40M1umZfeir2SO894l6HHrYokwmmNMLriHnJRGU,3732
+l20n/format/parser.py,sha256=i8M7IIOwGXCpqYQj0P3HkAVsJ1jydT9RjMpw-mo1GDI,16819
+l20n/format/serializer.py,sha256=TNIKy2OX4GnlRl3TQreJQ2JtiFMUwDhZGF9pRq0_SN0,4596
+l20n-4.0.0a1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+l20n-4.0.0a1.dist-info/METADATA,sha256=QjhqewcdcY1eMLZ0do6tV_AWhHc4SYbKjSqzb3I26Zc,547
+l20n-4.0.0a1.dist-info/RECORD,,
+l20n-4.0.0a1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+l20n-4.0.0a1.dist-info/metadata.json,sha256=1P4CMMhnBO6vUhIGsIDdagxtIReD13lHuePPR-swBdI,722
+l20n-4.0.0a1.dist-info/top_level.txt,sha256=r8hqMRmKsrW79QrbRRw0WK4y_xY_jvhWdT_yrrj9OpU,5
