@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+stacking/__init__.py
+stacking/base_fixed_fold.py
+stacking.egg-info/PKG-INFO
+stacking.egg-info/SOURCES.txt
+stacking.egg-info/dependency_links.txt
+stacking.egg-info/requires.txt
+stacking.egg-info/top_level.txt
+stacking.egg-info/zip-safe
