@@ -1,0 +1,11 @@
+pyparsing==2.1.5
+
+[all]
+autopep8
+watchdog
+
+[autopep8]
+autopep8
+
+[watch]
+watchdog
