@@ -1,0 +1,31 @@
+"""SSL configuration support
+"""
+import ssl
+
+default_cert_authenticate = 'SIGNED', '-'
+def ssl_config(section, server):
+    context = ssl.Context(ssl.PROTOCOL_SSLv23)
+    if section.certificate:
+        context.load_cert_chain(certfile=section.certificate,
+                                keyfile=section.key)
+    auth = section.authenticate
+    if auth:
+        if auth in default_cert_authenticate:
+            context.load_default_certs(
+                ssl.Purpose.CLIENT_AUTH if server else ssl.Purpose.SERVER_AUTH)
+        elif os.path.isdir(auth):
+            context.load_verify_locations(capath=auth)
+        else:
+            context.load_verify_locations(cafile=auth)
+
+        context.verify_mode = ssl.CERT_REQUIRED
+    else:
+        context.verify_mode = ssl.CERT_NONE
+
+    if server:
+        context.verify_hostname = False
+        return context
+
+    context.verify_hostname = section.verify_hostname or section.server_hosname
+
+    return context, section.server_hosname
