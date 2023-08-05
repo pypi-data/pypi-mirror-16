@@ -1,0 +1,8 @@
+pandas
+networkx
+pydot
+pydotplus
+requests
+python-igraph
+pyparsing
+scipy
