@@ -1,0 +1,3 @@
+pycurl
+ws4py
+ujson
