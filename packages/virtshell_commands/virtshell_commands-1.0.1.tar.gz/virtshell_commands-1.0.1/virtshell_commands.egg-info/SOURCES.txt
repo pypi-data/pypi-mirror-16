@@ -1,0 +1,12 @@
+LICENSE.txt
+MANIFEST.in
+setup.cfg
+setup.py
+virtshell_commands/__init__.py
+virtshell_commands/vs_package.py
+virtshell_commands/vs_service.py
+virtshell_commands.egg-info/PKG-INFO
+virtshell_commands.egg-info/SOURCES.txt
+virtshell_commands.egg-info/dependency_links.txt
+virtshell_commands.egg-info/entry_points.txt
+virtshell_commands.egg-info/top_level.txt
