@@ -1,0 +1,14 @@
+MANIFEST.in
+setup.cfg
+setup.py
+django_rest_scaffold/__init__.py
+django_rest_scaffold/settings.py
+django_rest_scaffold.egg-info/PKG-INFO
+django_rest_scaffold.egg-info/SOURCES.txt
+django_rest_scaffold.egg-info/dependency_links.txt
+django_rest_scaffold.egg-info/top_level.txt
+django_rest_scaffold/management/__init__.py
+django_rest_scaffold/management/commands/__init__.py
+django_rest_scaffold/management/commands/cleanmigrations.py
+django_rest_scaffold/management/commands/create-model.py
+tests/__init__.py
