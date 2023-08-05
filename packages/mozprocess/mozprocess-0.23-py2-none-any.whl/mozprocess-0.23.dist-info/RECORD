@@ -1,0 +1,11 @@
+mozprocess/__init__.py,sha256=6lXVg0R-8V3vEiqymbwc0dUaQoI5wP3LWpx02Orlqdw,270
+mozprocess/processhandler.py,sha256=h44nNKnNp_4xVTUZBfaB33NJ6EE8-QMirdSuVMlGTic,47345
+mozprocess/qijo.py,sha256=bK2NlY9JxWEtu_joPewDczrdbjMwrHjDRMi_z2_qQQ0,5325
+mozprocess/winprocess.py,sha256=cDL9pA8kA5wp12eqPisAsOjKEUhuIUU3YFzAV5n3pTA,18485
+mozprocess-0.23.dist-info/DESCRIPTION.rst,sha256=q1PK9Rug879wovvSnLUL9CKj6wsVct5sd3GfalE_DCA,38
+mozprocess-0.23.dist-info/METADATA,sha256=6QJFND1yeUDlr9QKlWctYFj9_NNJLPY2id49aI5QGUc,713
+mozprocess-0.23.dist-info/RECORD,,
+mozprocess-0.23.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+mozprocess-0.23.dist-info/entry_points.txt,sha256=FjKvgvGyIyqokCxiGIVCvaGmkWcXwEXZ8W6zk1mtvZQ,37
+mozprocess-0.23.dist-info/metadata.json,sha256=aonTqpJZKHu31pNtu7vtYaxUDpksXjGVtIAdqVGOd5o,858
+mozprocess-0.23.dist-info/top_level.txt,sha256=MOZg2hVGvbHULWKkFHtiXm_CHMQsrsqsaw9t_aPnaVM,11
