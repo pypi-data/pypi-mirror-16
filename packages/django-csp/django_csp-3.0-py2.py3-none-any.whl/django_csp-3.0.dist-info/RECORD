@@ -1,0 +1,16 @@
+csp/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+csp/decorators.py,sha256=ZnjWRWd77Un-UTE4QP0JxCxdh2Kl4n_OKi39PQDrd5I,1166
+csp/middleware.py,sha256=C4JH8vEuKA1NX7s0Jre7AqZdSxDsvUjIT0XyzZDsurk,1430
+csp/models.py,sha256=RaF-TB9TtjCF2AR80Es5MBMNEuJ0t0tc38kqlyMpbwI,38
+csp/utils.py,sha256=DoNfw6hk7hkxU-Y95QPq6uD8RWVKAg6LLu0_DxwPlE4,2189
+csp/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+csp/tests/settings.py,sha256=pGBtNewKKnmNSnSJkA2FJS8KiEmF24tgnZv37wPqx4g,350
+csp/tests/test_decorators.py,sha256=4FgYEGL1cNfvI-J-p6awOCpwOATaurS4QJNeUBgprds,3941
+csp/tests/test_middleware.py,sha256=7CcOBf4UWdkmMQZGPQR5SYgEtdoIohG5xwVCp_XskII,2360
+csp/tests/test_utils.py,sha256=GXMm-yQjGSI9xB1nnzUeKon0cVn9MyuuOJD8XVrEG8I,4774
+django_csp-3.0.dist-info/DESCRIPTION.rst,sha256=oIEy0W6pozM7LFhTc3KbQ32TRbnGFOS5bosGDHEMxoY,546
+django_csp-3.0.dist-info/METADATA,sha256=5jExbkJ4lUXg_zUTAgOnQFR25eN9f0hIDNwWjZxbIOA,2028
+django_csp-3.0.dist-info/RECORD,,
+django_csp-3.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+django_csp-3.0.dist-info/metadata.json,sha256=JEd7uGB7sRNp6ThsO_vI6wbdB34zmk_dJVoKg_CXzxE,1407
+django_csp-3.0.dist-info/top_level.txt,sha256=pm-MfHT9Zn_UmmbHzGQnOZzwOzhbEkjF32D9FUGazCI,4
