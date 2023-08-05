@@ -1,0 +1,14 @@
+bcc2to/__init__.py,sha256=BFg2tvp0GEmHwpUZw0n1ozQQPSsqlHirPeQzYhVyBRI,1663
+bcc2to/__main__.py,sha256=fTA_iGG-QDkQ9bj-HKJVylAmU7KQuYzaoQOPiq4S9Ik,379
+bcc2to/parts/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bcc2to/parts/cleanup.py,sha256=iOXu0D1YRl2-tp5hmtktt5XoBDqRvIguQQrR1rStzK0,1550
+bcc2to/parts/install.py,sha256=7tk5cJB8uGx3IH84F0h1OQ0WM1gCcFa2dgebRg4AZss,4059
+bcc2to/parts/proxy.py,sha256=xgLdBrZYV4TFp2SRWAu6s9lLgldtZiNRranBllFOz60,14274
+bcc2to/parts/smtpd.py,sha256=WK0VKScDeuWDGErL7AXKUiG7zU3BvhdJZ4s_6P7huXU,35380
+bcc2to/parts/smtplib.py,sha256=ERivc2zUsB9Ai5RYstguqYjqoWikZRMtmZK0MnH_0lM,43705
+bcc2to-0.4.0rc2.dist-info/DESCRIPTION.rst,sha256=1dyetlL-nfzTg9XHLdAkBKrDRC4hH3bFb1FgjPldz40,753
+bcc2to-0.4.0rc2.dist-info/METADATA,sha256=_JpECjAEKxCNxtqumWRLpKGtrkGScIBJffntMdBx4TM,1410
+bcc2to-0.4.0rc2.dist-info/RECORD,,
+bcc2to-0.4.0rc2.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+bcc2to-0.4.0rc2.dist-info/metadata.json,sha256=0N7Ljaix85TKV0FKvwOSuzkxUN0VHdOhWMBqAWEK1Wc,746
+bcc2to-0.4.0rc2.dist-info/top_level.txt,sha256=NU7PY5evNka_jFTUK2oglfiUtEaIUs3lKAOcVgTgRQI,7

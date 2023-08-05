@@ -1,0 +1,38 @@
+Metadata-Version: 2.0
+Name: bcc2to
+Version: 0.4.0rc2
+Summary: Posfix plugin for individual list mail delivering
+Home-page: UNKNOWN
+Author: Vidmantas Balčytis
+Author-email: vidma@lema.lt
+License: UNKNOWN
+Keywords: postfix mail plugin
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Plugins
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: Communications :: Email :: Mailing List Servers
+Classifier: License :: Free for non-commercial use
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+
+Bcc2To Python project
+=====================
+
+**Bcc2To** is simple *Posfix* plugin allowing to distribute list mail
+individually to each list user.
+
+**Purpose:** If you want to send mail to group of people and do not want
+to redistribute ech people mail address to others, you add all those
+recipients addresses to **Bcc:** field. **Bcc:** field is not included into message
+headers, so recipiens do not see addresses message was sent to.
+However some mail systems bans messages if your address cannot be found inside
+**To:** or **Cc:** fields. This utility lets organize delivery of mail, where it
+is delivered individually to each person from **Bcc:** (imaginary) field.
+
+:Author: Vidmantas Balčytis <vidma@lema.lt>
+:Version: 0.4.0rc2 (2016.07.11)
+
+
+
