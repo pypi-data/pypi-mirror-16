@@ -1,0 +1,65 @@
+Metadata-Version: 1.1
+Name: md-environ
+Version: 0.1.0
+Summary: This is an extension to Python-Markdown which allows environment variables to be used in the text.
+Home-page: https://github.com/cmacmackin/md-environ/
+Author: Chris MacMackin
+Author-email: cmacmackin@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/cmacmackin/md-environ/tarball/v0.1.0
+Description: MD-Environ
+        ==========
+        
+        This is an extension to
+        `Python-Markdown <https://pythonhosted.org/Markdown/>`__ which allows
+        environment variables to be inserted into the text. I originally wrote
+        it for my `FORD <https://github.com/cmacmackin/ford>`__ Fortran
+        auto-documentation generator.
+        
+        Installation
+        ------------
+        
+        This module can now be installed using ``pip``.
+        
+        ::
+        
+            pip install md-environ
+        
+        Usage
+        -----
+        
+        This module can be used in a program in the following way:
+        
+        .. code:: python
+        
+            import markdown
+            html = markdown.markdown(source, extensions=['md_environ.environ])
+        
+        The syntax for use within your Markdown files is
+        ``${ENVIRONMENT_VARIABLE}``. This statement will be replaced by the
+        contents of ``ENVIRONMENT_VARIABLE``, if it is defined, or by an empty
+        string otherwise.
+        
+        ChangeLog
+        ---------
+        
+        Version 0.1
+        ~~~~~~~~~~~
+        
+        Initial release.
+        
+Keywords: Markdown,typesetting,environment,variable,plugin,extension
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Internet :: WWW/HTTP :: Site Management
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Text Processing :: Filters
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
