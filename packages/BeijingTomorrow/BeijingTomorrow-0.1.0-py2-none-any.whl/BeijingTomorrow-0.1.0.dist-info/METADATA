@@ -1,0 +1,13 @@
+Metadata-Version: 2.0
+Name: BeijingTomorrow
+Version: 0.1.0
+Summary: This package generates a beijingtomorrow of the next day's pollution level in Beijing using daily MODIS satellite data and CaffeOnSpark.
+Home-page: http://www.github.com/tavisbarr/BeijingTomorrow
+Author: Tavis Barr
+Author-email: tavisbarr@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+
+UNKNOWN
+
+
