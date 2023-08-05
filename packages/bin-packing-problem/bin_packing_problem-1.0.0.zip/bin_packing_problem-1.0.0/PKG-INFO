@@ -1,0 +1,39 @@
+Metadata-Version: 1.1
+Name: bin_packing_problem
+Version: 1.0.0
+Summary: Provides 1D bin packing logic.
+Home-page: https://github.com/ibigpapa/bin_packing_problem
+Author: ibigpapa
+Author-email: issues@github.url
+License: MIT
+Description: # Bin Packing Problem
+        
+        This library is a grouping of 1D approximate solutions for the BPP  There is also a generic function to create variants.
+        
+        ## Example
+        
+        `python
+        
+        import random
+        
+        from binpackp import NumberBin, Fit
+        
+        bin_size = random.randint(10,100)
+        
+        fit_these = [random.randint(1, bin_size) for _ in range(1000)]
+        generic_results = Fit.fit(NumberBin, bin_size, fit_these)
+        
+        first_fit_results = Fit.ff(NumberBin, bin_size, fit_these)
+        
+        print("General Function: ", generic_results)
+        print("First Fit Function: ", first_fit_results)
+        
+        
+Keywords: 1D Bin Packing FirstFit NextFit BestFit FFD
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Software Development :: Libraries
