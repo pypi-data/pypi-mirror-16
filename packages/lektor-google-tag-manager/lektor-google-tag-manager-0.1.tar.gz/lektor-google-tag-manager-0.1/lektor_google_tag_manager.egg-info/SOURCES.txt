@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+lektor_google_tag_manager.py
+setup.py
+lektor_google_tag_manager.egg-info/PKG-INFO
+lektor_google_tag_manager.egg-info/SOURCES.txt
+lektor_google_tag_manager.egg-info/dependency_links.txt
+lektor_google_tag_manager.egg-info/entry_points.txt
+lektor_google_tag_manager.egg-info/requires.txt
+lektor_google_tag_manager.egg-info/top_level.txt

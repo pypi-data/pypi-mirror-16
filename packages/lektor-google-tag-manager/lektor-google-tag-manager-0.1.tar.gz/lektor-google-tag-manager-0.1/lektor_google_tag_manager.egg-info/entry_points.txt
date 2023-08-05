@@ -1,0 +1,3 @@
+[lektor.plugins]
+google-tag-manager = lektor_google_tag_manager:GoogleTagManagerPlugin
+
