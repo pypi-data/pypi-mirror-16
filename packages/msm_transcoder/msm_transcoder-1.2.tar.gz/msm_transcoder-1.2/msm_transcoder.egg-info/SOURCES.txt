@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+msm_transcoder/__init__.py
+msm_transcoder/transcoder.py
+msm_transcoder.egg-info/PKG-INFO
+msm_transcoder.egg-info/SOURCES.txt
+msm_transcoder.egg-info/dependency_links.txt
+msm_transcoder.egg-info/top_level.txt
+tests/__init__.py
+tests/test.py

@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: msm-transcoder
+Version: 1.2
+Summary: Encode and decode base64 data to binary data.
+Home-page: https://github.com/eHanlin/msm-transcoder-python
+Author: Sparrow Jang
+Author-email: sparrow.jang@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
