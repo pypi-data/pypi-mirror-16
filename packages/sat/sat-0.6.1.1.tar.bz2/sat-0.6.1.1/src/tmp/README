@@ -1,0 +1,6 @@
+Use this module to temporary store files that need to be integrated to other
+projects such as Wokkel.
+
+For example, the changeset that introduced this folder adds RSM (XEP-0059)
+support to Wokkel. The files in sat.tmp.wokkel are imported over the initial
+wokkel files from sat.plugins.__init__.py

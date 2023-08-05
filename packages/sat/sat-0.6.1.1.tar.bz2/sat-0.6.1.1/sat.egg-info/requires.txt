@@ -1,0 +1,15 @@
+twisted >= 15.2.0
+wokkel >= 0.7.1
+progressbar
+urwid >= 1.2.0
+urwid-satext >= 0.6.1
+mutagen
+pillow
+lxml >= 3.1.0
+pyxdg
+markdown
+html2text
+pycrypto >= 2.6.1
+python-potr
+PyOpenSSL
+service_identity
