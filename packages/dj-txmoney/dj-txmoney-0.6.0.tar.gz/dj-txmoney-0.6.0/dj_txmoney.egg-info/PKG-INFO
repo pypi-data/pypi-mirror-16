@@ -1,0 +1,78 @@
+Metadata-Version: 1.1
+Name: dj-txmoney
+Version: 0.6.0
+Summary: Adds support for working with money, currencies and rates.
+Home-page: https://github.com/txerpa/dj-txmoney
+Author: Mateu Cànaves Albertí
+Author-email: mateu.canaves@gmail.com
+License: BSD
+Description: =============================
+        dj-txmoney
+        =============================
+        
+        .. image:: https://badge.fury.io/py/dj-txmoney.png
+            :target: https://badge.fury.io/py/dj-txmoney
+        
+        .. image:: https://travis-ci.org/txerpa/dj-txmoney.png?branch=master
+            :target: https://travis-ci.org/txerpa/dj-txmoney
+        
+        Package for working with money and currencies with automatic rate updates.
+        
+        Documentation
+        -------------
+        
+        The full documentation is at https://dj-txmoney.readthedocs.org.
+        
+        Quickstart
+        ----------
+        
+        Install dj-txmoney::
+        
+            pip install dj-txmoney
+        
+        Then use it in a project::
+        
+            import txmoney
+        
+        Features
+        --------
+        
+        * TODO
+        
+        Running Tests
+        --------------
+        
+        Does the code actually work?
+        
+        ::
+        
+            source <YOURVIRTUALENV>/bin/activate
+            (myenv) $ python runtests.py
+        
+        Credits
+        ---------
+        
+        
+        
+        
+        History
+        -------
+        
+        0.1.0 (2016-05-26)
+        ++++++++++++++++++
+        
+        * First release on PyPI.
+        
+Keywords: dj-txmoney,txmoney,money,currency,finance
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.8
+Classifier: Framework :: Django :: 1.9
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
