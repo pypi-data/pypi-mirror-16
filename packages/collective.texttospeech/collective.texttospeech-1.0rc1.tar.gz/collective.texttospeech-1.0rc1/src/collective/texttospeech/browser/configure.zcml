@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.texttospeech">
+
+  <browser:page
+      name="texttospeech-helper"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".HelperView"
+      allowed_attributes="enabled"
+      permission="zope.Public"
+      layer="collective.texttospeech.interfaces.IBrowserLayer"
+      />
+
+  <browser:viewlet
+      name="collective.texttospeech"
+      class=".viewlets.TextToSpeechViewlet"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+      template="templates/texttospeech.pt"
+      layer="collective.texttospeech.interfaces.IBrowserLayer"
+      permission="zope2.View"
+      />
+
+</configure>

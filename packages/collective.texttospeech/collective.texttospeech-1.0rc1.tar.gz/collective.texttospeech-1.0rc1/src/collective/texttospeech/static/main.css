@@ -1,0 +1,26 @@
+#viewlet-texttospeech
+{
+    min-height: 1.2em;
+
+    text-align: right;
+}
+#viewlet-texttospeech > button
+{
+    display: none;
+}
+#texttospeech-button
+{
+    cursor: pointer;
+}
+#texttospeech-button.stopped:before
+{
+    content: "🔊 ";
+}
+#texttospeech-button.playing:before
+{
+    content: "⏸ ";
+}
+#texttospeech-button.paused:before
+{
+    content: "▶ ";
+}
