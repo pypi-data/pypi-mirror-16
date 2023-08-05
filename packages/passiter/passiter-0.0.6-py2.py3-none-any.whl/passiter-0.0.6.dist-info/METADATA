@@ -1,0 +1,47 @@
+Metadata-Version: 2.0
+Name: passiter
+Version: 0.0.6
+Summary: Simple password generator
+Home-page: https://github.com/atsmin/passiter
+Author: atsmin
+Author-email: a.minami79@gmail.com
+License: MIT
+Keywords: password generator
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Provides-Extra: dev
+Provides-Extra: test
+
+Passiter: A simple password generator
+=======================
+Usage:
+
+.. code-block:: python
+
+    import passiter
+    p = passiter()
+    for _ in range(10):
+        print(next(p))
+    # bA2x9m,P
+    # b:vOj29N
+    # sN%6gCh4
+    # ,khl0M5O
+    # jZ3F1v{d
+    # H5Atra^1
+    # t$7qM4Zv
+    # 7lUi6[Tj
+    # Y6p5cw_E
+    # Db>Qn45p
+----
+
+
