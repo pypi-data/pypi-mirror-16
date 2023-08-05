@@ -1,0 +1,26 @@
+[polyarchiv.sources]
+postgressql = polyarchiv.sources:PostgresSQL
+dovecot = polyarchiv.sources:Dovecot
+rsync = polyarchiv.sources:RSync
+ldap = polyarchiv.sources:Ldap
+mysql = polyarchiv.sources:MySQL
+
+[polyarchiv.remotes]
+synchronize = polyarchiv.remotes:Synchronize
+git = polyarchiv.remotes:GitRepository
+gitlab = polyarchiv.remotes:GitlabRepository
+archive = polyarchiv.remotes:TarArchive
+smart_archive = polyarchiv.remotes:SmartTarArchive
+
+[console_scripts]
+polyarchiv = polyarchiv.cli:main
+
+[polyarchiv.filters]
+hashes = polyarchiv.filters:Hashsum
+encrypt = polyarchiv.filters:SymmetricCrypt
+
+[polyarchiv.locals]
+files = polyarchiv.locals:FileRepository
+git = polyarchiv.locals:GitRepository
+archive = polyarchiv.locals:ArchiveRepository
+
