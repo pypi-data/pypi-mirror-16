@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Interactive k-means &mdash; Orange3 Educational 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Orange3 Educational 0.1 documentation" href="../index.html" />
+    <link rel="prev" title="Orange3 Educational Add-on" href="../index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../index.html" title="Orange3 Educational Add-on"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Orange3 Educational 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="interactive-k-means">
+<h1>Interactive k-means<a class="headerlink" href="#interactive-k-means" title="Permalink to this headline">¶</a></h1>
+<div class="figure">
+<img alt="../_images/mywidget.png" src="../_images/mywidget.png" />
+</div>
+<p>Educational widgets that shows working of a k-means clustering.</p>
+<div class="section" id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inputs">
+<h3>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Data</strong></li>
+</ul>
+<p>Input data set.</p>
+</div>
+<div class="section" id="outputs">
+<h3>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><strong>Data</strong></li>
+</ul>
+<p>Data set with clusters labels annotation.</p>
+<ul class="simple">
+<li><strong>Centroids</strong></li>
+</ul>
+<p>Centroids position</p>
+</div>
+</div>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The aim of this widget is to show the working of a k-means clustering algorithm on two attributes from data set.
+Widget applies k-means clustering to the selected two attributes step by step. User can step through the algorithm and
+see how the algorithm works.</p>
+<div class="figure">
+<img alt="../_images/kmeanswidget1.png" src="../_images/kmeanswidget1.png" />
+</div>
+<ol class="arabic simple">
+<li>Select attribute for <strong>x</strong> axis and attribute for <strong>y</strong> axis.</li>
+<li>Select number of centroids in the spinner. If you want new random positions of the centroids or restart the algorithm
+in any point, you can click on <strong>Randomize</strong> button. If you want to add centroid on particular position in the graph
+just click on this position. If you want to move centroid, grab it and drop it on the desired position.</li>
+<li>Step through the algorithm with <strong>Recompute centroids</strong> and <strong>Reassign membership</strong>. If you want to make step back
+use <strong>Step back</strong> button. You can also step automatically with pressing on <strong>Run</strong> button. <strong>Speed</strong> spinner can be used
+to set the speed of automatic stepping.</li>
+</ol>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>Here are two possible schemas that shows how the <strong>Interactive k-Menas</strong> widget can be used. You can load data form
+<strong>File</strong> or use any other data source, such as <strong>Paint Data</strong>. Interactive k-Menas widget also produce the data table
+with results of clustering and table with centroids positions. That can be inspected with <strong>Data Table</strong> widget or andy
+other widgets (e.g. Scatter Plot).</p>
+<div class="figure">
+<img alt="../_images/orangekmeans1.png" src="../_images/orangekmeans1.png" />
+</div>
+<p>Let us demonstrate the working of the widget on <em>Iris Dataset</em>.</p>
+<p>We provide data from data set using <strong>File widget</strong>. Then we open <strong>Interactive k-Means</strong> widget. We decided that we
+will demonstrate k-Menas on <em>petal length</em> and <em>petal width</em> attributes, so we set them as <em>X</em> and <em>Y</em> parameters.
+We also decided to perform a clustering in 3 clusters. This is set as <em>Number of centroids</em>. After that we get this
+figure.</p>
+<div class="figure">
+<img alt="../_images/kmeansstep1.png" src="../_images/kmeansstep1.png" />
+</div>
+<p>If we are not satisfied with positions of centroids we can change it with click on <strong>Randomize</strong> button. Then we
+perform first recomputing of centroids with click on <strong>Recompute centroids</strong> button. We get following image.</p>
+<div class="figure">
+<img alt="../_images/kmeansstep2.png" src="../_images/kmeansstep2.png" />
+</div>
+<p>The next step is to reassign membership of point to the closest centroid. It is performed with click on
+<strong>Reasign membership</strong> button.</p>
+<div class="figure">
+<img alt="../_images/kmeansstep3.png" src="../_images/kmeansstep3.png" />
+</div>
+<p>Then we repeat that two steps until algorithm converges. It is final result.</p>
+<div class="figure">
+<img alt="../_images/kmeanssteplast.png" src="../_images/kmeanssteplast.png" />
+</div>
+<p>But we are not satisfied with result because we noticed that maybe classification in 4 clusters would be better.
+So we decided to add a new centroid. We can make it with increasing number of centroids in left menu or with click on
+position in graph where we want to place the centroid. We decided to add it with click. New centroid is red one.</p>
+<div class="figure">
+<img alt="../_images/kmeansnewcentroid.png" src="../_images/kmeansnewcentroid.png" />
+</div>
+<p>Now we can repeat some steps that algorithm converges again, but before we will move green centroid to change the
+behavior of the algorithm. We grab green centroid and moved it to desired position.</p>
+<div class="figure">
+<img alt="../_images/kmeansstepmovedc.png" src="../_images/kmeansstepmovedc.png" />
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Interactive k-means</a><ul>
+<li><a class="reference internal" href="#signals">Signals</a><ul>
+<li><a class="reference internal" href="#inputs">Inputs</a></li>
+<li><a class="reference internal" href="#outputs">Outputs</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Orange3 Educational Add-on</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/widgets/kmeans.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../index.html" title="Orange3 Educational Add-on"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Orange3 Educational 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Biolab.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.6.
+    </div>
+  </body>
+</html>
