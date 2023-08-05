@@ -1,0 +1,8 @@
+django >= 1.9
+djangorestframework
+django-aggressivequery
+
+[docs]
+
+[testing]
+tox
