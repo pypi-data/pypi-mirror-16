@@ -1,0 +1,16 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+{% block modal-body-right %}
+  <div class="quota-dynamic">
+    {% include "project/shares/snapshots/_limits_snapshots.html" with usages=usages snapshot_quota=True %}
+  </div>
+{% endblock %}
+
+{% block modal-footer %}
+  <a href="{% url 'horizon:project:shares:index' %}" class="btn btn-default cancel">{% trans "Cancel" %}</a>
+  {% if attached %}
+    <input class="btn btn-warning" type="submit" value="{% trans "Create Share Snapshot (Force)" %}" />
+  {% else %}
+    <input class="btn btn-primary" type="submit" value="{% trans "Create Share Snapshot" %}" />
+  {% endif %}
+{% endblock %}
