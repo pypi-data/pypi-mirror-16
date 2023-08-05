@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: module_name
+Version: 0.1
+Summary: Simple Module to resolve module namespace
+Home-page: https://github.com/dalejung/module_name
+Author: Dale Jung
+Author-email: dale@dalejung.com
+License: UNKNOWN
+Download-URL: https://github.com/dalejung/module_name/tarball/0.1
+Description: UNKNOWN
+Platform: UNKNOWN
