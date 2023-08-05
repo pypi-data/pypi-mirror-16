@@ -1,0 +1,2 @@
+numpy
+HTSeq >= 0.6.1
