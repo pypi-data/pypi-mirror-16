@@ -1,0 +1,38 @@
+Metadata-Version: 1.1
+Name: pdLSR
+Version: 0.3
+Summary: pdLSR: Pandas-aware least squares regression.
+Home-page: https://github.com/mlgill/pdLSR
+Author: Michelle Gill
+Author-email: michelle@michellelynngill.com
+License: BSD (3-clause)
+Download-URL: https://github.com/mlgill/pdLSR
+Description: pdLSR
+        by Michelle L. Gill
+        
+        `pdLSR` is a library for performing least squares regression. It attempts to 
+        seamlessly incorporate this task in a Pandas-focused workflow. Input data 
+        are expected in dataframes, and multiple regressions can be performed using 
+        functionality similar to Pandas `groupby`. Results are returned as grouped 
+        dataframes and include best-fit parameters, statistics, residuals, and more. 
+        
+        `pdLSR` has been tested on python 2.7, 3.4, and 3.5. It requires Numpy, 
+        Pandas, multiprocess (https://github.com/uqfoundation/multiprocess), and 
+        lmfit (https://github.com/lmfit/lmfit-py). All dependencies are installable
+        via pip or conda (see README.md).
+        
+        A demonstration notebook is provided in the `demo` directory or the demo
+        can be run via GitHub (see README.md).
+        
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
