@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+bin/manifestor
+manifestor/__init__.py
+manifestor/command.py
+manifestor.egg-info/PKG-INFO
+manifestor.egg-info/SOURCES.txt
+manifestor.egg-info/dependency_links.txt
+manifestor.egg-info/requires.txt
+manifestor.egg-info/top_level.txt
