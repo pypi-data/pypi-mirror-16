@@ -1,0 +1,4 @@
+pygithub-redux>=1.29.0
+click
+jinja2
+tqdm
