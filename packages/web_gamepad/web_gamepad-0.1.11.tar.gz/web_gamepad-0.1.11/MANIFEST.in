@@ -1,0 +1,2 @@
+recursive-include src/web_gamepad/templates *
+recursive-include src/web_gamepad/static *
