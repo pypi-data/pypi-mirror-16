@@ -1,0 +1,17 @@
+Metadata-Version: 2.0
+Name: maxstdio
+Version: 0.1
+Summary: A small module that will enable windows devs to set and get number of files handles available to the underlying Visual C++ runtime.
+Home-page: UNKNOWN
+Author: Barry Carr
+Author-email: b.carr@dundee.ac.uk
+License: UNKNOWN
+Keywords: _setmaxstdio development windows win32 msvcrt
+Platform: win32
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+
+UNKNOWN
+
+
