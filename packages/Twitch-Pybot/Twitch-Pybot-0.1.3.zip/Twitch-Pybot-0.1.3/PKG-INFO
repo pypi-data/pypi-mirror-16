@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: Twitch-Pybot
+Version: 0.1.3
+Summary: A twitch bot with a web interface
+Home-page: http://github.com/isivisi/pybot
+Author: John Iannandrea
+Author-email: jiannandrea@gmail.com
+License: GNU
+Description: UNKNOWN
+Keywords: bot twitch web interface
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Operating System :: OS Independent
