@@ -1,0 +1,4 @@
+[console_scripts]
+processWorklog = worklog.process:run
+printWorklogFunction = worklog.print_worklog_function:run
+
