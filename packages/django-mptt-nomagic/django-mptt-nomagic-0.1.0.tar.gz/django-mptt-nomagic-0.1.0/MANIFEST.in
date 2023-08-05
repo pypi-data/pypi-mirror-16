@@ -1,0 +1,9 @@
+include INSTALL
+include LICENSE
+include MANIFEST.in
+include NOTES
+include README.rst
+recursive-include mptt/templates *
+recursive-include mptt/locale *
+recursive-include mptt/static *
+global-exclude __pycache__ *.pyc
