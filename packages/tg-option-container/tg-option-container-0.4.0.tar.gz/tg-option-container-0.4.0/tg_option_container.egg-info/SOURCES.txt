@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+tg_option_container/__init__.py
+tg_option_container/container.py
+tg_option_container/types.py
+tg_option_container.egg-info/PKG-INFO
+tg_option_container.egg-info/SOURCES.txt
+tg_option_container.egg-info/dependency_links.txt
+tg_option_container.egg-info/not-zip-safe
+tg_option_container.egg-info/requires.txt
+tg_option_container.egg-info/top_level.txt
