@@ -1,0 +1,17 @@
+Metadata-Version: 2.0
+Name: maxstdio
+Version: 0.2
+Summary: A small module that provides a wrapper around the VC++ runtimes _setmaxstdio and _getmaxstdio functions.
+Home-page: UNKNOWN
+Author: Barry Carr
+Author-email: b.carr@dundee.ac.uk
+License: UNKNOWN
+Keywords: _setmaxstdio _getmaxstdio development windows win32 msvcrt
+Platform: win32
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+
+UNKNOWN
+
+
