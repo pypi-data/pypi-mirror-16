@@ -1,0 +1,54 @@
+Metadata-Version: 1.1
+Name: rst2pptx
+Version: 0.2.1
+Summary: A docutils writer and script for converting reStructuredText to the PowerPoint format
+Home-page: https://github.com/myint/rst2pptx
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: ========
+        rst2pptx
+        ========
+        
+        Converts reStructuredText to PowerPoint.
+        
+        .. warning:: This tool is in very early experimental phase.
+        
+        
+        Installation
+        ============
+        
+        From pip::
+        
+            $ pip install --upgrade rst2pptx
+        
+        Example
+        =======
+        
+        ::
+        
+            $ rst2pptx input.rst output.pptx
+        
+        Input:
+        
+        .. code-block:: rst
+        
+            Slide 1
+            =======
+        
+            - it has some bullets
+            - bullet 2
+        
+        Output:
+        
+        .. image:: https://raw.githubusercontent.com/myint/rst2pptx/master/examples/output.png
+        
+Keywords: presentation,docutils,rst,restructuredtext,powerpoint,pptx
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Text Processing :: Markup
+Classifier: Topic :: Utilities
+Classifier: Topic :: Multimedia :: Graphics :: Presentation
