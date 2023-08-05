@@ -1,0 +1,9 @@
+README.txt
+setup.py
+t2/__init__.py
+t2/t2.py
+t2.egg-info/PKG-INFO
+t2.egg-info/SOURCES.txt
+t2.egg-info/dependency_links.txt
+t2.egg-info/top_level.txt
+t2.egg-info/zip-safe
