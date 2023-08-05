@@ -1,0 +1,40 @@
+Metadata-Version: 1.1
+Name: ucsmsdk-samples
+Version: 0.9.0.0
+Summary: samples for ucsmsdk
+Home-page: https://github.com/ciscoucs/ucsmsdk_samples
+Author: Vikrant Balyan
+Author-email: vvb@cisco.com
+License: http://www.apache.org/licenses/LICENSE-2.0
+Description: .. image:: https://landscape.io/github/CiscoUcs/ucsmsdk_samples/master/landscape.svg?style=flat
+           :target: https://landscape.io/github/CiscoUcs/ucsmsdk_samples/master
+           :alt: Code Health
+        
+        ===============================
+        ucsmsdk_samples
+        ===============================
+        
+        samples for ucsmsdk
+        
+        * Apache License, Version 2.0 (the "License") 
+        
+        
+        
+        =======
+        History
+        =======
+        
+        0.9.0.0 (2016-06-08)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: ucsmsdk_samples
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
