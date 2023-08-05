@@ -1,0 +1,3 @@
+[console_scripts]
+ns1 = ns1cli.cli:cli
+
