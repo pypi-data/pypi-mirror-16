@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: obnpy
+Version: 0.1.0
+Summary: Python interface for OpenBuildNet node
+Home-page: https://altugb@bitbucket.org/altugb/obnpy.git
+Author: altugb
+Author-email: altug.bitlislioglu@epfl.ch
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
