@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: flask-env-settings
+Version: 0.1.0
+Summary: Load application settings from env variables
+Home-page: https://github.com/dveselov/flask-env-settings
+Author: Dmitry Veselov
+Author-email: d.a.veselov@yandex.ru
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
