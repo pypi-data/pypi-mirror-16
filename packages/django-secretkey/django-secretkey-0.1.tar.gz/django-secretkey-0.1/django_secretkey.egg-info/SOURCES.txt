@@ -1,0 +1,8 @@
+MANIFEST.in
+setup.py
+cmd/secretkey
+django_secretkey.egg-info/PKG-INFO
+django_secretkey.egg-info/SOURCES.txt
+django_secretkey.egg-info/dependency_links.txt
+django_secretkey.egg-info/top_level.txt
+secretkey/__init__.py

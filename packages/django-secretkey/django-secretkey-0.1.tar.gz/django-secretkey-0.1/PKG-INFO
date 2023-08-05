@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: django-secretkey
+Version: 0.1
+Summary: Secret key generator for Django.
+Home-page: http://yeisoncardona.com/
+Author: Yeison Cardona
+Author-email: yeisoneng@gmail.com
+License: BSD License
+Download-URL: https://bitbucket.org/yeisoneng/python-secretkey/downloads
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
