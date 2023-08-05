@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        axsemantics=axsemantics_cli.main:cli
+    
