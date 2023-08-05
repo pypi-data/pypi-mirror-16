@@ -1,0 +1,4 @@
+[console_scripts]
+vs_package = virtshell_commands.vs_package:main
+vs_service = virtshell_commands.vs_service:main
+

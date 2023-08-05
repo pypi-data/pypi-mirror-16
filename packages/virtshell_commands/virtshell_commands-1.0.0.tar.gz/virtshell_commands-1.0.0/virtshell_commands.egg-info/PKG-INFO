@@ -1,0 +1,27 @@
+Metadata-Version: 1.1
+Name: virtshell-commands
+Version: 1.0.0
+Summary: Shell commands for VirtShell
+Home-page: https://github.com/janutechnology/VirtShell
+Author: Carlos Alberto Llano R.
+Author-email: carlos_llano@hotmail.com
+License: MIT
+Description: VirtShell-Command Project
+        =========================
+        
+        VirtShell-Command is a set of shell commands which allows flexibility in the provisioning scripts.
+        
+        
+        Creating an egg
+        ===============
+        python3 setup.py bdist_egg
+Keywords: provisioning
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
