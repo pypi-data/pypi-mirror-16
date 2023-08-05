@@ -1,0 +1,12 @@
+setup.py
+dictspec/__init__.py
+dictspec/compat.py
+dictspec/spec.py
+dictspec/validator.py
+dictspec.egg-info/PKG-INFO
+dictspec.egg-info/SOURCES.txt
+dictspec.egg-info/dependency_links.txt
+dictspec.egg-info/pbr.json
+dictspec.egg-info/top_level.txt
+dictspec/test/__init__.py
+dictspec/test/test_validator.py
