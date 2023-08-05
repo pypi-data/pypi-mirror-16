@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: dokky
+Version: 0.1.0
+Summary: Python client for Docsbox
+Home-page: https://github.com/docsbox/dokky
+Author: Dmitry Veselov
+Author-email: d.a.veselov@yandex.ru
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
