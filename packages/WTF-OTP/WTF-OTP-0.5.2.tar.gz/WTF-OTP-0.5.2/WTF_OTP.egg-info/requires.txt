@@ -1,0 +1,4 @@
+WTForms==2.1
+pyotp==2.1.1
+jinja2==2.8
+qrcode==5.3
