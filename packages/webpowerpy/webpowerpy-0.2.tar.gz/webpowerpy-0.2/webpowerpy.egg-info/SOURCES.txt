@@ -1,0 +1,13 @@
+setup.py
+webpowerpy/__init__.py
+webpowerpy/client.py
+webpowerpy/conf.py
+webpowerpy/exceptions.py
+webpowerpy.egg-info/PKG-INFO
+webpowerpy.egg-info/SOURCES.txt
+webpowerpy.egg-info/dependency_links.txt
+webpowerpy.egg-info/requires.txt
+webpowerpy.egg-info/top_level.txt
+webpowerpy/tests/__init__.py
+webpowerpy/tests/test_conf.py
+webpowerpy/tests/tests.py
