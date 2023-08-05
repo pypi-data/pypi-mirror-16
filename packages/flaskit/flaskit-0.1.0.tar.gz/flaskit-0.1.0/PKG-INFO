@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: flaskit
+Version: 0.1.0
+Summary: Utilies for Flask application.
+Home-page: https://github.com/manhg/flaskit
+Author: Giang Manh
+Author-email: manhgd@yahoo.com
+License: UNKNOWN
+Download-URL: https://github.com/manhg/flaskit/tarball/0.1.0
+Description: UNKNOWN
+Keywords: web,flask
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3

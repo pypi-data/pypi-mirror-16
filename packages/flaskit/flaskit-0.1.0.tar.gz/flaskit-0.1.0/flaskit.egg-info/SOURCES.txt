@@ -1,0 +1,8 @@
+README.rst
+setup.py
+flaskit/__init__.py
+flaskit.egg-info/PKG-INFO
+flaskit.egg-info/SOURCES.txt
+flaskit.egg-info/dependency_links.txt
+flaskit.egg-info/requires.txt
+flaskit.egg-info/top_level.txt
