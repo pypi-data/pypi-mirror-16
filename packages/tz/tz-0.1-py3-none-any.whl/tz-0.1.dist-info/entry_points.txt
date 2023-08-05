@@ -1,0 +1,3 @@
+[console_scripts]
+tz_cli = tz.main:entry_point
+
