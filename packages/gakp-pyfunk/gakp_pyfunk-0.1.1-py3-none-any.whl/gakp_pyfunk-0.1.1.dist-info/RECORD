@@ -1,0 +1,16 @@
+gakp_pyfunk-0.1.1.dist-info/DESCRIPTION.rst,sha256=MMJXg7cIUzQS7aANpVaUu24cbaaQiFLYILZzcK5FSt0,743
+gakp_pyfunk-0.1.1.dist-info/METADATA,sha256=lCbZ64HdNicsm0aDew1-MqQEB5h3PyG7OMjv0joiA1g,967
+gakp_pyfunk-0.1.1.dist-info/RECORD,,
+gakp_pyfunk-0.1.1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+gakp_pyfunk-0.1.1.dist-info/metadata.json,sha256=GlfnYsHadqpCJUuND__sOAG4L1XxgT0tkp-8qb5EO3w,411
+gakp_pyfunk-0.1.1.dist-info/top_level.txt,sha256=5xxRCPI4qAVXQkKs9_QpJv4RcwPh0aCoRnRBZqOSxEM,7
+pyfunk/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyfunk/collections.py,sha256=r1niweh4bGTjKCZjREIjn3hr3hFiT6CCFRd4HpgYig4,2947
+pyfunk/combinators.py,sha256=1aoF4WnhrlmFocjvXwkpwGN-eXmGuN7SC0sDlUQWDEU,809
+pyfunk/misc.py,sha256=JDxkITW_aULv0t3Kx911di583ui6i31DwgvsL7OcjFg,389
+pyfunk/functors/__init__.py,sha256=rN2BogIeGgRblbkojSqjUBqa4dw0sXYBCMl9QlKmQ60,598
+pyfunk/functors/container.py,sha256=t5Erm2RLMuNygY0nfMHk2hgfvdHGRZKXeFh572rrWRw,938
+pyfunk/functors/either.py,sha256=1l_zjPfpMN0omxJUKnuYe5Mc0qH0129at5RsXnVe4uU,1275
+pyfunk/functors/io.py,sha256=dlFygS5-bF4hSYpce8ucgGnsxsQ0-76ctyYUBpB7518,957
+pyfunk/functors/maybe.py,sha256=-HByMXgEJMpAJ9OOS9_BnUS3pSCsFv0srtdN-_6YjeI,1900
+pyfunk/functors/task.py,sha256=ZJuTxU4bIdGXPxT8pxV2sOnFJpSAgYMCWHHYCNj5n_U,1905
