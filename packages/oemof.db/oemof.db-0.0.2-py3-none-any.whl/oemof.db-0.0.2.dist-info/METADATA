@@ -1,0 +1,18 @@
+Metadata-Version: 2.0
+Name: oemof.db
+Version: 0.0.2
+Summary: The oemof database extension
+Home-page: https://github.com/oemof/oemof.db
+Author: oemof developing group
+Author-email: oemof@rl-institut.de
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: sqlalchemy (>=1.0)
+Requires-Dist: keyring (>=4.0)
+Requires-Dist: keyrings.alt
+Requires-Dist: shapely
+Requires-Dist: psycopg2
+
+UNKNOWN
+
+
