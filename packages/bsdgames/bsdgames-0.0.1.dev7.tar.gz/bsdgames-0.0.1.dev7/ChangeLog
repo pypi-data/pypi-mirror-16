@@ -1,0 +1,11 @@
+CHANGES
+=======
+
+* rmdir dist
+* +setup.[cfg/py]
+* +script:
+* + requirements.txt
+* reinit .travis.yml
+* fix indent
+* travis setup pypi >>> .trivas.yml
+* init src
