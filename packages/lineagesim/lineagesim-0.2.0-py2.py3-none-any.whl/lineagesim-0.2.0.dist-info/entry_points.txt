@@ -1,0 +1,3 @@
+[console_scripts]
+lineagesim = run_lineagesim:run_simulation
+

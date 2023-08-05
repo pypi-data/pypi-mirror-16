@@ -1,0 +1,26 @@
+Metadata-Version: 2.0
+Name: lineagesim
+Version: 0.2.0
+Summary: Model for the publication 'Competition Between Continuously Evolving Lineages in Asexual Populations'
+Home-page: https://github.com/kerrlab/lineagesim
+Author: Brian D. Connelly
+Author-email: bdc@bconnelly.net
+License: BSD
+Keywords: evolution simulation population mutation interference
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Life
+Classifier: License :: OSI Approved :: BSD License
+Requires-Dist: numpy (>=1.11.0)
+Requires-Dist: python-igraph (>=0.7.1)
+Requires-Dist: scipy (>=0.17.0)
+Requires-Dist: six (>=1.10.0)
+
+Simulation model described and used in 'Competition Between Continuously Evolving Lineages in Asexual Populations'. In each simulation, a population grows, mutates, and evolves by selection.
+
+
