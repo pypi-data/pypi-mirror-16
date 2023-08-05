@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+logged_requests/__init__.py
+logged_requests/logged_requests.py
+logged_requests/logger.py
+logged_requests.egg-info/PKG-INFO
+logged_requests.egg-info/SOURCES.txt
+logged_requests.egg-info/dependency_links.txt
+logged_requests.egg-info/requires.txt
+logged_requests.egg-info/top_level.txt
