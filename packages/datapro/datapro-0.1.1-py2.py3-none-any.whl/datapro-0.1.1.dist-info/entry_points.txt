@@ -1,0 +1,3 @@
+[console_scripts]
+datapro = datapro:main
+
