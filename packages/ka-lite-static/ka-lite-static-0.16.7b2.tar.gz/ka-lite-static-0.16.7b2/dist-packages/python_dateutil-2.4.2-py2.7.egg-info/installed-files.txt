@@ -1,0 +1,15 @@
+../dateutil/__init__.py
+../dateutil/tzwin.py
+../dateutil/easter.py
+../dateutil/tz.py
+../dateutil/relativedelta.py
+../dateutil/parser.py
+../dateutil/rrule.py
+../dateutil/zoneinfo/__init__.py
+../dateutil/zoneinfo/dateutil-zoneinfo.tar.gz
+requires.txt
+dependency_links.txt
+top_level.txt
+SOURCES.txt
+zip-safe
+PKG-INFO
