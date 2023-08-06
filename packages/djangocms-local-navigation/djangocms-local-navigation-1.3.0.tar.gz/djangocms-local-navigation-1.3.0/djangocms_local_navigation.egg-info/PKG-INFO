@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: djangocms-local-navigation
+Version: 1.3.0
+Summary: Provides a local navigation plugin in your pages
+Home-page: https://github.com/sephii/djangocms-local-navigation
+Author: Sylvain Fankhauser
+Author-email: sylvain.fankhauser@liip.ch
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5

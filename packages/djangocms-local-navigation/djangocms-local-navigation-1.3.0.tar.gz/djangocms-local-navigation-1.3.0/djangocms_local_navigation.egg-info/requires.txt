@@ -1,0 +1,3 @@
+django-cms>=3.0
+beautifulsoup4
+djangocms-text-ckeditor
