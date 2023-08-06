@@ -1,0 +1,8 @@
+setup.py
+sumochip/sumorobot.py
+sumochip/webapp.py
+sumochip.egg-info/PKG-INFO
+sumochip.egg-info/SOURCES.txt
+sumochip.egg-info/dependency_links.txt
+sumochip.egg-info/requires.txt
+sumochip.egg-info/top_level.txt
