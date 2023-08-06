@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: navernews
+Version: 0.0.1
+Summary: A simple Python module to crawl Naver News. See https://github.com/q1c/navernews for more information.
+Home-page: https://github.com/q1c/navernews
+Author: Kyuwon Choi
+Author-email: kyuwon.choi11@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: naver,news,scraping
+Platform: UNKNOWN

@@ -1,0 +1,7 @@
+setup.py
+navernews/__init__.py
+navernews.egg-info/PKG-INFO
+navernews.egg-info/SOURCES.txt
+navernews.egg-info/dependency_links.txt
+navernews.egg-info/requires.txt
+navernews.egg-info/top_level.txt
