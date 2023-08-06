@@ -1,0 +1,17 @@
+.gitignore
+.travis.yml
+MANIFEST.in
+NOTICE
+README.rst
+apache-2.0.LICENSE
+appveyor.yml
+configure
+configure.bat
+setup.cfg
+setup.py
+etc/configure.py
+etc/conf/base.txt
+etc/conf/win.txt
+etc/conf/dev/base.txt
+src/license_expression.py
+tests/test_license_expression.py
