@@ -1,0 +1,217 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>What’s new in release 2.1.0? &mdash; Aglyph 2.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Aglyph 2.1.1 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Aglyph
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="whats-new.html">What&#8217;s new in release 2.1.1?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Getting started with Aglyph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">Aglyph cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-ref.html">Aglyph API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Aglyph 2.1.1 testing summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap for future releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Aglyph</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>What&#8217;s new in release 2.1.0?</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="what-s-new-in-release-2-1-0">
+<h1>What&#8217;s new in release 2.1.0?<a class="headerlink" href="#what-s-new-in-release-2-1-0" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="http://www.python.org/download/releases/2.6/">Python 2.6</a> is no longer
+supported (and Aglyph 2.1.0 will not run on Python 2.6 without patching).</li>
+<li>Aglyph now supports <a class="reference internal" href="aglyph.component.html#lifecycle-methods"><span class="std std-ref">lifecycle methods</span></a>, which may
+be declared at the context, template, and/or component level for the &#8220;after
+injection&#8221; and &#8220;before clear&#8221; lifecycle states.</li>
+<li>Aglyph now supports a form of component &#8220;inheritance&#8221; through
+<a class="reference internal" href="aglyph.component.html#aglyph.component.Template" title="aglyph.component.Template"><code class="xref py py-class docutils literal"><span class="pre">aglyph.component.Template</span></code></a> (XML <code class="docutils literal"><span class="pre">&lt;template&gt;</span></code>). Refer to
+<a class="reference internal" href="cookbook-templating.html"><span class="doc">Component inheritance using templates</span></a> for examples.</li>
+<li>The <a class="reference download internal" href="_downloads/aglyph-context.dtd" download=""><code class="xref download docutils literal"><span class="pre">Aglyph</span> <span class="pre">context</span> <span class="pre">DTD</span></code></a> has
+been updated to support both lifecycle methods and templates.</li>
+<li>The <code class="xref py py-mod docutils literal"><span class="pre">aglpyh.integration</span></code> package has been added to support integrating
+Aglyph with other projects. Aglyph 2.1.0 introduces <a class="reference external" href="http://www.cherrypy.org/">CherryPy</a> integration using the classes defined in
+<a class="reference internal" href="aglyph.integration.cherrypy.html#module-aglyph.integration.cherrypy" title="aglyph.integration.cherrypy"><code class="xref py py-mod docutils literal"><span class="pre">aglyph.integration.cherrypy</span></code></a>. Refer to <a class="reference internal" href="cookbook-integration.html"><span class="doc">Integrating Aglyph</span></a> for
+examples.</li>
+<li>The caches defined in <a class="reference internal" href="aglyph.cache.html#module-aglyph.cache" title="aglyph.cache"><code class="xref py py-mod docutils literal"><span class="pre">aglyph.cache</span></code></a> are now implemented as <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#typecontextmanager">context
+managers</a>,
+and the public <code class="docutils literal"><span class="pre">lock</span></code> members have been deprecated.</li>
+<li>A &#8220;safe&#8221; representation is now used to log assembled objects, ensuring that
+possibly sensitive data is not logged.</li>
+<li>Deprecated classes and functions now issue
+<a class="reference internal" href="aglyph.html#aglyph.AglyphDeprecationWarning" title="aglyph.AglyphDeprecationWarning"><code class="xref py py-class docutils literal"><span class="pre">aglyph.AglyphDeprecationWarning</span></code></a>.</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2006-2016, Matthew Zipay.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
