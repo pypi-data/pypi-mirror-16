@@ -1,0 +1,3 @@
+[console_scripts]
+parsel-cli = parsel_cli.cli:main
+
