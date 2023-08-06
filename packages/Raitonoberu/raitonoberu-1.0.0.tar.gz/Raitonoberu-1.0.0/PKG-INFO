@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: Raitonoberu
+Version: 1.0.0
+Summary: Python 3 Aiohttp Novelupdates Scraper
+Home-page: https://github.com/GetRektByMe/Raitonoberu
+Author: Recchan
+Author-email: UNKNOWN
+License: MIT
+Description: Raitonoberu is a Python 3 Asyncio NovelUpdates Website scraper that is capable of getting useful information for use in applications.
+Keywords: NovelUpdates asyncio aiohttp scraping
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development :: Libraries
