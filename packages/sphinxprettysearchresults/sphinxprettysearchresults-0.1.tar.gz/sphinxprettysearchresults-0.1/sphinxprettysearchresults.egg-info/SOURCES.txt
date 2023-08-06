@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+sphinxprettysearchresults.egg-info/PKG-INFO
+sphinxprettysearchresults.egg-info/SOURCES.txt
+sphinxprettysearchresults.egg-info/dependency_links.txt
+sphinxprettysearchresults.egg-info/not-zip-safe
+sphinxprettysearchresults.egg-info/top_level.txt
