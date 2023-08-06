@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: fasttext
+Version: 0.5.18
+Summary: A Python interface for Facebook fastText library
+Home-page: https://github.com/pyk/fastText.py
+Author: Bayu Aldi Yansyah
+Author-email: bayualdiyansyah@gmail.com
+License: BSD 3-Clause License
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: C++
+Classifier: Programming Language :: Cython
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
