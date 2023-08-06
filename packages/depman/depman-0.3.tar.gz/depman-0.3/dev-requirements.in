@@ -1,0 +1,13 @@
+check-manifest
+coverage
+detox
+fmap
+ipdb
+lxml
+mock
+nose
+pip-tools
+Sphinx
+twine
+tox
+xunitmerge
