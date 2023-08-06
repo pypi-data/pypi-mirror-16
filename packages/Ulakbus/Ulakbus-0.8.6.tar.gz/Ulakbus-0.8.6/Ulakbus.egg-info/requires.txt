@@ -1,0 +1,7 @@
+zengine==0.7.4
+requests
+boto
+reportlab
+six
+lxml
+streamingxmlwriter
