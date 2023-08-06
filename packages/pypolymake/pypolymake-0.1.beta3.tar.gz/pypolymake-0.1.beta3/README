@@ -1,0 +1,69 @@
+pypolymake
+==========
+
+What is it?
+-----------
+
+The Python module pypolymake provides wrappers for `polymake
+<https://polymake.org/doku.php>`_.
+
+The language has been kept as close as possible as the original. The
+following polymake construction::
+
+    polytope> $c = cube(5);
+    polytope > print $c->F_VECTOR;
+    32 80 80 40 10
+
+is translated in Python as::
+
+    >>> from polymake import *
+    >>> c = cube(5)
+    >>> c.F_VECTOR()
+    (32, 80, 80, 40, 10)
+
+The library is currently under development. Many things are not working and are
+likely to cause segmentation fault!
+
+Installation and source code
+----------------------------
+
+To install pypolymake you need polymake in version 3.0 or later together with
+its header files.
+
+The simplest way to install the package is to use::
+
+    $ pip install pypolymake --user
+
+(the `--user` argument make the installation in your home directory and can be
+omitted if you have write access to your system).  Alternatively,
+you can download (or clone) the source repository at
+
+    https://github.com/videlec/pypolymake
+
+and then run in that directory
+
+    $ python setup.py install --user
+
+If polymake headers or libraries are installed in a non standard location you
+may need to set the environment variables CFLAGS, CXXFLAGS, LDFLAGS. For example,
+on OS X, you need to update LDFLAGS as::
+
+    $ export LDFLAGS="-L/System/Library/Perl/5.18/darwin-thread-multi-2level/CORE/ $LDFLAGS"
+    $ python setup.py install --user
+
+You might also need to set LD_LIBRARY_PATH before starting Python if the shared
+library of polymake (libpolymake.so) is not in a standard directory.
+
+License
+-------
+
+The library pypolymake is distributed under the terms of the GNU General Public
+License (GPL) as published by the Free Software Foundation; either version 3 of
+the License, or (at your option) any later version (see http://www.gnu.org/licenses/)
+
+Authors
+-------
+
+This project has been started by Burcin Erocal in 2011 and continued
+by Vincent Delecroix in 2016
+
