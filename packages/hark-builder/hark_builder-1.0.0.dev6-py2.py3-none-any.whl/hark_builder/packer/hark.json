@@ -1,0 +1,143 @@
+{
+  "description": "Debian images",
+  "variables": {
+    "ssh_username": "hark",
+    "ssh_password": "hark",
+    "hostname": "hark",
+    "domain": "harkavm.net",
+    "openbsd_mirror": "http://ftp.openbsd.org"
+  },
+  "builders": [
+    {
+      "type": "virtualbox-iso",
+      "name": "Debian-7_virtualbox",
+      "output_directory": "{{ user `output_dir` }}/output-{{ build_name }}",
+      "boot_command": [
+        "<esc><wait>",
+        "install <wait>",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/Debian-7/preseed.cfg <wait>",
+        "debian-installer=en_US <wait>",
+        "auto <wait>",
+        "locale=en_US <wait>",
+        "kbd-chooser/method=us <wait>",
+        "netcfg/get_hostname={{ user `hostname` }} <wait>",
+        "netcfg/get_domain={{ user `domain` }} <wait>",
+        "fb=false <wait>",
+        "debconf/frontend=noninteractive <wait>",
+        "console-setup/ask_detect=false <wait>",
+        "console-keymaps-at/keymap=us <wait>",
+        "keyboard-configuration/xkb-keymap=us <wait>",
+        "<enter><wait>"
+      ],
+      "headless": false,
+      "http_directory": "http",
+      "guest_os_type": "Debian_64",
+      "iso_url": "{{ user `iso_url` }}",
+      "iso_checksum_type": "md5",
+      "iso_checksum": "a91fba5001cf0fbccb44a7ae38c63b6e",
+      "ssh_username": "{{user `ssh_username`}}",
+      "ssh_password": "{{user `ssh_password`}}",
+      "ssh_wait_timeout": "30m",
+      "shutdown_command": "echo 'halt -p' > /tmp/shutdown.sh; echo 'hark' | sudo -S sh '/tmp/shutdown.sh'",
+      "guest_additions_mode": "disable"
+    },
+    {
+      "type": "virtualbox-iso",
+      "name": "Debian-8_virtualbox",
+      "output_directory": "{{ user `output_dir` }}/output-{{ build_name }}",
+      "boot_command": [
+        "<esc><wait>",
+        "install <wait>",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/Debian-8/preseed.cfg <wait>",
+        "debian-installer=en_US <wait>",
+        "auto <wait>",
+        "locale=en_US <wait>",
+        "kbd-chooser/method=us <wait>",
+        "netcfg/get_hostname={{ user `hostname` }} <wait>",
+        "netcfg/get_domain={{ user `domain` }} <wait>",
+        "fb=false <wait>",
+        "debconf/frontend=noninteractive <wait>",
+        "console-setup/ask_detect=false <wait>",
+        "console-keymaps-at/keymap=us <wait>",
+        "keyboard-configuration/xkb-keymap=us <wait>",
+        "<enter><wait>"
+      ],
+      "headless": false,
+      "http_directory": "http",
+      "guest_os_type": "Debian_64",
+      "iso_url": "{{ user `iso_url` }}",
+      "iso_checksum_type": "md5",
+      "iso_checksum": "8d52d1b7789cd5a464aae719f05299ec",
+      "ssh_username": "{{user `ssh_username`}}",
+      "ssh_password": "{{user `ssh_password`}}",
+      "ssh_wait_timeout": "30m",
+      "shutdown_command": "echo 'halt -p' > /tmp/shutdown.sh; echo 'hark' | sudo -S sh '/tmp/shutdown.sh'",
+      "guest_additions_mode": "disable"
+    },
+    {
+      "type": "virtualbox-iso",
+      "name": "Freebsd-10_virtualbox",
+      "output_directory": "{{ user `output_dir` }}/output-{{ build_name }}",
+      "boot_command": [
+        "<esc><wait>",
+        "load geom_mbr<enter>",
+        "boot -s<enter>",
+        "<wait5><wait><wait>",
+        "/bin/sh<enter>",
+        "mdmfs -s 100m md1 /tmp<enter>",
+        "mdmfs -s 100m md2 /mnt<enter>",
+        "dhclient -l /tmp/dhclient.lease.em0 em0<enter><wait5>",
+        "fetch -o /tmp/setup http://{{ .HTTPIP }}:{{ .HTTPPort }}/Freebsd-10/install.sh<enter><wait><wait>",
+        "bsdinstall script /tmp/setup<enter>"
+      ],
+      "headless": false,
+      "http_directory": "http",
+      "guest_os_type": "FreeBSD_64",
+      "iso_url": "{{ user `iso_url` }}",
+      "iso_checksum_type": "md5",
+      "iso_checksum": "ab5842858500b7a62889df39a1932343",
+      "ssh_username": "{{user `ssh_username`}}",
+      "ssh_password": "{{user `ssh_password`}}",
+      "ssh_wait_timeout": "30m",
+      "shutdown_command": "echo 'shutdown -p now' | sudo su -",
+      "guest_additions_mode": "disable"
+    }
+  ],
+  "provisioners": [
+    {
+      "execute_command": "echo 'hark' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
+      "type": "shell",
+      "override": {
+        "Debian-7_virtualbox": {
+          "scripts": [
+            "scripts/debian/common/base.sh",
+            "scripts/common/sshd_config.sh",
+            "scripts/debian/common/networking.sh",
+            "scripts/debian/common/boot.sh",
+            "scripts/debian/common/cleanup.sh",
+            "scripts/debian/common/cleanup-virtualbox.sh"
+          ]
+        },
+        "Debian-8_virtualbox": {
+          "scripts": [
+            "scripts/debian/common/base.sh",
+            "scripts/common/sshd_config.sh",
+            "scripts/debian/common/networking.sh",
+            "scripts/debian/common/boot.sh",
+            "scripts/debian/common/cleanup.sh",
+            "scripts/debian/common/cleanup-virtualbox.sh"
+          ]
+        },
+        "Freebsd-10_virtualbox": {
+          "scripts": [
+            "scripts/freebsd/10/base.sh",
+            "scripts/freebsd/10/hostname.sh",
+            "scripts/common/sshd_config.sh",
+            "scripts/freebsd/10/boot.sh",
+            "scripts/freebsd/10/cleanup.sh"
+          ]
+        }
+      }
+    }
+  ]
+}
