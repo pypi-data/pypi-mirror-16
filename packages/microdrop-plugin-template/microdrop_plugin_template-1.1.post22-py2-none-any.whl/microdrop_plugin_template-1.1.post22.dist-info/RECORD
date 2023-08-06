@@ -1,0 +1,16 @@
+microdrop_plugin_template/__init__.py,sha256=FuEc6-t3aujt6orpOdB8czLRFjmiQSBnWTkvcxaP4N0,1924
+microdrop_plugin_template/__init__.py.template,sha256=zRVqJXby4TLPaWWnkmL9Rx3a9Puv815bxV9Q31pcECA,6008
+microdrop_plugin_template/create_plugin.py,sha256=6oAKmUzurcIrG5IgJO34ENkLNmLQZ0Sc4ntcB1eUClU,5167
+microdrop_plugin_template/init_hooks.py,sha256=_T8DRI-ddFJWIyZGRnin1Hn0jtNCcLln-OlGyS_wddQ,4342
+microdrop_plugin_template/on_plugin_install.py,sha256=E6Dr9HuVqCbSP1Q1I7LX8Le9Ypp4GAj0Aovhuz-1UhI,213
+microdrop_plugin_template/properties.yml,sha256=Dvv_spF-UkZ7amkUgQ5AzGIwv3PwEcnEJ_KW29EEb0A,128
+microdrop_plugin_template/requirements.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+microdrop_plugin_template/hooks/Linux/bash.exe.stackdump,sha256=GJ6mzEV6kMcchDBr6q4IBmSSPBRc7gjEfJq1HN7ACmk,696
+microdrop_plugin_template/hooks/Linux/on_plugin_install.sh,sha256=udEo77HFMVa3NEymlIHYynMjlUPOxk9mtGjFSGPaXYo,735
+microdrop_plugin_template/hooks/Windows/on_plugin_install.bat,sha256=G7886gGgYHCCxIwpoFY9-bWaUjZFQ7hYipnW4qDtyUM,333
+microdrop_plugin_template-1.1.post22.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+microdrop_plugin_template-1.1.post22.dist-info/METADATA,sha256=mixZoclTnWPTOJgMbUf0GMdBxOsscLZHMpnQ-GGHyuE,398
+microdrop_plugin_template-1.1.post22.dist-info/RECORD,,
+microdrop_plugin_template-1.1.post22.dist-info/WHEEL,sha256=90z-L1FjHEv_g8pMPaPbaXuhBIvSlvYObRaa122x8ag,97
+microdrop_plugin_template-1.1.post22.dist-info/metadata.json,sha256=f9ZEQcMrOZC70j8HU2v8C5IGmZKHLeZ9DDQ-Fzhz12g,570
+microdrop_plugin_template-1.1.post22.dist-info/top_level.txt,sha256=I_7ojqGPBFxugN0RyKq9nWAVqQAMl_YltrxH5FA9S5A,26
