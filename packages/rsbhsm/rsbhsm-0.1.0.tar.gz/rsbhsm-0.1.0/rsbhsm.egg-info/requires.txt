@@ -1,0 +1,8 @@
+transitions>=0.4.0
+six
+rsb-python
+rstsandbox
+rststable
+
+[test]
+nose>=0.10.1

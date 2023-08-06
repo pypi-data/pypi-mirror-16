@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: rsbhsm
+Version: 0.1.0
+Summary: An RSB extension for transitions
+Home-page: http://github.com/aleneum/rsbhsm
+Author: Alexander Neumann
+Author-email: aleneum@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
