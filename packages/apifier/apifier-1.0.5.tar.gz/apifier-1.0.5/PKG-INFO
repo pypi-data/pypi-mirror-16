@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: apifier
+Version: 1.0.5
+Summary: A web parser for tabular and/or paginated data
+Home-page: https://github.com/luxcem/apifier
+Author: luxcem
+Author-email: a@luxcem.fr
+License: UNKNOWN
+Download-URL: https://github.com/luxcem/apifier/tarball/1.0.5
+Description: UNKNOWN
+Keywords: api,parser,table data,html parser
+Platform: UNKNOWN
