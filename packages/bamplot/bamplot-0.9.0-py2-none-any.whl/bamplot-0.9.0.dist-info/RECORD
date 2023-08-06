@@ -1,0 +1,17 @@
+bamplot/__init__.py,sha256=wqGzbWsw2RNg_wtakiFcO1pkQFkAKWaV0YwpfI_B8Xg,27916
+bamplot/bamplot_utils.py,sha256=C40QYe82LdapqkOdKJM6rNg4ww9RadCVDeqSNd7L7Y0,41524
+bamplot/annotation/hg18_refseq.ucsc.gz,sha256=Hn4p4ofJhQH0eVb9BYnbcbEXmnHM3Re2C0lc9EAc9vc,2860333
+bamplot/annotation/hg19_refseq.ucsc.gz,sha256=qAKGbgN-Szecz37PhGxvImauK2FN63bUJ_hm3xboo4Y,2828613
+bamplot/annotation/mm10_refseq.ucsc.gz,sha256=-Q8xxq_iyqVOl6PbAvPIbF17axXCoGur-la4oGK4RWg,2582681
+bamplot/annotation/mm8_refseq.ucsc.gz,sha256=WAu47MdJaCgOASvTmAlJuigL1rax0Wesa2kJj5xA5W4,2555174
+bamplot/annotation/mm9_refseq.ucsc.gz,sha256=17BjW0TYfsygyWzADON-8sWEi6cg0QmLk0Mtc0n76F8,2539017
+bamplot/annotation/rn4_refseq.ucsc.gz,sha256=ra4C8Z5J5aJDIuDvrSp90zarHIxpJv62XbxmacGOj-U,1745633
+bamplot/annotation/rn6_refseq.ucsc.gz,sha256=-x71jsAN_a73BCDCq3_fU6tlhlpP8OM-VVnWuVA2tUs,1845311
+bamplot-0.9.0.data/scripts/bamplot_plotter.R,sha256=KcrDpWPkb5O99xgNSiXzGUOCw7_g-09tkUG_SJljJXc,12429
+bamplot-0.9.0.dist-info/DESCRIPTION.rst,sha256=-nbjLfINSEcOx-Nr661E7JAnlMHXxGdFzmgHJk8emUo,61
+bamplot-0.9.0.dist-info/METADATA,sha256=E19uz53xCA_V5KQP0dowWldwoX6VQLYXAR7bk-QTO-E,374
+bamplot-0.9.0.dist-info/RECORD,,
+bamplot-0.9.0.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+bamplot-0.9.0.dist-info/entry_points.txt,sha256=DNIVfHPH79jOLt6m_FgQJg2kAGblILeH9QSMBw2IJkc,42
+bamplot-0.9.0.dist-info/metadata.json,sha256=6EEBxS0Tkf868Zmdt7eKklSdiGEqtCeKIaMN8E0t1n4,559
+bamplot-0.9.0.dist-info/top_level.txt,sha256=d9mushjd-Uz2R8e4ZGUXai4KozGehq3wAtTRhs72_-M,8
