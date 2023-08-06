@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: GMDownloader
+Version: 0.7
+Summary: GM Playlist Downloader
+Home-page: https://github.com/ceberous/GPMDownloader.git
+Author: ceberous
+Author-email: cerbus.collin@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/ceberous/GPMDownloader/tarball/0.7
+Description: # GPMDownloader
+        
+        ## 1.) Login
+        myD = GMDownloader()
+        
+        ## 2.) Fetch User's Stations
+        myD.getMyStations()
+        myD.printAvailableStations()
+        
+        ## 3.) Download a Station
+        wID = '9673a6e8-de88-3c98-b81e-b3a1a4d30c89'
+        myD.downloadStationToPOOL( wID )
+        myD.extractSinglePlaylistFromPOOL( wID , os.path.join( myD.libDIR , wID  )  )
+        
+Keywords: google,play,music,gmusicapi,downloader,playlist
+Platform: UNKNOWN
