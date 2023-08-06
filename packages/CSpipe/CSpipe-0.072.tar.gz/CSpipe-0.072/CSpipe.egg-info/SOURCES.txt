@@ -1,0 +1,11 @@
+README.rst
+setup.py
+CSpipe/
+CSpipe/CSpipe
+CSpipe/MarkDuplicates.jar
+CSpipe/__init__.py
+CSpipe/example.input.tab
+CSpipe.egg-info/PKG-INFO
+CSpipe.egg-info/SOURCES.txt
+CSpipe.egg-info/dependency_links.txt
+CSpipe.egg-info/top_level.txt
