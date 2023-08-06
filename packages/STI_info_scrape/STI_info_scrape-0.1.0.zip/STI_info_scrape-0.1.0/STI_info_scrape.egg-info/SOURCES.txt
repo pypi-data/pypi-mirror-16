@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+STI_info_scrape/STI_main_data_gather.py
+STI_info_scrape/__init__.py
+STI_info_scrape.egg-info/PKG-INFO
+STI_info_scrape.egg-info/SOURCES.txt
+STI_info_scrape.egg-info/dependency_links.txt
+STI_info_scrape.egg-info/requires.txt
+STI_info_scrape.egg-info/top_level.txt
