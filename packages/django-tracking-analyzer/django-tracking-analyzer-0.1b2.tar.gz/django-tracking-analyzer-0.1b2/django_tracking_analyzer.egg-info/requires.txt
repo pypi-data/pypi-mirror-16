@@ -1,0 +1,5 @@
+Django>=1.9
+django-countries
+django-ipware
+django-user-agents
+geoip2
