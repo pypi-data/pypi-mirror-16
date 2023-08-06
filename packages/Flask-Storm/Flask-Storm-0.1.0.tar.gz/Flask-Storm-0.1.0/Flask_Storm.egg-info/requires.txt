@@ -1,0 +1,11 @@
+Flask
+storm
+
+[dev]
+mock
+pytest
+pytest-cov
+sphinx
+
+[fancy]
+sqlparse

@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API documentation &mdash; Flask-Storm 0.1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Flask-Storm 0.1.0 documentation" href="index.html"/>
+        <link rel="next" title="Changelog" href="changelog.html"/>
+        <link rel="prev" title="Documentation" href="documentation.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Flask-Storm
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#extension">Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-flask_storm">Context locals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tracers">Tracers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#debugtracer">DebugTracer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#requesttracer">RequestTracer</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#utility">Utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Flask-Storm</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>API documentation</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/api.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="api-documentation">
+<h1>API documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
+<p>The following functions and classes are part of Flask Storm&#8217;s public API. All are available directly from the top level namespace <code class="docutils literal"><span class="pre">flask_storm</span></code>. Imports from namespaces below <code class="docutils literal"><span class="pre">flask_storm</span></code>, such as <code class="docutils literal"><span class="pre">flask_storm.debug</span></code> is not supported and may change across versions.</p>
+<div class="section" id="extension">
+<h2>Extension<a class="headerlink" href="#extension" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="flask_storm.FlaskStorm">
+<em class="property">class </em><code class="descname">FlaskStorm</code><span class="sig-paren">(</span><em>app=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flask_storm.FlaskStorm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a FlaskStorm instance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> &#8211; Application to enable Flask-Storm for. This is the same as
+calling <code class="xref py py-meth docutils literal"><span class="pre">init_app()</span></code> after initialization.</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flask_storm.FlaskStorm.connect">
+<code class="descname">connect</code><span class="sig-paren">(</span><em>bind=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flask_storm.FlaskStorm.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a new Store instance with a connection to the database specified
+in the STORM_DATABASE_URI configuration variable of the bound application.
+This method normally not be called externally as it does not close the
+store once the application context tears down.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bind</strong> &#8211; Database URI to use, defaults to <code class="docutils literal"><span class="pre">STORM_DATABASE_URI</span></code>.
+See <a class="reference internal" href="#flask_storm.FlaskStorm.get_binds" title="flask_storm.FlaskStorm.get_binds"><code class="xref py py-meth docutils literal"><span class="pre">get_binds()</span></code></a> for details.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Store instance</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>RuntimeError</strong> &#8211; if no connection URI is found.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flask_storm.FlaskStorm.get_binds">
+<code class="descname">get_binds</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flask_storm.FlaskStorm.get_binds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return dict of database URIs for the application as defined by the
+<code class="docutils literal"><span class="pre">STORM_BINDS</span></code> configuration variable. If <code class="docutils literal"><span class="pre">STORM_DATABASE_URI</span></code> is
+defined it will be available using the key <code class="docutils literal"><span class="pre">None</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dict from bind names to database URIs.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flask_storm.FlaskStorm.get_store">
+<code class="descname">get_store</code><span class="sig-paren">(</span><em>bind=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flask_storm.FlaskStorm.get_store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a Store instance for the current application context. If there is
+no instance a new one will be created. Instances created using this
+method will close on application context tear down.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bind</strong> &#8211; Bind name of database URI. Defaults to the one specified by
+<code class="docutils literal"><span class="pre">STORM_DATABASE_URI</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Store for the current application context.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>RuntimeError</strong> &#8211; if accessed outside the scope of an application
+context.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="flask_storm.FlaskStorm.init_app">
+<code class="descname">init_app</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#flask_storm.FlaskStorm.init_app" title="Permalink to this definition">¶</a></dt>
+<dd><p>Binds this extension to the given application. This is important since
+the database connection will not close unless the application has been
+initialized.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">One instance of FlaskStorm may be registered to multiple
+applications. One application should however only be registered to
+one FlaskStorm instance, or tear down functionality will trigger
+multiple times.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> &#8211; Application to enable Flask-Storm for.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><strong>RuntimeError</strong> &#8211; if an application is already bound to this
+instance by being passed to the constructor.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="flask_storm.FlaskStorm.store">
+<code class="descname">store</code><a class="headerlink" href="#flask_storm.FlaskStorm.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a Store instance for the current application context. If there is
+no instance a new one will be created. Instances created using this
+method will close on application context tear down.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bind</strong> &#8211; Bind name of database URI. Defaults to the one specified by
+<code class="docutils literal"><span class="pre">STORM_DATABASE_URI</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Store for the current application context.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><strong>RuntimeError</strong> &#8211; if accessed outside the scope of an application
+context.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-flask_storm">
+<span id="context-locals"></span><h2>Context locals<a class="headerlink" href="#module-flask_storm" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="flask_storm.store">
+<code class="descname">store</code><em class="property"> = &lt;LocalProxy unbound&gt;</em><a class="headerlink" href="#flask_storm.store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shorthand for <a class="reference internal" href="#flask_storm.FlaskStorm.store" title="flask_storm.FlaskStorm.store"><code class="xref py py-attr docutils literal"><span class="pre">FlaskStorm.store</span></code></a> which does not depend on knowing
+the FlaskStorm instance bound to the current request context. This is the
+prefered method of accessing the Store, since using the
+<a class="reference internal" href="#flask_storm.FlaskStorm.store" title="flask_storm.FlaskStorm.store"><code class="xref py py-attr docutils literal"><span class="pre">FlaskStorm.store</span></code></a> property directly makes it easy to accidentally
+create circular imports.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="flask_storm.create_context_local">
+<code class="descname">create_context_local</code><span class="sig-paren">(</span><em>bind</em><span class="sig-paren">)</span><a class="headerlink" href="#flask_storm.create_context_local" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a context local for the given bind. None means the default store.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Context local for the bind report_store</span>
+<span class="n">report_store</span> <span class="o">=</span> <span class="n">create_context_local</span><span class="p">(</span><span class="s2">&quot;report_store&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is what is used to implement the store context local which analogue to</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">store</span> <span class="o">=</span> <span class="n">create_context_local</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bind</strong> &#8211; Bind name of database URI to use when creating store.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><strong>RuntimeError</strong> &#8211; if working outside application context or if
+FlaskStorm is not bound to the current application.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="tracers">
+<h2>Tracers<a class="headerlink" href="#tracers" title="Permalink to this headline">¶</a></h2>
+<p>Tracers provide facilities to intercept and read SQL statements generated by Storm. The tracers provided in Flask-Storm are tailored for use in multithreaded environments, and work in conjunction with Flask&#8217;s contexts.</p>
+<div class="section" id="debugtracer">
+<h3>DebugTracer<a class="headerlink" href="#debugtracer" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="flask_storm.DebugTracer">
+<em class="property">class </em><code class="descname">DebugTracer</code><a class="headerlink" href="#flask_storm.DebugTracer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A tracer which stores all queries with parameters onto the current request
+context. Queries are accessible using <a class="reference internal" href="#flask_storm.get_debug_queries" title="flask_storm.get_debug_queries"><code class="xref py py-func docutils literal"><span class="pre">get_debug_queries()</span></code></a>. It is used
+as a context manager. Since all queries are stored on the request context,
+they can only be accessed until the current request tears down.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">DebugTracer</span><span class="p">():</span>
+    <span class="c1"># Perform queries</span>
+    <span class="n">queries</span> <span class="o">=</span> <span class="n">get_debug_queries</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><a class="reference internal" href="#flask_storm.get_debug_queries" title="flask_storm.get_debug_queries"><code class="xref py py-func docutils literal"><span class="pre">get_debug_queries()</span></code></a> do not need to be called within the context
+manager, as long as the request context is still alive, since all queries
+are stored on the request context.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="flask_storm.get_debug_queries">
+<code class="descname">get_debug_queries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flask_storm.get_debug_queries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an array of queries executed within the context of a
+<a class="reference internal" href="#flask_storm.DebugTracer" title="flask_storm.DebugTracer"><code class="xref py py-class docutils literal"><span class="pre">DebugTracer</span></code></a> under the current application context and thread.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="requesttracer">
+<h3>RequestTracer<a class="headerlink" href="#requesttracer" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="flask_storm.RequestTracer">
+<em class="property">class </em><code class="descname">RequestTracer</code><span class="sig-paren">(</span><em>file=None</em>, <em>fancy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#flask_storm.RequestTracer" title="Permalink to this definition">¶</a></dt>
+<dd><p>A tracer which prints all SQL queries generated by Storm directly to STDOUT.
+This is useful when debugging views in flask.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">RequestTracer</span><span class="p">():</span>
+    <span class="c1"># Queries executed here will be printed into STDOUT</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file</strong> &#8211; File like object (has write method) where queries will be
+logged to.</li>
+<li><strong>fancy</strong> &#8211; When <code class="docutils literal"><span class="pre">True</span></code> (default) colored output is used, if support is
+detected, when <code class="docutils literal"><span class="pre">False</span></code> plain text is used.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="flask_storm.RequestTracer.start">
+<code class="descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flask_storm.RequestTracer.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Install and activate this tracer for all statements executed in this
+thread (or greenlet).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="flask_storm.RequestTracer.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flask_storm.RequestTracer.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop using this tracer.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="utility">
+<h2>Utility<a class="headerlink" href="#utility" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="flask_storm.find_flask_storm">
+<code class="descname">find_flask_storm</code><span class="sig-paren">(</span><em>app</em><span class="sig-paren">)</span><a class="headerlink" href="#flask_storm.find_flask_storm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find and return <a class="reference internal" href="#flask_storm.FlaskStorm" title="flask_storm.FlaskStorm"><code class="xref py py-class docutils literal"><span class="pre">FlaskStorm</span></code></a> instance for the given application.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>app</strong> &#8211; Application to look for FlaskStorm instance in.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">FlaskStorm instance if found, else None.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="documentation.html" class="btn btn-neutral" title="Documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Andreas Runfalk.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
