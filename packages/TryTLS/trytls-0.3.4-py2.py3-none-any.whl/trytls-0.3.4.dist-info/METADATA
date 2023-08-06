@@ -1,0 +1,14 @@
+Metadata-Version: 2.0
+Name: trytls
+Version: 0.3.4
+Summary: Does your library check TLS certificates properly?
+Home-page: https://github.com/ouspg/trytls
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: colorama
+
+UNKNOWN
+
+

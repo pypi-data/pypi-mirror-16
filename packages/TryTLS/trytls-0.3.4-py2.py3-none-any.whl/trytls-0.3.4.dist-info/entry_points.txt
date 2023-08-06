@@ -1,0 +1,6 @@
+[console_scripts]
+trytls = trytls.runner:main
+
+[trytls.bundles]
+https = trytls.bundles.https:all_tests
+
