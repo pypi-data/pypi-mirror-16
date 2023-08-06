@@ -1,0 +1,13 @@
+CHANGES.txt
+LICENSE.txt
+MANIFEST.in
+setup.cfg
+setup.py
+term_frequency.py
+simple_n_grams/__init__.py
+simple_n_grams/simple_n_grams.py
+simple_n_grams/stop_words.py
+sngrams.egg-info/PKG-INFO
+sngrams.egg-info/SOURCES.txt
+sngrams.egg-info/dependency_links.txt
+sngrams.egg-info/top_level.txt

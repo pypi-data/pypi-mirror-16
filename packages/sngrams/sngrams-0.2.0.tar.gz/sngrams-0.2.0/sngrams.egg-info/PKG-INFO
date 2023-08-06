@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: sngrams
+Version: 0.2.0
+Summary: Term and paragraph frequency counts for non-stopwords in input document.
+Home-page: https://github.com/DrSkippy/SimpleNGrams
+Author: Scott Hendrickson, Jeff Kolb
+Author-email: scott@drskippy.net
+License: LICENSE.txt
+Download-URL: https://github.com/DrSkippy/SimpleNGrams/tags/
+Description: UNKNOWN
+Platform: UNKNOWN
