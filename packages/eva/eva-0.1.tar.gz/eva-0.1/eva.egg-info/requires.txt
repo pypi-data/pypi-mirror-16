@@ -1,0 +1,4 @@
+virtualenv
+virtualenvwrapper>=2.11
+click>=6.6
+terminaltables>=3.0.0
