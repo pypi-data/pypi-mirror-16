@@ -1,0 +1,11 @@
+oauth_middleware/__init__.py,sha256=S4ba7jt5KMtlHtSO8kp9DvMGwJuMqCg4vo5t8wBgjc8,316
+oauth_middleware/_version.py,sha256=CEb4C8enWbSFELY7PVI854-EO6Glmo-1qS6BT4TpEwk,116
+oauth_middleware/middleware.py,sha256=v3ApKli17n6FV9Fy4SEGwQxLK7z-ovJNMf79ED8vzIk,10408
+oauth_middleware/providers/__init__.py,sha256=TrvruvXQIYlNrEHABxXQqV4qGf3KZDjOwzgZ6kPg0fU,83
+oauth_middleware/providers/zalando.py,sha256=Wlch2x1_mSWAyRBNf_YUq7XrLrf_EojJSr9drPzxQiM,1597
+oauth_middleware-0.3.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+oauth_middleware-0.3.0.dist-info/METADATA,sha256=hgAHWUNiL3HIwY787Tph46DxoBSBAjh_OtrdT5NFwaQ,959
+oauth_middleware-0.3.0.dist-info/RECORD,,
+oauth_middleware-0.3.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+oauth_middleware-0.3.0.dist-info/metadata.json,sha256=fHbRZRrLl89OyYwAtA01a062NfEsGz0ObxQgdfFrgaU,1031
+oauth_middleware-0.3.0.dist-info/top_level.txt,sha256=E66-HRWJaQqFE6DZK_vmZ-PHLpXNK5Gvd01NSwedEDo,17
