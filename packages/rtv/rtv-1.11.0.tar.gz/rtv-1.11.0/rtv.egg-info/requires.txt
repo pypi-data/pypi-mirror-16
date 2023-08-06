@@ -1,0 +1,10 @@
+tornado
+praw==3.5.0
+six
+requests
+kitchen
+beautifulsoup4
+mailcap-fix
+
+[:python_version=="2.6" or python_version=="2.7"]
+futures
