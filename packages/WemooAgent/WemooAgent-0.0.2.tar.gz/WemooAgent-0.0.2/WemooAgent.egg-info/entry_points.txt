@@ -1,0 +1,3 @@
+[console_scripts]
+wemoo = wemoo_agent.wemoo_agent:main
+
