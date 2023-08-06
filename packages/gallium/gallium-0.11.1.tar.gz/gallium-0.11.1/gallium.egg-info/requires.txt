@@ -1,0 +1,3 @@
+imagination==1.30.0,<2
+kotoba
+pyyaml
