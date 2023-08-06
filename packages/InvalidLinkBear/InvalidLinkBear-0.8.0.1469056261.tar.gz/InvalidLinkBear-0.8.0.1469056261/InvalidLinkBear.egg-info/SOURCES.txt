@@ -1,0 +1,7 @@
+setup.py
+InvalidLinkBear/InvalidLinkBear.py
+InvalidLinkBear/__init__.py
+InvalidLinkBear.egg-info/PKG-INFO
+InvalidLinkBear.egg-info/SOURCES.txt
+InvalidLinkBear.egg-info/dependency_links.txt
+InvalidLinkBear.egg-info/top_level.txt
