@@ -1,0 +1,8 @@
+setup.py
+flocs/__init__.py
+flocs/_version.py
+flocs/recommendation.py
+flocs.egg-info/PKG-INFO
+flocs.egg-info/SOURCES.txt
+flocs.egg-info/dependency_links.txt
+flocs.egg-info/top_level.txt
