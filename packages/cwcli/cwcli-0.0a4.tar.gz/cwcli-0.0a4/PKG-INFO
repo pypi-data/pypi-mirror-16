@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: cwcli
+Version: 0.0a4
+Summary: Command line interface for the ConnectWise SOAP API.
+Home-page: https://github.com/excelmicro/connectwise-soap-cli
+Author: Jacob A. Bridges
+Author-email: jacob.bridges.for.hire@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/excelmicro/connectwise-soap-cli/tarball/0.0a4
+Description: UNKNOWN
+Keywords: connectwise,cli,terminal,api
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
