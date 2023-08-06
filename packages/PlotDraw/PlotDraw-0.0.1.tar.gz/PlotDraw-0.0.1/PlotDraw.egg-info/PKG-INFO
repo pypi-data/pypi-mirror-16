@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: PlotDraw
+Version: 0.0.1
+Summary: interface of Matplotlib
+Home-page: UNKNOWN
+Author: lwj0012
+Author-email: lwj0012@gmail.com
+License: MIT License
+Description: UNKNOWN
+Keywords: Matplotlib,Draw
+Platform: any
