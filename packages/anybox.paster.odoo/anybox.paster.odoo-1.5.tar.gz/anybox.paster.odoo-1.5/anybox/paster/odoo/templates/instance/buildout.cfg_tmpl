@@ -1,0 +1,20 @@
+[buildout]
+parts = pip odoo
+versions = versions
+
+[pip]
+recipe = collective.recipe.pip
+configs = https://raw.githubusercontent.com/anybox/odoo/8.0/requirements.txt
+versions = versions
+
+[odoo]
+recipe = anybox.recipe.odoo:server
+version = ${version_origin}
+addons = hg https://bitbucket.org/anybox/advanced_attachment advanced_attachment 8.0-autoinstall
+eggs =
+    soappy
+    PyPDF
+    GeoIP
+    \${pip:eggs}
+
+[versions]
