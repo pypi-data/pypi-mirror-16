@@ -1,0 +1,29 @@
+Metadata-Version: 1.0
+Name: mlutils
+Version: 0.2.0b
+Summary:  Collection of utilities for machine learning and AI planning and not-supervised learning. Development is in progress. 
+Home-page: https://gitlab.com/m.eremeev/mlutils
+Author: Mark Eremeev
+Author-email: m.eremeev@gmail.com
+License: BSD
+Description: 
+        mlutils package is collection of various utilities for machine learning and AI planning. 
+          -- N-Ary tree class supported various search algorithms: pre-order, post-order, breadth-first 
+             heuristic (you should provide heuristic function) and random sampling. 
+          -- State space generation/search.
+          -- Basic graph class. Implements generic directed graph.
+          -- Finite automata graph. Implements discrete finite automata state machine on base of BasicGraph class.
+          -- Processing graph. Implements network of asynchronius processing units, running in separate threads. 
+             Intended to be used as complex pipeline (pipenet) for machne learning or data processing.
+          
+        Dependency:
+           Package does not have extra dependencies except python standard library 
+          
+        Installation:
+           Standard installation for pure python modules
+           
+        Usage examples:
+           Each modute has test() function which implement brif self-testing and may serve as usage example       
+        
+Keywords: state space search,AI planning,machine learning pipeline,state machine,finite automaton
+Platform: UNKNOWN
