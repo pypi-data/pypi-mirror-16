@@ -1,0 +1,9 @@
+setup.py
+TypedNamedTuple.egg-info/PKG-INFO
+TypedNamedTuple.egg-info/SOURCES.txt
+TypedNamedTuple.egg-info/dependency_links.txt
+TypedNamedTuple.egg-info/requires.txt
+TypedNamedTuple.egg-info/top_level.txt
+tests/__init__.py
+tests/test_basic.py
+tests/test_namedtuple.py
