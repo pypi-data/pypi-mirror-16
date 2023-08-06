@@ -1,0 +1,62 @@
+{% set page_name = 'paste' %}
+{% extends 'layouts/base.html' %}
+
+{% block head_extra %}
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:500,700' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block content %}
+    <div class="paste-toolbar">
+        <div class="info">
+            {{num_lines(text)}} lines of {{lexer.name}}
+        </div>
+        <a class="button" href="{{raw_url}}">
+            Raw Text
+        </a>
+
+        <form method="POST" action="{{home_url}}">
+            <input type="hidden" name="text" value="{{text}}" />
+            <input type="submit" class="button" value="Copy &amp; Edit" />
+        </form>
+
+        <div style="clear: both;"></div>
+    </div>
+    <div id="paste">
+        <div class="line-numbers">
+            {% for i in range(1, num_lines(text) + 1) %}
+                <a href="#L{{i}}" id="L{{i}}">{{i}}</a>
+            {% endfor %}
+        </div>
+        <div class="text" contenteditable="true" spellcheck="false">
+            {{text|highlight(lexer)|safe}}</pre>
+        </div>
+    </div>
+{% endblock %}
+
+{% block inline_js %}
+    <!-- TODO: can we factor out jQuery? -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        var whitelistedKeys = [
+            // arrow keys
+            37, 38, 39, 40,
+
+            // home/end
+            35, 36,
+
+            // page up/down
+            33, 34,
+        ];
+        $(document).ready(function() {
+            $('#paste').on('keydown', function(e) {
+                if (e.ctrlKey) {
+                    return true;
+                }
+                if ($.inArray(e.which, whitelistedKeys) !== -1) {
+                    return true;
+                }
+                return false;
+            });
+        });
+    </script>
+{% endblock %}
