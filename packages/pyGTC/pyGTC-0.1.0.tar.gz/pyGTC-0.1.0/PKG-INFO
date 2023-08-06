@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: pyGTC
+Version: 0.1.0
+Summary: Make an awesome giant triangle confusogram (gtc)!
+Home-page: http://github.com/sebastianbocquet/pygtc
+Author: Sebastian Bocquet and Faustin Carter
+Author-email: sebastian.bocquet@gmail.com
+License: MIT
+Description: pygtc.py
+        =========
+        
+        Make a sweet giant triangle confusogram (GTC) plot with just one line of code!
+        
+        See source for documentation, or check out demo.ipynp.
+        
+        Works great with the output from ``emcee``.
+        
+        Install with pip: pip install pygtc
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering :: Visualization

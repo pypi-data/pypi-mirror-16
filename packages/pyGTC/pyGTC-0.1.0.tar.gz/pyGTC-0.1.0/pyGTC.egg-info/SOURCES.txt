@@ -1,0 +1,13 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+pyGTC.egg-info/PKG-INFO
+pyGTC.egg-info/SOURCES.txt
+pyGTC.egg-info/dependency_links.txt
+pyGTC.egg-info/pbr.json
+pyGTC.egg-info/requires.txt
+pyGTC.egg-info/top_level.txt
+pygtc/__init__.py
+pygtc/pygtc.py
