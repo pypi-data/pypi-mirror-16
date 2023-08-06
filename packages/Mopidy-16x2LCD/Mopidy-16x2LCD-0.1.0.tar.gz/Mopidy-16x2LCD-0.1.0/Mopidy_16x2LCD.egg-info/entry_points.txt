@@ -1,0 +1,3 @@
+[mopidy.ext]
+16x2LCD = mopidy_16x2LCD:Extension
+
