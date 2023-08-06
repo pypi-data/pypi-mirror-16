@@ -1,0 +1,14 @@
+MANIFEST.in
+requirements.txt
+setup.cfg
+setup.py
+d_clean/__init__.py
+d_clean/cli.py
+d_clean/common.py
+d_clean/tasks.py
+d_clean.egg-info/PKG-INFO
+d_clean.egg-info/SOURCES.txt
+d_clean.egg-info/dependency_links.txt
+d_clean.egg-info/entry_points.txt
+d_clean.egg-info/requires.txt
+d_clean.egg-info/top_level.txt
