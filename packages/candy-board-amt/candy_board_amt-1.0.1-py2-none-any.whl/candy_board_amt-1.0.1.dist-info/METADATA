@@ -1,0 +1,116 @@
+Metadata-Version: 2.0
+Name: candy-board-amt
+Version: 1.0.1
+Summary: Base CANDY LINE boards service for AM Telecom Modules
+Home-page: http://github.com/CANDY-LINE/candy-board-amt
+Author: Daisuke Baba
+Author-email: baba.daisuke@gmail.com
+License: BSD3
+Download-URL: https://github.com/CANDY-LINE/candy-board-amt/tarball/1.0.1
+Keywords: CANDY EGG,CANDY LINE
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Natural Language :: English
+Classifier: Environment :: Console
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Topic :: System :: Hardware
+
+candy-board-amt
+===============
+
+|GitHub release| |Build Status| |License BSD3|
+
+Base CANDY LINE boards service for AM Telecom Modules
+
+pip Installation
+----------------
+
+::
+
+    $ pip install candy-board-amt
+
+pip Uninstallation
+------------------
+
+::
+
+    $ pip candy-board-amt
+
+Development
+-----------
+
+Prerequisites
+~~~~~~~~~~~~~
+
+-  `pandoc <http://pandoc.org>`__
+-  `pypandoc <https://pypi.python.org/pypi/pypandoc/1.2.0>`__
+
+On Mac OS:
+
+::
+
+    $ brew install pandoc
+    $ pip install pypandoc
+
+Local Installation test
+~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+    $ ./setup.py install --record files.txt
+
+Local Uninstallation test
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+::
+
+    $ cat files.txt | xargs rm -rf
+
+Test
+----
+
+::
+
+    $ ./setup.py test
+
+Revision history
+================
+
+-  1.0.1
+
+   -  Fix an issue where echo back line can be included into the result
+      string
+   -  Fix an issue where CI test was failure because of unnecessary
+      dependency on pypandoc
+
+-  1.0.0
+
+   -  Initial public release
+
+-  0.1.1-0.1.3
+
+   -  Fix resolve\_modem\_port()
+
+-  0.1.0
+
+   -  Remove modem\_auto\_connect()
+   -  Add a new function to enable ACM, modem\_enable\_acm()
+   -  Add a new function delete APN, apn\_del()
+   -  Add a new static function to resolve modem serial port
+
+-  0.0.1
+
+   -  Initial beta release
+
+.. |GitHub release| image:: https://img.shields.io/github/release/CANDY-LINE/candy-board-amt.svg
+   :target: https://github.com/CANDY-LINE/candy-board-amt/releases/latest
+.. |Build Status| image:: https://travis-ci.org/CANDY-LINE/candy-board-amt.svg?branch=master
+   :target: https://travis-ci.org/CANDY-LINE/candy-board-amt
+.. |License BSD3| image:: https://img.shields.io/github/license/CANDY-LINE/candy-board-amt.svg
+   :target: http://opensource.org/licenses/BSD-3-Clause
+
+
