@@ -1,0 +1,20 @@
+Metadata-Version: 1.0
+Name: django-wechatvote
+Version: 0.0.5
+Summary: this is a package for django wechat vote
+Home-page: https://github.com/minkedong/django_wechatvote
+Author: minkedong
+Author-email: minkedong89@126.com
+License: Free
+Description: 
+        django_wechatvote
+        
+        ***微信投票活动***
+        
+        文档地址：
+        
+        http://blog.08050142.com/2016/08/12/django-wechatvote/
+        
+        
+Keywords: django vote wechat
+Platform: UNKNOWN
