@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: regart
+Version: 1.0.3
+Summary: Register art generator for ASCII based visual register section descriptions.
+Home-page: https://github.com/tiborsimon/regart
+Author: Tibor Simon
+Author-email: tibor@tiborsimon.io
+License: MIT
+Description: .
+Keywords: register,ascii,art,printout,tool,helper,bit,section
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Utilities
+Classifier: Environment :: Console
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Unix
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
