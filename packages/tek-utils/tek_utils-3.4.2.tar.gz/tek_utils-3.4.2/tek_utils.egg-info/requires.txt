@@ -1,0 +1,7 @@
+requests
+tryp>=7.10.0
+golgi
+tek>=3.0.0
+lxml
+ThePirateBay
+pyquery
