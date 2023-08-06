@@ -1,0 +1,14 @@
+craft_ai-0.3.dist-info/DESCRIPTION.rst,sha256=Bd4KGPbEqCL8aGMBaHXTxX4uinvP7fV_DilK0hR_REc,9703
+craft_ai-0.3.dist-info/METADATA,sha256=19YUG29CIDG4QXfxOqM2xE4rCP0pzLZ4J11C39kkeeI,10629
+craft_ai-0.3.dist-info/RECORD,,
+craft_ai-0.3.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+craft_ai-0.3.dist-info/entry_points.txt,sha256=DAZFKyeL3ceRAnoWp0efSvfOfsGx-jnS5pZWcju8gYM,47
+craft_ai-0.3.dist-info/metadata.json,sha256=KNNVbaqxjgfPd4PQvLdijC1IbyEuQxZCankJgvXZlD8,1177
+craft_ai-0.3.dist-info/top_level.txt,sha256=UfeyuSiUh39P54WXloMCjUtPEXpgutyMznugDGyTr4A,8
+craftai/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+craftai/cli.py,sha256=Gt8avEg1XQ1BP3auU0mNvQg7cg3Y4fGxBcIAORNy0ig,835
+craftai/client.py,sha256=Q1J4ta2gCISZjDGyueCkD3JBz95x6ikURPuPqq0IVg0,13936
+craftai/errors.py,sha256=bmvhP1rKWSCRyoJGCVuz0x1Tv2TXWoVpppKnduJeFeI,2440
+craftai/helpers.py,sha256=roOag2dhkl435UCH27mBBNkYI4hqzLB9arc6M-xE_To,408
+craftai/operators.py,sha256=K9lV3ClDF17AG98fFcIvYIyGoNvu40ucakmgxwOvXDY,457
+craftai/time.py,sha256=fnWWlcLPpbYr_yvPQ4_FSt3UW0jBmxgRbxkVF_dMLyI,2979
