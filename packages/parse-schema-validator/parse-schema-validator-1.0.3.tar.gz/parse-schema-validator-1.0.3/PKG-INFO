@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: parse-schema-validator
+Version: 1.0.3
+Summary: Tool for validating Parse classes on a Parse Server
+Home-page: https://github.com/sirnacnud/parse-schema-validator
+Author: Duncan Cunningham
+Author-email: duncanc4@gmail.com
+License: MIT
+Download-URL: https://github.com/sirnacnud/parse-schema-validator/archive/1.0.3.tar.gz
+Description: UNKNOWN
+Keywords: parse,schema,validator
+Platform: UNKNOWN

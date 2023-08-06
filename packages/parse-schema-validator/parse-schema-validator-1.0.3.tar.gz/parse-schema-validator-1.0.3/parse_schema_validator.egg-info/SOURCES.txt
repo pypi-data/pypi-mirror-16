@@ -1,0 +1,11 @@
+setup.cfg
+setup.py
+parse_schema_validator/__init__.py
+parse_schema_validator/__main__.py
+parse_schema_validator/parse_connection.py
+parse_schema_validator/schema_validator.py
+parse_schema_validator.egg-info/PKG-INFO
+parse_schema_validator.egg-info/SOURCES.txt
+parse_schema_validator.egg-info/dependency_links.txt
+parse_schema_validator.egg-info/entry_points.txt
+parse_schema_validator.egg-info/top_level.txt
