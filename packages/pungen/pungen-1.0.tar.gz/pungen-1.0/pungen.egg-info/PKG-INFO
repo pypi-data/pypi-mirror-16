@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: pungen
+Version: 1.0
+Summary: A simple program to generate Punnet Squares from CLI
+Home-page: https://github.com/MicroTransactionsMatterToo/punnet-generator
+Author: Ennis Massey
+Author-email: ennisbaradine@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Utilities
+Classifier: Environment :: Console
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: Apache Software License
