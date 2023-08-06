@@ -1,0 +1,23 @@
+Metadata-Version: 2.0
+Name: themis
+Version: 0.1.0
+Summary: A dataflow-based framework for writing robot control code
+Home-page: https://github.com/celskeggs/themis
+Author: Cel Skeggs
+Author-email: robotics-public@celskeggs.com
+License: MIT
+Keywords: robotics dataflow framework embedded
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Topic :: Software Development :: Embedded Systems
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: setuptools
+
+TODO
+
+
