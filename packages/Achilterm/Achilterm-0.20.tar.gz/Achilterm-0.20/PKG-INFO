@@ -1,0 +1,29 @@
+Metadata-Version: 1.1
+Name: Achilterm
+Version: 0.20
+Summary: A lightweight UTF-8 web based terminal
+Home-page: http://fgallaire.github.io/achilterm
+Author: Florent Gallaire
+Author-email: fgallaire@gmail.com
+License: GNU AGPLv3+
+Description: UNKNOWN
+Keywords: sh shell bash
+Platform: UNKNOWN
+Classifier: Development Status :: 6 - Mature
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
+Classifier: Topic :: System :: Shells
+Classifier: Topic :: Terminals :: Terminal Emulators/X Terminals
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.5
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
