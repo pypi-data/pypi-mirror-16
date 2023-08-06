@@ -1,0 +1,3 @@
+[wishbone.input]
+twitter = wishbone_input_twitter:Twitter
+
