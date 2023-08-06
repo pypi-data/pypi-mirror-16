@@ -1,0 +1,12 @@
+gevent >=1.0.1, <=1.1.1
+elasticsearch >=1, <2
+flask-bootstrap
+Flask-Babel
+flask-script
+Flask-Authbone >=0.2.2
+Flask <= 0.11.1
+opensearch
+Fsdb >= 0.3.3, <= 1.2.1
+click
+peewee <= 2.8.1
+passlib >=1.6, <1.7
