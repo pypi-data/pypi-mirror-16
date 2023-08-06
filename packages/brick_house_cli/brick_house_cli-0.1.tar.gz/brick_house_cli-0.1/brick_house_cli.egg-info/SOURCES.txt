@@ -1,0 +1,8 @@
+setup.py
+brick_house_cli.egg-info/PKG-INFO
+brick_house_cli.egg-info/SOURCES.txt
+brick_house_cli.egg-info/dependency_links.txt
+brick_house_cli.egg-info/not-zip-safe
+brick_house_cli.egg-info/top_level.txt
+maincode/__init__.py
+maincode/house_main.py
