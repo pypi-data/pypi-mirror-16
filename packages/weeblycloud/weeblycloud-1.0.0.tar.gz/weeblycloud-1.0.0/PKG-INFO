@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: weeblycloud
+Version: 1.0.0
+Summary: A client library for the Weebly Cloud API
+Home-page: https://github.com/Weebly/cloud-client-python
+Author: Daniel Nussbaum
+Author-email: daniel.e.nussbaum@gmail.com
+License: Weebly
+Description: UNKNOWN
+Platform: UNKNOWN
