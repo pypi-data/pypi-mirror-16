@@ -1,0 +1,11 @@
+d_clean/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+d_clean/cli.py,sha256=oBxkYVCZaPAoZ-oAZ5lkKsQNaYZiM4Z26QQcbmeX7oE,1256
+d_clean/common.py,sha256=wznbJWFzQNhFIKv-R98emlJqz-sxmcBE3xbV6ewz-YA,209
+d_clean/tasks.py,sha256=msWv7xbsL9q6JLB5OG1SaLkm7AmF-7r-M3NIdCL4O_Q,1704
+d_clean-0.0.5.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+d_clean-0.0.5.dist-info/METADATA,sha256=jKx6o3cKu0vnGyrZ1EBH0yGTsThdIX45-QFv4-zwz2A,665
+d_clean-0.0.5.dist-info/RECORD,,
+d_clean-0.0.5.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+d_clean-0.0.5.dist-info/entry_points.txt,sha256=5WHl99GeEXE1eGQSFS5fWXZeAn9_2rqr4mDNoDFHyu8,45
+d_clean-0.0.5.dist-info/metadata.json,sha256=GJezxMC8utpvwaZfs0bx6_alHMcBKDb5iMblJR7jdoY,908
+d_clean-0.0.5.dist-info/top_level.txt,sha256=Jt9sTdTVnXRvtDsSzolk-_MatJhK1wORK88EAXW3JHw,8
