@@ -1,0 +1,12 @@
+CHANGES.txt
+LICENSE.txt
+MANIFEST.in
+README.txt
+setup.py
+FinPy.egg-info/PKG-INFO
+FinPy.egg-info/SOURCES.txt
+FinPy.egg-info/dependency_links.txt
+FinPy.egg-info/requires.txt
+FinPy.egg-info/top_level.txt
+finpy/__init__.py
+scripts/marketsim.py
