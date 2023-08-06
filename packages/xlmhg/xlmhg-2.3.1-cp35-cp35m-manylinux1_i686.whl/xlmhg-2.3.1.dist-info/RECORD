@@ -1,0 +1,11 @@
+xlmhg-2.3.1.dist-info/top_level.txt,sha256=osYafJxINjXWbVF1jkgp5BiInmc7F64BUkFXgKEdKBw,6
+xlmhg-2.3.1.dist-info/DESCRIPTION.rst,sha256=QiMNEjibYbFOWNYYoF6-oTL-FFDEWV5k9xvXeUUJWdg,4783
+xlmhg-2.3.1.dist-info/RECORD,,
+xlmhg-2.3.1.dist-info/metadata.json,sha256=6AYJ0iTtNnm4nf2wYUoiN6RcCoHeBaddGsH_JP4tVYM,1275
+xlmhg-2.3.1.dist-info/WHEEL,sha256=patwyJiHN5F9ug9T_xdCVSy3xi0JhuXnET_4ZqfZJXE,107
+xlmhg-2.3.1.dist-info/METADATA,sha256=pfRsOmQ2IAKxO7Fh4YbslzzmBWmOIlCGquBKbwYWJMM,6028
+xlmhg/mhg.py,sha256=o8vM_25ViHpR6D9jBn-eMMXzy0Q_wYpUuKKc8lOGIWY,11609
+xlmhg/mhg_cython.cpython-35m-i386-linux-gnu.so,sha256=n4yeRdD8Jx7xzE8df2h-b6qFU3QKP1Tm9iqYlxGS26g,704216
+xlmhg/result.py,sha256=bjqip9t0wni8Lzhc5F5ATPFtrLQEFkg_TI7DSfwqewM,5883
+xlmhg/test.py,sha256=DGrRHjmjcmvRZoQVXoFK_BhfSYU60Lany7BWeHxJdVE,15180
+xlmhg/__init__.py,sha256=30fl6_Y1hoTKqkb_rHD-8ZgxdemIGSzJx5_1PHnrWTU,657
