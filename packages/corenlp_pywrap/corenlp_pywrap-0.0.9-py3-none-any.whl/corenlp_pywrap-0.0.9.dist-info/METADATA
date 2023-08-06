@@ -1,0 +1,20 @@
+Metadata-Version: 2.0
+Name: corenlp-pywrap
+Version: 0.0.9
+Summary: A powerful python wraper for Stanford CoreNLP
+Home-page: https://www.github.com/hhsecond/corenlp_pywrap
+Author: hhsecond
+Author-email: sherinct@live.com
+License: MIT
+Download-URL: https://www.github.com/hhsecond/corenlp_pywrap/tarball/0.0.9
+Keywords: stanford corenlp wrapper
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: requests
+
+['# corenlp_pywrap\n', '##CoreNLP v3.6.0\n', '###Powerfull python wrapper for Stanford CoreNLP project\n', '- Works only with python 3.x\n', '- Beta version equiped with basic output fetch of stanfornlp\n', '- \n', '####Install\n', '>pip install corenlp_pywrap\n', '\n', '####Usage\n', '```python\n', 'from corenlp_pywrap import pywrap\n', "cn = pywrap.CoreNLP(url='http://localhost:9000', annotator_list=full_annotator_list)\n", '#full_annotator_list = ["tokenize", "cleanxml", "ssplit", "pos", "lemma", "ner", "regexner", "truecase", "parse", "depparse", "dcoref", "relation", "natlog", "quote"]\n', '\n', "#Calling basic function which would return a 'requests' object\n", "out = cn.basic(data, out_format='json')\n", '```\n', "Remember 'out' would be 'requests' object, you can get information by using out.text or out.json()\n", '\n', "Pywrap does not inherently support 'Sentiment' now as the downloadable server version of CoreNLP doesn't have 'Sentiment' support. But there is a hack for you to use (if you are sure that your server version is the newest one and has the support)\n", '- You can give sentiment as an attribute to annotator_list while instantiating the class object\n', '- or\n', '```\n', "annotator_list = CoreNLP.full_annotator_list + ['sentiment']\n", '```']
+
+
