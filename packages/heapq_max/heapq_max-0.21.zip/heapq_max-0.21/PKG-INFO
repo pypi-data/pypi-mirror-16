@@ -1,0 +1,80 @@
+Metadata-Version: 1.1
+Name: heapq_max
+Version: 0.21
+Summary: A max Heap version of heapq module for Python.
+Home-page: https://github.com/he-zhe/heapq_max
+Author: Zhe He
+Author-email: hezhe88@gmail.com
+License: The MIT License (MIT)
+Copyright (c) 2016 Zhe He
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Download-URL: https://github.com/he-zhe/heapq_max/archive/0.21.tar.gz
+Description: Heapq\_max
+        ==========
+        
+        Description
+        -----------
+        
+        A maxHeap version of heapq module for Python. Similar to heapq, c
+        implementation is used when available to ensure performance.
+        
+        Dependencies
+        ------------
+        
+        Python 2 or 3
+        
+        Installation
+        ------------
+        
+        ::
+        
+            pip install heapq_max
+        
+        Usage
+        -----
+        
+        tl;dr: same as heapq module except adding '\_max' to all functions.
+        
+        ::
+        
+            from heapq_max import *
+        
+            heap_max = []                           # creates an empty heap
+            heappush_max(heap_max, item)            # pushes a new item on the heap
+            item = heappop_max(heap_max)            # pops the largest item from the heap
+            item = heap_max[0]                      # largest item on the heap without popping it
+            heapify_max(x)                          # transforms list into a heap, in-place, in linear time
+            item = heapreplace_max(heap_max, item)  # pops and returns largest item, and
+                                                    # adds new item; the heap size is unchanged
+        
+        License
+        -------
+        
+        MIT
+        
+        History
+        -------
+        0.21
+        ''''
+        
+        Small fix of download URL&README
+        
+        0.2
+        '''
+        
+        Add Python 2 support
+        
+        
+        0.1 & 0.11
+        '''''''''''
+        
+        First version, only supports Python 3
+        
+Keywords: heap,heapq,max heap
+Platform: UNKNOWN
