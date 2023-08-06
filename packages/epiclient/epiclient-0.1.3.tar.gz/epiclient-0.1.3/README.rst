@@ -1,0 +1,449 @@
+===============================
+epiclient
+===============================
+
+DCE client for `epipearl
+<https://github.com/harvard-dce/epipearl>`_
+
+epiclient wraps `epipearl <https://github.com/harvard-dce/epipearl>`_
+HTTP API and web ui calls. epiclient creates channels and recorders and
+configures them, as well as general configurations for an epiphan-pearl
+device. There is also configurations for the epiphan-pearl to work as an
+`Opencast Matterhorn <http://opencast.org/matterhorn>`_ Capture Agent,
+and these require a custom firmware from DCE that includes `mhpearl
+<https://bitbucket.org/hudcede/mhpearl>`_
+
+This software should be considered alpha, therefore likely to change/break in
+the near future.
+
+
+
+*******************************************************
+Install
+*******************************************************
+
+.. code-block:: bash
+
+    pip install epiclient
+
+
+*******************************************************
+Overview
+*******************************************************
+
+To configure an epiphan-pearl device to work as a Capture Agent, there are
+general configs (like ntp server, touchscreen, permanent logs), and channels
+and recorders that need to be created and proper configured.
+
+epiclient has a CLI that goes through the configuration steps:
+
+* clear channels
+* set source deinterlacing
+* config ntp server
+* config touchscreen settings
+* enable permanent logs
+* create and config DCE standard channels
+* create and config DCE standard recorders
+* config mhpearl
+
+Other than the CLI, epiclient is a python module that wraps `epipearl
+<https://github.com/harvard-dce/epipearl>`_
+calls to an epiphan-pearl in a
+DCE-tailored way. Learn how you can use it by checking
+section Testing_.
+
+
+
+*******************************************************
+epiclient CLI
+*******************************************************
+
+To check how to use epiclient CLI, after Install_:
+
+.. code-block:: bash
+
+    epiclient --help
+    Usage: epiclient [OPTIONS] DEVICE_NAME
+
+    Console script for epiclient
+
+    Options:
+        --step
+            [validate|clear_channels|config_deinterlacing|create_channels|config_layout|config_encodings|config_recorder_channels|config_recorder_settings|config_live|config_general|config_mhpearl]
+                                        when absent, execute all steps
+        --verbose / --quiet
+        --help                          Show this message and exit.
+
+
+The CLI requires some environment variables to be defined in a file
+named ${HOME}/.epiclient.env.
+
+Check an example in `epiclient/example.env`.
+
+.. code-block:: bash
+
+    # edit example.env
+    cat epiclient/example.env
+        # ca status board url, user/pwd
+        CA_STATS_URL=http://ca-status.dceapp.net/ca_stats/ca_stats.json
+        CA_STATS_USER=user
+        CA_STATS_PASSWD=password
+
+        # user/pwd for the epiphan-pearl being configured
+        EPIPEARL_USER=user
+        EPIPEARL_PASSWD=password
+
+        # digest user/pwd for opencast cluster epiphan-pearl points to
+        MH_DIGEST_USER=user
+        MH_DIGEST_PASSWD=password
+
+        # akamai user/pwd (live streaming)
+        RTMP_USER=user
+        RTPM_PASSWD=password
+
+        # s3 bucket that hosts ca json settings
+        CA_SETTINGS_BUCKET=capture-agent-settings
+
+    # set as ${HOME}/.epiclient.env
+    cp epiclient/example.env ${HOME}/.epiclient.env
+
+The CLI also needs AWS credentials configuration; check `aws configuration
+<https://boto3.readthedocs.io/en/latest/guide/quickstart.html#configuration>`_
+
+The CLI takes a device name as input, for example, `dev-epiphan006`. Each
+device has a json config that follows a json-schema specified in
+``epiclient/json_schema/role_settings_schema.json``. An example of what a json
+input look like can be found in ``tests/json/primary_sample_ca_settings.json``.
+
+These json configs are pulled from s3, and the bucket name can be configured in
+the .epiclient.env file as `CA_SETTINGS_BUCKET`.
+
+
+
+Steps
+=======================================================
+
+Some steps are required in specific order (e.g: ``config_recorder_channels``
+after ``create_channels``), but in general the steps are independent.
+
+Note that, if you ``create_channels``, the channel IDs change and the json
+input is updated in s3.
+
+Also, when you ``create_channels``, it does not check if there is already a
+channel with the same name. That's why there is a ``clear_channels`` command:
+make sure no previous DCE channels exist and prevent creating many
+channels with the same name. This is to guarantee the defaults are set or unset
+as expected.
+
+validate
+-------------------------------------------------------
+
+This step always runs to check that the json input conforms to the json-schema
+spec'd in ``epiphan/json_schema/role_settings_schema.json``.
+
+
+clear_channels
+-------------------------------------------------------
+
+As said, to make sure that there won't be channels or recorders with the same
+name, clear all channels first. This operation removes channels named after DCE
+(*dce_pr*, *dce_pn*, *dce_prpn*, *dce_live*, *dce_live_lowbr*).
+
+Only ``create_channels`` step works after running this operation because all
+subsequent steps assume the channels are created
+
+
+config_deinterlacing
+-------------------------------------------------------
+
+Source signals are usually set to be deinterlaced.
+
+This step is independent.
+
+
+create_channels
+-------------------------------------------------------
+
+Creates the DCE channels and recorders, and names them as mentioned before 
+*dce_pr*, *dce_pn*, *dce_prpn*, *dce_live*, *dce_live_lowbr*.
+
+As mentioned, this step updates the s3 json config.
+
+
+config_layout
+-------------------------------------------------------
+
+Configures the source layout for each channel. Note that the live channels
+have the presenter and presentation combined, thus a different framesize than
+presenter-only or presentation-only.
+
+This step depends on ``create_channels``.
+
+
+config_encodings
+-------------------------------------------------------
+
+Basic settings for encodings in each channel.
+
+This step depends on ``create_channels``.
+
+
+config_recorder_channels
+-------------------------------------------------------
+
+The recorder, *dce_prpn*, is the channel that is recorded as a media file and
+then ingested into `Opencast Matterhorn <http://opencast.org/matterhorn>`_.
+This step configures which channels are to be combined and saved into file
+(*dce_pr* and *dce_pn*).
+
+This step depends on ``create_channels``.
+
+
+config_recorder_settings
+-------------------------------------------------------
+
+Configures the max size of recorded media files: per duration or file size.
+
+This step depends on ``create_channels``.
+
+
+config_live
+-------------------------------------------------------
+
+Sets the server to which live stream a channel.
+
+This step depends on ``create_channels``.
+
+
+config_general
+-------------------------------------------------------
+
+Here, the ntp server, the touchscreen settings, and the permanent log are
+enabled.
+
+This step is independent.
+
+
+config_mhpearl
+-------------------------------------------------------
+
+This operation configures settings for
+`mhpearl <https://bitbucket.org/hudcede/mhpearl>`_.
+
+This step is independent.
+
+
+ommit --step option
+-------------------------------------------------------
+
+When the `--step` option is absent, all steps are run and you should have a
+configured capture agent at the end of the process. The CLI logs steps as they
+are done so you have an idea of what's going on.
+
+
+epiclient JSON Input
+=======================================================
+
+Here is an example of json input with comments for clarification. As mentioned,
+these configs are stored in a s3 bucket.
+
+.. code-block:: json
+
+    {
+        # name of capture agent that identifies it; only alpha-num and
+        # underscores allowed
+        "ca_name_id": "my_dev_epiphan",
+
+        # capture agent url for web ui; hostname preferred instead of IP
+        "ca_url": "http://epiphan.pearl.url",
+
+        # capture card id is specific to each device, if not present,
+        # epiclient queries the device and saves this info generating a new json
+        "ca_capture_card_id": "D12345678",
+
+        # similar to capture card id; epiclient queries device if not present
+        "ca_serial_number": "ED123456",
+
+        # valid values 'primary' or 'secondary'
+        # currently, 'experimental' devices are not automatically configurable
+        "role": "primary",
+
+        # opencast cluster name this capture agent must point to
+        "cluster_name_id": "cluster-name",
+
+        # if the opencast cluster is a dev, stage or prod cluster
+        "cluster_env": "dev",
+
+        # opencast admin node url, to pull scheduling from
+        "mh_admin_url": "http://cluster.dev.url.edu",
+
+        # firmware version, for now it's not mandatory
+        "firmware_version": "epiphan_firmware_version",
+
+        # mhpearl version, for now it's not mandatory
+        "mhpearl_version": "some_version",
+
+        # mhpearl settings file_search_range in secs
+        "mhpearl_file_search_range": 58,
+
+        # mhpearl settings update_frequency in secs
+        "mhpearl_update_frequency": 123,
+
+        # mhpearl settings, which ca_name pull scheduling of
+        "mh_ca_name": "my-dev-epiphan",
+
+        # classroom id; only alpha_num and underscores allowed
+        "location_name_id": "lab",
+
+        # presenter connector available in the classroom this device
+        # is installed
+        "pr_vconnector": "sdi",
+        "pr_vinput": "a",
+
+        # presentation connector available in the classroom this device
+        # is installed
+        "pn_vconnector": "hdmi",
+        "pn_vinput": "b",
+
+        # default for all epiphan-pearls is to have deinterlacing ON
+        "source_deinterlacing": "on",
+
+        "date_and_time": {
+            # ntp server, ask sysops for correct value
+            "ntp_server": "0.nz.pool.ntp.org",
+
+            # timezone is usually 'US/Eastern'
+            "timezone": "US/Alaska"
+        },
+        "touchscreen": {
+            # after timeout, touchscreen turns off
+            "episcreen_timeout": 579
+        },
+        "maintenance": {
+            # default is to have permanent logs ON
+            "permanent_logs": "on"
+        },
+        # these are common encoding settings for all channels
+        "channel_encodings": {
+            "autoframesize": "",
+            "codec": "h.264",
+            "vprofile": "100",
+            "vencpreset": "5",
+            "vkeyframeinterval": 1,
+            "fpslimit": 30,
+            "audio": "on",
+            "audiochannels": "1",
+            "audiopreset": "libfaac;44100"
+        },
+        "channels": {
+            "dce_pr": {
+                # this value, ``channel_id``, changes when creating a new
+                # channel; epiclient will update this value and save it in a
+                # new json file, backing up the previous json with a timestamp
+                "channel_id": "1",
+                "encodings": {
+                    "framesize": "1280x720",
+                    "vbitrate": 9000,
+                    "audiobitrate": 160
+                }
+            },
+            "dce_pn": {
+                "channel_id": "2",
+                "encodings": {
+                    "framesize": "1920x1080",
+                    "vbitrate": 9000,
+                    "audiobitrate": 160
+                }
+            },
+            "dce_live": {
+                "channel_id": "3",
+                "encodings": {
+                    "framesize": "1920x1080",
+                    "vbitrate": 4000,
+                    "audiobitrate": 96
+                },
+
+                # akamai streaming entry point
+                # note that this differ for primary and secondary CAs
+                "rtmp_url": "rtmp://p.blobblob.i.streamingservice.org/EntryPoint",
+                "stream_name": "my-dev-epiphan"
+            },
+            "dce_live_lowbr": {
+                "channel_id": "4",
+                "encodings": {
+                    "framesize": "960x270",
+                    "vbitrate": 250,
+                    "audiobitrate": 64
+                },
+
+                # akamai streaming entry point
+                # note that this differ for primary and secondary CAs
+                # this value is the same as **dce_live**
+                "rtmp_url": "rtmp://p.blobblob.i.streamingservice.org/EntryPoint",
+                "stream_name": "my-dev-epiphan"
+            }
+        },
+        "recorders": {
+            "dce_prpn": {
+
+                # this value, ``recorder_id``, changes when creating a new
+                # recorder; epiclient will update this value and save it in a
+                # new json file, backing up the previous json with a timestamp
+                "recorder_id": "1",
+                "timelimit": 360,
+                "sizelimit": 64000000,
+                "output_format": "avi"
+            }
+        }
+    }
+
+
+
+
+
+*******************************************************
+Testing
+*******************************************************
+
+During development, epiclient tests were executed using
+`pytest <http://pytest.org/latest/>`_
+
+To run tests from a local clone:
+
+.. code-block:: bash
+
+    pip install -r requirements_dev.txt
+    py.test tests
+
+    # to run live tests
+    export EPI_URL=http//epiphan_pearl_address
+    export EPI_USER=admin_user
+    export EPI_PASSWD=password
+    py.test tests --runlive
+
+Live tests will connect with the actual device at the given ``EPI_URL`` and
+change its settings! You might have to tweak
+``tests/json/primary_sample_ca_settings.json`` for that to work.
+
+
+*******************************************************
+License
+*******************************************************
+
+epiclient is licensed under the `Apache License, Version 2.0
+<http://ww.apache.org/licenses/LICENSE-2.0>`_.
+
+
+*******************************************************
+Copyright
+*******************************************************
+
+2016~2017 President and Fellows of Harvard College
+
+
+
+.. _epipearl: https://github.com/harvard-dce/epipearl
+.. _`Opencast Matterhorn`: http://opencast.org/matterhorn
+.. _mhpearl: https://bitbucket.org/hudcede/mhpearl
+.. _pytest: http://pytest.org/latest/
+.. _`Apache License, Version 2.0`: http://www.apache.org/licenses/LICENSE-2.0

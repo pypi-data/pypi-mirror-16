@@ -1,0 +1,41 @@
+{
+    "audio": [
+        {
+            "settings": {
+                "source": "D2P280762.sdi-a-audio"
+            },
+            "type": "source"
+        }
+    ],
+    "background": "#000000",
+    "video": [
+        {
+            "crop": {},
+            "position": {
+                "bottom": "0%",
+                "keep_aspect_ratio": true,
+                "left": "0%",
+                "right": "50%",
+                "top": "0%"
+            },
+            "settings": {
+                "source": "D2P280762.sdi-a"
+            },
+            "type": "source"
+        },
+        {
+            "crop": {},
+            "position": {
+                "bottom": "0%",
+                "keep_aspect_ratio": true,
+                "left": "50%",
+                "right": "0%",
+                "top": "0%"
+            },
+            "settings": {
+                "source": "D2P280762.hdmi-b"
+            },
+            "type": "source"
+        }
+    ]
+}
