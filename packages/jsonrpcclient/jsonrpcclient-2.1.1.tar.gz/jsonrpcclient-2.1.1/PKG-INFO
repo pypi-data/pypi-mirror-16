@@ -1,0 +1,34 @@
+Metadata-Version: 1.1
+Name: jsonrpcclient
+Version: 2.1.1
+Summary: Send JSON-RPC requests
+Home-page: https://jsonrpcclient.readthedocs.io/
+Author: Beau Barker
+Author-email: beauinmelbourne@gmail.com
+License: MIT
+Description: jsonrpcclient
+        *************
+        
+        Send JSON-RPC requests in Python 2.7 and 3.3+.
+        
+        .. sourcecode:: python
+        
+            >>> from jsonrpcclient.http_server import HTTPServer
+            >>> HTTPServer('http://pets.com/api').request('cat')
+            'meow'
+        
+        Full documentation is at `jsonrpcclient.readthedocs.io
+        <https://jsonrpcclient.readthedocs.io/>`_.
+        
+        
+        2.1.1 (July 22, 2016)
+        ~~~~~~~~~~~~~~~~~~~~~
+        
+        - More flexible configuration of requests in `HTTPServer
+          <https://jsonrpcclient.readthedocs.io/en/latest/http.html#configuration>`_.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
