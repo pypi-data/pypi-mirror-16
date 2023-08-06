@@ -1,0 +1,27 @@
+Metadata-Version: 1.1
+Name: matplotsave
+Version: 0.1.0
+Summary: Helper functions and context manager to make it easier to save matplotlib plots as images.
+Home-page: https://bitbucket.org/TheCDC/matplotsave
+Author: Christopher Chen
+Author-email: christopher.chen1995@gmail.com
+License: Public Domain
+Download-URL: https://bitbucket.org/TheCDC/matplotsave/get/HEAD.zip
+Description: Intro
+        =====
+        
+        A library of functions (just one at the moment) to streamline the saving
+        and exporting of matplotlib plots as images and whatnot.
+        
+        Usage
+        =====
+        
+        
+Keywords: matplotlib save export images context managers functions
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Operating System :: OS Independent
