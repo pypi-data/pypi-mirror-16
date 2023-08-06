@@ -1,0 +1,12 @@
+setup.cfg
+setup.py
+figtree/__init__.py
+figtree/dictconfig.py
+figtree/loader.py
+figtree/parsers.py
+figtree.egg-info/PKG-INFO
+figtree.egg-info/SOURCES.txt
+figtree.egg-info/dependency_links.txt
+figtree.egg-info/not-zip-safe
+figtree.egg-info/requires.txt
+figtree.egg-info/top_level.txt
