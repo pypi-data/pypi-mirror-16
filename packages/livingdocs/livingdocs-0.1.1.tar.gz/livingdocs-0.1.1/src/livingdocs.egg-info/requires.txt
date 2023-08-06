@@ -1,0 +1,4 @@
+click
+awesome-slugify
+Pillow
+mock
