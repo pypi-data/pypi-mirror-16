@@ -1,0 +1,22 @@
+{% load cms_tags thumbnail %}
+
+<section class="page-section">
+    {% if instance.headline %}
+    <h1>{{ instance.headline }}</h1>
+    {% endif %}
+    {% block figure %}
+    <figure>
+        <img src="{{ instance.image.image|thumbnail_url:"preview" }}" alt="{{ image.title }}" />
+        {% if instance.image_caption %}
+        <figcaption>{{ instance.image_caption }}</figcaption>
+        {% endif %}
+    </figure>
+    {% endblock figure %}
+    {% block text %}
+    <div class="text">
+        {% for plugin in instance.child_plugin_instances %}
+            {% render_plugin plugin %}
+        {% endfor %}
+    </div>
+    {% endblock text %}
+</section>

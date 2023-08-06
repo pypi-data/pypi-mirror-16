@@ -1,0 +1,55 @@
+Metadata-Version: 1.1
+Name: djangocms-section
+Version: 0.1
+Summary: A Django CMS plugin for displaying a FilerImage and a TextPlugin together by means of selectabletemplate layouts.
+Home-page: https://github.com/febsn/djangocms-section
+Author: Fabian Lehner
+Author-email: fl@makonis.net
+License: BSD License
+Description: =================
+        djangocms-section
+        =================
+        
+        Section is a DjangoCMS plugin for displaying a section consisting of a FilerImage and TextPlugin instances.
+        The app can be configured to offer multiple layouts to the user.
+        
+        Requires `django-filer` and `easy_thumbnails`.
+        
+        Quick start
+        -----------
+        1. Install with your favorite tool
+        2. Add `'section'` to `INSTALLED_APPS`.
+        3. Configure a `'preview'` thumbnail alias for easy_thumbnails if you're going to use the default template like so::
+            THUMBNAIL_ALIASES = {
+                'preview': {
+                    'size': (320, 150),
+                    'crop': 'smart',
+                },
+            }
+        
+        4. Enjoy adding a Section plugin to a page.
+        
+        Custom layouts
+        --------------
+        You can add as many layout templates as you desire. See `templates/section/default.html` for an example.
+        Don't forget to render the placeholder for the text plugins.
+        The templates have to be enabled in the settings::
+            SECTION_STYLE_CHOICES = (
+                ('default', _('default')),
+                ('lightbox', _('with lightbox')),
+            )
+        
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.8
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
