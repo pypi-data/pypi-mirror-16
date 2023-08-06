@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: apt-git
+Version: 0.1
+Summary: Apt-get like tool for github repositories
+Home-page: https://github.com/alexrochas/apt-git
+Author: Alex Rocha
+Author-email: alex.rochas@yahoo.com.br
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

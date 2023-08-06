@@ -1,0 +1,10 @@
+setup.py
+apt_git/__init__.py
+apt_git/console.py
+apt_git.egg-info/PKG-INFO
+apt_git.egg-info/SOURCES.txt
+apt_git.egg-info/dependency_links.txt
+apt_git.egg-info/entry_points.txt
+apt_git.egg-info/not-zip-safe
+apt_git.egg-info/requires.txt
+apt_git.egg-info/top_level.txt

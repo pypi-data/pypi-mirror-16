@@ -1,0 +1,3 @@
+[console_scripts]
+apt-git = apt_git.console:main
+
