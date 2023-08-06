@@ -1,0 +1,9 @@
+
+invoke
+mock
+mysql-connector
+pytest-cov
+pylint
+requests-oauthlib
+setuptools-scm
+SQLAlchemy
