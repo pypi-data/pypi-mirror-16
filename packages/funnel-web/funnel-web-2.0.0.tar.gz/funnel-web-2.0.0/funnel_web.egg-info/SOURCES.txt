@@ -1,0 +1,10 @@
+setup.py
+funnel_web/__init__.py
+funnel_web/__main__.py
+funnel_web/scrape.py
+funnel_web.egg-info/PKG-INFO
+funnel_web.egg-info/SOURCES.txt
+funnel_web.egg-info/dependency_links.txt
+funnel_web.egg-info/entry_points.txt
+funnel_web.egg-info/requires.txt
+funnel_web.egg-info/top_level.txt

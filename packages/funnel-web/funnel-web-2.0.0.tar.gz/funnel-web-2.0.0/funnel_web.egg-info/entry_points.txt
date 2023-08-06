@@ -1,0 +1,3 @@
+[console_scripts]
+funnel-web = funnel_web.__main__:main
+
