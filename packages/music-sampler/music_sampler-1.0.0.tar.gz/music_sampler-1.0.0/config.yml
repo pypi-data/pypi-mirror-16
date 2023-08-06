@@ -1,0 +1,430 @@
+aliases:
+  intro_jonglacro:
+    file: "PIRATE_01-1-intro_jonglacro.mp3"
+  jonglacro_suite:
+    file: "PIRATE_01-2-jonglacro_suite.mp3"
+  lancer_prisonniere:
+    file: "PIRATE_02-lancers_de_prisonniere.mp3"
+  quete:
+    file: "PIRATE_03-1-quete.mp3"
+  monstre:
+    file: "PIRATE_03-2-monstre.mp3"
+  entree_ondine:
+    file: "PIRATE_04-entree_ondine.mp3"
+  cour_ondine:
+    file: "PIRATE_05-cour_a_londine.mp3"
+  fouille_jonglage:
+    file: "PIRATE_07-fouille_jonglage.mp3"
+    gain: 0.9
+  liberation_prisonniere:
+    file: "PIRATE_08-1-liberation_prisonniere.mp3"
+  paf:
+    file: "PIRATE_08-2-paf_tombe.mp3"
+  duo_pirate_ondine:
+    file: "PIRATE_09-duo_pirate_ondine.mp3"
+    gain: 115
+  trio_jalousie:
+    file: "PIRATE_10-1-trios_jalousie.mp3"
+  coup:
+    file: "PIRATE_10-2-coup.mp3"
+  piquage_2_4:
+    file: "PIRATE_11-piquage_2_4.mp3"
+    gain: 110
+  baston:
+    file: "PIRATE_12-1-baston.mp3"
+  baston_ascension:
+    file: "PIRATE_12-3-baston_ascension.mp3"
+  ralenti:
+    file: "PIRATE_12-2-ralenti.mp3"
+  saluts:
+    file: "PIRATE_13-saluts.mp3"
+  wait_fade:
+    duration: 0.6
+  couleur_chloe:
+    color: [73, 221, 226]
+  couleur_denise:
+    color: [190, 110, 236]
+  couleur_jerome:
+    color: [240, 158, 0]
+  couleur_chris:
+    color: [255, 255, 0]
+  couleur_aure:
+    color: [0, 190, 27]
+
+
+music_properties:
+  "PIRATE_01-1-intro_jonglacro.mp3":
+    name: Intro Jonglacro
+  "PIRATE_01-2-jonglacro_suite.mp3":
+    name: Jonglacro suite
+  "PIRATE_02-lancers_de_prisonniere.mp3":
+    name: Lancer prisonnière
+  "PIRATE_03-1-quete.mp3":
+    name: Quête
+    gain: 1.2
+  "PIRATE_03-2-monstre.mp3":
+    name: Monstre
+  "PIRATE_04-entree_ondine.mp3":
+    name: Entrée Ondine
+  "PIRATE_05-cour_a_londine.mp3":
+    name: Cour à l'Ondine
+  "PIRATE_07-fouille_jonglage.mp3":
+    name: Fouille jonglage
+  "PIRATE_08-1-liberation_prisonniere.mp3":
+    name: Libération prisonnière
+    gain: 1.2
+  "PIRATE_08-2-paf_tombe.mp3":
+    name: Paf tombe
+  "PIRATE_09-duo_pirate_ondine.mp3":
+    name: Duo pirate Ondine
+  "PIRATE_10-1-trios_jalousie.mp3":
+    name: Trio Jalousie
+  "PIRATE_10-2-coup.mp3":
+    name: Coup
+  "PIRATE_11-piquage_2_4.mp3":
+    name: Piquage 2-4
+  "PIRATE_12-1-baston.mp3":
+    name: Baston
+  "PIRATE_12-3-baston_ascension.mp3":
+    name: Baston ascension
+    gain: 1.4
+  "PIRATE_12-2-ralenti.mp3":
+    name: Ralenti
+  "PIRATE_13-saluts.mp3":
+    name: Saluts
+    gain: 0.7
+
+key_properties:
+  'a':
+    description:
+      -  
+      - Jonglacro
+    include: couleur_chloe
+  'z':
+    description:
+      -  #Chloé
+      - Jonglacro
+      - 2
+    include: couleur_chloe
+  'e':
+    description:
+      -   #Chloé
+      - Fin
+      - jonglacro
+    include: couleur_chloe
+  'r':
+    description:
+      -   #Chloé
+      - Lancer 
+      - prisonnière
+    include: couleur_chloe
+  't':
+    description:
+      -  #Chloé
+      - Fin
+      - lancer
+    include: couleur_chloe
+  'y':
+    description:
+      -  #Chloé
+      - Quête
+    include: couleur_chloe
+  'u':
+    description:
+      -  #Chloé
+      - Monstre
+    include: couleur_chloe
+  'i':
+    description:
+      -  #Chloé
+      - Fin quête
+      - Grotte
+    include: couleur_chloe
+  'o':
+    description:
+      -   #Denise
+      - Fin ondine
+      - Cour ondine
+    include: couleur_denise
+  'p':
+    description:
+      -   #Denise
+      - Fin 
+      - Cour ondine
+    include: couleur_denise
+  'q':
+    description:
+      -  #Chloé
+      - Fouille 
+      - Jonglage
+    include: couleur_chloe
+  's':
+    description:
+      -   #Denise
+      - Fin
+      - Jonglage
+    include: couleur_denise
+  'd':
+    description:
+      -   #Denise
+      - Libération 
+      - Prisonnière
+    include: couleur_denise
+  'f':
+    description:
+      -   #Denise
+      - Paf
+      - Baisser musique
+    include: couleur_denise
+  'g':
+    description:
+      -   #Denise
+      - Stop 
+      - libération
+    include: couleur_denise
+  'h':
+    description:
+      -   #Denise
+      - Duo
+    include: couleur_denise
+  'j':
+    description:
+      -   #Jérôme
+      - Trio
+    include: couleur_jerome
+  'k':
+    description:
+      -   
+      - Fin trio
+    include: couleur_jerome
+  'l':
+    description:
+      - 
+      - Jeu à 
+      - 2 et 4
+    include: couleur_jerome
+  'm':
+    description:
+      -  
+      - Fin jeu
+      - Baston
+    include: couleur_chloe
+  'w':
+    description:
+      -  
+      - Fin baston
+      - Ralenti
+    include: couleur_chris
+  'x':
+    description:
+      -  
+      - Fin ralenti
+    include: couleur_chris
+  'c':
+    description:
+      -  
+      - Baston 2
+    include: couleur_chris
+  'v':
+    description:
+      -  
+      - Fin baston 2
+      - Saluts
+    include: couleur_aure
+  'ESC':
+    description:
+      - 
+      - STOP !
+    color: [255, 0, 0]
+
+  'F1':
+    description:
+      -  
+      - PAUSE
+
+  'F2':
+    description:
+      -  
+      - REPRENDRE
+
+  'F5':
+    description:
+      -   
+      - STOP
+      - FADE
+
+
+keys:
+  'a':
+    - stop:
+        fade_out: 0.5
+    - play:
+        include: intro_jonglacro
+  'z': 
+    - stop:
+        fade_out: 5
+    - wait:
+        duration: 7
+    - play:
+        include: jonglacro_suite
+  'e':
+    - stop:
+        fade_out: 3
+  'r':
+    - stop:
+        fade_out: 0.5
+    - play:
+        include: lancer_prisonniere
+  't':
+    - stop:
+        fade_out: 3
+  'y':
+    - stop:
+        fade_out: 0.5
+    - play:
+        include: quete
+  'u':
+    - volume:
+        include: quete
+        value: 50
+    - play:
+        include: monstre
+    - wait:
+        duration: 2
+    - volume:
+        include: quete
+        value: 100
+  'i':
+    - stop:
+        fade_out: 5
+    - wait:
+        duration: 18
+    - play:
+        include: entree_ondine
+  'o':
+    - stop:
+        fade_out: 4
+    - wait:
+        duration: 7
+    - play:
+        include: cour_ondine
+  'p':
+    - stop:
+        fade_out: 5
+  'q':
+    - stop:
+        fade_out: 0.5
+    - play:
+        include: fouille_jonglage
+  's':
+    - stop:
+        fade_out: 2
+  'd':
+    - stop:
+        fade_out: 0.5
+    - play:
+        include: liberation_prisonniere
+        fade_in: 1
+  'f':
+    - play:
+        include: paf
+    - wait:
+        duration: 0.25
+    - volume:
+        include: liberation_prisonniere
+        value: 30
+
+  'g':
+    - stop:
+        fade_out: 3
+  'h':
+    - stop:
+        fade_out: 0.5
+    - play:
+        include: duo_pirate_ondine
+  'j':
+    - stop:
+        fade_out: 2
+    - wait:
+        duration: 1.5
+    - play:
+        include: trio_jalousie
+  'k':
+    - play:
+        include: coup
+    - wait:
+        duration: 0.1
+    - stop:
+        include: trio_jalousie
+
+  'l':
+    - stop:
+        fade_out: 0.5
+    - play:
+        include: piquage_2_4
+  'm':
+    - stop:
+        fade_out: 4
+    - wait:
+        duration: 6
+    - play:
+        include: baston
+  'w':
+    - stop:
+        fade_out: 0.5
+    - wait:
+        duration: 0.5
+    - play:
+        include: ralenti
+  'x':
+    - stop:
+        fade_out: 1.5
+  'c':
+    - stop:
+        fade_out: 0.5
+    - play:
+        include: baston_ascension
+  'v':
+    - stop:
+        fade_out: 2
+    - wait:
+        duration: 7
+    - play:
+        include: saluts
+    - wait:
+        duration: 5
+    - volume:
+        include: saluts
+        value: 90
+    - wait:
+        include: wait_fade
+    - volume:
+        include: saluts
+        value: 80
+    - wait:
+        include: wait_fade
+    - volume:
+        include: saluts
+        value: 70
+    - wait:
+        include: wait_fade
+    - volume:
+        include: saluts
+        value: 60
+
+
+
+  'ESC':
+    - stop: ~
+    - stop_all_actions: ~
+
+  'F1': 
+    - pause: ~
+
+  'F2':
+    - unpause: ~
+
+  'F5':
+    - stop:
+        fade_out: 1
+

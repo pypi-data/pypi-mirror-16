@@ -1,0 +1,5 @@
+build/
+dist/
+music_sampler/__pycache__/
+__pycache__/
+.pyinstaller_commit
