@@ -1,0 +1,14 @@
+Metadata-Version: 2.0
+Name: clc-export-tool
+Version: 0.0.13
+Summary: Elasticsearch data export tool
+Home-page: https://ctl.io/
+Author: CLC Analytics Team. #analytics
+Author-email: analytics@ctl.io
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: elasticsearch (<3.0.0,>=2.0.0)
+
+UNKNOWN
+
+
