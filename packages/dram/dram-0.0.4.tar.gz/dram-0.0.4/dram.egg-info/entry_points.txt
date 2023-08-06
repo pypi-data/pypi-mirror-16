@@ -1,0 +1,3 @@
+      [console_scripts]
+      dram-install = dram:install
+      
