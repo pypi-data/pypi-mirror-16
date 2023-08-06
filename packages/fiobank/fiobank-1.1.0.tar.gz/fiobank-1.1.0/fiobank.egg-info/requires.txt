@@ -1,0 +1,13 @@
+requests
+six
+
+[release]
+pypandoc
+python-semantic-release
+
+[tests]
+pytest-runner
+pytest
+flake8
+responses
+mock
