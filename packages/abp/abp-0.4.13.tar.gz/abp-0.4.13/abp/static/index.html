@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <title>abp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+  <link rel="stylesheet" href="main.css">
+  <script src="scripts/three.js"></script>
+  <script src="scripts/orbitcontrols.js"></script>
+  <script src="scripts/tables.js"></script>
+  <script src="scripts/anders_briegel.js"></script>
+  <script src="scripts/mouse.js"></script>
+  <script src="scripts/materials.js"></script>
+  <script src="scripts/graph.js"></script>
+  <script src="scripts/gui.js"></script>
+  <script src="scripts/editor.js"></script>
+  <script src="scripts/websocket.js"></script>
+  <script src="scripts/main.js"></script>
+</head>
+
+<body>
+<img id=ball src="img/ball.png" style=display:none;>
+<img id=tip src="img/tip.png" style=display:none;>
+<div id=node_info class=hidden> nothing </div>
+<div id=server_info class=hidden> </div>
+
+<div id=node_data class=hidden>
+<div id=node_name></div>
+<ul>
+    <li id=node_vop></li>
+    <!--<li><a href="#">Measure in X</a></li>-->
+    <!--<li><a href="#">Measure in Y</a></li>-->
+    <!--<li><a href="#">Measure in Z</a></li>-->
+    <!--<li><a href="#">Act Hadamard</a></li>-->
+    <!--<li><a href="#">Act Phase</a></li>-->
+    <!--<li><a href="#" onclick="editor.localComplementation()">Invert neighbourhood</a></li>-->
+    <!--<li>-->
+    <!--<a href="#">IA</a>-->
+    <!--<a href="#">IB</a>-->
+    <!--</li>-->
+    <li><a href="#" onclick="editor.deleteNode()">Delete</a></li>
+</ul>
+</div>
+
+
+</body>
+</html>
