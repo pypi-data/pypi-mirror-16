@@ -1,0 +1,13 @@
+../ifcfg/__init__.py
+../ifcfg/meta.py
+../ifcfg/exc.py
+../ifcfg/tools.py
+../ifcfg/parser.py
+dependency_links.txt
+entry_points.txt
+top_level.txt
+pbr.json
+SOURCES.txt
+not-zip-safe
+namespace_packages.txt
+PKG-INFO
