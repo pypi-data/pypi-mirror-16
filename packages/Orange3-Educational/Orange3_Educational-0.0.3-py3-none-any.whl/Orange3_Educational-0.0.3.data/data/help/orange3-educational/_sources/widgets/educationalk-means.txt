@@ -1,0 +1,22 @@
+Educational k-means
+===================
+
+![image](icons/mywidget.png)
+
+Educational widgets that shows the working of a k-means clustering.
+
+Signals
+-------
+**Inputs**
+- **Data**
+Input data set.
+**Outputs**:
+- **Annotated Data**
+Data set with clusters labels.
+- **Centroids**
+Centroids position
+
+Description
+-----------
+
+This is a simple widget that greets the world using a QLabel. If you are interested in widget development, you should take a look at it's source code.
