@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: ptestpypi
+Version: 1.0.1
+Summary: Payments API
+Home-page: https://ptestpypi.com/
+Author: ptestpypi
+Author-email: dev@ptestpypi.com
+License: MIT License
+Description: # ptestpypi
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
