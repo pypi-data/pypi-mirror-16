@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: LitleSdkPython3
+Version: 9.3.1b0
+Summary: Vantiv eCommerce SDK for Python
+Home-page: https://github.com/SambaDemon/litle-sdk-for-python
+Author: Aleksander Sukharev
+Author-email: sambademon@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Topic :: Office/Business :: Financial
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
