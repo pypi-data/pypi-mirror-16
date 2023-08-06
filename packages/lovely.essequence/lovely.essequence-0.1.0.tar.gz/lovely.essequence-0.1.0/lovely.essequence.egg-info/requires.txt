@@ -1,0 +1,6 @@
+elasticsearch
+
+[test]
+collective.xmltestreport
+crate
+lovely.testlayers

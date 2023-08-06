@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.py
+lovely/__init__.py
+lovely.essequence.egg-info/PKG-INFO
+lovely.essequence.egg-info/SOURCES.txt
+lovely.essequence.egg-info/dependency_links.txt
+lovely.essequence.egg-info/not-zip-safe
+lovely.essequence.egg-info/requires.txt
+lovely.essequence.egg-info/top_level.txt
+lovely/essequence/__init__.py
+lovely/essequence/sequence.py
