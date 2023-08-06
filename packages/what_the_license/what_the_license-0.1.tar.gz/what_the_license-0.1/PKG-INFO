@@ -1,0 +1,35 @@
+Metadata-Version: 1.1
+Name: what_the_license
+Version: 0.1
+Summary: Returns the content of a jar file's MANIFEST as dict.
+Home-page: http://github.com/nlohmann/what_the_license
+Author: Niels Lohmann
+Author-email: mail@nlohmann.me
+License: MIT
+Description: What The License!?
+        ------------------
+        
+        A tool to find the concrete open source licens given a source file header::
+        
+            >>> import what_the_license
+            >>> what_the_license.wtk(open('some_source_file'))
+        	[
+        	  {
+        	    "score": 100.0, 
+        	    "license": "The MIT License"
+        	  }, 
+        	  {
+        	    "score": 48.030888030888036, 
+        	    "license": "Boost Software License - Version 1.0 - August 17th, 2003"
+        	  }, 
+        	  {
+        	    "score": 44.86486486486486, 
+        	    "license": "MOZILLA PUBLIC LICENSE Version 1.0"
+        	  }
+        	]
+        
+Keywords: open source license file(1)
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7

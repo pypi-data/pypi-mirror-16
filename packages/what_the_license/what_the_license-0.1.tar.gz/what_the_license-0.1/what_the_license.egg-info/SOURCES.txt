@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+setup.py
+what_the_license/__init__.py
+what_the_license/licenses.json
+what_the_license/ngrams.json
+what_the_license/wtl.py
+what_the_license.egg-info/PKG-INFO
+what_the_license.egg-info/SOURCES.txt
+what_the_license.egg-info/dependency_links.txt
+what_the_license.egg-info/not-zip-safe
+what_the_license.egg-info/top_level.txt
+what_the_license/bin/wtl
