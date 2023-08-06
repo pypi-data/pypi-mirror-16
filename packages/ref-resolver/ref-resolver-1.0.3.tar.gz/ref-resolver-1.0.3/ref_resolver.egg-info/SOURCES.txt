@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+ref_resolver/__init__.py
+ref_resolver/ref_resolver.py
+ref_resolver.egg-info/PKG-INFO
+ref_resolver.egg-info/SOURCES.txt
+ref_resolver.egg-info/dependency_links.txt
+ref_resolver.egg-info/requires.txt
+ref_resolver.egg-info/top_level.txt
