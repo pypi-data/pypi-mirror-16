@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+setup.py
+BaiduYuyin/__init__.py
+BaiduYuyin.egg-info/PKG-INFO
+BaiduYuyin.egg-info/SOURCES.txt
+BaiduYuyin.egg-info/dependency_links.txt
+BaiduYuyin.egg-info/top_level.txt
+BaiduYuyin/flac/flac-linux
+BaiduYuyin/flac/flac-mac
+BaiduYuyin/flac/flac-win32.exe
+BaiduYuyin/player/mpg123-mac
+BaiduYuyin/player/mpg123-win32.exe
