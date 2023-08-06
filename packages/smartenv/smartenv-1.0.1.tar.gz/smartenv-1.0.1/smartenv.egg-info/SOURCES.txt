@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+smartenv.py
+smartenv.egg-info/PKG-INFO
+smartenv.egg-info/SOURCES.txt
+smartenv.egg-info/dependency_links.txt
+smartenv.egg-info/top_level.txt

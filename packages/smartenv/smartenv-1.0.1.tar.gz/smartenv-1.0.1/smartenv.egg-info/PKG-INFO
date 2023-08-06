@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: smartenv
+Version: 1.0.1
+Summary: Intelligent environment variable handling
+Home-page: https://github.com/mikeroll/smartenv
+Author: mikeroll
+Author-email: scaryspiderpig@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: environment variable parsing
+Platform: any
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
