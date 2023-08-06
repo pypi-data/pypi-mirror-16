@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: pastpy
+Version: 1.0.0
+Summary: Python library for working with PastPerfect databases
+Home-page: https://github.com/minorg/pastpy
+Author: Minor Gordon
+Author-email: pastpy@minorgordon.net
+License: BSD
+Description: pastpy - Python library for working with PastPerfect databases
+        
+Keywords: pastperfect
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
