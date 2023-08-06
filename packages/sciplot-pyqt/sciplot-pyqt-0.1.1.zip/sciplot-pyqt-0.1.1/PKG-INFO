@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: sciplot-pyqt
+Version: 0.1.1
+Summary: A small matplotlib wrapper/UI for creating                      publication-ready plots, graphs, and images
+Home-page: http://github.com/CCampJr/SciPlot-PyQt
+Author: Charles H. Camp Jr.
+Author-email: charles.camp@nist.gov
+License: NONLICENSE
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: X11 Applications :: Qt
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Topic :: Scientific/Engineering :: Visualization
