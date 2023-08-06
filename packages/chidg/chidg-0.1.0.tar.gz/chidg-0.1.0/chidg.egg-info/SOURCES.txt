@@ -1,0 +1,6 @@
+chidg.py
+setup.py
+chidg.egg-info/PKG-INFO
+chidg.egg-info/SOURCES.txt
+chidg.egg-info/dependency_links.txt
+chidg.egg-info/top_level.txt

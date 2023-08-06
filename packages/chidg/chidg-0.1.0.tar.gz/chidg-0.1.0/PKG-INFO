@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: chidg
+Version: 0.1.0
+Summary: A Chimera-based, discontinuous Galerkin solver
+Home-page: https://github.com/nwukie/ChiDG
+Author: Nathan A. Wukie
+Author-email: nwukie@gmail.com
+License: BSD 3-Clause
+Description: A framework for solving partial differential equations using the discontinuous Galerkin discretization and Chimera overset grids. The framework includes a finite element library along with nonlinear and linear solvers, preconditioners and temporal advancement algorithms
+Keywords: finite element DG galerkin chimera
+Platform: UNKNOWN
