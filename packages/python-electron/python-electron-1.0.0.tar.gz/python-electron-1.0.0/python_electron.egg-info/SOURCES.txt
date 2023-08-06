@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+electron/__init__.py
+electron/decorators.py
+python_electron.egg-info/PKG-INFO
+python_electron.egg-info/SOURCES.txt
+python_electron.egg-info/dependency_links.txt
+python_electron.egg-info/top_level.txt
