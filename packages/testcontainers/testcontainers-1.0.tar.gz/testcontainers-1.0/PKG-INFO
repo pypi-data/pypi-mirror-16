@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: testcontainers
+Version: 1.0
+Summary: Library provides lightweight, throwaway instances of common databases, Selenium web browsers, or anything else that can run in a Docker containe
+Home-page: https://github.com/SergeyPirogov/testcontainers_python
+Author: Sergey Pirogov
+Author-email: automationremarks@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/SergeyPirogov/testcontainers_python/tarball/1.0
+Description: UNKNOWN
+Keywords: testing,logging,docker,test automation
+Platform: UNKNOWN
