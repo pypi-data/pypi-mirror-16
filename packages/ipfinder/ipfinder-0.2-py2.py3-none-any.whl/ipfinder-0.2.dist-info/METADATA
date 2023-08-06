@@ -1,0 +1,37 @@
+Metadata-Version: 2.0
+Name: ipfinder
+Version: 0.2
+Summary: Simple library to grab an external IP using HTTPS.
+Home-page: http://packages.python.org/ipfinder
+Author: Joshua Yabut
+Author-email: yabut.joshua@gmail.com
+License: BSD
+Keywords: iplookup ip find whois
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: BSD License
+Requires-Dist: requests
+
+This is a simple Python library to get an external IP by HTTPS.
+
+Example:
+    import ipfinder
+
+    link = ipfinder.IPFinder()
+    link.updateip()
+    print(link.getip())
+
+
+API Reference:
+
+    class IPFinder
+
+        methods:
+            IPFinder.seturl(string) - OPTIONAL - Set the URL of the IP lookup site. Site needs to return IP only.
+            IPFinder.getip() - Returns IP address as a string.
+            IPFinder.updateip() - Send connection request to get external IP.
+
+
+
+

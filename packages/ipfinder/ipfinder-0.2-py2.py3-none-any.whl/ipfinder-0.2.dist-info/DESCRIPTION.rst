@@ -1,0 +1,22 @@
+This is a simple Python library to get an external IP by HTTPS.
+
+Example:
+    import ipfinder
+
+    link = ipfinder.IPFinder()
+    link.updateip()
+    print(link.getip())
+
+
+API Reference:
+
+    class IPFinder
+
+        methods:
+            IPFinder.seturl(string) - OPTIONAL - Set the URL of the IP lookup site. Site needs to return IP only.
+            IPFinder.getip() - Returns IP address as a string.
+            IPFinder.updateip() - Send connection request to get external IP.
+
+
+
+
