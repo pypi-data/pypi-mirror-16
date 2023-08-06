@@ -1,0 +1,3 @@
+[console_scripts]
+abrio = abriocli.abrio:cli
+
