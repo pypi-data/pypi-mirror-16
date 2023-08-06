@@ -1,0 +1,11 @@
+lxml
+requests ~= 2.7
+simplejson ~= 3.8
+sqlalchemy ~= 1.0
+ipython ~= 5.0.0
+wrapt ~= 1.10
+coloredlogs == 5.0
+invoke ~= 0.13
+six ~= 1.10
+setuptools ~= 25.1.0
+PyYAML >= 1.1
