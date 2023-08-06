@@ -1,0 +1,11 @@
+empythy/EmpathyMachines.py,sha256=w9Da8J3ZRKWtIEcrypq6wH_lM6asw_P2ZZdab2qHU_4,4108
+empythy/__init__.py,sha256=k_NwNEbIJKjha2S-FF7rFfnPw4U-MrnkqJkBbvqqAmQ,154
+empythy/test_script.py,sha256=iV9b5fAnHNiiiFZjOkQCS36YmqcejeCXl3f7KQ-ubvg,479
+empythy/utils.py,sha256=YqdBdT4qfKIpN3aHU-0BKKr46muBTRo-IlcNnJjqEs4,3437
+empythy/corpora/aggregatedCorpusCleanedAndFiltered.csv,sha256=kYW-nXevDG37UIQymc6gOzEOxGIK9i7DpNdbDw95QwM,4530967
+empythy-0.9.2.dist-info/DESCRIPTION.rst,sha256=2jnjmru76MPAyMAdbef5lLJhKSf4wc6-UZCFTdAn4_8,2240
+empythy-0.9.2.dist-info/METADATA,sha256=UrawBm-BV5ryvYm2JNC6kdrbEfy-VjvhiEQKYXR6wS8,3111
+empythy-0.9.2.dist-info/RECORD,,
+empythy-0.9.2.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+empythy-0.9.2.dist-info/metadata.json,sha256=CE6sEeB-ypBeQWt6inhsbNSqX1sM0Jd7-lsZ4ZAnqF8,1123
+empythy-0.9.2.dist-info/top_level.txt,sha256=-8_imUNEzRsT_uERmUtGVJ5JFhCyM05CE0hF05nzNWI,24
