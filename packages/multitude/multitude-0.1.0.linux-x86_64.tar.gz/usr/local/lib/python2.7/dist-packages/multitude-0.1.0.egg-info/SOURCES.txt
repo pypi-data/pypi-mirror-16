@@ -1,0 +1,13 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+multitude/__init__.py
+multitude/graph.py
+multitude/ordered_set.py
+multitude.egg-info/PKG-INFO
+multitude.egg-info/SOURCES.txt
+multitude.egg-info/dependency_links.txt
+multitude.egg-info/not-zip-safe
+multitude.egg-info/top_level.txt
