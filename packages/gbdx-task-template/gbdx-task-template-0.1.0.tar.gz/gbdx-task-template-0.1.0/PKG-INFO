@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: gbdx-task-template
+Version: 0.1.0
+Summary: GBDX Task Template
+Home-page: https://github.com/michaelconnor00/gbdx-task-template
+Author: GBDX (Michael Connor)
+Author-email: mike@sparkgeo.com
+License: MIT
+Description: gbdx-task-template
+        ------------------
+        
+        A super class template for custom tasks to be run using gbdx-cloud-harness, see https://github.com/TDG-Platform/cloud-harness.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
