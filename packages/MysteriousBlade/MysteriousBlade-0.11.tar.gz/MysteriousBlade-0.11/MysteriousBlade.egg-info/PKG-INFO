@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: MysteriousBlade
+Version: 0.11
+Summary: A simple pygame demo.
+Home-page: https://github.com/AardvarkTotoro2/BladeProject
+Author: AardvarkTotoro
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: A small demo of a fencing-inspired RPG combat system. Contains tutorial and a final boss fight. Badly-written RPG dialog and blatant Undertale/Pokemon Mystery Dungeon references are complementary.
+Keywords: game demo pygame fencing
+Platform: UNKNOWN
