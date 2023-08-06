@@ -1,0 +1,63 @@
+.comments-native {
+
+  .comments-list {
+
+  }
+
+  .comment-item {
+    display: flex;
+
+    .author-picture {
+      text-align: center;
+    }
+
+    .header {
+      font-size: 80%;
+
+      .author, .publish-time, .report {
+        display: inline-block;
+        margin-right: 1em;
+      }
+
+      .author {
+        font-weight: bold;
+      }
+
+      .publish-time {
+        opacity: .75;
+      }
+    }
+
+    .right {
+      flex-grow: 1;
+    }
+
+    &.reply {
+      .author-picture img {
+        width: 50%;
+      }
+    }
+  }
+
+  .form {
+    display: flex;
+
+    .messages {
+      .alert {
+        margin-top: 0;
+      }
+    }
+
+    .input {
+      flex-grow: 1;
+
+      .textarea {
+        resize: none;
+      }
+
+      .actions {
+        text-align: right;
+      }
+    }
+  }
+}
