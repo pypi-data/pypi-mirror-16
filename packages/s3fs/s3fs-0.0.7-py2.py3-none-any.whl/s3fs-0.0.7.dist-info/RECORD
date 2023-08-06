@@ -1,0 +1,10 @@
+s3fs/__init__.py,sha256=9Rwd6pt8n9eb-MZ6aJyxnoXkX_ALR2GJWqQoZTA6aTM,89
+s3fs/core.py,sha256=5fW-QzYFbig9botFt_3x1UQhLkuP7w8c3iS2quP2IEA,35243
+s3fs/mapping.py,sha256=GuGhGbP67EgEhB4WXUtmCB_Fv-V-FQvacImEHHqB-Ds,2622
+s3fs/utils.py,sha256=Vl4Hh9Pm1MBqDYLqZngbLZPVNSWhSXhRI7J7pvutISM,3329
+s3fs-0.0.7.dist-info/DESCRIPTION.rst,sha256=0AhklZJWTq46Xw_KY16Cf0_-xx2mpIzFEeydCavIwBs,590
+s3fs-0.0.7.dist-info/METADATA,sha256=sDkWw-YT9ub0PxTMeoNB32AyGx2jhBFePmV9laulsi0,855
+s3fs-0.0.7.dist-info/RECORD,,
+s3fs-0.0.7.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+s3fs-0.0.7.dist-info/metadata.json,sha256=-9LfFG4mKr_p4gE_COqTLt0BekdXyllvpZcHFTwy0Z8,497
+s3fs-0.0.7.dist-info/top_level.txt,sha256=Lf6EI3TdjlPu7TN-92IIY6c-GdrHnkrKGb1n0iwKooI,5
