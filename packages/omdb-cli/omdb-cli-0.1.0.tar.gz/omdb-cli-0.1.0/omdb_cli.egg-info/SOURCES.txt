@@ -1,0 +1,9 @@
+README.rst
+setup.py
+omdb_cli.egg-info/PKG-INFO
+omdb_cli.egg-info/SOURCES.txt
+omdb_cli.egg-info/dependency_links.txt
+omdb_cli.egg-info/entry_points.txt
+omdb_cli.egg-info/requires.txt
+omdb_cli.egg-info/top_level.txt
+omdbcli/__init__.py

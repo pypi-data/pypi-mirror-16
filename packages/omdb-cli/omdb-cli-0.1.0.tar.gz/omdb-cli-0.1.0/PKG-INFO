@@ -1,0 +1,40 @@
+Metadata-Version: 1.1
+Name: omdb-cli
+Version: 0.1.0
+Summary: A command line tool for The Open Movie Database API
+Home-page: https://github.com/juanpabloaj/omdb-cli
+Author: JuanPablo AJ
+Author-email: jpabloaj@gmail.com
+License: MIT
+Description: omdb-cli
+        ========
+        
+        A command line tool for The Open Movie Database API ( `omdb`_), powered by `omdb.py`_
+        
+        Usage
+        _____
+        
+        Search in omdb
+        
+        ::
+        
+            omdb -s 'A new hope'
+        
+        Search by imdb ID
+        
+        ::
+        
+            omdb -i tt0251413
+        
+        Search by title
+        
+        ::
+        
+            omdb -t 'mad max'
+        
+        .. _omdb.py: https://github.com/dgilland/omdb.py
+        .. _omdb: http://www.omdbapi.com/
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
