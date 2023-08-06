@@ -1,0 +1,123 @@
+CHANGES
+=======
+
+* Imported Translations from Zanata
+* Imported Translations from Zanata
+* Updated from global requirements
+* Imported Translations from Zanata
+* Imported Translations from Zanata
+* Updated from global requirements
+* Imported Translations from Zanata
+* Imported Translations from Zanata
+* Imported Translations from Zanata
+* Imported Translations from Zanata
+* Updated from global requirements
+* Move enabled files
+* Rename service to 'container-infra'
+* Imported Translations from Zanata
+* Updated from global requirements
+* Imported Translations from Zanata
+* Updated from global requirements
+* Move magic-search bar out of the table structure
+* Updated from global requirements
+* Remove Container panel and action
+* Imported Translations from Zanata
+* Fix translation test
+* Imported Translations from Zanata
+* Remove version number to fix build
+
+1.0.0
+-----
+
+* tox tests should respect upper-constraints.txt
+* Imported Translations from Zanata
+* Imported Translations from Zanata
+* Re-fix workflow styles
+* Fix workflow display and markup
+* Add Create Container action into Bay item action
+* Imported Translations from Zanata
+* Remove unused attribute "ssh_authorized_key"
+* Imported Translations from Zanata
+* Add setup description in DevStack
+* Fix Devstack and Magnum-ui interaction
+* Add DevStack plugin
+* Imported Translations from Zanata
+* Add actions to Bay detail view
+* Imported Translations from Zanata
+* Fix styles of table views
+* Add actions to Container detail view
+* Remove py27dj17 from tox.ini
+* Specify pbr version of magnum-ui
+* Imported Translations from Zanata
+* Imported Translations from Zanata
+* Add Create Bay action into BayModel item action
+* Refactor actions in Container table
+* Use action register service for BayModel actions
+* Refactor actions in Bay table
+* Remove unnecessary import lines from scss files
+* Remove unused pngmath Sphinx extension
+* Add missing <tr> tag in BayModel table view
+* Add actions to BayModel detail view
+* Remove unnecessary translate attribute for docker_volume_size
+* Add volume_driver attribute to baymodel
+* Refactor actions in BayModel table view
+* Show human readable size and units
+* Imported Translations from Zanata
+* Update URLs to Django 1.8 style
+* Display "None" for "name" of the resource created without name
+* Add Bay Model Create View
+* Remove html5mode and hashPrefix setting from $locationProvider
+* Add link to bay view in create container dialog
+* Add link to baymodel view in create bay dialog
+* Replace deprecated library function os.popen() with subprocess
+* Imported Translations from Zanata
+* Add 'network-driver' and 'labels' to baymodel
+* Add stack_id to bay detail view
+* Imported Translations from Zanata
+* Fix H405 violations
+* Use Horizon's plugin registration system
+* Add detail view for container
+* Change "a" tag to "button" tag for "Create" button
+* Imported Translations from Zanata
+* Support "null" to Bay Create Timeout in bay detail view
+* Imported Translations from Zanata
+* Imported Translations from Zanata
+* Remove py26 and py33 support from setup.cfg
+* Deprecated tox -downloadcache option removed
+* Add "WEBROOT" variable to "base" tag in template HTML
+* Imported Translations from Zanata
+* Remove unnecessary translate attribute from bay detail view
+* Imported Translations from Zanata
+* Add detail view for bay
+* Add detail view for baymodel
+* Add REST API to get single baymodel
+* Add REST API to get single container
+* Add REST API to get single bay
+* Imported Translations from Zanata
+* Add create action to containers panel
+* Remove unnecessary double quote from bay create dialog
+* Refactor translate attribute and gettext() in bay panel
+* Add {$$} markup into hz-page-header's header attribute
+* Remove extra "translate" attribute from bay-create workflow
+* Imported Translations from Zanata
+* Imported Translations from Zanata
+* Proper translation integration
+* Translation setup
+* Add Magic Search to Containers table
+* Add a panel and table to display Containers
+* Add Magic Search into Bay table
+* Add Magic Search into Bay Model table
+* Revice REST APIs
+* Add create action to bay panel
+* Add API for container create, delete, list, show
+* Add table view for Bay
+* Bay REST API
+* Fix select all button in table view
+* Add Bay Model Table View
+* The function name mistake in "api.rest.magnum"
+* API for Bays
+* API for BayModel
+* Add magnum api client
+* Fix setup.cfg
+* Initial skeleton repo
+* Added .gitreview

@@ -1,0 +1,9 @@
+@import "baymodels/baymodels";
+@import "bays/bays";
+
+.batch-action {
+  float: right;
+  action-list {
+    padding-left: 0.3em;
+  }
+}

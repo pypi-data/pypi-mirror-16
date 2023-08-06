@@ -1,0 +1,471 @@
+# Andreas Jaeger <jaegerandi@gmail.com>, 2016. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: magnum-ui 1.0.1.dev9\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/openstack-i18n/\n"
+"POT-Creation-Date: 2016-05-23 00:13+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-03-29 10:26+0000\n"
+"Last-Translator: Akihiro Motoki <amotoki@gmail.com>\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"X-Generator: Zanata 3.7.3\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+
+msgid "API Address"
+msgstr "API アドレス"
+
+msgid "API Server Port"
+msgstr "API サーバーのポート"
+
+msgid "Actions"
+msgstr "アクション"
+
+msgid "An arbitrary human-readable name"
+msgstr "人間が読むことができる任意の名前。"
+
+msgid ""
+"Arbitrary labels in the form of key=value pairs to associate with a "
+"baymodel. May be used multiple times."
+msgstr ""
+"ベイモデルには、「key=value」形式で任意のラベルを関連付けできます。複数個指定"
+"できます。"
+
+#, python-format
+msgid "Bay %s was successfully created."
+msgstr "ベイ %s が正常に作成されました。"
+
+msgid "Bay Create Timeout"
+msgstr "ベイ作成のタイムアウト"
+
+msgid "Bay Name"
+msgstr "ベイの名前"
+
+msgid "Baymodel"
+msgstr "ベイモデル"
+
+#, python-format
+msgid "Baymodel %s was successfully created."
+msgstr "ベイモデル %s が正常に作成されました。"
+
+msgid "Baymodel Detail"
+msgstr "ベイモデルの詳細"
+
+msgid "Baymodel Name"
+msgstr "ベイモデル名"
+
+msgid "Baymodels"
+msgstr "ベイモデル"
+
+msgid "Bays"
+msgstr "ベイ"
+
+msgid "COE"
+msgstr "COE"
+
+msgid "Choose a Baymodel"
+msgstr "ベイモデルを選択してください"
+
+msgid "Choose a Container Orchestration Engine"
+msgstr "コンテナーオーケストレーションエンジンを選択してください"
+
+msgid "Choose a Flavor for the Master Node"
+msgstr "マスターノードのフレーバーを選択してください"
+
+msgid "Choose a Flavor for the Node"
+msgstr "ノードのフレーバーを選択してください"
+
+msgid "Choose a Keypair"
+msgstr "キーペアを選択してください"
+
+msgid "Choose a Network Driver"
+msgstr "ネットワークドライバーを選択してください"
+
+msgid "Choose a Volume Driver"
+msgstr "ボリュームドライバーを選択してください"
+
+msgid "Choose an Image"
+msgstr "イメージを選択してください"
+
+msgid "Cinder"
+msgstr "Cinder"
+
+msgid "Cluster Distro"
+msgstr "クラスターのディストリビューション"
+
+msgid "Cluster Type"
+msgstr "クラスター種別"
+
+msgid "Confirm Delete Bay"
+msgid_plural "Confirm Delete Bays"
+msgstr[0] "ベイの削除の確認"
+
+msgid "Confirm Delete Baymodel"
+msgid_plural "Confirm Delete Baymodels"
+msgstr[0] "ベイモデルの削除の確認"
+
+msgid "Container Orchestration Engine"
+msgstr "コンテナーオーケストレーションエンジン"
+
+msgid "Create"
+msgstr "作成"
+
+msgid "Create Bay"
+msgstr "ベイの作成"
+
+msgid "Create Baymodel"
+msgstr "ベイモデルの作成"
+
+msgid "Created"
+msgstr "作成時刻"
+
+msgid "DNS"
+msgstr "DNS"
+
+msgid "Delete Bay"
+msgid_plural "Delete Bays"
+msgstr[0] "ベイの削除"
+
+msgid "Delete Baymodel"
+msgid_plural "Delete Baymodels"
+msgstr[0] "ベイモデルの削除"
+
+msgid "Delete Baymodels"
+msgstr "ベイモデルの削除"
+
+msgid "Delete Bays"
+msgstr "ベイの削除"
+
+#, python-format
+msgid "Deleted Bay: %s."
+msgid_plural "Deleted Bays: %s."
+msgstr[0] "ベイ %s を削除しました。"
+
+#, python-format
+msgid "Deleted Baymodel: %s."
+msgid_plural "Deleted Baymodels: %s."
+msgstr[0] "ベイモデル %s を削除しました。"
+
+msgid "Disable TLS"
+msgstr "TLS の無効化"
+
+msgid "Disable TLS in the Bay. Default: False"
+msgstr "このベイにおいて、 TLS を無効にします。デフォルト: False"
+
+msgid "Discovery URL"
+msgstr "探索 URL"
+
+msgid "Docker"
+msgstr "Docker"
+
+msgid "Docker Swarm"
+msgstr "Docker Swarm"
+
+msgid "Docker Volume Size"
+msgstr "Docker のボリューム容量"
+
+msgid "Docker Volume Size (GB)"
+msgstr "Docker のボリューム容量 (GB)"
+
+msgid "Enable Registry"
+msgstr "レジストリーの有効化"
+
+msgid "Enable docker registry in the Bay. Default: False"
+msgstr ""
+"このベイにおいて、 Docker のレジストリーを有効にします。デフォルト: False"
+
+msgid "External Network ID"
+msgstr "外部ネットワーク ID"
+
+msgid "Fixed Network"
+msgstr "固定ネットワーク"
+
+msgid "Flannel"
+msgstr "Flannel"
+
+msgid "Flavor"
+msgstr "フレーバー"
+
+msgid "Flavor ID"
+msgstr "フレーバー ID"
+
+msgid "HTTP Proxy"
+msgstr "HTTP プロキシー"
+
+msgid "HTTPS Proxy"
+msgstr "HTTPS プロキシー"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Image"
+msgstr "イメージ"
+
+msgid "Image ID"
+msgstr "イメージ ID"
+
+msgid "Infinite"
+msgstr "無制限"
+
+msgid "Info"
+msgstr "情報"
+
+msgid "KEY1=VALUE1,KEY2=VALUE2..."
+msgstr "KEY1=VALUE1,KEY2=VALUE2..."
+
+msgid "Keypair"
+msgstr "キーペア"
+
+msgid "Keypair ID"
+msgstr "キーペア ID"
+
+msgid "Kubernetes"
+msgstr "Kubernetes"
+
+msgid "Labels"
+msgstr "ラベル"
+
+msgid "Make baymodel public. Default: False"
+msgstr "ベイモデルをパブリックに設定します。デフォルト: False"
+
+msgid "Master Addresses"
+msgstr "マスターのアドレス"
+
+msgid "Master Count"
+msgstr "マスターの数"
+
+msgid "Master Flavor"
+msgstr "マスターノードのフレーバー"
+
+msgid "Master Flavor ID"
+msgstr "マスターノードのフレーバー ID"
+
+msgid "Mesos"
+msgstr "Mesos"
+
+msgid "Misc"
+msgstr "その他"
+
+msgid "Miscellaneous"
+msgstr "その他"
+
+msgid "Name"
+msgstr "名前"
+
+msgid "Name of the bay to create."
+msgstr "作成するベイの名前"
+
+msgid "Name of the baymodel to create."
+msgstr "作成するベイモデルの名前"
+
+msgid "Network"
+msgstr "ネットワーク"
+
+msgid "Network Driver"
+msgstr "ネットワークドライバー"
+
+msgid "No Proxy"
+msgstr "プロキシーの例外"
+
+msgid "Node Addresses"
+msgstr "ノードのアドレス"
+
+msgid "Node Count"
+msgstr "ノードの数"
+
+msgid "Node Spec"
+msgstr "ノードのスペック"
+
+msgid "Nodes"
+msgstr "ノード"
+
+msgid "Overview"
+msgstr "概要"
+
+msgid "Public"
+msgstr "パブリック"
+
+msgid "Record Properties"
+msgstr "レコードのプロパティー"
+
+msgid "Registry Enabled"
+msgstr "レジストリーの有効化"
+
+msgid "Rexray"
+msgstr "Rexray"
+
+msgid "Server Type"
+msgstr "サーバー種別"
+
+msgid "Size"
+msgstr "サイズ"
+
+msgid "Specifies custom discovery url for node discovery."
+msgstr "ノードの探索のためのカスタム探索 URL を設定してください。"
+
+msgid "Specify bay name and choose baymodel"
+msgstr "ベイの名前を指定し、ベイモデルを選択してください"
+
+msgid "Specify conditions for bay creation."
+msgstr "ベイの作成条件を指定してください。"
+
+msgid "Specify the Container Orchestration Engine to use."
+msgstr "使用するコンテナーオーケストレーションエンジンを指定してください。"
+
+msgid "Specify the nameserver to use for the Bay. Default: 8.8.8.8"
+msgstr "ベイで使用するネームサーバーを指定してください。"
+
+msgid "Specify the number of master nodes and bay nodes for the bay."
+msgstr "ベイのマスターノードとベイノードの数を指定してください。"
+
+msgid "Specify the size in GB for the docker volume"
+msgstr "Docker のボリュームのサイズを GB 単位で指定してください"
+
+msgid "Stack ID"
+msgstr "スタック ID"
+
+msgid "Status"
+msgstr "状態"
+
+msgid "TLS Disabled"
+msgstr "TLS の無効化"
+
+msgid "The DNS nameserver to use for this Bay"
+msgstr "このベイで使用する DNS ネームサーバー"
+
+msgid "The bay node count."
+msgstr "ベイノードの数"
+
+msgid "The external Neutron network ID to connect to this bay model"
+msgstr "このベイモデルに接続する Neutron の外部ネットワーク ID"
+
+msgid "The http_proxy address to use for nodes in bay"
+msgstr "ベイのノードに使用する http_proxy アドレス"
+
+msgid "The https_proxy address to use for nodes in bay"
+msgstr "ベイのノードに使用する https_proxy アドレス"
+
+msgid "The name or UUID of the SSH keypair to load into the Bay nodes."
+msgstr "このベイのノードにロードする SSH キーペアの名前または UUID。"
+
+msgid "The name or UUID of the base image to customize for the bay."
+msgstr "このベイで、カスタマイズのベースとなるイメージの名前または UUID。"
+
+msgid "The network driver name for instantiating container networks"
+msgstr "コンテナーネットワークの作成に使用するネットワークドライバー名"
+
+msgid "The no_proxy address to use for nodes in bay"
+msgstr "ベイのノードに使用する no_proxy アドレス"
+
+msgid "The nova flavor id to use when launching the bay. Default: m1.small"
+msgstr ""
+"ベイを起動するときに使用する Nova のフレーバー ID。デフォルト: m1.small"
+
+msgid ""
+"The nova flavor id to use when launching the master node of the bay. "
+"Default: m1.small"
+msgstr ""
+"ベイのマスターノードを起動するときに使用する Nova のフレーバー ID。デフォル"
+"ト: m1.small"
+
+msgid "The number of master nodes for the bay."
+msgstr "ベイのマスターノードの数"
+
+msgid "The private Neutron network name to connect to this bay model"
+msgstr "このベイモデルに接続する Neutron のプライベートネットワーク名"
+
+msgid "The size in GB for Docker Volume. Default: 25"
+msgstr "Docker のボリュームの GB 単位のサイズ。デフォルト: 25"
+
+msgid ""
+"The timeout for bay creation in minutes. Set to 0 for no timeout. The "
+"default is no timeout."
+msgstr ""
+"ベイの作成タイムアウト時間 (単位: 分)。タイムアウトなしにするには 0 を設定し"
+"ます。デフォルトはタイムアウトしません。"
+
+msgid "The volume driver name for instantiating container volume."
+msgstr "コンテナーボリュームの作成時に使用するボリュームドライバー名。"
+
+msgid "This should really be named fixed-network-cidr. Default: 10.0.0.0/24"
+msgstr ""
+"固定ネットワークの CIDR を指定する必要があります。デフォルト: 10.0.0.0/24"
+
+msgid "Timeout"
+msgstr "タイムアウト"
+
+msgid "Unable to create Bay."
+msgstr "ベイを作成できません。"
+
+msgid "Unable to create Baymodel"
+msgstr "ベイモデルを作成できません。"
+
+#, python-format
+msgid "Unable to delete Bay: %s."
+msgid_plural "Unable to delete Bays: %s."
+msgstr[0] "ベイを削除できません: %s"
+
+#, python-format
+msgid "Unable to delete Baymodel: %s."
+msgid_plural "Unable to delete Baymodels: %s."
+msgstr[0] "ベイモデルを削除できません: %s"
+
+#, python-format
+msgid "Unable to delete the Bay with id: %(id)s"
+msgstr "ID %(id)s のベイを削除できません。"
+
+#, python-format
+msgid "Unable to delete the Baymodel with id: %(id)s"
+msgstr "ID %(id)s のベイモデルを削除できません"
+
+msgid "Unable to delete the Baymodels."
+msgstr "ベイモデルを削除できません。"
+
+msgid "Unable to delete the Bays."
+msgstr "ベイを削除できません。"
+
+msgid "Unable to retrieve the Bay."
+msgstr "ベイの情報を取得できません。"
+
+msgid "Unable to retrieve the Baymodel."
+msgstr "ベイモデルの情報を取得できません。"
+
+msgid "Unable to retrieve the Baymodels."
+msgstr "ベイモデルの一覧を取得できません。"
+
+msgid "Unable to retrieve the Bays."
+msgstr "ベイの一覧を取得できません。"
+
+msgid "Updated"
+msgstr "更新時刻"
+
+msgid "Volume Driver"
+msgstr "ボリュームドライバー"
+
+#, python-format
+msgid ""
+"You have selected \"%s\". Please confirm your selection. Deleted bay is not "
+"recoverable."
+msgid_plural ""
+"You have selected \"%s\". Please confirm your selection. Deleted bays are "
+"not recoverable."
+msgstr[0] ""
+"\"%s\" を選択しました。選択内容を確認してください。削除されたベイは元に戻せま"
+"せん。"
+
+#, python-format
+msgid ""
+"You have selected \"%s\". Please confirm your selection. Deleted baymodel is "
+"not recoverable."
+msgid_plural ""
+"You have selected \"%s\". Please confirm your selection. Deleted baymodels "
+"are not recoverable."
+msgstr[0] ""
+"\"%s\" を選択しました。選択内容を確認してください。削除されたベイモデルは元に"
+"戻せません。"
+
+msgid "{$ ctrl.bay.bay_create_timeout $} minute"
+msgid_plural "{$ ctrl.bay.bay_create_timeout $} minutes"
+msgstr[0] "{$ ctrl.bay.bay_create_timeout $} 分"
