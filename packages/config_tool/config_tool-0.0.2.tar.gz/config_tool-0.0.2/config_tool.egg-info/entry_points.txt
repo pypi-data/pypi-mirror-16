@@ -1,0 +1,3 @@
+[console_scripts]
+config = app:main
+
