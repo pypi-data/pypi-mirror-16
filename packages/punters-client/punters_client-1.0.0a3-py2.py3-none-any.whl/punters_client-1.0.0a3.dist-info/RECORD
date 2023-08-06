@@ -1,0 +1,10 @@
+punters_client/__init__.py,sha256=l6zNmFhCP7dmPCwFPjkBSqLAuD76u3V4jvHFwUe_lfc,55
+punters_client/html_utils.py,sha256=GSLqX5Ntsr2z-B_U5mZhLDMSyNI451-ONO-mBD7vCmY,2732
+punters_client/scraper.py,sha256=nLs286JwM245JJSsRmlOVhPRW1yF9rTw4l8NRZ3-F0M,13897
+punters_client-1.0.0a3.dist-info/DESCRIPTION.rst,sha256=rx4p1ZoKgT99oEAuUMjOpnWuWJKPUUJb7WagZG_80yQ,6984
+punters_client-1.0.0a3.dist-info/METADATA,sha256=D9CCvgoeNEzmaTRYfktSpZWsG_wMS8b65HAXUzK3YwQ,7915
+punters_client-1.0.0a3.dist-info/RECORD,,
+punters_client-1.0.0a3.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+punters_client-1.0.0a3.dist-info/entry_points.txt,sha256=eqGnTHtEVMYwfXVk1Z9MhC8O2N8wuqAbr0lisLmrkxs,20
+punters_client-1.0.0a3.dist-info/metadata.json,sha256=gEYHExDbd7r7eLqOdvrXNSB7jlIAc7QPJlXvcIwL6Vo,1123
+punters_client-1.0.0a3.dist-info/top_level.txt,sha256=KFFaipQiCbL5sX6i0KBAKWoZwYDTpdGm-0ok27PfXjg,15
