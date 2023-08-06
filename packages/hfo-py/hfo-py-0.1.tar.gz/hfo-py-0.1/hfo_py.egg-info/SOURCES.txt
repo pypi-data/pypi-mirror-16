@@ -1,0 +1,6 @@
+MANIFEST.in
+setup.py
+hfo_py.egg-info/PKG-INFO
+hfo_py.egg-info/SOURCES.txt
+hfo_py.egg-info/dependency_links.txt
+hfo_py.egg-info/top_level.txt
