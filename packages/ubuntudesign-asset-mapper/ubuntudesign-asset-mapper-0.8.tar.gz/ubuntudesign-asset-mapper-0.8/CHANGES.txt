@@ -1,0 +1,2 @@
+v0.1, 2014-12-19 -- Initial release.
+v0.8, 2014-08-03 -- More flexible parameters for "all" searching.
