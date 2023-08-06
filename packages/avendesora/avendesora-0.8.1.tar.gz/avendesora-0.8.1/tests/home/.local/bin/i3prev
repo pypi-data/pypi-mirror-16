@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+# EASY-INSTALL-SCRIPT: 'i3prev==0.0.0','i3prev'
+__requires__ = 'i3prev==0.0.0'
+__import__('pkg_resources').run_script('i3prev==0.0.0', 'i3prev')

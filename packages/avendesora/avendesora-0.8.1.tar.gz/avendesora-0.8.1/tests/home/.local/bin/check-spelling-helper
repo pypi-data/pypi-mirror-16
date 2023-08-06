@@ -1,0 +1,4 @@
+#!/usr/bin/python2.7
+# EASY-INSTALL-SCRIPT: 'check-spelling==0.1.0','check-spelling-helper'
+__requires__ = 'check-spelling==0.1.0'
+__import__('pkg_resources').run_script('check-spelling==0.1.0', 'check-spelling-helper')

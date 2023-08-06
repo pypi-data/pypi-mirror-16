@@ -1,0 +1,9 @@
+:open cass
+/password
+/reset
+/DHCP
+/Upgrade
+/Administration
+//2000
+/2000
+:q

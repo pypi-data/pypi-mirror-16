@@ -1,0 +1,4 @@
+#!/usr/bin/python2.7
+# EASY-INSTALL-SCRIPT: 'fromvcal==1.0','fromvcal'
+__requires__ = 'fromvcal==1.0'
+__import__('pkg_resources').run_script('fromvcal==1.0', 'fromvcal')
