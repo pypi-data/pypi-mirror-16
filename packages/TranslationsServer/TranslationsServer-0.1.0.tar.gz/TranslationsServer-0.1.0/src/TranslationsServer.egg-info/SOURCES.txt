@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+setup.py
+src/TranslationsServer.egg-info/PKG-INFO
+src/TranslationsServer.egg-info/SOURCES.txt
+src/TranslationsServer.egg-info/dependency_links.txt
+src/TranslationsServer.egg-info/requires.txt
+src/TranslationsServer.egg-info/top_level.txt
+src/translations_server/__init__.py
+src/translations_server/db.py
+src/translations_server/server.py
+src/translations_server/lib/__init__.py
+src/translations_server/lib/postgres_db.py
