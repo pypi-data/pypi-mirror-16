@@ -1,0 +1,14 @@
+CONTRIBUTORS.txt
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+primal/__init__.py
+primal/version.py
+primal.egg-info/PKG-INFO
+primal.egg-info/SOURCES.txt
+primal.egg-info/dependency_links.txt
+primal.egg-info/not-zip-safe
+primal.egg-info/requires.txt
+primal.egg-info/top_level.txt
