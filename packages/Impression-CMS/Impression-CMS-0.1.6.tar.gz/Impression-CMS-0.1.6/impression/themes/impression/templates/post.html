@@ -1,0 +1,21 @@
+{% extends theme("master.html") %}
+
+{% block title %} - {{ content.title }}{% endblock %}
+
+{% block content %}
+
+        <div class="row">
+            <div class="col-lg-8">
+
+                <!-- the actual blog post: title/author/date/content -->
+                <h1>{{ content.title }}</h1>
+                {{ content.parsed|safe }}
+            </div>
+            <!-- sidebar here -->
+            {% include theme("sidebar.html") %}
+        </div>
+
+{% endblock content %}
+
+{% block javascript %}
+{% endblock javascript %}
