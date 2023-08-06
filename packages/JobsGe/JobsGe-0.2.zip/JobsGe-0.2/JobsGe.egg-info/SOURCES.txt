@@ -1,0 +1,9 @@
+setup.py
+JobsGe.egg-info/PKG-INFO
+JobsGe.egg-info/SOURCES.txt
+JobsGe.egg-info/dependency_links.txt
+JobsGe.egg-info/not-zip-safe
+JobsGe.egg-info/top_level.txt
+jobsge/__init__.py
+jobsge/concrete_jobs.py
+jobsge/jobs.py
