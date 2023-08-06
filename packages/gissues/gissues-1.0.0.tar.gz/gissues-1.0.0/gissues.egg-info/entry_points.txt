@@ -1,0 +1,3 @@
+[console_scripts]
+giss = gissues.cli:giss
+

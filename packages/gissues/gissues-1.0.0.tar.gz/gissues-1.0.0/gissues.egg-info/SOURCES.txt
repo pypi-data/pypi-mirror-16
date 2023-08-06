@@ -1,0 +1,13 @@
+setup.cfg
+setup.py
+gissues/__init__.py
+gissues/app.py
+gissues/cli.py
+gissues/gissues.py
+gissues/utils.py
+gissues.egg-info/PKG-INFO
+gissues.egg-info/SOURCES.txt
+gissues.egg-info/dependency_links.txt
+gissues.egg-info/entry_points.txt
+gissues.egg-info/requires.txt
+gissues.egg-info/top_level.txt

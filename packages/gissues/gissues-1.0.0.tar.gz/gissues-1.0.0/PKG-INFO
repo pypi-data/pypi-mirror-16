@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: gissues
+Version: 1.0.0
+Summary: View and Manage Github issues from the comfort of your console.
+Home-page: https://github.com/DeveloperMal/gissues
+Author: Malcolm Jones
+Author-email: developermalj@gmail.com
+License: mit
+Description: UNKNOWN
+Keywords: github issues cli
+Platform: UNKNOWN
