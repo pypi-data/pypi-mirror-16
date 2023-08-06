@@ -1,0 +1,7 @@
+thrift
+twitter.common.lang==0.3.7
+twitter.common.finagle-thrift==0.3.7
+
+[sasl]
+kerberos==1.1.1
+pure-sasl==0.1.4
