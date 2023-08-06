@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: monitoring_agent
+Version: 0.1.2
+Summary: Agent to collect system metrics for Linux machines
+Home-page: https://github.com/adimania/monitoring_agent
+Author: Aditya Patawari
+Author-email: aditya@adityapatawari.com
+License: GPLv3
+Description: UNKNOWN
+Platform: UNKNOWN

@@ -1,0 +1,5 @@
+#!/usr/bin/env python
+
+import monitoring_agent.monitoring_agent
+
+monitoring_agent.monitoring_agent.get_metrics()
