@@ -1,0 +1,5 @@
+setup.py
+CMakeLintBear.egg-info/PKG-INFO
+CMakeLintBear.egg-info/SOURCES.txt
+CMakeLintBear.egg-info/dependency_links.txt
+CMakeLintBear.egg-info/top_level.txt
