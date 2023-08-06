@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: ap-python-sdk
+Version: 0.0.3
+Summary: SDK for python application to use Alternative Payments
+Home-page: https://github.com/AlternativePayments/ap-python-sdk
+Author: Marjan Stojanovic
+Author-email: marjan.stojanovic90@gmail.com
+License: MIT
+Description: Temp svasta nesta
+Keywords: alternative payments python sdk development
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
