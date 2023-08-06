@@ -1,0 +1,5 @@
+setup.py
+VintBear.egg-info/PKG-INFO
+VintBear.egg-info/SOURCES.txt
+VintBear.egg-info/dependency_links.txt
+VintBear.egg-info/top_level.txt
