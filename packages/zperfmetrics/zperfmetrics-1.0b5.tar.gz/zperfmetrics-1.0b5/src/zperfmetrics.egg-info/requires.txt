@@ -1,0 +1,7 @@
+perfmetrics
+setuptools
+zope.globalrequest
+Zope2
+
+[plone]
+plone.transformchain>=1.2.0
