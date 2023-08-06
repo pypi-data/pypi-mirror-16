@@ -1,0 +1,3 @@
+[console_scripts]
+mediachain = mediachain.cli.main:main
+
