@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+bootstrap4_datetime/__init__.py
+bootstrap4_datetime/widgets.py
+bootstrap4_datetime/static/bootstrap4_datetime/css/bootstrap-datetimepicker.css
+bootstrap4_datetime/static/bootstrap4_datetime/css/bootstrap-datetimepicker.min.css
+bootstrap4_datetime/static/bootstrap4_datetime/js/bootstrap-datetimepicker.js
+bootstrap4_datetime/static/bootstrap4_datetime/js/bootstrap-datetimepicker.min.js
+bootstrap4_datetime/static/bootstrap4_datetime/js/moment.min.js
+django_bootstrap4_datetimepicker.egg-info/PKG-INFO
+django_bootstrap4_datetimepicker.egg-info/SOURCES.txt
+django_bootstrap4_datetimepicker.egg-info/dependency_links.txt
+django_bootstrap4_datetimepicker.egg-info/top_level.txt
