@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+NOTICE
+README.rst
+requirements.txt
+setup.py
+em/__init__.py
+em/emojis.json
+em_keyboard.egg-info/PKG-INFO
+em_keyboard.egg-info/SOURCES.txt
+em_keyboard.egg-info/dependency_links.txt
+em_keyboard.egg-info/entry_points.txt
+em_keyboard.egg-info/not-zip-safe
+em_keyboard.egg-info/requires.txt
+em_keyboard.egg-info/top_level.txt
