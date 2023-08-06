@@ -1,0 +1,321 @@
+#!/usr/bin/env python
+
+## File: json-inspect
+##
+## Creates a histogram of field-values given a dot-delimited search path.
+## Prints the output out in text.
+
+import argparse
+import json
+import math
+import operator
+import os
+import sys
+
+from jsoninspectlib import __version__
+
+
+def main():
+  parser = argparse.ArgumentParser(description='Utility for inspecting JSON files/input', version=__version__)
+  parser.add_argument('-f' , '--file', nargs=1, action='store',
+                      help='JSON file to read in. If not provided STDIN will be used')
+  sub_parsers = parser.add_subparsers()
+
+  # histo sub-command
+  parser_histo = sub_parsers.add_parser('histo', description='Generate a histogram based on values'
+                                        ' found using a JSON search expression',
+                                        help='Create histograms from JSON values')
+  parser_histo.add_argument('-p', '--prefix', dest='prefix', action='store',
+                            help='String to prefix all search-paths with')
+  parser_histo.add_argument('-c', '--conflate', dest='conflate', action='store_true',
+                            default=False, help='Conflate non-empty responses to the same value')
+  parser_histo.add_argument('paths', metavar='paths', nargs='+', type=str,
+                            help='search paths to create histograms for, prefixed with optional value '
+                                  'from the --prefix option')
+  parser_histo.set_defaults(func=command_histo)
+
+  # extract sub-command
+  parser_ext = sub_parsers.add_parser('ext', description='Extract values from JSON using a JSON'
+                                      ' search expression', help='Extract values from JSON')
+  parser_ext.add_argument('-p', '--prefix', dest='prefix', action='store',
+                          help='String to prefix all search-paths with')
+  parser_ext.add_argument('-d', '--delimiter', dest='delim', action='store', default=',',
+                          help='String to delimit all results by')
+  parser_ext.add_argument('-F', '--flatten', dest='flatten', action='store_true', default=False,
+                          help='Flatten array and object values. For objects, only the values (not the keys)'
+                          ' are retained in the falttened values')
+  parser_ext.add_argument('paths', metavar='paths', nargs='+', type=str,
+                          help='search paths to return values for')
+  parser_ext.set_defaults(func=command_extract)
+
+  # keys command
+  parser_keys = sub_parsers.add_parser('keys', description='List all keys within the JSON document'
+                                       ' using a period-delimited notation similar to search-paths',
+                                       help='Lists keys in a JSON document')
+  parser_keys.add_argument('-n', '--exclude-null', dest='null', action='store_true', default=False,
+                           help='Exclude keys that contain a null value')
+  parser_keys.add_argument('-o', '--exclude-empty-objects', dest='empty_object', action='store_true', default=False,
+                           help='Exclude keys that contain an empty object')
+  parser_keys.add_argument('-p', '--exclude-empty-primitives', dest='empty_primitive', action='store_true', default=False,
+                           help='Exclude keys that contain an empty primitive value (zero and empty string)')
+  parser_keys.add_argument('-e', '--exclude-empty-array', dest='empty_array', action='store_true', default=False,
+                           help='Exclude keys that contain an empty array value')
+  parser_keys.set_defaults(func=command_keys)
+
+  # validate sub-command
+  parser_val = sub_parsers.add_parser('validate', description='Given some text, determine if it is valid JSON or not',
+                                      help='Validate text input as JSON (coming soon maybe)')
+  parser_val.set_defaults(func=command_validate)
+
+  # format sub-command
+  parser_fmt = sub_parsers.add_parser('format', description='Nicely format JSON input',
+                                      help='Nicely format JSON input (coming soon maybe)')
+  parser_fmt.set_defaults(func=command_format)
+
+  args = parser.parse_args()
+  args.func(args)
+
+def command_format(args):
+  """
+  Nicely format JSON input (pretty print)
+  """
+  print("Command not yet implimented yet")
+
+
+def command_validate(args):
+  """
+  Validate that the given input is JSON
+  """
+  print("Command not yet implimented yet")
+
+
+def command_keys(args):
+  """
+  Extract the keys from a JSON document
+  """
+  _json = read_json(args.file)
+  if _json is None or len(_json) is 0:
+    print ("No file or STDIN provided")
+    sys.exit(1)
+
+  if isinstance(_json, list):
+    _json = { '__root__': _json }
+
+  key_map = {}                          # map of keys (will be compressed at end)
+  search_stack = [(key_map, _json)]     # values left to search (initially whole object)
+  empty_ignore_types = {                # The value types we should ignore if empty
+    'dict':      args.empty_object,
+    'list':      args.empty_array,
+    'primitive': args.empty_primitive,
+    'null':      args.null,
+  }
+  
+  # must be a 'dict' at this point
+  while search_stack:
+    _k_map, node = search_stack.pop()
+    if isinstance(node, dict):
+      for k,v in node.iteritems():
+        if not is_empty(v, **empty_ignore_types):
+          _k_map[k] = {}
+          search_stack.append((_k_map[k], v))
+    elif isinstance(node, list):
+      for item in node:
+        search_stack.append((_k_map, item))
+    else:
+      # The value is primitive, we've extinguished this search
+      pass
+
+  # compress the key map
+  key_set = []
+  key_stack = [(k, key_map, '') for k in key_map.keys()]
+  while key_stack:
+    k, _k_map, agg = key_stack.pop()
+    if len(agg) == 0:
+      agg = k
+    elif agg == '__root__':
+      agg = k
+    else:
+      agg = agg + '.' + k
+    if _k_map[k].keys():
+      for sub_key in _k_map[k].keys():
+        key_stack.append( (sub_key, _k_map[k], agg) )
+    else:
+      key_set.append(agg)
+
+  # print out the result for the user
+  for key in key_set:
+    print(key)
+  
+
+def command_extract(args):
+  """
+  Command to extract values from JSON given a search path.
+  """
+  _json = read_json(args.file)
+  if _json is None or len(_json) is 0:
+    print("No file or STDIN provided")
+    sys.exit(1)
+
+  prefix = ''
+  if args.prefix is not None:
+    prefix = args.prefix
+  search_paths = [prefix + p for p in args.paths]
+
+  for path in search_paths:
+    extract_values(_json, path, args.flatten, args.delim)
+
+def extract_values(_json, path, flatten, delim):
+  """
+  """
+  results       = {}
+  search_tokens = path.split('.')
+  search_stack  = [_json]
+  next_stack    = []
+
+  for token in search_tokens:
+    while search_stack:
+      node = search_stack.pop()
+      if token == '[]' and isinstance(node, list):
+        for n in node:
+          next_stack.append(n)
+      elif token == '*' and isinstance(node, dict):
+        for k,v in node.iteritems():
+          next_stack.append(v)
+      elif isinstance(node, dict):
+        if node.get(token, None) is not None:
+          next_stack.append(node.get(token))
+        else:
+          pass # not match
+
+    search_stack = next_stack
+    next_stack = []
+
+  _first = True
+  for res in search_stack:
+    if not _first:
+      sys.stdout.write(delim)
+    else:
+      _first = False
+    if flatten and isinstance(res, list):
+      for item in res:
+        sys.stdout.write(str(item))
+    elif flatten and isinstance(res, dict):
+      for _,item in res.iteritems():
+        sys.stdout.write(str(item))
+    else:
+      sys.stdout.write(str(res))
+
+def command_histo(args):
+  _json = read_json(args.file)
+  if _json is None or len(_json) is 0:
+    print("No file or STDIN provided")
+    sys.exit(1)
+    
+  prefix = ''
+  if args.prefix is not None:
+    prefix = args.prefix
+  search_paths = [prefix + p for p in args.paths]
+
+  for path in search_paths:
+    matches = build_histo(_json, path, args.conflate)
+    print_histo(path, matches)
+
+def print_histo(path, matches):
+  """
+  Given a histogram, print out the results using a 50 char width bar
+  """
+  print "\n{0}:".format(path)
+  _max = max(matches.iteritems(), key=operator.itemgetter(1))[1]
+  for k,v in matches.iteritems():
+    percent_of_50 = int(math.ceil(50 * float(v) / float(_max)))
+    print "{0:15s} | {1:50s} | ({2})".format(k[0:13], '#' * percent_of_50, v)
+
+def build_histo(json, path, conflate):
+  """
+  create a dict of metches. The keys in the dict are the JSON values at
+  the specified path and the value is the count for the number of times
+  the value was found. '__none__' is the key used for lookups that do
+  not result in a value.
+  
+  json         - parsed JSON
+  search_paths - array of search strings
+  conflate     - bool flag to conflate positive values or not
+  """
+  results       = {}
+  search_tokens = path.split('.')
+  search_stack  = [json]
+  next_stack    = []
+
+  for token in search_tokens:
+    while search_stack:
+      node = search_stack.pop()
+      if token == '[]' and isinstance(node, list):
+        for n in node:
+          next_stack.append(n)
+      elif token == '*' and isinstance(node, dict):
+        for k,v in node.iteritems():
+          next_stack.append(v)
+      elif isinstance(node, dict):
+        if node.get(token, None) is not None:
+          next_stack.append(node.get(token))
+        else:
+          if '__none__' in results:
+            results['__none__'] += 1
+          else:
+            results['__none__'] = 1
+
+    search_stack = next_stack
+    next_stack = []
+
+  for res in search_stack:
+    if conflate:
+      res = '__some__'
+    if str(res) in results:
+      results[str(res)] += 1
+    else:
+      results[str(res)] = 1
+
+  return results
+
+
+
+
+##
+## Helper functions
+##
+
+def is_empty(value, **types):
+  return (types['dict'] and isinstance(value, dict) and len(value) == 0) or \
+         (types['list'] and isinstance(value, list) and len(value) == 0) or \
+         (types['primitive'] and is_empty_primitive(value))              or \
+         (value is None and types['null'])
+
+def is_empty_primitive(value, **types):
+  """
+  Return true if the given value is an empty primitive. This includes 0 and
+  the empty string.
+  """
+  return (isinstance(value, int) and value == 0)            or \
+         (isinstance(value, float) and value == 0.0)        or \
+         (isinstance(value, basestring) and len(value) == 0)
+
+def read_json(filename):
+  """
+  Read the file and parse it into JSON
+  """
+  _input = None
+  if filename is None:
+    _input = ''.join(sys.stdin)
+  else:
+    with open(filename, 'r') as f:
+      _input = f.read()
+  
+  if _input is not None:
+    return json.loads(_input)
+  return f
+
+
+
+
+if __name__ == '__main__':
+  main()
