@@ -1,0 +1,11 @@
+MANIFEST.in
+setup.py
+bin/shroud
+shroud/__init__.py
+shroud/encryption.py
+shroud/shroud.py
+shroud.egg-info/PKG-INFO
+shroud.egg-info/SOURCES.txt
+shroud.egg-info/dependency_links.txt
+shroud.egg-info/requires.txt
+shroud.egg-info/top_level.txt
