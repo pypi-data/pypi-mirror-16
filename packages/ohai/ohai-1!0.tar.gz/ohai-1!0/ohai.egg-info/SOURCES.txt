@@ -1,0 +1,8 @@
+MANIFEST.in
+ohai.dat
+setup.py
+ohai.egg-info/PKG-INFO
+ohai.egg-info/SOURCES.txt
+ohai.egg-info/dependency_links.txt
+ohai.egg-info/not-zip-safe
+ohai.egg-info/top_level.txt
