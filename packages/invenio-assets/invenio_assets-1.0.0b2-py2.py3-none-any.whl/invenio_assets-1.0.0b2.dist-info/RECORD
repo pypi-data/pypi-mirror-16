@@ -1,0 +1,14 @@
+invenio_assets/__init__.py,sha256=Bz2HejnV3yE0tIqCgU11kpR0SvRTkkRGgPE6JuMt7XI,4557
+invenio_assets/cli.py,sha256=POhbXXSs7qDre-jyGp7xQ-kidZg3Kp3OGi1Pq9XG0Og,3322
+invenio_assets/ext.py,sha256=PYXYXtvOXMAKk5jMjmDzO8aRlEuvjek2shTefXWqZgo,3070
+invenio_assets/filters.py,sha256=5V1xTspqAZCe0EqctxTovL_PXoSInQsYkVt59h6EK7s,2568
+invenio_assets/npm.py,sha256=KlntGQT4p5PnecLLm_lnDzTf7u1OUlUnTcXSFr_5W48,3585
+invenio_assets/proxies.py,sha256=svNrdMJ1X8qXr9pcfGXXnxhLBaKfzWYfyjpyiviAryA,1252
+invenio_assets/version.py,sha256=LZzW1fWmktrqhWvcqMeoVTcpsp017yGx0nRUFsIfzLU,1189
+invenio_assets-1.0.0b2.dist-info/top_level.txt,sha256=HyDPU-01Nmq0iCQy9SB_ZXoiAeY2qYKJuKEHr_sVdzc,15
+invenio_assets-1.0.0b2.dist-info/entry_points.txt,sha256=2pJBXHzxUSc_SepKBcdSN33ep8Dmz81bGnfMtDO_mEk,151
+invenio_assets-1.0.0b2.dist-info/METADATA,sha256=jFg-gk4iZxRIQ7gNhlvgcPcj-j2urShICQ5pUwgkP4Q,5912
+invenio_assets-1.0.0b2.dist-info/DESCRIPTION.rst,sha256=0y747zRGo9p-kCdomzWMnE-3xdksMEk0BmKbuS0u9WI,3072
+invenio_assets-1.0.0b2.dist-info/metadata.json,sha256=QyilZbShJpWLIno3TfjfGh7jSHqAZYMJDVkpHEa6-uw,2566
+invenio_assets-1.0.0b2.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+invenio_assets-1.0.0b2.dist-info/RECORD,,
