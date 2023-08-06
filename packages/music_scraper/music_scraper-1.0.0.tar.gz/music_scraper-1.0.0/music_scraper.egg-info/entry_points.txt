@@ -1,0 +1,3 @@
+[console_scripts]
+music-scraper = music_scraper.main:main
+

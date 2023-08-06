@@ -1,0 +1,15 @@
+README.rst
+setup.py
+music_scraper/__init__.py
+music_scraper/gui.py
+music_scraper/main.py
+music_scraper/threads.py
+music_scraper.egg-info/PKG-INFO
+music_scraper.egg-info/SOURCES.txt
+music_scraper.egg-info/dependency_links.txt
+music_scraper.egg-info/entry_points.txt
+music_scraper.egg-info/not-zip-safe
+music_scraper.egg-info/requires.txt
+music_scraper.egg-info/top_level.txt
+music_scraper/spiders/__init__.py
+music_scraper/spiders/music_spider.py
