@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+muffin_playground/__init__.py
+muffin_playground/boilerplate.plim
+muffin_playground/wsclient.pyj
+muffin_playground.egg-info/PKG-INFO
+muffin_playground.egg-info/SOURCES.txt
+muffin_playground.egg-info/dependency_links.txt
+muffin_playground.egg-info/requires.txt
+muffin_playground.egg-info/top_level.txt
