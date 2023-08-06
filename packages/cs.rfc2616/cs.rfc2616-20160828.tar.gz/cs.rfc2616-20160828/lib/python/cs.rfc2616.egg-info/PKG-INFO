@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: cs.rfc2616
+Version: 20160828
+Summary: RFC2616 (HTTP 1.1) facilities
+Home-page: https://bitbucket.org/cameron_simpson/css/commits/all
+Author: Cameron Simpson
+Author-email: cs@zip.com.au
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: python3
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Developers
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
