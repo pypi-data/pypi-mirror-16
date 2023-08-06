@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.py
+django_datalogger.egg-info/PKG-INFO
+django_datalogger.egg-info/SOURCES.txt
+django_datalogger.egg-info/dependency_links.txt
+django_datalogger.egg-info/top_level.txt
+docs/README.md
+middleware/__init__.py
+middleware/common.py
+migrations/0001_initial.py
+migrations/__init__.py
