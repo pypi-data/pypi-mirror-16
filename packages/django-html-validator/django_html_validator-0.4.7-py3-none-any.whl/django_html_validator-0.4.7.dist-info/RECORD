@@ -1,0 +1,11 @@
+django_html_validator-0.4.7.dist-info/DESCRIPTION.rst,sha256=9vNSDeB_WzjjIttEgWhSxkdzjdCtBZTCtXjCXfyOfig,5440
+django_html_validator-0.4.7.dist-info/METADATA,sha256=EorGnHlZ2r4XIBywrX8ikCX8SYBPGIAoud5Q-afypKg,6158
+django_html_validator-0.4.7.dist-info/RECORD,,
+django_html_validator-0.4.7.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+django_html_validator-0.4.7.dist-info/metadata.json,sha256=lh_acpV7bEdgzhc53bnk0OfE8PELIDxqu7gK_4d6JSk,873
+django_html_validator-0.4.7.dist-info/top_level.txt,sha256=hsYAz-tPX31CW3ZQ4aPVNFXxogpsb13uWf6SmFzzcUU,14
+htmlvalidator/__init__.py,sha256=UmVafZY7kcXtTkcxANj_olsrrxex9xg7OUKA4sTbnN8,22
+htmlvalidator/client.py,sha256=5p3UgEe0Q86KQCBxNIyrkuMIT8SUqFNaScYLCH2FaFk,1359
+htmlvalidator/core.py,sha256=cTlW1j4k13T_yL6Nj0pkHxv_cCij4YopNiQtUr1vO_A,4507
+htmlvalidator/exceptions.py,sha256=n4uABoAB9nARXYCVCh7IeA-FvGxMewL--MJaVMBtMbU,103
+htmlvalidator/middleware.py,sha256=k1Moi1YN3U_j2-D3fMQ-YlkQDeMd-3qTsbO0tJXz1cA,1305
