@@ -1,0 +1,4 @@
+include README.md
+recursive-include src tables/*
+recursive-include test *
+recursive-include example_scripts *
