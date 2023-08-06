@@ -1,0 +1,11 @@
+xlmhg-2.3.0.dist-info/RECORD,,
+xlmhg-2.3.0.dist-info/top_level.txt,sha256=osYafJxINjXWbVF1jkgp5BiInmc7F64BUkFXgKEdKBw,6
+xlmhg-2.3.0.dist-info/METADATA,sha256=kBSI0wprhdu5E0mB-EHwxI-jA7dx2noOs3wVnD2PGhE,5918
+xlmhg-2.3.0.dist-info/metadata.json,sha256=VEIfMYu9eT-lH0T4A3dtuH7OYW6IZ3GtGwp9DYQ-Hiw,1152
+xlmhg-2.3.0.dist-info/WHEEL,sha256=o_u-pycCappjpfbOv2DK_R1bmpGf0SFDAWOKqZSTsto,107
+xlmhg-2.3.0.dist-info/DESCRIPTION.rst,sha256=WVR7Pm_2mGVrQ1Ey4CyfxwJMO969P69dMvC1faMp8ms,4851
+xlmhg/test.py,sha256=wO75OetqlzbXDWXRf0f6oAxlJuzKBXCghBQ5AwlTnGo,15113
+xlmhg/__init__.py,sha256=fJuBVqSwtNIz25gkKsz5Rvkxb3s5vQUWVqzRffJgHY0,416
+xlmhg/mhg.py,sha256=o8vM_25ViHpR6D9jBn-eMMXzy0Q_wYpUuKKc8lOGIWY,11609
+xlmhg/result.py,sha256=j7Akp08ud8N8QUH6nj09jIIn3RoGE1r8Gx9i9zMY9F0,4036
+xlmhg/mhg_cython.cpython-34m.so,sha256=ZWCOy_XFz1dngWoaPmq8CAKu_5Xt04VfiEQ60zgZdD8,730902
