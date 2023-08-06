@@ -1,0 +1,3 @@
+pandoc-xnos>=0.4.1
+pandocfilters
+pandoc-attributes
