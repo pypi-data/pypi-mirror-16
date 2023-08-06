@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+src/dockertest/__init__.py
+src/dockertest/base.py
+src/dockertest/servicetest.py
+src/dockertest.egg-info/PKG-INFO
+src/dockertest.egg-info/SOURCES.txt
+src/dockertest.egg-info/dependency_links.txt
+src/dockertest.egg-info/requires.txt
+src/dockertest.egg-info/top_level.txt
