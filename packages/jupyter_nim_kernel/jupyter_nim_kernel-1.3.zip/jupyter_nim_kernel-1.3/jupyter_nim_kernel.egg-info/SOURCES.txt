@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+jupyter_nim_kernel/__init__.py
+jupyter_nim_kernel/__main__.py
+jupyter_nim_kernel/kernel.py
+jupyter_nim_kernel.egg-info/PKG-INFO
+jupyter_nim_kernel.egg-info/SOURCES.txt
+jupyter_nim_kernel.egg-info/dependency_links.txt
+jupyter_nim_kernel.egg-info/top_level.txt
