@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: ray_appengine
+Version: 0.0.1
+Summary: 
+    Ray is a framework that helps you to deliver
+    well designed software without been stucked in your framework.
+    Ray it's a ready to production framework that contains
+    a uWSGI server that can be used in production as well.
+    
+Home-page: http://github.com/felipevolpone/ray
+Author: Felipe Volpone
+Author-email: felipevolpone@gmail.com
+License: MIT
+Description: Check on github: http://github.com/felipevolpone/ray
+Keywords: appengine framework ray api rest google
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Utilities
