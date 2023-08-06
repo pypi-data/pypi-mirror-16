@@ -1,0 +1,9 @@
+setup.py
+smex/__init__.py
+smex/pissbot.py
+smex/smex.py
+smex/smtests.py
+smex.egg-info/PKG-INFO
+smex.egg-info/SOURCES.txt
+smex.egg-info/dependency_links.txt
+smex.egg-info/top_level.txt
