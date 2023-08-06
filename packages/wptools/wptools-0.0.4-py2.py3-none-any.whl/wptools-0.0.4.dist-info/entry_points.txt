@@ -1,0 +1,9 @@
+[console_scripts]
+wp_wikitext = scripts.wikitext:main
+wp_lead = scripts.lead:main
+wp_image = scripts.image:main
+wp_text = scripts.text:main
+wp_infobox = scripts.infobox:main
+wp_html = scripts.html:main
+wp_parsetree = scripts.parsetree:main
+
