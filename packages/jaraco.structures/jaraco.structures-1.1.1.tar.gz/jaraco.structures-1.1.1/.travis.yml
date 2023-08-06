@@ -1,0 +1,22 @@
+sudo: false
+language: python
+python:
+- 2.7
+- 3.5
+script:
+- pip install -U pytest
+- python setup.py test
+branches:
+  except:
+  - skeleton
+deploy:
+  provider: pypi
+  server: https://upload.pypi.org/legacy/
+  on:
+    tags: true
+    all_branches: true
+    python: 3.5
+  user: jaraco
+  distributions: dists
+  password:
+    secure: c4Dy+CT/Omx+LzdAFj3RKJFf/CxDFsqRM+ve8wWKuaUViopIILlQzcySlHsgrotOSLWkyMFeThLDqSOIQuPZPi3NHhJsF4+Wryjhletmu2f4taKwypL1bjPRIFixNAwN1L2h8dRQZ5jtAfGySgHayJNlt/rphWTfIprWoN2UsUsNon3eX4eCNa2lBOFzfrfH8DDbcT1nuaKG7Wo1f5+3cbMoN2mz086KKmMiSU5RMrotSLZq1mXW8koQuG8vJMlvQs1D0IcT/KT6lR15/gcbQfzP/ppodwzxSKVOJ17BJFDoGn6L8hzpxIz6c/0Zb5ipkpm3y8+Af1TB3oIOmo2w2ICbHgr4XEJD7Ro9SUsCqhkKT14dCx8tAeiJx18fV9sfqTEBhAEJtO2gW3K113AS2eopt7kRXJRkL5zuxVeVXobXcUdn4TPT6I99XCQFUrDiZYrjXAAEWWdW6+pUY/6v+mXEKgFfQqVmg0HGbO/a11wfDWmHyBvBcZMcaDL38DSxTMV3D/NXXQUvngxSj+bbjMsu9xnGs1e4Um5BEJmIQRu/A8jQfU6a5pgtI4zGAUokBOU6qlQVBfoQoLOK9wpfmGd952o9eJ6cqkg+GGbqbygBwYSqqy7tjkwOfvPAZHUBlNyi8HPpfBf+N4k85Pd4MIEo9hOdLJQNzj10JsrFd4c=
