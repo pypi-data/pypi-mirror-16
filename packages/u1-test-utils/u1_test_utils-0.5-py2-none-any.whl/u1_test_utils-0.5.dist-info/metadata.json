@@ -1,0 +1,1 @@
+{"extensions": {"python.details": {"contacts": [{"email": "ricardo.kirkner@canonical.com", "name": "Ricardo Kirkner", "role": "author"}], "document_names": {"description": "DESCRIPTION.rst"}}}, "generator": "bdist_wheel (0.26.0)", "metadata_version": "2.0", "name": "u1-test-utils", "summary": "Common testcases and utilities for testing Ubuntu One applications.", "version": "0.5"}
