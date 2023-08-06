@@ -1,0 +1,11 @@
+setup.py
+badfish/__init__.py
+badfish/_version.py
+badfish/badfish.py
+badfish/plotting.py
+badfish.egg-info/PKG-INFO
+badfish.egg-info/SOURCES.txt
+badfish.egg-info/dependency_links.txt
+badfish.egg-info/requires.txt
+badfish.egg-info/top_level.txt
+badfish.egg-info/zip-safe
