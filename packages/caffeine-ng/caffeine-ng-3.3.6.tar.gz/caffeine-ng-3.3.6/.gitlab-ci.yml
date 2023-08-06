@@ -1,0 +1,25 @@
+image: python:3.5
+before_script:
+  - pip install tox
+stages:
+  - style
+  - deploy
+
+flake8:
+  stage: style
+  script:
+    - tox -e flake8
+
+imports:
+  stage: style
+  script:
+    - tox -e isort
+
+pypi:
+  stage: deploy
+  script:
+    - pip install -r requirements.txt twine
+    - python setup.py sdist bdist_wheel
+    - twine upload --config-file .pypirc -u $PYPI_USER -p $PYPI_PASSWORD dist/*
+  only:
+    - tags@hobarrera/caffeine-ng
