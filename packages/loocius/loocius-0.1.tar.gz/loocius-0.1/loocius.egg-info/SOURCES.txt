@@ -1,0 +1,9 @@
+setup.py
+loocius/__init__.py
+loocius/test.py
+loocius.egg-info/PKG-INFO
+loocius.egg-info/SOURCES.txt
+loocius.egg-info/dependency_links.txt
+loocius.egg-info/not-zip-safe
+loocius.egg-info/pbr.json
+loocius.egg-info/top_level.txt
