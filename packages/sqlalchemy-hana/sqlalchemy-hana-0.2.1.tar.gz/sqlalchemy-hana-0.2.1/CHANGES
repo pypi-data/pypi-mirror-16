@@ -1,0 +1,25 @@
+Changelog
+=========
+
+0.2.1
+-----
+- Fix LOB handling with hdbcli driver
+
+0.2.0
+-----
+- Added basic support for hdbcli driver
+- Allow specification of table type via ``hana_table_type``
+
+0.1.2
+-----
+- Cleanup of setup.py
+- Release on PyPi
+
+0.1.0
+-----
+- Added support for LOBs
+
+
+0.0.1
+-----
+- Initial version
