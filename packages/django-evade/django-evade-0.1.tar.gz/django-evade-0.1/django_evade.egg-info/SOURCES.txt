@@ -1,0 +1,12 @@
+README.rst
+setup.py
+django_evade.egg-info/PKG-INFO
+django_evade.egg-info/SOURCES.txt
+django_evade.egg-info/dependency_links.txt
+django_evade.egg-info/not-zip-safe
+django_evade.egg-info/top_level.txt
+evade/__init__.py
+evade/templatetags/__init__.py
+evade/templatetags/evade_tags.py
+evade/tests/__init__.py
+evade/tests/settings.py
