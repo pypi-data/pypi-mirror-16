@@ -1,0 +1,13 @@
+cwl2argparse/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cwl2argparse/argparse.j2,sha256=oBzvX8PDkbFGOQQcGwRkaMAKnPdA5yZUZJwGpXHbjC8,824
+cwl2argparse/cwl_argparse_translation.py,sha256=9uSftGiWIN973iN0p9yaexmcXGg0uj5hCwuREzvAxDg,5021
+cwl2argparse/cwl_classes.py,sha256=iqSAkBg6en_jTdH32uVFd-QxPpeyplLDs2aqkQAleYA,3455
+cwl2argparse/main.py,sha256=k8W709kEcqyymkJZMdGzUljguTZ3IhlV7EjELwpROJ4,1510
+cwl2argparse/test_cwl2argparse.py,sha256=C3m1VFyhKnA-I3V8SzY0DAFBPCYmBYDRJbfyRA8lG3Y,1172
+cwl2argparse-0.1.6.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+cwl2argparse-0.1.6.dist-info/METADATA,sha256=_URw1fkNUTC6jAG-G_rK1I4275T-u8_jUx1nZeh9Ve8,599
+cwl2argparse-0.1.6.dist-info/RECORD,,
+cwl2argparse-0.1.6.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+cwl2argparse-0.1.6.dist-info/entry_points.txt,sha256=8vgzS3qnBiDqub-WsLNS9R8fTbe7fH-hwnVVEyI9-7Q,57
+cwl2argparse-0.1.6.dist-info/metadata.json,sha256=sSAyioJq_dgUfHsIk7o9ussUxKXk20qudTxaA4-a4gA,913
+cwl2argparse-0.1.6.dist-info/top_level.txt,sha256=Rxo4iK_jG2eGIjnS3tvXHC7DULtTHXYQboSb6ojCS5U,13
