@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+test-requirements.txt
+bear_installation_tool/__init__.py
+bear_installation_tool/installation_tool.py
+coala_install.egg-info/PKG-INFO
+coala_install.egg-info/SOURCES.txt
+coala_install.egg-info/dependency_links.txt
+coala_install.egg-info/entry_points.txt
+coala_install.egg-info/requires.txt
+coala_install.egg-info/top_level.txt
