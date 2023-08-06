@@ -1,0 +1,3 @@
+[console_scripts]
+wikipedia = wikipedia_cli:main
+

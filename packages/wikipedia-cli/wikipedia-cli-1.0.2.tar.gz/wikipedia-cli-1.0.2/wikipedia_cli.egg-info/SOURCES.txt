@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+requirements.txt
+setup.py
+wikipedia_cli.py
+wikipedia_cli.egg-info/PKG-INFO
+wikipedia_cli.egg-info/SOURCES.txt
+wikipedia_cli.egg-info/dependency_links.txt
+wikipedia_cli.egg-info/entry_points.txt
+wikipedia_cli.egg-info/requires.txt
+wikipedia_cli.egg-info/top_level.txt
