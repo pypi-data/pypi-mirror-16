@@ -1,0 +1,8 @@
+setup.py
+package_pertama/__init__.py
+package_pertama/text.py
+package_pertama.egg-info/PKG-INFO
+package_pertama.egg-info/SOURCES.txt
+package_pertama.egg-info/dependency_links.txt
+package_pertama.egg-info/not-zip-safe
+package_pertama.egg-info/top_level.txt
