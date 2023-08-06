@@ -1,0 +1,23 @@
+Metadata-Version: 2.0
+Name: myfantasyleague
+Version: 0.1
+Summary: Python wrapper for the MyFantasyLeague.com API
+Home-page: https://github.com/nixalot/python-myfantasyleague
+Author: Matthew Raspberry
+Author-email: nixalot@nixalot.com
+License: BSD
+Keywords: myfantasyleague mfl
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 2
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: requests
+
+# python-myfantasyleague
+
+This is a python wrapper for the MyFantasyLeague.com API. 
+
+
