@@ -1,0 +1,21 @@
+Metadata-Version: 2.0
+Name: nele
+Version: 0.1.0
+Summary: Send fancy newsletters with markdown
+Home-page: https://github.com/raphiz/nele
+Author: Raphael Zimmermann
+Author-email: dev@raphael.li
+License: GPL
+Platform: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Development Status :: 4 - Beta
+Requires-Dist: docopt
+Requires-Dist: jinja2
+Requires-Dist: py-gfm
+Requires-Dist: python-frontmatter
+
+For more information, please checkout the `Github Page <https://github.com/raphiz/nele>`_.
+
+
