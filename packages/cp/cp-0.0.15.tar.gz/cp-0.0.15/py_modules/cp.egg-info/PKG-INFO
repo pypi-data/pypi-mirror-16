@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: cp
+Version: 0.0.15
+Summary: cp(source,target,force=True) function
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: cp copy
+Platform: UNKNOWN
+Classifier: Topic :: System :: Filesystems
