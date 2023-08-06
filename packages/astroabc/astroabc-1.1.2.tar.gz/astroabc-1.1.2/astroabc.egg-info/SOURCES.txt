@@ -1,0 +1,27 @@
+.gitignore
+.travis.yml
+LICENSE.txt
+README.md
+abc_logo.001.jpeg
+setup.py
+astroabc/__init__.py
+astroabc/abc_class.py
+astroabc/io_utils.py
+astroabc/model.py
+astroabc/mpi_pool.py
+astroabc/mpi_test.py
+astroabc/myutils.py
+astroabc/priors.py
+astroabc/tests.py
+astroabc/tolerance.py
+astroabc/variance.py
+astroabc.egg-info/PKG-INFO
+astroabc.egg-info/SOURCES.txt
+astroabc.egg-info/dependency_links.txt
+astroabc.egg-info/top_level.txt
+examples/gaussian.py
+examples/gaussian_params.ini
+examples/multi-gaussian example.ipynb
+examples/parse_params.py
+examples/pendulum.ipynb
+examples/supernovae.ipynb
