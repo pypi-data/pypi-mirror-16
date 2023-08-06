@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: wordfencer
+Version: 1.3.0
+Summary: Parser for natural languages without space delimiters
+Home-page: https://github.com/bobbyesh/word-fencer
+Author: Bobby Eshleman
+Author-email: bobbyeshleman@gmail.com
+License: UNKNOWN
+Description: Parser For Chinese, Cantonese, and Thai
+        ---------------------------------------
+        
+        Tokenizes the words found in any arbitrary string in any of the supported languages.
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Natural Language :: Cantonese
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Natural Language :: Chinese (Traditional)
+Classifier: Natural Language :: Thai
