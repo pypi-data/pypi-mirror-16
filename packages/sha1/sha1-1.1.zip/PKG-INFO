@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: sha1
+Version: 1.1
+Author: anatoly techtonik
+Author-email: techtonik at gmail com
+Home-page: https://github.com/techtonik/sha1
+Download-url: UNKNOWN
+Summary: usage: python -m sha1 <filename>
+License: Public Domain
+Description: Safe for file+size consistency checks, but `probably not
+        <http://googleonlinesecurity.blogspot.co.uk/2014/09/gradually-sunsetting-sha-1.html>`_ for anything else.
+Platform: UNKNOWN
