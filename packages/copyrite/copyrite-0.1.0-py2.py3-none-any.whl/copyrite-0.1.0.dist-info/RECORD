@@ -1,0 +1,14 @@
+copyrite/__init__.py,sha256=n5dMlmXvAC-dNf--c8JYdvFMf9qAZLHZ53FdOdrKBbI,119
+copyrite/alias.py,sha256=6WEnENrNYOWQ5QPWIyUBXLxJT6PfbjKFjBfndUonpUY,4420
+copyrite/cli.py,sha256=AayJ7XtPOqUsF1TPF8TUSVreoqIr_Skdp09CB-Uc-QQ,5922
+copyrite/copyrite.py,sha256=Md3gw9TgJimmUXwehgtNmF1W0Es49KtQhQgK7vnRnBo,6052
+copyrite/vcs/__init__.py,sha256=HjGqWRl5261JoucTLrl5JcIO1VlMlBXjbR9mIJLcC1M,228
+copyrite/vcs/base.py,sha256=KHqLc-eLAjtJsItyBa1oI6OuY2vVDlU3sr4grBUBesY,962
+copyrite/vcs/git.py,sha256=d1CQMKsrr9gSp0hLiReAslynmSa6_ot_zssaeZHe10o,2838
+copyrite-0.1.0.dist-info/DESCRIPTION.rst,sha256=BNI88zNNTv9O5t_oZZwCv-upMvIoynX8CFpGBliwlRM,3742
+copyrite-0.1.0.dist-info/METADATA,sha256=doW_eHD95nVxI_DzGBoJ07tAoavvhbRTKoYNFykIz_E,4285
+copyrite-0.1.0.dist-info/RECORD,,
+copyrite-0.1.0.dist-info/WHEEL,sha256=5f-Lb0dq-Ei5P75pgK065AnrFl2dK_ZqskZBpCbWERA,116
+copyrite-0.1.0.dist-info/entry_points.txt,sha256=ylE1FA2xX5tbXQffXy15Q1CnuFeGeEmV35Rs7M5pDi4,48
+copyrite-0.1.0.dist-info/metadata.json,sha256=qOYj5HBp6blzNwm1kBfpF2lOnubm1K6JKdukpykI61g,878
+copyrite-0.1.0.dist-info/top_level.txt,sha256=ooDWpFrrGDqo1jtqJU-0sYQAZiIWVbIqr6uOXCjzZpc,9
