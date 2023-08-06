@@ -1,0 +1,22 @@
+Metadata-Version: 2.0
+Name: PoTrans
+Version: 0.1.1
+Summary: gettext PO files translate by Yandex translator
+Home-page: https://github.com/...
+Author: Mikhail Rubin
+Author-email: mihanentalpo@yandex.ru
+License: MIT
+Keywords: translate po gettext yandex localization
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Localization
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Dist: click
+Requires-Dist: polib
+Requires-Dist: yandex.translate
+
+UNKNOWN
+
+
