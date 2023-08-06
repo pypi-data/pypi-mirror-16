@@ -1,0 +1,17 @@
+<div class="frontcover">
+  <div class="cover-image">
+    {% if image %}
+    <style>
+      .cover-image {
+        background-image: url('{{image}}');
+      }
+    </style>
+    {% endif %}
+    <div class="cover-title">
+      <h1>{% block title %}{% endblock %}</h1>
+    </div>
+  </div>
+  <div class="cover-text">
+    {% block excerpt %}{% endblock %}
+  </div>
+</div>
