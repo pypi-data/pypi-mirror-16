@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: zerodb-server
+Version: 0.2.0b1
+Summary: ZeroDB server
+Home-page: http://zerodb.io
+Author: ZeroDB Inc.
+Author-email: michael@zerodb.io
+License: AGPLv3
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
