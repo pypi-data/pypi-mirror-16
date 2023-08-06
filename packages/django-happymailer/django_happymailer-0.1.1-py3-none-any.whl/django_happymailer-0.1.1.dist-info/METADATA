@@ -1,0 +1,19 @@
+Metadata-Version: 2.0
+Name: django-happymailer
+Version: 0.1.1
+Summary: django email templates manager
+Home-page: UNKNOWN
+Author: Dmitrii Gerasimenko
+Author-email: kiddima@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: django (>=1.9)
+Requires-Dist: django-import-export (==0.4.5)
+Requires-Dist: fake-factory (==0.5)
+Requires-Dist: html2text (==2016.5.29)
+Requires-Dist: six
+Requires-Dist: trafaret (>=0.7)
+
+UNKNOWN
+
+
