@@ -1,0 +1,61 @@
+Metadata-Version: 1.1
+Name: ytrie
+Version: 0.1.0
+Summary: A pure python API for Trie data access
+Home-page: https://github.com/ashwinjv/ytrie
+Author: Ashwin Venkatesan
+Author-email: ashwinjv@gmail.com
+License: Apache Software License 2.0
+Description: =============================
+        ytrie
+        =============================
+        
+        .. image:: https://badge.fury.io/py/ytrie.png
+            :target: http://badge.fury.io/py/ytrie
+        
+        .. image:: https://travis-ci.org/ashwinjv/ytrie.png?branch=master
+            :target: https://travis-ci.org/ashwinjv/ytrie
+        
+        .. image:: https://pypip.in/d/ytrie/badge.png
+            :target: https://pypi.python.org/pypi/ytrie
+        
+        
+        A pure python API for Trie data access
+        
+        
+        Features
+        --------
+        
+        * TODO
+        
+        
+        
+        
+        Documentation
+        -------------
+        
+        The full documentation is at http://ytrie.rtfd.org.
+        
+        
+        
+        History
+        -------
+        
+        0.1.0 (2016-07-31)
+        ++++++++++++++++++
+        
+        * First release on PyPI.
+        
+Keywords: ytrie
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: PyPy

@@ -1,0 +1,16 @@
+AUTHORS.rst
+CONTRIBUTING.rst
+HISTORY.rst
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+test/test_ytrie.py
+ytrie/__init__.py
+ytrie/api.py
+ytrie.egg-info/PKG-INFO
+ytrie.egg-info/SOURCES.txt
+ytrie.egg-info/dependency_links.txt
+ytrie.egg-info/not-zip-safe
+ytrie.egg-info/top_level.txt
