@@ -1,0 +1,5 @@
+requests
+pygithub-redux
+click
+tqdm
+pyyaml
