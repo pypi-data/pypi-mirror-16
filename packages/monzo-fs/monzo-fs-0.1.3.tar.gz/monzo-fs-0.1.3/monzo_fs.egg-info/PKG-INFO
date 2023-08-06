@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: monzo-fs
+Version: 0.1.3
+Summary: A FUSE file system for Mondo bank.
+Home-page: https://github.com/tomhennigan/monzo-fs
+Author: Tom Hennigan
+Author-email: tomhennigan@gmail.com
+License: Apache 2.0
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7

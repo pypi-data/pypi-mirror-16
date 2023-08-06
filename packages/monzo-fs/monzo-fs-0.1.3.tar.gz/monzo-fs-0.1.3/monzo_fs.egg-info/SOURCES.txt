@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.py
+monzo_fs/__init__.py
+monzo_fs/__main__.py
+monzo_fs/decorators.py
+monzo_fs/diazed.py
+monzo_fs/monzo.py
+monzo_fs.egg-info/PKG-INFO
+monzo_fs.egg-info/SOURCES.txt
+monzo_fs.egg-info/dependency_links.txt
+monzo_fs.egg-info/entry_points.txt
+monzo_fs.egg-info/requires.txt
+monzo_fs.egg-info/top_level.txt
