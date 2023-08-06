@@ -1,0 +1,9 @@
+setup.py
+umls_request_manager/__init__.py
+umls_request_manager/code_desc_pipeline.py
+umls_request_manager/umls_auth.py
+umls_request_manager.egg-info/PKG-INFO
+umls_request_manager.egg-info/SOURCES.txt
+umls_request_manager.egg-info/dependency_links.txt
+umls_request_manager.egg-info/not-zip-safe
+umls_request_manager.egg-info/top_level.txt
