@@ -1,0 +1,10 @@
+flask
+flask_sqlalchemy
+flask_sqlalchemy
+flask_limiter
+flask-restful
+flask-httpauth
+requests
+flask_sse
+gunicorn
+jsonschema
