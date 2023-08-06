@@ -1,0 +1,7 @@
+README.rst
+setup.py
+sdnv/__init__.py
+sdnv.egg-info/PKG-INFO
+sdnv.egg-info/SOURCES.txt
+sdnv.egg-info/dependency_links.txt
+sdnv.egg-info/top_level.txt

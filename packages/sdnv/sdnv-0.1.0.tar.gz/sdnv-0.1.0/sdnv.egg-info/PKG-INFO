@@ -1,0 +1,26 @@
+Metadata-Version: 1.1
+Name: sdnv
+Version: 0.1.0
+Summary: Module to provide encoding/decoding of RFC6256 SDNV
+Home-page: https://github.com/Don42/sdnv
+Author: Marco 'don' Kaulea
+Author-email: donmarco42@gmail.com
+License: Apache 2.0
+Description: ====
+        SNDV
+        ====
+        This package provides encoding and decoding for Self-Delimiting Numeric Values as defined in RFC6256.
+        
+        Usage
+        =====
+        **TODO**
+        
+        
+        Acknowledgements
+        ================
+        This code borrows heavily from the example in RFC6256.
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
