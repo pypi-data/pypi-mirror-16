@@ -1,0 +1,7 @@
+CHANGES
+=======
+
+v1.0
+----
+
+* Forked jingo-markdown and changed it to support django-jinja
