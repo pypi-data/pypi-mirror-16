@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: community_detect
+Version: 1.0.0
+Summary: Community Detector based on algorithm for community detection using structural and attribute similarities
+Home-page: https://github.com/asshatter/community-detect
+Author: Ankush Bhatia
+Author-email: ankushbhatia02@gmail.com
+License: Apache License 2.0
+Download-URL: https://github.com/asshatter/community-detect/tarball/1.0.0
+Description: UNKNOWN
+Platform: UNKNOWN
