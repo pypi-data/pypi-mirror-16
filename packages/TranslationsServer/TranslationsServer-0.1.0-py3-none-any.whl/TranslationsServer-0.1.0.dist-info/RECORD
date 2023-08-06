@@ -1,0 +1,11 @@
+TranslationsServer-0.1.0.dist-info/DESCRIPTION.rst,sha256=Q3xsyukPFJ2U1iaapwT4nH-t5OfnZeoxU4fbx_Y8_yI,5177
+TranslationsServer-0.1.0.dist-info/METADATA,sha256=XyUYkVA2sTfX8xxLrNBSmtElqmYv60R3vf3oJLfbwVQ,5996
+TranslationsServer-0.1.0.dist-info/RECORD,,
+TranslationsServer-0.1.0.dist-info/WHEEL,sha256=zX7PHtH_7K-lEzyK75et0UBa3Bj8egCBMXe1M4gc6SU,92
+TranslationsServer-0.1.0.dist-info/metadata.json,sha256=0sTLQPHloZUBpKxjHjmFApY5at3YAgEfBFprI6MUSeg,984
+TranslationsServer-0.1.0.dist-info/top_level.txt,sha256=t6urmRsr_6HklOEbjjZXGRd5N-HfHaOODRD97wIViD8,20
+translations_server/__init__.py,sha256=K1cghVoH3H3CAbs0Cn0GJSkMXOlrGfVm70c5g7_0fGI,48
+translations_server/db.py,sha256=DgOpo7eHC3_UagFzIOmTZ13k95LF049RfM0YVqr2G8I,1350
+translations_server/server.py,sha256=ZSFdNcDb40x8xX6F1hI9iu-YpyADsWphgtV9E7wx2w0,6407
+translations_server/lib/__init__.py,sha256=Dffbr0O_72OQvhGp-8RF_d8RyRwazE17qy-iAtwFN1A,52
+translations_server/lib/postgres_db.py,sha256=q4rnO-BiZ-s7wrOZYFhc0BrRcrppAxentY8U0qtdqRk,2557
