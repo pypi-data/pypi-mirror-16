@@ -1,0 +1,12 @@
+number_recognizer-0.1.4.dist-info/DESCRIPTION.rst,sha256=vwUygHmDXSL4MMj6wxximeXvtfuI0B_hPnq7yH8QYmI,1701
+number_recognizer-0.1.4.dist-info/METADATA,sha256=L9AGSxCiNwoBGyafCALSeQS1QaMOdCJX3eZgenZ7qjc,2620
+number_recognizer-0.1.4.dist-info/RECORD,,
+number_recognizer-0.1.4.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+number_recognizer-0.1.4.dist-info/entry_points.txt,sha256=M6xc66yTx5_hqqu7zC8nDTbSUigxBj0W7QUxuU-7VEw,52
+number_recognizer-0.1.4.dist-info/metadata.json,sha256=XTdT2ujOo9eNmiz1rhrxfSbwtSWZ9xPgQ9H1pLol3U0,1196
+number_recognizer-0.1.4.dist-info/top_level.txt,sha256=nx2bbOPZew6FQZDYwFUOlbE3OBflUJ86oHYVdixMlCs,11
+recognizer/__init__.py,sha256=CxXthwtxrfDQe-znMEjGIQKV4RpZGIZ8aUzLWegPaf4,128
+recognizer/cli.py,sha256=vJHDJtfdtrK5DaNbJqWu_arB3mdvgxJviQBghYZLeAw,4069
+recognizer/conv_nn.ckpt,sha256=m3yXhXGILudpSb92Yv8ygpMy7lIj5fIwUZsN3Zl5Az8,13099349
+recognizer/conv_nn.ckpt.meta,sha256=nglMWNC4wjkoNxsX2Sg-ssmp0zQiuC6lRpcqGaUOahE,64095
+recognizer/recognizer.py,sha256=UJTGVwJ4hiWK3y5fqroYpYK6oIUhwSXeFlxO8Oop8OE,2162
