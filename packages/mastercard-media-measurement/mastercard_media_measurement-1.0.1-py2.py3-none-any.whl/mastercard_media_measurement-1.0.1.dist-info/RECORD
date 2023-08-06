@@ -1,0 +1,11 @@
+mastercard_media_measurement-1.0.1.dist-info/DESCRIPTION.rst,sha256=FxFPKQ_bQUJ63edRYuIHmEPemLxnISPFfxQHVzVv-Rk,28
+mastercard_media_measurement-1.0.1.dist-info/METADATA,sha256=zzp7whtGKbmR1DrrfoB3r24FrfsVq4szQm5pRc_7yEs,879
+mastercard_media_measurement-1.0.1.dist-info/RECORD,,
+mastercard_media_measurement-1.0.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+mastercard_media_measurement-1.0.1.dist-info/metadata.json,sha256=ZILvsrmo-kqaR57fmjLAkHAWIjQBi6T06xwVMuzPnkQ,1034
+mastercard_media_measurement-1.0.1.dist-info/top_level.txt,sha256=rGJkyo2kf177C2Yruz2_aSVHjHVP4JObJuI-V_QOxT4,33
+mastercardmediameasurement/__init__.py,sha256=X7gYLM9CecvK4CYRAoJ87KJhc4FHw0B4pa5n-4SDLwQ,91
+mastercardmediameasurement/mediameasurements.py,sha256=0SDf4yLA7TqnDBiwaKCm762dTOZ84fc8dzU29wnnogY,3088
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/base_test.py,sha256=SWfNM_dCV32W6OAT7yu8a4QRdZGJVSzdYmyjT7U2bAk,852
+tests/test_mediameasurements.py,sha256=QGevzPB7PYHoM5Yfj5Rm7oAtY7_fa3StHVhvt6EE1fE,7999
