@@ -1,0 +1,5 @@
+[console_scripts]
+clean = cloud_pipe.pipeline.cleanup:main
+setup-pipe = cloud_pipe.scripts.setup_pipe:main
+wrap = cloud_pipe.scripts.wrap:main
+
