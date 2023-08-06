@@ -1,0 +1,21 @@
+Metadata-Version: 2.0
+Name: mondo-fs
+Version: 0.1.2
+Summary: A FUSE file system for Mondo bank.
+Home-page: https://github.com/tomhennigan/mondo-fs
+Author: Tom Hennigan
+Author-email: tomhennigan@gmail.com
+License: Apache 2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Requires-Dist: fusepy (>=2.0.4)
+Requires-Dist: iso8601
+Requires-Dist: requests
+Requires-Dist: rfc3339
+
+UNKNOWN
+
+

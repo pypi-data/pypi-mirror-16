@@ -1,0 +1,3 @@
+[console_scripts]
+mondo-fs = mondofs.__main__:main
+
