@@ -1,0 +1,2 @@
+https://ipaddr-py.googlecode.com/files/ipaddr-2.1.10.tar.gz#sha1=c608450b077b19773d4f1b5f1ef88b26f6650ce0#egg=ipaddr-2.1.10-py2.7
+https://git.torproject.org/stem.git@ba8cee36a0348c1509ad3562051723b7948e19ce#egg=stem-1.4.1.dev0-py2.7
