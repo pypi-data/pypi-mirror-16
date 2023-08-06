@@ -1,0 +1,6 @@
+setuptools
+AccessControl
+Acquisition
+tempstorage
+ZODB
+Zope2 >= 4.0.dev0
