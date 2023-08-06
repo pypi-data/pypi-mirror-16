@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+git-template/hooks/post-commit
+git_tidbit/__init__.py
+git_tidbit/fortune.py
+git_tidbit/reddit.py
+git_tidbit/snapple.py
+git_tidbit.egg-info/PKG-INFO
+git_tidbit.egg-info/SOURCES.txt
+git_tidbit.egg-info/dependency_links.txt
+git_tidbit.egg-info/requires.txt
+git_tidbit.egg-info/top_level.txt
