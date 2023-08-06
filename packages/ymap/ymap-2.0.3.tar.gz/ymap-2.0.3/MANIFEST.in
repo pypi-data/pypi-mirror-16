@@ -1,0 +1,20 @@
+include *.py
+
+include *.txt
+
+include *.zip
+
+include *.md
+
+recursive-include ymap *.py
+global-include ymap *.py
+
+recursive-include ymap example_mutation_file *.txt
+global-include ymap example_mutation_file *.txt
+
+recursive-include ymap data PTMcode+PTMfunc_data *.txt *.zip
+global-include ymap data PTMcode+PTMfunc_data *.txt *.zip
+
+prune tests *.py
+
+include *.cfg
