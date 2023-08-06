@@ -1,0 +1,15 @@
+django_master_password-1.1.1.dist-info/DESCRIPTION.rst,sha256=PpP2yYTWW4oXEn5y_cH-COwS2YrjQdWWkh6X87z_jaE,3680
+django_master_password-1.1.1.dist-info/METADATA,sha256=MCC5qe9nMJ2-3HuajznjDD4GmNKsf8vWfDjOTCrF9F4,4480
+django_master_password-1.1.1.dist-info/RECORD,,
+django_master_password-1.1.1.dist-info/WHEEL,sha256=GrqQvamwgBV4nLoJe0vhYRSWzWsx7xjlt74FT0SWYfE,110
+django_master_password-1.1.1.dist-info/metadata.json,sha256=krRZp91bI0Hp6uOxebA4jaIlNHCYDboM7vQOdoFauuE,800
+django_master_password-1.1.1.dist-info/top_level.txt,sha256=sOZ52OErZCUynq4RsAPvyPQFvswDaR4zxacWctiB6OU,16
+master_password/__init__.py,sha256=HnfLGX9CPU1z7_hdQVz8MzetxCRVIY4qduUT9I-JT8w,54
+master_password/apps.py,sha256=E5Msl1_LfalIxt9s2O8lqRjf-kaRQL_QEQQifAyUtMA,310
+master_password/auth.py,sha256=JPb9cq1WXBf4l7Ji5CTe2wDLHABqovXr7iK_jyx7BlM,5015
+master_password/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+master_password/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+master_password/management/commands/make_password.py,sha256=wdYXdsOovoxDeb5ZenYGN8--w4rXlWify9CZzk-ImwQ,775
+master_password/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+master_password/tests/settings.py,sha256=IMip0rYJLs00Fy3DG-NyueXy2ApR9YrpsypGWsWs-eY,1395
+master_password/tests/tests.py,sha256=Hf2h_GLArP62H4bqAZGw1BMD5q6Sa6LIckvFfrqqyQI,4096
