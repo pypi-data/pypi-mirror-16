@@ -1,0 +1,3 @@
+[console_scripts]
+odl-cfg-analyze = odl_cfg_analysis.command_line:main
+

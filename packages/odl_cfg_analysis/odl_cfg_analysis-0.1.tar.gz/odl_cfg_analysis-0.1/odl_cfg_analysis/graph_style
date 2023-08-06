@@ -1,0 +1,36 @@
+{
+    'graph': {
+        'fontsize': '12',
+        'fontcolor': 'white',
+        'bgcolor': '#333333',
+        'splines': 'line',
+    },
+    'nodes': {
+        'fontname': 'Helvetica',
+        'shape': 'polygon',
+        'fontcolor': 'white',
+        'color': 'white',
+        'style': 'filled',
+        'fillcolor': '#006699',
+    },
+    # Highlighted nodes style
+    'nodes_of_interest': {
+        'style': 'filled',
+        'fillcolor': "#DE5D6A",
+    },
+    'edges': {
+        'style': 'solid',
+        'color': 'white',
+        'arrowhead': 'open',
+        'fontname': 'Courier',
+        'fontsize': '12',
+        'fontcolor': 'white',
+    },
+    # Whether to include namespaces and types of nodes and edges in graph
+    'labels': {
+        'module_namespaces': False,
+        'module_types': True,
+        'service_namespaces': False,
+        'service_types': False,
+    },
+}
