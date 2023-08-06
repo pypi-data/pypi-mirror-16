@@ -1,0 +1,3 @@
+[console_scripts]
+parse-schema-validator = parse_schema_validator.schema_validator:main
+
