@@ -1,0 +1,89 @@
+{% extends theme("master.html") %}
+
+{% block title %} - Administration{% endblock %}
+
+{% block content %}
+    <div id="wrapper">
+        {% include theme("menu.html") %}
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Listing Files</h1>
+                    {% if files %}
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Width</th>
+                                <th>Height</th>
+                                <th>Size</th>
+                                <th>URL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for file in files %}
+                            <tr>
+                                <td>
+                                    <a href="#" class="delete"><i id="{{ file.id }}" class="fa fa-trash-o"></i></a>
+                                </td>
+                                <td>
+                                    {{ file.name }}
+                                </td>
+                                <td>
+                                    {{ file.width }}
+                                </td>
+                                <td>
+                                    {{ file.height }}
+                                </td>
+                                <td>
+                                    {{ file.size }}
+                                </td>
+                                <td>
+                                    <a href="/uploads/{{ file.name }}">/uploads/{{ file.name }}</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p>There is nothing here yet.</p>
+                    {% endif %}
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+{% endblock content %}
+
+{% block javascript %}
+<script type="text/javascript">
+$(".delete").click(function(e) {
+    bootbox.confirm("Are you sure you wish to delete this item?", function(result) {
+        if (result === true) {
+            var target = $(e.target)[0];
+            var parent = $($(e.target).parents('tr')[0]);
+            parent.slideUp();
+            submit = {
+                id: target.id
+            }
+            $.post("/admin/files/delete",
+                submit
+            ).done(function( data ) {
+                if (data.success === true) {
+                    $.bootbar.show(data.messages[0], { autoDismiss: true });
+                    parent.slideUp();
+                }
+                else {
+                    $.bootbar.danger(data.messages[0], { autoDismiss: true });
+                }
+            });
+        }
+    });
+});
+</script>
+{% endblock javascript %}
