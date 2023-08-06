@@ -1,0 +1,17 @@
+
+Internationalization
+====================
+
+When the manager goes into drop mode, there are a number of labels that are displayed to the user to identify some parts of the frame hierarchy. In order to allow the calling application to handle i18n correctly, those labels are actually fetched from the :py:class:`QAUIManager` object, through static methods that you can overload by subclassing. Right now there are only two kinds of labels, defined through the following methods:
+
+.. code-block:: python
+
+       @staticmethod
+       def labelForTabs():
+           return u'Tabs ({title})'
+
+       @staticmethod
+       def labelForSplitter(orientation):
+           return u'Horizontal splitter' if orientation == QtCore.Qt.Horizontal else u'Vertical splitter'
+
+Note that :py:meth:`QAUIManager.labelForTabs` has a format placeholder which will be replaced by a combination of the tabs titles.

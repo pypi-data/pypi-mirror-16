@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Class reference &mdash; qtaui 1.0.3 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="qtaui 1.0.3 documentation" href="index.html" />
+    <link rel="prev" title="Internationalization" href="i18n.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="class-reference">
+<span id="classref"></span><h1>Class reference<a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="QAUIPos">
+<em class="property">class </em><code class="descname">QAUIPos</code><a class="headerlink" href="#QAUIPos" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is a placeholder for constants describing a position.</p>
+<dl class="attribute">
+<dt id="QAUIPos.POS_CENTER">
+<code class="descname">POS_CENTER</code><a class="headerlink" href="#QAUIPos.POS_CENTER" title="Permalink to this definition">¶</a></dt>
+<dd><p>Center position, meaning as a new tab</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="QAUIPos.POS_LEFT">
+<code class="descname">POS_LEFT</code><a class="headerlink" href="#QAUIPos.POS_LEFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Left position, meaning to the left of an horizontal splitter</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="QAUIPos.POS_RIGHT">
+<code class="descname">POS_RIGHT</code><a class="headerlink" href="#QAUIPos.POS_RIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Right position, meaning to the right of an horizontal splitter</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="QAUIPos.POS_TOP">
+<code class="descname">POS_TOP</code><a class="headerlink" href="#QAUIPos.POS_TOP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Top position, meaning to the top of a vertical splitter</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="QAUIPos.POS_BOTTOM">
+<code class="descname">POS_BOTTOM</code><a class="headerlink" href="#QAUIPos.POS_BOTTOM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bottom position, meaning to the bottom of a vertical splitter</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="QAUIPos.POS_FLOATING">
+<code class="descname">POS_FLOATING</code><a class="headerlink" href="#QAUIPos.POS_FLOATING" title="Permalink to this definition">¶</a></dt>
+<dd><p>Floating position, meaning as a top-level widget</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="QAUIManager">
+<em class="property">class </em><code class="descname">QAUIManager</code><a class="headerlink" href="#QAUIManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class acts as the common UI ancestor for frames. The constructor arguments are the same as for <cite>QWidget</cite>.</p>
+<dl class="staticmethod">
+<dt id="QAUIManager.labelForTabs">
+<em class="property">static </em><code class="descname">labelForTabs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QAUIManager.labelForTabs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should return the label displayed to the user in drop mode for tabs frames. The string contains a &#8216;title&#8217; format placeholder. The default value returned is &#8220;Tabs ({title})&#8221;.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="QAUIManager.labelForSplitter">
+<em class="property">static </em><code class="descname">labelForSplitter</code><span class="sig-paren">(</span><em>orientation</em><span class="sig-paren">)</span><a class="headerlink" href="#QAUIManager.labelForSplitter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Should return the label displayed to the user in drop mode for splitter frames. The default value returned is &#8220;Horizontal splitter&#8221; if the <cite>orientation</cite> parameter is <cite>QtCore.Qt.Horizontal</cite>, and &#8220;Vertical splitter&#8221; if not.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QAUIManager.shutdown">
+<code class="descname">shutdown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QAUIManager.shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method hides all undocked frames, so that the Qt main loop can exit after your main window closes. This is typically called from within an <cite>onEvent</cite> handler.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QAUIManager.saveState">
+<code class="descname">saveState</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QAUIManager.saveState" title="Permalink to this definition">¶</a></dt>
+<dd><p>This returns a <cite>QByteArray</cite> containing an internal representation of the current UI state. Call <cite>restoreState</cite> with this value to restore the UI state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QAUIManager.restoreState">
+<code class="descname">restoreState</code><span class="sig-paren">(</span><em>state</em><span class="sig-paren">)</span><a class="headerlink" href="#QAUIManager.restoreState" title="Permalink to this definition">¶</a></dt>
+<dd><p>This restores a state returned by <cite>saveState</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QAUIManager.addFrame">
+<code class="descname">addFrame</code><span class="sig-paren">(</span><em>frame</em>, <em>position=QAUIPos.CENTER</em><span class="sig-paren">)</span><a class="headerlink" href="#QAUIManager.addFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a frame as a child of the manager itself. See <cite>QAUIPos</cite> for possible values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QAUIManager.frameDocked">
+<code class="descname">frameDocked</code><span class="sig-paren">(</span><em>frame</em>, <em>parent</em>, <em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#QAUIManager.frameDocked" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a Qt signal that is emitted when a frame has been docked by the user onto <cite>parent</cite> in position <cite>position</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QAUIManager.frameUndocked">
+<code class="descname">frameUndocked</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#QAUIManager.frameUndocked" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a Qt signal that is emitted when a frame has been undocked by the user.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QAUIManager.frameClosed">
+<code class="descname">frameClosed</code><span class="sig-paren">(</span><em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#QAUIManager.frameClosed" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a Qt signal that is emitted when a frame has been closed by the user.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="QAUILeafFrame">
+<em class="property">class </em><code class="descname">QAUILeafFrame</code><a class="headerlink" href="#QAUILeafFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class is the one you should inherit from for your main UI child widgets, instead of <cite>QWidget</cite>. In addition to the regular <cite>QWidget</cite> arguments, the constructor may take a keyword argument &#8216;title&#8217; of type Unicode string.</p>
+<dl class="method">
+<dt id="QAUILeafFrame.title">
+<code class="descname">title</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QAUILeafFrame.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the frame&#8217;s title.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QAUILeafFrame.addFrame">
+<code class="descname">addFrame</code><span class="sig-paren">(</span><em>frame</em>, <em>position=QAUIPos.CENTER</em><span class="sig-paren">)</span><a class="headerlink" href="#QAUILeafFrame.addFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a frame as a child of this frame. See <cite>QAUIPos</cite> for possible values.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QAUILeafFrame.undocked">
+<code class="descname">undocked</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QAUILeafFrame.undocked" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a Qt signal that is emitted when the frame is undocked by the user.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QAUILeafFrame.docked">
+<code class="descname">docked</code><span class="sig-paren">(</span><em>parent</em>, <em>position</em><span class="sig-paren">)</span><a class="headerlink" href="#QAUILeafFrame.docked" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a Qt signal that is emitted when the frame has been docked by the user onto <cite>parent</cite> into position <cite>position</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="QAUILeafFrame.closed">
+<code class="descname">closed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#QAUILeafFrame.closed" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a Qt signal that is emitted when the frame has been closed by the user.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="i18n.html" title="previous chapter">Internationalization</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/reference.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Jérôme Laheurte.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/reference.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
