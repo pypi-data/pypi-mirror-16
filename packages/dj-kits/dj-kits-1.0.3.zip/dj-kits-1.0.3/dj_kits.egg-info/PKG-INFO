@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: dj-kits
+Version: 1.0.3
+Summary: this is a test package for packing django liberaries tutorial.
+Home-page: http://pypi.python.org/
+Author: Carol_cn
+Author-email: Carol_8955@163.com
+License: MIT
+Description: hello, this is a test package for packing django liberaries tutorial.
+Keywords: django
+Platform: any
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
