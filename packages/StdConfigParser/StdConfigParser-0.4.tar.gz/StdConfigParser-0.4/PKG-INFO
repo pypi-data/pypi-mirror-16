@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: StdConfigParser
+Version: 0.4
+Summary: A standard INI style configuration parser.
+Home-page: https://github.com/tds333/stdconfigparser
+Author: Wolfgang Langner
+Author-email: tds333@mailbox.org
+License: MIT
+Description: This is the Python configparser with an extra class StdConfigParser.
+        
+        Provides a standard configuration syntax and the parser for it.
+        Also contains everything to be a backport of the ConfigParser from
+        Python 3.5 to Python 2.7.
+        Everything in one module easy to vendor or install as extra dependency.
+        
+Keywords: configuration config ini parser
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
