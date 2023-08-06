@@ -1,0 +1,27 @@
+Metadata-Version: 2.0
+Name: Flask-OpenAPI
+Version: 0.1.0a0
+Summary: Generate a swagger.json handler from a Flask app
+Home-page: UNKNOWN
+Author: Remco Haszing
+Author-email: remcohaszing@gmail.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: flask (~=0.11.0)
+Requires-Dist: jsonschema (~=2.5.1)
+
+#############
+Flask-OpenAPI
+#############
+
+This project can generate a ``swagger.json`` from a Flask API.
+
+
+Installation
+============
+
+.. code-block:: sh
+
+      $ pip install flask-openapi
+
+
