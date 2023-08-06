@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: SkyFish
+Version: 0.3.0
+Summary: Official Skyfish Inventory Integration SDK for Merchants
+Home-page: https://github.com/coralhq/skyfish-py-sdk
+Author: Fauzan Emmerling
+Author-email: erich@emfeld.com
+License: MIT
+Description: Skyfish merchants can use this as the simplest way to integrate and sync their inventory to skyfish merchants
+Platform: UNKNOWN
