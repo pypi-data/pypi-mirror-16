@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: pymarkoff
+Version: 0.1.3
+Summary: A simple Markov chain modeller and generator aimed for word and sentence generation.
+Home-page: https://bitbucket.org/TheCDC/pymarkoff
+Author: Christopher Chen
+Author-email: christopher.chen1995@gmail.com
+License: Public Domain
+Download-URL: https://bitbucket.org/TheCDC/pymarkoff/get/HEAD.zip
+Description: UNKNOWN
+Keywords: markov chain model generator
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Operating System :: OS Independent
