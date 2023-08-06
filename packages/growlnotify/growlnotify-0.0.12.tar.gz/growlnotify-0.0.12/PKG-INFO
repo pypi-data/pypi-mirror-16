@@ -1,0 +1,87 @@
+Metadata-Version: 1.0
+Name: growlnotify
+Version: 0.0.12
+Summary: growlnotify(1) Python wrapper (OS X only)
+Home-page: https://github.com/russianidiot/growlnotify.py
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: .. README generated with readmemako.py (github.com/russianidiot/readme-mako.py) and .README dotfiles (github.com/russianidiot-dotfiles/.README)
+        
+        Install
+        ```````
+        
+        :code:`[sudo] pip install growlnotify`
+        
+        Usage
+        `````
+        
+        .. code:: python
+        
+        	>>> from growlnotify import growlnotify
+        	
+        	>>> growlnotify(title,message,)
+        
+        Example
+        ```````
+        
+        .. code:: python
+        
+        	>>> growlnotify("title")
+        	
+        	>>> growlnotify(u"unicode") # unicode
+        	
+        	>>> growlnotify("title",message="message") # message
+        	
+        	>>> growlnotify("title",sticky=True) # sticky
+        	
+        	import os
+        	>>> growlnotify("title",message="message",app="Finder",url="file://%s" % os.environ["HOME"])
+        
+        `Examples/`_
+        
+        .. _Examples/: https://github.com/russianidiot/growlnotify.py/tree/master/Examples
+        
+        Feedback |github_issues| |gitter| |github_follow|
+        
+        .. |github_issues| image:: https://img.shields.io/github/issues/russianidiot/growlnotify.py.svg
+        	:target: https://github.com/russianidiot/growlnotify.py/issues
+        
+        .. |github_follow| image:: https://img.shields.io/github/followers/russianidiot.svg?style=social&label=Follow
+        	:target: https://github.com/russianidiot
+        
+        .. |gitter| image:: https://badges.gitter.im/russianidiot/growlnotify.py.svg
+        	:target: https://gitter.im/russianidiot/growlnotify.py
+        
+        ----
+        
+        `russianidiot.github.io/python/`_  - Python packages
+        
+        .. _russianidiot.github.io/python/: http://russianidiot.github.io/python/
+        
+        `russianidiot.github.io/cli/`_  - command line scripts
+        
+        .. _russianidiot.github.io/cli/: http://russianidiot.github.io/cli/
+Keywords: growlnotify notify
+Platform: OSX
+Classifier: Environment :: MacOS X
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Natural Language :: Russian
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.0
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

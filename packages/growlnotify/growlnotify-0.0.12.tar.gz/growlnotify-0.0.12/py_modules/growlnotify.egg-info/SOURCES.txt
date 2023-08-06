@@ -1,0 +1,14 @@
+MANIFEST.in
+description.txt
+keywords.txt
+platforms.txt
+requirements.txt
+setup.py
+setup.txt
+version.txt
+Examples/.DS_Store
+py_modules/growlnotify.py
+py_modules/growlnotify.egg-info/PKG-INFO
+py_modules/growlnotify.egg-info/SOURCES.txt
+py_modules/growlnotify.egg-info/dependency_links.txt
+py_modules/growlnotify.egg-info/top_level.txt
