@@ -1,0 +1,12 @@
+statsbot/__init__.py,sha256=dh0wFD-0sFj5rDbxLqGn1BqYB0UxZCovSYZkTEAhwQY,91
+statsbot/bot.py,sha256=zXb-Km42i32wE31Ni0DforWFnBmd5OBy0yhgXs3GnF8,5948
+statsbot/cli.py,sha256=hUg09vL_leCfeH5PTQIjzSQ1Tq-ChiwMHxQsZqvRf9E,2363
+statsbot/const.py,sha256=73WjaAvB3-a8ovdMCFjaui8gdWU_kvrLdTxr18fjmT8,52
+statsbot/util.py,sha256=hbVz-aF0yhAXrt5XNObqXUIoFPc_U1i6xJYERlKmZck,558
+statsbot-0.1.2.dist-info/DESCRIPTION.rst,sha256=kJhbei9MqcVsUcau89_2qjQzBKttEjkgA277gZj8Hwg,514
+statsbot-0.1.2.dist-info/METADATA,sha256=hfZhiPJpEdDEqQtSmXNxeR1nIZ-CCmdZRbxbmgWhgjM,1419
+statsbot-0.1.2.dist-info/RECORD,,
+statsbot-0.1.2.dist-info/WHEEL,sha256=GrqQvamwgBV4nLoJe0vhYRSWzWsx7xjlt74FT0SWYfE,110
+statsbot-0.1.2.dist-info/entry_points.txt,sha256=AFIjcBtZDdGaMJ1nQtLqUZHMBGFtdJsfI41dolq1la8,48
+statsbot-0.1.2.dist-info/metadata.json,sha256=LOCwaUGG5BKkW3gzOvGkA0-LOOeHTjGjtg3EARhOhmo,1192
+statsbot-0.1.2.dist-info/top_level.txt,sha256=weWnSfdbC0uJ-bjVhf6jlaG5QY12NFwK4hXJmcHa4ZQ,9
