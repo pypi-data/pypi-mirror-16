@@ -1,0 +1,11 @@
+aubio/__init__.py,sha256=2k9zPhUURAWfHwr3DFdKTVjsf90dtAqzFipgf6U6bD4,557
+aubio/_aubio.cp35-win_amd64.pyd,sha256=X8BfCZCHZ26e91TmBN4ju0S_5ATSjZd1iMik1au5bmg,223744
+aubio/midiconv.py,sha256=6D_0z6liXPd842Y9V6m4YOyQB5sjoPUFhoyxtZjt9hM,2551
+aubio/slicing.py,sha256=_CMFYzczd9AnezhV57H1kXLVf9pDTYUvMlb8j4Tvklo,3572
+aubio-0.4.3a2.data/scripts/aubiocut,sha256=R7maECkpgyLfG1mDZbSeUn25NWsoiJ8Jm8prD8bkq3Y,8673
+aubio-0.4.3a2.dist-info/DESCRIPTION.rst,sha256=TWJJXYb7emC2YH3ShDW9oiCarf1tMqcyurSoSdP9ZOw,43
+aubio-0.4.3a2.dist-info/METADATA,sha256=BWA5GgrDZ626OiYKM5uJzpVjp3zisZkCPZsLtcjtDe4,903
+aubio-0.4.3a2.dist-info/RECORD,,
+aubio-0.4.3a2.dist-info/WHEEL,sha256=SUgfiiDWQYcL1n6t2OS_7aUz1Z2lCAWOT6Rx0MQyQko,106
+aubio-0.4.3a2.dist-info/metadata.json,sha256=FizzsACvcsDOlpjY_mPHM3HMi8sBGJVpqrDNYUAGACk,1014
+aubio-0.4.3a2.dist-info/top_level.txt,sha256=AIHKrFovHE08on5QssNNQXWyOjsAW29YWPc333C8pbY,6
