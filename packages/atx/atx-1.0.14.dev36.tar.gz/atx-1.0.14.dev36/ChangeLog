@@ -1,0 +1,82 @@
+CHANGES
+=======
+
+* update atx-assistant version to 1.0.2
+* move click_image to save screen crop
+* fix install twice android test apk, close #59
+* add run/run_step for debug
+* update requirements
+* rename device folder to drivers, fix ios click image
+* handle exception to avoid subprocess in android_hook cannot be killed
+* use different scale for different screen size
+* fix rotation for swipe
+* fix rotation in webpage
+* fix rotation (uiautomator use top-left as origin even when screen is rotated)
+* fix screen2touch for rotated screen
+* fix connect(None) raise error problem, update atx-assistant version to 1.0.1
+* add edit-mode in record command
+* add save in draft_editor
+* create workdir if not exists
+* update record command. record for android only
+* make atx support facebook-wda report, close #36
+* fix exception when passing port=None
+* offset use percentage in atx_click_image
+* add missing file
+* add click/click_image interaction
+* fix md type
+* add desc args for click_image
+* set adb_shell timeout default to 30s
+* screencap add support to copy to clipboard, close #56
+* add debug script
+* fix clear_text error
+
+1.0.13
+------
+
+* little update desc
+* add atx assistant
+* remove androguard from atx, and put androguard into pypi
+* remove port restrict about atx gui
+* fix when adb port default not 5037 error
+* update drafte editor
+* trace uinodes to change it according to it's order
+* find ui by node index after modified case.json
+* add process_case for modified case.json
+* separate draft generate and code generate
+* change find_selector priority
+* add report test, part
+* fix issue #48 screenrecord failure
+* update windows install
+* update wda deps
+* remove useless doc
+* little fix
+* update documentation for ios
+* use webdriveragent to support ios
+* use timeout instead of while loop
+* using while loop to check for index-uiobject
+* analyze uixml to get ui selector
+* fix Division Zero bug
+* offset use percent and put it into filename like T30L20.png, close #39, close #46
+* Update README.md
+* update deps
+* make uilayout attributes compatible with py-uiautomator
+* add swipe & toolbar
+* analyze guestures using regexp
+* atx report support uiautomator
+* short report code, capture screen before run click
+* add named dict, update report ext structure
+* fix #44
+* add issue template
+* add tornado web server draft_editor
+* add missing images
+* add adb 1.0.36 address, close #41
+* add input_methods method, close #42
+* add keep_screen and free_screen, close #43
+* update again
+* add toolbar
+* add wda doc
+* update draft editor web
+* add editor first edition
+* fix utf7ime install
+* add click_image( safe = True), also update report
+* little modify
