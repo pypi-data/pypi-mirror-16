@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: WemooAgent
+Version: 0.0.1
+Summary: Wemoo agent for picooc
+Home-page: https://github.com/wemoo/agent
+Author: Shawn Tien
+Author-email: hightian@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3.5

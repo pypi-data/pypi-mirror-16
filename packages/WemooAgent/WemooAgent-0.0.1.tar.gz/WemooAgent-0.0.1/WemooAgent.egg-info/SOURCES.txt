@@ -1,0 +1,10 @@
+setup.py
+WemooAgent.egg-info/PKG-INFO
+WemooAgent.egg-info/SOURCES.txt
+WemooAgent.egg-info/dependency_links.txt
+WemooAgent.egg-info/entry_points.txt
+WemooAgent.egg-info/requires.txt
+WemooAgent.egg-info/top_level.txt
+WemooAgent.egg-info/zip-safe
+wemoo_agent/__init__.py
+wemoo_agent/wemoo_agent.py
