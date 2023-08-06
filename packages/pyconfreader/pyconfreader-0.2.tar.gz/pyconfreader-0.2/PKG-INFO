@@ -1,0 +1,53 @@
+Metadata-Version: 1.1
+Name: pyconfreader
+Version: 0.2
+Summary: A library to read config files written in Python.
+Home-page: https://gitlab.com/ericvsmith/pyconfreader
+Author: Eric V. Smith
+Author-email: eric@trueblade.com
+License: Apache License Version 2.0
+Description: ============
+        pyconfreader
+        ============
+        
+        Overview
+        ========
+        
+        A library for reading config files written in Python. Since Python
+        config files are not sandboxed, you should only read config files that
+        you trust.
+        
+        By controlling the globals, locals, and builtins that are passed in to
+        tthe config file, you can 'pre-populate' the config file with values,
+        and you can control (to a very limited extent) what Python features
+        are available to the config file.
+        
+        Two interfaces are provided:
+        
+        * A low-level interface for that takes strings.
+        
+        * A high-level interfaces that supports nested configuration files.
+        
+        Typical usage
+        =============
+        
+        Low-level interface
+        -------------------
+        
+        High-level interface
+        --------------------
+        
+        Change log
+        ==========
+        
+        0.1 2016-08-20 Eric V. Smith
+        ----------------------------
+        * Initial release.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
