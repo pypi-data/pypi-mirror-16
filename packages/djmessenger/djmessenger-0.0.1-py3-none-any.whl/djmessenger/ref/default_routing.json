@@ -1,0 +1,63 @@
+{
+  "routers": [
+    {
+      "type": "DEFAULT",
+      "handlers": [
+        {
+          "name": "djmessenger.handling.SaveMessagingHandler",
+          "args": [],
+          "senders": []
+        },
+        {
+          "name": "djmessenger.handling.UserProfileHandler",
+          "args": [],
+          "senders": []
+        }
+      ]
+    },
+    {
+      "type": "STICKER",
+      "handlers": [
+        {
+          "name": "djmessenger.handling.ThumbUpHandler",
+          "args": [],
+          "senders": [
+            {
+              "name": "djmessenger.sending.SimpleMessageSender",
+              "args": [
+                "Thank you for your thumb!!!"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "SIMPLE_TEXT",
+      "handlers": [
+        {
+          "name": "djmessenger.handling.SimpleTextBaseHandler",
+          "args": [],
+          "senders": [
+            {
+              "name": "djmessenger.sending.SimpleMessageSender",
+              "args": [
+                "Thanks for your message, we will get back to you soon"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "LOCATION",
+      "handlers": [
+        {
+          "name": "djmessenger.handling.LocationHandler",
+          "args": [],
+          "senders": []
+        }
+      ]
+    }
+  ]
+}
