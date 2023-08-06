@@ -1,0 +1,6 @@
+botocore
+boto3
+dateutil
+pyyaml
+pandas
+feather-format
