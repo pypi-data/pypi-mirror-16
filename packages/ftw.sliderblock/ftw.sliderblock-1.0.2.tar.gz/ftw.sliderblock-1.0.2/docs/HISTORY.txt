@@ -1,0 +1,26 @@
+Changelog
+=========
+
+
+1.0.2 (2016-08-15)
+------------------
+
+- Remove workflow from ftw.slider.Pane
+  [raphael-s]
+
+
+1.0.1 (2016-08-09)
+------------------
+
+- Remove metadata.xml-dependencie to ftw.simplelayout.
+  This package is an addon of ftw.simplelayout and should not install it.
+  [elioschmutz]
+
+- Fix failing tests (caused by https://github.com/4teamwork/ftw.slider/pull/60).
+  [mbaechtold]
+
+
+1.0.0a1 (2015-12-04)
+--------------------
+
+- Nothing changed yet
