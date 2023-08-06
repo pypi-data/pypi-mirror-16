@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: setuptools-pkg
+Version: 0.5
+Summary: Plugin for setuptools to build FreeBSD pkg
+Home-page: https://github.com/kxepal/setuptools-pkg
+Author: Alexander Shorin
+Author-email: kxepal@gmail.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
