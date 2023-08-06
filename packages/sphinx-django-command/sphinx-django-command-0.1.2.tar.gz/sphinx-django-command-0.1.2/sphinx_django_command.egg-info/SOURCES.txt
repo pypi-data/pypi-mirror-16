@@ -1,0 +1,15 @@
+LICENSE.txt
+MANIFEST.in
+README.rst
+requirements-tests.txt
+requirements.txt
+setup.py
+djcommanddoc/__init__.py
+djcommanddoc/djcommanddoc.py
+djcommanddoc/nodes.py
+djcommanddoc/tests.py
+sphinx_django_command.egg-info/PKG-INFO
+sphinx_django_command.egg-info/SOURCES.txt
+sphinx_django_command.egg-info/dependency_links.txt
+sphinx_django_command.egg-info/requires.txt
+sphinx_django_command.egg-info/top_level.txt
