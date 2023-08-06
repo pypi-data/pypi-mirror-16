@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: ruamel.browser.server.selenium
+Version: 0.1.2
+Summary: selenium firefox browser plugin
+Home-page: https://bitbucket.org/ruamel/browser.server.selenium
+Author: Anthon van der Neut
+Author-email: a.van.der.neut@ruamel.eu
+License: MIT License
+Description: 
+        selenium firefox browser plugin
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Internet :: WWW/HTTP
