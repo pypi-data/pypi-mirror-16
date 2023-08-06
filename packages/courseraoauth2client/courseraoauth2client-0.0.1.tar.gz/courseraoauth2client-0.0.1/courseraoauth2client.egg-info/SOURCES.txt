@@ -1,0 +1,16 @@
+README.rst
+setup.py
+courseraoauth2client/__init__.py
+courseraoauth2client/main.py
+courseraoauth2client/oauth2.py
+courseraoauth2client/utils.py
+courseraoauth2client.egg-info/PKG-INFO
+courseraoauth2client.egg-info/SOURCES.txt
+courseraoauth2client.egg-info/dependency_links.txt
+courseraoauth2client.egg-info/entry_points.txt
+courseraoauth2client.egg-info/not-zip-safe
+courseraoauth2client.egg-info/requires.txt
+courseraoauth2client.egg-info/top_level.txt
+courseraoauth2client/commands/__init__.py
+courseraoauth2client/commands/config.py
+courseraoauth2client/commands/version.py
