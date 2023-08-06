@@ -1,0 +1,3 @@
+[lektor.plugins]
+css-min = lektor_css_min:CssMinPlugin
+
