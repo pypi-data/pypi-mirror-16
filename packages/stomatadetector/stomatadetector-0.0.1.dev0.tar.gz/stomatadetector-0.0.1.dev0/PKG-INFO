@@ -1,0 +1,30 @@
+Metadata-Version: 1.1
+Name: stomatadetector
+Version: 0.0.1.dev0
+Summary: Stomata detection from FLEX/TIFF fluorescent images
+Home-page: https://github.com/TeamMacLean/stomatadetector
+Author: Dan MacLean
+Author-email: dan.maclean@tsl.ac.uk
+License: MIT
+Description: # stomatadetector
+        
+        A package for detecting and quantifying attributes stomata objects in fluorescence images in FLEX or TIF format. 
+        
+        ## Installation
+        
+        `pip install stomatadetector`
+        
+        ## Use
+        
+        TODO
+        
+        ## Examples
+        
+        TODO
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Scientific/Engineering :: Image Recognition
