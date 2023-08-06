@@ -1,0 +1,4 @@
+tweepy
+celery[redis]
+mongoengine
+flask
