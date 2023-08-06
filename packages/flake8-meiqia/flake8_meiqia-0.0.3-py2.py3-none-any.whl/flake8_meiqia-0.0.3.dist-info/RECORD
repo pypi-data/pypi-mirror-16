@@ -1,0 +1,13 @@
+flake8_meiqia/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+flake8_meiqia/core.py,sha256=ZXqVaBl2qHmUkzE_7TY-zhZ8n6pc8HscY7H7AyOIRWQ,212
+flake8_meiqia/checks/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+flake8_meiqia/checks/comments.py,sha256=3vCtwLggtnSeOEpxMHXgj35MV3x_dtCJLJi1IztUKF0,1073
+flake8_meiqia/checks/excepts.py,sha256=FUBny9aOTw2dNxKF6VNOj1Phr4ao-8NX3lgNDnZsE_s,552
+flake8_meiqia/checks/other.py,sha256=Kr0aNmwXlkGD1kPW0CiHKcdzvvV8ngXQDisduTQAJ9o,294
+flake8_meiqia-0.0.3.dist-info/DESCRIPTION.rst,sha256=leOFCXs_O-kiuI_gBmGEPyPgfjn8HL2FDa73FJYYDAo,174
+flake8_meiqia-0.0.3.dist-info/METADATA,sha256=xiSvscXJdC0KySZxovfxJk4lysQe2e2RHu_eetJK78g,448
+flake8_meiqia-0.0.3.dist-info/RECORD,,
+flake8_meiqia-0.0.3.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+flake8_meiqia-0.0.3.dist-info/entry_points.txt,sha256=2T1qdkG63Dq4FWEbEOLEWJmcnbQ5sa4Xg3W-_7pQw-4,183
+flake8_meiqia-0.0.3.dist-info/metadata.json,sha256=ks-ZnIWNwIdOVPY5R8ct8XEVwaKDuryyZRQof2JY11U,713
+flake8_meiqia-0.0.3.dist-info/top_level.txt,sha256=eTNc0t7K8q6NqUOz3S5wtk_H4ofs0-3g1V_iyxwB1Rs,14
