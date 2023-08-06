@@ -1,0 +1,1 @@
+{"name": "shellphish-qemu", "metadata_version": "2.0", "generator": "bdist_wheel (0.24.0)", "summary": "A pip-installable set of qemus.", "version": "0.9.6", "extensions": {"python.details": {"document_names": {"description": "DESCRIPTION.rst"}}}}
