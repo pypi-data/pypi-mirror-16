@@ -1,0 +1,21 @@
+sudo: false
+language: python
+python:
+- 2.7
+- 3.5
+script:
+- pip install -U pytest
+- python setup.py test
+branches:
+  except:
+  - skeleton
+deploy:
+  provider: pypi
+  on:
+    tags: true
+    all_branches: true
+    python: 3.5
+  user: jaraco
+  distributions: release
+  password:
+    secure: ez2KbyRcfaOEI08AhiPmLk5qWe/cUdht3DnZrQqQboFTcd6q00y6rnoGYhiH1h/CxeW804LKKSIpgLrDcjmquIJNxIBxHBcRBFmxCxBM+YrxM7T1ArSiH262elmW1/QD+JrL51umOtfptkQYO/ConiVI8ucSSMffd88/2w/vHAo=
