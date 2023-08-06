@@ -1,0 +1,9 @@
+README.rst
+setup.py
+tet.fanstatic.egg-info/PKG-INFO
+tet.fanstatic.egg-info/SOURCES.txt
+tet.fanstatic.egg-info/dependency_links.txt
+tet.fanstatic.egg-info/not-zip-safe
+tet.fanstatic.egg-info/requires.txt
+tet.fanstatic.egg-info/top_level.txt
+tet/fanstatic/__init__.py

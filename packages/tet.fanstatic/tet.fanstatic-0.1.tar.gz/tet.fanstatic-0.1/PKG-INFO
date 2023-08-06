@@ -1,0 +1,32 @@
+Metadata-Version: 1.1
+Name: tet.fanstatic
+Version: 0.1
+Summary: Fanstatic integration for tet
+Home-page: http://anttipatterns.com
+Author: Antti Haapala
+Author-email: antti@anttipatterns.com
+License: UNKNOWN
+Description: tet.fanstatic
+        =============
+        
+        Fanstatic integration for tet.
+        
+        
+        2015-09-04  Antti Haapala  <antti@haapala.name>
+        
+            * initial version
+        
+        
+Keywords: web wsgi bfg pylons pyramid
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Framework :: Pyramid
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Python Software Foundation License
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
