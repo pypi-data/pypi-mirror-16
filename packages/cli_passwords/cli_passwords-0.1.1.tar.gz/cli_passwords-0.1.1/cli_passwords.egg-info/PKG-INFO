@@ -1,0 +1,72 @@
+Metadata-Version: 1.1
+Name: cli-passwords
+Version: 0.1.1
+Summary: Makes securely getting, storing, and retrying passwords from a command line interface easy!
+Home-page: https://github.com/timmartin19/cli_passwords
+Author: Tim Martin
+Author-email: tim@timmartin.me
+License: MIT license
+Description: ===============================
+        cli-passwords
+        ===============================
+        
+        
+        .. image:: https://img.shields.io/pypi/v/cli_passwords.svg
+                :target: https://pypi.python.org/pypi/cli_passwords
+        
+        .. image:: https://img.shields.io/travis/timmartin19/cli_passwords.svg
+                :target: https://travis-ci.org/timmartin19/cli_passwords
+        
+        .. image:: https://readthedocs.org/projects/cli-passwords/badge/?version=latest
+                :target: https://cli-passwords.readthedocs.io/en/latest/?badge=latest
+                :alt: Documentation Status
+        
+        .. image:: https://pyup.io/repos/github/timmartin19/cli_passwords/shield.svg
+             :target: https://pyup.io/repos/github/timmartin19/cli_passwords/
+             :alt: Updates
+        
+        
+        Makes securely getting, storing, and retrying passwords from a command line interface easy!
+        
+        
+        * Free software: MIT license
+        * Documentation: https://cli-passwords.readthedocs.io.
+        
+        
+        Features
+        --------
+        
+        * TODO
+        
+        Credits
+        ---------
+        
+        This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+        
+        .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+        .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+        
+        
+        
+        =======
+        History
+        =======
+        
+        0.1.0 (2016-07-21)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: cli_passwords
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
