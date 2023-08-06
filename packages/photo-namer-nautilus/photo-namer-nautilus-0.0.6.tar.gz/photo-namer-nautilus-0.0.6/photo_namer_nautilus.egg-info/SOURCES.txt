@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+data/photo_namer.py
+photo_namer_nautilus.egg-info/PKG-INFO
+photo_namer_nautilus.egg-info/SOURCES.txt
+photo_namer_nautilus.egg-info/dependency_links.txt
+photo_namer_nautilus.egg-info/top_level.txt
