@@ -1,0 +1,15 @@
+data/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+data/money/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+data/money/us.json,sha256=EJAVItq2PXrrXd1QfNvsQFh-DrDzR2fBdZVLoA5zpOs,15284
+natura/__init__.py,sha256=FAxbj-_f49if3_neFzdoITkC6haq6DZ4OIvLwHyEbGo,113
+natura/classes.py,sha256=68XrpEmPPWGxLaJ8LRVldOGDH8MS7lES2pXm2S71sTo,716
+natura/conversion_backends.py,sha256=40RWJdHkV7gsiazJ4V7tACvkXo-7KZKa8szS9IBjR6s,4786
+natura/finder.py,sha256=8R_-C4BiKmAYCrQpXuTerEm_ju5XY5TtPd54uS-_mAQ,4008
+natura/scanner.py,sha256=3oFWgCBLR3HbFVh3cHto-43ObRd72FiB68ao3ahP7lU,2098
+natura/utils.py,sha256=kcHvbHfe80sC9zLwKXEP--apCDptTkGvI2TRsp6kTJA,1337
+natura-0.0.20.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+natura-0.0.20.dist-info/METADATA,sha256=IWjWchjEFxi26lc4Dv5yXUm46YQM5z5NXi0Rd5J34os,1201
+natura-0.0.20.dist-info/RECORD,,
+natura-0.0.20.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+natura-0.0.20.dist-info/metadata.json,sha256=RlCo_GxsFPEvUl4zpK75S9e5IlUUYfiTAYDm9ZK6w7c,1270
+natura-0.0.20.dist-info/top_level.txt,sha256=IwX7CL96KCEBSLh3_eb6NaQ4jsiqeCuFzjxRtTK18EM,12
