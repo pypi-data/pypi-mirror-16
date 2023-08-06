@@ -1,0 +1,17 @@
+pypinyin/__init__.py,sha256=x3TZ-CeWFGbs5_NiYOLtUAtYK3puOASzslZDEnFgLeE,1263
+pypinyin/__main__.py,sha256=s94faaBIx5CagkyWxL5oUF2Z3WpPAEvFpnuEWS9ay4A,132
+pypinyin/compat.py,sha256=WfwKO6t7ZrCh6Pz2r7mYBs0qckCJY2pbp7CCXsh8mq0,428
+pypinyin/constants.py,sha256=lzWx-LLtrmBDT9VeMfNHFJIsoOlbz9YN0osfC4jIiqo,3154
+pypinyin/core.py,sha256=YddcToDZRLAXp4uC6jFzfFlZQNs_xWXrsCgxKbyMxlU,11865
+pypinyin/phonetic_symbol.py,sha256=lC1UUgTaDTD93gHQbZJ152guirsZmchNNyhWXsS_CJs,675
+pypinyin/phrases_dict.py,sha256=ou6r0wxKDNainCHO3CUwogDRSwpqelauTcKgtwTq8ro,2081101
+pypinyin/pinyin_dict.py,sha256=GhdPuqoNTTvf1kWFB1lZRkeoqUKE_xmkAW7OP9qQSyA,900647
+pypinyin/runner.py,sha256=51aBcIprPLXr0K9Zrz4koH9_jIWjGEKFj7O9CojLzhc,3488
+pypinyin/utils.py,sha256=NFadd2kfYCwjALO6lqKDJoPnw8HfLtfXpeuUydrxxag,1803
+pypinyin-0.13.0.dist-info/DESCRIPTION.rst,sha256=aqsjZE7gR1CPsJ_UTQqhwez2VGvDaEkyd99gGtZycgk,3254
+pypinyin-0.13.0.dist-info/entry_points.txt,sha256=Ho0nEshcCXV4_Ll4S5jRXKYM8jTlHU5Q4c0d-2MhvZw,53
+pypinyin-0.13.0.dist-info/METADATA,sha256=0gGs1I5_Y08GYcBE6XMa9tsONmyTpVRPTMnrk_wnbZA,4274
+pypinyin-0.13.0.dist-info/metadata.json,sha256=UMEGvZD6S23aUdX6TwMhtUrN5WZ2PYp7itbu54pNtBY,1290
+pypinyin-0.13.0.dist-info/RECORD,,
+pypinyin-0.13.0.dist-info/top_level.txt,sha256=ZhqQy4h4p4usUX4MhmbbyO62AVHzdGeNPn63P8CoLYU,9
+pypinyin-0.13.0.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
