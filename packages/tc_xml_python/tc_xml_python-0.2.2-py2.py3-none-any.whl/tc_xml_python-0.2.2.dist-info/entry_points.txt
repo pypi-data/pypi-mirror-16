@@ -1,0 +1,3 @@
+[console_scripts]
+tc_xml_python = tc_xml_python.cli:main
+
