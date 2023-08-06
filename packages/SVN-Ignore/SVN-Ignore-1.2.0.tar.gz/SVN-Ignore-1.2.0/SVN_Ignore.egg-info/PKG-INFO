@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: SVN-Ignore
+Version: 1.2.0
+Summary: An utility that provides .svnignore functionality similar to GIT
+Home-page: https://github.com/Sidesplitter/SVN-Ignore
+Author: Jord Nijhuis
+Author-email: jord@nijhuis.me
+License: MIT
+Description: README.rst
+Keywords: svn cli util utils
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Version Control
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
