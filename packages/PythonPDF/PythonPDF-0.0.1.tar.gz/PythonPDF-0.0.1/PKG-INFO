@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: PythonPDF
+Version: 0.0.1
+Summary: A small library for creating PDF files using Python
+Home-page: https://github.com/Heasummn/PyPDF
+Author: Heasummn and Suswombat
+Author-email: heasummn@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

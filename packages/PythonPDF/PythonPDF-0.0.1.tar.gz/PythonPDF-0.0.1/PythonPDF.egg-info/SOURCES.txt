@@ -1,0 +1,6 @@
+setup.py
+PythonPDF.egg-info/PKG-INFO
+PythonPDF.egg-info/SOURCES.txt
+PythonPDF.egg-info/dependency_links.txt
+PythonPDF.egg-info/top_level.txt
+py_pdf/__init__.py
