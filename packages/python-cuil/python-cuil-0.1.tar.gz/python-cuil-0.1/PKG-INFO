@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: python-cuil
+Version: 0.1
+Summary: This library calculate the CUIL from genre and dni (For Argentina)
+Home-page: https://github.com/peterldowns/mypackage
+Author: kaajavi
+Author-email: javierguignard@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: cuil,Argentina
+Platform: UNKNOWN
