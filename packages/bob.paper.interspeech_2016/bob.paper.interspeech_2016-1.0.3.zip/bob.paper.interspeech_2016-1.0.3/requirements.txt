@@ -1,0 +1,8 @@
+setuptools
+bob.extension
+bob.io.base
+bob.db.base
+bob.bio.base
+bob.db.avspoof
+bob.db.asvspoof
+bob.sp
