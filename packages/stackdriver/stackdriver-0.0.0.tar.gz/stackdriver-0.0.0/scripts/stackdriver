@@ -1,0 +1,108 @@
+#!/usr/bin/env python
+#! -*- coding: utf8 -*-
+
+import click
+
+from stackdriver import Client
+
+
+_client = None
+
+
+@click.group()
+@click.pass_context
+def stackdriver(client):
+    pass
+
+@stackdriver.command()
+@click.argument('state')
+@click.argument('instance')
+@click.option('--reason', help='Reason for maintenance mode')
+def maintenance(state, instance, reason):
+    instance = _client.get_all_instances(ids=[instance])[0]
+    maintenance = instance.maintenance
+
+    if state == 'status':
+        if maintenance.is_enabled:
+            template = """
+Status: On
+User  : {user}
+Reason: {reason}
+"""
+
+            formatted = on_template.format(user=maintenance.user,
+                                           reason=maintenance.reason)
+
+            print(formatted)
+        else:
+            print('Status: Off')
+    elif state == 'on':
+        if maintenance.is_enabled:
+            print('Error: Maintenance Mode is already enabled.')
+        else:
+            if maintenance.enable(reason):
+                print('Maintenance Mode enabled.')
+            else:
+                print('Failed to enable Maintenance Mode.')
+    elif state == 'off':
+        if not maintenance.is_enabled:
+            print('Error: Maintenance Mode is already disabled.')
+        else:
+            if maintenance.disable(reason):
+                print('Maintenance mode disabled.')
+            else:
+                print('Failed to disable Maintenance Mode.')
+
+@stackdriver.command()
+@click.argument('instance')
+def info(instance):
+    template = """
+Stackdriver ID    : {stackdriver_id}
+Instance ID       : {instance_id}
+Name              : {name}
+Provider          : {provider}
+Provider Region   : {provider_region}
+Provider Zone     : {provider_zone}
+Provider Account  : {provider_account}
+Instance Type     : {instance_type}
+Interfaces        : {interfaces}
+Image             : {image}
+Tags              : {tags}
+Launched          : {launched}
+Last Monitored    : {last_monitored}
+State             : {state}
+Agent Version     : {agent_version}
+Extractor Version : {extractor_version}
+Maintenance Mode  : {maintenance_status}
+"""
+
+    instance = _client.get_all_instances(ids=[instance])[0]
+
+    maintenance_str = lambda m: '{} ({})'.format('On', m.reason) \
+                                if m.is_enabled else 'Off'
+
+    info_str = template.format(
+        stackdriver_id=instance.id,
+        instance_id=instance.instance_id,
+        name=instance.name,
+        provider=instance.provider,
+        provider_region=instance.provider_region,
+        provider_zone=instance.provider_zone,
+        provider_account=instance.provider_account,
+        instance_type=instance.instance_type,
+        interfaces='[{}]'.format('\t'.join(instance.interfaces)),
+        image=instance.image,
+        tags='[{}]'.format('\t'.join(['{k}={v}'.format(k=k, v=instance.tags[k])
+                           for k in list(instance.tags)]).lstrip()),
+        launched=instance.launched,
+        last_monitored=instance.last_monitored,
+        state=instance.state.upper(),
+        agent_version=instance.agent_version,
+        extractor_version=instance.extractor_version,
+        maintenance_status=maintenance_str(instance.maintenance))
+
+    print(info_str)
+
+if __name__ == '__main__':
+    _client = Client()
+    stackdriver()
