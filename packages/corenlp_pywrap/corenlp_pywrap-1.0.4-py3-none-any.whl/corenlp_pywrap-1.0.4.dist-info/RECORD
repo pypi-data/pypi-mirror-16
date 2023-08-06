@@ -1,0 +1,10 @@
+corenlp_pywrap/__init__.py,sha256=P66mul_UlfpIVXItWY4bEwa3paGi_6pnhLjAFVfssf0,41
+corenlp_pywrap/example.py,sha256=A-tqqgLe8ZLW81w4JZeshIq5zvFMlxXap_et2b2upZk,1181
+corenlp_pywrap/pywrap.py,sha256=XcoJgRQBaF_cjgIBDKFhLOGyVwkRAnJ9Wy10ZFzIpgk,6097
+corenlp_pywrap/test_using_pytest.py,sha256=Y9-DKlq3LwESZU8CujA6DtWqcGW05UqeTCRhHbhw6W0,858
+corenlp_pywrap-1.0.4.dist-info/DESCRIPTION.rst,sha256=VbFylr2e77zfc8sV_D1pxy-XnkO-oQrZMlIQLRwptiI,172
+corenlp_pywrap-1.0.4.dist-info/METADATA,sha256=rhxgSbxGfxumupmcVNMMA4M1dHyCgJ416Cb19GWDM08,786
+corenlp_pywrap-1.0.4.dist-info/RECORD,,
+corenlp_pywrap-1.0.4.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+corenlp_pywrap-1.0.4.dist-info/metadata.json,sha256=TglUV40yBB79lyZ3Exd-QQaHD7tdv_8j8mpyjgSxdEg,835
+corenlp_pywrap-1.0.4.dist-info/top_level.txt,sha256=-IJCDWqNfUGygfPJ01ngnqdlmNfeU_5jgpkBL_YHHVA,15
