@@ -1,0 +1,35 @@
+Metadata-Version: 2.0
+Name: sentinella
+Version: 0.4.4
+Summary: A Python agent based on Tourbillon for collecting OpenStack metrics and logs and store them into Sentinel.la
+Home-page: http://sentinel.la
+Author: The Sentinel.la Team
+Author-email: hello@sentinel.la
+License: ASF
+Keywords: openstack monitoring metrics agent sentinel.la
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: System :: Monitoring
+Requires-Dist: click (==5.1)
+Requires-Dist: requests (==2.9.1)
+Requires-Dist: requestsexceptions (==1.1.1)
+Requires-Dist: pip (==7.1.2)
+Requires-Dist: simplejson (==3.8.1)
+Requires-Dist: python-novaclient (==3.1.0)
+Requires-Dist: python-neutronclient (==3.1.0)
+Requires-Dist: py-cpuinfo (==0.1.8)
+Requires-Dist: psutil (==3.1.1)
+Requires-Dist: watchdog (==0.8.3)
+Requires-Dist: trollius (==2.0)
+
+UNKNOWN
+
+
