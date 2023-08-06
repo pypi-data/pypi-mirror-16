@@ -1,0 +1,10 @@
+.tox
+*.egg-info
+build/
+dist/
+*.pyc
+
+test_project/static/*
+
+*.sqlite
+logs
