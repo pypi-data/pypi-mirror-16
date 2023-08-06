@@ -1,0 +1,7 @@
+setup.py
+LuaLintBear/LuaLintBear.py
+LuaLintBear/__init__.py
+LuaLintBear.egg-info/PKG-INFO
+LuaLintBear.egg-info/SOURCES.txt
+LuaLintBear.egg-info/dependency_links.txt
+LuaLintBear.egg-info/top_level.txt
