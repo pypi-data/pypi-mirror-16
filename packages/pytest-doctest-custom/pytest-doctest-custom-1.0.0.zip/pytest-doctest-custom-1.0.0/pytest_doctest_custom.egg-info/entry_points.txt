@@ -1,0 +1,3 @@
+[pytest11]
+doctest_custom = pytest_doctest_custom
+
