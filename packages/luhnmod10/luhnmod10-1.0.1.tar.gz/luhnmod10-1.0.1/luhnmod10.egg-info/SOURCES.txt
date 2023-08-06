@@ -1,0 +1,8 @@
+README.rst
+setup.py
+luhnmod10/__init__.py
+luhnmod10.egg-info/PKG-INFO
+luhnmod10.egg-info/SOURCES.txt
+luhnmod10.egg-info/dependency_links.txt
+luhnmod10.egg-info/top_level.txt
+luhnmod10.egg-info/zip-safe
