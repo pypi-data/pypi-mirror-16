@@ -1,0 +1,9 @@
+#
+# requirements.yml
+# ansible-galaxy requirements list.
+#
+# The list of items below will be fetched by `ymir setup` if they are not
+# already present.  For example, uncomment the line below to  install the "git"
+# role from user "geerlinguy"
+
+#- src: geerlingguy.git

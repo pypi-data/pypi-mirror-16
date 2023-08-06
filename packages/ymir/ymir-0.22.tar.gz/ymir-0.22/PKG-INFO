@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: ymir
+Version: 0.22
+Summary: an automation tool for your automation tools
+Home-page: https://github.com/mattvonrocketstein/ymir/
+Author: mattvonrocketstein
+Author-email: $author@gmail
+License: apache
+Download-URL: https://github.com/mattvonrocketstein/ymir//tarball/master
+Description: http://mattvonrocketstein.github.io/ymir
+Keywords: ymir,devops,ansible,puppet
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development :: Bug Tracking
+Classifier: Topic :: System :: Installation/Setup
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: Utilities
