@@ -1,0 +1,14 @@
+CHANGES
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+captiv8/__init__.py
+captiv8/captiv.py
+captiv8/collect.py
+captiv8.egg-info/PKG-INFO
+captiv8.egg-info/SOURCES.txt
+captiv8.egg-info/dependency_links.txt
+captiv8.egg-info/requires.txt
+captiv8.egg-info/top_level.txt
