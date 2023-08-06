@@ -1,0 +1,3 @@
+[console_scripts]
+shortwave.http = shortwave.http.__main__:main
+
