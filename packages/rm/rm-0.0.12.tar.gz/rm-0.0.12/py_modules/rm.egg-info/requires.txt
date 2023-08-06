@@ -1,0 +1,4 @@
+fullpath
+public
+setupfiles
+touch
