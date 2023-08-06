@@ -1,0 +1,10 @@
+setup.py
+apps/__init__.py
+apps/main.py
+apps/urls.py
+xmemx.egg-info/PKG-INFO
+xmemx.egg-info/SOURCES.txt
+xmemx.egg-info/dependency_links.txt
+xmemx.egg-info/entry_points.txt
+xmemx.egg-info/requires.txt
+xmemx.egg-info/top_level.txt

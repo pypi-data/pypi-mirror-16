@@ -1,0 +1,3 @@
+[console_scripts]
+xmemx = apps.main:main
+
