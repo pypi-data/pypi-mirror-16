@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: tickeys
+Version: 0.2.5
+Summary: Instant audio feedback when typing. For Linux.
+Home-page: https://github.com/BillBillBillBill/Tickeys-linux
+Author: Huang Xiongbiao
+Author-email: billo@qq.com
+License: MIT
+Download-URL: https://github.com/BillBillBillBill/Tickeys-linux
+Description: # Tickeys-linux
+        
+        Instant audio feedback when typing. For Linux.
+        
+        English Readme: [English Readme](https://github.com/BillBillBillBill/Tickeys-linux/blob/master/README_en_US.md)
+        中文版Readme: [中文Readme](https://github.com/BillBillBillBill/Tickeys-linux/blob/master/README_zh_CN.md)
+        
+Keywords: keyboard typing audio feedback
+Platform: UNKNOWN
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: X11 Applications
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Programming Language :: Python :: 2.7
