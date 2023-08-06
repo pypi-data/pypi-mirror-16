@@ -1,0 +1,11 @@
+construct==2.5.2
+futures==2.2.0
+httpretty==0.8.14
+pyftdi==0.6.3
+pylibftdi==0.14.2
+pyserial==2.7
+pyusb==1.0.0
+PyYAML==3.11
+requests==2.11.0
+requests-futures==0.9.7
+six==1.10.0
