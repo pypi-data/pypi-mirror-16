@@ -1,0 +1,3 @@
+[console_scripts]
+glu = glu.__main__:main
+
