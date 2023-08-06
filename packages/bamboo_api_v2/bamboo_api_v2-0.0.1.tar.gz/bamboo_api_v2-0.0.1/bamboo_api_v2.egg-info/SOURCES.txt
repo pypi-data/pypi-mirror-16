@@ -1,0 +1,13 @@
+DESCRIPTION.rst
+MANIFEST.in
+setup.py
+bamboo_api_v2/__init__.py
+bamboo_api_v2/api.py
+bamboo_api_v2.egg-info/PKG-INFO
+bamboo_api_v2.egg-info/SOURCES.txt
+bamboo_api_v2.egg-info/dependency_links.txt
+bamboo_api_v2.egg-info/requires.txt
+bamboo_api_v2.egg-info/top_level.txt
+example-project/__init__.py
+example-project/some_package/__init__.py
+example-project/some_package/some_module.py
