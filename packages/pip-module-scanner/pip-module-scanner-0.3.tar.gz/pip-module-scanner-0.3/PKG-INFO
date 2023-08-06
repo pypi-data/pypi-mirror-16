@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: pip-module-scanner
+Version: 0.3
+Summary: Scans your Python project for all installed third party pip libraries and generates a requirements.txt based output
+Home-page: https://github.com/Paradoxis/Python-Third-Party-Module-Scanner
+Author: Luke Paris (Paradoxis)
+Author-email: luke@paradoxis.nl
+License: UNKNOWN
+Download-URL: https://github.com/Paradoxis/Python-Third-Party-Module-Scanner/tarball/0.1
+Description: UNKNOWN
+Keywords: scanning,requirements.txt,requirements
+Platform: UNKNOWN
