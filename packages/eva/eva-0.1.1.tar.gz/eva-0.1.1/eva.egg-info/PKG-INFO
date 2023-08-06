@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: eva
+Version: 0.1.1
+Summary: Plugin for virtualenvwrapper to automatically export config vars found in your project level .env file.
+Home-page: https://github.com/bjinwright/eva
+Author: Brian Jinwright
+Author-email: opensource@ipoots.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
