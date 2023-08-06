@@ -1,0 +1,4 @@
+bin
+kudubot
+tests
+doc
