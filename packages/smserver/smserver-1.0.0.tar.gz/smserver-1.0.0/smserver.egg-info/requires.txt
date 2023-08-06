@@ -1,0 +1,7 @@
+pyyaml
+sqlalchemy
+websockets
+
+[:python_version=="3.3"]
+asyncio
+enum34
