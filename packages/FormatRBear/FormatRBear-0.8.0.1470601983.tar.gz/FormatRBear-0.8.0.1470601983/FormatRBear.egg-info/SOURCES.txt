@@ -1,0 +1,7 @@
+setup.py
+FormatRBear/FormatRBear.py
+FormatRBear/__init__.py
+FormatRBear.egg-info/PKG-INFO
+FormatRBear.egg-info/SOURCES.txt
+FormatRBear.egg-info/dependency_links.txt
+FormatRBear.egg-info/top_level.txt
