@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: TinyFastSS
+Version: v2.0.1
+Summary: An efficient indexing data structure for string similarity search
+Home-page: https://github.com/fujimotos/TinyFastSS
+Author: Fujimoto Seiji
+Author-email: fujimoto@ceptord.net
+License: MIT
+Description: FastSS is an efficient indexing data structure
+        for string similarity search, invented by researchers at Zurich University
+        in 2007.
+        
+        TinyFastSS is a simple Python implementation of FastSS, written in less than
+        300 LoC.
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Text Processing :: Indexing
