@@ -1,0 +1,4 @@
+
+             [console_scripts]
+             appframer = appframer.app:main
+        
