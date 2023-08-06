@@ -1,0 +1,10 @@
+taiga_contrib_kerberos_auth/apps.py,sha256=1T_TsAeRn77Lc8eKb_LM3SfuJ-iovZ47Tia3asIdpE4,1111
+taiga_contrib_kerberos_auth/connector.py,sha256=i6-Ksneg2q_WYZokuniW1d-AEpjze6pQGrvUR8MrMVI,2661
+taiga_contrib_kerberos_auth/services.py,sha256=yqVOAgSIlPdt7ec1ZunDqcTvYAtbPqhJHwaxUhZSG5Y,2382
+taiga_contrib_kerberos_auth/__init__.py,sha256=jwxew0vCynT_AVC3URF520ncFyX5rtFGqFerkQGcw60,831
+taiga_contrib_kerberos_auth-0.1.9.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
+taiga_contrib_kerberos_auth-0.1.9.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+taiga_contrib_kerberos_auth-0.1.9.dist-info/RECORD,,
+taiga_contrib_kerberos_auth-0.1.9.dist-info/top_level.txt,sha256=OZf-oN4WeFWi7nOxppEvTHHcUVJ7Jrwla9fpt1ma2UU,28
+taiga_contrib_kerberos_auth-0.1.9.dist-info/METADATA,sha256=JsN0u0Hp_XC9L2z7me-IXdqKWYtwGkyCfBCjLf2aD8k,872
+taiga_contrib_kerberos_auth-0.1.9.dist-info/metadata.json,sha256=OtHNZJZLUIpCP-kKcjAHJDnwrFgoor3oo4qFXPVkucE,1015

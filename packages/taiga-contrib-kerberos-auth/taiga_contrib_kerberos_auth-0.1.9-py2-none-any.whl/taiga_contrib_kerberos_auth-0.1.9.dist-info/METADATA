@@ -1,0 +1,26 @@
+Metadata-Version: 2.0
+Name: taiga-contrib-kerberos-auth
+Version: 0.1.9
+Summary: The Taiga plugin for kerberos authentication
+Home-page: https://github.com/dpasqualin/taiga-contrib-kerberos-auth
+Author: dpasqualin
+Author-email: dpasqualin@gmail.com
+License: AGPL
+Keywords: taiga,kerberos,auth,plugin
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Internet :: WWW/HTTP
+Requires-Dist: django (>=1.7)
+Requires-Dist: kerberos (>=1.2.5)
+
+UNKNOWN
+
+
