@@ -1,0 +1,3 @@
+gmusicapi >= 10.0.0
+mutagen >= 1.33
+wrapt
