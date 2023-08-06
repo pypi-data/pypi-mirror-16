@@ -1,0 +1,36 @@
+Metadata-Version: 1.1
+Name: figbed
+Version: 0.1.4
+Summary: figbed is an easy to use fig bed when you writing with markdown
+Home-page: https://github.com/wwj718/figbed
+Author: wenjie wu
+Author-email: wuwenjie718@gmail.com
+License: BSD license
+Description: figbed 
+        ======
+        
+        an fig bed 
+        
+        
+        =======
+        History
+        =======
+        
+        0.1.0 (2016-07-26)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: figbed
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
