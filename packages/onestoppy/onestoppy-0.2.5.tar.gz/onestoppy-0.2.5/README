@@ -1,0 +1,24 @@
+Repo and user info in ~/.pypirc
+
+======================== Example ~/.pypirc
+[distutils]
+index-servers =
+  pypi
+  pypitest
+
+[pypi]
+repository=https://pypi.python.org/pypi
+username=mstankiewicz
+password=<here>
+
+[pypitest]
+repository=https://testpypi.python.org/pypi
+username=mstankiewicz
+password=<here>
+
+======================== Increment version
+$ vim setup.py
+
+======================== Then run
+$ python setup.py sdist upload -r pypi
+
