@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+tymeventure/__init__.py
+tymeventure.egg-info/PKG-INFO
+tymeventure.egg-info/SOURCES.txt
+tymeventure.egg-info/dependency_links.txt
+tymeventure.egg-info/entry_points.txt
+tymeventure.egg-info/top_level.txt
+unicurses/__init__.py
+unicurses/setup.py

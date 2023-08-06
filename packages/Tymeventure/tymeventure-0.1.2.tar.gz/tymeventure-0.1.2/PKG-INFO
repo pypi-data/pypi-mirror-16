@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: tymeventure
+Version: 0.1.2
+Summary: A curses-based adventure game
+Home-page: https://github.com/Tymewalk/Tymeventure
+Author: Tymewalk
+Author-email: none
+License: MIT
+Description: A curses-based adventure game
+Keywords: game adventure
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Other Audience
+Classifier: Topic :: Games/Entertainment
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
