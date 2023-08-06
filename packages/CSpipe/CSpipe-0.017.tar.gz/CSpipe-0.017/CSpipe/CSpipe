@@ -1,0 +1,718 @@
+#!/usr/bin/python
+__version__ = '0.017'
+
+##----PACKAGE------##
+import argparse
+import datetime
+import time
+import sys
+import os
+import subprocess
+import numpy
+from argparse import RawTextHelpFormatter
+from pkg_resources import resource_filename
+from multiprocessing import Pool
+
+##----MAIN---------#
+def main():
+	args = get_args()
+
+	if len(sys.argv) < 2:
+		make_ornament('   ABORT! no input!', 100, ' ', 1, 0)
+	
+	elif args.input == 'none' and not args.example:
+		run_mode_one(args)
+
+	else:
+		run_mode_more(args)
+
+##----CODA---------##
+	make_ornament('> END', 100, ' ', 1, 1)
+	make_ornament('', 100, '-', 0, 0)
+	print '\n\n'
+
+##----FUNCTION-----##
+#---get args---
+def get_args():
+	tool = os.path.basename(sys.argv[0])
+	author = 'Yingxiang Li'
+	email = 'xlccalyx@gmail.com'
+	date = 'Jul 28, 2016'
+	update_date = '072816'
+	home = 'www.calyx.biz'
+
+	parser = argparse.ArgumentParser(description='\ttool:   ' + tool + ' v' + __version__ + '\n\tdate:   ' + date + '(' + update_date + ')\n\tauthor: ' + author + ' (' + email + ')\n\thome:   ' + home + '\n\tMUST-install (NOT guaranteed on other versions):\n\t        python: 2.7.10; R 3.2.2; cutadapt: 1.10; bwa: 0.7.5a; fastqc: v0.11.2; samtools: 1.3; java: 1.7.0_95\n\tYou can find manual and test case in home.', prog=tool, formatter_class=RawTextHelpFormatter)
+
+	parser.add_argument('-V', '--version', action='version', version='%(prog)s v' + __version__)
+
+#---parser for mode one
+	parser.add_argument('-R', '--reference', help='sample reference file, fasta format. (eg: my_ref.fa)')
+	parser.add_argument('-Z', '--filegz', help='compressed sample data directory, gz-ONLY. (eg: my_data.gz/)', default='none')
+	parser.add_argument('-D', '--data', help='sample data directory, fastq-ONLY.  one file for single end, two files for paired end. if -Z used, will unzip the compressed files to this directory.(eg: my_data/)')
+	parser.add_argument('-CZ', '--ctrlfilegz', help='compressed control sample data directory, gz-ONLY. (eg: my_ctrl_data.gz/)', default='none')
+	parser.add_argument('-CD', '--ctrldata', help='contral sample data directory, fastq-ONLY.  one file for single end, two files for paired end. if -CZ used, will unzip the compressed files to this directory.(eg: my_data/)')
+	parser.add_argument('-O', '--output', help='output directory, will be created if not exists. (eg: my_output/)')
+
+	parser.add_argument('-F', '--refresh', help='whether to refresh all processes. default: OFF, -RE will turn ON.', action='store_true', default=False)
+#	parser.add_argument('-K', '--keep', help='whether to refresh and keep the old results. default: OFF, -K will turn ON.', action='store_true', default=False)
+
+	parser.add_argument('-N', '--name', help='sample name, default is name of output directory. (eg: my_sample)', default='none')
+	parser.add_argument('-RK', '--rank', help='sample rank. (eg: 1)', default='')
+
+	parser.add_argument('-CA', '--cutadapta', help='cut 3\' adapter with cutadapt, default: none.', default='none')
+	parser.add_argument('-CG', '--cutadaptg', help='cut 5\' adapter with cutadapt, default: none.', default='none')
+
+	parser.add_argument('-S', '--seed', help='the minimum seed length in BWA, default: 19.', default='19')
+	parser.add_argument('-T', '--thread', help='the thread number, default: 4.', default='4')
+
+#---parser for mode more
+	parser.add_argument('-E', '--example', help='whether to create example input data. modify the example.input.tab to fit your data. default: OFF, -E will turn ON.', action='store_true', default=False)
+	parser.add_argument('-I', '--input', help='information table of all input data. all settings should be in it. (eg. example.input.tab)', default='none')
+
+#---head
+	args = parser.parse_args()
+
+	print '\n\n\t' + ' '.join(sys.argv[:]) + '\n'
+	make_ornament('', 100, '-', 0, 0)
+	make_ornament('tool:   ' + tool + ' v' + __version__, 100, ' ', 0, 0)
+	make_ornament('author: ' + author + ' (' + email + ')', 100, ' ', 0, 0)
+	make_ornament('', 100, '-', 0, 0)
+	make_ornament('> BEGIN', 100, ' ', 1, 1)
+
+	return args
+
+#---run mode one---
+def run_mode_one(args):
+	start_time = datetime.datetime.now()
+	preset_one = run_preset_one(args)
+
+	if not preset_one:
+		make_ornament('fix the problems above and re-try!', 100, ' ', 0, 0)
+
+	else:
+		if os.path.exists(os.path.normpath(args.output) + '/' + args.name + '/'):
+			make_ornament(' WARNING! output directory exists.', 100, ' ', 1, 0)
+
+		#-output & log directory
+		output_dir = make_dir(os.path.normpath(args.output) + '/' + args.name + '/')
+		log_dir = make_dir(output_dir + '/log/')
+		run_setting(log_dir, args)
+
+		#---bwa index
+		run_bwa_index(args, log_dir)
+
+		#-fastq file
+		if args.filegz == 'none':
+			fastq_file_dict = {}
+			for data_dir in args.data.split(','):
+				fastq_file_dict.update(get_fastq_file(data_dir))
+			before_macs_result = run_before_macs_parallel(args, output_dir, fastq_file_dict, log_dir)
+			before_macs_result_ctrl = ''
+			if args.ctrldata != 'none':
+				fastq_ctrl_file_dict = {}
+				for ctrldata_dir in args.ctrldata.split(','):
+					fastq_ctrl_file_dict.update(get_fastq_file(fastq_ctrl_file_dict))
+				before_macs_result_ctrl = run_before_macs_parallel(args, output_dir, fastq_ctrl_file_dict, log_dir)
+
+		else:
+			data_dir = make_dir(args.data + '/' + args.name + '/')
+			fastq_file_dict = {}
+			for filegz_dir in args.filegz.split(','):
+				raw_data_dir = run_uncompress_fastq(args, data_dir, filegz_dir, log_dir)
+				fastq_file_dict.update(get_combine_fastq(args, raw_data_dir, 'R1_001', 'R2_001', log_dir))
+			before_macs_result = run_before_macs_parallel(args, output_dir, fastq_file_dict, log_dir)
+
+			before_macs_result_ctrl = ''
+			if args.ctrlfilegz != 'none':
+				ctrl_fastq_file_dict = {}
+				for ctrlfilegz_dir in args.ctrlfilegz.split(','):
+					ctrl_raw_data_dir = run_uncompress_fastq(args, data_dir, ctrlfilegz_dir, log_dir)
+					ctrl_fastq_file_dict.update(get_combine_fastq(args, ctrl_raw_data_dir, 'R1_001', 'R2_001', log_dir))
+				before_macs_result_ctrl = run_before_macs_parallel(args, output_dir, ctrl_fastq_file_dict, log_dir)
+
+		run_macs_call_peak(before_macs_result, before_macs_result_ctrl, output_dir, log_dir)
+
+#---run_before_macs_parallel
+def run_before_macs_parallel(args, output_dir, fastq_file_dict):
+	run_before_macs_setting = [[args, output_dir + sample_name + '/', sample_name, fastq_file_dict[sample_name]] for sample_name in fastq_file_dict.keys()]
+	pool = Pool(int(args.thread)) 
+	pool_result = pool.map(run_before_macs, run_before_macs_setting)
+	pool.close() 
+	pool.join()
+	before_macs_result = [[output_dir + sample_name + '/', sample_name] for sample_name in fastq_file_dict.keys()]
+	return before_macs_result
+
+#---run before macs--
+def run_before_macs(setting):
+	args, sample_output_dir, sample_name, fastq_file = setting
+	sample_log_dir = make_dir(sample_output_dir + 'log/')
+	fastq1_file, fastq2_file = fastq_file
+	#---fastqc quality control
+	run_fastqc_quality_control(args, output_dir, fastq1_file, fastq2_file, sample_log_dir)
+
+	#---cutadapt cut adapter
+	fastq1_file, fastq2_file = run_cutadapt_cut_adapter(args, output_dir, fastq1_file, fastq2_file, sample_log_dir)
+
+	if fastq1_file != '':
+		#---bwa map
+		bwa_map = run_bwa_map(fastq2_file, output_dir, sample_name, args, fastq1_file, sample_log_dir)
+
+		if bwa_map:
+			#---samtools sam to bam
+			samtools_sam_to_bam = run_samtools_sam_to_bam(args, output_dir, sample_name, sample_log_dir)
+
+			if samtools_sam_to_bam:
+				#---samtools sort index
+				samtools_sort_index = run_samtools_sort_index(args, output_dir, sample_name, sample_log_dir)
+
+				if samtools_sort_index:
+					#---basic information
+					result_dir = make_dir(output_dir + 'result/')
+					samtools_flagstat = run_samtools_flagstat(args, output_dir, sample_name, sample_log_dir)
+
+					if samtools_flagstat:
+						get_data_infor(output_dir, sample_name, args, result_dir, fastq1_file, fastq2_file)
+
+					#---picard mark duplicate
+					picard_mark_duplicate_app = resource_filename(os.path.basename(sys.argv[0], 'MarkDuplicates.jar'))
+					picard_mark_duplicate = run_picard_mark_duplicate(output_dir, sample_name, args, picard_mark_duplicate_app, sample_log_dir)
+
+				else:
+					make_ornament('   ABORT! fix SAMtools sort and re-try!', 100, ' ', 0, 0)
+
+			else:
+				make_ornament('   ABORT! fix SAMtools sam to bam and re-try!', 100, ' ', 0, 0)
+
+		else:
+			make_ornament('   ABORT! fix BWA map and re-try!', 100, ' ', 0, 0)
+
+	else:
+		make_ornament('   ABORT! fix cutadapt cut adapter and re-try!', 100, ' ', 0, 0)
+
+
+#---run preset one--
+def run_preset_one(args):
+#	check reference	
+	if not args.reference.endswith('.fa') and not args.reference.endswith('.fasta'):
+		make_ornament('   ABORT! -R file. should be fa(sta) format!', 100, ' ', 1, 0)
+		return False
+
+#	check filegz
+	if args.filegz != 'none':
+		for filegz_dir in args.filegz.split(','):
+			if not os.path.isdir(filegz_dir):
+				make_ornament('   ABORT! -Z filegz. \'{0}\' should be a directory!'.format(filegz_dir), 100, ' ', 1, 0)
+				return False
+				break
+		if args.data == 'none':
+			make_ornament('   ABORT! -D data. no data directory!', 100, ' ', 1, 0)
+			return False
+#	check data
+	else:
+		if args.data == 'none':
+			make_ornament('   ABORT! no data information!', 100, ' ', 1, 0)
+			return False
+
+		else:
+			fastq_file = [x for x in os.listdir(args.data) if x.endswith('fq') or x.endswith('fastq')]
+			if len(fastq_file) > 2:
+				make_ornament('   ABORT! -D data. more than 2 fastq-ONLY files!', 100, ' ', 1, 0)
+				return False
+			elif len(fastq_file) == 0:
+				make_ornament('   ABORT! -D data. no fastq file in the directory!', 100, ' ', 1, 0)
+				return False
+#	check output
+	if not os.path.isdir(args.output):
+		make_ornament('   ABORT! -O output. no output directory!', 100, ' ', 1, 0)
+		return False
+#	check name
+	if args.name == 'none':
+		make_ornament('   ABORT! -N name. no name!', 100, ' ', 1, 0)
+		return False
+	else:
+		return True
+
+#---run mode more---
+def run_mode_more(args):
+	if args.example:
+		example_input_file = resource_filename(os.path.basename(sys.argv[0]), 'example.input.tab')
+		os.system('cp ' + example_input_file + ' .')
+		make_ornament('example.input.tab created in current dir, modify it!', 100, ' ', 0, 0)
+
+	else:
+		preset_more = run_preset_more(args)
+		if not preset_more:
+			make_ornament('fix the problems above and re-try!', 100, ' ', 0, 0)
+
+		else:
+			log_dir, thread_number, args_more = preset_more
+			pool = Pool(thread_number) 
+			pool_result = pool.map(run_mode_one, args_more)
+			pool.close() 
+			pool.join()
+
+			run_indel_matrix(args_more)
+			run_collect_result(args_more)
+
+			make_ornament('CONGRATS! CIpipe multiple samples were finished!', 100, ' ', 1, 0)
+			write_content(log_dir + 'done', ' '.join(sys.argv[:]))
+
+#---run preset more--
+def run_preset_more(args):
+	if not os.path.isfile(args.input):
+		make_ornament('   ABORT! -I input. should be input file!', 100, ' ', 1, 0)
+		return False
+	else:
+		input_table_default = open(resource_filename('CIpipe', 'example.input.tab'), 'rU').readlines()
+		input_key_default = [x.split('\t')[0].lstrip() for x in input_table_default]
+		input_value_default = [x.rstrip().split('\t')[1:] for x in input_table_default]
+		input_table = open(args.input, 'rU').readlines()
+#		input_table = open('/data/tongji1/liyx/CIpipe/simulation/simulation.input.tab', 'rU').readlines()		
+		input_key = [x.split('\t')[0].lstrip() for x in input_table]
+		input_value = [x.rstrip().split('\t')[1:] for x in input_table]
+		input_dict =  dict(zip(input_key, input_value))
+		if not input_key == input_key_default:
+			make_ornament('   ABORT! input.tab parameter names are not default!', 100, ' ', 1, 0)
+			return False
+		else:
+			output_dir = make_dir(input_dict['output'][0] + input_dict['batch'][0] + '/')
+			log_dir = make_dir(output_dir + input_dict['batch'][0] + '.log/')
+			thread_number = int(input_dict['thread'][0])
+			group_order = get_group_order(input_dict['group'])
+			if len(group_order) == len(input_dict['name']):
+				input_dict['name'] = sum([[input_dict['name'][i] + '_' + str(y) for y in group_order[i]] for i in range(len(input_dict['name']))], [])
+			reference_all = sum([[os.path.basename(input_dict['reference'][i]) for y in group_order[i]] for i in range(len(input_dict['reference']))], [])
+			if input_dict['data'][0].endswith('/'):
+				data_all = [x.split('/')[-2] for x in input_dict['data']]
+			else:
+				data_all = [x.split('/')[-1] for x in input_dict['data']]
+			if len(input_dict['type']) != len(input_dict['data']):
+				type_all = ['na']*len(input_dict['data'])
+			else:
+				type_all = input_dict['type']
+			input_infor_file = make_dir(input_dict['output'][0] + input_dict['batch'][0] + '/' + input_dict['batch'][0] + '.result/') + input_dict['batch'][0] + '.infor.txt'
+			input_infor = 'name\ttype\trefence\tdata\n' + '\n'.join(['\t'.join([input_dict['name'][i], type_all[i], reference_all[i], data_all[i]]) for i in range(len(input_dict['name']))]) + '\n'
+			write_content(input_infor_file, input_infor)
+			args_more = [get_args_one(input_dict, name, group_order) for name in input_dict['name']]
+#			args_more = [get_args_one_data(input_dict, data, group_order) for data in input_dict['data']]
+			preset_more = (log_dir, thread_number, args_more)
+			return preset_more
+
+#args_dict = {'input':'/data/tongji1/liyx/CSIA/Test/Input/GB.Input.tab'}
+#args=get_class_from_dict(**args_dict)
+
+#---get args one from mode more---
+def get_args_one(input_dict, name, group_order):
+	name_group = [input_dict['name'].index(name) + 1 in x for x in group_order].index(1)
+	args_one_value = []
+	for key in input_dict.keys():
+		if len(input_dict[key]) == 1:
+			if input_dict[key][0] == 'ON' or input_dict[key][0] == 'OFF':
+				args_one_value.append([True, False][input_dict[key][0] == 'OFF'])
+			else:
+				args_one_value.append(input_dict[key][0])
+		else:
+			if len(input_dict[key]) == len(input_dict['name']):
+				args_one_value.append(input_dict[key][input_dict['name'].index(name)])
+			else:
+				args_one_value.append(input_dict[key][name_group])
+	args_one_dict = dict(zip(input_dict.keys(), args_one_value))
+	args_one_dict['output'] = args_one_dict['output'] + input_dict['batch'][0] + '/'
+	args_one_dict['rank'] = str(input_dict['name'].index(name) + 1)
+	args_one = get_class_from_dict(**args_one_dict)
+	return args_one
+
+#---run done--
+def run_done(start_time, log_dir):
+	done_file = log_dir + 'done.txt'
+	ellaspe_time = format((datetime.datetime.now() - start_time).seconds, ',') + 's'
+	write_content(done_file, ellaspe_time)
+
+#---get fastq file--
+def get_fastq_file(sample_data_dir):
+	sample_name = [x for x in sample_data_dir.split('/') if x != ''][-1]
+	fastq_file_all = sorted([x for x in os.listdir(sample_data_dir) if x.endswith('.fq') or x.endswith('.fastq')])
+	fastq1_file = os.path.normpath(sample_data_dir + '/' + fastq_file_all[0])
+	fastq2_file = '' if len(fastq_file_all) == 1 else os.path.normpath(sample_data_dir + '/' + fastq_file_all[1])
+	return {data_name: [fastq1_file, fastq2_file]}
+
+#---run uncompress fastq--
+def run_uncompress_fastq(args, data_dir, compress_dir, log_dir):
+	get_process_time('gunzip: uncompress -' + args.rank)
+	sample_name = [x for x in compress_dir.split('/') if x != ''][-1]
+	raw_data_dir = make_dir(data_dir + sample_name + '/')
+	uncompress_dir = make_dir(raw_data_dir + 'uncompress/')
+	for compress_file in os.listdir(compress_dir):
+		fastq_name = compress_file.replace('.gz', '')
+		uncompress_file = uncompress_dir + fastq_name
+		if not os.path.isfile(uncompress_file) or args.refresh:
+			uncompress_fastq = 'gunzip -c ' + compress_dir + compress_file + ' > ' + uncompress_file
+			run_bash_command(log_dir, 'gunzip_Uncompress.' + compress_file, uncompress_fastq)
+		else:
+			make_ornament(' WARNING! \'{0}\' existed! skipped.'.format(fastq_name), 100, ' ', 1, 0)
+	get_process_time('gunzip: uncompress -' + args.rank, 1)
+	return raw_data_dir
+
+#---get combine fastq-- zhe
+def get_combine_fastq(args, raw_data_dir, unique_symbole_read1, unique_symbole_read2, log_dir):
+	sample_name = [x for x in raw_data_dir.split('/') if x != ''][-1]
+	get_process_time('cat: combine fastq -' + args.rank)
+	combine_fastq_read1_file = raw_data_dir + '/' + sample_name + '_r1.fq'
+	combine_fastq_read2_file = raw_data_dir + '/' + sample_name + '_r2.fq'
+	if not os.path.isfile(combine_fastq_read1_file) or args.refresh:
+		uncompress_dir = raw_data_dir + 'uncompress/'
+		fastq_read1_file_list = sorted([uncompress_dir + x for x in os.listdir(uncompress_dir) if unique_symbole_read1 in x])
+		fastq_read2_file_list = sorted([uncompress_dir + x for x in os.listdir(uncompress_dir) if unique_symbole_read2 in x])
+		combine_fastq_read1 = 'cat ' + ' '.join(fastq_read1_file_list) + ' > ' + combine_fastq_read1_file
+		combine_fastq_read2 = 'cat ' + ' '.join(fastq_read1_file_list) + ' > ' + combine_fastq_read2_file
+		run_bash_command(log_dir, 'cat_Combine_fastq_read1', combine_fastq_read1)
+		run_bash_command(log_dir, 'cat_Combine_fastq_read2', combine_fastq_read2)
+	else:
+		make_ornament(' WARNING! \'combine fastq read\' existed! skipped.', 100, ' ', 1, 0)
+	get_process_time('cat: combine fastq -' + args.rank, 1)
+	return {sample_name: [combine_fastq_read1_file, combine_fastq_read2_file]}
+
+#---run bwa index--
+def run_bwa_index(args, log_dir):
+	bwa_index_file_exist = [os.path.isfile(args.reference + x) for x in ['.amb', '.ann', '.bwt', '.fai', '.pac', '.sa']]
+	if sum(bwa_index_file_exist) != 6 or args.refresh:
+		get_process_time('bwa: index -' + args.rank)
+		bwa_index = 'bwa index -a bwtsw ' + args.reference
+		refer_name = os.path.basename(os.path.splitext(args.reference)[0])
+		run_bash_command(log_dir, 'BWA_Index.' + refer_name, bwa_index)
+		get_process_time('bwa: index -' + args.rank, 1)
+	else:
+		make_ornament(' WARNING! \'bwa index\' existed! skipped.', 100, ' ', 1, 0)
+
+#---run FastQC quality control--
+def run_fastqc_quality_control(args, output_dir, fastq1_file, fastq2_file, log_dir):
+	quality_control_dir = make_dir(output_dir + 'FastQC/')
+	fastqc_fastq_file_exist = [os.path.isfile(quality_control_dir + os.path.basename(os.path.splitext(x)[0]) + '_fastqc.zip') for x in [fastq1_file, fastq2_file]]
+#	if args.fastqc:	
+	if sum(fastqc_fastq_file_exist) != 2 or args.refresh:
+		get_process_time('fastqc: quality control -' + args.rank)
+		fastqc_quality_control = 'fastqc -q --extract -o ' + quality_control_dir + ' ' + fastq1_file + ' ' + fastq2_file
+		run_bash_command(log_dir, 'FastQC_QualiyControl', fastqc_quality_control)
+		get_process_time('fastqc: quality control -' + args.rank, 1)
+		if len(os.listdir(quality_control_dir)) == 0:
+			make_ornament(' WARNING! no fastqc result! check FastQC_QualiyControl.log!', 100, ' ', 1, 0)
+	else:
+		make_ornament(' WARNING! \'fastqc\' existed! skipped.', 100, ' ', 1, 0)
+
+#---run cutadapt cut adapter--
+def run_cutadapt_cut_adapter(args, output_dir, fastq1_file, fastq2_file, log_dir):
+	if args.cutadapta == 'none' and args.cutadaptg == 'none':
+		make_ornament(' WARNING! no adapter cut.', 100, ' ', 1, 0)
+		return fastq1_file, fastq2_file
+
+	else:
+		cutadapt_dir = make_dir(output_dir + 'cutadapt/')
+		fastq1_ca_file = cutadapt_dir + 'read1_ca' + ['', '3'][args.cutadapta != 'none'] + ['', '5'][args.cutadaptg != 'none'] + '.fq' 
+		fastq2_ca_file = ['', cutadapt_dir + 'read2_ca' + ['', '3'][args.cutadapta != 'none'] + ['', '5'][args.cutadaptg != 'none'] + '.fq'][fastq2_file != '']
+
+		if len(os.listdir(cutadapt_dir)) == 0:
+			get_process_time('cutadapt: cut adapter -' + args.rank)
+			cutadapt_cut_adapter = 'cutadapt' + ['', ' -a ' + args.cutadapta][args.cutadapta != 'none'] + ['', ' -g ' + args.cutadaptg][args.cutadaptg != 'none'] + ' ' + fastq1_file + ' > ' + fastq1_ca_file
+			run_bash_command(log_dir, 'cutadapt_CutAdapter1', cutadapt_cut_adapter)
+			if fastq2_file != '':
+				cutadapt_cut_adapter = 'cutadapt' + ['', ' -a ' + args.cutadapta][args.cutadapta != 'none'] + ['', ' -g ' + args.cutadaptg][args.cutadaptg != 'none'] + ' ' + fastq2_file + ' > ' + fastq2_ca_file
+				run_bash_command(log_dir, 'cutadapt_CutAdapter2', cutadapt_cut_adapter)
+			get_process_time('cutadapt: cut adapter -' + args.rank, 1)
+			return fastq1_ca_file, fastq2_ca_file
+
+			if len(os.listdir(cutadapt_dir)) == 0:
+				make_ornament(' ABORT! no cutadapt result! check cutadapt_CutAdapter.log!', 100, ' ', 1, 0)
+				return '', ''
+		else:
+			make_ornament(' WARNING! \'cutadapt\' existed! skipped.', 100, ' ', 1, 0)
+			return fastq1_ca_file, fastq2_ca_file
+
+#---run bwa map--
+def run_bwa_map(fastq2_file, output_dir, name, args, fastq1_file, log_dir):
+	map_file = make_dir(output_dir + 'BWA/') + name + '.sam'
+	if not os.path.isfile(map_file) or args.refresh:
+		is_pair = ['pair', 'single'][fastq2_file == '']
+		get_process_time('bwa: map (' + is_pair + [')', ',seed:{0})'.format(args.seed)][int(args.seed) < 19] + ' -' + args.rank)
+		bwa_map = 'bwa mem -M -t 16 -k ' + args.seed + ''' -R "@RG\\tID:''' + name + '.BWA_map.' + is_pair + '\\tLB:bwa\\tPL:NA\\tSM:' + name + '\" ' + args.reference + ' ' + fastq1_file + ' ' + fastq2_file + ' > ' + map_file
+		run_bash_command(log_dir, 'BWA_Map', bwa_map)	
+		get_process_time('bwa: map -' + args.rank, 1)
+		if get_file_size(map_file) == 0:
+			make_ornament('   ABORT! no bwa result! check BWA_Map.log!', 100, ' ', 1, 0)
+			return False
+		else:
+			return True
+	else:
+		make_ornament(' WARNING! \'bwa map\' existed! skipped.', 100, ' ', 1, 0)
+		return True
+
+#---samtools: sam to bam--
+def run_samtools_sam_to_bam(args, output_dir, name, log_dir):
+	bam_file = make_dir(output_dir + 'SAMtools/') + name + '.bam'
+	if not os.path.isfile(bam_file) or args.refresh:
+		get_process_time('samtools: sam to bam -' + args.rank)
+		map_file = output_dir + 'BWA/' + name + '.sam'
+		samtools_sam_to_bam = 'samtools view -bhS ' + map_file + ' -o ' + bam_file
+		run_bash_command(log_dir, 'SAMtools_SamToBam', samtools_sam_to_bam)
+		get_process_time('samtools: sam to bam -' + args.rank, 1)
+		if not os.path.isfile(bam_file):
+			make_ornament('   ABORT! no bam result! check SAMtools_SamToBam.log!', 100, ' ', 1, 0)
+			return False
+		else:
+			return True
+	else:
+		make_ornament(' WARNING! \'sam to bam\' existed! skipped.', 100, ' ', 1, 0)
+		return True
+
+#---run samtools sort&index--
+def run_samtools_sort_index(args, output_dir, name, log_dir):
+	bam_file = output_dir + 'SAMtools/' + name + '.bam'
+	sort_bam_file = bam_file.replace('.bam', '.sort.bam')
+	sort_bam_index_file = sort_bam_file + '.bai'
+	if not (os.path.isfile(sort_bam_file) and os.path.isfile(sort_bam_index_file)) or args.refresh:
+		get_process_time('samtools: sort & index -' + args.rank)
+		sort_bam_file = bam_file.replace('.bam', '.sort.bam')
+		samtools_sort = 'samtools sort ' + bam_file + ' -o ' + sort_bam_file
+		samtools_index = 'samtools index ' + sort_bam_file
+		run_bash_command(log_dir, 'SAMtools_Sort', samtools_sort)
+		run_bash_command(log_dir, 'SAMtools_Index', samtools_index)	
+		get_process_time('samtools: sort & index -' + args.rank, 1)
+
+		if not os.path.isfile(sort_bam_file):
+			make_ornament('   ABORT! no bam sort result! check SAMtools_Sort.log!', 100, ' ', 1, 0)
+			return False
+		else:
+			return True
+	else:
+		make_ornament(' WARNING! \'bam sort & index\' existed! skipped.', 100, ' ', 1, 0)
+		return True
+
+#---run samtools flagstat--
+def run_samtools_flagstat(args, output_dir, name, log_dir):
+	sort_bam_file = '{0}SAMtools/{1}.sort.bam'.format(output_dir, name)
+	flagstat_file = sort_bam_file.replace('.sort.bam', '.flagstat.txt')
+	
+	if not os.path.isfile(flagstat_file) or args.refresh:
+		get_process_time('samtools: flagstat -' + args.rank)
+		samtools_flagstat = 'samtools flagstat {0} > {1}'.format(sort_bam_file, flagstat_file)
+		run_bash_command(log_dir, 'SAMtools_FlagStat', samtools_flagstat)
+		get_process_time('samtools: flagstat -' + args.rank, 1)
+
+		if not os.path.isfile(flagstat_file):
+			make_ornament(' WARNING! no samtools flagstat! check SAMtools_FlagStat.log!', 100, ' ', 1, 0)
+			return False
+		else:
+			return True
+
+	else:
+		make_ornament(' WARNING! \'samtools flagstat\' existed! skipped.', 100, ' ', 1, 0)
+		return True
+
+#---get data infor--
+def get_data_infor(output_dir, name, args, result_dir, fastq1_file, fastq2_file):
+	data_infor_file = result_dir + name + '.data.infor.txt'
+
+	if not os.path.isfile(data_infor_file) or args.refresh:
+		get_process_time('get: data infor -' + args.rank)
+		flagstat_file = '{0}SAMtools/{1}.flagstat.txt'.format(output_dir, name)
+		data_infor = ['sample\tread_number\tproperly_mapped_number\tratio\n']
+		flagstat_content = open(flagstat_file, 'rU').readlines()
+		data_infor.append(name + '\t' + add_thousand_separator(flagstat_content[5].split(' ')[0]) + '\t' + add_thousand_separator(flagstat_content[8].split(' ')[0]) + '\t' + flagstat_content[8].split('paired (')[1].split(' :')[0] + '\n')
+		bam_file = output_dir + 'SAMtools/' + name + '.bam'
+		data_infor.append('\n' + get_insert_size_standard_deviation(bam_file) + '\n')
+		data_infor.append('\nfastq1:\t' + fastq1_file + '\nfastq1_md5:\t' + get_md5_sum(fastq1_file) + '\nfastq1_size:\t' + get_file_size(fastq1_file) + '\n')
+		data_infor.append('fastq2:\t' + fastq2_file + '\nfastq2_md5:\t' + get_md5_sum(fastq2_file) + '\nfastq2_size:\t' + get_file_size(fastq2_file) + '\n')
+		write_content(data_infor_file, data_infor)
+		get_process_time('get: data infor -' + args.rank, 1)
+
+	else:
+		make_ornament(' WARNING! \'data infor\' existed! skipped.', 100, ' ', 1, 0)	
+
+#---get insert size & standard deviation
+def get_insert_size_standard_deviation(bam_file):
+	insert_size = [int(x) for x in run_shell('samtools view ' + bam_file + '|head -100000|cut -f 9', 1).split() if x != '0']
+	insert_size_mean = round(numpy.mean([abs(x) for x in insert_size]), 1)
+	standard_deviation = round(numpy.std(insert_size), 1)
+	return 'insert_size_mean:\t' + str(insert_size_mean) + '\nstandard_deviation:\t' + str(standard_deviation) + '\n'
+
+
+#---run picard mark duplicate--
+def run_picard_mark_duplicate(output_dir, name, args, picard_mark_duplicate_app, log_dir):
+	sort_bam_file = output_dir + 'SAMtools/' + name + '.sort.bam'
+	mark_duplicate_file = make_dir(output_dir + 'Picard') + name + '.clean.bam'
+	mark_duplicate_matrix_file = output_dir + 'Picard' + name + '.metrics.txt'
+	if not os.path.isfile(mark_duplicate_file) or args.refresh:
+		get_process_time('Picard: mark duplicate -' + args.rank)
+		picard_mark_duplicate = 'java -jar ' + picard_mark_duplicate + ''' REMOVE_DUPLICATES=true ASSUME_SORTED=true INPUT="{0}" OUTPUT="{1}" METRICS_FILE="{2}"'''.format(sort_bam_file, mark_duplicate_file, mark_duplicate_matrix_file)
+		run_bash_command(log_dir, 'Picard_MarkDuplicate', picard_mark_duplicate)
+		get_process_time('Picard: mark duplicate -' + args.rank, 1)
+
+		if not os.path.isfile(mark_duplicate_file):
+			make_ornament('   ABORT! no Picard Mark Duplicate result! check Picard_MarkDuplicate.log!', 100, ' ', 1, 0)
+			return False
+		else:
+			return True
+	else:
+		make_ornament(' WARNING! \'Picard Mark Duplicate\' existed! skipped.', 100, ' ', 1, 0)
+		return True
+
+#---run macs call peak--
+def run_macs_call_peak(before_macs_result, before_macs_result_ctrl, output_dir, log_dir):
+	before_macs_result = [[output_dir + sample_name + '/', sample_name] for sample_name in fastq_file_dict.keys()]
+	treat_file = [x[0] + 'Picard' + sample_name + '.clean.bam' for x in before_macs_result]
+	if before_macs_result_ctrl != '':
+		ctrl_file = [x[0] + 'Picard' + sample_name + '.clean.bam' for x in before_macs_result_ctrl]
+
+	clean_bam_file = output_dir + 'Picard' + name + '.clean.bam'
+	macs_dir = make_dir(output_dir + 'MACS/')
+	if not os.path.isfile(mpileup_file) or args.refresh:
+		get_process_time('samtools: mpileup' + ['', ' (unlimited)'][args.unlimited] + ' -' + args.rank)
+		samtools_mpileup = 'samtools mpileup{0} -BAQ0 -f {1} {2} > {3}'.format(['', ' -d10000000'][args.unlimited], args.reference, sort_bam_file, mpileup_file)
+#		samtools_mpileup = 'samtools mpileup{0} -m 3 -F 0.0002 -BAQ0 -f {1} {2} > {3}'.format(['', ' -d10000000'][args.unlimited], args.reference, sort_bam_file, mpileup_file)
+		run_bash_command(log_dir, 'SAMtools_Mpileup', samtools_mpileup)
+		get_process_time('samtools: mpileup -' + args.rank, 1)
+
+		if not os.path.isfile(mpileup_file):
+			make_ornament('   ABORT! no samtools mpileup result! check SAMtools_Mpileup.log!', 100, ' ', 1, 0)
+			return False
+		else:
+			return True
+	else:
+		make_ornament(' WARNING! \'mpileup\' existed! skipped.', 100, ' ', 1, 0)
+		return True
+
+
+#---run collect result--
+def run_collect_result(args_more):
+	get_process_time('run: collect results')
+	result_dir = make_dir(args_more[0].output + args_more[0].batch + '.result/')
+	refer_name_all = list(set([os.path.basename(os.path.splitext(x.reference)[0]) for x in args_more]))
+	for args_one in args_more:
+		result_one_dir = args_one.output + args_one.name + '/result'
+		collect_result_one = 'cp -r ' + result_one_dir + ' ' + result_dir + args_one.name
+		run_bash_command(args_more[0].output + args_more[0].batch + '.log/', 'collect_result', collect_result_one)
+	get_process_time('run: collect results', 1)
+
+#--common--
+class get_class_from_dict:
+	def __init__(self, **entries): 
+		self.__dict__.update(entries)
+
+def add_thousand_separator(int_number):
+	return str(format(int(int_number), ','))
+
+def get_absolute_file(file):
+	split_file = [x for x in file.split('/') if x != '']
+	current_dir = os.getcwd()
+	split_current_dir = [x for x in current_dir.split('/') if x != '']
+	if len(set(split_file)&set(split_current_dir)) == 0:
+		absolute_file = current_dir + '/' + file
+	else:
+		absolute_file = file
+	if os.path.isfile(absolute_file):
+		return absolute_file
+	else:
+		return 'WRONG file or directory!'
+
+#---get fasta dict--
+def get_fasta_dict(fasta_file):
+	fasta_name = []
+	fasta_sequence = []
+	fasta_number = -1
+	fasta_content = [x.rstrip() for x in open(fasta_file, 'rU').readlines() if len(x.rstrip()) != 0]
+	for line in fasta_content:
+		if line[0] == '>':
+			fasta_name.append(line[1:])
+			fasta_number += 1
+			fasta_sequence.append('')
+		else:
+			fasta_sequence[fasta_number] = fasta_sequence[fasta_number] + line
+	fasta_dict = dict(zip(fasta_name, fasta_sequence))
+	return fasta_dict
+
+def get_file_size(file):
+	file_size = os.path.getsize(file)
+	unit = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
+	unit_order = 0
+	if not file_size == 0:
+		while len(str(file_size)) >= 5:
+#			former_file_size = file_size
+#			former_unit_order = unit_order
+			file_size = round(file_size/1024.0, 1)
+			unit_order += 1
+		return str(file_size) + ' ' + unit[unit_order]
+	else:
+		return 0
+
+def get_group_order(group):
+	group_order = []
+	for group_one in group:
+		group_one_flat = []
+		for group_one_split in group_one.split(','):
+			if len(group_one_split.split('-')) == 1:
+				group_one_flat.append(int(group_one_split))
+			else:
+				group_one_flat = group_one_flat + range(int(group_one_split.split('-')[0]), int(group_one_split.split('-')[1]) + 1)
+		group_order = group_order + [group_one_flat]
+	return group_order
+
+def get_md5_sum(file):
+	md5_sum = run_shell('md5sum ' + file, 1).split()[0]
+	return md5_sum
+
+def get_process_time(function_name, is_finish=0, width=100, indent=16, split_sign=':'):
+	function_name_indent = ' '*(indent - len(function_name.split(split_sign)[0])) + function_name
+	if is_finish == 0:		
+		make_ornament(function_name_indent + ' '*(width - 23 - len(function_name_indent)) + '  -running', width)
+	else:
+		make_ornament(function_name_indent + ' '*(width - 23 - len(function_name_indent)) + '  -done   ', width)
+
+def make_dir(dir):
+	dir = dir.strip().rstrip("\\")
+	if not os.path.exists(dir):
+		os.makedirs(dir)
+	return dir
+
+def make_initial_upper(word):
+	initial_upper = word[0].upper() + word[1:].lower()
+	return initial_upper
+
+def make_ornament(title, width=100, ornament_type=' ', show_time=1, show_date = 0):
+	if show_time == 1:
+		if show_date == 0:
+			ornament = '\t|' + title + ornament_type*(width - 13 - len(title)) + ' @ ' + time.strftime("%X", time.localtime()) + '|'
+		else:
+			ornament = '\t|' + title + ornament_type*(width - 24 - len(title)) + ' @ ' + time.strftime("%m-%d-%Y %X", time.localtime()) + '|'
+	else:
+		ornament = '\t|' + title + ornament_type*(width - 2 - len(title)) + '|'
+	print ornament
+
+def write_content(content_file, content):
+	output = open(content_file, 'w')
+	output.writelines(content)
+	output.close()
+
+def run_bash_command(log_dir, command_name, command):
+	command_file = make_dir(log_dir) + command_name + '.sh'
+	write_content(command_file, command)
+	bash_command = 'bash "' + command_file + '" > ' + command_file.replace('.sh', '.log') + ' 2>&1'
+	run_shell(bash_command)
+
+def run_shell(shell_command, is_get_output=0):
+	shell_output = subprocess.Popen(shell_command, shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE).stdout.read()
+	if is_get_output:
+		return shell_output
+
+def run_setting(log_dir, args):
+	setting_file = log_dir + 'setting.txt'
+	setting_content = sys.argv[0] + '\n' + '\n'.join([x + ': ' + str(getattr(args, x)) for x in dir(args) if not x.startswith('_')]) + '\n'
+	write_content(setting_file, setting_content)
+
+##----PROCESS------##
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        sys.stderr.write('\t|ABORT! User interrupted me! ;-) Bye!' + ' '*62 + '|\n\t|' + '~'*98 + '|\n')
+        sys.exit(0)
+
+##----TEST--------##
