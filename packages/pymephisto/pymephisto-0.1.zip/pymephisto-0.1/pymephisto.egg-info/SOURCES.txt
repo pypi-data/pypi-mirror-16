@@ -1,0 +1,9 @@
+setup.py
+pymephisto/__init__.py
+pymephisto/csvoutput.py
+pymephisto/main.py
+pymephisto/mccread.py
+pymephisto.egg-info/PKG-INFO
+pymephisto.egg-info/SOURCES.txt
+pymephisto.egg-info/dependency_links.txt
+pymephisto.egg-info/top_level.txt
