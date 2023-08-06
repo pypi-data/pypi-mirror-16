@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: d-clean
+Version: 0.0.3
+Summary: Docker clean script
+Home-page: UNKNOWN
+Author: Alexander Brandstedt
+Author-email: alexanderbrandstedt@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/qoneci/d-clean
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.5
+Classifier: License :: OSI Approved :: MIT License
