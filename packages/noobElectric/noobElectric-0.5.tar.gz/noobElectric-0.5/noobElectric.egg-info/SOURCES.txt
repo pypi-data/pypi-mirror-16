@@ -1,0 +1,9 @@
+setup.py
+noobElectric.egg-info/PKG-INFO
+noobElectric.egg-info/SOURCES.txt
+noobElectric.egg-info/dependency_links.txt
+noobElectric.egg-info/not-zip-safe
+noobElectric.egg-info/requires.txt
+noobElectric.egg-info/top_level.txt
+noobee/MM.py
+noobee/__init__.py
