@@ -1,0 +1,9 @@
+recursive-include wallace *
+recursive-include docs *
+
+include requirements.txt
+include README.md
+include LICENSE
+include portrait.jpg
+
+prune *.pyc
