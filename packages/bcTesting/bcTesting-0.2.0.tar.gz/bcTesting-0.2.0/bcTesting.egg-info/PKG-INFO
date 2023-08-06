@@ -1,0 +1,38 @@
+Metadata-Version: 1.1
+Name: bcTesting
+Version: 0.2.0
+Summary: Python testing utilities and classes for Visual Effects
+Home-page: https://github.com/barishcb/testing
+Author: Barish Chandran B
+Author-email: barishcb@gmail.com
+License: MIT
+Description: A Simple Testing Framework
+        ==========================
+        
+        As am working as a pipeline developer in visual effect studio, I wanted to write this for like long time.
+        
+        -----
+        |pypi| |unix_build| |windows_build| |coverage| |gitter|
+        -----
+        
+        .. contents::
+            :local:
+            :depth: 1
+            :backlinks: none
+        
+        
+        =============
+        Main features
+        =============
+        
+        * New testing framework for tool developement
+        * Easy integration of mox and fixures
+        * Extra assert functionalities
+        
+Keywords: bcTesting unittest setuptools development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
