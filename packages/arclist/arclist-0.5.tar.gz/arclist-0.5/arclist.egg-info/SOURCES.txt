@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+arclist/__init__.py
+arclist/cmd.py
+arclist.egg-info/PKG-INFO
+arclist.egg-info/SOURCES.txt
+arclist.egg-info/dependency_links.txt
+arclist.egg-info/entry_points.txt
+arclist.egg-info/top_level.txt
