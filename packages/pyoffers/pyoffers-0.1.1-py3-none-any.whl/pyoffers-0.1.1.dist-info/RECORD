@@ -1,0 +1,16 @@
+pyoffers/__init__.py,sha256=F2hNQqmqWno6FovIUn8y10vhEUp2H1PVTHJk7fp0bV4,39
+pyoffers/api.py,sha256=8JK5Hh2Jfy_m6Crp6UTiXPfsQwpLLPR0a5GVjoCCOkM,2430
+pyoffers/exceptions.py,sha256=oiea5vAC7dqp-VqpOR_moK-0kgarBemznnt6mITy5Ag,68
+pyoffers/logging.py,sha256=4mShb_XCeJGTQDBCwKhA8_8sFohxFPdg32vmPREiqgI,609
+pyoffers/utils.py,sha256=5Um3npYzBCV3_sQojR6AJVROiRBpvvDFuUFu4kSmzzc,890
+pyoffers/models/__init__.py,sha256=3CNsCOCZWhR15vqD8bB2_8JahzhISuLAkIyOhY3AEjA,99
+pyoffers/models/advertiser.py,sha256=UEGPFxdH7cIO_atiASdPQ2N0gOpFn06AySM-gX4eVeU,704
+pyoffers/models/core.py,sha256=rXlswa67dOLjbbC2ZMRsXEuS6g04wO28P4lnfbB7ryk,1090
+pyoffers/models/goal.py,sha256=ucqHpZgBGRTKp3LTuNM9HB62DHt-2A-yed42bjjJLfk,502
+pyoffers/models/offer.py,sha256=0SkH4eBgrkv5vJoTS49vtvHbLoBsdqt2M4zdlDXjEXQ,1028
+pyoffers-0.1.1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+pyoffers-0.1.1.dist-info/METADATA,sha256=1BiIx9rpl3x5R3G1LHDfgAuOguUJLUXVXIMtt44Gh3E,797
+pyoffers-0.1.1.dist-info/RECORD,,
+pyoffers-0.1.1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+pyoffers-0.1.1.dist-info/metadata.json,sha256=o3YKiOyF-i7w9l5jGT1yQYdyY0F6tNKq3r0lO7HOZPg,949
+pyoffers-0.1.1.dist-info/top_level.txt,sha256=bfkxc3lCtSkkLegtAM2ra99OFlume78xw5V7uCj2ZeY,9
