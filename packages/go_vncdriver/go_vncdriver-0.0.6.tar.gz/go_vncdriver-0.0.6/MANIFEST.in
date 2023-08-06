@@ -1,0 +1,6 @@
+include go_vncdriver.so Makefile build.sh
+recursive-include vendor *.h *.m
+global-include *.go *.c
+prune .build
+prune dist
+prune build
