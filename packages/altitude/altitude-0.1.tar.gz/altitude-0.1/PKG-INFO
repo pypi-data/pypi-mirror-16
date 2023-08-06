@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: altitude
+Version: 0.1
+Summary: Lightweight Python parser for SRTM elevation data.
+Home-page: https://github.com/tomderuijter/altitude
+Author: Tom de Ruijter
+Author-email: deruijter.tom@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/tomderuijter/altitude/tarball/v0.1
+Description: UNKNOWN
+Keywords: altitude,elevation,geographic,srtm
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
