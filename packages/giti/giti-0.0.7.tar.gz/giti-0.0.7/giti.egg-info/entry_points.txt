@@ -1,0 +1,3 @@
+[console_scripts]
+giti = giti.giti:main
+
