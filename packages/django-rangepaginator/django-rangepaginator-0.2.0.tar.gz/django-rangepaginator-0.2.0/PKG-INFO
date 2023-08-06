@@ -1,0 +1,56 @@
+Metadata-Version: 1.1
+Name: django-rangepaginator
+Version: 0.2.0
+Summary: Nice paginator for Django
+Home-page: https://github.com/mvantellingen/django-rangepaginator
+Author: Michael van Tellingen
+Author-email: michaelvantellingen@gmail.com
+License: MIT
+Description: =====================
+        django-rangepaginator
+        =====================
+        
+        Simple Django app to create sane paginators
+        
+        Status
+        ======
+        .. image:: https://travis-ci.org/mvantellingen/django-rangepaginator.svg?branch=master
+            :target: https://travis-ci.org/mvantellingen/django-rangepaginator
+        
+        .. image:: http://codecov.io/github/mvantellingen/django-rangepaginator/coverage.svg?branch=master 
+            :target: http://codecov.io/github/mvantellingen/django-rangepaginator?branch=master
+            
+        .. image:: https://img.shields.io/pypi/v/django-rangepaginator.svg
+            :target: https://pypi.python.org/pypi/django-rangepaginator/
+        
+        .. image:: docs/_static/example.png
+        
+        Installation
+        ============
+        
+        .. code-block:: shell
+        
+           pip install django_rangepaginator
+           
+        Usage
+        =====
+        
+        .. code-block:: django
+        
+            {% load rangepaginator %}
+            {% paginate page request=request %}
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.8
+Classifier: Framework :: Django :: 1.9
+Classifier: Framework :: Django :: 1.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
