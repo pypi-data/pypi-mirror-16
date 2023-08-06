@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+wordfencer/__init__.py
+wordfencer/parser.py
+wordfencer.egg-info/PKG-INFO
+wordfencer.egg-info/SOURCES.txt
+wordfencer.egg-info/dependency_links.txt
+wordfencer.egg-info/top_level.txt
+wordfencer/data/thai.pickle
+wordfencer/data/yue-Hans.pickle
+wordfencer/data/yue-Hant.pickle
+wordfencer/data/yue.pickle
+wordfencer/data/zh-Hans.pickle
+wordfencer/data/zh-Hant.pickle
+wordfencer/data/zh.pickle
