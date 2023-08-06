@@ -1,0 +1,4 @@
+setuptools
+ipykernel >= 4.0
+jupyter_client >= 4.0
+aiml
