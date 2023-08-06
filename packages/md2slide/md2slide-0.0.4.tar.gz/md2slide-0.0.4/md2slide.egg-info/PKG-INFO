@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: md2slide
+Version: 0.0.4
+Summary: A web server serve markdown file to html slide
+Home-page: https://github.com/yanganto/MD2Slide
+Author: yanganto
+Author-email: yanganto@gmail.com
+License: MIT
+Description: Markdown to Slide package
+        -------------------------------------
+        
+        Translate markdown file to web slide
+        
+        This version requires Python 3.
+        
+Keywords: markdown,slide
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: JavaScript
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Internet :: WWW/HTTP :: HTTP Servers
