@@ -1,0 +1,24 @@
+includes:
+  dev:
+    - test
+
+dev:
+  apt:
+    - libxml2-dev
+    - libxslt1-dev
+  pip:
+    - lxml
+    - Sphinx
+
+test:
+  pip:
+    - nose
+    - coverage
+
+prod:
+  pip:
+    - gevent:
+        version: 1.0.2
+    - texttable
+    - syn:
+        always_upgrade: yes
