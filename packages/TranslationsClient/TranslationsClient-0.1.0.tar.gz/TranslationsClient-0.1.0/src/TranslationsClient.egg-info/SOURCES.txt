@@ -1,0 +1,10 @@
+MANIFEST.in
+README.rst
+setup.py
+src/TranslationsClient.egg-info/PKG-INFO
+src/TranslationsClient.egg-info/SOURCES.txt
+src/TranslationsClient.egg-info/dependency_links.txt
+src/TranslationsClient.egg-info/requires.txt
+src/TranslationsClient.egg-info/top_level.txt
+src/translations_client/__init__.py
+src/translations_client/client.py

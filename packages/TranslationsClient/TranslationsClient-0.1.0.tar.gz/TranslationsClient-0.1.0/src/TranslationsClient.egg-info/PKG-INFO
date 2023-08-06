@@ -1,0 +1,44 @@
+Metadata-Version: 1.1
+Name: TranslationsClient
+Version: 0.1.0
+Summary: A translations service Python client
+Home-page: https://github.com/GreenelyAB/TranslationsClient
+Author: GreenelyAB
+Author-email: info@greenely.com
+License: MIT
+Description: TranslationsClient
+        ==================
+        
+        .. image:: https://api.travis-ci.org/GreenelyAB/TranslationsClient.svg?branch=master
+            :target: https://travis-ci.org/GreenelyAB/TranslationsClient?branch=master
+        
+        A translation service client.
+        
+        
+        Usage example
+        -------------
+        
+        ::
+        
+            >>> from translations_client import TranslationsClient
+            >>> client = TranslationsClient("127.0.0.1", 5512)
+            >>> print(client.get("se", None, "I have many"))
+            "Jag har många"
+            >>> print(client.get("se", None, "I have many", "translations"))
+            ["Jag har många", "översättningar"]
+            >>> print(client.get("se", None, ("I have many", 1), ("translations", 1)))
+            ["Jag har en", "översättning"]
+            >>> print(client.get("se", None, ("I have many", 0), ("translations", 0)))
+            ["Jag har inga", "översättningar"]
+        
+Keywords: translation translations client internationalization
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Communications
+Classifier: Topic :: Software Development :: Internationalization
+Classifier: Topic :: Software Development :: Localization
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Text Processing
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
