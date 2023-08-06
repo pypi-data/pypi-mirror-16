@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>data Package &mdash; pwman3 0.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="pwman3 0.6 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pwman3 0.6 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="data-package">
+<h1>data Package<a class="headerlink" href="#data-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-pwman.data.convertdb">
+<span id="convertdb-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">convertdb</span></code> Module<a class="headerlink" href="#module-pwman.data.convertdb" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pwman.data.convertdb.DBConverter">
+<em class="property">class </em><code class="descclassname">pwman.data.convertdb.</code><code class="descname">DBConverter</code><span class="sig-paren">(</span><em>args</em>, <em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.DBConverter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A general class to provide a base template for converting a database
+from one version to another</p>
+<dl class="method">
+<dt id="pwman.data.convertdb.DBConverter.backup_old_db">
+<code class="descname">backup_old_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.DBConverter.backup_old_db" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.convertdb.DBConverter.convert_nodes">
+<code class="descname">convert_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.DBConverter.convert_nodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.convertdb.DBConverter.create_new_db">
+<code class="descname">create_new_db</code><span class="sig-paren">(</span><em>new_version=0.4</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.DBConverter.create_new_db" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="pwman.data.convertdb.DBConverter.detect_db_version">
+<em class="property">static </em><code class="descname">detect_db_version</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.DBConverter.detect_db_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method should accept a pwman db file name, and it should try to
+detect which database version it is.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="pwman.data.convertdb.DBConverter.invoke_converter">
+<em class="property">static </em><code class="descname">invoke_converter</code><span class="sig-paren">(</span><em>dbversion</em>, <em>future_version</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.DBConverter.invoke_converter" title="Permalink to this definition">¶</a></dt>
+<dd><p>this method should accept the two parameters and according to them
+invoke the right converter</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.convertdb.DBConverter.print_success">
+<code class="descname">print_success</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.DBConverter.print_success" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.convertdb.DBConverter.read_old_db">
+<code class="descname">read_old_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.DBConverter.read_old_db" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.convertdb.DBConverter.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.DBConverter.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.convertdb.DBConverter.save_new_nodes_to_db">
+<code class="descname">save_new_nodes_to_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.DBConverter.save_new_nodes_to_db" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.convertdb.DBConverter.save_old_key">
+<code class="descname">save_old_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.DBConverter.save_old_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pwman.data.convertdb.PwmanConvertKey">
+<em class="property">class </em><code class="descclassname">pwman.data.convertdb.</code><code class="descname">PwmanConvertKey</code><span class="sig-paren">(</span><em>args</em>, <em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.PwmanConvertKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pwman.data.convertdb.DBConverter" title="pwman.data.convertdb.DBConverter"><code class="xref py py-class docutils literal"><span class="pre">pwman.data.convertdb.DBConverter</span></code></a></p>
+<dl class="method">
+<dt id="pwman.data.convertdb.PwmanConvertKey.read_old_db">
+<code class="descname">read_old_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.PwmanConvertKey.read_old_db" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.convertdb.PwmanConvertKey.save_old_key">
+<code class="descname">save_old_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.convertdb.PwmanConvertKey.save_old_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pwman.data.database">
+<span id="database-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">database</span></code> Module<a class="headerlink" href="#module-pwman.data.database" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pwman.data.database.Database">
+<em class="property">class </em><code class="descclassname">pwman.data.database.</code><code class="descname">Database</code><a class="headerlink" href="#pwman.data.database.Database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="pwman.data.database.Database.add_node">
+<code class="descname">add_node</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.database.Database.add_node" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.database.Database.close">
+<code class="descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.database.Database.close" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.database.Database.editnode">
+<code class="descname">editnode</code><span class="sig-paren">(</span><em>nid</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.database.Database.editnode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.database.Database.fetch_crypto_info">
+<code class="descname">fetch_crypto_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.database.Database.fetch_crypto_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.database.Database.get_user_password">
+<code class="descname">get_user_password</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.database.Database.get_user_password" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the databases password from the user</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.database.Database.getnodes">
+<code class="descname">getnodes</code><span class="sig-paren">(</span><em>ids</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.database.Database.getnodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.database.Database.listnodes">
+<code class="descname">listnodes</code><span class="sig-paren">(</span><em>filter=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.database.Database.listnodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a list of node ids</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.database.Database.listtags">
+<code class="descname">listtags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.database.Database.listtags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.database.Database.loadkey">
+<code class="descname">loadkey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.database.Database.loadkey" title="Permalink to this definition">¶</a></dt>
+<dd><p>return _keycrypted</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.database.Database.open">
+<code class="descname">open</code><span class="sig-paren">(</span><em>dbver=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.database.Database.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the database, by calling the _open method of the
+class inherited for the specific database.
+When done validation that the file is OK, check if it has
+encryption key, by calling
+enc = CryptoEngine.get()
+key = self.loadkey()</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.database.Database.removenodes">
+<code class="descname">removenodes</code><span class="sig-paren">(</span><em>nid</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.database.Database.removenodes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.database.Database.save_crypto_info">
+<code class="descname">save_crypto_info</code><span class="sig-paren">(</span><em>seed</em>, <em>digest</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.database.Database.save_crypto_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>save the random seed and the digested key</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.database.Database.savekey">
+<code class="descname">savekey</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.database.Database.savekey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pwman.data.database.DatabaseException">
+<em class="property">exception </em><code class="descclassname">pwman.data.database.</code><code class="descname">DatabaseException</code><a class="headerlink" href="#pwman.data.database.DatabaseException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pwman.data.factory">
+<span id="factory-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">factory</span></code> Module<a class="headerlink" href="#module-pwman.data.factory" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pwman.data.factory.check_db_version">
+<code class="descclassname">pwman.data.factory.</code><code class="descname">check_db_version</code><span class="sig-paren">(</span><em>dburi</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.factory.check_db_version" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pwman.data.factory.createdb">
+<code class="descclassname">pwman.data.factory.</code><code class="descname">createdb</code><span class="sig-paren">(</span><em>dburi</em>, <em>version</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.factory.createdb" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pwman.data.factory.no_parse_uri">
+<code class="descclassname">pwman.data.factory.</code><code class="descname">no_parse_uri</code><span class="sig-paren">(</span><em>dburi</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.factory.no_parse_uri" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pwman.data.factory.parse_postgres_uri">
+<code class="descclassname">pwman.data.factory.</code><code class="descname">parse_postgres_uri</code><span class="sig-paren">(</span><em>dburi</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.factory.parse_postgres_uri" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pwman.data.factory.parse_sqlite_uri">
+<code class="descclassname">pwman.data.factory.</code><code class="descname">parse_sqlite_uri</code><span class="sig-paren">(</span><em>dburi</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.factory.parse_sqlite_uri" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pwman.data.nodes">
+<span id="nodes-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">nodes</span></code> Module<a class="headerlink" href="#module-pwman.data.nodes" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pwman.data.nodes.Node">
+<em class="property">class </em><code class="descclassname">pwman.data.nodes.</code><code class="descname">Node</code><span class="sig-paren">(</span><em>clear_text=True</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.nodes.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="classmethod">
+<dt id="pwman.data.nodes.Node.from_encrypted_entries">
+<em class="property">classmethod </em><code class="descname">from_encrypted_entries</code><span class="sig-paren">(</span><em>username</em>, <em>password</em>, <em>url</em>, <em>notes</em>, <em>tags</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.nodes.Node.from_encrypted_entries" title="Permalink to this definition">¶</a></dt>
+<dd><p>We use this alternatively, to create a node instance when reading
+the encrypted entities from the database</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pwman.data.nodes.Node.notes">
+<code class="descname">notes</code><a class="headerlink" href="#pwman.data.nodes.Node.notes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current notes.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pwman.data.nodes.Node.password">
+<code class="descname">password</code><a class="headerlink" href="#pwman.data.nodes.Node.password" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current password.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pwman.data.nodes.Node.tags">
+<code class="descname">tags</code><a class="headerlink" href="#pwman.data.nodes.Node.tags" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.data.nodes.Node.to_encdict">
+<code class="descname">to_encdict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.data.nodes.Node.to_encdict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a dictionary of encrypted records</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pwman.data.nodes.Node.url">
+<code class="descname">url</code><a class="headerlink" href="#pwman.data.nodes.Node.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current url.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pwman.data.nodes.Node.username">
+<code class="descname">username</code><a class="headerlink" href="#pwman.data.nodes.Node.username" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current username.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pwman.data.drivers.html">drivers Package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pwman.data.drivers.html#module-pwman.data.drivers.sqlite"><code class="docutils literal"><span class="pre">sqlite</span></code> Module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">data Package</a><ul>
+<li><a class="reference internal" href="#module-pwman.data.convertdb"><code class="docutils literal"><span class="pre">convertdb</span></code> Module</a></li>
+<li><a class="reference internal" href="#module-pwman.data.database"><code class="docutils literal"><span class="pre">database</span></code> Module</a></li>
+<li><a class="reference internal" href="#module-pwman.data.factory"><code class="docutils literal"><span class="pre">factory</span></code> Module</a></li>
+<li><a class="reference internal" href="#module-pwman.data.nodes"><code class="docutils literal"><span class="pre">nodes</span></code> Module</a></li>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pwman.data.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pwman3 0.6 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Oz Tiram.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.
+    </div>
+  </body>
+</html>

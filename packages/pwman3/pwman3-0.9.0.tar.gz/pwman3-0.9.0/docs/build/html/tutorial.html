@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Pwman3 - tutorial &mdash; pwman3 0.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="pwman3 0.6 documentation" href="index.html" />
+    <link rel="next" title="Configuring Pwman3" href="configuration.html" />
+    <link rel="prev" title="Installing and upgrading:" href="install.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuring Pwman3"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="install.html" title="Installing and upgrading:"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pwman3 0.6 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pwman3-tutorial">
+<h1>Pwman3 - tutorial<a class="headerlink" href="#pwman3-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Pwman3 is a text centric password manager, and as such suitable for people wishing
+to use it over SSH or brail terminals.</p>
+<p>Pwman3 is launched by typing <code class="docutils literal"><span class="pre">pwman3</span></code> in your shell. Multiple start options are
+available. You can see them by typing:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pwman3 -h
+</pre></div>
+</div>
+<p>For more information see also <code class="docutils literal"><span class="pre">man</span> <span class="pre">pwman3</span></code>.</p>
+<p>When started for the first time, <code class="docutils literal"><span class="pre">pwman3</span></code> will create a configuration file
+and your database (By default an SQLite database called <code class="docutils literal"><span class="pre">pwman.db</span></code>) in your
+home directory under <code class="docutils literal"><span class="pre">.pwman</span></code>.
+Before creating the database you will be asked to enter the master password which
+will be used to create an encryption key which will be used to encrypt the entries
+in your database:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ pwman3
+Please type in the master password:
+</pre></div>
+</div>
+<p>Take note of this password! If you forget it, you won&#8217;t be able to read your password
+database.</p>
+<p>Now <code class="docutils literal"><span class="pre">pwman3</span></code> will wait for your input.  The user interface is
+a simple loop waiting for user commands. You can see all the commands by typing:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pwman</span><span class="o">&gt;</span> <span class="n">help</span>
+
+<span class="n">Documented</span> <span class="n">commands</span> <span class="p">(</span><span class="nb">type</span> <span class="n">help</span> <span class="o">&lt;</span><span class="n">topic</span><span class="o">&gt;</span><span class="p">):</span>
+<span class="o">========================================</span>
+<span class="n">cls</span>   <span class="n">delete</span>  <span class="n">exit</span>    <span class="n">forget</span>  <span class="nb">list</span>  <span class="nb">open</span>    <span class="nb">print</span>
+<span class="n">copy</span>  <span class="n">edit</span>    <span class="n">export</span>  <span class="n">help</span>    <span class="n">new</span>   <span class="n">passwd</span>  <span class="n">tags</span>
+
+<span class="n">Aliases</span><span class="p">:</span>
+<span class="o">========</span>
+<span class="n">EOF</span>  <span class="n">cp</span>  <span class="n">h</span>  <span class="n">ls</span>  <span class="n">n</span>  <span class="n">o</span>  <span class="n">p</span>  <span class="n">rm</span>
+</pre></div>
+</div>
+<p>Most commands have a single or two letter alias which is easy to remember.</p>
+<p>As for a start you would probably like to store some passwords in your database, all
+you need to do is type the command <code class="docutils literal"><span class="pre">new</span></code> (or the alias <code class="docutils literal"><span class="pre">n</span></code>), and then insert the information
+as prompted:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pwman</span><span class="o">&gt;</span> <span class="n">new</span>
+<span class="n">Username</span><span class="p">:</span> <span class="n">oz123</span>
+<span class="n">Password</span><span class="p">:</span>
+<span class="n">Url</span><span class="p">:</span> <span class="n">example</span><span class="o">.</span><span class="n">org</span>
+<span class="n">Notes</span><span class="p">:</span> <span class="n">Your</span> <span class="n">notes</span>
+<span class="n">Tags</span><span class="p">:</span> <span class="n">bank</span> <span class="n">private</span>
+</pre></div>
+</div>
+<p>Note the password is typed in without echoing it. Also note that two tags were
+separated by a space. Now, you can list your database entries with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pwman</span><span class="o">&gt;</span> <span class="n">ls</span>
+
+<span class="n">ID</span>  <span class="n">USER</span>        <span class="n">URL</span>                 <span class="n">TAGS</span>
+<span class="mi">1</span>   <span class="n">oz123</span>       <span class="n">example</span><span class="o">.</span><span class="n">org</span>         <span class="n">bank</span><span class="p">,</span> <span class="n">private</span>
+</pre></div>
+</div>
+<p>After a while you have had many new nodes inserted in your database:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ID</span>  <span class="n">USER</span>        <span class="n">URL</span>                     <span class="n">TAGS</span>
+<span class="mi">1</span>   <span class="n">oz123</span>       <span class="n">example</span><span class="o">.</span><span class="n">org</span>             <span class="n">bank</span><span class="p">,</span> <span class="n">private</span>
+<span class="mi">2</span>   <span class="n">oz123</span>       <span class="n">intranet</span><span class="o">.</span><span class="n">workplace</span><span class="o">.</span><span class="n">biz</span>  <span class="n">work</span>
+<span class="mi">3</span>   <span class="n">oz123</span>       <span class="n">shopping</span><span class="o">.</span><span class="n">com</span>            <span class="n">shopping</span>
+</pre></div>
+</div>
+<p>Now searching for a searching entry can become quite tiresome. Hence, you can
+minimize the number of entries display by applying a filter to the <code class="docutils literal"><span class="pre">list</span></code>
+command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pwman</span><span class="o">&gt;</span> <span class="n">ls</span> <span class="n">work</span>
+
+<span class="n">ID</span>  <span class="n">USER</span>        <span class="n">URL</span>                 <span class="n">TAGS</span>
+<span class="mi">2</span>   <span class="n">oz123</span>       <span class="n">intranet</span><span class="o">.</span><span class="n">workplace</span><span class="o">.</span><span class="n">biz</span>  <span class="n">workplace</span>
+</pre></div>
+</div>
+<p>If you don&#8217;t remember all the tags you created you can list the tags using the
+command <code class="docutils literal"><span class="pre">tags</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pwman</span><span class="o">&gt;</span> <span class="n">tags</span>
+<span class="n">Tags</span><span class="p">:</span>
+<span class="n">bank</span><span class="p">,</span>
+<span class="n">private</span><span class="p">,</span>
+<span class="n">shopping</span>
+</pre></div>
+</div>
+<p>To see the content of a saved entry, you need to use the <code class="docutils literal"><span class="pre">print</span></code> command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pwman</span><span class="o">&gt;</span> <span class="nb">print</span> <span class="mi">2</span>
+<span class="n">Username</span><span class="p">:</span> <span class="n">oz123</span>
+<span class="n">Password</span><span class="p">:</span> <span class="n">Org4n7</span><span class="c1">#</span>
+<span class="n">URL</span><span class="p">:</span> <span class="n">intranet</span><span class="o">.</span><span class="n">workplace</span><span class="o">.</span><span class="n">biz</span>
+<span class="n">Notes</span><span class="p">:</span>
+<span class="n">Tags</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;work&#39;</span><span class="p">]</span>
+<span class="n">Type</span> <span class="n">Enter</span> <span class="n">to</span> <span class="n">flush</span> <span class="n">screen</span> <span class="ow">or</span> <span class="n">wait</span> <span class="mi">5</span> <span class="n">sec</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Notice, that the <code class="docutils literal"><span class="pre">print</span></code> command expects an entry number as an argument.
+After printing the content of the entry, pwman3 will wait for <code class="docutils literal"><span class="pre">Enter</span></code> to be
+pressed or 5 seconds until it flushes the screen. This way, unauthorized eyes
+can not browse your screen and see your password. You can always scroll up to
+see the printed entry or print it again.</p>
+<p>If you don&#8217;t want to type passwords and URLs constantly <code class="docutils literal"><span class="pre">Pwman3</span></code> comes with
+two shortcut commands. The first shortcut is <code class="docutils literal"><span class="pre">open</span></code>, when calling it with
+an entry number it will open the URL in your default browser:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pwman</span><span class="o">&gt;</span> <span class="nb">open</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>This will open the URL <em>intranet.workplace.biz</em>. After opening the browser you can use the <code class="docutils literal"><span class="pre">copy</span></code> command to copy your password
+to your clipboard. The password will be <em>erased</em> from the clipboard after 10
+seconds:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pwman</span><span class="o">&gt;</span> <span class="n">copy</span> <span class="mi">2</span>
+<span class="n">erasing</span> <span class="ow">in</span> <span class="mi">10</span> <span class="n">sec</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>After working with passwords for quite a while you can <code class="docutils literal"><span class="pre">delete</span></code> (or <code class="docutils literal"><span class="pre">rm</span></code>)
+entries or edit them:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>pwman&gt; rm 2
+Are you sure you want to delete node 2 [y/N]?N
+
+pwman&gt; e 2
+Editing node 2.
+1 - Username: oz123
+2 - Password: Org4n7#
+3 - Url: intranet.workplace.biz
+4 - Notes:
+5 - Tags: workplace
+X - Finish editing
+Enter your choice:
+</pre></div>
+</div>
+<p>You now know all the basics of using <code class="docutils literal"><span class="pre">pwman3</span></code>. If you need more help, try
+the command <code class="docutils literal"><span class="pre">help</span></code> to see more commands which are not documented here.
+Alternatively, you can open a ticket in <a class="reference external" href="https://github.com/pwman3/pwman3/issues">https://github.com/pwman3/pwman3/issues</a>.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="install.html"
+                        title="previous chapter">Installing and upgrading:</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="configuration.html"
+                        title="next chapter">Configuring Pwman3</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tutorial.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuring Pwman3"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="install.html" title="Installing and upgrading:"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pwman3 0.6 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Oz Tiram.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.
+    </div>
+  </body>
+</html>

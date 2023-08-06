@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>util Package &mdash; pwman3 0.6 documentation</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="pwman3 0.6 documentation" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pwman3 0.6 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="util-package">
+<h1>util Package<a class="headerlink" href="#util-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-pwman.util.callback">
+<span id="callback-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">callback</span></code> Module<a class="headerlink" href="#module-pwman.util.callback" title="Permalink to this headline">¶</a></h2>
+<p>Callback interface
+To be used when UI needs to be back to get info from user.</p>
+<dl class="class">
+<dt id="pwman.util.callback.CLICallback">
+<em class="property">class </em><code class="descclassname">pwman.util.callback.</code><code class="descname">CLICallback</code><a class="headerlink" href="#pwman.util.callback.CLICallback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pwman.util.callback.Callback" title="pwman.util.callback.Callback"><code class="xref py py-class docutils literal"><span class="pre">pwman.util.callback.Callback</span></code></a></p>
+<dl class="method">
+<dt id="pwman.util.callback.CLICallback.getinput">
+<code class="descname">getinput</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.callback.CLICallback.getinput" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.callback.CLICallback.getnewsecret">
+<code class="descname">getnewsecret</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.callback.CLICallback.getnewsecret" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.callback.CLICallback.getsecret">
+<code class="descname">getsecret</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.callback.CLICallback.getsecret" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pwman.util.callback.Callback">
+<em class="property">class </em><code class="descclassname">pwman.util.callback.</code><code class="descname">Callback</code><a class="headerlink" href="#pwman.util.callback.Callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Callback interface. Callback classes must implement this.</p>
+<dl class="method">
+<dt id="pwman.util.callback.Callback.error">
+<code class="descname">error</code><span class="sig-paren">(</span><em>error</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.callback.Callback.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Present error to user</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.callback.Callback.getinput">
+<code class="descname">getinput</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.callback.Callback.getinput" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return text</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.callback.Callback.getsecret">
+<code class="descname">getsecret</code><span class="sig-paren">(</span><em>question</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.callback.Callback.getsecret" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return key</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.callback.Callback.notice">
+<code class="descname">notice</code><span class="sig-paren">(</span><em>warning</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.callback.Callback.notice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Present notice to user</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.callback.Callback.warning">
+<code class="descname">warning</code><span class="sig-paren">(</span><em>warning</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.callback.Callback.warning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Present warning to user</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pwman.util.config">
+<span id="config-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">config</span></code> Module<a class="headerlink" href="#module-pwman.util.config" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pwman.util.config.Config">
+<em class="property">class </em><code class="descclassname">pwman.util.config.</code><code class="descname">Config</code><span class="sig-paren">(</span><em>filename=None</em>, <em>defaults=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.config.Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="pwman.util.config.Config.get_value">
+<code class="descname">get_value</code><span class="sig-paren">(</span><em>section</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.config.Config.get_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.config.Config.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.config.Config.save" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.config.Config.set_value">
+<code class="descname">set_value</code><span class="sig-paren">(</span><em>section</em>, <em>name</em>, <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.config.Config.set_value" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pwman.util.config.ConfigException">
+<em class="property">exception </em><code class="descclassname">pwman.util.config.</code><code class="descname">ConfigException</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.config.ConfigException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+<p>Basic exception for config.</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="pwman.util.config.ConfigNoConfigException">
+<em class="property">exception </em><code class="descclassname">pwman.util.config.</code><code class="descname">ConfigNoConfigException</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.config.ConfigNoConfigException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pwman.util.config.ConfigException" title="pwman.util.config.ConfigException"><code class="xref py py-class docutils literal"><span class="pre">pwman.util.config.ConfigException</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pwman.util.config.get_pass_conf">
+<code class="descclassname">pwman.util.config.</code><code class="descname">get_pass_conf</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.config.get_pass_conf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-pwman.util.crypto_engine">
+<span id="crypto-engine-module"></span><h2><code class="xref py py-mod docutils literal"><span class="pre">crypto_engine</span></code> Module<a class="headerlink" href="#module-pwman.util.crypto_engine" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pwman.util.crypto_engine.CryptoEngine">
+<em class="property">class </em><code class="descclassname">pwman.util.crypto_engine.</code><code class="descname">CryptoEngine</code><span class="sig-paren">(</span><em>salt=None</em>, <em>digest=None</em>, <em>algorithm='AES'</em>, <em>timeout=-1</em>, <em>reader=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.CryptoEngine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="pwman.util.crypto_engine.CryptoEngine.authenticate">
+<code class="descname">authenticate</code><span class="sig-paren">(</span><em>password</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.CryptoEngine.authenticate" title="Permalink to this definition">¶</a></dt>
+<dd><p>salt and digest are stored in a file or a database</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="pwman.util.crypto_engine.CryptoEngine.callback">
+<code class="descname">callback</code><a class="headerlink" href="#pwman.util.crypto_engine.CryptoEngine.callback" title="Permalink to this definition">¶</a></dt>
+<dd><p>return call back function</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.crypto_engine.CryptoEngine.changepassword">
+<code class="descname">changepassword</code><span class="sig-paren">(</span><em>reader=&lt;built-in function input&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.CryptoEngine.changepassword" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.crypto_engine.CryptoEngine.decrypt">
+<code class="descname">decrypt</code><span class="sig-paren">(</span><em>cipher_text</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.CryptoEngine.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.crypto_engine.CryptoEngine.encrypt">
+<code class="descname">encrypt</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.CryptoEngine.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.crypto_engine.CryptoEngine.forget">
+<code class="descname">forget</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.CryptoEngine.forget" title="Permalink to this definition">¶</a></dt>
+<dd><p>discard cipher</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="pwman.util.crypto_engine.CryptoEngine.get">
+<em class="property">classmethod </em><code class="descname">get</code><span class="sig-paren">(</span><em>timeout=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.CryptoEngine.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.crypto_engine.CryptoEngine.get_cryptedkey">
+<code class="descname">get_cryptedkey</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.CryptoEngine.get_cryptedkey" title="Permalink to this definition">¶</a></dt>
+<dd><p>return _keycrypted</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="pwman.util.crypto_engine.CryptoEngine.set_cryptedkey">
+<code class="descname">set_cryptedkey</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.CryptoEngine.set_cryptedkey" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="pwman.util.crypto_engine.CryptoException">
+<em class="property">exception </em><code class="descclassname">pwman.util.crypto_engine.</code><code class="descname">CryptoException</code><a class="headerlink" href="#pwman.util.crypto_engine.CryptoException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pwman.util.crypto_engine.decode_AES">
+<code class="descclassname">pwman.util.crypto_engine.</code><code class="descname">decode_AES</code><span class="sig-paren">(</span><em>cipher</em>, <em>encoded_text</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.decode_AES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pwman.util.crypto_engine.encode_AES">
+<code class="descclassname">pwman.util.crypto_engine.</code><code class="descname">encode_AES</code><span class="sig-paren">(</span><em>cipher</em>, <em>clear_text</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.encode_AES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pwman.util.crypto_engine.generate_password">
+<code class="descclassname">pwman.util.crypto_engine.</code><code class="descname">generate_password</code><span class="sig-paren">(</span><em>pass_len=8</em>, <em>uppercase=True</em>, <em>lowercase=True</em>, <em>digits=True</em>, <em>special_chars=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.generate_password" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="pwman.util.crypto_engine.get_cipher">
+<code class="descclassname">pwman.util.crypto_engine.</code><code class="descname">get_cipher</code><span class="sig-paren">(</span><em>password</em>, <em>salt</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.get_cipher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a chiper object from a hashed password</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pwman.util.crypto_engine.get_digest">
+<code class="descclassname">pwman.util.crypto_engine.</code><code class="descname">get_digest</code><span class="sig-paren">(</span><em>password</em>, <em>salt</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.get_digest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a digest based on clear text password</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pwman.util.crypto_engine.prepare_data">
+<code class="descclassname">pwman.util.crypto_engine.</code><code class="descname">prepare_data</code><span class="sig-paren">(</span><em>text</em>, <em>block_size</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.prepare_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>prepare data before encryption so the lenght matches the expected
+lenght by the algorithm.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pwman.util.crypto_engine.zerome">
+<code class="descclassname">pwman.util.crypto_engine.</code><code class="descname">zerome</code><span class="sig-paren">(</span><em>string</em><span class="sig-paren">)</span><a class="headerlink" href="#pwman.util.crypto_engine.zerome" title="Permalink to this definition">¶</a></dt>
+<dd><p>securely erase strings ...
+for windows: ctypes.cdll.msvcrt.memset</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">util Package</a><ul>
+<li><a class="reference internal" href="#module-pwman.util.callback"><code class="docutils literal"><span class="pre">callback</span></code> Module</a></li>
+<li><a class="reference internal" href="#module-pwman.util.config"><code class="docutils literal"><span class="pre">config</span></code> Module</a></li>
+<li><a class="reference internal" href="#module-pwman.util.crypto_engine"><code class="docutils literal"><span class="pre">crypto_engine</span></code> Module</a></li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/pwman.util.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pwman3 0.6 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014, Oz Tiram.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.5.
+    </div>
+  </body>
+</html>
