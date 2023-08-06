@@ -1,0 +1,17 @@
+README.rst
+setup.py
+goprolib/__init__.py
+goprolib.egg-info/PKG-INFO
+goprolib.egg-info/SOURCES.txt
+goprolib.egg-info/dependency_links.txt
+goprolib.egg-info/requires.txt
+goprolib.egg-info/top_level.txt
+goprolib/HERO4/HERO4.py
+goprolib/HERO4/__init__.py
+goprolib/HERO4/commands.py
+goprolib/HERO4/exceptions.py
+goprolib/HERO4/fisheye.py
+goprolib/HERO4/settings.py
+goprolib/HERO4/status.py
+goprolib/HERO4/scripts/__init__.py
+goprolib/HERO4/scripts/stream-udp-keepalive.py
