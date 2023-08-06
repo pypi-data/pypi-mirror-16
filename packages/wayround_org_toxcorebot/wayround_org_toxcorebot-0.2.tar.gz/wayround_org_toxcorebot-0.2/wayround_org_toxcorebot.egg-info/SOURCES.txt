@@ -1,0 +1,7 @@
+setup.py
+wayround_org/toxcorebot/bot.py
+wayround_org_toxcorebot.egg-info/PKG-INFO
+wayround_org_toxcorebot.egg-info/SOURCES.txt
+wayround_org_toxcorebot.egg-info/dependency_links.txt
+wayround_org_toxcorebot.egg-info/requires.txt
+wayround_org_toxcorebot.egg-info/top_level.txt
