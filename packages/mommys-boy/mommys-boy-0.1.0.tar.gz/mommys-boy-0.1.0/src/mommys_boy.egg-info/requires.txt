@@ -1,0 +1,7 @@
+factory_boy
+fake-factory
+model_mommy
+
+[testing]
+pytest
+pytest-django
