@@ -1,0 +1,3 @@
+[aspen.renderers]
+tornado=aspen_tornado_renderer
+
