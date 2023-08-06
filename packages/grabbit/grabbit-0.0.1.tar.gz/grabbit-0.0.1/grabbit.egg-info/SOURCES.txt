@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+grabbit/__init__.py
+grabbit/core.py
+grabbit/metadata.py
+grabbit.egg-info/PKG-INFO
+grabbit.egg-info/SOURCES.txt
+grabbit.egg-info/dependency_links.txt
+grabbit.egg-info/requires.txt
+grabbit.egg-info/top_level.txt
