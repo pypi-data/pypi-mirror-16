@@ -1,0 +1,11 @@
+barrett/__init__.py,sha256=ZRB5go_tNYsq9p8S-NdS53Nh9JCyd2darcdnwsTMCAQ,211
+barrett/data.py,sha256=eLhMcaNNUNXHRPPy9owsYDcweB30Fzau5D3xBfGudaY,3615
+barrett/posterior.py,sha256=fH9E_-p7mwDkzRuWMUHplgCBY2jpomW2zUgwTsG_DJo,4562
+barrett/profilelikelihood.py,sha256=C1lbyc6sL_8GKFpbo4-L3XeTNDtM6yUh-sGS2f4CQhg,4618
+barrett/util.py,sha256=rGzU3XOFzcq-zs3DKwc5VwE8ADdabClP6Ci5yfcv9wE,2911
+barrett-0.1.0.dist-info/DESCRIPTION.rst,sha256=16vGe3MEV6WTHa9UtHHNAVhcy-Vz5kV3ol2Tn1jNcuE,1366
+barrett-0.1.0.dist-info/METADATA,sha256=byM58h49NrOwYr6hiIhzkXdKDEWSNqMBx-zj8l0B0lw,2018
+barrett-0.1.0.dist-info/RECORD,,
+barrett-0.1.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+barrett-0.1.0.dist-info/metadata.json,sha256=Lc48bViC1pMHMjhrlwddS03ousPHml674wMrLxcxevU,826
+barrett-0.1.0.dist-info/top_level.txt,sha256=d2JMcGVmyaHYGVJ215S0cAmONb9ibnKGObLXZQfMh3k,8
