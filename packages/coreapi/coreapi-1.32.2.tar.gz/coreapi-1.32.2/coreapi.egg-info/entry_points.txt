@@ -1,0 +1,5 @@
+[coreapi.codecs]
+text = coreapi.codecs:TextCodec
+json = coreapi.codecs:JSONCodec
+corejson = coreapi.codecs:CoreJSONCodec
+
