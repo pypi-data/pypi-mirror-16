@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+bin/location_aware
+location_aware/__init__.py
+location_aware/location_aware.py
+location_aware.egg-info/PKG-INFO
+location_aware.egg-info/SOURCES.txt
+location_aware.egg-info/dependency_links.txt
+location_aware.egg-info/top_level.txt
+location_aware.egg-info/zip-safe

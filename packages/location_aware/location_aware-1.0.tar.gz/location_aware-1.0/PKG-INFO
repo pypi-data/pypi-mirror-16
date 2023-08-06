@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: location_aware
+Version: 1.0
+Summary: Python port for location aware names map geocoding (library and executable)
+Home-page: http://github.com/Ja-vi/location_aware
+Author: Javi Gonzalez
+Author-email: javi.gonzalez@zoho.com
+License: MIT
+Download-URL: http://github.com/Ja-vi/location_aware/tarball/1.0
+Description: UNKNOWN
+Keywords: location,geocoding,address,map
+Platform: UNKNOWN
