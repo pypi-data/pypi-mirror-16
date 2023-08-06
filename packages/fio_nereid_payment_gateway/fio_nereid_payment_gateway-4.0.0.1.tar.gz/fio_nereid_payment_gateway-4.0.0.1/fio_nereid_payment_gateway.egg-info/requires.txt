@@ -1,0 +1,3 @@
+trytond_nereid >= 4.0, < 4.1
+fio_payment_gateway >= 4.0, < 4.1
+trytond >= 4.0, < 4.1
