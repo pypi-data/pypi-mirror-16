@@ -1,0 +1,5 @@
+ipython>=1.0.0
+click
+zerodb>=0.99.0a1
+PyOpenSSL
+ecdsa

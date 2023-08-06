@@ -1,0 +1,4 @@
+[console_scripts]
+zerodb-manage = zerodbext.server.manage:cli
+zerodb-server = zerodbext.server.run:run
+
