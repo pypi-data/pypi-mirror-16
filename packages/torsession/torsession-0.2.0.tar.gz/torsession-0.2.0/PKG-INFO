@@ -1,0 +1,73 @@
+Metadata-Version: 1.1
+Name: torsession
+Version: 0.2.0
+Summary: An asynchronous session backend with mongodb for tornado
+Home-page: https://github.com/shiyanhui/torsession
+Author: Lime YH.Shi
+Author-email: shiyanhui66@gmail.com
+License: http://www.apache.org/licenses/LICENSE-2.0
+Description: ==========
+        Torsession
+        ==========
+        
+        :Info: Torsession is an asynchronous session backend with Mongodb for Tornado
+        :Author: Lime YH.Shi
+        
+        .. image:: https://pypip.in/v/torsession/badge.png
+                :target: https://crate.io/packages/torsession
+        
+        .. image:: https://pypip.in/d/torsession/badge.png
+                :target: https://crate.io/packages/torsession
+        
+        
+        Installation
+        ============
+        
+        .. code-block:: bash
+        
+            $ pip install torsession
+        
+        Example
+        =======
+        
+        .. code-block:: python
+        
+            # Initialize SessionManager
+            sm = SessionManager(motor.MotorClient())
+        
+            # create a new session or load a session
+            session = yield sm.new_session()
+            session = yield sm.load_session("session id")
+        
+            # set a key-value pair
+            yield session.set(key, value)
+        
+            # get key
+            yield session.get(key)
+        
+            # delete a key
+            yield session.delete(key)
+        
+            # refresh session id
+            yield session.refresh_id()
+        
+            # clear a session
+            yield session.clear()
+        
+        
+Keywords: torsession,mongo,mongodb,motor,session,backend,tornado,asynchronous
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.0
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: Implementation :: CPython
