@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+genetic/__init__.py
+genetic.egg-info/PKG-INFO
+genetic.egg-info/SOURCES.txt
+genetic.egg-info/dependency_links.txt
+genetic.egg-info/requires.txt
+genetic.egg-info/top_level.txt
