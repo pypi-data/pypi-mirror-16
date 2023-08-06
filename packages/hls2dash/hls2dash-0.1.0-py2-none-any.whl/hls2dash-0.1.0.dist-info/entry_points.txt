@@ -1,0 +1,3 @@
+[console_scripts]
+hls-to-dash = hls2dash:main
+
