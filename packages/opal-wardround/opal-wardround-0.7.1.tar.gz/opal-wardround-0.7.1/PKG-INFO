@@ -1,0 +1,15 @@
+Metadata-Version: 1.0
+Name: opal-wardround
+Version: 0.7.1
+Summary: OPAL Plugin for (Virtual) Ward Rounds and MDTs
+Home-page: http://opal.openhealthcare.org.uk/
+Author: Open Health Care UK
+Author-email: hello@openhealthcare.org.uk
+License: GPL3
+Description: 
+        OPAL Wardround is a plugin for the OPAL web framework that provides virtual wardround and MDT
+        functionality.
+        
+        Source code and documentation available at https://github.com/openhealthcare/opal-wardround/
+        
+Platform: UNKNOWN
