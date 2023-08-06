@@ -1,0 +1,4 @@
+lxml
+python-dateutil<2.0
+html2text
+beautifulsoup4

@@ -1,0 +1,4 @@
+
+    [console_scripts]
+    ever2text = ever2text.core:main
+    
