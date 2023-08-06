@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: bcTesting
+Version: 0.2.0
+Summary: Python testing utilities and classes for Visual Effects
+Home-page: https://github.com/barishcb/testing
+Author: Barish Chandran B
+Author-email: barishcb@gmail.com
+License: MIT
+Description: A Testing Framework for Visual Effect Developers
+        ================================================
+        
+        As am a animation/visual effects pipeline developer, It was one of my long term plan to create a python unittest framework for visual effects developer.
+        
+        More information in future commits.
+        
+Keywords: bcTesting unittest setuptools development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7

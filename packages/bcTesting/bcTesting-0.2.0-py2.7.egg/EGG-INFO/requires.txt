@@ -1,0 +1,7 @@
+testtools
+
+[dev]
+check-manifest
+
+[test]
+coverage
