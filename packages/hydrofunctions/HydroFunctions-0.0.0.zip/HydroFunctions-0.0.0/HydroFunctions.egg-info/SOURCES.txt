@@ -1,0 +1,7 @@
+setup.py
+HydroFunctions.egg-info/PKG-INFO
+HydroFunctions.egg-info/SOURCES.txt
+HydroFunctions.egg-info/dependency_links.txt
+HydroFunctions.egg-info/not-zip-safe
+HydroFunctions.egg-info/requires.txt
+HydroFunctions.egg-info/top_level.txt

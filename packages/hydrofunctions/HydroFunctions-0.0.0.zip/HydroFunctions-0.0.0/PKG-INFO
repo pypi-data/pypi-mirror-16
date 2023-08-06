@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: HydroFunctions
+Version: 0.0.0
+Summary: convenience functions for hydrology
+Home-page: https://github.com/mroberge/hf
+Author: Martin Roberge
+Author-email: mroberge.whois@gmail.com
+License: MIT
+Description: HydroFunctions
+        ==============
+        
+        [![build status on Travis CI](https://img.shields.io/travis/mroberge/hf.svg)](https://travis-ci.org/mroberge/hf)
+        
+        
+        A suite of convenience functions for working with hydrology data in an
+        interactive Python session.
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Topic :: Utilities
