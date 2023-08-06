@@ -1,0 +1,1 @@
+-e git+https://github.com/mrjoes/flask-babelex.git#egg=Flask-BabelEx
