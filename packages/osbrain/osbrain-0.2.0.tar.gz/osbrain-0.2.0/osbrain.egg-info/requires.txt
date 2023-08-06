@@ -1,0 +1,12 @@
+Pyro4==4.45
+pyzmq>=15.2.0
+
+[dev]
+dill
+
+[docs]
+sphinx
+numpydoc
+
+[test]
+tox
