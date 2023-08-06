@@ -1,0 +1,11 @@
+.gitignore
+LICENSE
+README.md
+deployconfigs.py
+setup.cfg
+setup.py
+deployconfigs.egg-info/PKG-INFO
+deployconfigs.egg-info/SOURCES.txt
+deployconfigs.egg-info/dependency_links.txt
+deployconfigs.egg-info/requires.txt
+deployconfigs.egg-info/top_level.txt
