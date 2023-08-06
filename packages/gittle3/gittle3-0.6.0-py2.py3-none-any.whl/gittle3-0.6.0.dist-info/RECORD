@@ -1,0 +1,15 @@
+gittle/__init__.py,sha256=6u5yaRdh2yLB-foKpEKx6Y3jZZ0d5NBobIJypSTd4to,131
+gittle/server.py,sha256=h8igM-_74Mokh1ElGBZwkYZk6orgjN_77Mdsxhq_Ge4,1996
+gittle/exceptions.py,sha256=ipf4d47LiL5yOW-QtSdOKmWddfvn3CNEzmfu8-LwRms,180
+gittle/gittle.py,sha256=Ac6pukcrTt2ssupS7jj2Nge9AI8zOKH3JH4W7CEGWa0,39031
+gittle/auth.py,sha256=n21ngSBlcyiehH4fQ-vVFk3wYwRstpok5Xwq2a6VDo4,2380
+gittle/utils/__init__.py,sha256=y9BZSUKS8JmbcK-JcOUDbG3q9iHkgbfGdX0mSrAwgnM,31
+gittle/utils/urls.py,sha256=71MjgBT7DynsRybDptRkccPPXJLYYAg1beIl9mJ8BXw,1522
+gittle/utils/paths.py,sha256=HMBt4s_W7yDZGwvLs577T69CeV8fj9y3FKWg7jX5_Q4,2721
+gittle/utils/git.py,sha256=cZB7QVVUjZm8hZPBFVNTaz44Cc58hx0hMVXtvOO6U1c,6942
+gittle3-0.6.0.dist-info/METADATA,sha256=onBCcIxa2_rU70lbAmi9bnMimc1GoorQM9i11RLK5Mo,656
+gittle3-0.6.0.dist-info/metadata.json,sha256=kVdP4Qf1DW9JXfit1cOSfwEEK9aSYk7PRXjZapT-RxE,626
+gittle3-0.6.0.dist-info/DESCRIPTION.rst,sha256=11_5NOiUTFLItWVNn24qhtdqU4DO8djqqihx8wz7Ft8,235
+gittle3-0.6.0.dist-info/RECORD,,
+gittle3-0.6.0.dist-info/top_level.txt,sha256=d-7VU05CM0zrIb08WfHeBQzWS-N9SSHprdyvhOmDZBc,7
+gittle3-0.6.0.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
