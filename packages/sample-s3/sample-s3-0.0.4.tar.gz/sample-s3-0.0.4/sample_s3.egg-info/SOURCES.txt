@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+bin/ss3
+sample_s3/__init__.py
+sample_s3/sample.py
+sample_s3.egg-info/PKG-INFO
+sample_s3.egg-info/SOURCES.txt
+sample_s3.egg-info/dependency_links.txt
+sample_s3.egg-info/requires.txt
+sample_s3.egg-info/top_level.txt
