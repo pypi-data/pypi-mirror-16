@@ -1,0 +1,17 @@
+openxmllib/__init__.py,sha256=9DiKPRLJPBStqyBPx-iRESMRFnRlQNwSUUGvuHteYC4,2775
+openxmllib/contenttypes.py,sha256=wfuMmrlr0cLd1lpbxycWLIDnKfYO9sViENdTZcFPlEc,5533
+openxmllib/document.py,sha256=NLfdijo_vSJwbBEYoi4Punr8aGjSOlPeTrgntc0HO14,8938
+openxmllib/namespaces.py,sha256=12_oUxnRYLNr7ZvbWS4uAgdBOe3IV3nP6rpwOE--tcU,1407
+openxmllib/presentation.py,sha256=PrgLVvURFU7bSmbyxqjrSjjR2x0WQhTGadxKpBwVC9w,1154
+openxmllib/shell.py,sha256=ZDA4Xsn-IniJacVM5LwqL7RhzX3TXzNYMjQ6MCf90oU,4918
+openxmllib/spreadsheet.py,sha256=qRnCVi4MmsF01gw_LyyBn4U9r-V1Qp660u-XLIoeZyI,1106
+openxmllib/utils.py,sha256=iKuJ-v19H4rTIZvCar-kKKiF2CiFSaxM-BaBGh2Cl1Y,2549
+openxmllib/version.txt,sha256=FSPp6YL_gExtl54bssbz17rjUwfozkWL_8DRKkQrmNo,4
+openxmllib/wordprocessing.py,sha256=mxTDl1wnIgS6Ov4DWD9JGQrqmM_DdWfWvoCajlB4Vik,1164
+openxmllib-1.1.dist-info/DESCRIPTION.rst,sha256=c3_he0An_AXUS-Ur8-d9ymGDgI4hpOlShIPTNw6FWT0,8468
+openxmllib-1.1.dist-info/METADATA,sha256=697nb-wH3r9FdGYT0e_u6qXPjCD6JC9SU3xSB0qDOw4,9093
+openxmllib-1.1.dist-info/RECORD,,
+openxmllib-1.1.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+openxmllib-1.1.dist-info/entry_points.txt,sha256=ICUMZGjO_p9OGW5qTKk3dkRoN4BnszRca0c4PL7knlw,62
+openxmllib-1.1.dist-info/metadata.json,sha256=r6fZQgBMZ5tpdEhBm5TnALKD1V8pmVqmAd1lFrLDZ64,1012
+openxmllib-1.1.dist-info/top_level.txt,sha256=xoJ2j665tj5IYwHUctRmXxXZgiqD-1YP5hQEXXkA2_U,11
