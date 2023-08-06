@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: molml
+Version: 0.1.0
+Summary: An interface between molecules and machine learning
+Home-page: https://github.com/crcollins/molml/
+Author: Chris Collins
+Author-email: chris@crcollins.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Physics
