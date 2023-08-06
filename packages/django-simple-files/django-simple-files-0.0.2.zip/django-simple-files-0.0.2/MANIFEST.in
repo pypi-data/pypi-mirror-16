@@ -1,0 +1,11 @@
+include README.md
+include AUTHORS
+include LICENSE
+include CHANGES.md
+include requirements.txt
+include MANIFEST.in
+include VERSION
+prune tests
+prune docs
+prune simple_files/migrations
+prune simple_files/tests
