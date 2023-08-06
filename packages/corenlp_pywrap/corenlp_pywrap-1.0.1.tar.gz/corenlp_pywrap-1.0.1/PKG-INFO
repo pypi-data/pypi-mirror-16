@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: corenlp_pywrap
+Version: 1.0.1
+Summary: A powerful python wraper for Stanford CoreNLP
+Home-page: https://www.github.com/hhsecond/corenlp_pywrap
+Author: hhsecond
+Author-email: sherinct@live.com
+License: MIT
+Download-URL: https://www.github.com/hhsecond/corenlp_pywrap/tarball/1.0.1
+Description: Production Ready version equiped with basicoutput fetch of stanfornlp and custom arrange function, for more Info - CheckItOut: https://github.com/hhsecond/corenlp_pywrap
+Keywords: stanford corenlp wrapper
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: MIT License
