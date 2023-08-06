@@ -1,0 +1,3 @@
+[console_scripts]
+banner_comment = banner_comment:cli
+
