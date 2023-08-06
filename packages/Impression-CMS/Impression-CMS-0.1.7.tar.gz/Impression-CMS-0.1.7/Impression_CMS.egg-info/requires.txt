@@ -1,0 +1,17 @@
+flask
+Flask-Assets
+Flask-Cache
+Flask-Login
+Flask-Mail
+Flask-Migrate
+Flask-Permissions
+Flask-Script
+Flask-SQLAlchemy
+Flask-Themes2
+Flask-WTF
+simplejson
+textile
+python-creole
+Markdown
+pillow
+python-dateutil
