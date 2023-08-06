@@ -1,0 +1,855 @@
+#!/usr/bin/python
+__version__ = '0.051'
+
+##----PACKAGE------##
+import argparse
+import datetime
+import time
+import sys
+import os
+import subprocess
+import numpy
+from argparse import RawTextHelpFormatter
+from pkg_resources import resource_filename
+from multiprocessing import Pool
+
+##----MAIN---------#
+def main():
+	args = get_args()
+
+	if len(sys.argv) < 2:
+		print_ornament('   ABORT! no input, \'CSpipe -h\' for help!', 100, ' ', 1, 0)
+	
+	elif args.input == 'none' and not args.example:
+		run_mode_one(args)
+
+	else:
+		run_mode_more(args)
+
+##----CODA---------##
+	print_ornament('> END', 100, ' ', 1, 1)
+	print_ornament('', 100, '-', 0, 0)
+	print '\n\n'
+
+##----FUNCTION-----##
+#---get args---
+def get_args():
+	tool = os.path.basename(sys.argv[0])
+	author = 'Yingxiang Li'
+	email = 'xlccalyx@gmail.com'
+	date = 'Jul 28, 2016'
+	update_date = '072816'
+	home = 'www.calyx.biz'
+
+	parser = argparse.ArgumentParser(description='\ttool:   ' + tool + ' v' + __version__ + '\n\tdate:   ' + date + '(' + update_date + ')\n\tauthor: ' + author + ' (' + email + ')\n\thome:   ' + home + '\n\tMUST-install (NOT guaranteed on other versions):\n\t        python: 2.7.10; R 3.2.2; cutadapt: 1.10; bwa: 0.7.5a; fastqc: v0.11.2; samtools: 1.3; java: 1.7.0_95\n\tYou can find manual and test case in home.', prog=tool, formatter_class=RawTextHelpFormatter)
+
+	parser.add_argument('-V', '--version', action='version', version='%(prog)s v' + __version__)
+
+#---parser for mode one
+	parser.add_argument('-R', '--reference', help='sample reference file, fasta format. (eg: my_ref.fa)')
+	parser.add_argument('-Z', '--filegz', help='compressed sample data directory, gz-ONLY. (eg: my_data.gz/)', default='none')
+	parser.add_argument('-D', '--data', help='sample data directory, fastq-ONLY.  one file for single end, two files for paired end. if -Z used, will unzip the compressed files to this directory.(eg: my_data/)')
+	parser.add_argument('-CZ', '--ctrlfilegz', help='compressed control sample data directory, gz-ONLY. (eg: my_ctrl_data.gz/)', default='none')
+	parser.add_argument('-CD', '--ctrldata', help='contral sample data directory, fastq-ONLY.  one file for single end, two files for paired end. if -CZ used, will unzip the compressed files to this directory.(eg: my_data/)')
+	parser.add_argument('-O', '--output', help='output directory, will be created if not exists. (eg: my_output/)')
+
+	parser.add_argument('-F', '--refresh', help='whether to refresh all processes. default: OFF, -RE will turn ON.', action='store_true', default=False)
+#	parser.add_argument('-K', '--keep', help='whether to refresh and keep the old results. default: OFF, -K will turn ON.', action='store_true', default=False)
+
+	parser.add_argument('-N', '--name', help='sample name. (eg: my_sample)', default='none')
+	parser.add_argument('-CN', '--comparename', help='comparison name. (eg: comparison_1)', default='none')
+	parser.add_argument('-GN', '--groupname', help='group name, separated by \',\'. (eg: comparison_1,comparison_2)', default='none')
+	parser.add_argument('-RK', '--rank', help='sample rank. (eg: 1)', default='')
+
+	parser.add_argument('-CA', '--cutadapta', help='cut 3\' adapter with cutadapt, default: none.', default='none')
+	parser.add_argument('-CG', '--cutadaptg', help='cut 5\' adapter with cutadapt, default: none.', default='none')
+
+	parser.add_argument('-A', '--annotate', help='the annotation in GFF3/bed format', default='none')
+	parser.add_argument('-AN', '--annotatename', help='the annotation name. (eg: gene_enhancer)', default='none')
+
+	parser.add_argument('-SF1', '--summaryfile1', help='the annotation summary file 1.', default='none')
+	parser.add_argument('-SF2', '--summaryfile2', help='the annotation summary file 2.', default='none')
+
+	parser.add_argument('-S', '--seed', help='the minimum seed length in BWA, default: 19.', default='19')
+	parser.add_argument('-T', '--thread', help='the thread number, default: 4.', default='4')
+
+#---parser for mode more
+	parser.add_argument('-E', '--example', help='whether to create example input data. modify the example.input.tab to fit your data. default: OFF, -E will turn ON.', action='store_true', default=False)
+	parser.add_argument('-I', '--input', help='information table of all input data. all settings should be in it. (eg. example.input.tab)', default='none')
+
+#---head
+	args = parser.parse_args()
+
+	print '\n\n\t' + ' '.join(sys.argv[:]) + '\n'
+	print_ornament('', 100, '-', 0, 0)
+	print_ornament('tool:   ' + tool + ' v' + __version__, 100, ' ', 0, 0)
+	print_ornament('author: ' + author + ' (' + email + ')', 100, ' ', 0, 0)
+	print_ornament('', 100, '-', 0, 0)
+	print_ornament('> BEGIN', 100, ' ', 1, 1)
+
+	return args
+
+#---run mode one---
+def run_mode_one(args):
+	start_time = datetime.datetime.now()
+	preset_one = run_preset_one(args)
+
+	if not preset_one:
+		print_ornament('fix the problems above and re-try!', 100, ' ', 0, 0)
+
+	else:
+		if os.path.exists(os.path.normpath(args.output) + '/' + args.name + '/'):
+			print_ornament(' WARNING! output directory exists.', 100, ' ', 1, 0)
+
+		#-output & log directory
+		output_dir = make_dir(os.path.normpath(args.output) + '/' + args.name + '/')
+		log_dir = make_dir(output_dir + '/log/')
+		run_setting(log_dir, args)
+
+		#---bwa index
+		run_bwa_index(args, log_dir)
+
+		#-fastq file
+		sample_name_all = []
+		ctrl_sample_name_all = []
+		fastq_file_dict = {}
+
+		if args.filegz == 'none':
+			for data_dir in args.data.split(','):
+				fastq_dict = get_fastq_dict(data_dir)
+				fastq_file_dict.update(fastq_dict)
+				sample_name_all.append(fastq_dict.keys()[0])
+			if args.ctrldata != 'none':
+				for ctrldata_dir in args.ctrldata.split(','):
+					fastq_dict = get_fastq_dict(ctrldata_dir)
+					fastq_file_dict.update(fastq_dict)
+					ctrl_sample_name_all.append(fastq_dict.keys()[0])
+
+		else:
+			data_dir = make_dir(os.path.normpath(args.data + '/' + args.name) + '/')
+			for filegz_dir in args.filegz.split(','):
+				sample_data_dir = run_uncompress_fastq(args, data_dir, filegz_dir, log_dir)
+				combine_fastq_dict = get_combine_fastq_dict(args, sample_data_dir, 'R1_001', 'R2_001', log_dir)
+				fastq_file_dict.update(combine_fastq_dict)
+				sample_name_all.append(combine_fastq_dict.keys()[0])
+
+			if args.ctrlfilegz != 'none':
+				for ctrlfilegz_dir in args.ctrlfilegz.split(','):
+					ctrl_raw_data_dir = run_uncompress_fastq(args, data_dir, ctrlfilegz_dir, log_dir)
+					combine_fastq_dict = get_combine_fastq_dict(args, ctrl_raw_data_dir, 'R1_001', 'R2_001', log_dir)
+					fastq_file_dict.update(combine_fastq_dict)
+					ctrl_sample_name_all.append(combine_fastq_dict.keys()[0])
+
+		run_before_macs_parallel(args, output_dir, fastq_file_dict)
+
+		macs_call_peak = run_macs_call_peak(args, sample_name_all, ctrl_sample_name_all, output_dir, log_dir)
+		if macs_call_peak[0]:
+			if len(sample_name_all) > 1:
+				comparison_name = macs_call_peak[1]
+				result_dir = make_dir(output_dir + comparison_name + '/result/')
+				run_bedtools_overall_peak(args, comparison_name, output_dir, result_dir, log_dir)
+				run_bedtools_annotate_peak(output_dir, comparison_name, args, result_dir, log_dir)
+#				run_gene_name(output_dir, comparison_name, result_dir, args)
+
+		else:
+			print_ornament('   ABORT! fix MACS2 Call Peak and re-try!', 100, ' ', 0, 0)
+
+
+
+#---run_before_macs_parallel
+def run_before_macs_parallel(args, output_dir, fastq_file_dict):
+	run_before_macs_setting = [[args, output_dir + sample_name + '/', sample_name, fastq_file_dict[sample_name]] for sample_name in fastq_file_dict.keys()]
+	pool = Pool(int(args.thread)) 
+	pool_result = pool.map(run_before_macs, run_before_macs_setting)
+	pool.close() 
+	pool.join()
+
+#---run before macs--
+def run_before_macs(setting):
+	args, sample_output_dir, sample_name, fastq_file = setting
+	sample_log_dir = make_dir(sample_output_dir + 'log/')
+	fastq1_file, fastq2_file = fastq_file
+	#---fastqc quality control
+	run_fastqc_quality_control(args, sample_output_dir, fastq1_file, fastq2_file, sample_log_dir)
+
+	#---cutadapt cut adapter
+	fastq1_file, fastq2_file = run_cutadapt_cut_adapter(args, sample_output_dir, fastq1_file, fastq2_file, sample_log_dir)
+
+	if fastq1_file != '':
+		#---bwa map
+		bwa_map = run_bwa_map(fastq2_file, sample_output_dir, sample_name, args, fastq1_file, sample_log_dir)
+
+		if bwa_map:
+			#---samtools sam to bam
+			samtools_sam_to_bam = run_samtools_sam_to_bam(args, sample_output_dir, sample_name, sample_log_dir)
+
+			if samtools_sam_to_bam:
+				#---samtools sort index
+				samtools_sort_index = run_samtools_sort_index(args, sample_output_dir, sample_name, sample_log_dir)
+
+				if samtools_sort_index:
+					#---basic information
+					result_dir = make_dir(sample_output_dir + 'result/')
+					samtools_flagstat = run_samtools_flagstat(args, sample_output_dir, sample_name, sample_log_dir)
+
+					if samtools_flagstat:
+						get_data_infor(sample_output_dir, sample_name, args, result_dir, fastq1_file, fastq2_file)
+
+					#---picard mark duplicate
+					picard_mark_duplicate_app = resource_filename(os.path.basename(sys.argv[0]), 'MarkDuplicates.jar')
+					picard_mark_duplicate = run_picard_mark_duplicate(sample_output_dir, sample_name, args, picard_mark_duplicate_app, sample_log_dir)
+
+				else:
+					print_ornament('   ABORT! fix SAMtools sort and re-try!', 100, ' ', 0, 0)
+
+			else:
+				print_ornament('   ABORT! fix SAMtools sam to bam and re-try!', 100, ' ', 0, 0)
+
+		else:
+			print_ornament('   ABORT! fix BWA map and re-try!', 100, ' ', 0, 0)
+
+	else:
+		print_ornament('   ABORT! fix cutadapt cut adapter and re-try!', 100, ' ', 0, 0)
+
+
+#---run preset one--
+def run_preset_one(args):
+#	check reference	
+	if not args.reference.endswith('.fa') and not args.reference.endswith('.fasta'):
+		print_ornament('   ABORT! -R file. should be fa(sta) format!', 100, ' ', 1, 0)
+		return False
+
+#	check filegz
+	if args.filegz != 'none':
+		for filegz_dir in args.filegz.split(','):
+			if not os.path.isdir(filegz_dir):
+				print_ornament('   ABORT! -Z filegz. \'{0}\' should be a directory!'.format(filegz_dir), 100, ' ', 1, 0)
+				return False
+				break
+		if args.data == 'none':
+			print_ornament('   ABORT! -D data. no data directory!', 100, ' ', 1, 0)
+			return False
+#	check data
+	else:
+		if args.data == 'none':
+			print_ornament('   ABORT! no any data information!', 100, ' ', 1, 0)
+			return False
+
+		else:
+			fastq_file = [x for x in os.listdir(args.data) if x.endswith('fq') or x.endswith('fastq')]
+			if len(fastq_file) > 2:
+				print_ornament('   ABORT! -D data. more than 2 fastq-ONLY files!', 100, ' ', 1, 0)
+				return False
+			elif len(fastq_file) == 0:
+				print_ornament('   ABORT! -D data. no fastq file in the directory!', 100, ' ', 1, 0)
+				return False
+#	check output
+	if not os.path.isdir(args.output):
+		print_ornament('   ABORT! -O output. no output directory!', 100, ' ', 1, 0)
+		return False
+#	check name
+	if args.name == 'none':
+		print_ornament('   ABORT! -N name. no name!', 100, ' ', 1, 0)
+		return False
+	else:
+		return True
+
+#---run mode more---
+def run_mode_more(args):
+	if args.example:
+		example_input_file = resource_filename(os.path.basename(sys.argv[0]), 'example.input.tab')
+		os.system('cp ' + example_input_file + ' .')
+		print_ornament('example.input.tab created in current dir, modify it!', 100, ' ', 0, 0)
+
+	else:
+		preset_more = run_preset_more(args)
+		if not preset_more:
+			print_ornament('fix the problems above and re-try!', 100, ' ', 0, 0)
+
+		else:
+			log_dir, thread_number, args_more = preset_more
+			pool = Pool(thread_number) 
+			pool_result = pool.map(run_mode_one, args_more)
+			pool.close() 
+			pool.join()
+
+			run_indel_matrix(args_more)
+			run_collect_result(args_more)
+
+			print_ornament('CONGRATS! CIpipe multiple samples were finished!', 100, ' ', 1, 0)
+			write_content(log_dir + 'done', ' '.join(sys.argv[:]))
+
+#---run preset more--
+def run_preset_more(args):
+	if not os.path.isfile(args.input):
+		print_ornament('   ABORT! -I input. should be input file!', 100, ' ', 1, 0)
+		return False
+	else:
+		input_table_default = open(resource_filename('CIpipe', 'example.input.tab'), 'rU').readlines()
+		input_key_default = [x.split('\t')[0].lstrip() for x in input_table_default]
+		input_value_default = [x.rstrip().split('\t')[1:] for x in input_table_default]
+		input_table = open(args.input, 'rU').readlines()
+#		input_table = open('/data/tongji1/liyx/CIpipe/simulation/simulation.input.tab', 'rU').readlines()		
+		input_key = [x.split('\t')[0].lstrip() for x in input_table]
+		input_value = [x.rstrip().split('\t')[1:] for x in input_table]
+		input_dict =  dict(zip(input_key, input_value))
+		if not input_key == input_key_default:
+			print_ornament('   ABORT! input.tab parameter names are not default!', 100, ' ', 1, 0)
+			return False
+		else:
+			output_dir = make_dir(input_dict['output'][0] + input_dict['batch'][0] + '/')
+			log_dir = make_dir(output_dir + input_dict['batch'][0] + '.log/')
+			thread_number = int(input_dict['thread'][0])
+			group_order = get_group_order(input_dict['group'])
+			if len(group_order) == len(input_dict['name']):
+				input_dict['name'] = sum([[input_dict['name'][i] + '_' + str(y) for y in group_order[i]] for i in range(len(input_dict['name']))], [])
+			reference_all = sum([[os.path.basename(input_dict['reference'][i]) for y in group_order[i]] for i in range(len(input_dict['reference']))], [])
+			if input_dict['data'][0].endswith('/'):
+				data_all = [x.split('/')[-2] for x in input_dict['data']]
+			else:
+				data_all = [x.split('/')[-1] for x in input_dict['data']]
+			if len(input_dict['type']) != len(input_dict['data']):
+				type_all = ['na']*len(input_dict['data'])
+			else:
+				type_all = input_dict['type']
+			input_infor_file = make_dir(input_dict['output'][0] + input_dict['batch'][0] + '/' + input_dict['batch'][0] + '.result/') + input_dict['batch'][0] + '.infor.txt'
+			input_infor = 'name\ttype\trefence\tdata\n' + '\n'.join(['\t'.join([input_dict['name'][i], type_all[i], reference_all[i], data_all[i]]) for i in range(len(input_dict['name']))]) + '\n'
+			write_content(input_infor_file, input_infor)
+			args_more = [get_args_one(input_dict, name, group_order) for name in input_dict['name']]
+			preset_more = (log_dir, thread_number, args_more)
+			return preset_more
+
+#---get args one---
+def get_args_one(input_dict, name, group_order):
+	name_group = [input_dict['name'].index(name) + 1 in x for x in group_order].index(1)
+	args_one_value = []
+	for key in input_dict.keys():
+		if len(input_dict[key]) == 1:
+			if input_dict[key][0] == 'ON' or input_dict[key][0] == 'OFF':
+				args_one_value.append([True, False][input_dict[key][0] == 'OFF'])
+			else:
+				args_one_value.append(input_dict[key][0])
+		else:
+			if len(input_dict[key]) == len(input_dict['name']):
+				args_one_value.append(input_dict[key][input_dict['name'].index(name)])
+			else:
+				args_one_value.append(input_dict[key][name_group])
+	args_one_dict = dict(zip(input_dict.keys(), args_one_value))
+	args_one_dict['output'] = args_one_dict['output'] + input_dict['batch'][0] + '/'
+	args_one_dict['rank'] = str(input_dict['name'].index(name) + 1)
+	args_one = get_class_from_dict(**args_one_dict)
+	return args_one
+
+#---get fastq dict--
+def get_fastq_dict(sample_data_dir):
+	sample_name = [x for x in sample_data_dir.split('/') if x != ''][-1]
+	fastq_file_all = sorted([x for x in os.listdir(sample_data_dir) if x.endswith('.fq') or x.endswith('.fastq')])
+	fastq1_file = os.path.normpath(sample_data_dir + '/' + fastq_file_all[0])
+	fastq2_file = '' if len(fastq_file_all) == 1 else os.path.normpath(sample_data_dir + '/' + fastq_file_all[1])
+	fastq_dict = {data_name: [fastq1_file, fastq2_file]}
+	return fastq_dict
+
+#---run uncompress fastq--
+def run_uncompress_fastq(args, data_dir, compress_dir, log_dir):
+	print_process_time('gunzip: uncompress -' + args.rank)
+	sample_name = [x for x in compress_dir.split('/') if x != ''][-1]
+	sample_data_dir = make_dir(data_dir + sample_name + '/')
+	uncompress_dir = make_dir(sample_data_dir + 'uncompress/')
+	for compress_name in os.listdir(compress_dir):
+		fastq_name = compress_name.replace('.gz', '')
+		uncompress_file = uncompress_dir + fastq_name
+		if not os.path.isfile(uncompress_file) or args.refresh:
+			uncompress_fastq = 'gunzip -c ' + compress_dir + compress_name + ' > ' + uncompress_file
+			run_bash_command(log_dir, 'gunzip_Uncompress.' + compress_name, uncompress_fastq)
+		else:
+			print_ornament(' WARNING! \'{0}\' existed! skipped.'.format(fastq_name), 100, ' ', 1, 0)
+	print_process_time('gunzip: uncompress -' + args.rank, 1)
+	return sample_data_dir
+
+#---get combine fastq dict--
+def get_combine_fastq_dict(args, sample_data_dir, unique_symbole_read1, unique_symbole_read2, log_dir):
+	sample_name = [x for x in sample_data_dir.split('/') if x != ''][-1]
+	print_process_time('cat: combine fastq -' + args.rank)
+	combine_fastq_read1_file = sample_data_dir + sample_name + '_r1.fq'
+	combine_fastq_read2_file = sample_data_dir + sample_name + '_r2.fq'
+	if not os.path.isfile(combine_fastq_read1_file) or args.refresh:
+		uncompress_dir = sample_data_dir + 'uncompress/'
+		fastq_read1_file_list = sorted([uncompress_dir + x for x in os.listdir(uncompress_dir) if unique_symbole_read1 in x])
+		fastq_read2_file_list = sorted([uncompress_dir + x for x in os.listdir(uncompress_dir) if unique_symbole_read2 in x])
+		combine_fastq_read1 = 'cat ' + ' '.join(fastq_read1_file_list) + ' > ' + combine_fastq_read1_file
+		combine_fastq_read2 = 'cat ' + ' '.join(fastq_read2_file_list) + ' > ' + combine_fastq_read2_file
+		run_bash_command(log_dir, 'cat_CombineFastqRead1.' + sample_name, combine_fastq_read1)
+		run_bash_command(log_dir, 'cat_CombineFastqRead2.' + sample_name, combine_fastq_read2)
+	else:
+		print_ornament(' WARNING! \'combine fastq read\' existed! skipped.', 100, ' ', 1, 0)
+	combine_fastq_dict = {sample_name: [combine_fastq_read1_file, combine_fastq_read2_file]}
+	print_process_time('cat: combine fastq -' + args.rank, 1)
+	return combine_fastq_dict
+
+#---run bwa index--
+def run_bwa_index(args, log_dir):
+	bwa_index_file_exist = [os.path.isfile(args.reference + x) for x in ['.amb', '.ann', '.bwt', '.fai', '.pac', '.sa']]
+	if sum(bwa_index_file_exist) != 6 or args.refresh:
+		print_process_time('bwa: index -' + args.rank)
+		bwa_index = 'bwa index -a bwtsw ' + args.reference
+		refer_name = os.path.basename(os.path.splitext(args.reference)[0])
+		run_bash_command(log_dir, 'BWA_Index.' + refer_name, bwa_index)
+		print_process_time('bwa: index -' + args.rank, 1)
+	else:
+		print_ornament(' WARNING! \'bwa index\' existed! skipped.', 100, ' ', 1, 0)
+
+#---run FastQC quality control--
+def run_fastqc_quality_control(args, sample_output_dir, sample_fastq1_file, sample_fastq2_file, sample_log_dir):
+	fastqc_dir = make_dir(sample_output_dir + 'FastQC/')
+	fastqc_all_file = [x for x in os.listdir(fastqc_dir) if x.endswith('fastqc.zip')]
+	fastq_file_number = sum([x != '' for x in [sample_fastq1_file, sample_fastq2_file]])
+#	if args.fastqc:	
+	if len(fastqc_all_file) != fastq_file_number or args.refresh:
+		print_process_time('fastqc: quality control -' + args.rank)
+		fastqc_quality_control = 'fastqc -q --extract -o ' + fastqc_dir + ' ' + sample_fastq1_file + ' ' + sample_fastq2_file
+		run_bash_command(sample_log_dir, 'FastQC_QualiyControl', fastqc_quality_control)
+		print_process_time('fastqc: quality control -' + args.rank, 1)
+		if len(os.listdir(fastqc_dir)) == 0:
+			print_ornament(' WARNING! no FastQC result! check FastQC_QualiyControl.log!', 100, ' ', 1, 0)
+	else:
+		print_ornament(' WARNING! \'FastQC Quality Control\' existed! skipped.', 100, ' ', 1, 0)
+
+#---run cutadapt cut adapter--
+def run_cutadapt_cut_adapter(args, output_dir, fastq1_file, fastq2_file, sample_log_dir):
+	if args.cutadapta == 'none' and args.cutadaptg == 'none':
+		print_ornament(' WARNING! no adapter cut.', 100, ' ', 1, 0)
+		return fastq1_file, fastq2_file
+
+	else:
+		cutadapt_dir = make_dir(output_dir + 'cutadapt/')
+		fastq1_ca_file = cutadapt_dir + 'read1_ca' + ['', '3'][args.cutadapta != 'none'] + ['', '5'][args.cutadaptg != 'none'] + '.fq' 
+		fastq2_ca_file = ['', cutadapt_dir + 'read2_ca' + ['', '3'][args.cutadapta != 'none'] + ['', '5'][args.cutadaptg != 'none'] + '.fq'][fastq2_file != '']
+
+		if len(os.listdir(cutadapt_dir)) == 0:
+			print_process_time('cutadapt: cut adapter -' + args.rank)
+			cutadapt_cut_adapter = 'cutadapt' + ['', ' -a ' + args.cutadapta][args.cutadapta != 'none'] + ['', ' -g ' + args.cutadaptg][args.cutadaptg != 'none'] + ' ' + fastq1_file + ' > ' + fastq1_ca_file
+			run_bash_command(sample_log_dir, 'cutadapt_Cut3EndAdapter', cutadapt_cut_adapter)
+			if fastq2_file != '':
+				cutadapt_cut_adapter = 'cutadapt' + ['', ' -a ' + args.cutadapta][args.cutadapta != 'none'] + ['', ' -g ' + args.cutadaptg][args.cutadaptg != 'none'] + ' ' + fastq2_file + ' > ' + fastq2_ca_file
+				run_bash_command(sample_log_dir, 'cutadapt_Cut5EndAdapter', cutadapt_cut_adapter)
+			print_process_time('cutadapt: cut adapter -' + args.rank, 1)
+			return fastq1_ca_file, fastq2_ca_file
+
+			if len(os.listdir(cutadapt_dir)) == 0:
+				print_ornament(' ABORT! no cutadapt result! check cutadapt_CutAdapter.log!', 100, ' ', 1, 0)
+				return '', ''
+		else:
+			print_ornament(' WARNING! \'cutadapt\' existed! skipped.', 100, ' ', 1, 0)
+			return fastq1_ca_file, fastq2_ca_file
+
+#---run bwa map--
+def run_bwa_map(fastq2_file, output_dir, name, args, fastq1_file, sample_log_dir):
+	map_file = make_dir(output_dir + 'BWA/') + name + '.sam'
+	if not os.path.isfile(map_file) or args.refresh:
+		is_pair = ['pair', 'single'][fastq2_file == '']
+		print_process_time('bwa: map (' + is_pair + [')', ',seed:{0})'.format(args.seed)][int(args.seed) < 19] + ' -' + args.rank)
+		bwa_map = 'bwa mem -M -t 16 -k ' + args.seed + ''' -R "@RG\\tID:''' + name + '.BWA_map.' + is_pair + '\\tLB:bwa\\tPL:NA\\tSM:' + name + '\" ' + args.reference + ' ' + fastq1_file + ' ' + fastq2_file + ' > ' + map_file
+		run_bash_command(sample_log_dir, 'BWA_Map', bwa_map)	
+		print_process_time('bwa: map -' + args.rank, 1)
+		if get_file_size(map_file) == 0:
+			print_ornament('   ABORT! no bwa result! check BWA_Map.log!', 100, ' ', 1, 0)
+			return False
+		else:
+			return True
+	else:
+		print_ornament(' WARNING! \'bwa map\' existed! skipped.', 100, ' ', 1, 0)
+		return True
+
+#---samtools: sam to bam--
+def run_samtools_sam_to_bam(args, output_dir, name, sample_log_dir):
+	bam_file = make_dir(output_dir + 'SAMtools/') + name + '.bam'
+	if not os.path.isfile(bam_file) or args.refresh:
+		print_process_time('samtools: sam to bam -' + args.rank)
+		map_file = output_dir + 'BWA/' + name + '.sam'
+		samtools_sam_to_bam = 'samtools view -bhS ' + map_file + ' -o ' + bam_file
+		run_bash_command(sample_log_dir, 'SAMtools_SamToBam', samtools_sam_to_bam)
+		print_process_time('samtools: sam to bam -' + args.rank, 1)
+		if not os.path.isfile(bam_file):
+			print_ornament('   ABORT! no bam result! check SAMtools_SamToBam.log!', 100, ' ', 1, 0)
+			return False
+		else:
+			return True
+	else:
+		print_ornament(' WARNING! \'sam to bam\' existed! skipped.', 100, ' ', 1, 0)
+		return True
+
+#---run samtools sort&index--
+def run_samtools_sort_index(args, output_dir, name, sample_log_dir):
+	bam_file = output_dir + 'SAMtools/' + name + '.bam'
+	sort_bam_file = bam_file.replace('.bam', '.sort.bam')
+	sort_bam_index_file = sort_bam_file + '.bai'
+	if not (os.path.isfile(sort_bam_file) and os.path.isfile(sort_bam_index_file)) or args.refresh:
+		print_process_time('samtools: sort & index -' + args.rank)
+		sort_bam_file = bam_file.replace('.bam', '.sort.bam')
+		samtools_sort = 'samtools sort ' + bam_file + ' -o ' + sort_bam_file
+		samtools_index = 'samtools index ' + sort_bam_file
+		run_bash_command(sample_log_dir, 'SAMtools_Sort', samtools_sort)
+		run_bash_command(sample_log_dir, 'SAMtools_Index', samtools_index)	
+		print_process_time('samtools: sort & index -' + args.rank, 1)
+
+		if not os.path.isfile(sort_bam_file):
+			print_ornament('   ABORT! no bam sort result! check SAMtools_Sort.log!', 100, ' ', 1, 0)
+			return False
+		else:
+			return True
+	else:
+		print_ornament(' WARNING! \'bam sort & index\' existed! skipped.', 100, ' ', 1, 0)
+		return True
+
+#---run samtools flagstat--
+def run_samtools_flagstat(args, output_dir, name, sample_log_dir):
+	sort_bam_file = '{0}SAMtools/{1}.sort.bam'.format(output_dir, name)
+	flagstat_file = sort_bam_file.replace('.sort.bam', '.flagstat.txt')
+	
+	if not os.path.isfile(flagstat_file) or args.refresh:
+		print_process_time('samtools: flagstat -' + args.rank)
+		samtools_flagstat = 'samtools flagstat {0} > {1}'.format(sort_bam_file, flagstat_file)
+		run_bash_command(sample_log_dir, 'SAMtools_FlagStat', samtools_flagstat)
+		print_process_time('samtools: flagstat -' + args.rank, 1)
+
+		if not os.path.isfile(flagstat_file):
+			print_ornament(' WARNING! no samtools flagstat! check SAMtools_FlagStat.log!', 100, ' ', 1, 0)
+			return False
+		else:
+			return True
+
+	else:
+		print_ornament(' WARNING! \'samtools flagstat\' existed! skipped.', 100, ' ', 1, 0)
+		return True
+
+#---get data infor--
+def get_data_infor(output_dir, name, args, result_dir, fastq1_file, fastq2_file):
+	data_infor_file = result_dir + name + '.data.infor.txt'
+
+	if not os.path.isfile(data_infor_file) or args.refresh:
+		print_process_time('get: data infor -' + args.rank)
+		flagstat_file = '{0}SAMtools/{1}.flagstat.txt'.format(output_dir, name)
+		data_infor = ['sample\tread_number\tproperly_mapped_number\tratio\n']
+		flagstat_content = open(flagstat_file, 'rU').readlines()
+		data_infor.append(name + '\t' + add_thousand_separator(flagstat_content[5].split(' ')[0]) + '\t' + add_thousand_separator(flagstat_content[8].split(' ')[0]) + '\t' + flagstat_content[8].split('paired (')[1].split(' :')[0] + '\n')
+		bam_file = output_dir + 'SAMtools/' + name + '.bam'
+		data_infor.append('\n' + get_insert_size_standard_deviation(bam_file) + '\n')
+		data_infor.append('\nfastq1:\t' + fastq1_file + '\nfastq1_md5:\t' + get_md5_sum(fastq1_file) + '\nfastq1_size:\t' + get_file_size(fastq1_file) + '\n')
+		data_infor.append('fastq2:\t' + fastq2_file + '\nfastq2_md5:\t' + get_md5_sum(fastq2_file) + '\nfastq2_size:\t' + get_file_size(fastq2_file) + '\n')
+		write_content(data_infor_file, data_infor)
+		print_process_time('get: data infor -' + args.rank, 1)
+
+	else:
+		print_ornament(' WARNING! \'data infor\' existed! skipped.', 100, ' ', 1, 0)	
+
+#---get insert size & standard deviation
+def get_insert_size_standard_deviation(bam_file):
+	insert_size = [int(x) for x in run_shell('samtools view ' + bam_file + '|head -100000|cut -f 9', 1).split() if x != '0']
+	insert_size_mean = round(numpy.mean([abs(x) for x in insert_size]), 1)
+	standard_deviation = round(numpy.std(insert_size), 1)
+	return 'insert_size_mean:\t' + str(insert_size_mean) + '\nstandard_deviation:\t' + str(standard_deviation) + '\n'
+
+#---run picard mark duplicate--
+def run_picard_mark_duplicate(output_dir, name, args, picard_mark_duplicate_app, sample_log_dir):
+	sort_bam_file = output_dir + 'SAMtools/' + name + '.sort.bam'
+	mark_duplicate_file = make_dir(output_dir + 'Picard/') + name + '.clean.bam'
+	mark_duplicate_matrix_file = output_dir + 'Picard/' + name + '.metrics.txt'
+	if not os.path.isfile(mark_duplicate_file) or args.refresh:
+		print_process_time('Picard: mark duplicate -' + args.rank)
+		picard_mark_duplicate = 'java -jar ' + picard_mark_duplicate_app + ''' REMOVE_DUPLICATES=true ASSUME_SORTED=true INPUT="{0}" OUTPUT="{1}" METRICS_FILE="{2}"'''.format(sort_bam_file, mark_duplicate_file, mark_duplicate_matrix_file)
+		run_bash_command(sample_log_dir, 'Picard_MarkDuplicate', picard_mark_duplicate)
+		print_process_time('Picard: mark duplicate -' + args.rank, 1)
+
+		if not os.path.isfile(mark_duplicate_file):
+			print_ornament('   ABORT! no Picard Mark Duplicate result! check Picard_MarkDuplicate.log!', 100, ' ', 1, 0)
+			return False
+		else:
+			return True
+	else:
+		print_ornament(' WARNING! \'Picard Mark Duplicate\' existed! skipped.', 100, ' ', 1, 0)
+		return True
+
+#---run macs call peak--
+def run_macs_call_peak(args, sample_name_all, ctrl_sample_name_all, output_dir, log_dir):
+	treat_bam = ' '.join([output_dir + x + '/Picard/' + x + '.clean.bam' for x in sample_name_all])
+	ctrl_bam = ''
+	if ctrl_sample_name_all != []:
+		ctrl_bam = ' -c ' + ' '.join([output_dir + x + '/Picard/' + x + '.clean.bam' for x in ctrl_sample_name_all])
+	if args.comparename == 'none':
+		comparison_name_potential = [x for x in os.listdir(output_dir) if x.startswith('comparison')]
+		if len(comparison_name_potential) != 0:
+			comparison_name = 'comparison_' + str(max([int(x.split('_')[1]) for x in comparison_name_potential]))
+		else:
+			comparison_name = 'comparison_1'
+	else:
+		comparison_name = args.comparename
+	macs_dir = make_dir(output_dir + comparison_name + '/MACS/')
+	if len(os.listdir(macs_dir)) == 0 or args.refresh:
+		print_process_time('MACS2: call peak -' + args.rank)
+		macs_call_peak = 'macs2 callpeak -g mm -f BAM -B -t {0}{1} -n {2} --outdir {3}'.format(treat_bam, ctrl_bam, args.comparename, macs_dir)
+		run_bash_command(log_dir, 'MACS2_CallPeak.' + comparison_name, macs_call_peak)
+		print_process_time('MACS2: call peak -' + args.rank, 1)
+		if len(os.listdir(macs_dir)) == 0:
+			print_ornament('   ABORT! no \'MACS2 Call Peak\' result! check MACS2_CallPeak.log!', 100, ' ', 1, 0)
+			return [False, comparison_name]
+		else:
+			return [True, comparison_name]
+	else:
+		print_ornament(' WARNING! \'MACS2 Call Peak\' existed! skipped.', 100, ' ', 1, 0)
+		return [True, comparison_name]
+
+#---run bedtools intersect--
+def run_bedtools_intersect(former_fraction, latter_fraction, peak1_file, peak2_file, output_file, intersect_name, log_dir, other_setting=''):
+	bedtools_intersect = 'bedtools intersect' + other_setting + ' -f ' + str(former_fraction) + ' -F ' + str(latter_fraction) + ' -a ' + peak1_file + ' -b ' + peak2_file + ' > ' + output_file
+	run_bash_command(log_dir, 'bedtools_Intersect.' + intersect_name, bedtools_intersect)
+
+#---run bedtools overall peak--
+def run_bedtools_overall_peak(args, comparison_name, output_dir, result_dir, log_dir):
+	overall_peak_file = result_dir + comparison_name + '.overall_peak.bed'
+	bedtools_dir = make_dir(output_dir + comparison_name + '/bedtools/')
+	macs_merge_narrow_peak_file = output_dir + comparison_name + '/MACS/' + comparison_name + '_peaks.narrowPeak'
+
+	if not os.path.exists(overall_peak_file) or args.refresh:
+		print_process_time('bedtools: overall peak -' + args.rank)
+		overall_peak = []
+		for group_name in [x.lstrip().rstrip() for x in args.groupname.split(',')]:
+			macs_narrow_peak_file = output_dir + group_name + '/MACS/' + group_name + '_peaks.narrowPeak'
+			bedtools_overlap_peak_file = bedtools_dir + comparison_name + '.' + group_name + '.intersect_peak.bed'
+#			bedtools_intersect_group = 'bedtools intersect -f 0.5 -a ' + macs_merge_narrow_peak_file + ' -b ' + macs_narrow_peak_file + ' > ' + bedtools_overlap_peak_file
+#			run_bash_command(log_dir, 'bedtools_Intersect.' + comparison_name + '.' + group_name, bedtools_intersect_group)
+			run_bedtools_intersect(0.5, 0.5, macs_merge_narrow_peak_file, macs_narrow_peak_file, bedtools_overlap_peak_file, comparison_name + '.' + group_name, log_dir, ' -wa')
+			overall_peak = overall_peak + open(bedtools_overlap_peak_file, 'rU').readlines()
+		overall_peak_unique = sorted(list(set(overall_peak)), key = lambda x:x.split('\t')[3])
+		write_content(overall_peak_file, overall_peak_unique)
+		print_process_time('bedtools: overall peak -' + args.rank, 1)
+
+	else:
+		print_ornament(' WARNING! \'bedtools overall peak\' existed! skipped.', 100, ' ', 1, 0)
+
+#---run bedtools annotate peak--
+def run_bedtools_annotate_peak(output_dir, comparison_name, args, result_dir, log_dir):
+	bedtools_dir = make_dir(output_dir + comparison_name + '/bedtools/')
+	if args.annotatename == 'none':
+		annotate_name = os.path.splitext(args.annotate)
+	else:
+		annotate_name = args.annotatename
+	annotate_gene_file = bedtools_dir + comparison_name + '.' + annotate_name + '.txt'
+	annotate_summary_file = result_dir + comparison_name + '.' + annotate_name + '.annotate_summary.txt'
+
+	if not os.path.exists(annotate_gene_file) or not os.path.exists(annotate_summary_file) or args.refresh:
+		print_process_time('bedtools: annotate peak {0} -'.format(annotate_name) + args.rank)
+		overall_peak_file = result_dir + comparison_name + '.overall_peak.bed'
+		run_bedtools_intersect(1E-9, 0.5, args.annotate, overall_peak_file, annotate_gene_file, 'annotate.' + annotate_name, log_dir, ' -wa -wb')
+
+		annotate_gene = open(annotate_gene_file, 'rU').readlines()
+		unique_gene_name = sorted(list(set([x.split('\t')[8] for x in annotate_gene])))
+		annotate_summary = ['gene\tchr\tannotate_start\tannotate_end\tstrand\tpeak_number\tpeak_mean_score\tpeak_name\tpeak_score\n']
+		for gene_name in unique_gene_name:
+			annotate_gene_one = [x for x in annotate_gene if x.split('\t')[8] == gene_name]
+			gene_peak_number = len(annotate_gene_one)
+			peak_score_mean = round(numpy.mean([int(x.split('\t')[13]) for x in annotate_gene_one]), 1)
+			annotate_summary_one = '\t'.join([gene_name, x.split('\t')[0], '\t'.join(x.split('\t')[3:5]), x.split('\t')[6], str(gene_peak_number), str(peak_score_mean), ','.join([x.split('\t')[12] for x in annotate_gene_one]), ','.join([x.split('\t')[13] for x in annotate_gene_one])]) + '\n'
+			annotate_summary.append(annotate_summary_one)
+		write_content(annotate_summary_file, annotate_summary)
+
+		print_process_time('bedtools: annotate peak {0} -'.format(annotate_name) + args.rank, 1)
+
+	else:
+		print_ornament(' WARNING! \'bedtools annotate peak\' existed! skipped.', 100, ' ', 1, 0)
+
+#---run compare annotation summary-- zhe
+def run_compare_annotation_summary(args):
+	annotate_summary1_file = args.summaryfile1
+#	annotate_summary1_file = '/data/tongji1/liyx/KRAS/output/7B/7B_all/result/7B_all.5k_tss_5k.annotate_summary.txt'	
+	annotate_summary2_file = args.summaryfile2
+#	annotate_summary2_file = '/data/tongji1/liyx/KRAS/output/B5/B5_all/result/B5_all.5k_tss_5k.annotate_summary.txt'
+	annotate_summary_name1 = os.path.splitext(os.path.basename(annotate_summary1_file))[0]
+	annotate_summary_name2 = os.path.splitext(os.path.basename(annotate_summary2_file))[0]
+	compare_annotation_summary_name = annotate_summary_name1 + '.' + annotate_summary_name2 + '.txt'
+	compare_annotation_summary_file = make_dir(args.output) + compare_annotation_summary_name
+#	compare_annotation_summary_file = '/data/tongji1/liyx/KRAS/output/result/' + compare_annotation_summary_name
+
+	if not os.path.exists(compare_annotation_summary_file) or args.refresh:
+		print_process_time('python: compare summary -'.format(compare_annotation_summary_name) + args.rank)
+		annotate_summary1 = open(annotate_summary1_file, 'rU').readlines()[1:]
+		annotate_summary2 = open(annotate_summary2_file, 'rU').readlines()[1:]
+		unique_gene_name1 = [x.split('\t')[0] for x in annotate_summary1]
+		unique_gene_name2 = [x.split('\t')[0] for x in annotate_summary2]
+		unique_gene_name = sorted(list(set(unique_gene_name1 + unique_gene_name2)))
+		compare_annotation_summary = []
+		for gene_name in unique_gene_name:
+			if gene_name in unique_gene_name1 and gene_name in unique_gene_name2:
+				gene_group = 'both'
+				compare_annotation_summary.append(gene_group + '\t' + [x for x in annotate_summary1 if x.startswith(gene_name)][0])
+				compare_annotation_summary.append(gene_group + '\t' + [x for x in annotate_summary2 if x.startswith(gene_name)][0])
+			elif gene_name in unique_gene_name1 and gene_name not in unique_gene_name2:
+				gene_group = annotate_summary_name1
+				compare_annotation_summary.append(gene_group + '\t' + [x for x in annotate_summary1 if x.startswith(gene_name)][0])
+			else:
+				gene_group = annotate_summary_name2
+				compare_annotation_summary.append(gene_group + '\t' + [x for x in annotate_summary2 if x.startswith(gene_name)][0])
+
+		compare_annotation_summary = sorted(compare_annotation_summary)
+		write_content(compare_annotation_summary_file, compare_annotation_summary)
+
+		print_process_time('python: compare summary -'.format(compare_annotation_summary_name) + args.rank, 1)
+
+	else:
+		print_ornament(' WARNING! \'python compare summary\' existed! skipped.', 100, ' ', 1, 0)
+
+
+#---run gene name--
+def run_gene_name(output_dir, comparison_name, result_dir, args):
+	bedtools_dir = make_dir(output_dir + comparison_name + '/bedtools/')
+	peak_in_gene_file = bedtools_dir + comparison_name + '.peak_gene.gff3'
+	gene_name_file = result_dir + comparison_name + '.gene_name.txt'
+	if not os.path.exists(gene_name_file) or args.refresh:
+		print_process_time('python: gene name -' + args.rank)
+		peak_in_gene = open(peak_in_gene_file, 'rU').readlines()
+		gene_name_all = sorted(list(set([x.split('gene_name=')[1].split(';')[0] + '\n' for x in peak_in_gene if x.split('\t')[2] == 'gene'])))
+		write_content(gene_name_file, gene_name_all)
+		print_process_time('python: gene name -' + args.rank, 1)
+
+	else:
+		print_ornament(' WARNING! \'gene name\' existed! skipped.', 100, ' ', 1, 0)
+
+#---run collect result--
+def run_collect_result(args_more):
+	print_process_time('run: collect results')
+	result_dir = make_dir(args_more[0].output + args_more[0].batch + '.result/')
+	refer_name_all = list(set([os.path.basename(os.path.splitext(x.reference)[0]) for x in args_more]))
+	for args_one in args_more:
+		result_one_dir = args_one.output + args_one.name + '/result'
+		collect_result_one = 'cp -r ' + result_one_dir + ' ' + result_dir + args_one.name
+		run_bash_command(args_more[0].output + args_more[0].batch + '.log/', 'collect_result', collect_result_one)
+	print_process_time('run: collect results', 1)
+
+#---run done--
+def run_done(start_time, log_dir):
+	done_file = log_dir + 'done.txt'
+	ellaspe_time = format((datetime.datetime.now() - start_time).seconds, ',') + 's'
+	write_content(done_file, ellaspe_time)
+
+#--common--
+class get_class_from_dict:
+	def __init__(self, **entries): 
+		self.__dict__.update(entries)
+
+def add_thousand_separator(int_number):
+	return str(format(int(int_number), ','))
+
+def get_absolute_file(file):
+	split_file = [x for x in file.split('/') if x != '']
+	current_dir = os.getcwd()
+	split_current_dir = [x for x in current_dir.split('/') if x != '']
+	if len(set(split_file)&set(split_current_dir)) == 0:
+		absolute_file = current_dir + '/' + file
+	else:
+		absolute_file = file
+	if os.path.isfile(absolute_file):
+		return absolute_file
+	else:
+		return 'WRONG file or directory!'
+
+def get_fasta_dict(fasta_file):
+	fasta_name = []
+	fasta_sequence = []
+	fasta_number = -1
+	fasta_content = [x.rstrip() for x in open(fasta_file, 'rU').readlines() if len(x.rstrip()) != 0]
+	for line in fasta_content:
+		if line[0] == '>':
+			fasta_name.append(line[1:])
+			fasta_number += 1
+			fasta_sequence.append('')
+		else:
+			fasta_sequence[fasta_number] = fasta_sequence[fasta_number] + line
+	fasta_dict = dict(zip(fasta_name, fasta_sequence))
+	return fasta_dict
+
+def get_file_size(file):
+	file_size = os.path.getsize(file)
+	unit = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
+	unit_order = 0
+	if not file_size == 0:
+		while len(str(file_size)) >= 5:
+#			former_file_size = file_size
+#			former_unit_order = unit_order
+			file_size = round(file_size/1024.0, 1)
+			unit_order += 1
+		return str(file_size) + ' ' + unit[unit_order]
+	else:
+		return 0
+
+def get_group_order(group):
+	group_order = []
+	for group_one in group:
+		group_one_flat = []
+		for group_one_split in group_one.split(','):
+			if len(group_one_split.split('-')) == 1:
+				group_one_flat.append(int(group_one_split))
+			else:
+				group_one_flat = group_one_flat + range(int(group_one_split.split('-')[0]), int(group_one_split.split('-')[1]) + 1)
+		group_order = group_order + [group_one_flat]
+	return group_order
+
+def get_md5_sum(file):
+	md5_sum = run_shell('md5sum ' + file, 1).split()[0]
+	return md5_sum
+
+def make_dir(dir):
+	dir = dir.strip().rstrip("\\")
+	if not os.path.exists(dir):
+		os.makedirs(dir)
+	return dir
+
+def make_initial_upper(word):
+	initial_upper = word[0].upper() + word[1:].lower()
+	return initial_upper
+
+def print_ornament(title, width=100, ornament_type=' ', show_time=1, show_date = 0):
+	if show_time == 1:
+		if show_date == 0:
+			ornament = '\t|' + title + ornament_type*(width - 13 - len(title)) + ' @ ' + time.strftime("%X", time.localtime()) + '|'
+		else:
+			ornament = '\t|' + title + ornament_type*(width - 24 - len(title)) + ' @ ' + time.strftime("%m-%d-%Y %X", time.localtime()) + '|'
+	else:
+		ornament = '\t|' + title + ornament_type*(width - 2 - len(title)) + '|'
+	print ornament
+
+def print_process_time(function_name, is_finish=0, width=100, indent=16, split_sign=':'):
+	function_name_indent = ' '*(indent - len(function_name.split(split_sign)[0])) + function_name
+	if is_finish == 0:		
+		print_ornament(function_name_indent + ' '*(width - 23 - len(function_name_indent)) + '  -running', width)
+	else:
+		print_ornament(function_name_indent + ' '*(width - 23 - len(function_name_indent)) + '  -done   ', width)
+
+def run_bash_command(log_dir, command_name, command):
+	command_file = make_dir(log_dir) + command_name + '.sh'
+	write_content(command_file, command)
+	bash_command = 'bash "' + command_file + '" > ' + command_file.replace('.sh', '.log') + ' 2>&1'
+	run_shell(bash_command)
+
+def run_shell(shell_command, is_get_output=0):
+	shell_output = subprocess.Popen(shell_command, shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE).stdout.read()
+	if is_get_output:
+		return shell_output
+
+def run_setting(log_dir, args):
+	setting_file = log_dir + 'setting.txt'
+	setting_content = sys.argv[0] + '\n' + '\n'.join([x + ': ' + str(getattr(args, x)) for x in dir(args) if not x.startswith('_')]) + '\n'
+	write_content(setting_file, setting_content)
+
+def write_content(content_file, content):
+	output = open(content_file, 'w')
+	output.writelines(content)
+	output.close()
+
+##----PROCESS------##
+if __name__ == '__main__':
+    try:
+        main()
+    except KeyboardInterrupt:
+        sys.stderr.write('\t|ABORT! User interrupted me! ;-) Bye!' + ' '*62 + '|\n\t|' + '~'*98 + '|\n')
+        sys.exit(0)
+
+##----TEST--------##
