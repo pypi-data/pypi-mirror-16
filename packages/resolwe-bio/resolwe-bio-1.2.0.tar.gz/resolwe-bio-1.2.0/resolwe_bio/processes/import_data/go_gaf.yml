@@ -1,0 +1,34 @@
+# ===============================
+# Import GO annotation (GAF) file
+# ===============================
+---
+
+- slug: upload-gaf
+  name: Upload GO annotation file (GAF v2.0)
+  data_name: 'GO annotation file ({{ src.file|default:"?" }}) upload'
+  version: 1.0.9
+  type: data:gaf:2:0
+  category: upload
+  persistence: RAW
+  description: >
+        GO annotation file (GAF v2.0) relating gene ID and associated GO terms
+  input:
+    - name: src
+      label: GO annotation file (GAF v2.0)
+      type: basic:file
+      description: >
+        Upload GO annotation file (GAF v2.0) relating gene ID and associated GO terms
+      required: true
+  output:
+    - name: gaf
+      label: GO annotation file (GAF v2.0)
+      type: basic:file
+    - name : gaf_obj
+      label: GAF object
+      type: basic:file
+  run:
+    runtime: polyglot
+    bash: |
+      re-import "{{ src.file_temp|default:src.file }}" "{{ src.file }}" "txt|" "txt" 0.8
+      preprocessor gaf "${NAME}.txt" gaf_obj
+      echo "{\"proc.rc\":$?,\"gaf\":{\"file\":\"$NAME.txt.gz\"},\"gaf_obj\":{\"file\":\"gaf_obj\"}}"

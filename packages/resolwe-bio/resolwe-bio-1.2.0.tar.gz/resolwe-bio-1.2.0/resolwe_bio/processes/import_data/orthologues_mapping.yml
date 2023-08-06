@@ -1,0 +1,31 @@
+# ===============================
+# Import Orthologues Mapping File
+# ===============================
+---
+
+- slug: upload-orthologues
+  name: Upload gene orthologues file
+  data_name: '{{ src.file|default:"?" }}'
+  version: 1.0.7
+  type: data:orthologues
+  category: upload
+  persistence: RAW
+  description: >
+        File (tab delimited .txt) containing gene orthologues relations information. Column one - primary organism gene IDs; column two - orthologues gene IDs.
+  input:
+    - name: src
+      label: Gene orthologues file
+      type: basic:file
+      description: >
+        Upload file (tab delimited .txt) containing gene orthologues relations information. Column one - primary organism gene IDs; column two - orthologues gene IDs.
+      validate_regex: '\.(txt)(|\.gz|\.bz2|\.tgz|\.tar\.gz|\.tar\.bz2|\.zip|\.rar|\.7z)$'
+  output:
+    - name: ort
+      label: Gene information
+      type: basic:file
+  run:
+    runtime: polyglot
+    bash: |
+      re-import "{{ src.file_temp|default:src.file }}" "{{ src.file }}" "txt|gz" "txt" 1.0
+      verify_orthologues.py "${NAME}.txt"
+      re-save-file ort ${NAME}.txt.gz
