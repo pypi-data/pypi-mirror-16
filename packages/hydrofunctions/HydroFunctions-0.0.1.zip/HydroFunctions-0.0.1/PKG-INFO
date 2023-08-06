@@ -1,0 +1,72 @@
+Metadata-Version: 1.1
+Name: HydroFunctions
+Version: 0.0.1
+Summary: convenience functions for hydrology
+Home-page: https://github.com/mroberge/hf
+Author: Martin Roberge
+Author-email: mroberge.whois@gmail.com
+License: MIT
+Description: ==============
+        HydroFunctions
+        ==============
+        
+        *A suite of convenience functions for working with hydrology data in an
+        interactive Python session.*
+        
+        .. image:: https://travis-ci.org/mroberge/hf.png
+            :target: https://travis-ci.org/mroberge/hf
+            :alt: Build status
+        
+        .. image:: https://img.shields.io/pypi/dm/hydrofunctions.svg
+            :target: https://pypi.python.org/pypi/hydrofunctions
+            :alt: PyPI downloads
+        
+        .. image:: https://img.shields.io/pypi/v/hydrofunctions.svg
+            :target: https://pypi.python.org/pypi/hydrofunctions
+            :alt: Version
+        
+        .. image:: https://img.shields.io/pypi/l/hydrofunctions.svg
+            :target: https://pypi.python.org/pypi/hydrofunctions
+            :alt: License
+        
+        .. image:: https://img.shields.io/pypi/pyversions/hydrofunctions.svg
+            :target: https://pypi.python.org/pypi/hydrofunctions
+            :alt: Support Python versions
+        
+        .. image:: https://img.shields.io/pypi/status/hydrofunctions.svg
+            :target: https://pypi.python.org/pypi/hydrofunctions
+            :alt: project status
+        
+        ----
+        
+        Install
+        -------
+        
+        install hydrofunctions using pip from the command line:
+        
+          code-block:: python
+        
+          pip install hydrofunctions
+        
+        
+        Usage
+        -----
+        
+        then, import it into your own code:
+        
+        .. code-block:: python
+        
+          import numpy as np
+          import pandas as pd
+          import hydrofunctions as hf
+        
+        this makes it easy to
+Keywords: hydrology USGS NWIS stream gage water
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.4Programming Language :: Python :: 3.5
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Topic :: Utilities
