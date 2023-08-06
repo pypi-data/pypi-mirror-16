@@ -1,0 +1,6 @@
+setup.py
+anndi/__init__.py
+thefuck.egg-info/PKG-INFO
+thefuck.egg-info/SOURCES.txt
+thefuck.egg-info/dependency_links.txt
+thefuck.egg-info/top_level.txt
