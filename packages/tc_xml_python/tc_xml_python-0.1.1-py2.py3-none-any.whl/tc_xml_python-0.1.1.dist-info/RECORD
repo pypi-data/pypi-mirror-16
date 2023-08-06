@@ -1,0 +1,11 @@
+tc_xml_python/__init__.py,sha256=r19qPV13UwE0HGBKDY81QVhDU1YRhBXv2gbBz1X2cdI,177
+tc_xml_python/cli.py,sha256=6oMG4xbnuOX49NCtD8xU1FJ7MdnO2mpSz3CA4llej38,336
+tc_xml_python/globals.py,sha256=0K5QR3SCCaOslDthwYlQQ_BK1QvtdLJshxODywUYqA4,21
+tc_xml_python/tc_xml_python.py,sha256=iwhKnzeBJLKxpRVjvzwiRE63_zNpIBfaKLITauVph-0,24
+tc_xml_python-0.1.1.dist-info/DESCRIPTION.rst,sha256=GoqPPvgyfpgTxEvZdIs-LJCGkX6qDYqPiwCrNEPoKG8,1698
+tc_xml_python-0.1.1.dist-info/METADATA,sha256=lMlxRM3-iMm6GaIHnapl0hFvq-GC1-MFF6f5LZicQqs,2566
+tc_xml_python-0.1.1.dist-info/RECORD,,
+tc_xml_python-0.1.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+tc_xml_python-0.1.1.dist-info/entry_points.txt,sha256=rP0F6v3GM_iXhkE99bOI4xidDVBeCP43UAj_I68Zhe0,58
+tc_xml_python-0.1.1.dist-info/metadata.json,sha256=qJ8AnBVIl7gJ5AyXctqabgav_dd1TkfG4xhJhBmzAGA,1218
+tc_xml_python-0.1.1.dist-info/top_level.txt,sha256=Cq0l6W41ggpa5coWPNxhWVtI8Nd_iJNBR04xGmAyGYk,14
