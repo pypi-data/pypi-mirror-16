@@ -1,0 +1,32 @@
+{"main": {
+    "valid_datetime": null,
+    "valid_position": null,
+    "location_at_sea": {
+        "url": "http://opendap.ccst.inpe.br/Climatologies/ETOPO/etopo5.cdf"
+        }
+    },
+"temperature": {
+    "global_range": {
+        "minval": -2.5,
+        "maxval": 40
+        },
+    "gradient": 10.0,
+    "spike": 2.0,
+    "woa_normbias": {
+        "threshold": "FIXME",
+        "vars": {"woa_an": "t_mn", "woa_sd": "t_sd", "woa_n": "t_dd"}
+        }
+    },
+"salinity": {
+    "global_range": {
+        "minval": 2,
+        "maxval": 41
+        },
+    "gradient": 5.0,
+    "spike": 0.3,
+    "woa_normbias": {
+        "threshold": "FIXME",
+        "vars": {"woa_an": "s_mn", "woa_sd": "s_sd", "woa_n": "s_dd"}
+        }
+    }
+}
