@@ -1,0 +1,8 @@
+MANIFEST.in
+setup.py
+centiment_alpha.egg-info/PKG-INFO
+centiment_alpha.egg-info/SOURCES.txt
+centiment_alpha.egg-info/dependency_links.txt
+centiment_alpha.egg-info/requires.txt
+centiment_alpha.egg-info/top_level.txt
+centiment_alpha.egg-info/zip-safe
