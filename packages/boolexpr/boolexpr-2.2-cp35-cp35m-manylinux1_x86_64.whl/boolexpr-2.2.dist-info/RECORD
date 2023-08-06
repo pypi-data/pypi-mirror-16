@@ -1,0 +1,11 @@
+boolexpr/wrap.py,sha256=bMT5n8urInzBgZsi3mbJmwyG619X2muV5Cf3oaEmTYA,60623
+boolexpr/misc.py,sha256=vOcP0BuphOPtCA-WCdsRB0Ikg8VFmaxkL-I0zg4161c,3280
+boolexpr/util.py,sha256=xNwUP5Zc4vwmztMdC_PvacrLI9rnEWO4y4GjqEYYers,1589
+boolexpr/_boolexpr.cpython-35m-x86_64-linux-gnu.so,sha256=KlooiJq-b9lZMIqpLyvv681keHA9AqeMsrOzISY9K4I,25511142
+boolexpr/__init__.py,sha256=YueW3Mb3v1PJAAIrlcRr2JnEShSuGWbp0SSgqAPV9LM,3870
+boolexpr-2.2.dist-info/top_level.txt,sha256=X8YlLMJg0XsEIGDfkiFhur1zC834k75AyoryUKyXmY0,9
+boolexpr-2.2.dist-info/DESCRIPTION.rst,sha256=-TU33U4_3g59udBx0tZsPVFe9Z8tElDuQIzGigIjpNw,1475
+boolexpr-2.2.dist-info/RECORD,,
+boolexpr-2.2.dist-info/metadata.json,sha256=uVLtGl4ZI8Ri3uFhsiHruN9SZZBmycseK5NGRdcHF38,845
+boolexpr-2.2.dist-info/WHEEL,sha256=FO-U_qE3v9UVkqkcibgzGqYSuGIvACgOboyXHbsAhvw,109
+boolexpr-2.2.dist-info/METADATA,sha256=ZNlA9YnlwPHFwQ1qclCNaGEb3k0dB-En2AHt46DJmBs,2153
