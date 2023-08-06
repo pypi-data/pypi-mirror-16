@@ -1,0 +1,14 @@
+.hgtags
+README.rst
+s3_example_settings.yaml
+setup.cfg
+setup.py
+thumpy/Lenna.png
+thumpy/__init__.py
+thumpy/thumpy_tests.py
+yg.thumpy.egg-info/PKG-INFO
+yg.thumpy.egg-info/SOURCES.txt
+yg.thumpy.egg-info/dependency_links.txt
+yg.thumpy.egg-info/entry_points.txt
+yg.thumpy.egg-info/requires.txt
+yg.thumpy.egg-info/top_level.txt
