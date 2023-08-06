@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: lcps
+Version: 0.3.dev30
+Summary: Light Curve Pre-Selection
+Home-page: http://astropy.org/
+Author: Martin Schlecker
+Author-email: martin.schlecker@tum.de
+License: BSD
+Description: 
+        A tool to search for dips in photometric time series
+        
+Platform: UNKNOWN
