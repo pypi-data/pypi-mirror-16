@@ -1,0 +1,20 @@
+addons:
+    apt:
+        sources:
+            - deadsnakes
+        packages:
+            - python3.5
+
+env:
+- TOXENV=py35
+- TOXENV=py27
+- TOXENV=py34
+
+sudo: required
+
+install:
+    - pip install -U tox
+    - sudo apt-get install libxml2-dev libxslt1-dev avahi-utils
+
+language: python
+script: tox

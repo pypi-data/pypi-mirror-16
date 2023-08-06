@@ -1,0 +1,30 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Automatically unregister services
+desc: ""
+type: :bugfix
+component: zeroconf
+release: "1.0"
+reporter: boisgera <Sebastien.Boisgerault@mines-paristech.fr>
+status: :closed
+disposition: :fixed
+creation_time: 2012-04-29 13:25:45.783792 Z
+references: []
+
+id: 4d2744d4c05a71219e4a1e726aeaf2f5102d1540
+log_events: 
+- - 2012-04-29 13:25:46.340174 Z
+  - boisgera <Sebastien.Boisgerault@mines-paristech.fr>
+  - created
+  - ""
+- - 2012-05-21 12:10:33.688290 Z
+  - "S\xC3\xA9bastien Boisg\xC3\xA9rault <Sebastien.Boisgerault@mines-paristech.fr>"
+  - commented
+  - Done for normal process exit.
+- - 2012-05-24 14:20:55.423120 Z
+  - "S\xC3\xA9bastien Boisg\xC3\xA9rault <Sebastien.Boisgerault@mines-paristech.fr>"
+  - assigned to release 1.0 from unassigned
+  - ""
+- - 2012-05-24 14:28:37.871569 Z
+  - "S\xC3\xA9bastien Boisg\xC3\xA9rault <Sebastien.Boisgerault@mines-paristech.fr>"
+  - closed with disposition fixed
+  - ""
