@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: upd89
+Version: 0.5.26
+Summary: upd89 is a system update management for debian based systems.
+Home-page: http://upd89.org
+Author: Ueli Bosshard
+Author-email: ubosshard@gmail.com
+License: MIT
+Description: upd89 is a system update management for debian based systems.
+Keywords: upd89 system update orchestration
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
