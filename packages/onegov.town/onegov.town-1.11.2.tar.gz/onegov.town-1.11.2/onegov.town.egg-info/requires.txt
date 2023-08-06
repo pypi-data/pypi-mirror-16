@@ -1,0 +1,9 @@
+onegov.org>=0.0.4
+
+[test]
+coverage
+freezegun
+onegov.testing
+webtest
+pyquery
+pytest-localserver
