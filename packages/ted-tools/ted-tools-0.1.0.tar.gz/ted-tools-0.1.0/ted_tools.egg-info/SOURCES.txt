@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+scripts/ted
+ted_tools.egg-info/PKG-INFO
+ted_tools.egg-info/SOURCES.txt
+ted_tools.egg-info/dependency_links.txt
+ted_tools.egg-info/requires.txt
+ted_tools.egg-info/top_level.txt
