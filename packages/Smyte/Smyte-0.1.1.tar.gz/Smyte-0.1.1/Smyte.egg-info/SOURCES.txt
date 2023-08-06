@@ -1,0 +1,7 @@
+setup.py
+smyte.py
+Smyte.egg-info/PKG-INFO
+Smyte.egg-info/SOURCES.txt
+Smyte.egg-info/dependency_links.txt
+Smyte.egg-info/requires.txt
+Smyte.egg-info/top_level.txt
