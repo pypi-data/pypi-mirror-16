@@ -1,0 +1,7 @@
+PyLintBear.py
+setup.py
+PyLintBear.egg-info/PKG-INFO
+PyLintBear.egg-info/SOURCES.txt
+PyLintBear.egg-info/dependency_links.txt
+PyLintBear.egg-info/entry_points.txt
+PyLintBear.egg-info/top_level.txt
