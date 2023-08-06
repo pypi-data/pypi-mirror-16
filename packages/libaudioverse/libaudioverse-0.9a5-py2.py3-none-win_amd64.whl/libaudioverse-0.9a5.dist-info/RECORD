@@ -1,0 +1,11 @@
+libaudioverse/__init__.py,sha256=qCWmntvTRmuuiLCjyUoqeo-VDixkiq9E1cKO7BFwW1U,229450
+libaudioverse/_lav.py,sha256=xIEa9GQWpC7hxEVMTt68bkD-cj13mWPMw-WLXRlhGRo,78744
+libaudioverse/_libaudioverse.py,sha256=IABfFJC-QM4PLFC9suvtsxbGKKNmb30ZGhRmQPp54V4,31938
+libaudioverse/libaudioverse.dll,sha256=1Rie0uhB5w9HoQxYtxciv3A7tGTUZoT-Cx4MLnfbUBg,2642432
+libaudioverse/libsndfile-1.dll,sha256=4diN_HoS0SU2wuH4wwS5m_uBHqmCelaJ1vxxeJ-1teA,1530880
+libaudioverse-0.9a5.dist-info/DESCRIPTION.rst,sha256=_Ff6HZQh1pUCwAej-7lGc06T8nIuHzBp9lOa_o7nwzI,5977
+libaudioverse-0.9a5.dist-info/METADATA,sha256=tbJd29IRJhrvlmMRkjEz25Uq4nQN1HJ6zqWp8ohqmo8,6639
+libaudioverse-0.9a5.dist-info/RECORD,,
+libaudioverse-0.9a5.dist-info/WHEEL,sha256=9Z5Xm-eel1bTS7e6ogYiKz0zmPEqDwIypurdHN1hR40,116
+libaudioverse-0.9a5.dist-info/metadata.json,sha256=pSHP3__UulpplMbzTfYNfqDr48ey_7iiRuqGD2J1dQs,848
+libaudioverse-0.9a5.dist-info/top_level.txt,sha256=CSW8dl2QAxLzun0fIwj0vLC0BBdvwOEB1Yfjh72YRYo,14
