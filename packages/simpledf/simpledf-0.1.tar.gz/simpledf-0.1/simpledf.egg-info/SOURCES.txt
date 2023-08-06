@@ -1,0 +1,11 @@
+MANIFEST.in
+README.rst
+setup.py
+simpledf/__init__.py
+simpledf/apply.py
+simpledf.egg-info/PKG-INFO
+simpledf.egg-info/SOURCES.txt
+simpledf.egg-info/dependency_links.txt
+simpledf.egg-info/not-zip-safe
+simpledf.egg-info/requires.txt
+simpledf.egg-info/top_level.txt
