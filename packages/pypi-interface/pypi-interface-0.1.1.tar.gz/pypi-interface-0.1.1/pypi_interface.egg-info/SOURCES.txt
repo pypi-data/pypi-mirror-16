@@ -1,0 +1,8 @@
+setup.py
+pypi_interface/__init__.py
+pypi_interface/package.py
+pypi_interface.egg-info/PKG-INFO
+pypi_interface.egg-info/SOURCES.txt
+pypi_interface.egg-info/dependency_links.txt
+pypi_interface.egg-info/requires.txt
+pypi_interface.egg-info/top_level.txt
