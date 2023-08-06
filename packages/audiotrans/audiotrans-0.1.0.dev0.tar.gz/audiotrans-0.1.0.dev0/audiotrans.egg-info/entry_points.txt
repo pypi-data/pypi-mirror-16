@@ -1,0 +1,3 @@
+[console_scripts]
+audiotrans = audiotrans.__main__:main
+
