@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+SiteLinksCheck/Sitecheck.py
+SiteLinksCheck/__init__.py
+SiteLinksCheck.egg-info/PKG-INFO
+SiteLinksCheck.egg-info/SOURCES.txt
+SiteLinksCheck.egg-info/dependency_links.txt
+SiteLinksCheck.egg-info/top_level.txt

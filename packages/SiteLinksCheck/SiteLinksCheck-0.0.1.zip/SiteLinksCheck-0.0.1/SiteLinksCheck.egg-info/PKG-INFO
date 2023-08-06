@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: SiteLinksCheck
+Version: 0.0.1
+Summary: Given an url it returns all the links, broken links, internal links etc.
+Home-page: https://github.com/Manideepto/SiteLinksCheck
+Author: Manideepto
+Author-email: dasmanideepto@gmail.com
+License: MIT
+Description: Given an url it returns all the 1.links 2.Internal Links 3.Internal broken links 4.Broken Links as a list.
+Keywords: Broken Links,URL,Site Links Check
+Platform: any
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Utilities
