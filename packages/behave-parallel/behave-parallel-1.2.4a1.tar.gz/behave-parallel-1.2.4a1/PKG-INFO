@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: behave-parallel
+Version: 1.2.4a1
+Summary: behave is behaviour-driven development, Python style
+Home-page: UNKNOWN
+Author: Benno Rice, Richard Jones and Jens Engel
+Author-email: behave-users@googlegroups.com
+License: BSD
+Download-URL: http://github.com/behave/behave
+Description: behave is behaviour-driven development, Python style
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.5
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: Jython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Testing
+Classifier: License :: OSI Approved :: BSD License
