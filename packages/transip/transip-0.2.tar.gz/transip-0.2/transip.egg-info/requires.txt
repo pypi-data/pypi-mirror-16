@@ -1,0 +1,5 @@
+suds
+configobj
+M2Crypto
+requests[security]
+requests
