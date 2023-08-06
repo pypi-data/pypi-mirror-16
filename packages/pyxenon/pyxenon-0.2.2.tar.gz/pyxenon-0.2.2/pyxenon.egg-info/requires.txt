@@ -1,0 +1,6 @@
+JPype1
+
+[test]
+nose
+flake8
+coverage
