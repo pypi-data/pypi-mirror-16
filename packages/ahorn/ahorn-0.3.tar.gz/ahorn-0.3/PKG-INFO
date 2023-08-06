@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: ahorn
+Version: 0.3
+Summary: A game playing and game AI library
+Home-page: https://github.com/drieswijns/ahorn
+Author: Dries Wijns
+Author-email: dries.wijns@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/drieswijns/ahorn/tarball/master
+Description: UNKNOWN
+Keywords: game,playing,AI,MCTS
+Platform: UNKNOWN
