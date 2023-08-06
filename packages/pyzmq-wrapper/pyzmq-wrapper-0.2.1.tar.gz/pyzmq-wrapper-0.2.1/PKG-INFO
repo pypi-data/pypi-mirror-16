@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: pyzmq-wrapper
+Version: 0.2.1
+Summary: Wrapper classes for pyzmq
+Home-page: https://github.com/supercoderz/pyzmq-wrapper
+Author: Narahari Allamraju
+Author-email: anarahari@gmail.com
+License: UNKNOWN
+Description: Please visit https://github.com/supercoderz/pyzmq-wrapper for more details
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3
