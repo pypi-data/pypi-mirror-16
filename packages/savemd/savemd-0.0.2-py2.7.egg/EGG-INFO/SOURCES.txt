@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+savemd/__init__.py
+savemd.egg-info/PKG-INFO
+savemd.egg-info/SOURCES.txt
+savemd.egg-info/dependency_links.txt
+savemd.egg-info/entry_points.txt
+savemd.egg-info/top_level.txt
+savemd.egg-info/zip-safe
