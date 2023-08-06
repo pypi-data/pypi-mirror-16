@@ -1,0 +1,10 @@
+#!/home/rocky/.pyenv/versions/2.7.11/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'trepan==0.6.5','console_scripts','trepan2'
+__requires__ = 'trepan==0.6.5'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('trepan==0.6.5', 'console_scripts', 'trepan2')()
+    )
