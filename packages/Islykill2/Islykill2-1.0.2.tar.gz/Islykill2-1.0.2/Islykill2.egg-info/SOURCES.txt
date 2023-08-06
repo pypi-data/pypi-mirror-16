@@ -1,0 +1,13 @@
+LICENCE
+MANIFEST.in
+setup.cfg
+setup.py
+Islykill2.egg-info/PKG-INFO
+Islykill2.egg-info/SOURCES.txt
+Islykill2.egg-info/dependency_links.txt
+Islykill2.egg-info/not-zip-safe
+Islykill2.egg-info/requires.txt
+Islykill2.egg-info/top_level.txt
+islykill2/Oll_kedjan.pem
+islykill2/__init__.py
+islykill2/parser.py
