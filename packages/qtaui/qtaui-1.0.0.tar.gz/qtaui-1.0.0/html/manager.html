@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Frames and manager &mdash; qtaui 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="qtaui 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Saving and restoring state" href="state.html" />
+    <link rel="prev" title="About qtaui" href="about.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="frames-and-manager">
+<h1>Frames and manager<a class="headerlink" href="#frames-and-manager" title="Permalink to this headline">¶</a></h1>
+<p>The basic building blocks of a qtaui based UI are frames, which are instances of <a class="reference internal" href="reference.html#QAUILeafFrame" title="QAUILeafFrame"><code class="xref py py-class docutils literal"><span class="pre">QAUILeafFrame</span></code></a> (a QWidget really). The application must also hold an instance of <a class="reference internal" href="reference.html#QAUIManager" title="QAUIManager"><code class="xref py py-class docutils literal"><span class="pre">QAUIManager</span></code></a>, which acts as a common ancestor and repository for frames. So the skeleton of a qtaui based application would be:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">PySide</span> <span class="kn">import</span> <span class="n">QtGui</span>
+<span class="kn">from</span> <span class="nn">qtaui</span> <span class="kn">import</span> <span class="n">QAUIManager</span><span class="p">,</span> <span class="n">QAUILeafFrame</span>
+
+<span class="k">class</span> <span class="nc">MainWindow</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MainWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span> <span class="o">=</span> <span class="n">QAUIManager</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="p">)</span>
+
+        <span class="c"># Let&#39;s add a simple empty frame</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">addFrame</span><span class="p">(</span><span class="n">QAUILeafFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;I am a frame&#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QApplication</span><span class="p">([])</span>
+    <span class="n">win</span> <span class="o">=</span> <span class="n">MainWindow</span><span class="p">()</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">raise_</span><span class="p">()</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Which will look pretty uninteresting:</p>
+<img alt="_images/singleframe.png" class="align-center" src="_images/singleframe.png" />
+<div class="section" id="frame-position">
+<h2>Frame position<a class="headerlink" href="#frame-position" title="Permalink to this headline">¶</a></h2>
+<p>the <a class="reference internal" href="reference.html#QAUIManager.addFrame" title="QAUIManager.addFrame"><code class="xref py py-meth docutils literal"><span class="pre">QAUIManager.addFrame()</span></code></a> method takes an optional position argument, which value must be one of the constants defined in the <a class="reference internal" href="reference.html#QAUIPos" title="QAUIPos"><code class="xref py py-class docutils literal"><span class="pre">QAUIPos</span></code></a> class. The default value is <code class="xref py py-attr docutils literal"><span class="pre">QAUIPos.CENTER</span></code>, which means to add the frame as a new tab. Other values are:</p>
+<dl class="docutils">
+<dt><code class="xref py py-attr docutils literal"><span class="pre">QAUIPos.LEFT</span></code></dt>
+<dd>Add the frame as a new column in an horizontal splitter, to the left.</dd>
+<dt><code class="xref py py-attr docutils literal"><span class="pre">QAUIPos.RIGHT</span></code></dt>
+<dd>Add the frame as a new column in an horizontal splitter, to the right.</dd>
+<dt><code class="xref py py-attr docutils literal"><span class="pre">QAUIPos.TOP</span></code></dt>
+<dd>Add the frame as a new row in a vertical splitter, to the top.</dd>
+<dt><code class="xref py py-attr docutils literal"><span class="pre">QAUIPos.BOTTOM</span></code></dt>
+<dd>Add the frame as a new row in a vertical splitter, to the bottom.</dd>
+<dt><code class="xref py py-attr docutils literal"><span class="pre">QAUIPos.FLOATING</span></code></dt>
+<dd>Add the frame as a top-level widget.</dd>
+</dl>
+<p>The frame that will be replaced in the hierarchy by a splitter/tabbed interface is the one the <a class="reference internal" href="reference.html#QAUILeafFrame.addFrame" title="QAUILeafFrame.addFrame"><code class="xref py py-meth docutils literal"><span class="pre">QAUILeafFrame.addFrame()</span></code></a> method is called on. So we can already build a not so simple interface:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Tab #1<ul>
+<li>Vertical splitter with frames 1 and 2</li>
+</ul>
+</li>
+<li>Tab #2<ul>
+<li>Horizontal splitter with frames 3 and 4</li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+<p>With the following code:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">PySide</span> <span class="kn">import</span> <span class="n">QtGui</span>
+<span class="kn">from</span> <span class="nn">qtaui</span> <span class="kn">import</span> <span class="n">QAUIManager</span><span class="p">,</span> <span class="n">QAUILeafFrame</span><span class="p">,</span> <span class="n">QAUIPos</span>
+
+<span class="k">class</span> <span class="nc">MainWindow</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MainWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span> <span class="o">=</span> <span class="n">QAUIManager</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="p">)</span>
+
+        <span class="n">tab1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">addFrame</span><span class="p">(</span><span class="n">QAUILeafFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;Frame #1&#39;</span><span class="p">))</span>
+        <span class="n">tab1</span><span class="o">.</span><span class="n">addFrame</span><span class="p">(</span><span class="n">QAUILeafFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;Frame #2&#39;</span><span class="p">),</span> <span class="n">QAUIPos</span><span class="o">.</span><span class="n">BOTTOM</span><span class="p">)</span>
+        <span class="n">tab2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">addFrame</span><span class="p">(</span><span class="n">QAUILeafFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;Frame #3&#39;</span><span class="p">))</span>
+        <span class="n">tab2</span><span class="o">.</span><span class="n">addFrame</span><span class="p">(</span><span class="n">QAUILeafFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;Frame #4&#39;</span><span class="p">),</span> <span class="n">QAUIPos</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QApplication</span><span class="p">([])</span>
+    <span class="n">win</span> <span class="o">=</span> <span class="n">MainWindow</span><span class="p">()</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">raise_</span><span class="p">()</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="_images/tabsandsplitters.png" class="align-center" src="_images/tabsandsplitters.png" />
+</div>
+<div class="section" id="undocking-a-frame">
+<h2>Undocking a frame<a class="headerlink" href="#undocking-a-frame" title="Permalink to this headline">¶</a></h2>
+<p>Leaf frames and tabs have a title bar. The user can drag the frame from this titlebar in order to undock it, i.e. to make it into a top-level widget. The parent container of the undocked widget will be replaced by the appropriate one if this leads to it containing only one or zero frames; for instance a tabbed container will be replaced by a plain one, thus removing the tabs. Undocking the frame #4 in the previous example will lead to this:</p>
+<img alt="_images/undocked.png" class="align-center" src="_images/undocked.png" />
+<p>When a frame is undocked, the frame itself emits a <a class="reference internal" href="reference.html#QAUILeafFrame.undocked" title="QAUILeafFrame.undocked"><code class="xref py py-meth docutils literal"><span class="pre">QAUILeafFrame.undocked()</span></code></a> signal and the manager emits a <a class="reference internal" href="reference.html#QAUIManager.frameUndocked" title="QAUIManager.frameUndocked"><code class="xref py py-meth docutils literal"><span class="pre">QAUIManager.frameUndocked()</span></code></a> signal. There are also <a class="reference internal" href="reference.html#QAUILeafFrame.docked" title="QAUILeafFrame.docked"><code class="xref py py-meth docutils literal"><span class="pre">QAUILeafFrame.docked()</span></code></a> and <a class="reference internal" href="reference.html#QAUIManager.frameDocked" title="QAUIManager.frameDocked"><code class="xref py py-meth docutils literal"><span class="pre">QAUIManager.frameDocked()</span></code></a> signals. See the <a class="reference internal" href="reference.html#classref"><span>Class reference</span></a> for more information.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Since Qt does not exit the main event loop as long as there are visible top-level widgets, a convenience method of the <a class="reference internal" href="reference.html#QAUIManager" title="QAUIManager"><code class="xref py py-class docutils literal"><span class="pre">QAUIManager</span></code></a> class allows you to hide all undocked frames at once; this must typically be called on program termination, from your main window:</p>
+<div class="last highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">closeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+    <span class="n">event</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="docking-a-frame">
+<h2>Docking a frame<a class="headerlink" href="#docking-a-frame" title="Permalink to this headline">¶</a></h2>
+<p>When the user is dragging an undocked frame around, the <a class="reference internal" href="reference.html#QAUIManager" title="QAUIManager"><code class="xref py py-class docutils literal"><span class="pre">QAUIManager</span></code></a> goes into &#8220;drop&#8221; mode, which is a graphical representation of the UI hierarchy, with hints as to where the frame can be dropped in order to dock it:</p>
+<img alt="_images/drop.png" class="align-center" src="_images/drop.png" />
+<p>Each part of the hierarchy has five drop targets, each mapping to one of the positions defined in <a class="reference internal" href="reference.html#QAUIPos" title="QAUIPos"><code class="xref py py-class docutils literal"><span class="pre">QAUIPos</span></code></a>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Frames and manager</a><ul>
+<li><a class="reference internal" href="#frame-position">Frame position</a></li>
+<li><a class="reference internal" href="#undocking-a-frame">Undocking a frame</a></li>
+<li><a class="reference internal" href="#docking-a-frame">Docking a frame</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="about.html" title="previous chapter">About qtaui</a></li>
+      <li>Next: <a href="state.html" title="next chapter">Saving and restoring state</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/manager.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Jérôme Laheurte.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/manager.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

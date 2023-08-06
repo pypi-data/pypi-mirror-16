@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Saving and restoring state &mdash; qtaui 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="top" title="qtaui 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Internationalization" href="i18n.html" />
+    <link rel="prev" title="Frames and manager" href="manager.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="saving-and-restoring-state">
+<h1>Saving and restoring state<a class="headerlink" href="#saving-and-restoring-state" title="Permalink to this headline">¶</a></h1>
+<p>So that the user does not have to rebuild his own UI each time he launches the application, the <a class="reference internal" href="reference.html#QAUIManager" title="QAUIManager"><code class="xref py py-class docutils literal"><span class="pre">QAUIManager</span></code></a> class supports state saving and restoring. The <a class="reference internal" href="reference.html#QAUIManager.saveState" title="QAUIManager.saveState"><code class="xref py py-meth docutils literal"><span class="pre">QAUIManager.saveState()</span></code></a> method returns a <cite>QByteArray</cite> that can be saved in a <cite>QSettings</cite> object. After adding your frames to the manager, you can call <a class="reference internal" href="reference.html#QAUIManager.restoreState" title="QAUIManager.restoreState"><code class="xref py py-meth docutils literal"><span class="pre">QAUIManager.restoreState()</span></code></a> method to restore the UI setup. <a class="reference internal" href="reference.html#QAUIManager.restoreState" title="QAUIManager.restoreState"><code class="xref py py-meth docutils literal"><span class="pre">QAUIManager.restoreState()</span></code></a> should typically be called after you have restored your geometry.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">PySide</span> <span class="kn">import</span> <span class="n">QtGui</span><span class="p">,</span> <span class="n">QtCore</span>
+<span class="kn">from</span> <span class="nn">qtaui</span> <span class="kn">import</span> <span class="n">QAUIManager</span><span class="p">,</span> <span class="n">QAUILeafFrame</span><span class="p">,</span> <span class="n">QAUIPos</span>
+
+<span class="k">class</span> <span class="nc">MainWindow</span><span class="p">(</span><span class="n">QtGui</span><span class="o">.</span><span class="n">QMainWindow</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MainWindow</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span> <span class="o">=</span> <span class="n">QAUIManager</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="p">)</span>
+
+        <span class="n">tab1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">addFrame</span><span class="p">(</span><span class="n">QAUILeafFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;Frame #1&#39;</span><span class="p">))</span>
+        <span class="n">tab1</span><span class="o">.</span><span class="n">addFrame</span><span class="p">(</span><span class="n">QAUILeafFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;Frame #2&#39;</span><span class="p">),</span> <span class="n">QAUIPos</span><span class="o">.</span><span class="n">BOTTOM</span><span class="p">)</span>
+        <span class="n">tab2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">addFrame</span><span class="p">(</span><span class="n">QAUILeafFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;Frame #3&#39;</span><span class="p">))</span>
+        <span class="n">tab2</span><span class="o">.</span><span class="n">addFrame</span><span class="p">(</span><span class="n">QAUILeafFrame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s">&#39;Frame #4&#39;</span><span class="p">),</span> <span class="n">QAUIPos</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
+
+        <span class="n">settings</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QSettings</span><span class="p">(</span><span class="s">&#39;net.jeromelaheurte&#39;</span><span class="p">,</span> <span class="s">&#39;qtaui test&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">settings</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s">&#39;Geometry&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">restoreGeometry</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s">&#39;Geometry&#39;</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">restoreState</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s">&#39;State&#39;</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">closeEvent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="n">settings</span> <span class="o">=</span> <span class="n">QtCore</span><span class="o">.</span><span class="n">QSettings</span><span class="p">(</span><span class="s">&#39;net.jeromelaheurte&#39;</span><span class="p">,</span> <span class="s">&#39;qtaui test&#39;</span><span class="p">)</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="s">&#39;Geometry&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">saveGeometry</span><span class="p">())</span>
+        <span class="n">settings</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="s">&#39;State&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">saveState</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">manager</span><span class="o">.</span><span class="n">shutdown</span><span class="p">()</span>
+        <span class="n">event</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">QtGui</span><span class="o">.</span><span class="n">QApplication</span><span class="p">([])</span>
+    <span class="n">win</span> <span class="o">=</span> <span class="n">MainWindow</span><span class="p">()</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">win</span><span class="o">.</span><span class="n">raise_</span><span class="p">()</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">exec_</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The state includes the geometry of undocked frames. Internally, frames are identified by their <cite>objectName</cite> property if they have one, or an automatically generated index that depends on the order they were added to the manager. Thus, if you don&#8217;t set (unique) <cite>objectName</cite> for your frames, you cannot change the order in which you add them to the manager. Additional frames (frames added to the manager that are not known to the state) will show up undocked. Bottom line: set unique <cite>objectName</cite> for each of your frame if you don&#8217;t want to run into trouble.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="manager.html" title="previous chapter">Frames and manager</a></li>
+      <li>Next: <a href="i18n.html" title="next chapter">Internationalization</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/state.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Jérôme Laheurte.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+      |
+      <a href="_sources/state.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
