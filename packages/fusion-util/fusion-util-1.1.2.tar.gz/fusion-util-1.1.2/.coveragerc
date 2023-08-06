@@ -1,0 +1,8 @@
+[run]
+branch = True
+source = fusion_util
+
+[paths]
+source =
+  fusion_util
+  .tox/*/lib/python*/site-packages/fusion_util
