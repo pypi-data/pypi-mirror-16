@@ -1,0 +1,18 @@
+Metadata-Version: 2.0
+Name: betatim-fragala
+Version: 0.1
+Summary: Fragala fragala! Testing dependencies
+Home-page: UNKNOWN
+Author: Tim Head
+Author-email: UNKNOWN
+License: BSD
+Platform: UNKNOWN
+Requires-Dist: cython
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: scikit-learn (>=0.18dev)
+Requires-Dist: scipy
+
+This is a non sensical package to test dependencies.
+
+
