@@ -1,0 +1,10 @@
+cssselect
+pytz
+setuptools_scm
+tzlocal
+
+[dev]
+check-manifest
+
+[test]
+tox
