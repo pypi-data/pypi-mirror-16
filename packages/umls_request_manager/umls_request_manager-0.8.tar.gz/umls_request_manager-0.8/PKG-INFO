@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: umls_request_manager
+Version: 0.8
+Summary: Authenticates, caches, and pipelines requests to the UMLS REST metathesaurus API
+Home-page: http://github.com/aduriseti/umls_request_manager
+Author: Amal Duriseti
+Author-email: aduriseti@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
