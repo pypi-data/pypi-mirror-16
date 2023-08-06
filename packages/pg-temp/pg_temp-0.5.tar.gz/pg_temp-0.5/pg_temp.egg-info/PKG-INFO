@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: pg-temp
+Version: 0.5
+Summary: Quickly create Postgres databases, e.g. for testing
+Home-page: https://github.com/ugtar/pg_temp
+Author: Uri Okrent
+Author-email: ugtar -at- gmail.com
+License: MIT
+Description: A library for creating temporary Postgres databases.
+Keywords: postgres,testing
+Platform: POSIX
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
