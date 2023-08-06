@@ -1,0 +1,36 @@
+Metadata-Version: 1.1
+Name: PyMoa
+Version: 0.2.dev0
+Summary: Kivy based scientific platform for running experiments.
+Home-page: http://matham.github.io/moa/
+Author: Matthew Einhorn
+Author-email: moiein2000@gmail.com
+License: MIT
+Description: Moa is a kivy based framework for describing and running experiments.
+        
+        For more information: http://matham.github.io/moa/index.html
+        
+        To install https://matham.github.io/moa/installation.html
+        
+        .. image:: https://ci.appveyor.com/api/projects/status/j9s0v9etdjg0h8vv/branch/master?svg=true
+            :target: https://ci.appveyor.com/project/matham/moa/branch/master
+            :alt: Appveyor status
+        
+        .. image:: https://img.shields.io/pypi/pyversions/moa.svg
+            :target: https://pypi.python.org/pypi/moa/
+            :alt: Supported Python versions
+        
+        .. image:: https://img.shields.io/pypi/v/moa.svg
+            :target: https://pypi.python.org/pypi/moa/
+            :alt: Latest Version on PyPI
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: System :: Hardware
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Intended Audience :: Developers
