@@ -1,0 +1,4 @@
+tracware
+tracware/migrations
+tracware/templatetags
+tracware/tests
