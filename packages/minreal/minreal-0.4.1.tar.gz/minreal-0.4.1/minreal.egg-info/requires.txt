@@ -1,0 +1,4 @@
+paste
+eventlet
+webob
+msgpack-python
