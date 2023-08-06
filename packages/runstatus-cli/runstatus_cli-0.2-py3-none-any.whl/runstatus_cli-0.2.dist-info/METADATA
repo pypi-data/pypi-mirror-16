@@ -1,0 +1,16 @@
+Metadata-Version: 2.0
+Name: runstatus-cli
+Version: 0.2
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: click (==5.1)
+Requires-Dist: requests (==2.7.0)
+Requires-Dist: requests-exoscale-auth (==1.0)
+
+UNKNOWN
+
+
