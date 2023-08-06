@@ -1,0 +1,20 @@
+Metadata-Version: 2.0
+Name: glamkit-collections
+Version: 0.2.1
+Summary: Boilerplate for modelling collections of collecting institutions.
+Home-page: https://github.com/ixc/glamkit-collections
+Author: Interaction Consortium
+Author-email: studio@interaction.net.au
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: colorweave
+Requires-Dist: django-icekit
+Requires-Dist: django-object-actions (<0.6)
+Requires-Dist: Django (>=1.7)
+Requires-Dist: pyparsing
+Requires-Dist: unidecode
+Requires-Dist: django-brightcove
+
+UNKNOWN
+
+
