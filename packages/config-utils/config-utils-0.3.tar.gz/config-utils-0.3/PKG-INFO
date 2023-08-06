@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: config-utils
+Version: 0.3
+Summary: A python script that parses a simple configuration file
+Home-page: https://github.com/duanuys/config-file-read/tarball/0.1
+Author: Duan Uys
+Author-email: duan_uys@icloud.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: configuration,file,parser
+Platform: UNKNOWN
