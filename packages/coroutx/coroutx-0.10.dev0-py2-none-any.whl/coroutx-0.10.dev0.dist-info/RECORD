@@ -1,0 +1,12 @@
+coroutx/__init__.py,sha256=5227IKrMeXnGuX21emwz5TkaxkAgufYoYFvayHSJETk,251
+coroutx/app.py,sha256=MQzFIdBobcxS52erxB_N7LDMqqmdQo4swaoFt4Y54z0,3451
+coroutx/hub.py,sha256=nUyJV5Zh1a8-JbG0g-DkdlatqazNGOTU2knXuZUNzag,473
+coroutx/reqctx.py,sha256=8o6r1WziKMF18Wu2XwC_XKCz1SnV-zHYuvKTgV1Qlag,993
+coroutx/response.py,sha256=wXEs04si7Q16AimfpV4mka2uhwnMxT-CRy1AcEb91jY,359
+coroutx/route.py,sha256=JrOcK9qAwolr2tDs7uBadRWCR0lPVAR7hFWX7PGrGjc,704
+coroutx-0.10.dev0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+coroutx-0.10.dev0.dist-info/METADATA,sha256=_9V-oyxFXELcU7HnMg0S6f9JCIsCmhtO9WrOkmpCoyM,791
+coroutx-0.10.dev0.dist-info/RECORD,,
+coroutx-0.10.dev0.dist-info/WHEEL,sha256=JTb7YztR8fkPg6aSjc571Q4eiVHCwmUDlX8PhuuqIIE,92
+coroutx-0.10.dev0.dist-info/metadata.json,sha256=UNPqaoNIx_xQToyQB2UAGGgwbBvbLADVtI3Dn94J1_U,941
+coroutx-0.10.dev0.dist-info/top_level.txt,sha256=xF_eJSr2HTr6pax3zAN04Gs--lM04BoFCFNHMmnbQdI,8
