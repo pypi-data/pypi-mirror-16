@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+tests/__init__.py
+tests/__init__.pyc
+tests/test_beta.pyc
+tests/test_liveserver.py
+tests/test_liveserver.pyc
+unisquid/__init__.py
+unisquid/liveserver.py
+unisquid.egg-info/PKG-INFO
+unisquid.egg-info/SOURCES.txt
+unisquid.egg-info/dependency_links.txt
+unisquid.egg-info/requires.txt
+unisquid.egg-info/top_level.txt
