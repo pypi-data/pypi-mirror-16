@@ -1,0 +1,13 @@
+xrootdpyfs/__init__.py,sha256=HwSJXp2SEtXhL9AWAfZoPT3Re7GvPHwrlUscqfSw6sQ,5118
+xrootdpyfs/env.py,sha256=z1uGXycAzS1RpWw_1b8sqzXpC1u7ORZzsS5wNpk2VM8,2254
+xrootdpyfs/fs.py,sha256=Oi0AuVuCxEPCFNxqKI7XkzwkZjLgMazGxDZ3P9w0-UI,26931
+xrootdpyfs/opener.py,sha256=oYNreRMlbwYTtxNNO-nk-WVl6yADAjQ0q1x74slwmW8,1761
+xrootdpyfs/utils.py,sha256=1bxxic75RrL58-fpHnxUA4eR0uKAROX7UeJ7geUBEwk,1687
+xrootdpyfs/version.py,sha256=frFS4Mh4bUc6qxeCFr5XeP4YvCUC9vgXo8PeBCOyGzs,578
+xrootdpyfs/xrdfile.py,sha256=RfzDd6fZ3k4vrrtwIt6keoXE1v38LkyUffrZ1rgkXz4,14077
+xrootdpyfs-0.1.2.dist-info/DESCRIPTION.rst,sha256=znJU1G2-JRy2VvBLOXpxPek75_xaFG6Me1fB-QEIQUc,2291
+xrootdpyfs-0.1.2.dist-info/METADATA,sha256=rdBQnyd3iSW8A_6qeGfBee0zD8HlYDBsQ38UGSob8WA,2890
+xrootdpyfs-0.1.2.dist-info/metadata.json,sha256=_T2LFLgMtmjRF4lS0eFi7CeqzN4Y05D8OI43ihrUjQk,937
+xrootdpyfs-0.1.2.dist-info/RECORD,,
+xrootdpyfs-0.1.2.dist-info/top_level.txt,sha256=nuC3uai237I93cQvKv0CY6_aE1SdHNdWt2De36g9Kak,11
+xrootdpyfs-0.1.2.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
