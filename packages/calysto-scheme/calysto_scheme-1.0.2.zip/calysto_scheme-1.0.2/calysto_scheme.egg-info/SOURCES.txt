@@ -1,0 +1,10 @@
+MANIFEST.in
+Makefile
+setup.py
+calysto_scheme.egg-info/PKG-INFO
+calysto_scheme.egg-info/SOURCES.txt
+calysto_scheme.egg-info/dependency_links.txt
+calysto_scheme.egg-info/requires.txt
+calysto_scheme.egg-info/top_level.txt
+calysto_scheme/images/logo-32x32.png
+calysto_scheme/images/logo-64x64.png
