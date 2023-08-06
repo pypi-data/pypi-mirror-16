@@ -1,0 +1,6 @@
+setup.py
+GITC.egg-info/PKG-INFO
+GITC.egg-info/SOURCES.txt
+GITC.egg-info/dependency_links.txt
+GITC.egg-info/top_level.txt
+gitc.egg-info/SOURCES.txt
