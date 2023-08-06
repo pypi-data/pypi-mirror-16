@@ -1,0 +1,32 @@
+Metadata-Version: 1.1
+Name: pip-services-runtime
+Version: 1.0.0
+Summary: Microservices runtime framework for Pip.Services in Python
+Home-page: http://github.com/pip-services/pip-services-runtime-python
+Author: Digital Living Software Corp.
+Author-email: UNKNOWN
+License: MIT
+Description: 
+        Pip.Services Runtime
+        --------------------
+        
+        Pip.Services is an open-source library of basic microservices.
+        Runtime represents a foundation the microservices are built on.
+        
+        Links
+        `````
+        
+        * `website <http://www.pipservices.org>`_
+        * `development version <http://github.com/pip-services/pip-services-runtime-python>`
+        
+        
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
