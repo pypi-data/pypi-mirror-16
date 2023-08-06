@@ -1,0 +1,9 @@
+setup.py
+trt/__init__.py
+trt/__main__.py
+trt.egg-info/PKG-INFO
+trt.egg-info/SOURCES.txt
+trt.egg-info/dependency_links.txt
+trt.egg-info/entry_points.txt
+trt.egg-info/requires.txt
+trt.egg-info/top_level.txt
