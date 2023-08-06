@@ -1,0 +1,9 @@
+#!/usr/local/opt/python3/bin/python3.5
+
+import pungen
+
+if __name__ == '__main__':
+	pungen.main()
+
+else:
+	print("This script is not designed to be imported, please run from the command line")
