@@ -1,0 +1,101 @@
+import unittest
+import zope.testing.setupstack
+
+from BTrees.Length import Length
+from ZODB import serialize
+from ZODB.DemoStorage import DemoStorage
+from ZODB.utils import p64, z64, maxtid
+
+from .utils import StorageServer
+
+class ClientSideConflictResolutionTests(zope.testing.setupstack.TestCase):
+
+    def test_disable_storage_conflict_resolution(self):
+
+        # First, verify default conflict resolution.
+        server = StorageServer(self, DemoStorage())
+
+        writer = serialize.ObjectWriter()
+        ob = Length(0)
+        ob._p_oid = z64
+
+        # 2 non-conflicting transactions:
+
+        server.tpc_begin(1)
+        server.storea(ob._p_oid, z64, writer.serialize(ob), 1)
+        self.assertEqual(server.tpc_vote(1), [])
+        tid1 = server.tpc_finish(1)
+        server.assert_calls()
+
+        ob.change(1)
+        server.tpc_begin(2)
+        server.storea(ob._p_oid, tid1, writer.serialize(ob), 2)
+        self.assertEqual(server.tpc_vote(2), [])
+        tid2 = server.tpc_finish(2)
+        server.assert_calls()
+
+        # Now, a cnflicting one:
+        server.tpc_begin(3)
+        server.storea(ob._p_oid, tid1, writer.serialize(ob), 3)
+
+        # Vote returns the object, indicating that a conflict was resolved.
+        self.assertEqual(server.tpc_vote(3), [ob._p_oid])
+        tid3 = server.tpc_finish(3)
+
+        p, serial, next_serial = server.loadBefore(ob._p_oid, maxtid)
+        self.assertEqual((serial, next_serial), (tid3, None))
+        reader = serialize.ObjectReader()
+        self.assertEqual(reader.getClassName(p), 'BTrees.Length.Length')
+        self.assertEqual(reader.getState(p), 3)
+
+
+        # Now, we'll create a server that expects the client to
+        # resolve conflicts:
+
+        server = StorageServer(
+            self, DemoStorage(), client_side_conflict_resolution=True)
+
+        # 2 non-conflicting transactions:
+
+        server.tpc_begin(1)
+        server.storea(ob._p_oid, z64, writer.serialize(ob), 1)
+        self.assertEqual(server.tpc_vote(1), [])
+        tid1 = server.tpc_finish(1)
+        server.assert_calls()
+
+        ob.change(1)
+        server.tpc_begin(2)
+        server.storea(ob._p_oid, tid1, writer.serialize(ob), 2)
+        self.assertEqual(server.tpc_vote(2), [])
+        tid2 = server.tpc_finish(2)
+        server.assert_calls()
+
+        # Now, a conflicting one:
+        server.tpc_begin(3)
+        server.storea(ob._p_oid, tid1, writer.serialize(ob), 3)
+
+        # Vote returns an object, indicating that a conflict was not resolved.
+        self.assertEqual(
+            server.tpc_vote(3),
+            dict(oid=ob._p_oid,
+                 serials=(tid2, tid1),
+                 data=writer.serialize(ob),
+                 ))
+
+        # Now, it's up to the client to resolve the conflict. It can
+        # do this by making another store call. In this call, we use
+        # tid2 as the starting tid:
+        ob.change(1)
+        server.storea(ob._p_oid, tid2, writer.serialize(ob), 3)
+        self.assertEqual(server.tpc_vote(3), [])
+        tid3 = server.tpc_finish(3)
+        server.assert_calls()
+
+        p, serial, next_serial = server.loadBefore(ob._p_oid, maxtid)
+        self.assertEqual((serial, next_serial), (tid3, None))
+        reader = serialize.ObjectReader()
+        self.assertEqual(reader.getClassName(p), 'BTrees.Length.Length')
+        self.assertEqual(reader.getState(p), 3)
+
+def test_suite():
+    return unittest.makeSuite(ClientSideConflictResolutionTests)
