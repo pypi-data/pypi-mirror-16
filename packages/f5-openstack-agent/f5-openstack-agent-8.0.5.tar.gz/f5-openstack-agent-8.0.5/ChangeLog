@@ -1,0 +1,36 @@
+CHANGES
+=======
+
+* Adding packaging for the F5 Agent Service
+* Change logging from error to debug
+* Add L3 binding support
+* Add L3 binding support
+* WIP updating default pool for virtual
+* WIP fix env prefix errors
+* WIP flake8 cleanup, network helper stubs
+* WIP tenant remove partition, prefix, default pool id
+* WIP temp work around for member exists
+* WIP -- add exception handling to builder methods
+* Add support for creating health monitors and members
+* Add pools, members, monitors to assure_service
+* Connecting the agent manager and the icontrol driver. This also builds enough to create and destroy virtural servers from the command line
+* Refactor to use F5 SDK
+* Update LBaaSv2 with existing LBaaSv1 code
+* Continuing devel on implementing LBaaSv2 API
+* fixing flake8 messages before continuing
+* commiting work for listener lifecycle
+* Getting loadbalacer_create flow to work
+* Removing redudant context initialization
+* Create LBaaS v2 objects on BIG-IP systems
+* Modify Travis-CI config to run flake8 only against f5_openstack_agent source
+* Configure Travis-CI
+* Add initial implemenation of Agent RPC and service
+* - updated README - added SUPPORT.md - added CONTRIBUTING.md - added .git-commit-template.txt
+* Fixes: modified .travis.yml
+* Fixes: code review from @jlonstaff
+* Fixes: changed name of S3 bucket in .travis.yml
+* Fixes: Add configuration files for Travis CI
+* Update README.md
+* Add How To Deploy Agent and figures
+* Add Apache License 2.0
+* Create README.md
