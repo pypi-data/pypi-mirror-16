@@ -1,0 +1,17 @@
+docker_dev-1.0a2.dist-info/pbr.json,sha256=cNFI0IkXQO9ZP2b84Vao-CsGrGYKAROYvik-dlpCVsk,47
+docker_dev-1.0a2.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
+docker_dev-1.0a2.dist-info/metadata.json,sha256=BCKfAYz3tT8Rwsp4E2RT92IkGwv28LFvhv_BpM6tTWU,749
+docker_dev-1.0a2.dist-info/DESCRIPTION.rst,sha256=HUkAjCWxv8CzyhMzJT9SUYHnebpNTWc1eMOE_5sRiQQ,59
+docker_dev-1.0a2.dist-info/METADATA,sha256=vPwCyUis-8MJEXE7V5DHGNxj4NybYQM5PUeKbKBrENk,360
+docker_dev-1.0a2.dist-info/top_level.txt,sha256=pMOTLeFonzndeZyygDIcxDnllmFXrAjhrgoTRBmnZ7M,11
+docker_dev-1.0a2.dist-info/entry_points.txt,sha256=cHH9jbLimYt2Me3-XcYLnY9J18I2LoLKOI5ptviR2aw,152
+docker_dev-1.0a2.dist-info/RECORD,,
+docker_dev/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+docker_dev/projects.py,sha256=05rQlohaz6V_NbIQ2ub9WUU69Nm0GOsNmYRA669u2rM,4013
+docker_dev/cli.py,sha256=daRw3zTHSV7Jr5jQkqcHMLFbTTJcAIm7-8Errgivedg,3162
+docker_dev/subprocess.py,sha256=KGpNeLRRGnrYZPb1NYNHMW9ZBd3FPMBdu8V-OsISa3k,1925
+docker_dev/docker_interface.py,sha256=SRhpG0OiqWrJZsEasP3qyTbmHHwxi3dJROKllNnMyzo,1789
+docker_dev/_logging.py,sha256=3b5c3jbtjCoIX8j9wn4zc2eh8xiqlwNHHnBd8dXxCp4,2515
+docker_dev/exceptions.py,sha256=6PRrQe1VfRkE6nMeheIfisAm2Yh9EZq1pXuYCHpyLWA,2102
+docker_dev/plugins/__init__.py,sha256=HQjNGXpaSVR8PgR1UbucYOI5_gcJWcQ5vPuCyJdHhoM,1120
+docker_dev/plugins/git_integration.py,sha256=nhGnp-zbBYtX4ln2iXJh3ZBHWtp6wnkL-1Vj9lgaJs0,1678
