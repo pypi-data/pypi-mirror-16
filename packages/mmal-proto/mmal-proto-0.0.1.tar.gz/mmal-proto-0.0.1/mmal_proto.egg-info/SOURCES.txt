@@ -1,0 +1,9 @@
+setup.py
+mmal/__init__.py
+mmal/proto/__init__.py
+mmal/proto/mmal_pb2.py
+mmal_proto.egg-info/PKG-INFO
+mmal_proto.egg-info/SOURCES.txt
+mmal_proto.egg-info/dependency_links.txt
+mmal_proto.egg-info/requires.txt
+mmal_proto.egg-info/top_level.txt
