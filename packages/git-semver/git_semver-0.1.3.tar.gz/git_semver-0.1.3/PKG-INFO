@@ -1,0 +1,53 @@
+Metadata-Version: 1.1
+Name: git_semver
+Version: 0.1.3
+Summary: Semantic versions management integrated to git.
+Home-page: https://github.com/hartym/git-semver
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: Apache License, Version 2.0
+Download-URL: https://github.com/hartym/git-semver/archive/0.1.3.tar.gz
+Description: git-semver
+        ==========
+        
+        Install
+        :::::::
+        
+        .. code-block:: shell
+        
+            (sudo) pip install git-semver
+        
+        Usage
+        :::::
+        
+        .. code-block:: shell
+        
+            $ git semver
+            0.1.0
+        
+        .. code-block:: shell
+        
+            $ git semver --next-patch
+            0.1.1
+        
+        .. code-block:: shell
+        
+            $ git semver --next-minor
+            0.2.0
+        
+        .. code-block:: shell
+        
+            $ git semver --next-major
+            1.0.0
+            
+        Simple release process using git-semver
+        :::::::::::::::::::::::::::::::::::::::
+        
+        .. code-block:: shell
+        
+            git semver -p > version.txt
+            git add version.txt
+            git commir -m 'Release: '`cat version.txt`
+            git tag -am `cat version.txt` `cat version.txt`
+            git push origin --tags
+Platform: UNKNOWN
