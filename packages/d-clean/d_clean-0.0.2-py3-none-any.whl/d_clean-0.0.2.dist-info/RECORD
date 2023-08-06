@@ -1,0 +1,10 @@
+d_clean/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+d_clean/cli.py,sha256=oBxkYVCZaPAoZ-oAZ5lkKsQNaYZiM4Z26QQcbmeX7oE,1256
+d_clean/tasks.py,sha256=V3_puaLwnZRxAn8AjZazR9wTZ8S5RyYn0D79ZdUJ3Bg,2099
+d_clean-0.0.2.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+d_clean-0.0.2.dist-info/METADATA,sha256=pRaz7LDrdTM5myCoNCGcuVxUCmAcEENlMLJlWm5YJes,688
+d_clean-0.0.2.dist-info/RECORD,,
+d_clean-0.0.2.dist-info/WHEEL,sha256=zX7PHtH_7K-lEzyK75et0UBa3Bj8egCBMXe1M4gc6SU,92
+d_clean-0.0.2.dist-info/entry_points.txt,sha256=5WHl99GeEXE1eGQSFS5fWXZeAn9_2rqr4mDNoDFHyu8,45
+d_clean-0.0.2.dist-info/metadata.json,sha256=zfowPsi9RyYMi6G5merZB2ysAvoNerOvHPXHhUpq2pI,916
+d_clean-0.0.2.dist-info/top_level.txt,sha256=Jt9sTdTVnXRvtDsSzolk-_MatJhK1wORK88EAXW3JHw,8

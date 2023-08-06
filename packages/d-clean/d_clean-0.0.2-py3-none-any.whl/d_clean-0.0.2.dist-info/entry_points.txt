@@ -1,0 +1,3 @@
+[console_scripts]
+d-clean = d_clean.cli:cli
+
