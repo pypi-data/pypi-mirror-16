@@ -1,0 +1,10 @@
+README.rst
+setup.py
+casepropods.dummy.egg-info/PKG-INFO
+casepropods.dummy.egg-info/SOURCES.txt
+casepropods.dummy.egg-info/dependency_links.txt
+casepropods.dummy.egg-info/namespace_packages.txt
+casepropods.dummy.egg-info/not-zip-safe
+casepropods.dummy.egg-info/top_level.txt
+casepropods/dummy/__init__.py
+casepropods/dummy/plugin.py
