@@ -1,0 +1,36 @@
+Metadata-Version: 2.0
+Name: rewritebody
+Version: 1.0
+Summary: HTML Rewrite Body
+Home-page: https://github.com/TakesxiSximada/rewritebody-py
+Author: TakesxiSximada
+Author-email: sximada@gmail.com
+License: UNKNOWN
+Keywords: HTML
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Requires-Dist: lazr.delegates
+Requires-Dist: six
+Requires-Dist: zope.interface
+Provides-Extra: develop
+Requires-Dist: wheel; extra == 'develop'
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == 'docs'
+Provides-Extra: testing
+Requires-Dist: astroid; extra == 'testing'
+Requires-Dist: detox; extra == 'testing'
+Requires-Dist: eventlet; extra == 'testing'
+Requires-Dist: flake8; extra == 'testing'
+Requires-Dist: mypy-lang; extra == 'testing'
+Requires-Dist: nose; extra == 'testing'
+Requires-Dist: pylint; extra == 'testing'
+Requires-Dist: selenium; extra == 'testing'
+Requires-Dist: tox; extra == 'testing'
+Requires-Dist: vulture; extra == 'testing'
+
+rewritebody
+===========
+
+
+
+

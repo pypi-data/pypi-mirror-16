@@ -1,0 +1,11 @@
+rewritebody/__init__.py,sha256=lQ32vvDDdSqqFF1AoBsog569I6ZF-CoDktV5ohh06Mw,80
+rewritebody/compat.py,sha256=fjbjkL6qgBS-r_iY73Ydtd25_6V_ewRl-N_xFKqLMj0,3172
+rewritebody/django/__init__.py,sha256=SLpvV7AhtIXASIcwrg5QJPzX88IDDFMk7JbfpR9R92Y,1092
+rewritebody-1.0.dist-info/DESCRIPTION.rst,sha256=hoxya4Jub3Oe-KVVEXOX7t7QSTgQY6zRqCciXuAMrVM,28
+rewritebody-1.0.dist-info/METADATA,sha256=hk7TAE-8ucEgD2N7VkWnj29RDOozB0-SX487iRSUl20,968
+rewritebody-1.0.dist-info/RECORD,,
+rewritebody-1.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+rewritebody-1.0.dist-info/entry_points.txt,sha256=if9lPOXfv1zo28aOm7zIgYgOaQUWW7jDAbJUOH4dkvs,30
+rewritebody-1.0.dist-info/metadata.json,sha256=wl5qlikU2Krgt7iQNeKpWIYQBPrRBG2eyJyJyM06Ggs,1036
+rewritebody-1.0.dist-info/namespace_packages.txt,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+rewritebody-1.0.dist-info/top_level.txt,sha256=lbTM-p2gP1Gw406-dHv1IRW7F6IzBf0Hv9zZH1QMe9U,12
