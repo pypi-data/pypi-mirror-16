@@ -1,0 +1,7 @@
+GoReturnsBear.py
+setup.py
+GoReturnsBear.egg-info/PKG-INFO
+GoReturnsBear.egg-info/SOURCES.txt
+GoReturnsBear.egg-info/dependency_links.txt
+GoReturnsBear.egg-info/entry_points.txt
+GoReturnsBear.egg-info/top_level.txt
