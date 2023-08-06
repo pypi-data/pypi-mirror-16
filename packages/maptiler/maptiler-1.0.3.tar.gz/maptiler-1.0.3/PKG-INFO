@@ -1,0 +1,61 @@
+Metadata-Version: 1.1
+Name: maptiler
+Version: 1.0.3
+Summary: Allows custom geohash bucket sizes and finding buckets in vicinity of given location
+Home-page: https://github.com/nziehn/maptiler
+Author: Nils Ziehn
+Author-email: nziehn@gmail.com
+License: MIT
+Download-URL: https://github.com/nziehn/maptiler/archive/1.0.3.tar.gz
+Description: ### maptiler ###
+        
+        Easy interface to created custom sized map tiles for geohashing.
+        
+        - Plot the result to verify that everything is working correctly
+        - Get tiles in the vicinity of a given latitude, longitude
+        - You can use the `tile.hash` property for hashing
+        - For many applications, it's even better to use `tile.x`, `tile.y` coordinates because you can reconstruct the bounding box from them 
+        
+        Important: What is different than most other map tiling algorithms: The tiles from maptiler have the same size
+        
+        - You can specify the tile size when creating the instance
+         
+        
+        ```
+            import maptiler.maptiler as mt
+            import maptiler.map_plot as mp
+            
+            out_path = 'mymap.gitign.html'
+            search_point = mt.MapPoint(40.7058254, -74.1180859)
+            search_radius = 500 * 1000
+            square_size = 500 * 1000
+            
+            map_tiler = mt.MapTiler(square_size=square_size)
+            tiles = map_tiler.tiles_for_point(search_point,
+                                              search_radius)
+            
+            # the (x,y) values of the tiles
+            print [(tile.x, tile.y) for tile in tiles]
+            
+            # the hash values of the tiles
+            print [tile.hash for tile in tiles]
+            
+            map = mp.Map(google_api_key='YOUR_GOOGLE_MAPS_JS_API_KEY_HERE')
+            
+            for tile in tiles:
+                rect = mp.MapRect(tile.bounds[0], tile.bounds[2])
+                map.add_entity(rect)
+            
+            map.add_entity(mp.MapCircle(search_point, search_radius))
+            map.add_entity(mp.MapMarker(search_point))
+            
+            map.to_file(out_path, focus=search_point, zoom=4)
+        ```
+        
+        ![maptiler - image tiles](http://i.imgur.com/W1qvWUF.png)
+        
+        Code hosted on `GitHub https://github.com/nziehn/maptiler`
+        
+        
+Keywords: python geohash tiles
+Platform: UNKNOWN

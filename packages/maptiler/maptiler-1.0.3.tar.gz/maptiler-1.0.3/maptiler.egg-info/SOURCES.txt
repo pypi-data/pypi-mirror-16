@@ -1,0 +1,12 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+maptiler/__init__.py
+maptiler/map_plot.py
+maptiler/maptiler.py
+maptiler.egg-info/PKG-INFO
+maptiler.egg-info/SOURCES.txt
+maptiler.egg-info/dependency_links.txt
+maptiler.egg-info/top_level.txt
