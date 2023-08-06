@@ -1,0 +1,29 @@
+{% set version = "0.1.3" %}
+
+package:
+  name: patch-conda-rpaths
+  version: {{ version }}
+
+source:
+  path: ..
+
+build:
+  skip: true  # [not osx]
+  script: mkdir -p $PREFIX/bin/ && cp patch-conda-rpaths $PREFIX/bin/
+
+requirements:
+  run:
+    # don't express a dependency on Python, even though we have one
+    # noarch_python doesn't work because it tries to patch post-link.sh as a Python script
+    # - python
+test:
+  commands:
+    - patch-conda-rpaths -h
+  requires:
+    - python
+
+about:
+  home: https://github.com/minrk/patch-conda-rpaths
+  license: MIT
+  summary: "Patch conda dylibs to have proper @rpath"
+

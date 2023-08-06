@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: patch-conda-rpaths
+Version: 0.1.3
+Summary: Disable App Nap on OS X 10.9
+Home-page: http://github.com/minrk/patch-conda-rpaths
+Author: Min Ragan-Kelley
+Author-email: benjaminrk@gmail.com
+License: MIT
+Description: 
+            Patch conda dylibs with @rpath/name. Most conda packages have this,
+            but some old packages not built with conda-build (python itself, mkl) don't have this,
+            which causes many runtime compilation tools to fail.
+            
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3

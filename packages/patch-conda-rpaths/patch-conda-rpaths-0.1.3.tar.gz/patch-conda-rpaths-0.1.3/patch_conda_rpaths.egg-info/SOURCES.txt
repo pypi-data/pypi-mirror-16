@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+patch-conda-rpaths
+setup.py
+patch_conda_rpaths.egg-info/PKG-INFO
+patch_conda_rpaths.egg-info/SOURCES.txt
+patch_conda_rpaths.egg-info/dependency_links.txt
+patch_conda_rpaths.egg-info/top_level.txt
+recipe/meta.yaml
+recipe/post-link.sh

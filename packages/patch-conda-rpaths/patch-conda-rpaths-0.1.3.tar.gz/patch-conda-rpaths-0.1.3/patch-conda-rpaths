@@ -1,0 +1,119 @@
+#!/usr/bin/env python
+"""Ensure all dylibs in a given conda prefix have @rpath/dylib
+
+Example:
+
+    patch-conda-rpaths $PREFIX/lib
+
+Fixes loading of libraries linked against these
+
+- check all dylibs for @rpath with otool -D
+- add @rpath/id where it's missing
+  - breaks hardlinks to avoid modifying conda originals
+
+Only for use on OS X
+"""
+
+# from __future__ import print_function
+
+__version__ = '0.1.3'
+
+import os
+import pipes
+import shutil
+import sys
+import glob
+from subprocess import check_output, Popen, PIPE
+
+join = os.path.join
+
+
+def get_output(cmd):
+    """Get the output of a command as text,
+    
+    not bytes like some caveperson.
+    """
+    out = check_output(cmd)
+    return out.decode('utf8', 'replace')
+
+
+def get_id(dylib):
+    """Get the id of a library using otool -D"""
+    out = get_output(['otool', '-D', dylib])
+    lines = out.splitlines()
+    return lines[1].strip()
+
+
+def break_hardlink(path):
+    """Break hardlink, so we aren't modifying the original file
+    
+    - copy to temp
+    - remove original
+    - copy from temp back to original
+    - remove temp
+    """
+    d, base = os.path.split(path)
+    tmp = os.path.join(d, '.break-hardlink.' + base)
+    shutil.copy(path, tmp)
+    os.remove(path)
+    shutil.copy(tmp, path)
+    os.remove(tmp)
+
+
+def add_rpath(dylib, name):
+    """Add @rpath/name to dylib id
+    
+    sets the id to `@rpath/original-id.dylib`
+    """
+    cmd = ['install_name_tool', '-id', "@rpath/%s" % name, dylib]
+    print(' '.join(map(pipes.quote, cmd)))
+    p = Popen(cmd, stderr=PIPE)
+    stdout, stderr = p.communicate()
+    stderr = stderr.decode('utf-8')
+    # stub check from conda-build
+    if "Mach-O dynamic shared library stub file" in stderr:
+        print("Skipping Mach-O dynamic shared library stub file %s\n" % dylib)
+        return
+    print(stderr, file=sys.stderr)
+    if p.returncode:
+        raise RuntimeError("install_name_tool failed with exit status %d" % p.returncode)
+
+
+def patch_rpaths(path):
+    """Ensure all .dylibs in conda_prefix/lib have @rpath/id
+    
+    - check all dylibs for @rpath with otool -D
+    - add @rpath/id where it's missing
+      - breaks hardlinks to avoid modifying conda originals
+    """
+    if os.path.isfile(path):
+        # single file specified
+        dylibs = [path]
+    else:
+        dylibs = glob.glob(join(path, '*.dylib'))
+    for dylib in dylibs:
+        if os.path.islink(dylib):
+            # skip symlinks, only real files
+            continue
+        old_id = get_id(dylib)
+        if '@rpath' not in old_id:
+            break_hardlink(dylib)
+            add_rpath(dylib, old_id)
+            new_id = get_id(dylib)
+            assert '@rpath' in new_id, new_id
+
+
+def main():
+    import argparse
+    parser = argparse.ArgumentParser(
+        description=__doc__,
+        formatter_class=argparse.RawTextHelpFormatter,
+    )
+    parser.add_argument('path', default=join(sys.prefix, 'lib'), nargs='+')
+    opts = parser.parse_args()
+    for path in opts.path:
+        patch_rpaths(path)
+
+
+if __name__ == '__main__':
+    main()
