@@ -1,0 +1,16 @@
+setup.py
+fasttext/__init__.py
+fasttext/fasttext.cpp
+fasttext/fasttext_test.py
+fasttext/interface.cc
+fasttext/model.py
+fasttext.egg-info/PKG-INFO
+fasttext.egg-info/SOURCES.txt
+fasttext.egg-info/dependency_links.txt
+fasttext.egg-info/top_level.txt
+fasttext/cpp/src/args.cc
+fasttext/cpp/src/dictionary.cc
+fasttext/cpp/src/matrix.cc
+fasttext/cpp/src/model.cc
+fasttext/cpp/src/utils.cc
+fasttext/cpp/src/vector.cc
