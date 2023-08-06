@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+audiotrans_transform_fft/__init__.py
+audiotrans_transform_fft/__main__.py
+audiotrans_transform_fft.egg-info/PKG-INFO
+audiotrans_transform_fft.egg-info/SOURCES.txt
+audiotrans_transform_fft.egg-info/dependency_links.txt
+audiotrans_transform_fft.egg-info/requires.txt
+audiotrans_transform_fft.egg-info/top_level.txt
