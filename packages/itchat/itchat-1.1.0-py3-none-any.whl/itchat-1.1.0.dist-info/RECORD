@@ -1,0 +1,12 @@
+itchat/__init__.py,sha256=UB06tWhs0Fi5JGRNyK5B_F-f0wics-suF_rIoRRpcjA,4297
+itchat/client.py,sha256=W7n7j_ZLClKrN3M6y9XewUXPIuDI38rOLXyQkjti3tw,27812
+itchat/config.py,sha256=zqZmg2b08iqM51UEI4caUrKoYAUDlqLAKlH8SSQGsi8,166
+itchat/out.py,sha256=-ppGFji6m3fuLx5fmAce8ohVEjOfvagGUUD_oKVUyOU,363
+itchat/storage.py,sha256=asd-OWHUsmJw7ETGnDGX9obcMuY2p9v7ItXumDLs77g,2649
+itchat/tools.py,sha256=h4tzAwFyWCfTI22f0H_HBKB0iLgU2NLWU4D9l1xF08I,2820
+itchat-1.1.0.dist-info/DESCRIPTION.rst,sha256=8jF9fobMGKfTpG4X3R7zCVgl8_Zy6Kukw4Q6guDKLbo,4617
+itchat-1.1.0.dist-info/METADATA,sha256=cRTc3kdS9_-9cuxf4w1MxyS75Wb-1XfPdzcyDyer_pw,5296
+itchat-1.1.0.dist-info/RECORD,,
+itchat-1.1.0.dist-info/WHEEL,sha256=Ds0ba8WsPJtjBPzEMyPOBG3qfPa6B4mlzB-vhzorIZs,97
+itchat-1.1.0.dist-info/metadata.json,sha256=gnwh9gRBCjpRfsqRSa150YEj81loBvq1DSVYrPn883w,880
+itchat-1.1.0.dist-info/top_level.txt,sha256=XnjxDww9U_hLaP6bBa4r7uSSBEqFJW-ztV8QbiYKzs4,7
