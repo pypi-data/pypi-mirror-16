@@ -1,0 +1,7 @@
+setup.py
+FaBoBarometer_MPL115/MPL115.py
+FaBoBarometer_MPL115/__init__.py
+FaBoBarometer_MPL115.egg-info/PKG-INFO
+FaBoBarometer_MPL115.egg-info/SOURCES.txt
+FaBoBarometer_MPL115.egg-info/dependency_links.txt
+FaBoBarometer_MPL115.egg-info/top_level.txt
