@@ -1,0 +1,14 @@
+Metadata-Version: 2.0
+Name: json-query
+Version: 0.0.2
+Summary: JSON Query tools
+Home-page: UNKNOWN
+Author: Alexey Dubkov
+Author-email: alexey.dubkov@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: argparse
+
+UNKNOWN
+
+

@@ -1,0 +1,11 @@
+json_query-0.0.2.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+json_query-0.0.2.dist-info/METADATA,sha256=T8m6cm2NlyWUd5_yvunssNYwfeXc1y3uYawNGaHF_qI,229
+json_query-0.0.2.dist-info/RECORD,,
+json_query-0.0.2.dist-info/WHEEL,sha256=JTb7YztR8fkPg6aSjc571Q4eiVHCwmUDlX8PhuuqIIE,92
+json_query-0.0.2.dist-info/entry_points.txt,sha256=hBXsXaahMusQUVTyHKit5E5h52nhK2uap1angPIRZNY,57
+json_query-0.0.2.dist-info/metadata.json,sha256=tSJKfpNSmaGj-A8hqU2ppOrtz1F9RGBW_nwM33ivJqA,593
+json_query-0.0.2.dist-info/top_level.txt,sha256=cK1sdgyCCBIt0HhkbcVY0F96EySMxOgPcd81jqbnnCo,10
+jsonquery/__init__.py,sha256=miSsqPy2PFJ18TW9kocQJLcv4HFpkfQhcTzgAO-GTVE,22
+jsonquery/jsonquery.py,sha256=mBIpj5cPaQ7laR1iAsJm7B37KMs1gMd99m6wlw3qHa0,2365
+jsonquery/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jsonquery/tests/test_jsonquery.py,sha256=crVcud80l-ulauCuC4eAVlpxMsAZuyHF6SjTy83Wf9s,940
