@@ -1,0 +1,4 @@
+[console_scripts]
+pyfeld = pyfeld.rfcmd:run_main
+pyfeld-browse = pyfeld.browseRF:run_main
+
