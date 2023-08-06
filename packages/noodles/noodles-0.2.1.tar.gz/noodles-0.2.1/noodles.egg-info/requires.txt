@@ -1,0 +1,13 @@
+
+[prov]
+tinydb
+
+[test]
+nose
+coverage
+pyflakes
+pep8
+docker-py
+
+[xenon]
+pyxenon
