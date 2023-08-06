@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+ez_setup.py
+setup.cfg
+setup.py
+MurmurV3.egg-info/PKG-INFO
+MurmurV3.egg-info/SOURCES.txt
+MurmurV3.egg-info/dependency_links.txt
+MurmurV3.egg-info/not-zip-safe
+MurmurV3.egg-info/top_level.txt
+murmur/ioapi.c
+murmur/murmur.cpp
+murmur/unzip.c
+murmur/include/crypt.h
+murmur/include/ioapi.h
+murmur/include/unzip.h
