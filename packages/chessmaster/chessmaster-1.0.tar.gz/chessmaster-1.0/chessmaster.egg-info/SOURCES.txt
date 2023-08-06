@@ -1,0 +1,15 @@
+README.rst
+setup.py
+chessmaster.egg-info/PKG-INFO
+chessmaster.egg-info/SOURCES.txt
+chessmaster.egg-info/dependency_links.txt
+chessmaster.egg-info/entry_points.txt
+chessmaster.egg-info/requires.txt
+chessmaster.egg-info/top_level.txt
+masterchess/__init__.py
+masterchess/chess.py
+masterchess/playchess.py
+masterchess/utils.py
+tests/__init__.py
+tests/tests_chess.py
+tests/tests_utils.py
