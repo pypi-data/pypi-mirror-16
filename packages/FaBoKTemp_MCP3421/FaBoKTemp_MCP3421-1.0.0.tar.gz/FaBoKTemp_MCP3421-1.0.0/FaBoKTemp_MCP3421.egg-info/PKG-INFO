@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: FaBoKTemp-MCP3421
+Version: 1.0.0
+Summary: This is a library for the FaBo KTemp I2C Brick.
+Home-page: https://github.com/FaBoPlatform/FaBoKTemp-MCP3421-Python
+Author: FaBo
+Author-email: info@fabo.io
+License: Apache License 2.0
+Description: FaBoKTemp-MCP3421-Python
+        ========================
+        
+        How to install.
+        ---------------
+        
+        ::
+        
+            pip install FaBoKTemp_MCP3421
+        
+        FaBo 3AXIS I2C Brick
+        --------------------
+        
+        　`#209 KTemp I2C Brick <http://fabo.io/209.html>`__
+        
+        MCP3421
+        -------
+        
+        　MCP3421 is 18-Bit Analog-to-Digital Converter.
+        
+        MCP3421 Datasheet
+        ~~~~~~~~~~~~~~~~~
+        
+        　`MCP3421
+        Datasheet <http://ww1.microchip.com/downloads/jp/DeviceDoc/22003E_JP.pdf>`__
+        
+        Releases
+        --------
+        
+        -  1.0.0 Initial release.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development
+Classifier: Topic :: System :: Hardware

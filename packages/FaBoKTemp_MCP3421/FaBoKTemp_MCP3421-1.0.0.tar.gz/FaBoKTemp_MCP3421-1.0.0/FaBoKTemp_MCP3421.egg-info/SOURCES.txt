@@ -1,0 +1,7 @@
+setup.py
+FaBoKTemp_MCP3421/MCP3421.py
+FaBoKTemp_MCP3421/__init__.py
+FaBoKTemp_MCP3421.egg-info/PKG-INFO
+FaBoKTemp_MCP3421.egg-info/SOURCES.txt
+FaBoKTemp_MCP3421.egg-info/dependency_links.txt
+FaBoKTemp_MCP3421.egg-info/top_level.txt
