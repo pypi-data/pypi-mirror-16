@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: findeverything
+Version: 0.1.1
+Summary: find keyword from files, needs everything, it's important!
+Home-page: https://github.com/yejinlei/about-python/tree/master/data/findeverything
+Author: yejinlei
+Author-email: 4010896@qq.com
+License: BSD
+Description: What is :
+           quick find Script
+        
+        Description :
+           which needs https://www.voidtools.com/ 's everything
+        
+Keywords: find grep es everything
+Platform: win-amd64
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: BSD License

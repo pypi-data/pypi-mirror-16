@@ -1,0 +1,9 @@
+README.rst
+setup.py
+findeverything/findeverything.py
+findeverything.egg-info/PKG-INFO
+findeverything.egg-info/SOURCES.txt
+findeverything.egg-info/dependency_links.txt
+findeverything.egg-info/not-zip-safe
+findeverything.egg-info/requires.txt
+findeverything.egg-info/top_level.txt
