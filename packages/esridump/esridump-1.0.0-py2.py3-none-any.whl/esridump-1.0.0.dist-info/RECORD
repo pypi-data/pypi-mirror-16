@@ -1,0 +1,11 @@
+esridump/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+esridump/cli.py,sha256=18zFbFhoSG3DaFZAq1g7BP1mw5ckfsagGyp-OBZUwxs,2871
+esridump/dumper.py,sha256=ik8IN0FrFVQzV4hUzm0GG6pARqU_ILZ6lD-rY5MGti0,17103
+esridump/errors.py,sha256=T5f69NfJUBnAmJboSjb_xBKRId8DcFqpJpyc8ok5zVM,45
+esridump-1.0.0.dist-info/DESCRIPTION.rst,sha256=stbctXjTLb2BoL2n5T2hY5lTADQY_IPdwGTwgJPoNLU,5063
+esridump-1.0.0.dist-info/METADATA,sha256=t4XI2xWePqVvAlUq9dq7RqeIagtW_g8I9Kl84xOMSBk,5345
+esridump-1.0.0.dist-info/RECORD,,
+esridump-1.0.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+esridump-1.0.0.dist-info/entry_points.txt,sha256=m4NDRCCz3rebV8N9Nz5jqqV_V0OkI0-QaxKq_eahx4M,52
+esridump-1.0.0.dist-info/metadata.json,sha256=YRz4dKBh9ZQqGjf3gtUSmZdbzWPNDqCRD9zJRVUwJRM,664
+esridump-1.0.0.dist-info/top_level.txt,sha256=mGcXkFdhwnxjvfvcrsA9lCt2uZuQB4dDv9VW5q2AA4E,9
