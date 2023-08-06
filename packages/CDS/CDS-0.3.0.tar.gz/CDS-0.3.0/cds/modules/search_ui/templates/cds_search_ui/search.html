@@ -1,0 +1,49 @@
+{% extends "invenio_search_ui/search.html" %}
+
+{%- block page_header %}
+  {% include "cds_search_ui/header.html" %}
+    <div class="cds-top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2> {{ _('Search') }}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+{%- endblock page_header %}
+
+{%- block search_pagination_top %}
+     <div class="col-md-6 col-sm-12 text-center">
+        <invenio-search-pagination
+            template="{{ url_for('static', filename='templates/cds_search_ui/pagination.html') }}">
+        </invenio-search-pagination>
+    </div>
+{%- endblock search_pagination_top %}
+
+{%- block search_pagination_bottom %}
+    <div align="center">
+        <invenio-search-pagination
+            template="{{ url_for('static', filename='templates/cds_search_ui/pagination.html') }}">
+        </invenio-search-pagination>
+    </div>
+{%- endblock search_pagination_bottom %}
+
+{%- block search_results %}
+    <invenio-search-results
+        template="{{ url_for('static', filename='templates/cds_search_ui/results.html') }}">
+    </invenio-search-results>
+{%- endblock search_results %}
+
+{%- block search_facets %}
+    <invenio-search-facets
+    template="{{ url_for('static', filename='templates/cds_search_ui/facets.html') }}">
+    </invenio-search-facets>
+{%- endblock search_facets %}
+
+{%- block search_range %}
+    <invenio-search-range
+    options='{{ config.SEARCH_UI_JSTEMPLATE_RANGE_OPTIONS | tojson }}'
+    template="{{ url_for('static', filename='templates/cds_search_ui/range.html') }}">
+    </invenio-search-range>
+{%- endblock search_range %}

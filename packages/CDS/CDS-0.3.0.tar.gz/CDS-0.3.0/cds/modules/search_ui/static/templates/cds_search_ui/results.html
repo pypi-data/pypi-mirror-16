@@ -1,0 +1,83 @@
+<ul class="list-unstyled">
+  <li ng-repeat="record in vm.invenioSearchResults.hits.hits track by $index">
+    <!-- FIXME find a better way to set the record url -->
+    <div class="media cds-media">
+      <div class="media-body cds-media-body">
+        <div class="cds-media-subject" ng-show="record.metadata.
+          subject_added_entry_topical_term.length > 0">
+          {{ record.metadata.subject_added_entry_topical_term[0].
+              topical_term_or_geographic_name_entry_element }}
+        </div>
+        <h4 class="cds-media-title media-heading">
+          <a target="_self" ng-href="/record/{{ record.id }}">
+          {{ record.metadata.title_statement.title || 'No title :(' }}</a>
+        </h4>
+        <div>
+          <ul class="list-inline">
+            <li class="cds-media-date"
+                ng-show="record.metadata.imprint.length > 0">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              {{ record.metadata.imprint[0].complete_date }}</li>
+            <li class="cds-media-author"
+                ng-show="record.metadata.added_entry_personal_name.length > 0">
+             <i class="fa fa-user" aria-hidden="true"></i>
+              {{ record.metadata.added_entry_personal_name[0].personal_name }}
+              <a target="_self" ng-href="/record/{{ record.id }}"
+                 ng-show="record.metadata.added_entry_personal_name.length > 1">
+                et al.
+              </a></li>
+          </ul>
+        </div>
+        <div class="cds-media-summary">
+          <p class="line-clamp">
+            {{ record.metadata.summary[0].summary || 'No summary' }}</p>
+        </div>
+
+        <div class="cds-media-badges" ng-show="record.metadata.other_standard_identifier.length > 0">
+          <ul class="list-inline">
+            <li class="cds-media-badge"
+                ng-repeat="identifier in record.metadata.other_standard_identifier"
+                ng-if="identifier.source_of_number_or_code == 'DOI'">
+              <!-- If the identifier is from DOI, display it as a link ... -->
+              <a class="get-badge"
+                 ng-href="http://dx.doi.org/{{ identifier.standard_number_or_code }}"
+                 target="_blank">
+                <img class="media-object"
+                     ng-src="/badge/doi/{{ identifier.standard_number_or_code }}.svg"
+                     alt="{{ identifier.standard_number_or_code }}">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div ng-show="(record.metadata._files | filter:{type: 'pdf'}).length > 0"
+           id="carousel{{ record.id }}" class="carousel slide media-right hidden-xs"
+           data-ride="carousel" data-interval="false">
+        <!-- Wrapper for slides -->
+        <div style="float: right; max-width: 105px">
+          <div class="carousel-inner media-object cds-media-object" role="listbox">
+            <div ng-repeat="file in record.metadata._files | filter:{type: 'pdf'}" class="item"
+                 ng-class="{ active:$first}">
+              <a
+                 class="cds-record-detail-files-filename"
+                 ng-click="vm.preview='/record/' + record.metadata.control_number + '/preview/' + file.key"
+                 ng-dialog="/static/templates/cds_records/popup_template.html"
+                 ng-dialog-class="ngdialog-theme-default ngdialog-file-preview"
+                 ng-dialog-close-previous>
+                <img
+                    ng-src="/api/iiif/v2/{{ file.bucket }}:{{ file.key }}/full/300,400/0/default.png" />
+              </a>
+            </div>
+          </div>
+
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li ng-repeat="file in record.metadata._files | filter:{type: 'pdf'} track by $index"
+                data-target="#carousel{{ record.id }}"
+                data-slide-to="{{ $index }}" ng-class="{'active':$first}"></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

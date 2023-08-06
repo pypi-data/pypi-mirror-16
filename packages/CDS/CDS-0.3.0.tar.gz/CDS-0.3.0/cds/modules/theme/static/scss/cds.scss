@@ -1,0 +1,286 @@
+/*
+ * This file is part of Invenio.
+ * Copyright (C) 2015, 2016 CERN.
+ *
+ * Invenio is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of the
+ * License, or (at your option) any later version.
+ *
+ * Invenio is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Invenio; if not, write to the Free Software Foundation, Inc.,
+ * 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
+
+* In applying this license, CERN does not
+* waive the privileges and immunities granted to it by virtue of its status
+* as an Intergovernmental Organization or submit itself to any jurisdiction.
+*/
+
+// any variable we need to override
+@import "variables";
+
+@import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap";
+@import "../node_modules/font-awesome/scss/font-awesome";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+a[ng-click]{
+  cursor: pointer;
+}
+
+.cds-top-header {
+  background-color: #eee;
+  margin-top: -22px;
+  padding: 25px 0;
+  margin-bottom: 20px;
+  h2 {
+    margin: 0;
+  }
+}
+
+.text-white {
+  color: #fff;
+}
+
+.cds-content-section {
+  padding: 30px 0;
+}
+
+.cds-footer {
+  background-color: #eee;
+}
+
+.cds-footer-brand {
+  img {
+    margin-bottom: 10px;
+  }
+}
+
+// /home
+
+.cds-home {
+  margin-top: -50px;
+  padding: 80px 0 30px 0;
+  background-color: $primary-color;
+  p {
+    padding: 5px 0 0 0;
+    margin-bottom: 20px;
+  }
+}
+
+.cds-cards {
+  padding: 30px 0;
+  background-color: #eee;
+  .panel {
+    margin-bottom: 0;
+  }
+  .list-group {
+    margin: 0!important;
+    li {
+      border-left: 0 !important;
+      border-right: none !important
+    }
+  }
+  .panel-body {
+    h4 {
+      a {
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+.cds-card-popular {
+  .panel-body {
+    background-color: $primary-color-light;
+  }
+}
+
+.cds-home-title {
+  margin-top: 0px;
+}
+
+
+.cds-event {
+  min-height: 620px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('/static/img/event.jpg');
+  position: relative;
+}
+
+.cds-event-description {
+  max-width: 50%;
+  padding: 2px;
+  bottom: 20px;
+  left: 0;
+  right:0;
+  margin: 0 auto;
+  position: absolute;
+}
+
+/////////
+
+// /search
+
+.cds-navbar-form {
+  width: 60%;
+  .form-group, .input-group {
+    width: 100%;
+  }
+  input {
+    width: 80%;
+  }
+}
+
+/////////
+
+// /record/{recid}
+
+.cds-record-detail-bottom {
+  dd, dt, dd li {
+    line-height: 1.6; // A bit more space between elements
+  }
+}
+
+@media(min-width: 768px) {
+  .cds-record-detail-title {
+    // Add some margin on bigger screens screen
+    margin-left: 90px; // half of the default bootstrap dd element margin
+  }
+}
+
+.cds-record-detail {
+  .cds-record-detail-files {
+    .list-group-item.active {
+      a.cds-record-detail-files-filename {
+        color: #fff;
+      }
+    }
+  }
+}
+
+// ngdialog rules are very specific, so we need to be even more specific to
+// overwrite them
+.ngdialog.ngdialog-file-preview {
+  .ngdialog-content {
+    width: 60%;
+  }
+}
+
+/////////
+
+// /search
+
+.cds-media {
+  margin-bottom: 40px;
+  overflow: visible;
+
+  .carousel {
+    min-width: 120px;
+
+    .cds-media-object img {
+      width:100%;
+      margin: auto;
+    }
+
+    .carousel-indicators li {
+      margin-bottom: -10px;
+    }
+  }
+}
+
+.cds-media-title {
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  & > a {
+    white-space: nowrap;
+  }
+  max-width: 600px;
+}
+
+.cds-media-subject {
+  margin-bottom: -2px;
+  font-size: 12px;
+  color: #888;
+}
+
+.cds-media-body {
+  width: 100%;
+}
+
+.cds-media-summary {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+
+  position: relative;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 !important;
+
+  -webkit-line-clamp : 4;
+  height: calc(1em * 1.2 * 4);
+}
+.line-clamp:after {
+  content: '';
+  text-align: right;
+  bottom: 0;
+  right: 0;
+  width: 25%;
+  display: block;
+  position: absolute;
+  height: calc(1em * 1.2);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9) 75%);
+}
+@supports (-webkit-line-clamp: 1) {
+  .line-clamp {
+    height: auto;
+  }
+  .line-clamp:after {
+    display: none !important;
+  }
+}
+
+.carousel-indicators {
+  position: relative;
+  bottom: auto;
+  margin: 0;
+  left: auto;
+  width: auto;
+
+  & > li {
+    background-color: black;
+    opacity: 0.3;
+    &.active {
+      background-color: black;
+      opacity: 0.5;
+      width: 11px;
+      height: 11px;
+    }
+  }
+}
+
+.cds-media-object {
+  border: 1px solid #999;
+}
