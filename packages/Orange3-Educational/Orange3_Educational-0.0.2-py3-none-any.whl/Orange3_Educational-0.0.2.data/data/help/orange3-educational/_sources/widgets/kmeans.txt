@@ -1,0 +1,30 @@
+Educational k-means
+===================
+
+![image](icons/mywidget.png)
+
+Educational widgets that shows the working of a k-means clustering.
+
+Signals
+-------
+Inputs
+~~~~~~
+- **Data**
+Input data set.
+Outputs
+~~~~~~~
+
+- **Data**
+Data set with clusters labels annotation.
+- **Centroids**
+Centroids position
+
+Description
+-----------
+
+The aim of this widget is to show the working of k-means clustering algorithm on two attributes from data set.
+Widget applies k-means clustering to the selected two attributes step by step. User can step through the algorithm and
+see how the algorithm works.
+
+
+
