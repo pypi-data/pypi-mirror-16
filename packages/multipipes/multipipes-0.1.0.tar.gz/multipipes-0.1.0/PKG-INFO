@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: multipipes
+Version: 0.1.0
+Summary: Create and scale complex pipelines on multiple cores.
+Home-page: https://github.com/bigchaindb/multipipes/
+Author: BigchainDB dev
+Author-email: alberto@bigchaindb.com
+License: AGPLv3
+Description: 
+        multipipes: create and scale complex pipelines on multiple cores.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux

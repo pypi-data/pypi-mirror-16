@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+multipipes/__init__.py
+multipipes/pipeline.py
+multipipes.egg-info/PKG-INFO
+multipipes.egg-info/SOURCES.txt
+multipipes.egg-info/dependency_links.txt
+multipipes.egg-info/not-zip-safe
+multipipes.egg-info/requires.txt
+multipipes.egg-info/top_level.txt
