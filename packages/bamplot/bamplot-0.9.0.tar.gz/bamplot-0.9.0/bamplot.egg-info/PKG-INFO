@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: bamplot
+Version: 0.9.0
+Summary: bamplot python package
+Home-page: https://github.com/linlabbcm/bamplot
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Download-URL: https://github.com/linlabbcm/bamplot/tarball/v0.8.0
+Description: program to make plots of bam read density at specific loci
+Keywords: bioinformatics,bam,SEQ,plotting
+Platform: UNKNOWN
