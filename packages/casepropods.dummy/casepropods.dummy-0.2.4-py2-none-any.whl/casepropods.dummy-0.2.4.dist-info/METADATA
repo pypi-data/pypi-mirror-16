@@ -1,0 +1,56 @@
+Metadata-Version: 2.0
+Name: casepropods.dummy
+Version: 0.2.4
+Summary: Example casepro data pod returning statically configureddata
+Home-page: http://github.com/praekelt/casepro.pods.dummy
+Author: Praekelt Foundation
+Author-email: dev@praekelt.com
+License: BSD
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Django
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
+
+casepropods.dummy
+==================
+
+Example casepro data pod returning statically configured data.
+
+Install
+~~~~~~~
+
+.. code-block::
+
+  $ pip install casepropods.dummy
+
+Usage
+~~~~~
+
+In casepro's settings file, add the pod as an installed app, and configure the pods that you would like to show in the UI:
+
+.. code-block:: python
+
+  INSTALLED_APPS += ('casepropods.dummy.plugin.DummyPodPlugin',)
+
+  PODS = [{
+      # maps this pod to the dummy pod type
+      'label': 'dummy_pod',
+
+      # title of the pod to show in the ui
+      'title': 'Maternal Health Info',
+
+      # static data to show as item in the ui for this pod
+      # (only relevant to the dummy pod type)
+      'data': {
+          'items': [{
+              'name': 'EDD',
+              'value': '2015-07-18'
+          }, {
+              'name': 'Clinic Code',
+              'value': '2034 6524 6421'
+          }]
+      }
+  }]
+
+
