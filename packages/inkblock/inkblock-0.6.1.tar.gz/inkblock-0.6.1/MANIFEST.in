@@ -1,0 +1,10 @@
+include README.md AUTHORS LICENSE
+include *.html
+include templates/*.html
+include templates/*.xml
+include inkblock/templates/*.html
+include inkblock/templates/*.xml
+include *.md
+include *.py
+include requirements.txt
+
