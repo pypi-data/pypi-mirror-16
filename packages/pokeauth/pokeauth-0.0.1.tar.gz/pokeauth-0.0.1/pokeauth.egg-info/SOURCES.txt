@@ -1,0 +1,8 @@
+setup.py
+pokeauth/__init__.py
+pokeauth/pokeauth.py
+pokeauth.egg-info/PKG-INFO
+pokeauth.egg-info/SOURCES.txt
+pokeauth.egg-info/dependency_links.txt
+pokeauth.egg-info/requires.txt
+pokeauth.egg-info/top_level.txt
