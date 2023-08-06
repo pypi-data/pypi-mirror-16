@@ -1,0 +1,29 @@
+Metadata-Version: 1.1
+Name: yandex-delivery
+Version: 0.0.1
+Summary: Yandex Delivery python client (python-клиент «Яндекс.Доставик»
+Home-page: https://github.com/daniilr/yandex-delivery-pythonlj
+Author: Daniil Ryzhkov
+Author-email: i@daniil-r.ru
+License: MIT License
+Download-URL: https://github.com/daniilr/yandex-delivery-python/
+Description: Python-клиент для «Яндекс.Доставки»
+        ===================================
+        Проект находится в стадии разработки. После покрытия всех методов API, клиент будет выложен на PyPi.
+        
+        Поддержка версий Python
+        -----------------------
+        В настоящий момент Python поддерживается Python 3 версии. Поддержка Python 2.7 будет доступна позже
+        
+        Ищите `Python-клиент для «Яндекс.Доставки» на Github
+        <https://github.com/daniilr/python-lj/>`_
+Keywords: yandex,delivery,logistics,business
+Platform: osx
+Platform: posix
+Platform: linux
+Platform: windows
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 3 - Alpha
