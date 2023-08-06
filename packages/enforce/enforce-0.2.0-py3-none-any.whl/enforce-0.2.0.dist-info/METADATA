@@ -1,0 +1,13 @@
+Metadata-Version: 2.0
+Name: enforce
+Version: 0.2.0
+Summary: A Python library for enforcing runtime validation of function inputs and outputs
+Home-page: https://github.com/RussBaz/enforce
+Author: R. Bazhenov
+Author-email: RussBaz@users.noreply.github.com
+License: MIT
+Requires-Dist: wrapt
+
+|  Branch	| Status  |
+
+
