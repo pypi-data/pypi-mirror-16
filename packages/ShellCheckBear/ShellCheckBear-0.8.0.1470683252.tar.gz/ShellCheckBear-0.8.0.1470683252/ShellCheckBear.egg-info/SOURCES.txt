@@ -1,0 +1,7 @@
+ShellCheckBear.py
+setup.py
+ShellCheckBear.egg-info/PKG-INFO
+ShellCheckBear.egg-info/SOURCES.txt
+ShellCheckBear.egg-info/dependency_links.txt
+ShellCheckBear.egg-info/entry_points.txt
+ShellCheckBear.egg-info/top_level.txt
