@@ -1,0 +1,10 @@
+Metadata-Version: 1.2
+Name: test_requires_python_3_warehouse
+Version: 0.0.2
+Summary: This is a test module
+Home-page: https://github.com/Carreau/test_requires_python_3_warehouse
+License: UNKNOWN
+Author: Matthias Bussonnier
+Author-email: bussonniermatthias@gmail.com
+Requires-Python: 3
+Classifier: License :: OSI Approved :: MIT License
