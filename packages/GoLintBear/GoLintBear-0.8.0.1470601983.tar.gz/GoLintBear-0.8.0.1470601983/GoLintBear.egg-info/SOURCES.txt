@@ -1,0 +1,7 @@
+setup.py
+GoLintBear/GoLintBear.py
+GoLintBear/__init__.py
+GoLintBear.egg-info/PKG-INFO
+GoLintBear.egg-info/SOURCES.txt
+GoLintBear.egg-info/dependency_links.txt
+GoLintBear.egg-info/top_level.txt
