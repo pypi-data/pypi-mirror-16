@@ -1,0 +1,8 @@
+loot.py
+setup.py
+loot.egg-info/PKG-INFO
+loot.egg-info/SOURCES.txt
+loot.egg-info/dependency_links.txt
+loot.egg-info/entry_points.txt
+loot.egg-info/requires.txt
+loot.egg-info/top_level.txt
