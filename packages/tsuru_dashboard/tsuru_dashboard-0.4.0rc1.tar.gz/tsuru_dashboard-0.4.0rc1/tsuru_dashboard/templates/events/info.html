@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load filters_deploys %}
+
+{% block header %}
+<h1>Events</h1>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Info</h3>
+      <div class="content">
+        <p><strong>unique id:</strong> {{ event.UniqueID }}</p>
+        <p><strong>kind:</strong> {{ event.Kind.Name }}</p>
+        <p><strong>{{ event.Owner.Type }}:</strong> {{ event.Owner.Name }}</p>
+        <p><strong>{{ event.Target.Type }}:</strong> {{ event.Target.Value }}</p>
+        {% if event.StartTime %}
+          <p><strong>started at:</strong> {{ event.StartTime|string_to_date|date:" d-m-Y H:i:s " }}</p>
+        {% endif %}
+        {% if event.EndTime %}
+          <p><strong>finished at:</strong> {{ event.EndTime|string_to_date|date:" d-m-Y H:i:s " }}</p>
+        {% endif %}
+        {% if event.StartCustomData.Kind %}
+        <p><strong>Start Custom Data: </strong>
+        <pre>{{ event.StartCustomData.Data | linebreaksbr }}</pre>
+        {% endif %}
+        {% if event.EndCustomData.Kind %}
+        <p><strong>End Custom Data: </strong>
+        <pre>{{ event.EndCustomData.Data | linebreaksbr }}</pre>
+        {% endif %}
+        {% if event.OtherCustomData.Kind %}
+        <p><strong>Other Custom Data: </strong>
+        <pre>{{ event.OtherCustomData.Data | linebreaksbr }}</pre>
+        {% endif %}
+        {% if event.Log %}
+          <p><strong>Log:</strong></p>
+          <div><pre>{{ event.Log | escape }}</pre></div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
