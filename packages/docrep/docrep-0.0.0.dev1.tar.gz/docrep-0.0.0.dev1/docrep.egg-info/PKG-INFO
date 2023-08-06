@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: docrep
+Version: 0.0.0.dev1
+Summary: Python package for docsting repetition
+Home-page: https://github.com/Chilipp/docrep
+Author: Philipp Sommer
+Author-email: philipp.sommer@unil.ch
+License: GPLv2
+Description: docrep - A Python Module for intelligent reuse of docstrings
+        ============================================================
+        
+        This page is to be filled
+Keywords: docstrings docs docstring napoleon numpy
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Documentation
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Operating System :: OS Independent
