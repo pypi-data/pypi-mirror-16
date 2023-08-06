@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+require/__init__.py
+require/require.py
+require.py.egg-info/PKG-INFO
+require.py.egg-info/SOURCES.txt
+require.py.egg-info/dependency_links.txt
+require.py.egg-info/pbr.json
+require.py.egg-info/top_level.txt
