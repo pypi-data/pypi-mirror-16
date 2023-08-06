@@ -1,0 +1,3 @@
+[console_scripts]
+coala-install = coala_install.installation_tool:main
+
