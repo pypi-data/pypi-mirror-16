@@ -1,0 +1,7 @@
+README.rst
+setup.py
+singlesp/__init__.py
+singlesp.egg-info/PKG-INFO
+singlesp.egg-info/SOURCES.txt
+singlesp.egg-info/dependency_links.txt
+singlesp.egg-info/top_level.txt
