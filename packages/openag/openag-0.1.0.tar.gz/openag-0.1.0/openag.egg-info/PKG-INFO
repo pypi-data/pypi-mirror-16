@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: openag
+Version: 0.1.0
+Summary: Core Python package for the OpenAg software stack
+Home-page: https://github.com/OpenAgInitiative/openag_python
+Author: Open Agriculture Initiative
+Author-email: UNKNOWN
+License: GPL
+Description: openag\_python
+        ==============
+        
+        [![Build Status](https://travis-ci.org/OpenAgInitiative/openag_python.svg?branch=master)](https://travis-ci.org/OpenAgInitiative/openag_python)
+        [![Coverage Status](https://coveralls.io/repos/github/OpenAgInitiative/openag_python/badge.svg?branch=master)](https://coveralls.io/github/OpenAgInitiative/openag_python?branch=master)
+        [![Documentation Status](https://readthedocs.org/projects/openag-python/badge/?version=latest)](http://openag-python.readthedocs.io/en/latest/?badge=latest)
+        
+        Core Python package for the OpenAg software stack
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 2.7
