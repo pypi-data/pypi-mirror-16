@@ -1,0 +1,6 @@
+USAGE
+=====
+
+json-to-dir <json-file> [output-directory]
+
+output-directory defaults to somewhere in /tmp.
