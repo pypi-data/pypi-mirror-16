@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: MLCLAS
+Version: 0.0.3
+Summary: Multi-label classification algorithms implemented in Python
+Home-page: https://github.com/markzy/multi-label-classification
+Author: Mark Zhou
+Author-email: zhouyao0808@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: multi label classification
+Platform: UNKNOWN
