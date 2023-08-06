@@ -1,0 +1,4 @@
+#!/home/ken/.local/bin/python3.5
+# EASY-INSTALL-SCRIPT: 'vtidy==2.2','vtidy'
+__requires__ = 'vtidy==2.2'
+__import__('pkg_resources').run_script('vtidy==2.2', 'vtidy')
