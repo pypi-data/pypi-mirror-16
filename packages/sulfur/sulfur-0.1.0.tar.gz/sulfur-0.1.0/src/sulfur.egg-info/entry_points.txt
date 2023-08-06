@@ -1,0 +1,3 @@
+[console_scripts]
+sulfur = sulfur.__main__:main
+
