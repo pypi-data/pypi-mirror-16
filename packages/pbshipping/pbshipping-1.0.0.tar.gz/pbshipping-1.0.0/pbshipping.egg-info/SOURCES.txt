@@ -1,0 +1,15 @@
+setup.cfg
+setup.py
+pbshipping/__init__.py
+pbshipping/authentication.py
+pbshipping/error.py
+pbshipping/http_client.py
+pbshipping/requestor.py
+pbshipping/resource.py
+pbshipping/shipping_resource.py
+pbshipping/util.py
+pbshipping.egg-info/PKG-INFO
+pbshipping.egg-info/SOURCES.txt
+pbshipping.egg-info/dependency_links.txt
+pbshipping.egg-info/top_level.txt
+pbshipping.egg-info/zip-safe
