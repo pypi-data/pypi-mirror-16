@@ -1,0 +1,18 @@
+CHANGES
+=======
+
+0.1.0
+-----
+
+* Add MQTT auth support
+* Add missing .gitreview file
+* Fix all things tox
+
+0.0.1
+-----
+
+* Add real documentation to the README
+* Handle pulling the project from ref-updated events
+* Fix a bug with setting project on topic
+* Add topic hierarchy
+* Initial commit
