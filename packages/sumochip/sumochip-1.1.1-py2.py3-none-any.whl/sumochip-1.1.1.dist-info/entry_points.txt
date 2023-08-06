@@ -1,0 +1,4 @@
+[console_scripts]
+sumochip_test = sumochip.sumorobot:main
+sumochip_web = sumochip.webapp:main
+

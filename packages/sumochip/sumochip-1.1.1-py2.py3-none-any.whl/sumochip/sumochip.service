@@ -1,0 +1,16 @@
+[Unit]
+Description=SumoCHIP web interface
+Documentation=https://github.com/laurivosandi/sumochip
+# Don't run without a config file
+AssertPathExists=/etc/sumorobot/sumorobot.ini
+
+[Service]
+# Note: setting PYTHONUNBUFFERED is necessary to see the output of this service in the journal
+# See https://docs.python.org/2/using/cmdline.html#envvar-PYTHONUNBUFFERED
+Environment=PYTHONUNBUFFERED=true
+
+# By default python scripts are installed under /usr/local/bin
+ExecStart=/usr/local/bin/sumochip_web
+
+[Install]
+WantedBy=multi-user.target
