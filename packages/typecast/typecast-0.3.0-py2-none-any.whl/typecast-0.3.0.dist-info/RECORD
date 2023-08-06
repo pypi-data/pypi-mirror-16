@@ -1,0 +1,14 @@
+typecast/__init__.py,sha256=fytQrJ0xTxR7IJPicaT2SPF1Z5EqGhpPFMqma78D8vg,2352
+typecast/converter.py,sha256=fJFvUUPLSlqou5ZZ_5jtce1UEI3k0bamXDD_UH6N9Ww,2883
+typecast/date.py,sha256=B3EQ4H_E3n6DJAl8IsdKd4P7mUqduqUexuSWOGltcuE,2042
+typecast/formats.py,sha256=oANlFrz6bR07yDKkN7rU-5rHG9Ecu1yl3aAxysw1I2I,1564
+typecast/guess.py,sha256=ghKtJfUezl18WjB5V7WfJlcpO7Hp92YoTygennV_LP8,1328
+typecast/name.py,sha256=X_2Udsl2VtDYD6fAzz5t_yc2CjWB7dvCmCyhudSGSiI,627
+typecast/value.py,sha256=4ned5SyJzr36fXI60j8q6iT2ykrVkukAOWpmCK972hs,2829
+typecast-0.3.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+typecast-0.3.0.dist-info/METADATA,sha256=IEKzTKDh7IzhZDIpwhdSYTg7QeOgpmVz423Al-c_jGU,727
+typecast-0.3.0.dist-info/metadata.json,sha256=9KPjwYc7XjTLip0Ct3WrYPy4mRvZ_b67C3KHWExTjI4,934
+typecast-0.3.0.dist-info/namespace_packages.txt,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+typecast-0.3.0.dist-info/RECORD,,
+typecast-0.3.0.dist-info/top_level.txt,sha256=4NdZb2XIH91XVrMAZDGUHCkYCzm4fNmd-f0aLrfC5Y4,9
+typecast-0.3.0.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
