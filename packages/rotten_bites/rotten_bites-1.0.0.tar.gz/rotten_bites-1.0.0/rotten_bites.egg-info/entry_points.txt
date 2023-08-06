@@ -1,0 +1,3 @@
+[console_scripts]
+rotten_bites = rotten_bites.__main__:main
+

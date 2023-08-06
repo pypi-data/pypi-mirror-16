@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+rotten_bites/__init__.py
+rotten_bites/__main__.py
+rotten_bites.egg-info/PKG-INFO
+rotten_bites.egg-info/SOURCES.txt
+rotten_bites.egg-info/dependency_links.txt
+rotten_bites.egg-info/entry_points.txt
+rotten_bites.egg-info/not-zip-safe
+rotten_bites.egg-info/requires.txt
+rotten_bites.egg-info/top_level.txt
