@@ -1,0 +1,7 @@
+argparse
+termcolor
+pytest
+python-coveralls
+numpy
+matplotlib
+pyserial
