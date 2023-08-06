@@ -1,0 +1,9 @@
+django_jquery-2.2.4.dist-info/DESCRIPTION.rst,sha256=DA7qt23FrWGj2oStuSJepyoReQNQnnhqsB6cfeOSF4w,1130
+django_jquery-2.2.4.dist-info/METADATA,sha256=fG92OtuRZexgEhgxxJLb5O_5g1A1canyChZNzCaN2qw,1901
+django_jquery-2.2.4.dist-info/RECORD,,
+django_jquery-2.2.4.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+django_jquery-2.2.4.dist-info/metadata.json,sha256=HwwE3DPWMI0RCAd7Fn4a8ZoCY4Fwp_VC146gMX9IJ6U,965
+django_jquery-2.2.4.dist-info/top_level.txt,sha256=aGknaoJU6kEGlFimGJF-Hguny7AjAd9rqq_4R8REYKI,7
+jquery/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jquery/models.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jquery/static/js/jquery.js,sha256=BbhdlvQf_xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44,85578
