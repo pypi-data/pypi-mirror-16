@@ -1,0 +1,12 @@
+zulu/__init__.py,sha256=_i4bI_tUPkmrNt1EhkdVL8DSpfuaPZZxg8caAMwhfYM,264
+zulu/__pkg__.py,sha256=zxZkhxv8Ncta3lwkfweJcUfhqx0bb5KRi1IQrJbbrbs,346
+zulu/_compat.py,sha256=NSlAlw2RxZLgNsUdfwAf6lZN33p-5opQyOb2uM-2dis,840
+zulu/api.py,sha256=_563eDzn8hQATN_ChakS6XuGFJEe8kje5beSxAc5LZo,123
+zulu/datetime.py,sha256=TVKDLuA4Yaq2G_WHZ3xUfh7_tREF6YxlzsWtB7VgXh0,24500
+zulu/parser.py,sha256=0a_ZNZpjSOKxTwos13xgxVBTiwAwlT_b9voaBccqo80,10301
+zulu-0.2.0.dist-info/DESCRIPTION.rst,sha256=7P9WbDndDX_k1HmTUqYQT1v14oT-NU-ATwas1uxrUFg,6460
+zulu-0.2.0.dist-info/METADATA,sha256=-W55O1sz6w9btqVgFwNLp3H7BC41ONU5psXjepRD04o,7561
+zulu-0.2.0.dist-info/RECORD,,
+zulu-0.2.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+zulu-0.2.0.dist-info/metadata.json,sha256=ypH-fTNU892CDtIEfiOzXfI38K1fmZLhP9AwEwIfb6Y,1212
+zulu-0.2.0.dist-info/top_level.txt,sha256=TI4MDsEpif9nvIKm6oEjk1ktEm2HKUAhuaRpvL0oakE,5
