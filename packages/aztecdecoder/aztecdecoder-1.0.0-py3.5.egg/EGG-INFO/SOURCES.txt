@@ -1,0 +1,7 @@
+setup.py
+aztecdecoder.egg-info/PKG-INFO
+aztecdecoder.egg-info/SOURCES.txt
+aztecdecoder.egg-info/dependency_links.txt
+aztecdecoder.egg-info/not-zip-safe
+aztecdecoder.egg-info/top_level.txt
+pelock/aztecdecoder.py
