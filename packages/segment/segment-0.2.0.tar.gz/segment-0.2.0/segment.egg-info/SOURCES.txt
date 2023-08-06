@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+segment/__init__.py
+segment/client.py
+segment/consumer.py
+segment/request.py
+segment/utils.py
+segment/version.py
+segment.egg-info/PKG-INFO
+segment.egg-info/SOURCES.txt
+segment.egg-info/dependency_links.txt
+segment.egg-info/requires.txt
+segment.egg-info/top_level.txt
