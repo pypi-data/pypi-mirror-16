@@ -1,0 +1,7 @@
+setup.py
+PEP8Bear/PEP8Bear.py
+PEP8Bear/__init__.py
+PEP8Bear.egg-info/PKG-INFO
+PEP8Bear.egg-info/SOURCES.txt
+PEP8Bear.egg-info/dependency_links.txt
+PEP8Bear.egg-info/top_level.txt
