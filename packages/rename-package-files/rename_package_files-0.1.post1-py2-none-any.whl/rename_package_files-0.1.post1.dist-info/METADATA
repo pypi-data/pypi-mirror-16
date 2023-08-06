@@ -1,0 +1,15 @@
+Metadata-Version: 2.0
+Name: rename-package-files
+Version: 0.1.post1
+Summary: Rename all occurrences of ``old_name`` to ``new_name`` inall files in package directory.
+Home-page: https://github.com/wheeler-microfluidics/rename-package-files
+Author: Christian Fobel
+Author-email: christian@fobel.net
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: pandas
+Requires-Dist: path-helpers
+
+UNKNOWN
+
+
