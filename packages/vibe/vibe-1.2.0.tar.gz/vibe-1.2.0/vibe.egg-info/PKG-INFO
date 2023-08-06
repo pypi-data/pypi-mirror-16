@@ -1,0 +1,73 @@
+Metadata-Version: 1.0
+Name: vibe
+Version: 1.2.0
+Summary: Python Package for Vibe, Fastest way to know everything about your contacts
+Home-page: https://github.com/sachinvettithanam/vibe
+Author: Sachin Philip Mathew
+Author-email: sachinvettithanam@gmail.com
+License: MIT
+Description: Vibe - Fastest way to know everything about Emails
+        --------------------------------------------------
+        
+        Person & Company Insights powered by Human Intelligence
+        
+        Vibe provides Accurate, Comprehensive and Verified Lead Information for B2B Sales and Marketing
+        
+        visit : <a href="https://vibeapp.co">vibeapp.co</a>
+        
+        ## Documentation
+        
+        ### Installation
+        
+        ```bash
+        pip install vibe
+        ```
+        
+        
+        ## Basic Usages
+        
+        #### Initialize Vibe
+        
+        
+        ```python
+        
+        from vibe import Vibe
+        vibe = Vibe(<api_key>)
+        
+        ```
+        api_key : Your api key
+        get your vibe api key <a href="https://vibeapp.co/developer/">here</a>
+        
+        
+        #### Email/EmailMD5 Lookups
+        
+        
+        ```python
+        ### Email Lookup
+        
+        vibe.email(<email>)
+        
+        ### EmailMD5 Lookup
+        
+        vibe.emailMD5(<email_md5>)
+        
+        ```
+        
+        #### Email Lookups for Premium API
+        
+        
+        ```python
+        ### Email Lookup
+        
+        vibe.email(<email>, <webhook_url>)
+        
+        ```
+        
+        email : email for which info is required
+        emailMd5 : Email Hash for which info is required
+        webhook_url : Premium API param, url which u need response once data is enriched
+        
+        To know more about output formats visit <a href='https://vibeapp.co/docs/'>vibe docs</a>
+        
+Keywords: vibe
+Platform: UNKNOWN

@@ -1,0 +1,8 @@
+setup.py
+vibe/__init__.py
+vibe.egg-info/PKG-INFO
+vibe.egg-info/SOURCES.txt
+vibe.egg-info/dependency_links.txt
+vibe.egg-info/not-zip-safe
+vibe.egg-info/requires.txt
+vibe.egg-info/top_level.txt
