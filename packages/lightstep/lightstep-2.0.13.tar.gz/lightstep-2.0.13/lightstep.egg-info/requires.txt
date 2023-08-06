@@ -1,0 +1,4 @@
+thrift==0.9.2
+opentracing>=2.0.0,<3.0
+jsonpickle
+basictracer==2.0.0.dev1
