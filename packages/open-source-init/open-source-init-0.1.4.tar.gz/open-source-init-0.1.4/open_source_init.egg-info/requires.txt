@@ -1,0 +1,10 @@
+Click>=6.0
+PyGithub
+PyYaml
+TravisPy
+cryptography
+gitpython
+keyring
+py-env-config
+requests
+retrying
