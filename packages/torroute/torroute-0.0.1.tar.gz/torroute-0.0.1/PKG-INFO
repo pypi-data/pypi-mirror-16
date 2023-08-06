@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: torroute
+Version: 0.0.1
+Summary: Delicate Tornado Route Decorator.
+Home-page: https://github.com/BeginMan/ptcache
+Author: beginman
+Author-email: xinxinyu2011@163.com
+License: BSD
+Description: UNKNOWN
+Keywords: tornado,routes,flask-like,route decorator
+Platform: any
