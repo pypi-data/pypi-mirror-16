@@ -1,0 +1,44 @@
+Metadata-Version: 1.1
+Name: wave-utils
+Version: 0.1.1
+Summary: Utilities for computing properties of ocean waves
+Home-page: https://github.com/ChrisBarker-NOAA/wave_utils
+Author: Chris Barker
+Author-email: chris.barker@noaa.gov
+License: Public Domain
+Download-URL: https://github.com/ChrisBarker-NOAA/wave_utils/archive/v0.1.1.tar.gz
+Description: ##########
+        wave_utils
+        ##########
+        
+        Python utilities for computing properties of ocean waves.
+        
+        Currently only linear gravity waves (Airy theory).
+        
+        Included is the dispersion relation, and assorted related utilities:
+        
+        group speed
+        
+        celerity
+        
+        shoaling coeff
+        
+        eulerian velocities
+        
+        ...
+        
+        | Created by:
+        | Christoher H. Barker
+        | Chris.Barker@noaa.gov
+        
+        I'd appreciate anyone letting me know if they find this work useful.
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: Public Domain
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Utilities
+Classifier: Topic :: Scientific/Engineering
