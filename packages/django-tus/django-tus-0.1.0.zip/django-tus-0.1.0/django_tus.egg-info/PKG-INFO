@@ -1,0 +1,88 @@
+Metadata-Version: 1.1
+Name: django-tus
+Version: 0.1.0
+Summary: Django app implementing server side of tus v1.0.0 powering resumable file uploads for django projects
+Home-page: https://github.com/alican/django-tus
+Author: Alican Toprak
+Author-email: alican@querhin.com
+License: MIT
+Description: =============================
+        django-tus
+        =============================
+        
+        .. image:: https://badge.fury.io/py/django-tus.png
+            :target: https://badge.fury.io/py/django-tus
+        
+        .. image:: https://travis-ci.org/alican/django-tus.png?branch=master
+            :target: https://travis-ci.org/alican/django-tus
+        
+        Your project description goes here
+        
+        Documentation
+        -------------
+        
+        The full documentation is at https://django-tus.readthedocs.org.
+        
+        Quickstart
+        ----------
+        
+        Install django-tus::
+        
+            pip install django-tus
+        
+        Then use it in a project::
+        
+            import django_tus
+        
+        Features
+        --------
+        
+        * TODO
+        
+        Running Tests
+        --------------
+        
+        Does the code actually work?
+        
+        ::
+        
+            source <YOURVIRTUALENV>/bin/activate
+            (myenv) $ pip install -r requirements_test.txt
+            (myenv) $ python runtests.py
+        
+        Credits
+        ---------
+        
+        Tools used in rendering this package:
+        
+        *  Cookiecutter_
+        *  `cookiecutter-djangopackage`_
+        
+        .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+        .. _`cookiecutter-djangopackage`: https://github.com/pydanny/cookiecutter-djangopackage
+        
+        
+        
+        
+        History
+        -------
+        
+        0.1.0 (2016-08-06)
+        ++++++++++++++++++
+        
+        * First release on PyPI.
+        
+Keywords: django-tus
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.9
+Classifier: Framework :: Django :: 1.10
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
