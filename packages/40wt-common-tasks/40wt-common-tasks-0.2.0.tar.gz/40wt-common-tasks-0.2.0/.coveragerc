@@ -1,0 +1,14 @@
+[paths]
+source =
+   src/common_tasks
+   */site-packages/common_tasks
+
+[run]
+branch = True
+source = common_tasks
+parallel = true
+
+[report]
+show_missing = true
+precision = 2
+omit = *migrations*

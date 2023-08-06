@@ -1,0 +1,85 @@
+Metadata-Version: 1.1
+Name: 40wt-common-tasks
+Version: 0.2.0
+Summary: A collection of tasks for python invoke, to build and maintain python projects.
+Home-page: https://github.com/svetlyak40wt/40wt-common-tasks
+Author: Alexander Artemenko
+Author-email: svetlyak.40wt@gmail.com
+License: BSD
+Description: ========
+        Overview
+        ========
+        
+        
+        
+        A collection of tasks for python invoke, to build and maintain python projects.
+        
+        * Free software: BSD license
+        
+        Installation
+        ============
+        
+        ::
+        
+            pip install 40wt-common-taskss
+        
+        Documentation
+        =============
+        
+        https://40wt-common-tasks.readthedocs.org/
+        
+        Development
+        ===========
+        
+        To run the all tests run::
+        
+            tox
+        
+        Note, to combine the coverage data from all the tox environments run:
+        
+        .. list-table::
+            :widths: 10 90
+            :stub-columns: 1
+        
+            - - Windows
+              - ::
+        
+                    set PYTEST_ADDOPTS=--cov-append
+                    tox
+        
+            - - Other
+              - ::
+        
+                    PYTEST_ADDOPTS=--cov-append tox
+        
+        Changelog
+        =========
+        
+        0.2.0 (2016-07-29)
+        ------------------
+        
+        * Tasks were fixed to work with ``invoke >= 0.13.0``.
+        * New task ``check_if_dirty`` was added. Make your tasks depend on it,
+          and execution will be interrupted if some git changes aren't commited and pushed.
+        
+        0.1.0 (2016-02-10)
+        ------------------
+        
+        * First release on PyPI.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Utilities
