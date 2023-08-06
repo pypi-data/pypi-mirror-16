@@ -1,0 +1,14 @@
+{
+    "overview": {
+        "columns": [
+            {"name": "date", "label": "Date", "width": "150"},
+            {"name": "subject", "label": "Subject"},
+            {"name": "users", "label": "Users"}
+        ],
+        "settings": {
+            "default-sort-field": "date",
+            "default-sort-order": "desc",
+            "auto-responsive": false
+        }
+    }
+}
