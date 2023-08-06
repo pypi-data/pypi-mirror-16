@@ -1,0 +1,69 @@
+#!/usr/bin/python3
+#
+# Licensed under the GPL: https://www.gnu.org/licenses/gpl-3.0.en.html
+# For details: reprotest/debian/copyright
+
+import sys
+import os
+import argparse
+
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(
+    os.path.abspath(__file__)))))
+
+from reprotest.lib import VirtSubproc
+from reprotest.lib import adtlog
+
+
+capabilities = []
+chroot_dir = None
+
+
+def parse_args():
+    global chroot_dir
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-r', '--gain-root', metavar='COMMAND',
+                        help='can become root by prefixing commands with COMMAND')
+    parser.add_argument('-d', '--debug', action='store_true',
+                        help='Enable debugging output')
+    parser.add_argument('chroot', metavar='/path/to/chroot')
+    args = parser.parse_args()
+    if args.debug:
+        adtlog.verbosity = 2
+
+    chroot_dir = os.path.abspath(args.chroot)
+    down = ['chroot', chroot_dir]
+    if args.gain_root:
+        down = args.gain_root.split() + down
+
+    if args.gain_root or os.getuid() == 0:
+        capabilities.append('root-on-testbed')
+
+    VirtSubproc.auxverb = down
+
+
+def hook_open():
+    pass
+
+
+def hook_downtmp(path):
+    global capabilities
+    d = VirtSubproc.downtmp_mktemp(path)
+    if chroot_dir:
+        capabilities.append('downtmp-host=%s/%s' % (chroot_dir, d))
+    return d
+
+
+def hook_cleanup():
+    global capabilities
+    VirtSubproc.downtmp_remove()
+    capabilities = [c for c in capabilities if not c.startswith('downtmp-host')]
+
+
+def hook_capabilities():
+    return capabilities
+
+
+parse_args()
+VirtSubproc.main()
