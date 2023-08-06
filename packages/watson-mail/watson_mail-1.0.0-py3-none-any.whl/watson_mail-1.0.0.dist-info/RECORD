@@ -1,0 +1,13 @@
+watson/__init__.py,sha256=HAPFSDzYZTcMVQz_7AI3KlmE4Q0sbPgPAfOVkkvqDj4,321
+watson/mail/__init__.py,sha256=Cggy3D90WNawdRV98dKrTNSPK8HSVa1r5bu-JtjHOZU,88
+watson/mail/messages.py,sha256=Eq6mCU9aHlorpS-RdIOiw3UvZFagyKZ9UkDm_01zQCo,9644
+watson/mail/backends/__init__.py,sha256=bXPUbn_D1-G_CxfcFI2IfQ5l8jiPqAojMqhci89n6dI,118
+watson/mail/backends/abc.py,sha256=J3Q7XiIoX2RrzTRUq4rYPY1yDhxC-oNfT6AhAnh2DZY,188
+watson/mail/backends/sendmail.py,sha256=KVe4fDM4_NubjnZlDd13eGYRgLBIwSw_YRBoLgLj1Fg,1124
+watson/mail/backends/smtp.py,sha256=ODV722gfZHHhWeLx82hKeF5hs6h9G6fSY_4kBySiuf8,1637
+watson_mail-1.0.0.dist-info/DESCRIPTION.rst,sha256=F66NAN3-U50FZB90jxGuA4GtP25Dls02GjROxppq0pk,3335
+watson_mail-1.0.0.dist-info/METADATA,sha256=Gn0dmMD6oOyZ-F-X5OaZnFJSNh8FCNFJrAAHhVXSPbc,3856
+watson_mail-1.0.0.dist-info/RECORD,,
+watson_mail-1.0.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+watson_mail-1.0.0.dist-info/metadata.json,sha256=HeFBdQ54ZyUUCubHamZD20Zm_PhYqDR1f8rDR_1fiX8,663
+watson_mail-1.0.0.dist-info/top_level.txt,sha256=QQZdZ6AxPCQ1a1p0y2MpAF1x2wkCHy_btt5UXoEjT34,7
