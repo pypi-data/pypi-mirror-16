@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        efesto-quickstart=efesto.scripts.quickstart:quickstart
+    
