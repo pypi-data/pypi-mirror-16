@@ -1,0 +1,2 @@
+include pydart/pydart_api.h
+include pydart/numpy.i
