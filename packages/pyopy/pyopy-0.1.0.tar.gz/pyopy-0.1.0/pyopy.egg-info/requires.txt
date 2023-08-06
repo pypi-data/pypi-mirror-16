@@ -1,0 +1,11 @@
+
+[mathworks]
+
+[matlab_wrapper]
+matlab_wrapper>=0.9.6
+
+[oct2py]
+oct2py>=3.1.0
+
+[pymatbridge]
+pymatbridge>=0.4.3

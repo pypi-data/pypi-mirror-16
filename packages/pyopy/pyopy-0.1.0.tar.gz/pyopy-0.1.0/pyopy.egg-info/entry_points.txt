@@ -1,0 +1,3 @@
+[console_scripts]
+hctsa-cli = pyopy.hctsa.hctsa_cli:main
+
