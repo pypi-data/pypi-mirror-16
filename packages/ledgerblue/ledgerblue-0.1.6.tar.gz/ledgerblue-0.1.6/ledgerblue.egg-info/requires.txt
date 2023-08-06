@@ -1,0 +1,6 @@
+hidapi>=0.7.99
+secp256k1>=0.12.1
+pycrypto>=2.6.1
+
+[smartcard]
+python-pyscard>=1.6.12-4build1
