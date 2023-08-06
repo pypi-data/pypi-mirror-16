@@ -1,0 +1,3 @@
+pylibmc
+msm-transcoder
+msm_api

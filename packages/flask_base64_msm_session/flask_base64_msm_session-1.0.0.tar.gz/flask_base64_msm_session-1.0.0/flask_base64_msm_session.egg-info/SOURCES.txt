@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+flask_base64_msm_session/__init__.py
+flask_base64_msm_session/session_processor.py
+flask_base64_msm_session.egg-info/PKG-INFO
+flask_base64_msm_session.egg-info/SOURCES.txt
+flask_base64_msm_session.egg-info/dependency_links.txt
+flask_base64_msm_session.egg-info/requires.txt
+flask_base64_msm_session.egg-info/top_level.txt

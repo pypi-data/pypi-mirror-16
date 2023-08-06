@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: flask-base64-msm-session
+Version: 1.0.0
+Summary: Use base64 encoder on memcached server. And it will use memcached on session
+Home-page: https://github.com/eHanlin/flask_base64_msm_session
+Author: Sparrow Jang
+Author-email: sparrow.jang@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
