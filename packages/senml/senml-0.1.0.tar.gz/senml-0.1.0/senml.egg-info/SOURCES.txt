@@ -1,0 +1,11 @@
+MANIFEST.in
+requirements.txt
+setup.cfg
+setup.py
+senml/__init__.py
+senml/senml.py
+senml.egg-info/PKG-INFO
+senml.egg-info/SOURCES.txt
+senml.egg-info/dependency_links.txt
+senml.egg-info/requires.txt
+senml.egg-info/top_level.txt

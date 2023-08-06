@@ -1,0 +1,7 @@
+attrs>=16.0.0
+cbor>=1.0.0
+
+[testing]
+pytest
+cov
+pylint
