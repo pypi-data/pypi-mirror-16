@@ -1,0 +1,11 @@
+CHANGES
+=======
+
+0.0.1
+-----
+
+* Allow importing wsmanclient.Client
+* Add documentation
+* Import client from python-dracclient
+* Initial commit
+* Added .gitreview
