@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: audiotrans-transform-stft
+Version: 0.1.0.dev1
+Summary: audiotrans transform module to Short-Time Fourier Transformation (STFT)
+Home-page: https://github.com/keik/audiotrans-transform-stft
+Author: keik
+Author-email: k4t0.kei@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Multimedia :: Sound/Audio :: Conversion
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
