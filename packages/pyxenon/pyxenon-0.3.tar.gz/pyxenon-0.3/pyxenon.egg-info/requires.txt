@@ -1,0 +1,6 @@
+JPype1
+
+[test]
+pytest
+pytest-flake8
+coverage
