@@ -1,0 +1,12 @@
+README.rst
+setup.cfg
+setup.py
+json2xml2csv/__init__.py
+json2xml2csv/args.py
+json2xml2csv/json_to_xml.py
+json2xml2csv/json_to_xml_utils.py
+json2xml2csv.egg-info/PKG-INFO
+json2xml2csv.egg-info/SOURCES.txt
+json2xml2csv.egg-info/dependency_links.txt
+json2xml2csv.egg-info/entry_points.txt
+json2xml2csv.egg-info/top_level.txt
