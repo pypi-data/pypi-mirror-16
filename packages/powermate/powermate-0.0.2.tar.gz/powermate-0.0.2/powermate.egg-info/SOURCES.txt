@@ -1,0 +1,11 @@
+README.rst
+setup.cfg
+setup.py
+powermate/__init__.py
+powermate/demo.py
+powermate.egg-info/PKG-INFO
+powermate.egg-info/SOURCES.txt
+powermate.egg-info/dependency_links.txt
+powermate.egg-info/entry_points.txt
+powermate.egg-info/requires.txt
+powermate.egg-info/top_level.txt
