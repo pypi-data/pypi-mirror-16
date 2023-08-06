@@ -1,0 +1,2 @@
+click>=6.3
+python-deform>=0.1.1
