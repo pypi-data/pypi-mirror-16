@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: bq-lib
+Version: 0.1
+Summary: A simple python wrapper for Google BigQuery
+Home-page: https://github.com/jpvelez/bqlib
+Author: Manish Nag
+Author-email: manish@spotify.com
+License: MIT
+Download-URL: https://github.com/jpvelez/bqlib/tarball/0.1
+Description: UNKNOWN
+Keywords: BigQuery,Google Cloud Platform
+Platform: UNKNOWN

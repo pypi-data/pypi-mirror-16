@@ -1,0 +1,6 @@
+setup.cfg
+setup.py
+bq_lib.egg-info/PKG-INFO
+bq_lib.egg-info/SOURCES.txt
+bq_lib.egg-info/dependency_links.txt
+bq_lib.egg-info/top_level.txt
