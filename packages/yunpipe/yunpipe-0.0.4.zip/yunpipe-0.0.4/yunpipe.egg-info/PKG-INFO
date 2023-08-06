@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: yunpipe
+Version: 0.0.4
+Summary: An Automatic tool for setting up your image processing work flow on the cloud
+Home-page: https://github.com/wangyx2005/cloud_pipe.git
+Author: Yuxing Wang
+Author-email: wangyx2005@gmail.com
+License: Apache v2.0
+Description: UNKNOWN
+Platform: UNKNOWN
