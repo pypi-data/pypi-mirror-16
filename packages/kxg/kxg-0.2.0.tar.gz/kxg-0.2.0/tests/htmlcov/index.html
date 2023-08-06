@@ -1,0 +1,176 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Coverage report</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.debounce.min.js"></script>
+    <script type="text/javascript" src="jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="coverage_html.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(coverage.index_ready);
+    </script>
+</head>
+<body class="indexfile">
+
+<div id="header">
+    <div class="content">
+        <h1>Coverage report:
+            <span class="pc_cov">99%</span>
+        </h1>
+
+        <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
+
+        <form id="filter_container">
+            <input id="filter" type="text" value="" placeholder="filter..." />
+        </form>
+    </div>
+</div>
+
+<div class="help_panel">
+    <img id="panel_icon" src="keybd_open.png" alt="Hide keyboard shortcuts" />
+    <p class="legend">Hot-keys on this page</p>
+    <div>
+    <p class="keyhelp">
+        <span class="key">n</span>
+        <span class="key">s</span>
+        <span class="key">m</span>
+        <span class="key">x</span>
+        
+        <span class="key">c</span> &nbsp; change column sorting
+    </p>
+    </div>
+</div>
+
+<div id="index">
+    <table class="index">
+        <thead>
+            
+            <tr class="tablehead" title="Click to sort">
+                <th class="name left headerSortDown shortkey_n">Module</th>
+                <th class="shortkey_s">statements</th>
+                <th class="shortkey_m">missing</th>
+                <th class="shortkey_x">excluded</th>
+                
+                <th class="right shortkey_c">coverage</th>
+            </tr>
+        </thead>
+        
+        <tfoot>
+            <tr class="total">
+                <td class="name left">Total</td>
+                <td>1011</td>
+                <td>7</td>
+                <td>27</td>
+                
+                <td class="right" data-ratio="1004 1011">99%</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_kale_kxgames_libraries_kxg_kxg___init___py.html">/home/kale/kxgames/libraries/kxg/kxg/__init__.py</a></td>
+                <td>9</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="9 9">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_kale_kxgames_libraries_kxg_kxg_actors_py.html">/home/kale/kxgames/libraries/kxg/kxg/actors.py</a></td>
+                <td>76</td>
+                <td>3</td>
+                <td>6</td>
+                
+                <td class="right" data-ratio="73 76">96%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_kale_kxgames_libraries_kxg_kxg_errors_py.html">/home/kale/kxgames/libraries/kxg/kxg/errors.py</a></td>
+                <td>36</td>
+                <td>0</td>
+                <td>7</td>
+                
+                <td class="right" data-ratio="36 36">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_kale_kxgames_libraries_kxg_kxg_forums_py.html">/home/kale/kxgames/libraries/kxg/kxg/forums.py</a></td>
+                <td>145</td>
+                <td>0</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="145 145">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_kale_kxgames_libraries_kxg_kxg_messages_py.html">/home/kale/kxgames/libraries/kxg/kxg/messages.py</a></td>
+                <td>98</td>
+                <td>0</td>
+                <td>1</td>
+                
+                <td class="right" data-ratio="98 98">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_kale_kxgames_libraries_kxg_kxg_multiplayer_py.html">/home/kale/kxgames/libraries/kxg/kxg/multiplayer.py</a></td>
+                <td>144</td>
+                <td>1</td>
+                <td>7</td>
+                
+                <td class="right" data-ratio="143 144">99%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_kale_kxgames_libraries_kxg_kxg_quickstart_py.html">/home/kale/kxgames/libraries/kxg/kxg/quickstart.py</a></td>
+                <td>154</td>
+                <td>2</td>
+                <td>0</td>
+                
+                <td class="right" data-ratio="152 154">99%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_kale_kxgames_libraries_kxg_kxg_theater_py.html">/home/kale/kxgames/libraries/kxg/kxg/theater.py</a></td>
+                <td>134</td>
+                <td>0</td>
+                <td>1</td>
+                
+                <td class="right" data-ratio="134 134">100%</td>
+            </tr>
+            
+            <tr class="file">
+                <td class="name left"><a href="_home_kale_kxgames_libraries_kxg_kxg_tokens_py.html">/home/kale/kxgames/libraries/kxg/kxg/tokens.py</a></td>
+                <td>215</td>
+                <td>1</td>
+                <td>5</td>
+                
+                <td class="right" data-ratio="214 215">99%</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <p id="no_rows">
+        No items found using the specified filter.
+    </p>
+</div>
+
+<div id="footer">
+    <div class="content">
+        <p>
+            <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.2</a>,
+            created at 2016-08-10 00:02
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
