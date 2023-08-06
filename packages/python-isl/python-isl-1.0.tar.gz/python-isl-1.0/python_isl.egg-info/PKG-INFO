@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: python-isl
+Version: 1.0
+Summary: A python package to wrap the islapi.
+Home-page: https://github.com/istrategylabs/python-isl
+Author: Joseph Solomon
+Author-email: josephs@isl.co
+License: MIT
+Description: UNKNOWN
+Keywords: python isl api
+Platform: UNKNOWN
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
