@@ -1,0 +1,3 @@
+[console_scripts]
+skyf = skyb.quick.flyway:main
+
