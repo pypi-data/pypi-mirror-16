@@ -1,0 +1,9 @@
+README.rst
+nanogen.py
+setup.py
+nanogen.egg-info/PKG-INFO
+nanogen.egg-info/SOURCES.txt
+nanogen.egg-info/dependency_links.txt
+nanogen.egg-info/entry_points.txt
+nanogen.egg-info/requires.txt
+nanogen.egg-info/top_level.txt
