@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: sabermetrics
+Version: 0.1
+Summary: Beta version of the Sabermetrics Package: A python package with a set of baseball analytic functions for sabermetric purposes.
+Home-page: https://github.com/belgrades/sabermetrics
+Author: Fernando Crema
+Author-email: fcremaldc@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/belgrades/sabermetrics/tarball/0.1
+Description: UNKNOWN
+Keywords: beta,sabermetrics,baseball,MLB
+Platform: UNKNOWN
