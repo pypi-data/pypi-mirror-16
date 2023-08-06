@@ -1,0 +1,9 @@
+grpcio>=1.0.0
+protobuf>=3.0.0
+numpy
+
+[dev]
+check-manifest
+
+[test]
+coverage
