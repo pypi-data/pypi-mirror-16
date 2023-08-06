@@ -1,0 +1,16 @@
+django_telegrambot/apps.py,sha256=eK03pXc8fPxhvpBsWbpcDFhpklnm2vWHI86OpaykkOY,4675
+django_telegrambot/admin.py,sha256=suMo4x8I3JBxAFBVIdE-5qnqZ6JAZV0FESABHOSc-vg,63
+django_telegrambot/tests.py,sha256=mrbGGRNg5jwbTJtWWa7zSKdDyeB4vmgZCRc2nk6VY-g,60
+django_telegrambot/views.py,sha256=ls_Hm_Ni8y2U7pVLULzt5MtelofhaS1ZhRA5urZSPsM,1752
+django_telegrambot/__init__.py,sha256=YzDW4CUyIRz9Q_5cHo1ikJFBw1VS2j0XMr3UUP7Vco4,87
+django_telegrambot/models.py,sha256=Vjc0p2XbAPgE6HyTF6vll98A4eDhA5AvaQqsc4kQ9AQ,57
+django_telegrambot/urls.py,sha256=hoSsr3HAiP82DTItdemBMqNhVn2c92YLZjPvVlxF14s,156
+django_telegrambot/static/css/django_telegrambot.css,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_telegrambot/static/js/django_telegrambot.js,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_telegrambot/templates/django_telegrambot/base.html,sha256=zzaUPjEgvwxg-Gn2rZ6gIMWphucmEGvAU_skUXJIcDA,661
+django_telegrambot-0.2.1.dist-info/RECORD,,
+django_telegrambot-0.2.1.dist-info/metadata.json,sha256=P9SbIY00Rghysl-86_jiAODBy74io31R4SPoOv_O89Y,1056
+django_telegrambot-0.2.1.dist-info/DESCRIPTION.rst,sha256=Sq0AnUlOW7URp4Knl8fpf77RmJwiPMgWgfG0NecQYOI,4648
+django_telegrambot-0.2.1.dist-info/top_level.txt,sha256=gKQ75X_cu0IFa-ZfYLc-Uz-Xx16L5K_ISh0HZnee8j4,19
+django_telegrambot-0.2.1.dist-info/METADATA,sha256=ShOcBnJY4Fw7f3n-E8kJrl0RzF6V7jF1aZ8uAfbUK50,5575
+django_telegrambot-0.2.1.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
