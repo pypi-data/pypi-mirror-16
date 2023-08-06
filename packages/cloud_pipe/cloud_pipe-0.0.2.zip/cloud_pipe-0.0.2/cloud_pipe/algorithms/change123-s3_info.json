@@ -1,0 +1,59 @@
+{
+    "CPU": {},
+    "container_name": "wangyx2005/change123-s3",
+    "executable_path": "/change123",
+    "input_file_path": "/",
+    "instance_type": "t2.micro",
+    "memory": {
+        "minimal": 50,
+        "suggested": 128
+    },
+    "name": "change123-s3",
+    "output_file_path": "/",
+    "port": [
+        {
+            "port": 9090,
+            "protocol": "tcp"
+        }
+    ],
+    "run_command": "sh /change123.sh $input $output",
+    "system": "ubuntu",
+    "user_specified_environment_variables": [
+        {
+            "name": "TEST_ENV",
+            "required": true
+        },
+        {
+            "name": "output_s3_name",
+            "required": true
+        },
+        {
+            "name": "sqs",
+            "required": true
+        },
+        {
+            "name": "LOG_LVL",
+            "required": false
+        },
+        {
+            "name": "NAME",
+            "required": true
+        },
+        {
+            "name": "AWS_DEFAULT_REGION",
+            "required": true
+        },
+        {
+            "name": "AWS_DEFAULT_OUTPUT",
+            "required": true
+        },
+        {
+            "name": "AWS_ACCESS_KEY_ID",
+            "required": true
+        },
+        {
+            "name": "AWS_SECRET_ACCESS_KEY",
+            "required": true
+        }
+    ]
+}
