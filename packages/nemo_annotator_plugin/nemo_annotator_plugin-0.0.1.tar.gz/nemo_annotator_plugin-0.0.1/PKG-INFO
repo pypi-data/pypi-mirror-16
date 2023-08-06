@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: nemo_annotator_plugin
+Version: 0.0.1
+Summary: Plugin for Capitains Nemo to load Perseids Annotator on passage page
+Home-page: https://github.com/fbaumgardt/nemo_annotator_plugin
+Author: Frederik Baumgardt
+Author-email: baumgardt@informatik.uni-leipzig.de
+License: GNU GPL
+Description: UNKNOWN
+Platform: UNKNOWN
