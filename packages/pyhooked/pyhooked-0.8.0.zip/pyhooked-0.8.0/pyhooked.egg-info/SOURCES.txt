@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+pyhooked/__init__.py
+pyhooked.egg-info/PKG-INFO
+pyhooked.egg-info/SOURCES.txt
+pyhooked.egg-info/dependency_links.txt
+pyhooked.egg-info/top_level.txt
