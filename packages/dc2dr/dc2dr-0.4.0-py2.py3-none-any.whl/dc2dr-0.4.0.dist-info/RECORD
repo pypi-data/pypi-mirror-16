@@ -1,0 +1,11 @@
+dc2dr/__init__.py,sha256=iguNr_NGN0RH_rYKkX7WCzk9qJ5Z7DP82vRZYcr-dFc,113
+dc2dr/cli.py,sha256=GCyuoF1nTJGtvuOjTJ6IGOVAwcnpoC0aDJQ306POFEg,384
+dc2dr/parser.py,sha256=TjmfIiXzt1uAgn1RR0WNd7jR9oFQZVY8B9jSG9c56rE,1976
+dc2dr/sorting.py,sha256=od1cKjahVyCWat9hvuo5M0peH5yFlPpIX7CObgzi_3o,808
+dc2dr-0.4.0.dist-info/DESCRIPTION.rst,sha256=4fSMYrLL7tZl1lbLlc5_gJCEmHG_7sPkEG_AGMkWNiE,1575
+dc2dr-0.4.0.dist-info/METADATA,sha256=d4uxuo3rzfQmWt4XLlMfLCRR_nj3KtEgocZH5InnXeQ,2466
+dc2dr-0.4.0.dist-info/RECORD,,
+dc2dr-0.4.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+dc2dr-0.4.0.dist-info/entry_points.txt,sha256=EeurXRcw3JOmkz4ZWQDDDErjxOClY790Fv6TdDYxJSc,42
+dc2dr-0.4.0.dist-info/metadata.json,sha256=P0uxLCDld9b4_qCmXSlyS7ChTMgyMXHfpM5-XQPnY54,1203
+dc2dr-0.4.0.dist-info/top_level.txt,sha256=1b0YuKkmNKr-YGFtP-vmOEyX-OZT8Xn5Z1HRYRNSQTk,6
