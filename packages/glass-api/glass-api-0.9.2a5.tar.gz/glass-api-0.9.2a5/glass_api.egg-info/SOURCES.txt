@@ -1,0 +1,12 @@
+README.rst
+setup.cfg
+setup.py
+glass/__init__.py
+glass/cli.py
+glass/client.py
+glass_api.egg-info/PKG-INFO
+glass_api.egg-info/SOURCES.txt
+glass_api.egg-info/dependency_links.txt
+glass_api.egg-info/entry_points.txt
+glass_api.egg-info/requires.txt
+glass_api.egg-info/top_level.txt
