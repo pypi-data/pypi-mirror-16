@@ -1,0 +1,6 @@
+setup.py
+thedonald.egg-info/PKG-INFO
+thedonald.egg-info/SOURCES.txt
+thedonald.egg-info/dependency_links.txt
+thedonald.egg-info/requires.txt
+thedonald.egg-info/top_level.txt
