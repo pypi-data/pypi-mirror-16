@@ -1,0 +1,9 @@
+setup.py
+ossuapi.egg-info/PKG-INFO
+ossuapi.egg-info/SOURCES.txt
+ossuapi.egg-info/dependency_links.txt
+ossuapi.egg-info/not-zip-safe
+ossuapi.egg-info/top_level.txt
+osuapi/__init__.py
+osuapi/endpoints.py
+osuapi/osu.py
