@@ -1,0 +1,52 @@
+Metadata-Version: 1.1
+Name: botibal
+Version: 0.8.0
+Summary: The silly, quizzical XMPP bot
+Home-page: https://github.com/virtualtam/botibal
+Author: VirtualTam
+Author-email: virtualtam@flibidi.net
+License: MIT
+Description: Botibal
+        =======
+        
+        .. image:: https://img.shields.io/travis/virtualtam/botibal/master.svg
+           :target: http://travis-ci.org/virtualtam/botibal
+           :alt: Travis build status
+        
+        .. image:: https://img.shields.io/pypi/v/botibal.svg
+           :target: https://pypi.python.org/pypi/botibal
+           :alt: PyPI package
+        
+        .. image:: https://readthedocs.org/projects/botibal/badge/?version=latest
+           :target: http://botibal.readthedocs.org/en/latest/?badge=latest
+           :alt: Documentation Status
+        
+        A silly, quizzical XMPP bot based on the `SliXMPP`_ (3.4+) Python library.
+        
+        .. _SliXMPP: https://dev.louiz.org/projects/slixmpp
+        
+        Getting started
+        ---------------
+        The documentation is hosted on `ReadTheDocs <http://botibal.readthedocs.org>`_.
+        To quickly get started with Botibal, take a look at the following pages:
+        
+        * `Installation <http://botibal.readthedocs.org/en/latest/installation.html>`_
+        * `Configuration <http://botibal.readthedocs.org/en/latest/configuration.html>`_
+        * `Usage <http://botibal.readthedocs.org/en/latest/usage.html>`_
+        * `Examples <http://botibal.readthedocs.org/en/latest/examples.html>`_
+        
+        If you're interested in contributing, please check the
+        `developer resources <http://botibal.readthedocs.org/en/latest/developer.html>`_
+        ;-)
+        
+Keywords: bot jabber xmpp quizz chat
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Communications :: Chat
