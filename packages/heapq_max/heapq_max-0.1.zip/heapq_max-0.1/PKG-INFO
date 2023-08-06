@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: heapq_max
+Version: 0.1
+Summary: A max Heap version of heapq module for Python.
+Home-page: https://github.com/he-zhe/heapq_max
+Author: Zhe He
+Author-email: hezhe88@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/he-zhe/heapq_max/archive/0.1.tar.gz
+Description: UNKNOWN
+Keywords: heap,heapq,max heap
+Platform: UNKNOWN
