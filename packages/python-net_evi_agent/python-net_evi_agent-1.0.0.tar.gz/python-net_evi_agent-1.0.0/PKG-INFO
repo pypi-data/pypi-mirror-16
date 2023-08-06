@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: python-net_evi_agent
+Version: 1.0.0
+Summary: An openstack multi_tenant network isolation evidence gathering module
+Home-page: http://www.headfirst.com
+Author: wesia
+Author-email: wexll@sina.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: openstack multi_tenant network evidence
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.4
+Classifier: Programming Language :: Python :: 2.5
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
