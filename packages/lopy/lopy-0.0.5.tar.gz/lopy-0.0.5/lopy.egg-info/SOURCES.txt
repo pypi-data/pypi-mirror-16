@@ -1,0 +1,10 @@
+setup.py
+lopy/__init__.py
+lopy/commands.py
+lopy/lopy.py
+lopy.egg-info/PKG-INFO
+lopy.egg-info/SOURCES.txt
+lopy.egg-info/dependency_links.txt
+lopy.egg-info/entry_points.txt
+lopy.egg-info/requires.txt
+lopy.egg-info/top_level.txt
