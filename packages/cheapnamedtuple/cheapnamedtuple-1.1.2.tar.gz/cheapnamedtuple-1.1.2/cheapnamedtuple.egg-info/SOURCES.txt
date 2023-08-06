@@ -1,0 +1,9 @@
+MANIFEST.in
+README.md
+README.rst
+cheapnamedtuple.py
+setup.py
+cheapnamedtuple.egg-info/PKG-INFO
+cheapnamedtuple.egg-info/SOURCES.txt
+cheapnamedtuple.egg-info/dependency_links.txt
+cheapnamedtuple.egg-info/top_level.txt
