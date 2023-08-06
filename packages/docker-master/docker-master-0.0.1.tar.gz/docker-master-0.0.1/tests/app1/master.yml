@@ -1,0 +1,43 @@
+name: dm_test_app1
+
+services:
+  data:
+    image: mbodenhamer/alpine-data
+    volumes:
+      - ./data:/data
+    start:
+      order: 0
+
+  echo:
+    image: mbodenhamer/echoserver
+    environment:
+      LISTEN_PORTS: 5001,5002
+    volumes_from:
+      - data
+    restart: unless-stopped
+    expose:
+      - 5001
+    ports:
+      - 5002:5002
+    start:
+      order: 1
+    scan:
+      - 5001
+      - 5002
+
+  simple:
+    build: simple
+    links:
+      - echo:echo
+    start:
+      order: 2
+      wait: 0.05
+      poll:
+        - echo:5002
+
+  sa:
+    image: mbodenhamer/alpine-data
+    standalone: yes
+    command:
+      - ls
+      - "/"
