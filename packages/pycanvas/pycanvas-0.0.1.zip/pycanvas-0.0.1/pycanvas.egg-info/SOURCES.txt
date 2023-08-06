@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+pycanvas/__init__.py
+pycanvas/base_api.py
+pycanvas/base_model.py
+pycanvas/configuration.py
+pycanvas/rest.py
+pycanvas.egg-info/PKG-INFO
+pycanvas.egg-info/SOURCES.txt
+pycanvas.egg-info/dependency_links.txt
+pycanvas.egg-info/requires.txt
+pycanvas.egg-info/top_level.txt
