@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+tystrings/__init__.py
+tystrings/strings.py
+tystrings/tyformatter.py
+tystrings/tylogger.py
+tystrings.egg-info/.DS_Store
+tystrings.egg-info/PKG-INFO
+tystrings.egg-info/SOURCES.txt
+tystrings.egg-info/dependency_links.txt
+tystrings.egg-info/entry_points.txt
+tystrings.egg-info/top_level.txt
