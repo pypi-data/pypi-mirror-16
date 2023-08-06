@@ -1,0 +1,6 @@
+setup.py
+syrok/__init__.py
+syrok.egg-info/PKG-INFO
+syrok.egg-info/SOURCES.txt
+syrok.egg-info/dependency_links.txt
+syrok.egg-info/top_level.txt
