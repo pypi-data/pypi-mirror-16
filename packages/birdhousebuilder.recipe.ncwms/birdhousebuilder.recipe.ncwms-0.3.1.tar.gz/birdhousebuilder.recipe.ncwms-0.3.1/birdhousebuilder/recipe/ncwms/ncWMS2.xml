@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+    <Parameter name="configDir" value="${ncwms_home}" override="false"/>
+    <Parameter name="paletteDirs" value="${ncwms_home}/palettes" override="false"/>
+    <Parameter name="styleDirs" value="${ncwms_home}/styles" override="false"/>
+    <Parameter name="defaultPalette" value="x-Rainbow" override="false"/>
+    <Parameter name="advertisedPalettes" value="default,x-Rainbow,x-Rainbow-inv" override="false"/>
+</Context>
