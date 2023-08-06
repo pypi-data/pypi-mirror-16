@@ -1,0 +1,40 @@
+Metadata-Version: 1.1
+Name: Jools
+Version: 0.0.1
+Summary: A collection of Python tools
+Home-page: https://github.com/johanvergeer/jools
+Author: Johan Vergeer
+Author-email: johanvergeer@gmail.com
+License: MIT
+Download-URL: https://github.com/johanvergeer/jools/0.0.1
+Description: # jools
+        A collection of Python tools
+        
+        Jools
+        =====
+        
+        A collection of Python tools
+        
+        This project aims to deliver a set of generic tools that can be used in Python projects.
+        
+        Testing and documetation
+        ------------------------
+        Every final release is fully tested and documented
+        
+        Contributions
+        -------------
+        Feel free to contribute. Every contribution should contain tests and documentation.
+        
+        
+Keywords: tools
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
