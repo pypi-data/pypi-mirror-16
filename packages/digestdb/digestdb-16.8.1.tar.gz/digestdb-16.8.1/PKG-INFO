@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: digestdb
+Version: 16.8.1
+Summary: Digestdb provides database style (e.g. SQL) access to binary datafiles stored in a balanced set of file system directories.
+Home-page: https://github.com/claws/digestdb
+Author: Chris Laws
+Author-email: clawsicus@gmail.com
+License: MPL 2.0
+Description: Digestdb provides database style (e.g. SQL) access to binary datafiles stored in a balanced set of file system directories.
+Keywords: hash database development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+Classifier: Programming Language :: Python :: 3.5
