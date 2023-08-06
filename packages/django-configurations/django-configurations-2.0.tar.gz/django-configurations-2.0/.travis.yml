@@ -1,0 +1,50 @@
+language: python
+python: 3.5
+sudo: false
+cache:
+  directories:
+  - "~/.cache/pip"
+env:
+  global:
+    - PIP_WHEEL_DIR=$HOME/.cache/pip/wheels
+    - PIP_FIND_LINKS=file://$HOME/.cache/pip/wheels
+  matrix:
+    - TOXENV=flake8-py27
+    - TOXENV=flake8-py35
+    - TOXENV=readme-py27
+    - TOXENV=py27-dj18
+    - TOXENV=py27-dj19
+    - TOXENV=py27-djmaster
+    - TOXENV=py33-dj18
+    - TOXENV=py34-dj18
+    - TOXENV=py34-dj19
+    - TOXENV=py34-djmaster
+    - TOXENV=py35-dj18
+    - TOXENV=py35-dj19
+    - TOXENV=py35-djmaster
+    - TOXENV=pypy-dj18
+    - TOXENV=pypy-dj19
+matrix:
+  allow_failures:
+    - env: TOXENV=py27-djmaster
+    - env: TOXENV=py34-djmaster
+    - env: TOXENV=py35-djmaster
+    - env: TOXENV=pypy-djmaster
+install:
+  - pip wheel -r tests/requirements.txt
+  - pip install tox codecov
+script: tox -v
+after_success:
+  - codecov
+branches:
+  except: templates/1.5.x templates/1.6.x
+deploy:
+  provider: pypi
+  user: jazzband
+  distributions: "sdist bdist_wheel"
+  password:
+    secure: Oq6xiBtbip8+0U8t1WvDcUt1tX6imQeaHXvB+bqh2eU+RYntz8UWl9UOxfQEV4ghssX1zEKeOZzpYohj+oEi5b8oJo3H8pcbJIdK6rTNJEjQpDGSSjI3I1pHlflAJCDhPlGIgZYVPlY0dWK50l86hL+Y7QzLXjgsVCqlTCCtDfA=
+  on:
+    tags: true
+    repo: jazzband/django-configurations
+    condition: "$TOXENV = py27-dj19"
