@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: transformers
+Version: 0.1
+Summary: Experimental module for AST transformations.
+Home-page: https://github.com/nvbn/__transformers__
+Author: Vladimir Iakovlev
+Author-email: nvbn.rm@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
