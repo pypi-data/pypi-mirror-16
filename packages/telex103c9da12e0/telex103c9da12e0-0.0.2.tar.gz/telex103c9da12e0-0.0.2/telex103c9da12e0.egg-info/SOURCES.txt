@@ -1,0 +1,7 @@
+setup.py
+telex103c9da12e0/__init__.py
+telex103c9da12e0.egg-info/PKG-INFO
+telex103c9da12e0.egg-info/SOURCES.txt
+telex103c9da12e0.egg-info/dependency_links.txt
+telex103c9da12e0.egg-info/not-zip-safe
+telex103c9da12e0.egg-info/top_level.txt
