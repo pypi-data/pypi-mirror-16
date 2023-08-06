@@ -1,0 +1,4 @@
+beautifulsoup4
+markdown
+praw<4
+update_checker>=0.1
