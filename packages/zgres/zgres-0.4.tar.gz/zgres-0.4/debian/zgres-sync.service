@@ -1,0 +1,19 @@
+[Unit]
+Description=Zgres Database Info Sync
+After=cloud-final.service
+
+[Service]
+User=root
+PrivateTmp=true
+ProtectHome=read-only
+NoNewPrivileges=true
+PrivateDevices=true
+ExecStart=/usr/bin/zgres-sync --verbose
+Restart=on-failure
+#StartLimitInterval=5min
+#StartLimitBurst=4
+#StartLimitAction=reboot-force
+
+[Install]
+WantedBy=multi-user.target
+
