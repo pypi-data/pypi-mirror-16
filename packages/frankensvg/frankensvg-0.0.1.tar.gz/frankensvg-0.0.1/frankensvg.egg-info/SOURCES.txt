@@ -1,0 +1,14 @@
+.travis.yml
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+frankensvg/__init__.py
+frankensvg/cli.py
+frankensvg.egg-info/PKG-INFO
+frankensvg.egg-info/SOURCES.txt
+frankensvg.egg-info/dependency_links.txt
+frankensvg.egg-info/entry_points.txt
+frankensvg.egg-info/requires.txt
+frankensvg.egg-info/top_level.txt

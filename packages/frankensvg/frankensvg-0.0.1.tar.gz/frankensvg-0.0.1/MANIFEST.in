@@ -1,0 +1,9 @@
+# Source distribution files.
+include .travis.yml
+include LICENSE
+include README.md
+include requirements.txt
+include setup.py
+
+# Prune stray bytecode files.
+global-exclude *.pyc

@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: frankensvg
+Version: 0.0.1
+Summary: Generate an SVG from a YAML description
+Home-page: http://github.com/hodgestar/frankensvg
+Author: Simon Cross
+Author-email: hodgestar@gmail.com
+License: MIT
+Description: # frankensvg
+        A Frankenstein generator of single-page SVGs.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
