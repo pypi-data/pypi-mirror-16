@@ -1,0 +1,10 @@
+extypes-1.0.1.dist-info/top_level.txt,sha256=NXbloQOCyj_ATNEzQwUb91dzYhBKDxIgZS6cEiaQqqI,8
+extypes-1.0.1.dist-info/METADATA,sha256=lXyVjF_0G6oNZmdtHt2X3lyim0xWcynXgXCkfOlyaCk,679
+extypes-1.0.1.dist-info/WHEEL,sha256=-aSo8rHuuPDEFzkcqqQ55pDyCjy25bYMLxSiHWKAOTc,92
+extypes-1.0.1.dist-info/RECORD,,
+extypes-1.0.1.dist-info/metadata.json,sha256=PJkK2I5CNwUPpWSmgjdgkzHi4DMlqnZnWeScoST6Vq0,863
+extypes-1.0.1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+extypes/base.py,sha256=E_LWMlECavoHzgl4ECn8--vu7FPdFuK-LO9fXnyAJWE,6647
+extypes/__init__.py,sha256=2Z3cIy4yNKIbaCbHEPoemqkBHCbOp7o4kVVFhltkDlY,266
+extypes/compat.py,sha256=Q7DhtXNjOl8mV3ine2rd6CIDoCI5Q-YdHkpWA_izzjY,292
+extypes/django.py,sha256=_VsRA8ObC_Ugh_6Wr8T5c0zGCDdajaAHvpAhmytUN1M,5125
