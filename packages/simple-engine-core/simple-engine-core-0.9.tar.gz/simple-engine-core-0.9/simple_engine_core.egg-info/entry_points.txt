@@ -1,0 +1,3 @@
+[console_scripts]
+engine = core.index:main
+

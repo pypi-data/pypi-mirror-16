@@ -1,0 +1,13 @@
+LICENSE.md
+MANIFEST.in
+README.md
+setup.py
+core/__init__.py
+core/index.py
+simple_engine_core.egg-info/PKG-INFO
+simple_engine_core.egg-info/SOURCES.txt
+simple_engine_core.egg-info/dependency_links.txt
+simple_engine_core.egg-info/entry_points.txt
+simple_engine_core.egg-info/requires.txt
+simple_engine_core.egg-info/top_level.txt
+test/test_ingest.py
