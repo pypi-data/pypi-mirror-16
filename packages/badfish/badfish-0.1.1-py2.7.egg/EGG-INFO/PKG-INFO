@@ -1,0 +1,28 @@
+Metadata-Version: 1.1
+Name: badfish
+Version: 0.1.1
+Summary: Badfish - A missing data analysis and wrangling library in Python
+Home-page: https://github.com/harshnisar/badfish
+Author: Harsh Nisar and Deshana Desai
+Author-email: nisar.harsh@gmail.com
+License: License :: OSI Approved :: MIT License
+Description: 
+        A Python library built over pandas to help wrangle and analyse missing data conveniently.
+        =============
+        If you have any questions or comments about badfish, please feel free to contact me via:
+        E-mail: nisar.harsh@gmail.com or desai.deshna@gmail.com
+        
+        This project is hosted at https://github.com/harshnisar/badfish
+        
+Keywords: data cleaning,missing,machine learning,data analysis,imputation,data wrangling
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Utilities
