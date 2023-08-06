@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: change-build
+Version: 0.0.1
+Summary: change build
+Home-page: http://changedeploy.cloud
+Author: maoxuepeng
+Author-email: maoxuepeng@gmail.com
+License: MIT Licence
+Description: build for change system
+Keywords: pip,deployment,build,change
+Platform: any
