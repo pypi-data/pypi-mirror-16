@@ -1,0 +1,27 @@
+Metadata-Version: 1.1
+Name: pbshipping
+Version: 1.0.4
+Summary: Pitney Bowes Shipping API client library for Python
+Home-page: http://developer.pitneybowes.com/
+Author: Pitney Bowes Shipping API team
+Author-email: ShippingAPISupport@pb.com
+License: MIT
+Download-URL: https://github.com/PitneyBowes/pitneybowes-shipping-api-python
+Description: UNKNOWN
+Keywords: shipping,mailing
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
