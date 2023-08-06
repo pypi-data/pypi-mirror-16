@@ -1,0 +1,179 @@
+{% load i18n staticfiles arctic_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>
+            {% block title %}
+                {{ SITE_TITLE }} – {{ page_title }}
+            {% endblock %}
+        </title>
+
+        <link href="{% static "arctic/dist/assets/css/app.css" %}" rel="stylesheet">
+
+        <style>
+            {% if TOPBAR_BACKGROUND_COLOR %}
+                .topbar-background { background-color: {{ TOPBAR_BACKGROUND_COLOR }}; }
+            {% endif %}
+            {% if HIGHLIGHT_COLOR %}
+                .highlight-background,
+                table tfoot, table thead,
+                .accordion-item.is-active, .accordion-item:hover,
+                .accordion-title:focus, .accordion-title:hover,
+                .off-canvas .side-menu>li.sub--collapsed ul.active:before,
+                .off-canvas .side-menu>li>a.active:before,
+                .selectize-control.multi .selectize-input .item {
+                    background-color: {{ HIGHLIGHT_COLOR }};
+                }
+
+                .highlight-color,
+                .tabs .tabs-title.is-active a,
+                .off-canvas .side-menu>li>a.active,
+                .off-canvas .side-menu ul>li>a.active
+                 {
+                    color: {{ HIGHLIGHT_COLOR }};
+                }
+            {% endif %}
+        </style>
+
+        {% block head_extras %}{% endblock %}
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+
+        {% block body %}
+
+            {# page header #}
+            <header class="primary-header row align-middle align-justify topbar-background">
+                <div class="columns shrink">
+                    <a href="#" class="menu-button hide-for-large" id="menu-button" data-toggle="offCanvas">
+                        <span class="burger-icon"></span>
+                    </a>
+                    <a href="{{ index_url }}" class="logo">
+                        <img src="{% static SITE_LOGO %}" />
+                        <span class="hide-for-small-only">{{ SITE_NAME }}</span>
+                    </a>
+                </div>
+                {% block topbar_menu %}
+                <div class="columns shrink">
+                    <ul class="dropdown menu" data-dropdown-menu data-options="disableHover:true;clickOpen:true;">
+                        {% if request.user.username %}
+                        <li>
+                            <a href="#" class="user">{{ request.user.username }}</a>
+                            <ul class="menu">
+                                <li>
+                                	<a href="{% url 'login' %}">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                        {% else %}
+                        <li>
+                        	<a href="{% url 'login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+                {% endblock %}
+            </header>
+
+            <div class="off-canvas-wrapper">
+                <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+                    {# sidebar #}
+                    <div class="off-canvas position-left reveal-for-large" id="offCanvas" data-off-canvas>
+
+                    {% include "arctic/partials/menu.html" %}
+                </div>
+
+                    {# page content #}
+                    <div class="off-canvas-content" data-off-canvas-content>
+
+                        {% block outer_content %}
+                            <div class="block-wrapper">
+                            {% if breadcrumbs %}
+                                <nav aria-label="You are here:" role="navigation">
+                                    <ul class="breadcrumbs">
+                                        {% for name, url in breadcrumbs %}
+                                            {% if forloop.last %}
+                                                <li><span class="show-for-sr">Current: </span>{{ name }}</li>
+                                            {% else %}
+                                                <li><a href="{% url url %}">{{ name }}</a></li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </nav>
+                            {% endif %}
+
+                                {# page page header #}
+                                <div class="row">
+                                    <h3 class="columns">
+                                        {{ page_title }}
+                                    </h3>
+                                </div>
+
+                                {# page page description #}
+                                {% if page_description %}
+                                    <div class="row">
+                                        <small>{{ page_description }}</small>
+                                    </div>
+                                {% endif %}
+
+                                {# tabs #}
+                                {% if tabs %}
+                                    <div class="row">
+                                        <div class="small-12 columns">
+                                            <ul class="tabs" id="table-tabs">
+                                                {% for name, url in tabs %}
+                                                    {% if object.pk %}
+                                                        {% arctic_url url object.pk as url %}
+                                                    {% else %}
+                                                        {% arctic_url url as url %}
+                                                    {% endif %}
+                                                    {% if request.path == url %}
+                                                        <li class="tabs-title is-active"><a href="javascript:">{{ name }}</a></li>
+                                                    {% else %}
+                                                        <li class="tabs-title"><a href="{{ url }}">{{ name }}</a></li>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                                {# page messages #}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                    <div class="row">
+                                        <div class="column">
+                                        <div class="callout {{ message.tags }}" data-closable>
+                                            {{ message }}
+                                            <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                {% endif %}
+
+                                {# content #}
+                                {% block content %}content here{% endblock %}
+                            </div>
+                        {% endblock %}
+                    </div>
+
+                </div>
+            </div>
+        {% endblock %}
+        {% block scripts_bottom %}
+        <script src="{% static "arctic/dist/assets/js/app.js" %}"></script>
+        {% endblock %}
+    </body>
+</html>
