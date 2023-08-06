@@ -1,0 +1,14 @@
+activeview/__init__.py,sha256=QgT2merO244EosEBVwiHgsVI-I7x-_auOt4ab1QmuQ8,216
+activeview/apps.py,sha256=qoK5afd4neRsAqmu9opH-sMFHX2GKeQYcqroQ7P0k0k,273
+activeview/models.py,sha256=uZhZBb-KXarVfE_yBMuSgzBei5mrGMuK05AN-PELmYI,48
+activeview/urls.py,sha256=uZhZBb-KXarVfE_yBMuSgzBei5mrGMuK05AN-PELmYI,48
+activeview/views.py,sha256=uZhZBb-KXarVfE_yBMuSgzBei5mrGMuK05AN-PELmYI,48
+activeview/templatetags/__init__.py,sha256=SIvv-p56n7k_eAdGanAT2ysnLThaW9pXSIVPMm1EUOw,134
+activeview/templatetags/activeview.py,sha256=9ZxE4fp27R7fFjpqDj3h-4Z8EILxeaD1Bk_SQfHWz7U,3866
+django_activeview-0.1.0.dist-info/DESCRIPTION.rst,sha256=89Vj0UbCEX1U68yVgYjp9jw2srl-XPUjiTTtNHRb3UM,3317
+django_activeview-0.1.0.dist-info/METADATA,sha256=CoYdh4ADi9416irOrYVSWqfSoJgPcONHAath1seJOuU,4294
+django_activeview-0.1.0.dist-info/RECORD,,
+django_activeview-0.1.0.dist-info/WHEEL,sha256=9Z5Xm-eel1bTS7e6ogYiKz0zmPEqDwIypurdHN1hR40,116
+django_activeview-0.1.0.dist-info/metadata.json,sha256=v0vvgNhltfbD-tUyEMYLtdBH9QpYBBbs_sJ1USHb2ho,1069
+django_activeview-0.1.0.dist-info/top_level.txt,sha256=qDPCRj5QRf7V00H-ImkDZxGLysGrlfAWbg0RI3DJY_I,11
+django_activeview-0.1.0.dist-info/zip-safe,sha256=frcCV1k9oG9oKj3dpUqdJg1PxRT2RSN_XKdLCPjaYaY,2
