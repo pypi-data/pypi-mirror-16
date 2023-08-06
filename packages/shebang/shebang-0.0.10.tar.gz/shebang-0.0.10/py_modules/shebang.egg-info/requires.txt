@@ -1,0 +1,6 @@
+future
+isbinaryfile
+public
+read
+setupfiles
+write
