@@ -1,0 +1,36 @@
+Metadata-Version: 1.1
+Name: starred
+Version: 1.2.0
+Summary: creating your own Awesome List used GitHub stars!
+Home-page: https://github.com/maguowei/starred
+Author: maguowei
+Author-email: imaguowei@gmail.com
+License: The MIT License (MIT)
+Description: 
+        Install
+        ```````
+        
+        .. code:: bash
+        
+          pip install starred
+        
+          starred --username maguowei --sort > README.md
+        
+        Links
+        `````
+        
+        * `website <https://github.com/maguowei/starred>`_
+        
+        
+Platform: any
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
