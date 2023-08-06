@@ -1,0 +1,6 @@
+[console_scripts]
+clean-up = cloud_pipe.pipeline.cleanup:main
+create-lambda-exec-role = cloud_pipe.scripts.setup_pipe:create_lambda_exec_role
+setup-pipe = cloud_pipe.scripts.setup_pipe:main
+wrap = cloud_pipe.scripts.wrap:main
+
