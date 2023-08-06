@@ -1,0 +1,14 @@
+aws_etc_keys.rst:90: [redirected with Found] https://requester.mturk.com/mturk/beginsignin to https://www.amazon.com/ap/signin?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.assoc_handle=amzn_mturk_requester&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&_encoding=UTF8&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.pape.max_auth_age=43200&marketplaceId=A2LNHB43R2GSAT&clientContext=04b7e5865b995a9006bedefe6ab739&openid.return_to=https%3A%2F%2Frequester.mturk.com%2Fmturk%2Fendsignin
+aws_etc_keys.rst:90: [redirected with Found] https://requester.mturk.com/begin_signin to https://www.amazon.com/ap/signin?_encoding=UTF8&clientContext=04b7e5865b995a9006bedefe6ab739&marketplaceId=A2LNHB43R2GSAT&openid.assoc_handle=amzn_mturk_requester&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.pape.max_auth_age=43200&openid.return_to=https%3A%2F%2Frequester.mturk.com%2Fmturk%2Fendsignin
+aws_etc_keys.rst:90: [redirected with Found] https://www.mturk.com/mturk/beginsignin to https://www.amazon.com/ap/signin?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.assoc_handle=amzn_mturk_worker&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&_encoding=UTF8&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.pape.max_auth_age=43200&marketplaceId=A384XSLT9ODACQ&clientContext=04f4061dfe2bbf7901f79525654e14&openid.return_to=https%3A%2F%2Fwww.mturk.com%2Fmturk%2Fendsignin
+aws_etc_keys.rst:103: [redirected with Found] https://psiturk.org/dashboard/api_credentials to https://psiturk.org/login?next=%2Fdashboard%2Fapi_credentials
+demos/bartlett1932.rst:22: [local] ../_static/bartlett1932.zip
+demos/chatroom.rst:8: [local] ../_static/chatroom.zip
+demos/function-learning.rst:14: [local] ../bartlett1932
+demos/function-learning.rst:34: [local] ../_static/function-learning.zip
+demos/mcmcp.rst:17: [local] ../_static/mcmcp.zip
+demos/rogers.rst:9: [local] ../_static/rogers.zip
+developing_wallace_setup_guide.rst:97: [local] Wallace-with-Anaconda.md
+monitoring_a_live_experiment.rst:53: [local] link%20https://slack.com/services/new/papertrail
+monitoring_a_live_experiment.rst:29: [redirected with Found] https://papertrailapp.com/systems to https://papertrailapp.com/login?return_to=%2Fsystems
+wallace_with_anaconda.rst:4: [broken] https://www.continuum.io/downloads: <urlopen error [SSL: UNSUPPORTED_PROTOCOL] unsupported protocol (_ssl.c:590)>
