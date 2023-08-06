@@ -1,0 +1,8 @@
+README.rst
+setup.py
+pgwebsocket/__init__.py
+pgwebsocket.egg-info/PKG-INFO
+pgwebsocket.egg-info/SOURCES.txt
+pgwebsocket.egg-info/dependency_links.txt
+pgwebsocket.egg-info/requires.txt
+pgwebsocket.egg-info/top_level.txt
