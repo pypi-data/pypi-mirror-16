@@ -1,0 +1,9 @@
+setup.py
+CSImportResources/CloudShellManager.py
+CSImportResources/__init__.py
+CSImportResources.egg-info/PKG-INFO
+CSImportResources.egg-info/SOURCES.txt
+CSImportResources.egg-info/dependency_links.txt
+CSImportResources.egg-info/entry_points.txt
+CSImportResources.egg-info/requires.txt
+CSImportResources.egg-info/top_level.txt
