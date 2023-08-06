@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+audiotrans_transform_stft/__init__.py
+audiotrans_transform_stft/__main__.py
+audiotrans_transform_stft.egg-info/PKG-INFO
+audiotrans_transform_stft.egg-info/SOURCES.txt
+audiotrans_transform_stft.egg-info/dependency_links.txt
+audiotrans_transform_stft.egg-info/requires.txt
+audiotrans_transform_stft.egg-info/top_level.txt
