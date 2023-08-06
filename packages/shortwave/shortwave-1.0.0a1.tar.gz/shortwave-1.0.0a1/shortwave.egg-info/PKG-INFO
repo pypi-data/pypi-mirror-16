@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: shortwave
+Version: 1.0.0a1
+Summary: Library of networking components
+Home-page: http://shortwave.fm/
+Author: Nigel Small <nigel@nigelsmall.name>
+Author-email: nigel@nigelsmall.name
+License: Apache License, Version 2.0
+Description: Shortwave is a library of components for Python network applications.
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
