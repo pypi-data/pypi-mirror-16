@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2008-07-12 17:35+CET\n"
+"PO-Revision-Date: 2011-03-04 18:45+0100\n"
+"Last-Translator: Logilab\n"
+"Language-Team: French <contact@logilab.fr>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#, python-format
+msgid "%(font)s (inline style: %(style)s, family: %(family)s)"
+msgstr "%(font)s (style en ligne: %(style)s, famille: %(family)s)"
+
+msgid "Attribute :  new value vs old value"
+msgstr "Attribut : nouvelle valeur vs ancienne valeur"
+
+#, python-format
+msgid "Authorized fonts are : %s"
+msgstr "Les polices autorisées sont : %s"
+
+msgid "Depth of table of contents"
+msgstr "Profondeur de la table des matières"
+
+msgid "Error"
+msgstr "Erreur"
+
+msgid "Errors"
+msgstr "Erreurs"
+
+msgid ""
+"Following text blocks use fonts for which you must choose a substitution"
+msgstr ""
+"Les blocs de texte ci-dessous utilisent des polices pour lesquelles vous "
+"devrez définir une substitution"
+
+msgid "Font"
+msgstr "Police"
+
+msgid "Fonts"
+msgstr "Polices"
+
+msgid "Headers"
+msgstr "Titres des chapitres"
+
+msgid "Images legends"
+msgstr "Légendes des images"
+
+msgid ""
+"Images legends must respect the following format :  'Images' followed by the "
+"chapter number and the table indice : (ex:'Image 1.1 -1')."
+msgstr ""
+"Les légendes des images doivent respecter le format suivant : 'Images' suivi "
+"du numéro de chapitre et de l'indice de la table : 'Image 1.1-1'"
+
+msgid "Modified styles"
+msgstr "Styles modifiés"
+
+msgid "New styles"
+msgstr "Nouveaux styles"
+
+#, python-format
+msgid "No automatically generated legend found for %s"
+msgstr "Pas de légende automatique pour %s"
+
+#, python-format
+msgid ""
+"No automatically generated title found for the table of contents number %d"
+msgstr "La table des matières %d n'a pas de titre automatiquement généré"
+
+#, python-format
+msgid "No automatically genereted legend found for %s"
+msgstr "%s n'a pas de légende automatiquement générée"
+
+msgid ""
+"Some differences in styles (in/pt/cm) may be caused by the diffrence in "
+"measurement unit settings. Choose \"Tools > Options... > OpenOffice.org."
+"Writer > General > Measurement unit \" to set the right unit (cm)."
+msgstr ""
+"Certaines des différences signalées (in/pt/cm) peuvent venir de la "
+"différence des unités de mesure utilisées dans les deux documents. Veillez "
+"mettre \"cm\" comme unités de mesure dans dans Outils > Options... > "
+"OpenOffice.org.Writer > Général > Unité de mesure."
+
+msgid "Style (style family)"
+msgstr "Style (famille de style)"
+
+msgid "Styles"
+msgstr "Styles"
+
+msgid "Styles using this font"
+msgstr "Styles utilisant cette police"
+
+msgid "Table of contents"
+msgstr "Table des matières"
+
+msgid "Table text"
+msgstr "Texte de la table"
+
+msgid "Tables legends"
+msgstr "Légendes des tables"
+
+msgid ""
+"Tables legends must respect the following format : 'Tableau' followed by the "
+"chapter number and the table indice : (ex:'Tableau 1.1 -2')"
+msgstr ""
+"Les légendes des Tables doivent respecter le format suivant : 'Tableau' "
+"suivi du numéro de chapitre et de l'indice de la table : 'Tableau 1.2-3'"
+
+msgid "Text"
+msgstr "Texte"
+
+msgid "Text blocks using this font"
+msgstr "Blocs de texte utilisant cette police"
+
+msgid "Text using this style"
+msgstr "Texte avec ce style"
+
+msgid "The table of contents must be placed before the first header"
+msgstr ""
+"La table des matières doit être placée devant le premier titre de chapitre"
+
+msgid "The table of contents must be unique"
+msgstr "Il ne doit y avoir qu'une seule table des matières"
+
+#, python-format
+msgid "This document contains %d tables of contents"
+msgstr "Ce document contient %d tables des matières"
+
+msgid "This document contains no table of contents"
+msgstr "Ce document ne contient pas de table des matières"
+
+msgid "This style is not used"
+msgstr "Ce style n'est pas utilisé."
+
+msgid ""
+"Those fonts will be automatically replaced if you choose to \"fixe styles up"
+"\"."
+msgstr ""
+"Ces polices seront remplacées automatiquement si vous appliquez la "
+"correction automatique des styles."
+
+msgid "Those modifications will be lost if you choose to \"fixe styles up\"."
+msgstr "Ces modifications seront perdues lors de la mise à jour des styles."
+
+msgid ""
+"Those styles will be lost or replaced if you choose to \"fixe styles up\"."
+msgstr ""
+"Ces styles seront perdus ou remplacés si vous appliquez la correction "
+"automatique."
+
+msgid ""
+"Those styles will be replaced or lost if you choose to \"fixe styles up\"."
+msgstr ""
+"Ces styles seront remplacés ou perdus si vous appliquez la correction "
+"automatique."
+
+#, python-format
+msgid "Unauthorized level %d"
+msgstr "Les titres de chapitre de niveau %d ne sont pas autorisés."
+
+msgid "Unused styles"
+msgstr "Styles non utilisés"
+
+#, python-format
+msgid "Wrong legend name for %s"
+msgstr "Le titre de la légende de %s est incorrect"
+
+#, python-format
+msgid "default font for %ss"
+msgstr "police par défaut pour %ss"
+
+#~ msgid "The table of content must be placed before the first header"
+#~ msgstr ""
+#~ "La table des matières doit se trouver devant le premier titre de chapitre"

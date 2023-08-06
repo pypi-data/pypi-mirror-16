@@ -1,0 +1,3 @@
+recursive-include i18n *.pot *.po *.mo
+recursive-include test/data *.xml
+
