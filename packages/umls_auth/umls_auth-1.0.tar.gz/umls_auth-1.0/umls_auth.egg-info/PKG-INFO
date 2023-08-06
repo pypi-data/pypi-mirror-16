@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: umls-auth
+Version: 1.0
+Summary: Standalone authentication package for UMLS REST metathesaurus API
+Home-page: http://github.com/aduriseti/umls_auth
+Author: Amal Duriseti
+Author-email: aduriseti@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
