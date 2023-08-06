@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: mssup
+Version: 1.0.1
+Summary: A simple tool to upload file to meituan object bucket.
+Home-page: https://github.com/iberryful/mssup
+Author: berry
+Author-email: iberryful@gmail
+License: MIT lisence
+Description: UNKNOWN
+Platform: UNKNOWN

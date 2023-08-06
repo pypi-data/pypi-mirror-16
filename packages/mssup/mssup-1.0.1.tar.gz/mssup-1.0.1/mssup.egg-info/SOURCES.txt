@@ -1,0 +1,9 @@
+setup.py
+mssup/__init__.py
+mssup/mssup.py
+mssup.egg-info/PKG-INFO
+mssup.egg-info/SOURCES.txt
+mssup.egg-info/dependency_links.txt
+mssup.egg-info/entry_points.txt
+mssup.egg-info/requires.txt
+mssup.egg-info/top_level.txt

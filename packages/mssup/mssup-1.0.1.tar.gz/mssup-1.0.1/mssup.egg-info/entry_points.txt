@@ -1,0 +1,4 @@
+
+    [console_scripts]
+    mssup = mssup.mssup:main
+    
