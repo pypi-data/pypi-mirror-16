@@ -1,0 +1,12 @@
+README.txt
+setup.py
+basicutilsd/__init__.py
+basicutilsd/http_status_code.py
+basicutilsd/print_it.py
+basicutilsd/servic.py
+basicutilsd.egg-info/PKG-INFO
+basicutilsd.egg-info/SOURCES.txt
+basicutilsd.egg-info/dependency_links.txt
+basicutilsd.egg-info/pbr.json
+basicutilsd.egg-info/requires.txt
+basicutilsd.egg-info/top_level.txt
