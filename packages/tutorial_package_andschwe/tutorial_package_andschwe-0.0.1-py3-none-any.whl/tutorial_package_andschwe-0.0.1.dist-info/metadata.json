@@ -1,0 +1,1 @@
+{"extensions": {"python.details": {"contacts": [{"name": "Uwe Schmitt", "role": "author"}], "document_names": {"description": "DESCRIPTION.rst"}}}, "generator": "bdist_wheel (0.29.0)", "license": "BSD", "metadata_version": "2.0", "name": "tutorial-package-andschwe", "summary": "An demonstration of how to create and publish python packages", "version": "0.0.1"}
