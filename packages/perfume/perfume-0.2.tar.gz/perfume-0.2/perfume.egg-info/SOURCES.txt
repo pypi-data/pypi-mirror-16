@@ -1,0 +1,9 @@
+MANIFEST.in
+README.md
+setup.py
+perfume/__init__.py
+perfume.egg-info/PKG-INFO
+perfume.egg-info/SOURCES.txt
+perfume.egg-info/dependency_links.txt
+perfume.egg-info/requires.txt
+perfume.egg-info/top_level.txt

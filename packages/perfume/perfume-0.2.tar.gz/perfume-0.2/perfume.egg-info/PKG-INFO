@@ -1,0 +1,59 @@
+Metadata-Version: 1.1
+Name: perfume
+Version: 0.2
+Summary: Simple Object Oriented layer for Flask.
+Home-page: http://github.com/hoh/perfume
+Author: Hugo Herter
+Author-email: hugoherter.com
+License: BSD
+Description: Perfume
+        ===
+        
+        Perfume aims at making Flask-apps more Object-Oriented friendly
+        by providing a base class to create them.
+        
+        It's BSD licensed.
+        
+        Usage:
+        - inherit from Perfume
+        - decorate your methods with route(path)
+        
+        Perfume is Easy
+        ---
+        
+        
+        ```python
+        from perfume import Perfume, route
+        
+        class Hello(Perfume):
+        
+            @route('/')
+            def hello(self):
+                return "Hello World !"
+        
+        if __name__ == "__main__":
+            Hello().run()
+        ```
+        
+        And Easy to Setup
+        ---
+        
+        ```bash
+        $ pip install Perfume
+        $ python hello.py
+         * Running on http://localhost:5000/
+        ```
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: Web Environment
+Classifier: Development Status :: 3 - Alpha
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.5
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
