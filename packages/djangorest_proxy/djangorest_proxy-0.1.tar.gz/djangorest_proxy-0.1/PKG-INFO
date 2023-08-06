@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: djangorest_proxy
+Version: 0.1
+Summary: PROXY for API REST
+Home-page: https://github.com/Marcelo1180/djangorest_proxy
+Author: Juan Marcelo Arteaga Gutierrez
+Author-email: arteagamarcelo@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/Marcelo1180/djangorest_proxy/tarball/0.1
+Description: UNKNOWN
+Keywords: django,rest,proxy
+Platform: UNKNOWN
