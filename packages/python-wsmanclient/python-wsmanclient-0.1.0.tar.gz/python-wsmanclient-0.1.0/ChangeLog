@@ -1,0 +1,16 @@
+CHANGES
+=======
+
+0.1.0
+-----
+
+* Use constraints for all the things
+
+0.0.1
+-----
+
+* Allow importing wsmanclient.Client
+* Add documentation
+* Import client from python-dracclient
+* Initial commit
+* Added .gitreview
