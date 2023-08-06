@@ -1,0 +1,121 @@
+Change History
+==============
+
+0.6.0 - 2016-08-27
+------------------
+
+Thanks to @BenjaminBossan, @cancan101, @DanChianucci who greatly
+contributed to this release.
+
+- lasagne: Many improvements to the nolearn.lasagne interface.  Some
+  of the more important changes:
+
+  - Add basic support for multiple outputs
+    https://github.com/dnouri/nolearn/pull/278
+
+  - Extra scores can now be computed as part of Theano computation
+    graph
+    https://github.com/dnouri/nolearn/pull/261
+
+  - Fix excessive memory usage in batch iterator when using shuffle
+    https://github.com/dnouri/nolearn/pull/238
+
+  - Add visualization code for saliency maps
+    https://github.com/dnouri/nolearn/pull/223
+
+  - Add method for convenient access of network's intermediate layer
+    output
+    https://github.com/dnouri/nolearn/pull/196
+
+  - Allow gradients to be scaled per layer
+    https://github.com/dnouri/nolearn/pull/195
+
+  - Add shuffling to BatchIterator
+    https://github.com/dnouri/nolearn/pull/193
+
+  - Add l1 and l2 regularization to default objective
+    https://github.com/dnouri/nolearn/pull/169
+
+  - Add RememberBestWeights handler: restores best weights after
+    training
+    https://github.com/dnouri/nolearn/pull/155
+
+  - Passing Lasagne layer instances to 'layers' parameter of NeuralNet
+    is now possible
+    https://github.com/dnouri/nolearn/pull/146
+
+  - Add feature visualization functions plot_loss, plot_weights,
+    plot_activity, and plot_occlusion.  The latter shows for image
+    samples, which part of the images are crucial for the prediction
+    https://github.com/dnouri/nolearn/pull/74
+
+  - Add SaveWeights handler that saves weights to disk every n epochs
+    https://github.com/dnouri/nolearn/pull/91
+
+  - In verbose mode, print out more detailed layer information before
+    starting with training
+    https://github.com/dnouri/nolearn/pull/85
+
+  - List of NeuralNet's 'layers' parameter may now be formatted to
+    contain '(layer_factory, layer_kwargs)' tuples
+    https://github.com/dnouri/nolearn/pull/73
+
+- dbn: Added back module dbn because there's a few online articles
+  referencing it.  Works with Python 2 only.
+
+- Removed deprecated modules.  Also deprecate grid_search module.
+
+0.5 - 2015-01-22
+----------------
+
+- Deprecated modules console, dataset, dbn, and model.
+
+- lasagne: Added scikit-learn compatible wrapper around the `Lasagne`
+  neural network library for building simple feed-forward networks.
+
+0.5b1 - 2014-08-09
+------------------
+
+- overfeat: Add OverFeat-based feature extractor.
+
+- caffe: Add feature extractor based on ImageNet-pretrained nets found
+  in caffe.
+
+0.4 - 2014-01-15
+----------------
+
+- cache: Use joblib's `numpy_pickle` instead of `cPickle` to persist.
+
+0.3.1 - 2013-11-18
+------------------
+
+- convnet: Add `center_only` and `classify_direct` options.
+
+0.3 - 2013-11-02
+----------------
+
+- convnet: Add scikit-learn estimator based on Jia and Donahue's
+  `DeCAF`.
+
+- dbn: Change default args of `use_re_lu=True` and `nesterov=True`.
+
+0.2 - 2013-03-03
+----------------
+
+- dbn: Add parameters `learn_rate_decays` and `learn_rate_minimums`,
+  which allow for decreasing the learning after each epoch of
+  fine-tuning.
+
+- dbn: Allow `-1` as the value of the input and output layers of the
+  neural network.  The shapes of `X` and `y` will then be used to
+  determine those.
+
+- dbn: Add support for processing sparse input data matrices.
+
+- dbn: Improve miserable speed of `DBN.predict_proba`.
+
+0.2b1 - 2012-12-30
+------------------
+
+- Added a scikit-learn estimator based on George Dahl's `gdbn` in
+  `nolearn.dbn`.
