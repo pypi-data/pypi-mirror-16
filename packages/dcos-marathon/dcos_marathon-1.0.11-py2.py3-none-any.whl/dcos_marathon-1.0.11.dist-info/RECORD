@@ -1,0 +1,8 @@
+__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+dcos_marathon.py,sha256=QeVAekqtzITta0gGP3pcjovN1GPFWKtCoI4M9IIc-uY,6262
+dcos_marathon-1.0.11.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+dcos_marathon-1.0.11.dist-info/METADATA,sha256=tZ74KJQQ4owWlQPGCa6IVpUwXgyJ59fDZV89RpJf9lQ,900
+dcos_marathon-1.0.11.dist-info/RECORD,,
+dcos_marathon-1.0.11.dist-info/WHEEL,sha256=9Z5Xm-eel1bTS7e6ogYiKz0zmPEqDwIypurdHN1hR40,116
+dcos_marathon-1.0.11.dist-info/metadata.json,sha256=mD4uMsPcOd10Pmf_LEAnQk2W_JeZHdUqBLcmSAk2p3o,992
+dcos_marathon-1.0.11.dist-info/top_level.txt,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
