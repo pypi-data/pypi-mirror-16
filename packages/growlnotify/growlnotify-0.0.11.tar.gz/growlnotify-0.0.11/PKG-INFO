@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: growlnotify
+Version: 0.0.11
+Summary: growlnotify(1) Python wrapper (OS X only)
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: growlnotify notify
+Platform: OSX
