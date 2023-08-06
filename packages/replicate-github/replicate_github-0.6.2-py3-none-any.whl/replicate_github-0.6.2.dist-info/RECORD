@@ -1,0 +1,11 @@
+replicate_github-0.6.2.dist-info/DESCRIPTION.rst,sha256=YXa9TL5iw3uyVV1L2XAYhll_Hro2AJlPyqRvFI5lQaw,2933
+replicate_github-0.6.2.dist-info/METADATA,sha256=JOV_LJAUaZIOa4RCzjc1vSDS406Q81KwsPySjWiOW1E,3696
+replicate_github-0.6.2.dist-info/RECORD,,
+replicate_github-0.6.2.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+replicate_github-0.6.2.dist-info/entry_points.txt,sha256=Xk9TfbbY9Xw7PXv7WQIKKqC54cKJV8MX2AkIDGw_cqY,63
+replicate_github-0.6.2.dist-info/metadata.json,sha256=P7LTKqIr5fwQnrmIF57FlkDvXXLKzeyrJKZ3RzBhLRI,1070
+replicate_github-0.6.2.dist-info/top_level.txt,sha256=cqJxPQAZxaAl_S-cxLPlETfm-Us9lGn_ceHz6tOCoyg,16
+replicategithub/__init__.py,sha256=3XbqHdxcs1rlzdZun_nOq__SMkQmYFimP8i-xAjFeio,4674
+replicategithub/cli.py,sha256=Z4pYZ4E7Nhrnebw1x8qoo3pzgFspQiHOSeahZdbe1oM,7098
+replicategithub/mirror.py,sha256=Sdh53J92gkTunmdfCD644M30h6NNWlwIIcichqhywds,6858
+replicategithub/webhook.py,sha256=yTUGCyLVo7QXra2yOARXNK2cQV91-IK_5cZ1jaj1pKY,5438
