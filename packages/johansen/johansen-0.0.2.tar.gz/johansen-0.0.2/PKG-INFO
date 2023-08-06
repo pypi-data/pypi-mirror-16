@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: johansen
+Version: 0.0.2
+Summary: Python implementation of the Johansen test for cointegration
+Home-page: https://github.com/https://github.com/iisayoo/johansen
+Author: Isaiah Yoo
+Author-email: yoo.isaiah@gmail.com
+License: MIT License
+Description: UNKNOWN
+Platform: UNKNOWN
