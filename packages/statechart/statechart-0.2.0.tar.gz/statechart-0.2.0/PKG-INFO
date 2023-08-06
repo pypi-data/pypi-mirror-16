@@ -1,0 +1,59 @@
+Metadata-Version: 1.1
+Name: statechart
+Version: 0.2.0
+Summary: Python UML statechart framework
+Home-page: https://github.com/leighmck/statechart
+Author: Leigh McKenzie
+Author-email: maccarav0@gmail.com
+License: ISCL
+Description: ===============================
+        Python Statechart
+        ===============================
+        
+        .. image:: https://img.shields.io/pypi/v/statechart.svg
+                :target: https://pypi.python.org/pypi/statechart
+        
+        .. image:: https://img.shields.io/travis/leighmck/statechart.svg
+                :target: https://travis-ci.org/leighmck/statechart
+        
+        .. image:: https://readthedocs.org/projects/statechart/badge/?version=latest
+                :target: https://readthedocs.org/projects/statechart/?badge=latest
+                :alt: Documentation Status
+        
+        
+        Python UML statechart framework
+        
+        * Free software: ISC license
+        * Documentation: https://statechart.readthedocs.org.
+        
+        Features
+        --------
+        
+        * TODO
+        
+        Credits
+        ---------
+        
+        This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+        
+        .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+        .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+        
+        
+        =======
+        History
+        =======
+        
+        0.1.0 (2016-1-22)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: statechart
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: ISC License (ISCL)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
