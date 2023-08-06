@@ -1,0 +1,14 @@
+django_hfut_auth-0.1.2.dist-info/DESCRIPTION.rst,sha256=C24u0x5IRuMVn6pKna3Vy6W3EJ6J5QN2mL2MgOsKynM,4653
+django_hfut_auth-0.1.2.dist-info/METADATA,sha256=1kGSn2XxKdtMTN0awV6eyssQMwCST7JBikVtbPXjKSw,5415
+django_hfut_auth-0.1.2.dist-info/RECORD,,
+django_hfut_auth-0.1.2.dist-info/WHEEL,sha256=9Z5Xm-eel1bTS7e6ogYiKz0zmPEqDwIypurdHN1hR40,116
+django_hfut_auth-0.1.2.dist-info/metadata.json,sha256=xyH-lnm0p8tI7RQ9aBH_lH7eFhe-_mqLpGEkruNtQf4,1076
+django_hfut_auth-0.1.2.dist-info/top_level.txt,sha256=RZnbLMTxim7UiGgXEN_v0m3UC1Fuph9fuPx4VsbAMDQ,10
+hfut_auth/__init__.py,sha256=ZiE3ttRqv1SbL0Uo-3gbmapE0f9Vtc4CpNT8wc6MjUY,298
+hfut_auth/apps.py,sha256=eAZczRCSGA2AZroftV8Qqaocw4ebLPScYgaTU3k_d2U,152
+hfut_auth/backends.py,sha256=pkNTmCMDRCRA0HXVOC2g7ycl5Y9FrODEGuu6nwuJmTM,2048
+hfut_auth/forms.py,sha256=mrJOO2cw2_ZCVOTrPZV7nsLK4qTuU3pZ3MuW-9U_rKI,541
+hfut_auth/log.py,sha256=1VzTIaQs87E42Uvph05wI13v_K4a9yXi0ZGKOphmkrw,1030
+hfut_auth/settings.py,sha256=DWb6jIyyXzfaNW457o9H9_hBTSLOvsw5nqYSGAJo6wA,806
+hfut_auth/signals.py,sha256=V7zRu7QWhKRpALeyisY3qtR7bLXLDV0VLb198WNqDGY,363
+hfut_auth/tests.py,sha256=ti0NqDTMl9nBbCXymaqfavH49ar7nx9lXiTe1lAlF5k,2423
