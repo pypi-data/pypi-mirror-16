@@ -1,0 +1,5 @@
+mezzanine >= 4.2.0
+xhtml2pdf
+
+[stripe]
+stripe
