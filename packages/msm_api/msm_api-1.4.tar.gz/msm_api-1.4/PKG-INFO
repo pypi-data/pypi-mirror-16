@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: msm_api
+Version: 1.4
+Summary: Use base64 encoder on memcached server.
+Home-page: https://github.com/eHanlin/msm_api
+Author: Sparrow Jang
+Author-email: sparrow.jang@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN

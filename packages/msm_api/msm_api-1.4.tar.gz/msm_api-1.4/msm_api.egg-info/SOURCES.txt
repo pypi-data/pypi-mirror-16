@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+msm_api/__init__.py
+msm_api/memory_session_api.py
+msm_api.egg-info/PKG-INFO
+msm_api.egg-info/SOURCES.txt
+msm_api.egg-info/dependency_links.txt
+msm_api.egg-info/requires.txt
+msm_api.egg-info/top_level.txt
