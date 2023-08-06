@@ -1,0 +1,12 @@
+soundcloud_dl/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+soundcloud_dl/soundcloud_dl.py,sha256=jUsZRR-xWR_DuAX-xp3SybfvuVeQA9yGxAJb6uTrW_w,1673
+soundcloud_dl/downloader/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+soundcloud_dl/downloader/config.py,sha256=rb9-iSyKXYy3X7EFnMS8QQryBc5JxLcNc0rPTOFuhnE,94
+soundcloud_dl/downloader/downloader.py,sha256=XIfWFe51nRlKLg8HSGEZiAVhuQW3IePZL8os2oL3bQY,15973
+soundcloud_dl-0.1.8.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+soundcloud_dl-0.1.8.dist-info/METADATA,sha256=hhajOpcXwJvNjr8o2d7Ghc1ti-QcoHyMjejN9_UxqFo,549
+soundcloud_dl-0.1.8.dist-info/RECORD,,
+soundcloud_dl-0.1.8.dist-info/WHEEL,sha256=90z-L1FjHEv_g8pMPaPbaXuhBIvSlvYObRaa122x8ag,97
+soundcloud_dl-0.1.8.dist-info/entry_points.txt,sha256=eUQNTCiVoG195O8kWYtdgVffNiIVyWaj3eSsebQTJ_k,109
+soundcloud_dl-0.1.8.dist-info/metadata.json,sha256=kpCLCax9QOd2KW7h0vsO14o5XKjt85Q96jveWsUJEZk,985
+soundcloud_dl-0.1.8.dist-info/top_level.txt,sha256=I2Q4yZlj0MW7TG1yzpmJRQYmlZNHFWBaGZEVBNHngFM,39
