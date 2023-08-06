@@ -1,0 +1,7 @@
+setup.py
+pickrr/__init__.py
+pickrr.egg-info/PKG-INFO
+pickrr.egg-info/SOURCES.txt
+pickrr.egg-info/dependency_links.txt
+pickrr.egg-info/not-zip-safe
+pickrr.egg-info/top_level.txt
