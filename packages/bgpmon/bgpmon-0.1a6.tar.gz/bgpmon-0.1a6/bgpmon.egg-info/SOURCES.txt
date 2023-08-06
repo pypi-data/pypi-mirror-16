@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+bgpmon/__init__.py
+bgpmon/bgpmon.py
+bgpmon.egg-info/PKG-INFO
+bgpmon.egg-info/SOURCES.txt
+bgpmon.egg-info/dependency_links.txt
+bgpmon.egg-info/requires.txt
+bgpmon.egg-info/top_level.txt

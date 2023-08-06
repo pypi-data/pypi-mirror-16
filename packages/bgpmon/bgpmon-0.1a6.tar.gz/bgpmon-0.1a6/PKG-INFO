@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: bgpmon
+Version: 0.1a6
+Summary: A simple Python wrapper for the BGPMon SOAP API.
+Home-page: https://github.com/brettkrueger/bgpmon/bgpmon/
+Author: Brett Krueger
+Author-email: brett@jinsku.com
+License: MIT
+Description: UNKNOWN
+Keywords: bgpmon python wrapper
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
