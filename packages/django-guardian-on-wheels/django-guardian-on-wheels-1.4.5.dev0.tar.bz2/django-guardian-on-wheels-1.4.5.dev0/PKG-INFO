@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: django-guardian-on-wheels
+Version: 1.4.5.dev0
+Summary: Implementation of per object permissions for Django.  Minor fork to get wheels in Pypi
+Home-page: http://github.com/pombredanne/django-guardian
+Author: Lukasz Balcerzak, Philippe Ombredanne
+Author-email: pombredanne@gmail.com
+License: BSD
+Download-URL: https://github.com/pombredanne/django-guardian/tags
+Description: ===============
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Security
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
