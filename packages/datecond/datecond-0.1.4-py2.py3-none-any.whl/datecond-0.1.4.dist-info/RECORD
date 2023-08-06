@@ -1,0 +1,10 @@
+datecond/__init__.py,sha256=TlfrxG6cy9INd8JVRMVpJ6Dkx7SII6dDkMlBh-hQaXs,3230
+datecond/__main__.py,sha256=qB8D8rC3wrIp8kW_MA-gygsOg4uvWUpwlJpSol2KT7I,2258
+datecond-0.1.4.dist-info/DESCRIPTION.rst,sha256=GHvw4izR9-GBy1HiwKHayKoTIemabSbUi1dNb9EqGh0,3744
+datecond-0.1.4.dist-info/METADATA,sha256=8joZJH1ZyRrHznIJJQ9EjK6c7DnSTWnnxm51X-6CZnc,4448
+datecond-0.1.4.dist-info/RECORD,,
+datecond-0.1.4.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+datecond-0.1.4.dist-info/metadata.json,sha256=TheOZ1CdgyexWGBoYOLhTJ0PdOocbTHxsAPJULAmxHQ,892
+datecond-0.1.4.dist-info/top_level.txt,sha256=42OUCVMkbh5zfYHRSOPEkfQUhNPP_-x8NW_D3smcbNQ,15
+tests/__init__.py,sha256=Np0p37VkSqvKyed7K0UUFFj4q_4YiSQmgV-dofY6OrI,1624
+tests/test_daterange.py,sha256=c9EhvzA7OpHQ6QXsZLWr65Mnv5q7zCohDvyG5EVs7hU,2663
