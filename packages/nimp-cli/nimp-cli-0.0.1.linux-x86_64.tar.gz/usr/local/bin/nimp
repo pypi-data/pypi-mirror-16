@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+# EASY-INSTALL-ENTRY-SCRIPT: 'nimp-cli==0.0.1','console_scripts','nimp'
+__requires__ = 'nimp-cli==0.0.1'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('nimp-cli==0.0.1', 'console_scripts', 'nimp')()
+    )
