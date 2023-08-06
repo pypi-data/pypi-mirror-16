@@ -1,0 +1,6 @@
+numpy
+
+[all]
+sympy>=1.0
+pysym
+symcxx
