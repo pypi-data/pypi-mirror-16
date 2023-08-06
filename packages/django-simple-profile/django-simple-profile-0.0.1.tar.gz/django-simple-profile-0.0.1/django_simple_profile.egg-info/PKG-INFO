@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: django-simple-profile
+Version: 0.0.1
+Summary: django-simple-profile
+Home-page: https://github.com/lvjiyong/django-simple-profile
+Author: lvjiyong
+Author-email: lvjiyong@gmail.com
+License: Apache2.0
+Description: # Django-Simple-Profile
+Platform: any
