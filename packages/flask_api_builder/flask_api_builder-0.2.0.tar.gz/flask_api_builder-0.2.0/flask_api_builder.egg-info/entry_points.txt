@@ -1,0 +1,3 @@
+[console_scripts]
+flask-api-builder = flask_api_builder.__main__:main
+

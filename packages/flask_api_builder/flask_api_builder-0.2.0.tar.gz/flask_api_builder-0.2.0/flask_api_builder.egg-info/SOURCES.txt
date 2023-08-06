@@ -1,0 +1,15 @@
+CHANGELOG.rst
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+flask_api_builder/__init__.py
+flask_api_builder/__main__.py
+flask_api_builder.egg-info/PKG-INFO
+flask_api_builder.egg-info/SOURCES.txt
+flask_api_builder.egg-info/dependency_links.txt
+flask_api_builder.egg-info/entry_points.txt
+flask_api_builder.egg-info/requires.txt
+flask_api_builder.egg-info/top_level.txt
+flask_api_builder/examples/basic_api.spec
