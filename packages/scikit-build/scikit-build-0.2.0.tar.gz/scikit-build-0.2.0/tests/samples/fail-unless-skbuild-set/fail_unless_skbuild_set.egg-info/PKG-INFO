@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: fail-unless-skbuild-set
+Version: 0.0.1
+Summary: test project that should fail unless the CMake variable "SKBUILD" is set
+Home-page: UNKNOWN
+Author: The scikit-build team
+Author-email: UNKNOWN
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

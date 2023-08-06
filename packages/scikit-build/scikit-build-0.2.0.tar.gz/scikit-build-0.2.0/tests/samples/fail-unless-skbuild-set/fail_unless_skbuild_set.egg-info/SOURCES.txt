@@ -1,0 +1,5 @@
+setup.py
+fail_unless_skbuild_set.egg-info/PKG-INFO
+fail_unless_skbuild_set.egg-info/SOURCES.txt
+fail_unless_skbuild_set.egg-info/dependency_links.txt
+fail_unless_skbuild_set.egg-info/top_level.txt

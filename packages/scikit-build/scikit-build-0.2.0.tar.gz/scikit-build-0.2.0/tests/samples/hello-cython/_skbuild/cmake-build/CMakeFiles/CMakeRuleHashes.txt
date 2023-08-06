@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+9bb36e15ffe458156070ae20541d85c7 hello/_hello.cxx

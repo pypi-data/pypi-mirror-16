@@ -1,0 +1,8 @@
+setup.py
+_skbuild/cmake-install/hello/__init__.py
+_skbuild/cmake-install/hello/__main__.py
+_skbuild/cmake-install/hello/_hello.so
+hello.egg-info/PKG-INFO
+hello.egg-info/SOURCES.txt
+hello.egg-info/dependency_links.txt
+hello.egg-info/top_level.txt

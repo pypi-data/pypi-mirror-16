@@ -1,0 +1,3 @@
+/home/matt/src/scikit-build/tests/samples/hello/_skbuild/cmake-install/hello/_hello.so
+/home/matt/src/scikit-build/tests/samples/hello/_skbuild/cmake-install/hello/__init__.py
+/home/matt/src/scikit-build/tests/samples/hello/_skbuild/cmake-install/hello/__main__.py

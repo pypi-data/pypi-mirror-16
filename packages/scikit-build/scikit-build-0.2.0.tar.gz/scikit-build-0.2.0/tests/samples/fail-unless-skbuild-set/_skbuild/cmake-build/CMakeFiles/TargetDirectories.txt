@@ -1,0 +1,5 @@
+/home/matt/src/scikit-build/tests/samples/fail-unless-skbuild-set/_skbuild/cmake-build/CMakeFiles/edit_cache.dir
+/home/matt/src/scikit-build/tests/samples/fail-unless-skbuild-set/_skbuild/cmake-build/CMakeFiles/rebuild_cache.dir
+/home/matt/src/scikit-build/tests/samples/fail-unless-skbuild-set/_skbuild/cmake-build/CMakeFiles/list_install_components.dir
+/home/matt/src/scikit-build/tests/samples/fail-unless-skbuild-set/_skbuild/cmake-build/CMakeFiles/install.dir
+/home/matt/src/scikit-build/tests/samples/fail-unless-skbuild-set/_skbuild/cmake-build/CMakeFiles/install/local.dir
