@@ -1,0 +1,36 @@
+Metadata-Version: 1.1
+Name: m2m-certificates
+Version: 0.1
+Summary: Python module for generating and parsing M2M format certificates
+Home-page: https://github.com/LoyVanBeek/m2m_certificates
+Author: Loy van Beek
+Author-email: l.vanbeek@ultimaker.com
+License: AGPL
+Download-URL: https://github.com/LoyVanBeek/m2m_certificates/tarball/0.1
+Description: .. image:: https://travis-ci.org/LoyVanBeek/m2m_certificates.svg?branch=master
+            :target: https://travis-ci.org/LoyVanBeek/m2m_certificates
+        
+        Python module for generating and parsing M2M format certificates
+        ================================================================
+        
+        .. _Python: https://www.python.org
+        .. _GitHub: https://github.com/LoyVanBeek/m2m_certificates
+        .. _issues: https://github.com/LoyVanBeek/m2m_certificates/issues
+        .. _bugs: https://github.com/LoyVanBeek/m2m_certificates/labels/bug
+        .. _questions: https://github.com/LoyVanBeek/m2m_certificates/labels/question
+        .. _NFC Forum: http://nfc-forum.org/
+        
+        The **m2m_certificates** module implements the `NFC Forum`_ specification for M2M (Machine to Machine) certificates.
+        This is a part of the NDEF specification.
+        
+        These certificates are more compact than standard x509 certificates and are thus easier to fit onto a NFC tag.
+        
+Keywords: nfc ndef m2m
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Security :: Cryptography

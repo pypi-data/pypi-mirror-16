@@ -1,0 +1,14 @@
+README.rst
+setup.py
+m2m_certificates/__init__.py
+m2m_certificates/x509_to_m2m_conversion.py
+m2m_certificates.egg-info/PKG-INFO
+m2m_certificates.egg-info/SOURCES.txt
+m2m_certificates.egg-info/dependency_links.txt
+m2m_certificates.egg-info/requires.txt
+m2m_certificates.egg-info/top_level.txt
+m2m_certificates/tests/__init__.py
+m2m_certificates/tests/test_m2m.py
+m2m_certificates/tests/test_tagging_choice.py
+m2m_certificates/tests/test_tagging_nested_sequence.py
+m2m_certificates/tests/test_tagging_sequence.py
