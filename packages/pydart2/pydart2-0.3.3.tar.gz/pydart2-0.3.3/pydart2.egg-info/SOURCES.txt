@@ -1,0 +1,14 @@
+MANIFEST.in
+README
+setup.cfg
+setup.py
+pydart2/__init__.py
+pydart2/pydart2_api.cpp
+pydart2/pydart2_api.h
+pydart2/pydart2_api.i
+pydart2/pydart2_api.py
+pydart2.egg-info/PKG-INFO
+pydart2.egg-info/SOURCES.txt
+pydart2.egg-info/dependency_links.txt
+pydart2.egg-info/requires.txt
+pydart2.egg-info/top_level.txt
