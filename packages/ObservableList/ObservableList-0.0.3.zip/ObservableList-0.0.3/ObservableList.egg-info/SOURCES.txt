@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.rst
+dev-requirements.txt
+requirements.txt
+setup.cfg
+setup.py
+test-requirements.txt
+ObservableList/__init__.py
+ObservableList.egg-info/PKG-INFO
+ObservableList.egg-info/SOURCES.txt
+ObservableList.egg-info/dependency_links.txt
+ObservableList.egg-info/not-zip-safe
+ObservableList.egg-info/top_level.txt
+ObservableList/test/conftest.py
+ObservableList/test/test_observable_list.py
