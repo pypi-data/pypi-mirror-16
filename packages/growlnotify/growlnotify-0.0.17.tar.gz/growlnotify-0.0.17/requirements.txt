@@ -1,0 +1,8 @@
+find_executable
+fullpath
+isstring
+only
+osx_only
+public
+setupfiles
+subopen
