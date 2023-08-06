@@ -1,0 +1,3 @@
+[console_scripts]
+img2url = img2url.main:entry_point
+
