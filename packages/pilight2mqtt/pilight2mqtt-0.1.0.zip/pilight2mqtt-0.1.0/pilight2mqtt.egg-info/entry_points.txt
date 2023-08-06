@@ -1,0 +1,3 @@
+[console_scripts]
+pilight2mqtt = pilight2mqtt.__main__:main
+

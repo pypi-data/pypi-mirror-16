@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: pilight2mqtt
+Version: 0.1.0
+Summary: Translate pilight to mqtt.
+Home-page: https://www.van-porten.de/portfolio/pilight2mqtt
+Author: Oliver van Porten
+Author-email: oliver@van-porten.de
+License: MIT License
+Download-URL: https://github.com/mcdeck/pilight2mqtt/archive/0.1.0.zip
+Description: UNKNOWN
+Keywords: home,automation
+Platform: any
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Topic :: Home Automation
