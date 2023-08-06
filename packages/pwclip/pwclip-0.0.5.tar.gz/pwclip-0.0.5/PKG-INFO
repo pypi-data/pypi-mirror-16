@@ -1,0 +1,56 @@
+Metadata-Version: 1.1
+Name: pwclip
+Version: 0.0.5
+Summary: gui to save time-based yubikey challenge-response hash to system-paste-buffer
+Home-page: http://janeiskla.de
+Author: Leon Pelzer
+Author-email: mail@leonpelzer.de
+License: GPL
+Description: README for pwclip - http://packages.python.org/pwclip/
+        ======================================================
+        
+        pwclip is a small tool to put some hash, generated via (yubikey)
+        challenge-response on any slot of the first yubikey found on system.
+        So far Linux, Windows and OSX is supported by using python's tk library
+        to create password input window. If no text is inserted there will be a
+        challenge-response for that empty string. The appropriate response is saved
+        only for 3 seconds by default but the command-line tool supports the input
+        of any integer number which is then used as timer.
+        
+        Install
+        -------
+        
+        pwclip requires the "xsel" package on Linux-Systems to have access to
+            copy/paste buffers. on Windows-Systems the libusb package must be
+            integrated to python3 as "usb-backend" (see libusb documentation for that)
+        
+        * https://wiki.ubuntuusers.de/xsel/
+        * https://sourceforge.net/projects/libusb/
+        
+        If you are on a debian like System the installation of the dependencies
+            should work like the following:
+        
+        :~$ apt-get install xsel
+        
+        Documentation
+        -------------
+        
+        http://packages.python.org/pwclip/
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Environment :: MacOS X
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Environment :: X11 Applications
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: System Administrators
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Security
+Classifier: Topic :: Utilities
+Classifier: Topic :: Desktop Environment
+Classifier: Topic :: System :: Systems Administration
