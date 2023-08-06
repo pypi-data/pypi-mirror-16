@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: remove-backups
+Version: 0.2.0
+Summary: Remove old backups
+Home-page: https://gprohorenko@bitbucket.org/gprohorenko/remove_backups
+Author: blinchik
+Author-email: prohorenko_gena_@mail.ru
+License: MIT License
+Download-URL: https://bitbucket.org/gprohorenko/remove_backups/downloads/remove_backups.tar.gz
+Description: ==============
+        remove_backups
+        ==============
+        
+        Remove old backups.
+        
+Platform: UNKNOWN
