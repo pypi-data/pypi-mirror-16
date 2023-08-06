@@ -1,0 +1,29 @@
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   api
+   build
+   capi
+   compatibility
+   cssselect
+   element_classes
+   elementsoup
+   extensions
+   FAQ
+   html5parser
+   intro
+   lxml2
+   lxmlhtml
+   lxml-source-howto
+   memorymanagement
+   objectify
+   parsing
+   performance
+   resolvers
+   sax
+   tutorial
+   validation
+   xpathxslt

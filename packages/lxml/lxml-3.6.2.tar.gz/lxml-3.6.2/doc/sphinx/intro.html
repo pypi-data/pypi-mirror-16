@@ -1,0 +1,157 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Why lxml? &mdash; lxml v2.3 - Processing XML and HTML with Python</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="lxml v2.3 - Processing XML and HTML with Python" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="why-lxml">
+<h1><a class="toc-backref" href="#id1">Why lxml?</a><a class="headerlink" href="#why-lxml" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#why-lxml" id="id1">Why lxml?</a><ul>
+<li><a class="reference internal" href="#motto" id="id2">Motto</a></li>
+<li><a class="reference internal" href="#aims" id="id3">Aims</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="motto">
+<h2><a class="toc-backref" href="#id2">Motto</a><a class="headerlink" href="#motto" title="Permalink to this headline">¶</a></h2>
+<p>&#8220;the thrills without the strangeness&#8221;</p>
+<p>To explain the motto:</p>
+<p>&#8220;Programming with libxml2 is like the thrilling embrace of an exotic stranger.
+It seems to have the potential to fulfill your wildest dreams, but there&#8217;s a
+nagging voice somewhere in your head warning you that you&#8217;re about to get
+screwed in the worst way.&#8221;  (<a class="reference external" href="http://diveintomark.org/archives/2004/02/18/libxml2">a quote by Mark Pilgrim</a>)</p>
+<p>Mark Pilgrim was describing in particular the experience a Python programmer
+has when dealing with libxml2.  The default Python bindings of libxml2 are
+fast, thrilling, powerful, and your code might fail in some horrible way that
+you really shouldn&#8217;t have to worry about when writing Python code.  lxml
+combines the power of libxml2 with the ease of use of Python.</p>
+</div>
+<div class="section" id="aims">
+<h2><a class="toc-backref" href="#id3">Aims</a><a class="headerlink" href="#aims" title="Permalink to this headline">¶</a></h2>
+<p>The C libraries <a class="reference external" href="http://www.xmlsoft.org">libxml2</a> and <a class="reference external" href="http://xmlsoft.org/XSLT">libxslt</a> have huge benefits:</p>
+<ul class="simple">
+<li>Standards-compliant XML support.</li>
+<li>Support for (broken) HTML.</li>
+<li>Full-featured.</li>
+<li>Actively maintained by XML experts.</li>
+<li>fast. fast! FAST!</li>
+</ul>
+<p>These libraries already ship with Python bindings, but these Python bindings
+mimic the C-level interface.  This yields a number of problems:</p>
+<ul class="simple">
+<li>very low level and C-ish (not Pythonic).</li>
+<li>underdocumented and huge, you get lost in them.</li>
+<li>UTF-8 in API, instead of Python unicode strings.</li>
+<li>Can easily cause segfaults from Python.</li>
+<li>Require manual memory management!</li>
+</ul>
+<p>lxml is a new Python binding for libxml2 and libxslt, completely independent
+from these existing Python bindings.  Its aims:</p>
+<ul class="simple">
+<li>Pythonic API.</li>
+<li>Documented.</li>
+<li>Use Python unicode strings in API.</li>
+<li>Safe (no segfaults).</li>
+<li>No manual memory management!</li>
+</ul>
+<p>lxml aims to provide a Pythonic API by following as much as possible the
+<a class="reference external" href="http://effbot.org/zone/element-index.htm">ElementTree API</a>.  We&#8217;re trying to avoid inventing too many new APIs, or you
+having to learn new things &#8211; XML is complicated enough.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="main.html">
+              <img class="logo" src="_static/python-xml-title.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="main.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Why lxml?</a><ul>
+<li><a class="reference internal" href="#motto">Motto</a></li>
+<li><a class="reference internal" href="#aims">Aims</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/intro.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Stefan Behnel et al..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>lxml.cssselect &mdash; lxml v2.3 - Processing XML and HTML with Python</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="lxml v2.3 - Processing XML and HTML with Python" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="lxml-cssselect">
+<h1><a class="toc-backref" href="#id1">lxml.cssselect</a><a class="headerlink" href="#lxml-cssselect" title="Permalink to this headline">¶</a></h1>
+<p>lxml supports a number of interesting languages for tree traversal and element
+selection.  The most important is obviously <a class="reference external" href="xpathxslt.html#xpath">XPath</a>, but there is also
+<a class="reference external" href="objectify.html#objectpath">ObjectPath</a> in the <a class="reference external" href="objectify.html">lxml.objectify</a> module.  The newest child of this family
+is <a class="reference external" href="http://www.w3.org/TR/CSS21/selector.html">CSS selection</a>, which is implemented in the new <tt class="docutils literal"><span class="pre">lxml.cssselect</span></tt> module.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#lxml-cssselect" id="id1">lxml.cssselect</a><ul>
+<li><a class="reference internal" href="#the-cssselector-class" id="id2">The CSSSelector class</a></li>
+<li><a class="reference internal" href="#css-selectors" id="id3">CSS Selectors</a></li>
+<li><a class="reference internal" href="#namespaces" id="id4">Namespaces</a></li>
+<li><a class="reference internal" href="#limitations" id="id5">Limitations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="the-cssselector-class">
+<h2><a class="toc-backref" href="#id2">The CSSSelector class</a><a class="headerlink" href="#the-cssselector-class" title="Permalink to this headline">¶</a></h2>
+<p>The most important class in the <tt class="docutils literal"><span class="pre">cssselect</span></tt> module is <tt class="docutils literal"><span class="pre">CSSSelector</span></tt>.  It
+provides the same interface as the <a class="reference external" href="xpathxslt.html#xpath">XPath</a> class, but accepts a CSS selector
+expression as input:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">lxml.cssselect</span> <span class="kn">import</span> <span class="n">CSSSelector</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sel</span> <span class="o">=</span> <span class="n">CSSSelector</span><span class="p">(</span><span class="s">&#39;div.content&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sel</span>  
+<span class="go">&lt;CSSSelector ... for &#39;div.content&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sel</span><span class="o">.</span><span class="n">css</span>
+<span class="go">&#39;div.content&#39;</span>
+</pre></div>
+</div>
+<p>The selector actually compiles to XPath, and you can see the
+expression by inspecting the object:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sel</span><span class="o">.</span><span class="n">path</span>
+<span class="go">&quot;descendant-or-self::div[contains(concat(&#39; &#39;, normalize-space(@class), &#39; &#39;), &#39; content &#39;)]&quot;</span>
+</pre></div>
+</div>
+<p>To use the selector, simply call it with a document or element
+object:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">lxml.etree</span> <span class="kn">import</span> <span class="n">fromstring</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">fromstring</span><span class="p">(</span><span class="s">&#39;&#39;&#39;&lt;div id=&quot;outer&quot;&gt;</span>
+<span class="gp">... </span><span class="s">  &lt;div id=&quot;inner&quot; class=&quot;content body&quot;&gt;</span>
+<span class="gp">... </span><span class="s">      text</span>
+<span class="gp">... </span><span class="s">  &lt;/div&gt;&lt;/div&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;id&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">sel</span><span class="p">(</span><span class="n">h</span><span class="p">)]</span>
+<span class="go">[&#39;inner&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="css-selectors">
+<h2><a class="toc-backref" href="#id3">CSS Selectors</a><a class="headerlink" href="#css-selectors" title="Permalink to this headline">¶</a></h2>
+<p>This libraries attempts to implement CSS selectors <a class="reference external" href="http://www.w3.org/TR/2001/CR-css3-selectors-20011113/">as described in
+the w3c specification</a>.  Many of
+the pseudo-classes do not apply in this context, including all
+<a class="reference external" href="http://www.w3.org/TR/2001/CR-css3-selectors-20011113/#dynamic-pseudos">dynamic pseudo-classes</a>.
+In particular these will not be available:</p>
+<ul class="simple">
+<li>link state: <tt class="docutils literal"><span class="pre">:link</span></tt>, <tt class="docutils literal"><span class="pre">:visited</span></tt>, <tt class="docutils literal"><span class="pre">:target</span></tt></li>
+<li>actions: <tt class="docutils literal"><span class="pre">:hover</span></tt>, <tt class="docutils literal"><span class="pre">:active</span></tt>, <tt class="docutils literal"><span class="pre">:focus</span></tt></li>
+<li>UI states: <tt class="docutils literal"><span class="pre">:enabled</span></tt>, <tt class="docutils literal"><span class="pre">:disabled</span></tt>, <tt class="docutils literal"><span class="pre">:indeterminate</span></tt>
+(<tt class="docutils literal"><span class="pre">:checked</span></tt> and <tt class="docutils literal"><span class="pre">:unchecked</span></tt> <em>are</em> available)</li>
+</ul>
+<p>Also, none of the pseudo-elements apply, because the selector only
+returns elements and pseudo-elements select portions of text, like
+<tt class="docutils literal"><span class="pre">::first-line</span></tt>.</p>
+</div>
+<div class="section" id="namespaces">
+<h2><a class="toc-backref" href="#id4">Namespaces</a><a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h2>
+<p>In CSS you can use <tt class="docutils literal"><span class="pre">namespace-prefix|element</span></tt>, similar to
+<tt class="docutils literal"><span class="pre">namespace-prefix:element</span></tt> in an XPath expression.  In fact, it maps
+one-to-one, and the same rules are used to map namespace prefixes to
+namespace URIs.</p>
+</div>
+<div class="section" id="limitations">
+<h2><a class="toc-backref" href="#id5">Limitations</a><a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<p>These applicable pseudoclasses are not yet implemented:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">:lang(language)</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">:root</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*:first-of-type</span></tt>, <tt class="docutils literal"><span class="pre">*:last-of-type</span></tt>, <tt class="docutils literal"><span class="pre">*:nth-of-type</span></tt>,
+<tt class="docutils literal"><span class="pre">*:nth-last-of-type</span></tt>, <tt class="docutils literal"><span class="pre">*:only-of-type</span></tt>.  All of these work when
+you specify an element type, but not with <tt class="docutils literal"><span class="pre">*</span></tt></li>
+</ul>
+<p>Unlike XPath you cannot provide parameters in your expressions &#8211; all
+expressions are completely static.</p>
+<p>XPath has underspecified string quoting rules (there seems to be no
+string quoting at all), so if you use expressions that contain
+characters that requiring quoting you might have problems with the
+translation from CSS to XPath.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="main.html">
+              <img class="logo" src="_static/python-xml-title.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="main.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">lxml.cssselect</a><ul>
+<li><a class="reference internal" href="#the-cssselector-class">The CSSSelector class</a></li>
+<li><a class="reference internal" href="#css-selectors">CSS Selectors</a></li>
+<li><a class="reference internal" href="#namespaces">Namespaces</a></li>
+<li><a class="reference internal" href="#limitations">Limitations</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/cssselect.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Stefan Behnel et al..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

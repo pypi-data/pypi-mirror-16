@@ -1,0 +1,184 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The public C-API of lxml.etree &mdash; lxml v2.3 - Processing XML and HTML with Python</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="lxml v2.3 - Processing XML and HTML with Python" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-public-c-api-of-lxml-etree">
+<h1><a class="toc-backref" href="#id1">The public C-API of lxml.etree</a><a class="headerlink" href="#the-public-c-api-of-lxml-etree" title="Permalink to this headline">¶</a></h1>
+<p>As of version 1.1, lxml.etree provides a public C-API.  This allows external
+C extensions to efficiently access public functions and classes of lxml,
+without going through the Python API.</p>
+<p>The API is described in the file <a class="reference external" href="http://codespeak.net/svn/lxml/trunk/src/lxml/etreepublic.pxd">etreepublic.pxd</a>, which is directly
+c-importable by extension modules implemented in <a class="reference external" href="http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/">Pyrex</a> or <a class="reference external" href="http://www.cython.org">Cython</a>.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#the-public-c-api-of-lxml-etree" id="id1">The public C-API of lxml.etree</a><ul>
+<li><a class="reference internal" href="#writing-external-modules-in-cython" id="id2">Writing external modules in Cython</a></li>
+<li><a class="reference internal" href="#writing-external-modules-in-c" id="id3">Writing external modules in C</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="writing-external-modules-in-cython">
+<h2><a class="toc-backref" href="#id2">Writing external modules in Cython</a><a class="headerlink" href="#writing-external-modules-in-cython" title="Permalink to this headline">¶</a></h2>
+<p>This is the easiest way of extending lxml at the C level.  A <a class="reference external" href="http://www.cython.org">Cython</a>
+(or <a class="reference external" href="http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/">Pyrex</a>) module should start like this:</p>
+<div class="highlight-python"><pre># My Cython extension
+
+# import the public functions and classes of lxml.etree
+cimport etreepublic as cetree
+
+# import the lxml.etree module in Python
+cdef object etree
+from lxml import etree
+
+# initialize the access to the C-API of lxml.etree
+cetree.import_lxml__etree()</pre>
+</div>
+<p>From this line on, you can access all public functions of lxml.etree
+from the <tt class="docutils literal"><span class="pre">cetree</span></tt> namespace like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># build a tag name from namespace and element name</span>
+<span class="n">py_tag</span> <span class="o">=</span> <span class="n">cetree</span><span class="o">.</span><span class="n">namespacedNameFromNsName</span><span class="p">(</span><span class="s">&quot;http://some/url&quot;</span><span class="p">,</span> <span class="s">&quot;myelement&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Public lxml classes are easily subclassed.  For example, to implement
+and set a new default element class, you can write Cython code like
+the following:</p>
+<div class="highlight-python"><pre>from etreepublic cimport ElementBase
+cdef class NewElementClass(ElementBase):
+     def set_value(self, myval):
+         self.set("my_attribute", myval)
+
+etree.set_element_class_lookup(
+     etree.DefaultElementClassLookup(element=NewElementClass))</pre>
+</div>
+</div>
+<div class="section" id="writing-external-modules-in-c">
+<h2><a class="toc-backref" href="#id3">Writing external modules in C</a><a class="headerlink" href="#writing-external-modules-in-c" title="Permalink to this headline">¶</a></h2>
+<p>If you really feel like it, you can also interface with lxml.etree straight
+from C code.  All you have to do is include the header file for the public
+API, import the <tt class="docutils literal"><span class="pre">lxml.etree</span></tt> module and then call the import function:</p>
+<div class="highlight-c"><div class="highlight"><pre><span class="cp">/* My C extension */</span>
+
+<span class="cp">/* common includes */</span>
+<span class="cp">#include &quot;Python.h&quot;</span>
+<span class="cp">#include &quot;stdio.h&quot;</span>
+<span class="cp">#include &quot;string.h&quot;</span>
+<span class="cp">#include &quot;stdarg.h&quot;</span>
+<span class="cp">#include &quot;libxml/xmlversion.h&quot;</span>
+<span class="cp">#include &quot;libxml/encoding.h&quot;</span>
+<span class="cp">#include &quot;libxml/hash.h&quot;</span>
+<span class="cp">#include &quot;libxml/tree.h&quot;</span>
+<span class="cp">#include &quot;libxml/xmlIO.h&quot;</span>
+<span class="cp">#include &quot;libxml/xmlsave.h&quot;</span>
+<span class="cp">#include &quot;libxml/globals.h&quot;</span>
+<span class="cp">#include &quot;libxml/xmlstring.h&quot;</span>
+
+<span class="cp">/* lxml.etree specific includes */</span>
+<span class="cp">#include &quot;lxml-version.h&quot;</span>
+<span class="cp">#include &quot;etree_defs.h&quot;</span>
+<span class="cp">#include &quot;etree.h&quot;</span>
+
+<span class="cm">/* setup code */</span>
+<span class="n">import_lxml__etree</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Note that including <tt class="docutils literal"><span class="pre">etree.h</span></tt> does not automatically include the
+header files it requires.  Note also that the above list of common
+includes may not be sufficient.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="main.html">
+              <img class="logo" src="_static/python-xml-title.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="main.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The public C-API of lxml.etree</a><ul>
+<li><a class="reference internal" href="#writing-external-modules-in-cython">Writing external modules in Cython</a></li>
+<li><a class="reference internal" href="#writing-external-modules-in-c">Writing external modules in C</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/capi.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Stefan Behnel et al..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

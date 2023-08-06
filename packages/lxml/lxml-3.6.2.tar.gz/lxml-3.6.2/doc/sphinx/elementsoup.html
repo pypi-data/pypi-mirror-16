@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>BeautifulSoup Parser &mdash; lxml v2.3 - Processing XML and HTML with Python</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="lxml v2.3 - Processing XML and HTML with Python" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="beautifulsoup-parser">
+<h1><a class="toc-backref" href="#id1">BeautifulSoup Parser</a><a class="headerlink" href="#beautifulsoup-parser" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a> is a Python package that parses broken HTML, just like
+lxml supports it based on the parser of libxml2.  BeautifulSoup uses a
+different parsing approach.  It is not a real HTML parser but uses
+regular expressions to dive through tag soup.  It is therefore more
+forgiving in some cases and less good in others.  It is not uncommon
+that lxml/libxml2 parses and fixes broken HTML better, but
+BeautifulSoup has superiour <a class="reference external" href="http://www.crummy.com/software/BeautifulSoup/documentation.html#Beautiful%20Soup%20Gives%20You%20Unicode%2C%20Dammit">support for encoding detection</a>.  It
+very much depends on the input which parser works better.</p>
+<p>To prevent users from having to choose their parser library in
+advance, lxml can interface to the parsing capabilities of
+BeautifulSoup through the <tt class="docutils literal"><span class="pre">lxml.html.soupparser</span></tt> module.  It
+provides three main functions: <tt class="docutils literal"><span class="pre">fromstring()</span></tt> and <tt class="docutils literal"><span class="pre">parse()</span></tt> to
+parse a string or file using BeautifulSoup into an <tt class="docutils literal"><span class="pre">lxml.html</span></tt>
+document, and <tt class="docutils literal"><span class="pre">convert_tree()</span></tt> to convert an existing BeautifulSoup
+tree into a list of top-level Elements.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#beautifulsoup-parser" id="id1">BeautifulSoup Parser</a><ul>
+<li><a class="reference internal" href="#parsing-with-the-soupparser" id="id2">Parsing with the soupparser</a></li>
+<li><a class="reference internal" href="#entity-handling" id="id3">Entity handling</a></li>
+<li><a class="reference internal" href="#using-soupparser-as-a-fallback" id="id4">Using soupparser as a fallback</a></li>
+<li><a class="reference internal" href="#using-only-the-encoding-detection" id="id5">Using only the encoding detection</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="parsing-with-the-soupparser">
+<h2><a class="toc-backref" href="#id2">Parsing with the soupparser</a><a class="headerlink" href="#parsing-with-the-soupparser" title="Permalink to this headline">¶</a></h2>
+<p>The functions <tt class="docutils literal"><span class="pre">fromstring()</span></tt> and <tt class="docutils literal"><span class="pre">parse()</span></tt> behave as known from
+ElementTree.  The first returns a root Element, the latter returns an
+ElementTree.</p>
+<p>There is also a legacy module called <tt class="docutils literal"><span class="pre">lxml.html.ElementSoup</span></tt>, which
+mimics the interface provided by ElementTree&#8217;s own <a class="reference external" href="http://effbot.org/zone/element-soup.htm">ElementSoup</a>
+module.  Note that the <tt class="docutils literal"><span class="pre">soupparser</span></tt> module was added in lxml 2.0.3.
+Previous versions of lxml 2.0.x only have the <tt class="docutils literal"><span class="pre">ElementSoup</span></tt> module.</p>
+<p>Here is a document full of tag soup, similar to, but not quite like, HTML:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tag_soup</span> <span class="o">=</span> <span class="s">&#39;&lt;meta&gt;&lt;head&gt;&lt;title&gt;Hello&lt;/head&gt;&lt;body onload=crash()&gt;Hi all&lt;p&gt;&#39;</span>
+</pre></div>
+</div>
+<p>all you need to do is pass it to the <tt class="docutils literal"><span class="pre">fromstring()</span></tt> function:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">lxml.html.soupparser</span> <span class="kn">import</span> <span class="n">fromstring</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">fromstring</span><span class="p">(</span><span class="n">tag_soup</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To see what we have here, you can serialise it:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">lxml.etree</span> <span class="kn">import</span> <span class="n">tostring</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">tostring</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">pretty_print</span><span class="o">=</span><span class="bp">True</span><span class="p">),</span>
+<span class="go">&lt;html&gt;</span>
+<span class="go">  &lt;meta/&gt;</span>
+<span class="go">  &lt;head&gt;</span>
+<span class="go">    &lt;title&gt;Hello&lt;/title&gt;</span>
+<span class="go">  &lt;/head&gt;</span>
+<span class="go">  &lt;body onload=&quot;crash()&quot;&gt;Hi all&lt;p/&gt;&lt;/body&gt;</span>
+<span class="go">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<p>Not quite what you&#8217;d expect from an HTML page, but, well, it was broken
+already, right?  BeautifulSoup did its best, and so now it&#8217;s a tree.</p>
+<p>To control which Element implementation is used, you can pass a
+<tt class="docutils literal"><span class="pre">makeelement</span></tt> factory function to <tt class="docutils literal"><span class="pre">parse()</span></tt> and <tt class="docutils literal"><span class="pre">fromstring()</span></tt>.
+By default, this is based on the HTML parser defined in <tt class="docutils literal"><span class="pre">lxml.html</span></tt>.</p>
+<p>For a quick comparison, libxml2 2.6.32 parses the same tag soup as
+follows.  The main difference is that libxml2 tries harder to adhere
+to the structure of an HTML document and moves misplaced tags where
+they (likely) belong.  Note, however, that the result can vary between
+parser versions.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta/&gt;</span>
+    <span class="nt">&lt;title&gt;</span>Hello<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Hi all<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p/&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="entity-handling">
+<h2><a class="toc-backref" href="#id3">Entity handling</a><a class="headerlink" href="#entity-handling" title="Permalink to this headline">¶</a></h2>
+<p>By default, the BeautifulSoup parser also replaces the entities it
+finds by their character equivalent.</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tag_soup</span> <span class="o">=</span> <span class="s">&#39;&lt;body&gt;&amp;copy;&amp;euro;&amp;#45;&amp;#245;&amp;#445;&lt;p&gt;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">body</span> <span class="o">=</span> <span class="n">fromstring</span><span class="p">(</span><span class="n">tag_soup</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;.//body&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">body</span><span class="o">.</span><span class="n">text</span>
+<span class="go">u&#39;\xa9\u20ac-\xf5\u01bd&#39;</span>
+</pre></div>
+</div>
+<p>If you want them back on the way out, you can just serialise with the
+default encoding, which is &#8216;US-ASCII&#8217;.</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tostring</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+<span class="go">&#39;&lt;body&gt;&amp;#169;&amp;#8364;-&amp;#245;&amp;#445;&lt;p/&gt;&lt;/body&gt;&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tostring</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;html&quot;</span><span class="p">)</span>
+<span class="go">&#39;&lt;body&gt;&amp;#169;&amp;#8364;-&amp;#245;&amp;#445;&lt;p&gt;&lt;/p&gt;&lt;/body&gt;&#39;</span>
+</pre></div>
+</div>
+<p>Any other encoding will output the respective byte sequences.</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tostring</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="go">&#39;&lt;body&gt;\xc2\xa9\xe2\x82\xac-\xc3\xb5\xc6\xbd&lt;p/&gt;&lt;/body&gt;&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tostring</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;html&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="go">&#39;&lt;body&gt;\xc2\xa9\xe2\x82\xac-\xc3\xb5\xc6\xbd&lt;p&gt;&lt;/p&gt;&lt;/body&gt;&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tostring</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="nb">unicode</span><span class="p">)</span>
+<span class="go">u&#39;&lt;body&gt;\xa9\u20ac-\xf5\u01bd&lt;p/&gt;&lt;/body&gt;&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tostring</span><span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;html&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="nb">unicode</span><span class="p">)</span>
+<span class="go">u&#39;&lt;body&gt;\xa9\u20ac-\xf5\u01bd&lt;p&gt;&lt;/p&gt;&lt;/body&gt;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-soupparser-as-a-fallback">
+<h2><a class="toc-backref" href="#id4">Using soupparser as a fallback</a><a class="headerlink" href="#using-soupparser-as-a-fallback" title="Permalink to this headline">¶</a></h2>
+<p>The downside of using this parser is that it is <a class="reference external" href="http://blog.ianbicking.org/2008/03/30/python-html-parser-performance/">much slower</a> than
+the HTML parser of lxml.  So if performance matters, you might want to
+consider using <tt class="docutils literal"><span class="pre">soupparser</span></tt> only as a fallback for certain cases.</p>
+<p>One common problem of lxml&#8217;s parser is that it might not get the
+encoding right in cases where the document contains a <tt class="docutils literal"><span class="pre">&lt;meta&gt;</span></tt> tag
+at the wrong place.  In this case, you can exploit the fact that lxml
+serialises much faster than most other HTML libraries for Python.
+Just serialise the document to unicode and if that gives you an
+exception, re-parse it with BeautifulSoup to see if that works
+better.</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tag_soup</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;</span><span class="se">\</span>
+<span class="gp">... </span><span class="s">&lt;meta http-equiv=&quot;Content-Type&quot;</span>
+<span class="gp">... </span><span class="s">      content=&quot;text/html;charset=utf-8&quot; /&gt;</span>
+<span class="gp">... </span><span class="s">&lt;html&gt;</span>
+<span class="gp">... </span><span class="s">  &lt;head&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;title&gt;Hello W</span><span class="se">\xc3\xb6</span><span class="s">rld!&lt;/title&gt;</span>
+<span class="gp">... </span><span class="s">  &lt;/head&gt;</span>
+<span class="gp">... </span><span class="s">  &lt;body&gt;Hi all&lt;/body&gt;</span>
+<span class="gp">... </span><span class="s">&lt;/html&gt;&#39;&#39;&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">lxml.html</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">lxml.html.soupparser</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">lxml</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">tag_soup</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">ignore</span> <span class="o">=</span> <span class="n">tostring</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="nb">unicode</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">except</span> <span class="ne">UnicodeDecodeError</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">root</span> <span class="o">=</span> <span class="n">lxml</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">soupparser</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">tag_soup</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-only-the-encoding-detection">
+<h2><a class="toc-backref" href="#id5">Using only the encoding detection</a><a class="headerlink" href="#using-only-the-encoding-detection" title="Permalink to this headline">¶</a></h2>
+<p>If you prefer a &#8216;real&#8217; (and fast) HTML parser instead of the regular
+expression based one in BeautifulSoup, you can still benefit from
+BeautifulSoup&#8217;s <a class="reference external" href="http://www.crummy.com/software/BeautifulSoup/documentation.html#Beautiful%20Soup%20Gives%20You%20Unicode%2C%20Dammit">support for encoding detection</a> in the
+<tt class="docutils literal"><span class="pre">UnicodeDammit</span></tt> class.</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">UnicodeDammit</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">decode_html</span><span class="p">(</span><span class="n">html_string</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">converted</span> <span class="o">=</span> <span class="n">UnicodeDammit</span><span class="p">(</span><span class="n">html_string</span><span class="p">,</span> <span class="n">isHTML</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">if</span> <span class="ow">not</span> <span class="n">converted</span><span class="o">.</span><span class="n">unicode</span><span class="p">:</span>
+<span class="gp">... </span>        <span class="k">raise</span> <span class="ne">UnicodeDecodeError</span><span class="p">(</span>
+<span class="gp">... </span>            <span class="s">&quot;Failed to detect encoding, tried [</span><span class="si">%s</span><span class="s">]&quot;</span><span class="p">,</span>
+<span class="gp">... </span>            <span class="s">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">converted</span><span class="o">.</span><span class="n">triedEncodings</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="c"># print converted.originalEncoding</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">converted</span><span class="o">.</span><span class="n">unicode</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">lxml</span><span class="o">.</span><span class="n">html</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">decode_html</span><span class="p">(</span><span class="n">tag_soup</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="main.html">
+              <img class="logo" src="_static/python-xml-title.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="main.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">BeautifulSoup Parser</a><ul>
+<li><a class="reference internal" href="#parsing-with-the-soupparser">Parsing with the soupparser</a></li>
+<li><a class="reference internal" href="#entity-handling">Entity handling</a></li>
+<li><a class="reference internal" href="#using-soupparser-as-a-fallback">Using soupparser as a fallback</a></li>
+<li><a class="reference internal" href="#using-only-the-encoding-detection">Using only the encoding detection</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/elementsoup.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Stefan Behnel et al..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

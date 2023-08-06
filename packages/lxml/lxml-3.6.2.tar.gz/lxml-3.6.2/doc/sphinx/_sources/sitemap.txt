@@ -1,0 +1,38 @@
+Sitemap
+========
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   main
+   intro
+   api
+   ../INSTALL
+   performance
+   compatibility
+   FAQ
+
+   tutorial
+   API reference <api/>
+   parsing
+   validation
+   xpathxslt
+   objectify
+   lxmlhtml
+   cssselect
+   elementsoup
+   html5parser
+
+   resolvers
+   extensions
+   element_classes
+   sax
+   capi
+
+   build
+   lxml-source-howto
+   ../CREDITS
+
+   self

@@ -1,0 +1,60 @@
+=====================
+Donate to the project
+=====================
+
+PayPal donations are used to cover the costs for project hosting, general
+maintenance and support.  Basically, they are what keeps the free lxml
+software alive for everyone to use.
+
+If, instead, you are interested in financing the development of specific
+features or the resolution of a specific problem, get in touch with the
+lead developer, `Stefan Behnel <http://consulting.behnel.de/>`_.
+
+
+Making a one-time donation
+--------------------------
+
+When you click the PayPal icon, you will be taken to the PayPal website
+where you can donate any amount up to ten thousand US dollars or the
+equivalent in another currency to the lxml project.  Note that you do
+not have to create a PayPal account in order to donate money to the
+lxml project.  You can also pay with your credit card or by other means
+directly.  Please make sure you have read the legal notice at the bottom
+of this page.
+
+ONETIMEBUTTON
+
+Regular contribution each month
+-------------------------------
+
+If you would like to donate money to the lxml project each month through
+your PayPal subscription, please select a currency and amount and then
+click the PayPal icon.  You will be taken to the PayPal website where
+you can initiate the monthly donation.  After that, your credit card will
+be automatically charged each month via PayPal until you cancel this
+monthly donation.  If you do not have a PayPal account, you will need to
+create one on the PayPal website.  Please make sure you have read the
+legal notice at the bottom of this page.
+
+REGULARBUTTON
+
+------
+
+Legal notice
+    By making a donation to the lxml project you state that you have
+    acknowledged, understood, accepted, and agreed to the terms and
+    conditions contained in this notice.  Your donation to the lxml
+    project is voluntary and is not a fee for any services, goods,
+    or advantages.  Making a donation to the lxml project does not
+    entitle you to any services, goods, or advantages.  We have the
+    right to use the money you donate to the lxml project in any
+    lawful way and for any lawful purpose we see fit and we are not
+    obligated to disclose the way and purpose to any party unless
+    required by applicable law.  Although lxml is free software, to
+    our best knowledge the lxml project does not have any tax exempt
+    status.  The lxml project is neither a registered non-profit
+    corporation nor a registered charity in any country. Your donation
+    may or may not be tax-deductible; please consult your tax advisor
+    in this matter.  We will not publish or disclose your name and/or
+    e-mail address without your consent, unless required by applicable
+    law.  Your donation is non-refundable.

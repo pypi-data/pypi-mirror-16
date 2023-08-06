@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>How to build lxml from source &mdash; lxml v2.3 - Processing XML and HTML with Python</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="lxml v2.3 - Processing XML and HTML with Python" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="how-to-build-lxml-from-source">
+<h1><a class="toc-backref" href="#id3">How to build lxml from source</a><a class="headerlink" href="#how-to-build-lxml-from-source" title="Permalink to this headline">¶</a></h1>
+<p>To build lxml from source, you need libxml2 and libxslt properly
+installed, <em>including the header files</em>.  These are likely shipped in
+separate <tt class="docutils literal"><span class="pre">-dev</span></tt> or <tt class="docutils literal"><span class="pre">-devel</span></tt> packages like <tt class="docutils literal"><span class="pre">libxml2-dev</span></tt>, which
+you must install before trying to build lxml.  The build process also
+requires <a class="reference external" href="http://peak.telecommunity.com/DevCenter/setuptools">setuptools</a>.  The lxml source distribution comes with a
+script called <tt class="docutils literal"><span class="pre">ez_setup.py</span></tt> that can be used to install them.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#how-to-build-lxml-from-source" id="id3">How to build lxml from source</a><ul>
+<li><a class="reference internal" href="#cython" id="id4">Cython</a></li>
+<li><a class="reference internal" href="#github-git-and-hg" id="id5">Github, git and hg</a></li>
+<li><a class="reference internal" href="#id2" id="id6">Setuptools</a></li>
+<li><a class="reference internal" href="#running-the-tests-and-reporting-errors" id="id7">Running the tests and reporting errors</a></li>
+<li><a class="reference internal" href="#building-an-egg" id="id8">Building an egg</a></li>
+<li><a class="reference internal" href="#building-lxml-on-macos-x" id="id9">Building lxml on MacOS-X</a></li>
+<li><a class="reference internal" href="#static-linking-on-windows" id="id10">Static linking on Windows</a></li>
+<li><a class="reference internal" href="#building-debian-packages-from-svn-sources" id="id11">Building Debian packages from SVN sources</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="cython">
+<h2><a class="toc-backref" href="#id4">Cython</a><a class="headerlink" href="#cython" title="Permalink to this headline">¶</a></h2>
+<p>The lxml.etree and lxml.objectify modules are written in <a class="reference external" href="http://www.cython.org">Cython</a>.
+Since we distribute the Cython-generated .c files with lxml releases,
+however, you do not need Cython to build lxml from the normal release
+sources.  We even encourage you to <em>not install Cython</em> for a normal
+release build, as the generated C code can vary quite heavily between
+Cython versions, which may or may not generate correct code for lxml.
+The pre-generated release sources were tested and therefore are known
+to work.</p>
+<p>So, if you want a reliable build of lxml, we suggest to a) use a
+source release of lxml and b) disable or uninstall Cython for the
+build.</p>
+<p><em>Only</em> if you are interested in building lxml from a checkout of the
+developer sources (e.g. to test a bug fix that has not been release
+yet) or if you want to be an lxml developer, then you do need a
+working Cython installation.  You can use <a class="reference external" href="http://peak.telecommunity.com/DevCenter/EasyInstall">EasyInstall</a> to install it:</p>
+<div class="highlight-python"><pre>easy_install "Cython&gt;=0.14.1"</pre>
+</div>
+<p>lxml currently requires Cython 0.14.1, later release versions should
+work as well.</p>
+</div>
+<div class="section" id="github-git-and-hg">
+<h2><a class="toc-backref" href="#id5">Github, git and hg</a><a class="headerlink" href="#github-git-and-hg" title="Permalink to this headline">¶</a></h2>
+<p>The lxml package is developed in a repository on <a class="reference external" href="https://github.com/lxml/">Github</a> using
+<a class="reference external" href="http://mercurial.selenic.com/">Mercurial</a> and the <a class="reference external" href="http://hg-git.github.com/">hg-git</a> plugin.  You can retrieve the current
+developer version using:</p>
+<div class="highlight-python"><pre>hg clone git://github.com/lxml/lxml.git lxml</pre>
+</div>
+<p>This will create a directory <tt class="docutils literal"><span class="pre">lxml</span></tt> and download the source into it,
+including the complete development history.  Don&#8217;t be afraid, the
+download is fairly quick.  You can also browse the <a class="reference external" href="https://github.com/lxml/lxml">lxml repository</a>
+through the web.</p>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#id6">Setuptools</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Usually, building lxml is done through setuptools.  Clone the source
+repository as described above (or download the <a class="reference external" href="https://github.com/lxml/lxml/tarball/master">source tar-ball</a> and
+unpack it) and then type:</p>
+<div class="highlight-python"><pre>python setup.py build</pre>
+</div>
+<p>or:</p>
+<div class="highlight-python"><pre>python setup.py bdist_egg</pre>
+</div>
+<p>If you want to test lxml from the source directory, it is better to build it
+in-place like this:</p>
+<div class="highlight-python"><pre>python setup.py  build_ext -i</pre>
+</div>
+<p>or, in Unix-like environments:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">make</span>
+</pre></div>
+</div>
+<p>If you get errors about missing header files (e.g. <tt class="docutils literal"><span class="pre">Python.h</span></tt> or
+<tt class="docutils literal"><span class="pre">libxml/xmlversion.h</span></tt>) then you need to make sure the development
+packages of Python, libxml2 and libxslt are properly installed.  On
+Linux distributions, they are usually called something like
+<tt class="docutils literal"><span class="pre">libxml2-dev</span></tt> or <tt class="docutils literal"><span class="pre">libxslt-devel</span></tt>.  If these packages were
+installed in non-standard places, try passing the following option to
+setup.py to make sure the right config is found:</p>
+<div class="highlight-python"><pre>python setup.py build --with-xslt-config=/path/to/xslt-config</pre>
+</div>
+<p>If this doesn&#8217;t help, you may have to add the location of the header
+files to the include path like:</p>
+<div class="highlight-python"><pre>python setup.py build_ext -i  -I /usr/include/libxml2</pre>
+</div>
+<p>where the file is in <tt class="docutils literal"><span class="pre">/usr/include/libxml2/libxml/xmlversion.h</span></tt></p>
+<p>To use lxml.etree in-place, you can place lxml&#8217;s <tt class="docutils literal"><span class="pre">src</span></tt> directory on your
+Python module search path (PYTHONPATH) and then import <tt class="docutils literal"><span class="pre">lxml.etree</span></tt> to play
+with it:</p>
+<div class="highlight-python"><pre># cd lxml
+# PYTHONPATH=src python
+Python 2.5.1
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; from lxml import etree
+&gt;&gt;&gt;</pre>
+</div>
+<p>To make sure everything gets recompiled cleanly after changes, you can
+run <tt class="docutils literal"><span class="pre">make</span> <span class="pre">clean</span></tt> or delete the file <tt class="docutils literal"><span class="pre">src/lxml/etree.c</span></tt>.  Distutils
+do not automatically pick up changes that affect files other than the
+main file <tt class="docutils literal"><span class="pre">src/lxml/etree.pyx</span></tt>.</p>
+</div>
+<div class="section" id="running-the-tests-and-reporting-errors">
+<h2><a class="toc-backref" href="#id7">Running the tests and reporting errors</a><a class="headerlink" href="#running-the-tests-and-reporting-errors" title="Permalink to this headline">¶</a></h2>
+<p>The source distribution (tgz) and the source repository contain a test
+suite for lxml.  You can run it from the top-level directory:</p>
+<div class="highlight-python"><pre>python test.py</pre>
+</div>
+<p>Note that the test script only tests the in-place build (see distutils
+building above), as it searches the <tt class="docutils literal"><span class="pre">src</span></tt> directory.  You can use the
+following one-step command to trigger an in-place build and test it:</p>
+<div class="highlight-python"><pre>make test</pre>
+</div>
+<p>This also runs the ElementTree and cElementTree compatibility tests.  To call
+them separately, make sure you have lxml on your PYTHONPATH first, then run:</p>
+<div class="highlight-python"><pre>python selftest.py</pre>
+</div>
+<p>and:</p>
+<div class="highlight-python"><pre>python selftest2.py</pre>
+</div>
+<p>If the tests give failures, errors, or worse, segmentation faults, we&#8217;d really
+like to know.  Please contact us on the <a class="reference external" href="http://codespeak.net/mailman/listinfo/lxml-dev">mailing list</a>, and please specify
+the version of lxml, libxml2, libxslt and Python you were using, as well as
+your operating system type (Linux, Windows, MacOs, ...).</p>
+</div>
+<div class="section" id="building-an-egg">
+<h2><a class="toc-backref" href="#id8">Building an egg</a><a class="headerlink" href="#building-an-egg" title="Permalink to this headline">¶</a></h2>
+<p>This is the procedure to make an lxml egg for your platform (assuming
+that you have <a class="reference external" href="http://peak.telecommunity.com/DevCenter/setuptools">setuptools</a> installed):</p>
+<ul class="simple">
+<li>Download the lxml-x.y.tar.gz release.  This contains the pregenerated C so
+that you can be sure you build exactly from the release sources.  Unpack
+them and cd into the resulting directory.</li>
+<li>python setup.py build</li>
+<li>If you&#8217;re on a unixy platform, cd into <tt class="docutils literal"><span class="pre">build/lib.your.platform</span></tt> and strip
+any <tt class="docutils literal"><span class="pre">.so</span></tt> file you find there.  This reduces the size of the egg
+considerably.</li>
+<li><tt class="docutils literal"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">bdist_egg</span></tt></li>
+</ul>
+<p>This will put the egg into the <tt class="docutils literal"><span class="pre">dist</span></tt> directory.</p>
+</div>
+<div class="section" id="building-lxml-on-macos-x">
+<h2><a class="toc-backref" href="#id9">Building lxml on MacOS-X</a><a class="headerlink" href="#building-lxml-on-macos-x" title="Permalink to this headline">¶</a></h2>
+<p>Apple regularly ships new system releases with horribly outdated
+system libraries.  This is specifically the case for libxml2 and
+libxslt, where the system provided versions are too old to build lxml.</p>
+<p>While the Unix environment in MacOS-X makes it relatively easy to
+install Unix/Linux style package management tools and new software, it
+actually seems to be hard to get libraries set up for exclusive usage
+that MacOS-X ships in an older version.  Alternative distributions
+(like macports) install their libraries in addition to the system
+libraries, but the compiler and the runtime loader on MacOS still sees
+the system libraries before the new libraries.  This can lead to
+undebuggable crashes where the newer library seems to be loaded but
+the older system library is used.</p>
+<p>Apple discourages static building against libraries, which would help
+working around this problem.  Apple does not ship static library
+binaries with its system and several package management systems follow
+this decision.  Therefore, building static binaries requires building
+the dependencies first.  The <tt class="docutils literal"><span class="pre">setup.py</span></tt> script does this
+automatically when you call it like this:</p>
+<div class="highlight-python"><pre>python setup.py build --static-deps</pre>
+</div>
+<p>This will download and build the latest versions of libxml2 and
+libxslt from the official FTP download site.  If you want to use
+specific versions, or want to prevent any online access, you can
+download both <tt class="docutils literal"><span class="pre">tar.gz</span></tt> release files yourself, place them into a
+subdirectory <tt class="docutils literal"><span class="pre">libs</span></tt> in the lxml distribution, and call <tt class="docutils literal"><span class="pre">setup.py</span></tt>
+with the desired target versions like this:</p>
+<div class="highlight-python"><pre>python setup.py build --static-deps \
+       --libxml2-version=2.7.3 \
+       --libxslt-version=1.1.24 \
+
+sudo python setup.py install</pre>
+</div>
+<p>Instead of <tt class="docutils literal"><span class="pre">build</span></tt>, you can use any target, like <tt class="docutils literal"><span class="pre">bdist_egg</span></tt> if
+you want to use setuptools to build an installable egg.</p>
+<p>Note that this also works with <a class="reference external" href="http://peak.telecommunity.com/DevCenter/EasyInstall">EasyInstall</a>.  Since you can&#8217;t pass
+command line options in this case, you have to use an environment
+variable instead:</p>
+<div class="highlight-python"><pre>STATIC_DEPS=true easy_install lxml</pre>
+</div>
+<p>Some machines may require an additional run with &#8220;sudo&#8221; to install the
+package into the Python package directory:</p>
+<div class="highlight-python"><pre>STATIC_DEPS=true sudo easy_install lxml</pre>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">STATICBUILD</span></tt> environment variable is handled equivalently to
+the <tt class="docutils literal"><span class="pre">STATIC_DEPS</span></tt> variable, but is used by some other extension
+packages, too.</p>
+</div>
+<div class="section" id="static-linking-on-windows">
+<h2><a class="toc-backref" href="#id10">Static linking on Windows</a><a class="headerlink" href="#static-linking-on-windows" title="Permalink to this headline">¶</a></h2>
+<p>Most operating systems have proper package management that makes installing
+current versions of libxml2 and libxslt easy.  The most famous exception is
+Microsoft Windows, which entirely lacks these capabilities.  It can therefore
+be interesting to statically link the external libraries into lxml.etree to
+avoid having to install them separately.</p>
+<p>Download lxml and all required libraries to the same directory.  The iconv,
+libxml2, libxslt, and zlib libraries are all available from the ftp site
+<a class="reference external" href="ftp://ftp.zlatkovic.com/pub/libxml/">ftp://ftp.zlatkovic.com/pub/libxml/</a>.</p>
+<p>Your directory should now have the following files in it (although most likely
+different versions):</p>
+<div class="highlight-python"><pre>iconv-1.9.1.win32.zip
+libxml2-2.6.23.win32.zip
+libxslt-1.1.15.win32.zip
+lxml-1.0.0.tgz
+zlib-1.2.3.win32.zip</pre>
+</div>
+<p>Now extract each of those files in the <em>same</em> directory.  This should give you
+something like this:</p>
+<div class="highlight-python"><pre>iconv-1.9.1.win32/
+iconv-1.9.1.win32.zip
+libxml2-2.6.23.win32/
+libxml2-2.6.23.win32.zip
+libxslt-1.1.15.win32/
+libxslt-1.1.15.win32.zip
+lxml-1.0.0/
+lxml-1.0.0.tgz
+zlib-1.2.3.win32/
+zlib-1.2.3.win32.zip</pre>
+</div>
+<p>Go to the lxml directory and edit the file <tt class="docutils literal"><span class="pre">setup.py</span></tt>.  There should
+be a section near the top that looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">STATIC_INCLUDE_DIRS</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">STATIC_LIBRARY_DIRS</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">STATIC_CFLAGS</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>Change this section to something like this, but take care to use the correct
+version numbers:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">STATIC_INCLUDE_DIRS</span> <span class="o">=</span> <span class="p">[</span>
+       <span class="s">&quot;..</span><span class="se">\\</span><span class="s">libxml2-2.6.23.win32</span><span class="se">\\</span><span class="s">include&quot;</span><span class="p">,</span>
+       <span class="s">&quot;..</span><span class="se">\\</span><span class="s">libxslt-1.1.15.win32</span><span class="se">\\</span><span class="s">include&quot;</span><span class="p">,</span>
+       <span class="s">&quot;..</span><span class="se">\\</span><span class="s">zlib-1.2.3.win32</span><span class="se">\\</span><span class="s">include&quot;</span><span class="p">,</span>
+       <span class="s">&quot;..</span><span class="se">\\</span><span class="s">iconv-1.9.1.win32</span><span class="se">\\</span><span class="s">include&quot;</span>
+       <span class="p">]</span>
+
+<span class="n">STATIC_LIBRARY_DIRS</span> <span class="o">=</span> <span class="p">[</span>
+       <span class="s">&quot;..</span><span class="se">\\</span><span class="s">libxml2-2.6.23.win32</span><span class="se">\\</span><span class="s">lib&quot;</span><span class="p">,</span>
+       <span class="s">&quot;..</span><span class="se">\\</span><span class="s">libxslt-1.1.15.win32</span><span class="se">\\</span><span class="s">lib&quot;</span><span class="p">,</span>
+       <span class="s">&quot;..</span><span class="se">\\</span><span class="s">zlib-1.2.3.win32</span><span class="se">\\</span><span class="s">lib&quot;</span><span class="p">,</span>
+       <span class="s">&quot;..</span><span class="se">\\</span><span class="s">iconv-1.9.1.win32</span><span class="se">\\</span><span class="s">lib&quot;</span>
+       <span class="p">]</span>
+
+<span class="n">STATIC_CFLAGS</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>Add any CFLAGS you might consider useful to the third list.  Now you
+should be able to pass the <tt class="docutils literal"><span class="pre">--static</span></tt> option to setup.py and
+everything should work well.  Try calling:</p>
+<div class="highlight-python"><pre>python setup.py bdist_wininst --static</pre>
+</div>
+<p>This will create a windows installer in the <tt class="docutils literal"><span class="pre">pkg</span></tt> directory.</p>
+</div>
+<div class="section" id="building-debian-packages-from-svn-sources">
+<h2><a class="toc-backref" href="#id11">Building Debian packages from SVN sources</a><a class="headerlink" href="#building-debian-packages-from-svn-sources" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://codespeak.net/pipermail/lxml-dev/2006-May/001254.html">Andreas Pakulat</a> proposed the following approach.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">apt-get</span> <span class="pre">source</span> <span class="pre">lxml</span></tt></li>
+<li>remove the unpacked directory</li>
+<li>tar.gz the lxml SVN version and replace the orig.tar.gz that lies in the
+directory</li>
+<li>check md5sum of created tar.gz file and place new sum and size in dsc file</li>
+<li>do <tt class="docutils literal"><span class="pre">dpkg-source</span> <span class="pre">-x</span> <span class="pre">lxml-[VERSION].dsc</span></tt> and cd into the newly created directory</li>
+<li>run <tt class="docutils literal"><span class="pre">dch</span> <span class="pre">-i</span></tt> and add a comment like &#8220;use trunk version&#8221;, this will
+increase the debian version number so apt/dpkg won&#8217;t get confused</li>
+<li>run <tt class="docutils literal"><span class="pre">dpkg-buildpackage</span> <span class="pre">-rfakeroot</span> <span class="pre">-us</span> <span class="pre">-uc</span></tt> to build the package</li>
+</ul>
+<p>In case <tt class="docutils literal"><span class="pre">dpkg-buildpackage</span></tt> tells you that some dependecies are missing, you
+can either install them manually or run <tt class="docutils literal"><span class="pre">apt-get</span> <span class="pre">build-dep</span> <span class="pre">lxml</span></tt>.</p>
+<p>That will give you .deb packages in the parent directory which can be
+installed using <tt class="docutils literal"><span class="pre">dpkg</span> <span class="pre">-i</span></tt>.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="main.html">
+              <img class="logo" src="_static/python-xml-title.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="main.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">How to build lxml from source</a><ul>
+<li><a class="reference internal" href="#cython">Cython</a></li>
+<li><a class="reference internal" href="#github-git-and-hg">Github, git and hg</a></li>
+<li><a class="reference internal" href="#id2">Setuptools</a></li>
+<li><a class="reference internal" href="#running-the-tests-and-reporting-errors">Running the tests and reporting errors</a></li>
+<li><a class="reference internal" href="#building-an-egg">Building an egg</a></li>
+<li><a class="reference internal" href="#building-lxml-on-macos-x">Building lxml on MacOS-X</a></li>
+<li><a class="reference internal" href="#static-linking-on-windows">Static linking on Windows</a></li>
+<li><a class="reference internal" href="#building-debian-packages-from-svn-sources">Building Debian packages from SVN sources</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/build.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Stefan Behnel et al..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="How to read and work on the source code of lxml" name="description" />
+<meta content="lxml, XML, Cython, source code, develop, comprehend, understand" name="keywords" />
+
+    <title>How to read the source of lxml &mdash; lxml v2.3 - Processing XML and HTML with Python</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="lxml v2.3 - Processing XML and HTML with Python" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="how-to-read-the-source-of-lxml">
+<h1><a class="toc-backref" href="#id1">How to read the source of lxml</a><a class="headerlink" href="#how-to-read-the-source-of-lxml" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">Author:</th><td class="field-body">Stefan Behnel</td>
+</tr>
+</tbody>
+</table>
+<p>This document describes how to read the source code of <a class="reference external" href="http://codespeak.net/lxml/">lxml</a> and how
+to start working on it.  You might also be interested in the companion
+document that describes <a class="reference external" href="build.html">how to build lxml from sources</a>.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#how-to-read-the-source-of-lxml" id="id1">How to read the source of lxml</a><ul>
+<li><a class="reference internal" href="#what-is-cython" id="id2">What is Cython?</a></li>
+<li><a class="reference internal" href="#where-to-start" id="id3">Where to start?</a><ul>
+<li><a class="reference internal" href="#concepts" id="id4">Concepts</a></li>
+<li><a class="reference internal" href="#the-documentation" id="id5">The documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lxml-etree" id="id6">lxml.etree</a></li>
+<li><a class="reference internal" href="#python-modules" id="id7">Python modules</a></li>
+<li><a class="reference internal" href="#lxml-objectify" id="id8">lxml.objectify</a></li>
+<li><a class="reference internal" href="#lxml-html" id="id9">lxml.html</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="what-is-cython">
+<h2><a class="toc-backref" href="#id2">What is Cython?</a><a class="headerlink" href="#what-is-cython" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://cython.org/">Cython</a> is the language that lxml is written in.  It is a very
+Python-like language that was specifically designed for writing Python
+extension modules.</p>
+<p>The reason why Cython (or actually its predecessor <a class="reference external" href="http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/">Pyrex</a> at the time)
+was chosen as an implementation language for lxml, is that it makes it
+very easy to interface with both the Python world and external C code.
+Cython generates all the necessary glue code for the Python API,
+including Python types, calling conventions and reference counting.
+On the other side of the table, calling into C code is not more than
+declaring the signature of the function and maybe some variables as
+being C types, pointers or structs, and then calling it.  The rest of
+the code is just plain Python code.</p>
+<p>The Cython language is so close to Python that the Cython compiler can
+actually compile many, many Python programs to C without major
+modifications.  But the real speed gains of a C compilation come from
+type annotations that were added to the language and that allow Cython
+to generate very efficient C code.</p>
+<p>Even if you are not familiar with Cython, you should keep in mind that
+a slow implementation of a feature is better than none.  So, if you
+want to contribute and have an idea what code you want to write, feel
+free to start with a pure Python implementation.  Chances are, if you
+get the change officially accepted and integrated, others will take
+the time to optimise it so that it runs fast in Cython.</p>
+</div>
+<div class="section" id="where-to-start">
+<h2><a class="toc-backref" href="#id3">Where to start?</a><a class="headerlink" href="#where-to-start" title="Permalink to this headline">¶</a></h2>
+<p>First of all, read <a class="reference external" href="build.html">how to build lxml from sources</a> to learn how to
+retrieve the source code from the Subversion repository and how to
+build it.  The source code lives in the subdirectory <tt class="docutils literal"><span class="pre">src</span></tt> of the
+checkout.</p>
+<p>The main extension modules in lxml are <tt class="docutils literal"><span class="pre">lxml.etree</span></tt> and
+<tt class="docutils literal"><span class="pre">lxml.objectify</span></tt>.  All main modules have the file extension
+<tt class="docutils literal"><span class="pre">.pyx</span></tt>, which shows the descendence from Pyrex.  As usual in Python,
+the main files start with a short description and a couple of imports.
+Cython distinguishes between the run-time <tt class="docutils literal"><span class="pre">import</span></tt> statement (as
+known from Python) and the compile-time <tt class="docutils literal"><span class="pre">cimport</span></tt> statement, which
+imports C declarations, either from external libraries or from other
+Cython modules.</p>
+<div class="section" id="concepts">
+<h3><a class="toc-backref" href="#id4">Concepts</a><a class="headerlink" href="#concepts" title="Permalink to this headline">¶</a></h3>
+<p>lxml&#8217;s tree API is based on proxy objects.  That means, every Element
+object (or rather <tt class="docutils literal"><span class="pre">_Element</span></tt> object) is a proxy for a libxml2 node
+structure.  The class declaration is (mainly):</p>
+<div class="highlight-python"><pre>cdef class _Element:
+    cdef _Document _doc
+    cdef xmlNode* _c_node</pre>
+</div>
+<p>It is a naming convention that C variables and C level class members
+that are passed into libxml2 start with a prefixed <tt class="docutils literal"><span class="pre">c_</span></tt> (commonly
+libxml2 struct pointers), and that C level class members are prefixed
+with an underscore.  So you will often see names like <tt class="docutils literal"><span class="pre">c_doc</span></tt> for an
+<tt class="docutils literal"><span class="pre">xmlDoc*</span></tt> variable (or <tt class="docutils literal"><span class="pre">c_node</span></tt> for an <tt class="docutils literal"><span class="pre">xmlNode*</span></tt>), or the above
+<tt class="docutils literal"><span class="pre">_c_node</span></tt> for a class member that points to an <tt class="docutils literal"><span class="pre">xmlNode</span></tt> struct
+(or <tt class="docutils literal"><span class="pre">_c_doc</span></tt> for an <tt class="docutils literal"><span class="pre">xmlDoc*</span></tt>).</p>
+<p>It is important to know that every proxy in lxml has a factory
+function that properly sets up C level members.  Proxy objects must
+<em>never</em> be instantiated outside of that factory.  For example, to
+instantiate an _Element object or its subclasses, you must always call
+its factory function:</p>
+<div class="highlight-python"><pre>cdef xmlNode* c_node
+cdef _Document doc
+cdef _Element element
+...
+element = _elementFactory(doc, c_node)</pre>
+</div>
+<p>A good place to see how this factory is used are the Element methods
+<tt class="docutils literal"><span class="pre">getparent()</span></tt>, <tt class="docutils literal"><span class="pre">getnext()</span></tt> and <tt class="docutils literal"><span class="pre">getprevious()</span></tt>.</p>
+</div>
+<div class="section" id="the-documentation">
+<h3><a class="toc-backref" href="#id5">The documentation</a><a class="headerlink" href="#the-documentation" title="Permalink to this headline">¶</a></h3>
+<p>An important part of lxml is the documentation that lives in the
+<tt class="docutils literal"><span class="pre">doc</span></tt> directory.  It describes a large part of the API and comprises
+a lot of example code in the form of doctests.</p>
+<p>The documentation is written in the <a class="reference external" href="http://docutils.sourceforge.net/rst.html">ReStructured Text</a> format, a
+very powerful text markup language that looks almost like plain text.
+It is part of the <a class="reference external" href="http://docutils.sourceforge.net/">docutils</a> package.</p>
+<p>The project web site of <a class="reference external" href="http://codespeak.net/lxml/">lxml</a> is completely generated from these text
+documents.  Even the side menu is just collected from the table of
+contents that the ReST processor writes into each HTML page.
+Obviously, we use lxml for this.</p>
+<p>The easiest way to generate the HTML pages is by calling:</p>
+<div class="highlight-python"><pre>make html</pre>
+</div>
+<p>This will call the script <tt class="docutils literal"><span class="pre">doc/mkhtml.py</span></tt> to run the ReST processor
+on the files.  After generating an HTML page the script parses it back
+in to build the side menu, and injects the complete menu into each
+page at the very end.</p>
+<p>Running the <tt class="docutils literal"><span class="pre">make</span></tt> command will also generate the API documentation
+if you have <a class="reference external" href="http://epydoc.sourceforge.net/">epydoc</a> installed.  The epydoc package will import and
+introspect the extension modules and also introspect and parse the
+Python modules of lxml.  The aggregated information will then be
+written out into an HTML documentation site.</p>
+</div>
+</div>
+<div class="section" id="lxml-etree">
+<h2><a class="toc-backref" href="#id6">lxml.etree</a><a class="headerlink" href="#lxml-etree" title="Permalink to this headline">¶</a></h2>
+<p>The main module, <tt class="docutils literal"><span class="pre">lxml.etree</span></tt>, is in the file <a class="reference external" href="http://codespeak.net/svn/lxml/trunk/src/lxml/lxml.etree.pyx">lxml.etree.pyx</a>.  It
+implements the main functions and types of the ElementTree API, as
+well as all the factory functions for proxies.  It is the best place
+to start if you want to find out how a specific feature is
+implemented.</p>
+<p>At the very end of the file, it contains a series of <tt class="docutils literal"><span class="pre">include</span></tt>
+statements that merge the rest of the implementation into the
+generated C code.  Yes, you read right: no importing, no source file
+namespacing, just plain good old include and a huge C code result of
+more than 100,000 lines that we throw right into the C compiler.</p>
+<p>The main include files are:</p>
+<dl class="docutils">
+<dt>apihelpers.pxi</dt>
+<dd>Private C helper functions.  Except for the factory functions,
+most of the little functions that are used all over the place are
+defined here.  This includes things like reading out the text
+content of a libxml2 tree node, checking input from the API level,
+creating a new Element node or handling attribute values.  If you
+want to work on the lxml code, you should keep these functions in
+the back of your head, as they will definitely make your life
+easier.</dd>
+<dt>classlookup.pxi</dt>
+<dd>Element class lookup mechanisms.  The main API and engines for
+those who want to define custom Element classes and inject them
+into lxml.</dd>
+<dt>docloader.pxi</dt>
+<dd>Support for custom document loaders.  Base class and registry for
+custom document resolvers.</dd>
+<dt>extensions.pxi</dt>
+<dd>Infrastructure for extension functions in XPath/XSLT, including
+XPath value conversion and function registration.</dd>
+<dt>iterparse.pxi</dt>
+<dd>Incremental XML parsing.  An iterator class that builds iterparse
+events while parsing.</dd>
+<dt>nsclasses.pxi</dt>
+<dd>Namespace implementation and registry.  The registry and engine
+for Element classes that use the ElementNamespaceClassLookup
+scheme.</dd>
+<dt>parser.pxi</dt>
+<dd>Parsers for XML and HTML.  This is the main parser engine.  It&#8217;s
+the reason why you can parse a document from various sources in
+two lines of Python code.  It&#8217;s definitely not the right place to
+start reading lxml&#8217;s soure code.</dd>
+<dt>parsertarget.pxi</dt>
+<dd>An ElementTree compatible parser target implementation based on
+the SAX2 interface of libxml2.</dd>
+<dt>proxy.pxi</dt>
+<dd>Very low-level functions for memory allocation/deallocation
+and Element proxy handling.  Ignoring this for the beginning
+will safe your head from exploding.</dd>
+<dt>public-api.pxi</dt>
+<dd>The set of C functions that are exported to other extension
+modules at the C level.  For example, <tt class="docutils literal"><span class="pre">lxml.objectify</span></tt> makes use
+of these.  See the <cite>C-level API</cite> documentation.</dd>
+<dt>readonlytree.pxi</dt>
+<dd>A separate read-only implementation of the Element API.  This is
+used in places where non-intrusive access to a tree is required,
+such as the <tt class="docutils literal"><span class="pre">PythonElementClassLookup</span></tt> or XSLT extension
+elements.</dd>
+<dt>saxparser.pxi</dt>
+<dd>SAX-like parser interfaces as known from ElementTree&#8217;s TreeBuilder.</dd>
+<dt>serializer.pxi</dt>
+<dd>XML output functions.  Basically everything that creates byte
+sequences from XML trees.</dd>
+<dt>xinclude.pxi</dt>
+<dd>XInclude support.</dd>
+<dt>xmlerror.pxi</dt>
+<dd><p class="first">Error log handling.  All error messages that libxml2 generates
+internally walk through the code in this file to end up in lxml&#8217;s
+Python level error logs.</p>
+<p class="last">At the end of the file, you will find a long list of named error
+codes.  It is generated from the libxml2 HTML documentation (using
+lxml, of course).  See the script <tt class="docutils literal"><span class="pre">update-error-constants.py</span></tt>
+for this.</p>
+</dd>
+<dt>xmlid.pxi</dt>
+<dd>XMLID and IDDict, a dictionary-like way to find Elements by their
+XML-ID attribute.</dd>
+<dt>xpath.pxi</dt>
+<dd>XPath evaluators.</dd>
+<dt>xslt.pxi</dt>
+<dd>XSL transformations, including the <tt class="docutils literal"><span class="pre">XSLT</span></tt> class, document lookup
+handling and access control.</dd>
+</dl>
+<p>The different schema languages (DTD, RelaxNG, XML Schema and
+Schematron) are implemented in the following include files:</p>
+<ul class="simple">
+<li>dtd.pxi</li>
+<li>relaxng.pxi</li>
+<li>schematron.pxi</li>
+<li>xmlschema.pxi</li>
+</ul>
+</div>
+<div class="section" id="python-modules">
+<h2><a class="toc-backref" href="#id7">Python modules</a><a class="headerlink" href="#python-modules" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">lxml</span></tt> package also contains a number of pure Python modules:</p>
+<dl class="docutils">
+<dt>builder.py</dt>
+<dd>The E-factory and the ElementBuilder class.  These provide a
+simple interface to XML tree generation.</dd>
+<dt>cssselect.py</dt>
+<dd>A CSS selector implementation based on XPath.  The main class is
+called <tt class="docutils literal"><span class="pre">CSSSelector</span></tt>.</dd>
+<dt>doctestcompare.py</dt>
+<dd>A relaxed comparison scheme for XML/HTML markup in doctest.</dd>
+<dt>ElementInclude.py</dt>
+<dd>XInclude-like document inclusion, compatible with ElementTree.</dd>
+<dt>_elementpath.py</dt>
+<dd>XPath-like path language, compatible with ElementTree.</dd>
+<dt>sax.py</dt>
+<dd>SAX2 compatible interfaces to copy lxml trees from/to SAX compatible
+tools.</dd>
+<dt>usedoctest.py</dt>
+<dd>Wrapper module for <tt class="docutils literal"><span class="pre">doctestcompare.py</span></tt> that simplifies its usage
+from inside a doctest.</dd>
+</dl>
+</div>
+<div class="section" id="lxml-objectify">
+<h2><a class="toc-backref" href="#id8">lxml.objectify</a><a class="headerlink" href="#lxml-objectify" title="Permalink to this headline">¶</a></h2>
+<p>A Cython implemented extension module that uses the public C-API of
+lxml.etree.  It provides a Python object-like interface to XML trees.
+The implementation resides in the file <a class="reference external" href="http://codespeak.net/svn/lxml/trunk/src/lxml/lxml.objectify.pyx">lxml.objectify.pyx</a>.</p>
+</div>
+<div class="section" id="lxml-html">
+<h2><a class="toc-backref" href="#id9">lxml.html</a><a class="headerlink" href="#lxml-html" title="Permalink to this headline">¶</a></h2>
+<p>A specialised toolkit for HTML handling, based on lxml.etree.  This is
+implemented in pure Python.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="main.html">
+              <img class="logo" src="_static/python-xml-title.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="main.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">How to read the source of lxml</a><ul>
+<li><a class="reference internal" href="#what-is-cython">What is Cython?</a></li>
+<li><a class="reference internal" href="#where-to-start">Where to start?</a><ul>
+<li><a class="reference internal" href="#concepts">Concepts</a></li>
+<li><a class="reference internal" href="#the-documentation">The documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lxml-etree">lxml.etree</a></li>
+<li><a class="reference internal" href="#python-modules">Python modules</a></li>
+<li><a class="reference internal" href="#lxml-objectify">lxml.objectify</a></li>
+<li><a class="reference internal" href="#lxml-html">lxml.html</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/lxml-source-howto.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Stefan Behnel et al..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,736 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>XPath and XSLT with lxml &mdash; lxml v2.3 - Processing XML and HTML with Python</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="lxml v2.3 - Processing XML and HTML with Python" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="xpath-and-xslt-with-lxml">
+<h1><a class="toc-backref" href="#id1">XPath and XSLT with lxml</a><a class="headerlink" href="#xpath-and-xslt-with-lxml" title="Permalink to this headline">¶</a></h1>
+<p>lxml supports XPath 1.0, XSLT 1.0 and the EXSLT extensions through
+libxml2 and libxslt in a standards compliant way.</p>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#xpath-and-xslt-with-lxml" id="id1">XPath and XSLT with lxml</a><ul>
+<li><a class="reference internal" href="#xpath" id="id2">XPath</a><ul>
+<li><a class="reference internal" href="#the-xpath-method" id="id3">The <tt class="docutils literal"><span class="pre">xpath()</span></tt> method</a></li>
+<li><a class="reference internal" href="#namespaces-and-prefixes" id="id4">Namespaces and prefixes</a></li>
+<li><a class="reference internal" href="#xpath-return-values" id="id5">XPath return values</a></li>
+<li><a class="reference internal" href="#generating-xpath-expressions" id="id6">Generating XPath expressions</a></li>
+<li><a class="reference internal" href="#the-xpath-class" id="id7">The <tt class="docutils literal"><span class="pre">XPath</span></tt> class</a></li>
+<li><a class="reference internal" href="#regular-expressions-in-xpath" id="id8">Regular expressions in XPath</a></li>
+<li><a class="reference internal" href="#the-xpathevaluator-classes" id="id9">The <tt class="docutils literal"><span class="pre">XPathEvaluator</span></tt> classes</a></li>
+<li><a class="reference internal" href="#etxpath" id="id10"><tt class="docutils literal"><span class="pre">ETXPath</span></tt></a></li>
+<li><a class="reference internal" href="#error-handling" id="id11">Error handling</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#xslt" id="id12">XSLT</a><ul>
+<li><a class="reference internal" href="#xslt-result-objects" id="id13">XSLT result objects</a></li>
+<li><a class="reference internal" href="#stylesheet-parameters" id="id14">Stylesheet parameters</a></li>
+<li><a class="reference internal" href="#errors-and-messages" id="id15">Errors and messages</a></li>
+<li><a class="reference internal" href="#the-xslt-tree-method" id="id16">The <tt class="docutils literal"><span class="pre">xslt()</span></tt> tree method</a></li>
+<li><a class="reference internal" href="#dealing-with-stylesheet-complexity" id="id17">Dealing with stylesheet complexity</a></li>
+<li><a class="reference internal" href="#profiling" id="id18">Profiling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>The usual setup procedure:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+</pre></div>
+</div>
+<div class="section" id="xpath">
+<h2><a class="toc-backref" href="#id2">XPath</a><a class="headerlink" href="#xpath" title="Permalink to this headline">¶</a></h2>
+<p>lxml.etree supports the simple path syntax of the <a class="reference external" href="http://effbot.org/zone/element.htm#searching-for-subelements">find, findall and
+findtext</a> methods on ElementTree and Element, as known from the original
+ElementTree library (<a class="reference external" href="http://effbot.org/zone/element-xpath.htm">ElementPath</a>).  As an lxml specific extension, these
+classes also provide an <tt class="docutils literal"><span class="pre">xpath()</span></tt> method that supports expressions in the
+complete XPath syntax, as well as <a class="reference external" href="extensions.html#xpath-extension-functions">custom extension functions</a>.</p>
+<p>There are also specialized XPath evaluator classes that are more efficient for
+frequent evaluation: <tt class="docutils literal"><span class="pre">XPath</span></tt> and <tt class="docutils literal"><span class="pre">XPathEvaluator</span></tt>.  See the <a class="reference external" href="performance.html#xpath">performance
+comparison</a> to learn when to use which.  Their semantics when used on
+Elements and ElementTrees are the same as for the <tt class="docutils literal"><span class="pre">xpath()</span></tt> method described
+here.</p>
+<div class="section" id="the-xpath-method">
+<h3><a class="toc-backref" href="#id3">The <tt class="docutils literal"><span class="pre">xpath()</span></tt> method</a><a class="headerlink" href="#the-xpath-method" title="Permalink to this headline">¶</a></h3>
+<p>For ElementTree, the xpath method performs a global XPath query against the
+document (if absolute) or against the root node (if relative):</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="s">&#39;&lt;foo&gt;&lt;bar&gt;&lt;/bar&gt;&lt;/foo&gt;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;/foo/bar&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span>
+<span class="go">&#39;bar&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;bar&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span>
+<span class="go">&#39;bar&#39;</span>
+</pre></div>
+</div>
+<p>When <tt class="docutils literal"><span class="pre">xpath()</span></tt> is used on an Element, the XPath expression is evaluated
+against the element (if relative) or against the root tree (if absolute):</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;bar&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span>
+<span class="go">&#39;bar&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bar</span> <span class="o">=</span> <span class="n">root</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">bar</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;/foo/bar&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span>
+<span class="go">&#39;bar&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">bar</span><span class="o">.</span><span class="n">getroottree</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;/foo/bar&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span>
+<span class="go">&#39;bar&#39;</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">xpath()</span></tt> method has support for XPath variables:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">expr</span> <span class="o">=</span> <span class="s">&quot;//*[local-name() = $name]&quot;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;foo&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+<span class="go">foo</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;bar&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+<span class="go">bar</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&quot;$text&quot;</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&quot;Hello World!&quot;</span><span class="p">))</span>
+<span class="go">Hello World!</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="namespaces-and-prefixes">
+<h3><a class="toc-backref" href="#id4">Namespaces and prefixes</a><a class="headerlink" href="#namespaces-and-prefixes" title="Permalink to this headline">¶</a></h3>
+<p>If your XPath expression uses namespace prefixes, you must define them
+in a prefix mapping.  To this end, pass a dictionary to the
+<tt class="docutils literal"><span class="pre">namespaces</span></tt> keyword argument that maps the namespace prefixes used
+in the XPath expression to namespace URIs:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="s">&#39;&#39;&#39;</span><span class="se">\</span>
+<span class="gp">... </span><span class="s">&lt;a:foo xmlns:a=&quot;http://codespeak.net/ns/test1&quot;</span>
+<span class="gp">... </span><span class="s">       xmlns:b=&quot;http://codespeak.net/ns/test2&quot;&gt;</span>
+<span class="gp">... </span><span class="s">   &lt;b:bar&gt;Text&lt;/b:bar&gt;</span>
+<span class="gp">... </span><span class="s">&lt;/a:foo&gt;</span>
+<span class="gp">... </span><span class="s">&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">doc</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&#39;/t:foo/b:bar&#39;</span><span class="p">,</span>
+<span class="gp">... </span>              <span class="n">namespaces</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;t&#39;</span><span class="p">:</span> <span class="s">&#39;http://codespeak.net/ns/test1&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                          <span class="s">&#39;b&#39;</span><span class="p">:</span> <span class="s">&#39;http://codespeak.net/ns/test2&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span>
+<span class="go">&#39;{http://codespeak.net/ns/test2}bar&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+<span class="go">&#39;Text&#39;</span>
+</pre></div>
+</div>
+<p>The prefixes you choose here are not linked to the prefixes used
+inside the XML document.  The document may define whatever prefixes it
+likes, including the empty prefix, without breaking the above code.</p>
+<p>Note that XPath does not have a notion of a default namespace.  The
+empty prefix is therefore undefined for XPath and cannot be used in
+namespace prefix mappings.</p>
+<p>There is also an optional <tt class="docutils literal"><span class="pre">extensions</span></tt> argument which is used to
+define <a class="reference external" href="extensions.html#xpath-extension-functions">custom extension functions</a> in Python that are local to this
+evaluation.  The namespace prefixes that they use in the XPath
+expression must also be defined in the namespace prefix mapping.</p>
+</div>
+<div class="section" id="xpath-return-values">
+<h3><a class="toc-backref" href="#id5">XPath return values</a><a class="headerlink" href="#xpath-return-values" title="Permalink to this headline">¶</a></h3>
+<p>The return value types of XPath evaluations vary, depending on the
+XPath expression used:</p>
+<ul class="simple">
+<li>True or False, when the XPath expression has a boolean result</li>
+<li>a float, when the XPath expression has a numeric result (integer or float)</li>
+<li>a &#8216;smart&#8217; string (as described below), when the XPath expression has
+a string result.</li>
+<li>a list of items, when the XPath expression has a list as result.
+The items may include Elements (also comments and processing
+instructions), strings and tuples.  Text nodes and attributes in the
+result are returned as &#8216;smart&#8217; string values.  Namespace
+declarations are returned as tuples of strings: <tt class="docutils literal"><span class="pre">(prefix,</span> <span class="pre">URI)</span></tt>.</li>
+</ul>
+<p>XPath string results are &#8216;smart&#8217; in that they provide a
+<tt class="docutils literal"><span class="pre">getparent()</span></tt> method that knows their origin:</p>
+<ul class="simple">
+<li>for attribute values, <tt class="docutils literal"><span class="pre">result.getparent()</span></tt> returns the Element
+that carries them.  An example is <tt class="docutils literal"><span class="pre">//foo/&#64;attribute</span></tt>, where the
+parent would be a <tt class="docutils literal"><span class="pre">foo</span></tt> Element.</li>
+<li>for the <tt class="docutils literal"><span class="pre">text()</span></tt> function (as in <tt class="docutils literal"><span class="pre">//text()</span></tt>), it returns the
+Element that contains the text or tail that was returned.</li>
+</ul>
+<p>You can distinguish between different text origins with the boolean
+properties <tt class="docutils literal"><span class="pre">is_text</span></tt>, <tt class="docutils literal"><span class="pre">is_tail</span></tt> and <tt class="docutils literal"><span class="pre">is_attribute</span></tt>.</p>
+<p>Note that <tt class="docutils literal"><span class="pre">getparent()</span></tt> may not always return an Element.  For
+example, the XPath functions <tt class="docutils literal"><span class="pre">string()</span></tt> and <tt class="docutils literal"><span class="pre">concat()</span></tt> will
+construct strings that do not have an origin.  For them,
+<tt class="docutils literal"><span class="pre">getparent()</span></tt> will return None.</p>
+<p>There are certain cases where the smart string behaviour is
+undesirable.  For example, it means that the tree will be kept alive
+by the string, which may have a considerable memory impact in the case
+that the string value is the only thing in the tree that is actually
+of interest.  For these cases, you can deactivate the parental
+relationship using the keyword argument <tt class="docutils literal"><span class="pre">smart_strings</span></tt>.</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&quot;&lt;root&gt;&lt;a&gt;TEXT&lt;/a&gt;&lt;/root&gt;&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_text</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XPath</span><span class="p">(</span><span class="s">&quot;//text()&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="n">find_text</span><span class="p">(</span><span class="n">root</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="go">TEXT</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">getparent</span><span class="p">()</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="go">TEXT</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find_text</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XPath</span><span class="p">(</span><span class="s">&quot;//text()&quot;</span><span class="p">,</span> <span class="n">smart_strings</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="n">find_text</span><span class="p">(</span><span class="n">root</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="go">TEXT</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hasattr</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="s">&#39;getparent&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="generating-xpath-expressions">
+<h3><a class="toc-backref" href="#id6">Generating XPath expressions</a><a class="headerlink" href="#generating-xpath-expressions" title="Permalink to this headline">¶</a></h3>
+<p>ElementTree objects have a method <tt class="docutils literal"><span class="pre">getpath(element)</span></tt>, which returns a
+structural, absolute XPath expression to find that element:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>  <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>  <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span>  <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d1</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s">&quot;d&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d2</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">SubElement</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s">&quot;d&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">ElementTree</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">getpath</span><span class="p">(</span><span class="n">d2</span><span class="p">))</span>
+<span class="go">/c/d[2]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="n">tree</span><span class="o">.</span><span class="n">getpath</span><span class="p">(</span><span class="n">d2</span><span class="p">))</span> <span class="o">==</span> <span class="p">[</span><span class="n">d2</span><span class="p">]</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="the-xpath-class">
+<h3><a class="toc-backref" href="#id7">The <tt class="docutils literal"><span class="pre">XPath</span></tt> class</a><a class="headerlink" href="#the-xpath-class" title="Permalink to this headline">¶</a></h3>
+<p>The <tt class="docutils literal"><span class="pre">XPath</span></tt> class compiles an XPath expression into a callable function:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&quot;&lt;root&gt;&lt;a&gt;&lt;b/&gt;&lt;/a&gt;&lt;b/&gt;&lt;/root&gt;&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XPath</span><span class="p">(</span><span class="s">&quot;//b&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">find</span><span class="p">(</span><span class="n">root</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+<span class="go">b</span>
+</pre></div>
+</div>
+<p>The compilation takes as much time as in the <tt class="docutils literal"><span class="pre">xpath()</span></tt> method, but it is
+done only once per class instantiation.  This makes it especially efficient
+for repeated evaluation of the same XPath expression.</p>
+<p>Just like the <tt class="docutils literal"><span class="pre">xpath()</span></tt> method, the <tt class="docutils literal"><span class="pre">XPath</span></tt> class supports XPath
+variables:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">count_elements</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XPath</span><span class="p">(</span><span class="s">&quot;count(//*[local-name() = $name])&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">count_elements</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;a&quot;</span><span class="p">))</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">count_elements</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;b&quot;</span><span class="p">))</span>
+<span class="go">2.0</span>
+</pre></div>
+</div>
+<p>This supports very efficient evaluation of modified versions of an XPath
+expression, as compilation is still only required once.</p>
+<p>Prefix-to-namespace mappings can be passed as second parameter:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&quot;&lt;root xmlns=&#39;NS&#39;&gt;&lt;a&gt;&lt;b/&gt;&lt;/a&gt;&lt;b/&gt;&lt;/root&gt;&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XPath</span><span class="p">(</span><span class="s">&quot;//n:b&quot;</span><span class="p">,</span> <span class="n">namespaces</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;n&#39;</span><span class="p">:</span><span class="s">&#39;NS&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">find</span><span class="p">(</span><span class="n">root</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+<span class="go">{NS}b</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="regular-expressions-in-xpath">
+<h3><a class="toc-backref" href="#id8">Regular expressions in XPath</a><a class="headerlink" href="#regular-expressions-in-xpath" title="Permalink to this headline">¶</a></h3>
+<p>By default, <tt class="docutils literal"><span class="pre">XPath</span></tt> supports regular expressions in the <a class="reference external" href="http://www.exslt.org/">EXSLT</a> namespace:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">regexpNS</span> <span class="o">=</span> <span class="s">&quot;http://exslt.org/regular-expressions&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XPath</span><span class="p">(</span><span class="s">&quot;//*[re:test(., &#39;^abc$&#39;, &#39;i&#39;)]&quot;</span><span class="p">,</span>
+<span class="gp">... </span>                   <span class="n">namespaces</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;re&#39;</span><span class="p">:</span><span class="n">regexpNS</span><span class="p">})</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&quot;&lt;root&gt;&lt;a&gt;aB&lt;/a&gt;&lt;b&gt;aBc&lt;/b&gt;&lt;/root&gt;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">find</span><span class="p">(</span><span class="n">root</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="go">aBc</span>
+</pre></div>
+</div>
+<p>You can disable this with the boolean keyword argument <tt class="docutils literal"><span class="pre">regexp</span></tt> which
+defaults to True.</p>
+</div>
+<div class="section" id="the-xpathevaluator-classes">
+<h3><a class="toc-backref" href="#id9">The <tt class="docutils literal"><span class="pre">XPathEvaluator</span></tt> classes</a><a class="headerlink" href="#the-xpathevaluator-classes" title="Permalink to this headline">¶</a></h3>
+<p>lxml.etree provides two other efficient XPath evaluators that work on
+ElementTrees or Elements respectively: <tt class="docutils literal"><span class="pre">XPathDocumentEvaluator</span></tt> and
+<tt class="docutils literal"><span class="pre">XPathElementEvaluator</span></tt>.  They are automatically selected if you use the
+XPathEvaluator helper for instantiation:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&quot;&lt;root&gt;&lt;a&gt;&lt;b/&gt;&lt;/a&gt;&lt;b/&gt;&lt;/root&gt;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xpatheval</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XPathEvaluator</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">xpatheval</span><span class="p">,</span> <span class="n">etree</span><span class="o">.</span><span class="n">XPathElementEvaluator</span><span class="p">))</span>
+<span class="go">True</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">xpatheval</span><span class="p">(</span><span class="s">&quot;//b&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+<span class="go">b</span>
+</pre></div>
+</div>
+<p>This class provides efficient support for evaluating different XPath
+expressions on the same Element or ElementTree.</p>
+</div>
+<div class="section" id="etxpath">
+<h3><a class="toc-backref" href="#id10"><tt class="docutils literal"><span class="pre">ETXPath</span></tt></a><a class="headerlink" href="#etxpath" title="Permalink to this headline">¶</a></h3>
+<p>ElementTree supports a language named <a class="reference external" href="http://effbot.org/zone/element-xpath.htm">ElementPath</a> in its <tt class="docutils literal"><span class="pre">find*()</span></tt> methods.
+One of the main differences between XPath and ElementPath is that the XPath
+language requires an indirection through prefixes for namespace support,
+whereas ElementTree uses the Clark notation (<tt class="docutils literal"><span class="pre">{ns}name</span></tt>) to avoid prefixes
+completely.  The other major difference regards the capabilities of both path
+languages.  Where XPath supports various sophisticated ways of restricting the
+result set through functions and boolean expressions, ElementPath only
+supports pure path traversal without nesting or further conditions.  So, while
+the ElementPath syntax is self-contained and therefore easier to write and
+handle, XPath is much more powerful and expressive.</p>
+<p>lxml.etree bridges this gap through the class <tt class="docutils literal"><span class="pre">ETXPath</span></tt>, which accepts XPath
+expressions with namespaces in Clark notation.  It is identical to the
+<tt class="docutils literal"><span class="pre">XPath</span></tt> class, except for the namespace notation.  Normally, you would
+write:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&quot;&lt;root xmlns=&#39;ns&#39;&gt;&lt;a&gt;&lt;b/&gt;&lt;/a&gt;&lt;b/&gt;&lt;/root&gt;&quot;</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XPath</span><span class="p">(</span><span class="s">&quot;//p:b&quot;</span><span class="p">,</span> <span class="n">namespaces</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;p&#39;</span> <span class="p">:</span> <span class="s">&#39;ns&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">find</span><span class="p">(</span><span class="n">root</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+<span class="go">{ns}b</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">ETXPath</span></tt> allows you to change this to:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">find</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">ETXPath</span><span class="p">(</span><span class="s">&quot;//{ns}b&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">find</span><span class="p">(</span><span class="n">root</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tag</span><span class="p">)</span>
+<span class="go">{ns}b</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="error-handling">
+<h3><a class="toc-backref" href="#id11">Error handling</a><a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h3>
+<p>lxml.etree raises exceptions when errors occur while parsing or evaluating an
+XPath expression:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">find</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XPath</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">lxml.etree.XPathSyntaxError</span>: <span class="n">Invalid expression</span>
+</pre></div>
+</div>
+<p>lxml will also try to give you a hint what went wrong, so if you pass a more
+complex expression, you may get a somewhat more specific error:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">find</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XPath</span><span class="p">(</span><span class="s">&quot;//*[1.1.1]&quot;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">lxml.etree.XPathSyntaxError</span>: <span class="n">Invalid predicate</span>
+</pre></div>
+</div>
+<p>During evaluation, lxml will emit an XPathEvalError on errors:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">find</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XPath</span><span class="p">(</span><span class="s">&quot;//ns:a&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">lxml.etree.XPathEvalError</span>: <span class="n">Undefined namespace prefix</span>
+</pre></div>
+</div>
+<p>This works for the <tt class="docutils literal"><span class="pre">XPath</span></tt> class, however, the other evaluators (including
+the <tt class="docutils literal"><span class="pre">xpath()</span></tt> method) are one-shot operations that do parsing and evaluation
+in one step.  They therefore raise evaluation exceptions in all cases:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">Element</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&quot;//*[1.1.1]&quot;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">lxml.etree.XPathEvalError</span>: <span class="n">Invalid predicate</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&quot;//ns:a&quot;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">lxml.etree.XPathEvalError</span>: <span class="n">Undefined namespace prefix</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">find</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">xpath</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\\</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">lxml.etree.XPathEvalError</span>: <span class="n">Invalid expression</span>
+</pre></div>
+</div>
+<p>Note that lxml versions before 1.3 always raised an <tt class="docutils literal"><span class="pre">XPathSyntaxError</span></tt> for
+all errors, including evaluation errors.  The best way to support older
+versions is to except on the superclass <tt class="docutils literal"><span class="pre">XPathError</span></tt>.</p>
+</div>
+</div>
+<div class="section" id="xslt">
+<h2><a class="toc-backref" href="#id12">XSLT</a><a class="headerlink" href="#xslt" title="Permalink to this headline">¶</a></h2>
+<p>lxml.etree introduces a new class, lxml.etree.XSLT. The class can be
+given an ElementTree or Element object to construct an XSLT
+transformer:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xslt_root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&#39;&#39;&#39;</span><span class="se">\</span>
+<span class="gp">... </span><span class="s">&lt;xsl:stylesheet version=&quot;1.0&quot;</span>
+<span class="gp">... </span><span class="s">    xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;xsl:template match=&quot;/&quot;&gt;</span>
+<span class="gp">... </span><span class="s">        &lt;foo&gt;&lt;xsl:value-of select=&quot;/a/b/text()&quot; /&gt;&lt;/foo&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;/xsl:template&gt;</span>
+<span class="gp">... </span><span class="s">&lt;/xsl:stylesheet&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transform</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XSLT</span><span class="p">(</span><span class="n">xslt_root</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can then run the transformation on an ElementTree document by simply
+calling it, and this results in another ElementTree object:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">(</span><span class="s">&#39;&lt;a&gt;&lt;b&gt;Text&lt;/b&gt;&lt;/a&gt;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">doc</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result_tree</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>By default, XSLT supports all extension functions from libxslt and
+libexslt as well as Python regular expressions through the <a class="reference external" href="http://www.exslt.org/regexp/">EXSLT
+regexp functions</a>.  Also see the documentation on <a class="reference external" href="extensions.html#xpath-extension-functions">custom extension
+functions</a>, <a class="reference external" href="extensions.html#xslt-extension-elements">XSLT extension elements</a> and <a class="reference external" href="resolvers.html">document resolvers</a>.
+There is a separate section on <a class="reference external" href="resolvers.html#i-o-access-control-in-xslt">controlling access</a> to external
+documents and resources.</p>
+<div class="section" id="xslt-result-objects">
+<h3><a class="toc-backref" href="#id13">XSLT result objects</a><a class="headerlink" href="#xslt-result-objects" title="Permalink to this headline">¶</a></h3>
+<p>The result of an XSL transformation can be accessed like a normal ElementTree
+document:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&#39;&lt;a&gt;&lt;b&gt;Text&lt;/b&gt;&lt;/a&gt;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span><span class="o">.</span><span class="n">text</span>
+<span class="go">&#39;Text&#39;</span>
+</pre></div>
+</div>
+<p>but, as opposed to normal ElementTree objects, can also be turned into an (XML
+or text) string by applying the str() function:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">&#39;&lt;?xml version=&quot;1.0&quot;?&gt;\n&lt;foo&gt;Text&lt;/foo&gt;\n&#39;</span>
+</pre></div>
+</div>
+<p>The result is always a plain string, encoded as requested by the
+<tt class="docutils literal"><span class="pre">xsl:output</span></tt> element in the stylesheet.  If you want a Python unicode string
+instead, you should set this encoding to <tt class="docutils literal"><span class="pre">UTF-8</span></tt> (unless the <span class="incremental">ASCII</span> default
+is sufficient).  This allows you to call the builtin <tt class="docutils literal"><span class="pre">unicode()</span></tt> function on
+the result:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="nb">unicode</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">u&#39;&lt;?xml version=&quot;1.0&quot;?&gt;\n&lt;foo&gt;Text&lt;/foo&gt;\n&#39;</span>
+</pre></div>
+</div>
+<p>You can use other encodings at the cost of multiple recoding.  Encodings that
+are not supported by Python will result in an error:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xslt_tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&#39;&#39;&#39;</span><span class="se">\</span>
+<span class="gp">... </span><span class="s">&lt;xsl:stylesheet version=&quot;1.0&quot;</span>
+<span class="gp">... </span><span class="s">    xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;xsl:output encoding=&quot;UCS4&quot;/&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;xsl:template match=&quot;/&quot;&gt;</span>
+<span class="gp">... </span><span class="s">        &lt;foo&gt;&lt;xsl:value-of select=&quot;/a/b/text()&quot; /&gt;&lt;/foo&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;/xsl:template&gt;</span>
+<span class="gp">... </span><span class="s">&lt;/xsl:stylesheet&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transform</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XSLT</span><span class="p">(</span><span class="n">xslt_tree</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">unicode</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">LookupError: unknown encoding</span>: <span class="n">UCS4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="stylesheet-parameters">
+<h3><a class="toc-backref" href="#id14">Stylesheet parameters</a><a class="headerlink" href="#stylesheet-parameters" title="Permalink to this headline">¶</a></h3>
+<p>It is possible to pass parameters, in the form of XPath expressions, to the
+XSLT template:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xslt_tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&#39;&#39;&#39;</span><span class="se">\</span>
+<span class="gp">... </span><span class="s">&lt;xsl:stylesheet version=&quot;1.0&quot;</span>
+<span class="gp">... </span><span class="s">    xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;xsl:param name=&quot;a&quot; /&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;xsl:template match=&quot;/&quot;&gt;</span>
+<span class="gp">... </span><span class="s">        &lt;foo&gt;&lt;xsl:value-of select=&quot;$a&quot; /&gt;&lt;/foo&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;/xsl:template&gt;</span>
+<span class="gp">... </span><span class="s">&lt;/xsl:stylesheet&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transform</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XSLT</span><span class="p">(</span><span class="n">xslt_tree</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">doc_root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&#39;&lt;a&gt;&lt;b&gt;Text&lt;/b&gt;&lt;/a&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The parameters are passed as keyword parameters to the transform call.
+First, let&#8217;s try passing in a simple integer expression:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">doc_root</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="s">&quot;5&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">&#39;&lt;?xml version=&quot;1.0&quot;?&gt;\n&lt;foo&gt;5&lt;/foo&gt;\n&#39;</span>
+</pre></div>
+</div>
+<p>You can use any valid XPath expression as parameter value:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">doc_root</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="s">&quot;/a/b/text()&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">&#39;&lt;?xml version=&quot;1.0&quot;?&gt;\n&lt;foo&gt;Text&lt;/foo&gt;\n&#39;</span>
+</pre></div>
+</div>
+<p>It&#8217;s also possible to pass an XPath object as a parameter:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">doc_root</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">etree</span><span class="o">.</span><span class="n">XPath</span><span class="p">(</span><span class="s">&quot;/a/b/text()&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">&#39;&lt;?xml version=&quot;1.0&quot;?&gt;\n&lt;foo&gt;Text&lt;/foo&gt;\n&#39;</span>
+</pre></div>
+</div>
+<p>Passing a string expression looks like this:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">doc_root</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="s">&quot;&#39;A&#39;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">&#39;&lt;?xml version=&quot;1.0&quot;?&gt;\n&lt;foo&gt;A&lt;/foo&gt;\n&#39;</span>
+</pre></div>
+</div>
+<p>To pass a string that (potentially) contains quotes, you can use the
+<tt class="docutils literal"><span class="pre">.strparam()</span></tt> class method.  Note that it does not escape the
+string.  Instead, it returns an opaque object that keeps the string
+value.</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">plain_string_value</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XSLT</span><span class="o">.</span><span class="n">strparam</span><span class="p">(</span>
+<span class="gp">... </span>                         <span class="sd">&quot;&quot;&quot; It&#39;s &quot;Monty Python&quot; &quot;&quot;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">doc_root</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">plain_string_value</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">&#39;&lt;?xml version=&quot;1.0&quot;?&gt;\n&lt;foo&gt; It\&#39;s &quot;Monty Python&quot; &lt;/foo&gt;\n&#39;</span>
+</pre></div>
+</div>
+<p>If you need to pass parameters that are not legal Python identifiers,
+pass them inside of a dictionary:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">transform</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XSLT</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&#39;&#39;&#39;</span><span class="se">\</span>
+<span class="gp">... </span><span class="s">&lt;xsl:stylesheet version=&quot;1.0&quot;</span>
+<span class="gp">... </span><span class="s">    xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;xsl:param name=&quot;non-python-identifier&quot; /&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;xsl:template match=&quot;/&quot;&gt;</span>
+<span class="gp">... </span><span class="s">        &lt;foo&gt;&lt;xsl:value-of select=&quot;$non-python-identifier&quot; /&gt;&lt;/foo&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;/xsl:template&gt;</span>
+<span class="gp">... </span><span class="s">&lt;/xsl:stylesheet&gt;&#39;&#39;&#39;</span><span class="p">))</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">doc_root</span><span class="p">,</span> <span class="o">**</span><span class="p">{</span><span class="s">&#39;non-python-identifier&#39;</span><span class="p">:</span> <span class="s">&#39;5&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">&#39;&lt;?xml version=&quot;1.0&quot;?&gt;\n&lt;foo&gt;5&lt;/foo&gt;\n&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="errors-and-messages">
+<h3><a class="toc-backref" href="#id15">Errors and messages</a><a class="headerlink" href="#errors-and-messages" title="Permalink to this headline">¶</a></h3>
+<p>Like most of the processing oriented objects in lxml.etree, <tt class="docutils literal"><span class="pre">XSLT</span></tt>
+provides an error log that lists messages and error output from the
+last run.  See the <a class="reference external" href="parsing.html#error-log">parser documentation</a> for a description of the
+error log.</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xslt_root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&#39;&#39;&#39;</span><span class="se">\</span>
+<span class="gp">... </span><span class="s">&lt;xsl:stylesheet version=&quot;1.0&quot;</span>
+<span class="gp">... </span><span class="s">    xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;xsl:template match=&quot;/&quot;&gt;</span>
+<span class="gp">... </span><span class="s">        &lt;xsl:message terminate=&quot;no&quot;&gt;STARTING&lt;/xsl:message&gt;</span>
+<span class="gp">... </span><span class="s">        &lt;foo&gt;&lt;xsl:value-of select=&quot;/a/b/text()&quot; /&gt;&lt;/foo&gt;</span>
+<span class="gp">... </span><span class="s">        &lt;xsl:message terminate=&quot;no&quot;&gt;DONE&lt;/xsl:message&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;/xsl:template&gt;</span>
+<span class="gp">... </span><span class="s">&lt;/xsl:stylesheet&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transform</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XSLT</span><span class="p">(</span><span class="n">xslt_root</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">doc_root</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XML</span><span class="p">(</span><span class="s">&#39;&lt;a&gt;&lt;b&gt;Text&lt;/b&gt;&lt;/a&gt;&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">doc_root</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">&#39;&lt;?xml version=&quot;1.0&quot;?&gt;\n&lt;foo&gt;Text&lt;/foo&gt;\n&#39;</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transform</span><span class="o">.</span><span class="n">error_log</span>
+<span class="go">&lt;string&gt;:0:0:ERROR:XSLT:ERR_OK: STARTING</span>
+<span class="go">&lt;string&gt;:0:0:ERROR:XSLT:ERR_OK: DONE</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">transform</span><span class="o">.</span><span class="n">error_log</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&#39;message from line </span><span class="si">%s</span><span class="s">, col </span><span class="si">%s</span><span class="s">: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+<span class="gp">... </span>               <span class="n">entry</span><span class="o">.</span><span class="n">line</span><span class="p">,</span> <span class="n">entry</span><span class="o">.</span><span class="n">column</span><span class="p">,</span> <span class="n">entry</span><span class="o">.</span><span class="n">message</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&#39;domain: </span><span class="si">%s</span><span class="s"> (</span><span class="si">%d</span><span class="s">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">domain_name</span><span class="p">,</span> <span class="n">entry</span><span class="o">.</span><span class="n">domain</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&#39;type: </span><span class="si">%s</span><span class="s"> (</span><span class="si">%d</span><span class="s">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">type_name</span><span class="p">,</span> <span class="n">entry</span><span class="o">.</span><span class="n">type</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&#39;level: </span><span class="si">%s</span><span class="s"> (</span><span class="si">%d</span><span class="s">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">level_name</span><span class="p">,</span> <span class="n">entry</span><span class="o">.</span><span class="n">level</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="k">print</span><span class="p">(</span><span class="s">&#39;filename: </span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">entry</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+<span class="go">message from line 0, col 0: STARTING</span>
+<span class="go">domain: XSLT (22)</span>
+<span class="go">type: ERR_OK (0)</span>
+<span class="go">level: ERROR (2)</span>
+<span class="go">filename: &lt;string&gt;</span>
+<span class="go">message from line 0, col 0: DONE</span>
+<span class="go">domain: XSLT (22)</span>
+<span class="go">type: ERR_OK (0)</span>
+<span class="go">level: ERROR (2)</span>
+<span class="go">filename: &lt;string&gt;</span>
+</pre></div>
+</div>
+<p>Note that there is no way in XSLT to distinguish between user
+messages, warnings and error messages that occurred during the
+run. <tt class="docutils literal"><span class="pre">libxslt</span></tt> simply does not provide this information.  You can
+partly work around this limitation by making your own messages
+uniquely identifiable, e.g. with a common text prefix.</p>
+</div>
+<div class="section" id="the-xslt-tree-method">
+<h3><a class="toc-backref" href="#id16">The <tt class="docutils literal"><span class="pre">xslt()</span></tt> tree method</a><a class="headerlink" href="#the-xslt-tree-method" title="Permalink to this headline">¶</a></h3>
+<p>There&#8217;s also a convenience method on ElementTree objects for doing XSL
+transformations.  This is less efficient if you want to apply the same XSL
+transformation to multiple documents, but is shorter to write for one-shot
+operations, as you do not have to instantiate a stylesheet yourself:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">xslt</span><span class="p">(</span><span class="n">xslt_tree</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="s">&quot;&#39;A&#39;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">&#39;&lt;?xml version=&quot;1.0&quot;?&gt;\n&lt;foo&gt;A&lt;/foo&gt;\n&#39;</span>
+</pre></div>
+</div>
+<p>This is a shortcut for the following code:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">transform</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XSLT</span><span class="p">(</span><span class="n">xslt_tree</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="s">&quot;&#39;A&#39;&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">&#39;&lt;?xml version=&quot;1.0&quot;?&gt;\n&lt;foo&gt;A&lt;/foo&gt;\n&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="dealing-with-stylesheet-complexity">
+<h3><a class="toc-backref" href="#id17">Dealing with stylesheet complexity</a><a class="headerlink" href="#dealing-with-stylesheet-complexity" title="Permalink to this headline">¶</a></h3>
+<p>Some applications require a larger set of rather diverse stylesheets.
+lxml.etree allows you to deal with this in a number of ways.  Here are
+some ideas to try.</p>
+<p>The most simple way to reduce the diversity is by using XSLT
+parameters that you pass at call time to configure the stylesheets.
+The <tt class="docutils literal"><span class="pre">partial()</span></tt> function in the <tt class="docutils literal"><span class="pre">functools</span></tt> module of Python 2.5
+may come in handy here.  It allows you to bind a set of keyword
+arguments (i.e. stylesheet parameters) to a reference of a callable
+stylesheet.  The same works for instances of the <tt class="docutils literal"><span class="pre">XPath()</span></tt>
+evaluator, obviously.</p>
+<p>You may also consider creating stylesheets programmatically.  Just
+create an XSL tree, e.g. from a parsed template, and then add or
+replace parts as you see fit.  Passing an XSL tree into the <tt class="docutils literal"><span class="pre">XSLT()</span></tt>
+constructor multiple times will create independent stylesheets, so
+later modifications of the tree will not be reflected in the already
+created stylesheets.  This makes stylesheet generation very straight
+forward.</p>
+<p>A third thing to remember is the support for <a class="reference external" href="extensions.html#xpath-extension-functions">custom extension
+functions</a> and <a class="reference external" href="extensions.html#xslt-extension-elements">XSLT extension elements</a>.  Some things are much
+easier to express in XSLT than in Python, while for others it is the
+complete opposite.  Finding the right mixture of Python code and XSL
+code can help a great deal in keeping applications well designed and
+maintainable.</p>
+</div>
+<div class="section" id="profiling">
+<h3><a class="toc-backref" href="#id18">Profiling</a><a class="headerlink" href="#profiling" title="Permalink to this headline">¶</a></h3>
+<p>If you want to know how your stylesheet performed, pass the <tt class="docutils literal"><span class="pre">profile_run</span></tt>
+keyword to the transform:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="s">&quot;/a/b/text()&quot;</span><span class="p">,</span> <span class="n">profile_run</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">profile</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">xslt_profile</span>
+</pre></div>
+</div>
+<p>The value of the <tt class="docutils literal"><span class="pre">xslt_profile</span></tt> property is an ElementTree with profiling
+data about each template, similar to the following:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;profile&gt;</span>
+  <span class="nt">&lt;template</span> <span class="na">rank=</span><span class="s">&quot;1&quot;</span> <span class="na">match=</span><span class="s">&quot;/&quot;</span> <span class="na">name=</span><span class="s">&quot;&quot;</span> <span class="na">mode=</span><span class="s">&quot;&quot;</span> <span class="na">calls=</span><span class="s">&quot;1&quot;</span> <span class="na">time=</span><span class="s">&quot;1&quot;</span> <span class="na">average=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/profile&gt;</span>
+</pre></div>
+</div>
+<p>Note that this is a read-only document.  You must not move any of its elements
+to other documents.  Please deep-copy the document if you need to modify it.
+If you want to free it from memory, just do:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">result</span><span class="o">.</span><span class="n">xslt_profile</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="main.html">
+              <img class="logo" src="_static/python-xml-title.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="main.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">XPath and XSLT with lxml</a><ul>
+<li><a class="reference internal" href="#xpath">XPath</a><ul>
+<li><a class="reference internal" href="#the-xpath-method">The <tt class="docutils literal"><span class="pre">xpath()</span></tt> method</a></li>
+<li><a class="reference internal" href="#namespaces-and-prefixes">Namespaces and prefixes</a></li>
+<li><a class="reference internal" href="#xpath-return-values">XPath return values</a></li>
+<li><a class="reference internal" href="#generating-xpath-expressions">Generating XPath expressions</a></li>
+<li><a class="reference internal" href="#the-xpath-class">The <tt class="docutils literal"><span class="pre">XPath</span></tt> class</a></li>
+<li><a class="reference internal" href="#regular-expressions-in-xpath">Regular expressions in XPath</a></li>
+<li><a class="reference internal" href="#the-xpathevaluator-classes">The <tt class="docutils literal"><span class="pre">XPathEvaluator</span></tt> classes</a></li>
+<li><a class="reference internal" href="#etxpath"><tt class="docutils literal"><span class="pre">ETXPath</span></tt></a></li>
+<li><a class="reference internal" href="#error-handling">Error handling</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#xslt">XSLT</a><ul>
+<li><a class="reference internal" href="#xslt-result-objects">XSLT result objects</a></li>
+<li><a class="reference internal" href="#stylesheet-parameters">Stylesheet parameters</a></li>
+<li><a class="reference internal" href="#errors-and-messages">Errors and messages</a></li>
+<li><a class="reference internal" href="#the-xslt-tree-method">The <tt class="docutils literal"><span class="pre">xslt()</span></tt> tree method</a></li>
+<li><a class="reference internal" href="#dealing-with-stylesheet-complexity">Dealing with stylesheet complexity</a></li>
+<li><a class="reference internal" href="#profiling">Profiling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/xpathxslt.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Stefan Behnel et al..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,339 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Document loading and URL resolving &mdash; lxml v2.3 - Processing XML and HTML with Python</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="lxml v2.3 - Processing XML and HTML with Python" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="document-loading-and-url-resolving">
+<h1><a class="toc-backref" href="#id2">Document loading and URL resolving</a><a class="headerlink" href="#document-loading-and-url-resolving" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#document-loading-and-url-resolving" id="id2">Document loading and URL resolving</a><ul>
+<li><a class="reference internal" href="#xml-catalogs" id="id3">XML Catalogs</a></li>
+<li><a class="reference internal" href="#uri-resolvers" id="id4">URI Resolvers</a></li>
+<li><a class="reference internal" href="#document-loading-in-context" id="id5">Document loading in context</a></li>
+<li><a class="reference internal" href="#i-o-access-control-in-xslt" id="id6">I/O access control in XSLT</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>The normal way to load external entities (such as DTDs) is by using
+XML catalogs.  Lxml also has support for user provided document
+loaders in both the parsers and XSL transformations.  These so-called
+resolvers are subclasses of the etree.Resolver class.</p>
+<div class="section" id="xml-catalogs">
+<h2><a class="toc-backref" href="#id3">XML Catalogs</a><a class="headerlink" href="#xml-catalogs" title="Permalink to this headline">¶</a></h2>
+<p>When loading an external entity for a document, e.g. a DTD, the parser
+is normally configured to prevent network access (see the
+<tt class="docutils literal"><span class="pre">no_network</span></tt> parser option).  Instead, it will try to load the
+entity from their local file system path or, in the most common case
+that the entity uses a network URL as reference, from a local XML
+catalog.</p>
+<p><a class="reference external" href="http://www.oasis-open.org/committees/entity/spec.html">XML catalogs</a> are the preferred and agreed-on mechanism to load
+external entities from XML processors.  Most tools will use them, so
+it is worth configuring them properly on a system.  Many Linux
+installations use them by default, but on other systems they may need
+to get enabled manually.  The <a class="reference external" href="http://xmlsoft.org/">libxml2 site</a> has some documentation
+on <a class="reference external" href="http://xmlsoft.org/catalog.html">how to set up XML catalogs</a></p>
+</div>
+<div class="section" id="uri-resolvers">
+<h2><a class="toc-backref" href="#id4">URI Resolvers</a><a class="headerlink" href="#uri-resolvers" title="Permalink to this headline">¶</a></h2>
+<p>Here is an example of a custom resolver:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">DTDResolver</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">Resolver</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">resolve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Resolving URL &#39;</span><span class="si">%s</span><span class="s">&#39;&quot;</span> <span class="o">%</span> <span class="n">url</span><span class="p">)</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_string</span><span class="p">(</span>
+<span class="gp">... </span>            <span class="s">&#39;&lt;!ENTITY myentity &quot;[resolved text: </span><span class="si">%s</span><span class="s">]&quot;&gt;&#39;</span> <span class="o">%</span> <span class="n">url</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This defines a resolver that always returns a dynamically generated DTD
+fragment defining an entity.  The <tt class="docutils literal"><span class="pre">url</span></tt> argument passes the system URL of
+the requested document, the <tt class="docutils literal"><span class="pre">id</span></tt> argument is the public ID.  Note that any
+of these may be None.  The context object is not normally used by client code.</p>
+<p>Resolving is based on the methods of the Resolver object that build
+internal representations of the result document.  The following
+methods exist:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">resolve_string</span></tt> takes a parsable string as result document</li>
+<li><tt class="docutils literal"><span class="pre">resolve_filename</span></tt> takes a filename</li>
+<li><tt class="docutils literal"><span class="pre">resolve_file</span></tt> takes an open file-like object that has at least a read() method</li>
+<li><tt class="docutils literal"><span class="pre">resolve_empty</span></tt> resolves into an empty document</li>
+</ul>
+<p>The <tt class="docutils literal"><span class="pre">resolve()</span></tt> method may choose to return None, in which case the next
+registered resolver (or the default resolver) is consulted.  Resolving always
+terminates if <tt class="docutils literal"><span class="pre">resolve()</span></tt> returns the result of any of the above
+<tt class="docutils literal"><span class="pre">resolve_*()</span></tt> methods.</p>
+<p>Resolvers are registered local to a parser:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XMLParser</span><span class="p">(</span><span class="n">load_dtd</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span><span class="o">.</span><span class="n">resolvers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">DTDResolver</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that we instantiate a parser that loads the DTD.  This is not done by the
+default parser, which does no validation.  When we use this parser to parse a
+document that requires resolving a URL, it will call our custom resolver:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xml</span> <span class="o">=</span> <span class="s">&#39;&lt;!DOCTYPE doc SYSTEM &quot;MissingDTD.dtd&quot;&gt;&lt;doc&gt;&amp;myentity;&lt;/doc&gt;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">xml</span><span class="p">),</span> <span class="n">parser</span><span class="p">)</span>
+<span class="go">Resolving URL &#39;MissingDTD.dtd&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="go">[resolved text: MissingDTD.dtd]</span>
+</pre></div>
+</div>
+<p>The entity in the document was correctly resolved by the generated DTD
+fragment.</p>
+</div>
+<div class="section" id="document-loading-in-context">
+<h2><a class="toc-backref" href="#id5">Document loading in context</a><a class="headerlink" href="#document-loading-in-context" title="Permalink to this headline">¶</a></h2>
+<p>XML documents memorise their initial parser (and its resolvers) during their
+life-time.  This means that a lookup process related to a document will use
+the resolvers of the document&#8217;s parser.  We can demonstrate this with a
+resolver that only responds to a specific prefix:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">PrefixResolver</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">Resolver</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prefix</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="n">prefix</span>
+<span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">result_xml</span> <span class="o">=</span> <span class="s">&#39;&#39;&#39;</span><span class="se">\</span>
+<span class="gp">... </span><span class="s">             &lt;xsl:stylesheet</span>
+<span class="gp">... </span><span class="s">                    xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;</span>
+<span class="gp">... </span><span class="s">               &lt;test xmlns=&quot;testNS&quot;&gt;</span><span class="si">%s</span><span class="s">-TEST&lt;/test&gt;</span>
+<span class="gp">... </span><span class="s">             &lt;/xsl:stylesheet&gt;</span>
+<span class="gp">... </span><span class="s">             &#39;&#39;&#39;</span> <span class="o">%</span> <span class="n">prefix</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">resolve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">pubid</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">if</span> <span class="n">url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prefix</span><span class="p">):</span>
+<span class="gp">... </span>            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Resolved url </span><span class="si">%s</span><span class="s"> as prefix </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">prefix</span><span class="p">))</span>
+<span class="gp">... </span>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">resolve_string</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">result_xml</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We demonstrate this in XSLT and use the following stylesheet as an example:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">xml_text</span> <span class="o">=</span> <span class="s">&quot;&quot;&quot;</span><span class="se">\</span>
+<span class="gp">... </span><span class="s">&lt;xsl:stylesheet version=&quot;1.0&quot;</span>
+<span class="gp">... </span><span class="s">   xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;&gt;</span>
+<span class="gp">... </span><span class="s">  &lt;xsl:include href=&quot;honk:test&quot;/&gt;</span>
+<span class="gp">... </span><span class="s">  &lt;xsl:template match=&quot;/&quot;&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;test&gt;</span>
+<span class="gp">... </span><span class="s">      &lt;xsl:value-of select=&quot;document(&#39;hoi:test&#39;)/*/*/text()&quot;/&gt;</span>
+<span class="gp">... </span><span class="s">    &lt;/test&gt;</span>
+<span class="gp">... </span><span class="s">  &lt;/xsl:template&gt;</span>
+<span class="gp">... </span><span class="s">&lt;/xsl:stylesheet&gt;</span>
+<span class="gp">... </span><span class="s">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Note that it needs to resolve two URIs: <tt class="docutils literal"><span class="pre">honk:test</span></tt> when compiling the XSLT
+document (i.e. when resolving <tt class="docutils literal"><span class="pre">xsl:import</span></tt> and <tt class="docutils literal"><span class="pre">xsl:include</span></tt> elements) and
+<tt class="docutils literal"><span class="pre">hoi:test</span></tt> at transformation time, when calls to the <tt class="docutils literal"><span class="pre">document</span></tt> function
+are resolved.  If we now register different resolvers with two different
+parsers, we can parse our document twice in different resolver contexts:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">hoi_parser</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XMLParser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">normal_doc</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">xml_text</span><span class="p">),</span> <span class="n">hoi_parser</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hoi_parser</span><span class="o">.</span><span class="n">resolvers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">PrefixResolver</span><span class="p">(</span><span class="s">&quot;hoi&quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hoi_doc</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">xml_text</span><span class="p">),</span> <span class="n">hoi_parser</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">honk_parser</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XMLParser</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">honk_parser</span><span class="o">.</span><span class="n">resolvers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">PrefixResolver</span><span class="p">(</span><span class="s">&quot;honk&quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">honk_doc</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">StringIO</span><span class="p">(</span><span class="n">xml_text</span><span class="p">),</span> <span class="n">honk_parser</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These contexts are important for the further behaviour of the documents.  They
+memorise their original parser so that the correct set of resolvers is used in
+subsequent lookups.  To compile the stylesheet, XSLT must resolve the
+<tt class="docutils literal"><span class="pre">honk:test</span></tt> URI in the <tt class="docutils literal"><span class="pre">xsl:include</span></tt> element.  The <tt class="docutils literal"><span class="pre">hoi</span></tt> resolver cannot
+do that:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">transform</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XSLT</span><span class="p">(</span><span class="n">normal_doc</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">lxml.etree.XSLTParseError</span>: <span class="n">Cannot resolve URI honk:test</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transform</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XSLT</span><span class="p">(</span><span class="n">hoi_doc</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">lxml.etree.XSLTParseError</span>: <span class="n">Cannot resolve URI honk:test</span>
+</pre></div>
+</div>
+<p>However, if we use the <tt class="docutils literal"><span class="pre">honk</span></tt> resolver associated with the respective
+document, everything works fine:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">transform</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XSLT</span><span class="p">(</span><span class="n">honk_doc</span><span class="p">)</span>
+<span class="go">Resolved url honk:test as prefix honk</span>
+</pre></div>
+</div>
+<p>Running the transform accesses the same parser context again, but since it now
+needs to resolve the <tt class="docutils literal"><span class="pre">hoi</span></tt> URI in the call to the document function, its
+<tt class="docutils literal"><span class="pre">honk</span></tt> resolver will fail to do so:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">normal_doc</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">lxml.etree.XSLTApplyError</span>: <span class="n">Cannot resolve URI hoi:test</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">hoi_doc</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">lxml.etree.XSLTApplyError</span>: <span class="n">Cannot resolve URI hoi:test</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">honk_doc</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">lxml.etree.XSLTApplyError</span>: <span class="n">Cannot resolve URI hoi:test</span>
+</pre></div>
+</div>
+<p>This can only be solved by adding a <tt class="docutils literal"><span class="pre">hoi</span></tt> resolver to the original parser:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">honk_parser</span><span class="o">.</span><span class="n">resolvers</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">PrefixResolver</span><span class="p">(</span><span class="s">&quot;hoi&quot;</span><span class="p">)</span> <span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">honk_doc</span><span class="p">)</span>
+<span class="go">Resolved url hoi:test as prefix hoi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="go">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="go">&lt;test&gt;hoi-TEST&lt;/test&gt;</span>
+</pre></div>
+</div>
+<p>We can see that the <tt class="docutils literal"><span class="pre">hoi</span></tt> resolver was called to generate a document that
+was then inserted into the result document by the XSLT transformation.  Note
+that this is completely independent of the XML file you transform, as the URI
+is resolved from within the stylesheet context:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">normal_doc</span><span class="p">)</span>
+<span class="go">Resolved url hoi:test as prefix hoi</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="go">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="go">&lt;test&gt;hoi-TEST&lt;/test&gt;</span>
+</pre></div>
+</div>
+<p>It may be seen as a matter of taste what resolvers the generated document
+inherits.  For XSLT, the output document inherits the resolvers of the input
+document and not those of the stylesheet.  Therefore, the last result does not
+inherit any resolvers at all.</p>
+</div>
+<div class="section" id="i-o-access-control-in-xslt">
+<h2><a class="toc-backref" href="#id6">I/O access control in XSLT</a><a class="headerlink" href="#i-o-access-control-in-xslt" title="Permalink to this headline">¶</a></h2>
+<p>By default, XSLT supports all extension functions from libxslt and libexslt as
+well as Python regular expressions through EXSLT.  Some extensions enable
+style sheets to read and write files on the local file system.</p>
+<p>XSLT has a mechanism to control the access to certain I/O operations during
+the transformation process.  This is most interesting where XSL scripts come
+from potentially insecure sources and must be prevented from modifying the
+local file system.  Note, however, that there is no way to keep them from
+eating up your precious CPU time, so this should not stop you from thinking
+about what XSLT you execute.</p>
+<p>Access control is configured using the <tt class="docutils literal"><span class="pre">XSLTAccessControl</span></tt> class.  It can be
+called with a number of keyword arguments that allow or deny specific
+operations:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">transform</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XSLT</span><span class="p">(</span><span class="n">honk_doc</span><span class="p">)</span>
+<span class="go">Resolved url honk:test as prefix honk</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">normal_doc</span><span class="p">)</span>
+<span class="go">Resolved url hoi:test as prefix hoi</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ac</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XSLTAccessControl</span><span class="p">(</span><span class="n">read_network</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">transform</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">XSLT</span><span class="p">(</span><span class="n">honk_doc</span><span class="p">,</span> <span class="n">access_control</span><span class="o">=</span><span class="n">ac</span><span class="p">)</span>
+<span class="go">Resolved url honk:test as prefix honk</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">transform</span><span class="p">(</span><span class="n">normal_doc</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+  <span class="c">...</span>
+<span class="gr">lxml.etree.XSLTApplyError: xsltLoadDocument</span>: <span class="n">read rights for hoi:test denied</span>
+</pre></div>
+</div>
+<p>There are a few things to keep in mind:</p>
+<ul class="simple">
+<li>XSL parsing (<tt class="docutils literal"><span class="pre">xsl:import</span></tt>, etc.) is not affected by this mechanism</li>
+<li><tt class="docutils literal"><span class="pre">read_file=False</span></tt> does not imply <tt class="docutils literal"><span class="pre">write_file=False</span></tt>, all controls are
+independent.</li>
+<li><tt class="docutils literal"><span class="pre">read_file</span></tt> only applies to files in the file system.  Any other scheme
+for URLs is controlled by the <tt class="docutils literal"><span class="pre">*_network</span></tt> keywords.</li>
+<li>If you need more fine-grained control than switching access on and off, you
+should consider writing a custom document loader that returns empty
+documents or raises exceptions if access is denied.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="main.html">
+              <img class="logo" src="_static/python-xml-title.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="main.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Document loading and URL resolving</a><ul>
+<li><a class="reference internal" href="#xml-catalogs">XML Catalogs</a></li>
+<li><a class="reference internal" href="#uri-resolvers">URI Resolvers</a></li>
+<li><a class="reference internal" href="#document-loading-in-context">Document loading in context</a></li>
+<li><a class="reference internal" href="#i-o-access-control-in-xslt">I/O access control in XSLT</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/resolvers.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Stefan Behnel et al..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

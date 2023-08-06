@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>What’s new in lxml 2.0? &mdash; lxml v2.3 - Processing XML and HTML with Python</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.3',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="lxml v2.3 - Processing XML and HTML with Python" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="what-s-new-in-lxml-2-0">
+<h1><a class="toc-backref" href="#id3">What&#8217;s new in lxml 2.0?</a><a class="headerlink" href="#what-s-new-in-lxml-2-0" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#what-s-new-in-lxml-2-0" id="id3">What&#8217;s new in lxml 2.0?</a><ul>
+<li><a class="reference internal" href="#changes-in-etree-and-objectify" id="id4">Changes in etree and objectify</a><ul>
+<li><a class="reference internal" href="#incompatible-changes" id="id5">Incompatible changes</a></li>
+<li><a class="reference internal" href="#enhancements" id="id6">Enhancements</a></li>
+<li><a class="reference internal" href="#deprecation" id="id7">Deprecation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#new-modules" id="id8">New modules</a><ul>
+<li><a class="reference internal" href="#lxml-usedoctest" id="id9">lxml.usedoctest</a></li>
+<li><a class="reference internal" href="#lxml-html" id="id10">lxml.html</a></li>
+<li><a class="reference internal" href="#lxml-cssselect" id="id11">lxml.cssselect</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>During the development of the lxml 1.x series, a couple of quirks were
+discovered in the design that made the API less obvious and its future
+extensions harder than necessary. lxml 2.0 is a soft evolution of lxml 1.x
+towards a simpler, more consistent and more powerful API - with some major
+extensions.  Wherever possible, lxml 1.3 comes close to the semantics of lxml
+2.0, so that migrating should be easier for code that currently runs with 1.3.</p>
+<p>One of the important internal changes was the switch from the <a class="reference external" href="http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/">Pyrex</a>
+compiler to <a class="reference external" href="http://www.cython.org/">Cython</a>, which provides better optimisation and improved
+support for newer Python language features.  This allows the code of
+lxml to become more Python-like again, while the performance improves
+as Cython continues its own development.  The code simplification,
+which will continue throughout the 2.x series, will hopefully make it
+even easier for users to contribute.</p>
+<div class="section" id="changes-in-etree-and-objectify">
+<h2><a class="toc-backref" href="#id4">Changes in etree and objectify</a><a class="headerlink" href="#changes-in-etree-and-objectify" title="Permalink to this headline">¶</a></h2>
+<p>A graduation towards a more consistent API cannot go without a certain amount
+of incompatible changes.  The following is a list of those differences that
+applications need to take into account when migrating from lxml 1.x to lxml
+2.0.</p>
+<div class="section" id="incompatible-changes">
+<h3><a class="toc-backref" href="#id5">Incompatible changes</a><a class="headerlink" href="#incompatible-changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>lxml 0.9 introduced a feature called <a class="reference external" href="element_classes.html#implementing-namespaces">namespace implementation</a>.  The
+global <tt class="docutils literal"><span class="pre">Namespace</span></tt> factory was added to register custom element classes
+and have lxml.etree look them up automatically.  However, the later
+development of further class lookup mechanisms made it appear less and less
+adequate to register this mapping at a global level, so lxml 1.1 first
+removed the namespace based lookup from the default setup and lxml 2.0
+finally removes the global namespace registry completely.  As all other
+lookup mechanisms, the namespace lookup is now local to a parser, including
+the registry itself.  Applications that use a module-level parser can easily
+map its <tt class="docutils literal"><span class="pre">get_namespace()</span></tt> method to a global <tt class="docutils literal"><span class="pre">Namespace</span></tt> function to
+mimic the old behaviour.</li>
+<li>Some API functions now require passing options as keyword arguments,
+as opposed to positional arguments.  This restriction was introduced
+to make the API usage independent of future extensions such as the
+addition of new positional arguments.  Users should not rely on the
+position of an optional argument in function signatures and instead
+pass it explicitly named.  This also improves code readability - it
+is common good practice to pass options in a consistent way
+independent of their position, so many people may not even notice
+the change in their code.  Another important reason is compatibility
+with cElementTree, which also enforces keyword-only arguments in a
+couple of places.</li>
+<li>XML tag names are validated when creating an Element.  This does not
+apply to HTML tags, where only HTML special characters are
+forbidden.  The distinction is made by the <tt class="docutils literal"><span class="pre">SubElement()</span></tt> factory,
+which tests if the tree it works on is an HTML tree, and by the
+<tt class="docutils literal"><span class="pre">.makeelement()</span></tt> methods of parsers, which behave differently for
+the <tt class="docutils literal"><span class="pre">XMLParser()</span></tt> and the <tt class="docutils literal"><span class="pre">HTMLParser()</span></tt>.</li>
+<li>XPath now raises exceptions specific to the part of the execution that
+failed: <tt class="docutils literal"><span class="pre">XPathSyntaxError</span></tt> for parser errors and <tt class="docutils literal"><span class="pre">XPathEvalError</span></tt> for
+errors that occurred during the evaluation.  Note that the distinction only
+works for the <tt class="docutils literal"><span class="pre">XPath()</span></tt> class.  The other two evaluators only have a
+single evaluation call that includes the parsing step, and will therefore
+only raise an <tt class="docutils literal"><span class="pre">XPathEvalError</span></tt>.  Applications can catch both exceptions
+through the common base class <tt class="docutils literal"><span class="pre">XPathError</span></tt> (which also exists in earlier
+lxml versions).</li>
+<li>Network access in parsers is now disabled by default, i.e. the
+<tt class="docutils literal"><span class="pre">no_network</span></tt> option defaults to True.  Due to a somewhat &#8216;interesting&#8217;
+implementation in libxml2, this does not affect the first document (i.e. the
+URL that is parsed), but only subsequent documents, such as a DTD when
+parsing with validation.  This means that you will have to check the URL you
+pass, instead of relying on lxml to prevent <em>any</em> access to external
+resources.  As this can be helpful in some use cases, lxml does not work
+around it.</li>
+<li>The type annotations in lxml.objectify (the <tt class="docutils literal"><span class="pre">pytype</span></tt> attribute) now use
+<tt class="docutils literal"><span class="pre">NoneType</span></tt> for the None value as this is the correct Python type name.
+Previously, lxml 1.x used a lower case <tt class="docutils literal"><span class="pre">none</span></tt>.</li>
+<li>Another change in objectify regards the way it deals with ambiguous types.
+Previously, setting a value like the string <tt class="docutils literal"><span class="pre">&quot;3&quot;</span></tt> through normal attribute
+access would let it come back as an integer when reading the object
+attribute.  lxml 2.0 prevents this by always setting the <tt class="docutils literal"><span class="pre">pytype</span></tt>
+attribute to the type the user passed in, so <tt class="docutils literal"><span class="pre">&quot;3&quot;</span></tt> will come back as a
+string, while the number <tt class="docutils literal"><span class="pre">3</span></tt> will come back as a number.  To remove the
+type annotation on serialisation, you can use the <tt class="docutils literal"><span class="pre">deannotate()</span></tt> function.</li>
+<li>The C-API function <tt class="docutils literal"><span class="pre">findOrBuildNodeNs()</span></tt> was replaced by the more generic
+<tt class="docutils literal"><span class="pre">findOrBuildNodeNsPrefix()</span></tt> that accepts an additional default prefix.</li>
+</ul>
+</div>
+<div class="section" id="enhancements">
+<h3><a class="toc-backref" href="#id6">Enhancements</a><a class="headerlink" href="#enhancements" title="Permalink to this headline">¶</a></h3>
+<p>Most of the enhancements of lxml 2.0 were made under the hood.  Most people
+won&#8217;t even notice them, but they make the maintenance of lxml easier and thus
+facilitate further enhancements and an improved integration between lxml&#8217;s
+features.</p>
+<ul class="simple">
+<li>lxml.objectify now has its own implementation of the <a class="reference external" href="objectify.html#tree-generation-with-the-e-factory">E factory</a>.  It uses
+the built-in type lookup mechanism of lxml.objectify, thus removing the need
+for an additional type registry mechanism (as previously available through
+the <tt class="docutils literal"><span class="pre">typemap</span></tt> parameter).</li>
+<li>XML entities are supported through the <tt class="docutils literal"><span class="pre">Entity()</span></tt> factory, an Entity
+element class and a parser option <tt class="docutils literal"><span class="pre">resolve_entities</span></tt> that allows to keep
+entities in the element tree when set to False.  Also, the parser will now
+report undefined entities as errors if it needs to resolve them (which is
+still the default, as in lxml 1.x).</li>
+<li>A major part of the XPath code was rewritten and can now benefit from a
+bigger overlap with the XSLT code.  The main benefits are improved thread
+safety in the XPath evaluators and Python RegExp support in standard XPath.</li>
+<li>The string results of an XPath evaluation have become &#8216;smart&#8217; string
+subclasses.  Formerly, there was no easy way to find out where a
+string originated from.  In lxml 2.0, you can call its
+<tt class="docutils literal"><span class="pre">getparent()</span></tt> method to <a class="reference external" href="tutorial.html#using-xpath-to-find-text">find the Element that carries it</a>.  This
+works for attributes (<tt class="docutils literal"><span class="pre">//&#64;attribute</span></tt>) and for <tt class="docutils literal"><span class="pre">text()</span></tt> nodes,
+i.e. Element text and tails.  Strings that were constructed in the
+path expression, e.g. by the <tt class="docutils literal"><span class="pre">string()</span></tt> function or extension
+functions, will return None as their parent.</li>
+<li>Setting a <tt class="docutils literal"><span class="pre">QName</span></tt> object as value of the <tt class="docutils literal"><span class="pre">.text</span></tt> property or as
+an attribute value will resolve its prefix in the respective context</li>
+<li>Following ElementTree 1.3, the <tt class="docutils literal"><span class="pre">iterfind()</span></tt> method supports
+efficient iteration based on XPath-like expressions.</li>
+</ul>
+<p>The parsers also received some major enhancements:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">iterparse()</span></tt> can parse HTML when passing the boolean <tt class="docutils literal"><span class="pre">html</span></tt>
+keyword.</li>
+<li>Parse time XML Schema validation by passing an
+XMLSchema object to the <tt class="docutils literal"><span class="pre">schema</span></tt> keyword argument of a parser.</li>
+<li>Support for a <tt class="docutils literal"><span class="pre">target</span></tt> object that implements ElementTree&#8217;s
+<a class="reference external" href="http://effbot.org/elementtree/elementtree-treebuilder.htm">TreeBuilder interface</a>.</li>
+<li>The <tt class="docutils literal"><span class="pre">encoding</span></tt> keyword allows overriding the document encoding.</li>
+</ul>
+</div>
+<div class="section" id="deprecation">
+<h3><a class="toc-backref" href="#id7">Deprecation</a><a class="headerlink" href="#deprecation" title="Permalink to this headline">¶</a></h3>
+<p>The following functions and methods are now deprecated.  They are
+still available in lxml 2.0 and will be removed in lxml 2.1:</p>
+<ul>
+<li><p class="first">The <tt class="docutils literal"><span class="pre">tounicode()</span></tt> function was replaced by the call
+<tt class="docutils literal"><span class="pre">tostring(encoding=unicode)</span></tt>.</p>
+</li>
+<li><p class="first">CamelCaseNamed module functions and methods were renamed to their
+underscore equivalents to follow <a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">PEP 8</a> in naming.</p>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">etree.clearErrorLog()</span></tt>, use <tt class="docutils literal"><span class="pre">etree.clear_error_log()</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">etree.useGlobalPythonLog()</span></tt>, use
+<tt class="docutils literal"><span class="pre">etree.use_global_python_log()</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">etree.ElementClassLookup.setFallback()</span></tt>, use
+<tt class="docutils literal"><span class="pre">etree.ElementClassLookup.set_fallback()</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">etree.getDefaultParser()</span></tt>, use <tt class="docutils literal"><span class="pre">etree.get_default_parser()</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">etree.setDefaultParser()</span></tt>, use <tt class="docutils literal"><span class="pre">etree.set_default_parser()</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">etree.setElementClassLookup()</span></tt>, use
+<tt class="docutils literal"><span class="pre">etree.set_element_class_lookup()</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">XMLParser.setElementClassLookup()</span></tt>, use <tt class="docutils literal"><span class="pre">.set_element_class_lookup()</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">HTMLParser.setElementClassLookup()</span></tt>, use <tt class="docutils literal"><span class="pre">.set_element_class_lookup()</span></tt></p>
+<p>Note that <tt class="docutils literal"><span class="pre">parser.setElementClassLookup()</span></tt> has not been removed
+yet, although <tt class="docutils literal"><span class="pre">parser.set_element_class_lookup()</span></tt> should be used
+instead.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">xpath_evaluator.registerNamespace()</span></tt>, use
+<tt class="docutils literal"><span class="pre">xpath_evaluator.register_namespace()</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">xpath_evaluator.registerNamespaces()</span></tt>, use
+<tt class="docutils literal"><span class="pre">xpath_evaluator.register_namespaces()</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">objectify.setPytypeAttributeTag</span></tt>, use
+<tt class="docutils literal"><span class="pre">objectify.set_pytype_attribute_tag</span></tt></p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">objectify.setDefaultParser()</span></tt>, use
+<tt class="docutils literal"><span class="pre">objectify.set_default_parser()</span></tt></p>
+</li>
+</ul>
+</li>
+<li><p class="first">The <tt class="docutils literal"><span class="pre">.getiterator()</span></tt> method on Elements and ElementTrees was
+renamed to <tt class="docutils literal"><span class="pre">.iter()</span></tt> to follow ElementTree 1.3.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="new-modules">
+<h2><a class="toc-backref" href="#id8">New modules</a><a class="headerlink" href="#new-modules" title="Permalink to this headline">¶</a></h2>
+<p>The most visible changes in lxml 2.0 regard the new modules that were added.</p>
+<div class="section" id="lxml-usedoctest">
+<h3><a class="toc-backref" href="#id9">lxml.usedoctest</a><a class="headerlink" href="#lxml-usedoctest" title="Permalink to this headline">¶</a></h3>
+<p>A very useful module for doctests based on XML or HTML is
+<tt class="docutils literal"><span class="pre">lxml.doctestcompare</span></tt>.  It provides a relaxed comparison mechanism
+for XML and HTML in doctests.  Using it for XML comparisons is as
+simple as:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">lxml.usedoctest</span>
+</pre></div>
+</div>
+<p>and for HTML comparisons:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">lxml.html.usedoctest</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lxml-html">
+<h3><a class="toc-backref" href="#id10">lxml.html</a><a class="headerlink" href="#lxml-html" title="Permalink to this headline">¶</a></h3>
+<p>The largest new package that was added to lxml 2.0 is <a class="reference external" href="lxmlhtml.html">lxml.html</a>.  It
+contains various tools and modules for HTML handling.  The major features
+include support for cleaning up HTML (removing unwanted content), a readable
+HTML diff and various tools for working with links.</p>
+</div>
+<div class="section" id="lxml-cssselect">
+<h3><a class="toc-backref" href="#id11">lxml.cssselect</a><a class="headerlink" href="#lxml-cssselect" title="Permalink to this headline">¶</a></h3>
+<p>The Cascading Stylesheet Language (<a class="reference external" href="http://www.w3.org/Style/CSS/">CSS</a>) has a very short and generic path
+language for pointing at elements in XML/HTML trees (<a class="reference external" href="http://www.w3.org/TR/CSS21/selector.html">CSS selectors</a>).  The module
+<a class="reference external" href="cssselect.html">lxml.cssselect</a> provides an implementation based on XPath.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="main.html">
+              <img class="logo" src="_static/python-xml-title.png" alt="Logo"/>
+            </a></p>
+            <h3><a href="main.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">What&#8217;s new in lxml 2.0?</a><ul>
+<li><a class="reference external" href="#changes-in-etree-and-objectify">Changes in etree and objectify</a><ul>
+<li><a class="reference external" href="#incompatible-changes">Incompatible changes</a></li>
+<li><a class="reference external" href="#enhancements">Enhancements</a></li>
+<li><a class="reference external" href="#deprecation">Deprecation</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#new-modules">New modules</a><ul>
+<li><a class="reference external" href="#lxml-usedoctest">lxml.usedoctest</a></li>
+<li><a class="reference external" href="#lxml-html">lxml.html</a></li>
+<li><a class="reference external" href="#lxml-cssselect">lxml.cssselect</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/lxml2.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+      &copy; Copyright 2011, Stefan Behnel et al..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.6.
+    </div>
+  </body>
+</html>

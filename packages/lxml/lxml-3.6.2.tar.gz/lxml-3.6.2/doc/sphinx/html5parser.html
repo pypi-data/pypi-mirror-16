@@ -1,0 +1,163 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>html5lib Parser &mdash; lxml v2.3 - Processing XML and HTML with Python</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="lxml v2.3 - Processing XML and HTML with Python" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="html5lib-parser">
+<h1>html5lib Parser<a class="headerlink" href="#html5lib-parser" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://code.google.com/p/html5lib/">html5lib</a> is a Python package that implements the HTML5 parsing algorithm
+which is heavily influenced by current browsers and based on the <a class="reference external" href="http://www.whatwg.org/specs/web-apps/current-work/">WHATWG
+HTML5 specification</a>.</p>
+<p>lxml can benefit from the parsing capabilities of <cite>html5lib</cite> through
+the <tt class="docutils literal"><span class="pre">lxml.html.html5parser</span></tt> module.  It provides a similar interface
+to the <tt class="docutils literal"><span class="pre">lxml.html</span></tt> module by providing <tt class="docutils literal"><span class="pre">fromstring()</span></tt>,
+<tt class="docutils literal"><span class="pre">parse()</span></tt>, <tt class="docutils literal"><span class="pre">document_fromstring()</span></tt>, <tt class="docutils literal"><span class="pre">fragment_fromstring()</span></tt> and
+<tt class="docutils literal"><span class="pre">fragments_fromstring()</span></tt> that work like the regular html parsing
+functions.</p>
+<div class="section" id="differences-to-regular-html-parsing">
+<h2>Differences to regular HTML parsing<a class="headerlink" href="#differences-to-regular-html-parsing" title="Permalink to this headline">¶</a></h2>
+<p>There are a few differences in the returned tree to the regular HTML
+parsing functions from <tt class="docutils literal"><span class="pre">lxml.html</span></tt>.  html5lib normalizes some elements
+and element structures to a common format.  For example even if a tables
+does not have a <cite>tbody</cite> html5lib will inject one automatically:</p>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">lxml.html</span> <span class="kn">import</span> <span class="n">tostring</span><span class="p">,</span> <span class="n">html5parser</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tostring</span><span class="p">(</span><span class="n">html5parser</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="s">&quot;&lt;table&gt;&lt;td&gt;foo&quot;</span><span class="p">))</span>
+<span class="go">&#39;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;foo&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&#39;</span>
+</pre></div>
+</div>
+<p>Also the parameters the functions accept are different.</p>
+</div>
+<div class="section" id="function-reference">
+<h2>Function Reference<a class="headerlink" href="#function-reference" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">parse(filename_url_or_file)</span></tt>:</dt>
+<dd>Parses the named file or url, or if the object has a <tt class="docutils literal"><span class="pre">.read()</span></tt>
+method, parses from that.</dd>
+<dt><tt class="docutils literal"><span class="pre">document_fromstring(html,</span> <span class="pre">guess_charset=True)</span></tt>:</dt>
+<dd><p class="first">Parses a document from the given string.  This always creates a
+correct HTML document, which means the parent node is <tt class="docutils literal"><span class="pre">&lt;html&gt;</span></tt>,
+and there is a body and possibly a head.</p>
+<p class="last">If a bytestring is passed and <tt class="docutils literal"><span class="pre">guess_charset</span></tt> is true the chardet
+library (if installed) will guess the charset if ambiguities exist.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">fragment_fromstring(string,</span> <span class="pre">create_parent=False,</span> <span class="pre">guess_charset=False)</span></tt>:</dt>
+<dd><p class="first">Returns an HTML fragment from a string.  The fragment must contain
+just a single element, unless <tt class="docutils literal"><span class="pre">create_parent</span></tt> is given;
+e.g,. <tt class="docutils literal"><span class="pre">fragment_fromstring(string,</span> <span class="pre">create_parent='div')</span></tt> will
+wrap the element in a <tt class="docutils literal"><span class="pre">&lt;div&gt;</span></tt>.  If <tt class="docutils literal"><span class="pre">create_parent</span></tt> is true the
+default parent tag (div) is used.</p>
+<p class="last">If a bytestring is passed and <tt class="docutils literal"><span class="pre">guess_charset</span></tt> is true the chardet
+library (if installed) will guess the charset if ambiguities exist.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">fragments_fromstring(string,</span> <span class="pre">no_leading_text=False,</span> <span class="pre">parser=None)</span></tt>:</dt>
+<dd><p class="first">Returns a list of the elements found in the fragment.  The first item in
+the list may be a string.  If <tt class="docutils literal"><span class="pre">no_leading_text</span></tt> is true, then it will
+be an error if there is leading text, and it will always be a list of
+only elements.</p>
+<p class="last">If a bytestring is passed and <tt class="docutils literal"><span class="pre">guess_charset</span></tt> is true the chardet
+library (if installed) will guess the charset if ambiguities exist.</p>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">fromstring(string)</span></tt>:</dt>
+<dd>Returns <tt class="docutils literal"><span class="pre">document_fromstring</span></tt> or <tt class="docutils literal"><span class="pre">fragment_fromstring</span></tt>, based
+on whether the string looks like a full document, or just a
+fragment.</dd>
+</dl>
+<p>Additionally all parsing functions accept an <tt class="docutils literal"><span class="pre">parser</span></tt> keyword argument
+that can be set to a custom parser instance.  To create custom parsers
+you can subclass the <tt class="docutils literal"><span class="pre">HTMLParser</span></tt> and <tt class="docutils literal"><span class="pre">XHTMLParser</span></tt> from the same
+module.  Note that these are the parser classes provided by html5lib.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="main.html">
+              <img class="logo" src="_static/python-xml-title.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="main.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">html5lib Parser</a><ul>
+<li><a class="reference internal" href="#differences-to-regular-html-parsing">Differences to regular HTML parsing</a></li>
+<li><a class="reference internal" href="#function-reference">Function Reference</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/html5parser.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="main.html">lxml v2.3 - Processing XML and HTML with Python</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011, Stefan Behnel et al..
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>
