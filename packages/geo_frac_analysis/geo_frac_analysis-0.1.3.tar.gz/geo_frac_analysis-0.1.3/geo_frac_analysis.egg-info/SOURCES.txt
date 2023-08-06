@@ -1,0 +1,8 @@
+setup.py
+geo_frac_analysis/__init__.py
+geo_frac_analysis.egg-info/PKG-INFO
+geo_frac_analysis.egg-info/SOURCES.txt
+geo_frac_analysis.egg-info/dependency_links.txt
+geo_frac_analysis.egg-info/not-zip-safe
+geo_frac_analysis.egg-info/requires.txt
+geo_frac_analysis.egg-info/top_level.txt
