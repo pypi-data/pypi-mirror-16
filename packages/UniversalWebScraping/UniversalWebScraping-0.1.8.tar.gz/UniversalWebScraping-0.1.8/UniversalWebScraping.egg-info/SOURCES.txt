@@ -1,0 +1,13 @@
+setup.cfg
+setup.py
+UniversalWebScraping/CommonWeb.py
+UniversalWebScraping/Scraper.py
+UniversalWebScraping/Wordpress.py
+UniversalWebScraping/__init__.py
+UniversalWebScraping.egg-info/PKG-INFO
+UniversalWebScraping.egg-info/SOURCES.txt
+UniversalWebScraping.egg-info/dependency_links.txt
+UniversalWebScraping.egg-info/entry_points.txt
+UniversalWebScraping.egg-info/not-zip-safe
+UniversalWebScraping.egg-info/requires.txt
+UniversalWebScraping.egg-info/top_level.txt
