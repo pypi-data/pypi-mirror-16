@@ -1,0 +1,1 @@
+https://github.com/adamar/python-bamboo-api/tarball/master#egg=bamboo_api-0.0.2
