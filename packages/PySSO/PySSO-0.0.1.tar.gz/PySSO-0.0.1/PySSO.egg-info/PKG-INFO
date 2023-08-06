@@ -1,0 +1,44 @@
+Metadata-Version: 1.1
+Name: PySSO
+Version: 0.0.1
+Summary: A single sign on(sso) system
+Home-page: https://github.com/alexazhou/PySSO
+Author: AlexaZhou
+Author-email: AlexaZhou@163.com
+License: LGPL
+Description: PySSO
+        ========
+        
+        A single sign on(sso) system drive by python
+        
+        install
+        -------
+        
+        python3 -m pip install husky
+        
+        require
+        -------
+        
+        PySSO based on python3, and those libs was required.
+        
+        -  Tornado
+        
+        if you use pip install PySSO, the requirements will be install
+        automatic.
+        
+        Desc
+        ----
+        
+        ToDo:...
+        
+        You can see detail documents over https://github.com/alexazhou/PySSO
+Keywords: git pull hook
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5

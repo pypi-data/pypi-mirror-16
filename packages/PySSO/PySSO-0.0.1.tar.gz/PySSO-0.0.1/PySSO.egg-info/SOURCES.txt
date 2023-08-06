@@ -1,0 +1,13 @@
+README.rst
+setup.py
+PySSO.egg-info/PKG-INFO
+PySSO.egg-info/SOURCES.txt
+PySSO.egg-info/dependency_links.txt
+PySSO.egg-info/requires.txt
+PySSO.egg-info/top_level.txt
+pysso/__init__.py
+pysso/__main__.py
+pysso/auth.py
+pysso/pysso.py
+pysso/setting.py
+pysso/user.py
