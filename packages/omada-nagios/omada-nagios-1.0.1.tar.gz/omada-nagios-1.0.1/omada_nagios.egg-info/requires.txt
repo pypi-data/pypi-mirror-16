@@ -1,0 +1,9 @@
+sumologic-sdk
+requests
+
+[dev]
+check-manifest
+twine
+
+[test]
+mock
