@@ -1,0 +1,16 @@
+escpos/cli.py,sha256=O8cYXA6dQQ-YoRARlTV7zdSt4bXw9qym0yLNeWnYrhs,17188
+escpos/exceptions.py,sha256=8PISk_kMP1424pf75_IoADf5Ruj0Zr_IKXx6tBwK-RU,7433
+escpos/constants.py,sha256=kS2oIYAmLaXbDbecSLva2jGdqrXYhMHKaaGWMIh2rEw,8905
+escpos/image.py,sha256=UTvoiaaedfI3a8WDW91iIztSISrd058jRiGdhrBuJ9E,2781
+escpos/version.py,sha256=S1g4IjxIRgpUgrFwmnBqJHDeDGzm6S7afxMEIQqlHRQ,158
+escpos/printer.py,sha256=Q8d7m7uf4yrxZDwCQg_Q4xtsnd7wB-AowcVMZv8R9yQ,8855
+escpos/config.py,sha256=rwgSg7IcpuPmzC-xhMm1CzTUN2g_0za0GtuBmzWpiN0,3697
+escpos/__init__.py,sha256=N8tPvw47JJc_J43sroy-sgp3qL0_Isyg7F2h7aqKKL4,588
+escpos/escpos.py,sha256=KsPXrQcMy-RRB271HKwgYjEDo3A3b2-EkPl-g9Q_SPY,28927
+python_escpos-2.1.1.dist-info/metadata.json,sha256=wQe_1QslxhWpo3Trypel62xAsRYZnpCP0eHB6Hs9C0U,1805
+python_escpos-2.1.1.dist-info/RECORD,,
+python_escpos-2.1.1.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+python_escpos-2.1.1.dist-info/top_level.txt,sha256=lLiF97qkeWvwFU56z1z8ny_rLLKBI-suZzeDym-ToRM,7
+python_escpos-2.1.1.dist-info/DESCRIPTION.rst,sha256=zQwvNMvqEhw5hUy60vhJn1hsG2eI0Cp3iySovd1YQ08,2502
+python_escpos-2.1.1.dist-info/METADATA,sha256=rk2uRZKpHOIuabOz3Vl2fBLcmEsRz9WfxmPwz9nScAU,4017
+python_escpos-2.1.1.dist-info/entry_points.txt,sha256=heAtsCmIga4DM5GplzT4MNTvkV999yfTAXsOyXkzzpM,51
