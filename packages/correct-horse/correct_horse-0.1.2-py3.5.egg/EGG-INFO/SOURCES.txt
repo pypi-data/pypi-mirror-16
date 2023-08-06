@@ -1,0 +1,8 @@
+setup.py
+correct_horse.egg-info/PKG-INFO
+correct_horse.egg-info/SOURCES.txt
+correct_horse.egg-info/dependency_links.txt
+correct_horse.egg-info/entry_points.txt
+correct_horse.egg-info/requires.txt
+correct_horse.egg-info/top_level.txt
+correcthorse/__init__.py
