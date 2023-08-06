@@ -1,0 +1,62 @@
+<link rel="stylesheet" type="text/css" href="/static/django_autocomplete/css/jquery.autocomplete.css">
+<script type="text/javascript" src="/static/django_autocomplete/js/jquery.autocomplete.js"></script>
+<div style="display: inline-block">
+	<label>{{choices.0.title}}:</label>
+	<input type="text" id="{{choices.0.name}}" placeholder="Escribe algo...">
+	<input id="id_{{choices.0.name}}" type="hidden" name="{{choices.0.name}}" value="{{choices.0.value}}">
+	<script type="text/javascript">
+		var url = "{{choices.0.url}}?module_path={{choices.0.module}}&model_name={{choices.0.model}}&list_display=pk&search_fields={{choices.0.main_field}}&format_data=&query=";
+		function load_data(value){
+			django.jQuery.ajax({
+				'url': "{{choices.0.url}}?module_path={{choices.0.module}}&model_name={{choices.0.model}}&list_display=pk&search_fields=pk&format_data=&query=" + value,
+				success: function(data){
+					if (data.suggestions && data.suggestions[0]){
+						django.jQuery('#{{choices.0.name}}').val(data.suggestions[0].value);
+					}
+				}
+			});
+		}
+		function parseQuery(q, name, val) {
+		    var objURL = {};
+		    q.replace(
+		        new RegExp( "([^?=&]+)(=([^&]*))?", "g" ),
+		        function( $0, $1, $2, $3 ){
+		        	console.log($3);
+		        	if ($3){
+		            	objURL[ $1 ] = $3;
+		        	}else{
+		        		delete objURL[ $1 ];
+		        	}
+		        }
+		    );
+		    if (val){
+		    	objURL[name] = val;
+			}else{
+				delete objURL[name];
+			}
+		    return objURL;
+		}
+		load_data("{{choices.0.value}}");
+		django.jQuery("#id_{{choices.0.name}}").change(function (data){
+			console.log(data);
+			window.location.search = django.jQuery.param(parseQuery(window.location.search, "{{choices.0.name}}", this.value));
+		});
+		django.jQuery("#{{choices.0.name}}").change(function (data){
+			if (this.value == ''){
+				django.jQuery("#id_{{choices.0.name}}").removeAttr('name');
+				django.jQuery("#id_{{choices.0.name}}").get(0).value="";
+				window.location.search = django.jQuery.param(parseQuery(window.location.search, "{{choices.0.name}}", this.value));
+			}else{
+				django.jQuery("#id_{{choices.0.name}}").attr('name', '{{choices.0.name}}');
+			}
+		});
+		django.jQuery("#{{choices.0.name}}").autocomplete({
+			serviceUrl: url,
+			onSelect: function (suggestion) {
+				if(suggestion.date != django.jQuery('[name="{{choices.0.name}}"]').val()){
+					django.jQuery('[name="{{choices.0.name}}"]').val(suggestion.date).trigger('change');
+				}
+			}
+		});
+	</script>
+</div>
