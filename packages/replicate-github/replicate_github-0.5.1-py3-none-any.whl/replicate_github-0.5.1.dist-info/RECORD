@@ -1,0 +1,11 @@
+replicate_github-0.5.1.dist-info/DESCRIPTION.rst,sha256=MhHSP5Blkdw3P-elRKeoUMMW3xewvf042EhiN5qV1Es,2704
+replicate_github-0.5.1.dist-info/METADATA,sha256=YJ4JE3YTF3fEMp54E8AQrrMn-u1VskCZP4_94l6YSf4,3467
+replicate_github-0.5.1.dist-info/RECORD,,
+replicate_github-0.5.1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+replicate_github-0.5.1.dist-info/entry_points.txt,sha256=Xk9TfbbY9Xw7PXv7WQIKKqC54cKJV8MX2AkIDGw_cqY,63
+replicate_github-0.5.1.dist-info/metadata.json,sha256=SAojwp8LieX6gG6jLqKwAPLEr3Ns4SG5xsd1rXfveFc,1070
+replicate_github-0.5.1.dist-info/top_level.txt,sha256=cqJxPQAZxaAl_S-cxLPlETfm-Us9lGn_ceHz6tOCoyg,16
+replicategithub/__init__.py,sha256=5WuC-sLOE0FOY38VwhqN6ae5Q7h8Rq2C7KhDbZr7Im8,1666
+replicategithub/cli.py,sha256=9_2if7KLGkOly0oQa7UvnNlisc4DOCktXhnCEJYI0v8,7064
+replicategithub/mirror.py,sha256=1z7uBnpkiX0H8LRab-IW_LYKSO2SZunVx97wfCdMGBQ,7000
+replicategithub/webhook.py,sha256=l8luot3J6aBlXd_WVr4LsB3aV3dYjQjChs6ILCK4mSE,5437
