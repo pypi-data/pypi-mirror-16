@@ -1,0 +1,7 @@
+setup.py
+JSComplexityBear/JSComplexityBear.py
+JSComplexityBear/__init__.py
+JSComplexityBear.egg-info/PKG-INFO
+JSComplexityBear.egg-info/SOURCES.txt
+JSComplexityBear.egg-info/dependency_links.txt
+JSComplexityBear.egg-info/top_level.txt
