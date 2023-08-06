@@ -1,0 +1,6 @@
+setup.py
+schemaman.egg-info/PKG-INFO
+schemaman.egg-info/SOURCES.txt
+schemaman.egg-info/dependency_links.txt
+schemaman.egg-info/not-zip-safe
+schemaman.egg-info/top_level.txt
