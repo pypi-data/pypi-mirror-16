@@ -1,0 +1,11 @@
+Django_HTTPolice-0.2.0.dev1.dist-info/DESCRIPTION.rst,sha256=CW36KuktbY6HEPy3ox3gt5OU15wBZyJGxpVlIZeLVpc,451
+Django_HTTPolice-0.2.0.dev1.dist-info/METADATA,sha256=eQBiDRS7Ie9vp4jj0t8onQzSUifVpOmXbDO56TqojII,1403
+Django_HTTPolice-0.2.0.dev1.dist-info/RECORD,,
+Django_HTTPolice-0.2.0.dev1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+Django_HTTPolice-0.2.0.dev1.dist-info/metadata.json,sha256=4MliTq_xesnbUNmg4-qSSFhT5UA5VFwvo2aXVZcnLWQ,1102
+Django_HTTPolice-0.2.0.dev1.dist-info/top_level.txt,sha256=pliZkrqwR1QolGfYs3jjhKKPEtJ_LZF8C0ILqgjtNto,17
+django_httpolice/__init__.py,sha256=CWtSUhoUGFuVaDm6cfMEfsYjt8khBl7rDOzmN2X9GbA,270
+django_httpolice/__metadata__.py,sha256=_HZ2VBMjjByZJJQwBizVOZCLxw78J3qUlUkol1bqpDM,49
+django_httpolice/common.py,sha256=4LnOY3A8iso4pZGmBz_MJPluLqwlk_n7ocMUgusP8YM,869
+django_httpolice/middleware.py,sha256=RwtGSVatBAP3pESFL5hQtlQF0aq9kvpz8g9JOUb6Cpg,2967
+django_httpolice/views.py,sha256=HbGJDZi3tM6IUPJf3UmhdMdgKdzI8wW5JLT37gaQp8I,730
