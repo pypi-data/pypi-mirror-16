@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: icqsol
+Version: 0.3.21
+Summary: Solving engineering problems on the web
+Home-page: https://github.com/pletzer/icqsol/wiki
+Author: Alex Pletzer and Greg Von Kuster
+Author-email: alexander@gokliya.net
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires: numpy
+Requires: vtk
