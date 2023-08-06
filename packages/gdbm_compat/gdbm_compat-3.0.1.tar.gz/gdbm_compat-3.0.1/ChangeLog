@@ -1,0 +1,8 @@
+3.0.1 - Aug 16 2016
+- Added a commandline tool, gdbm-compat-convert, which can perform the same task as the module.
+
+2.0.0 - Mar 8 2016
+- Move "delete temp db at exit" hooking to register_for_cleanup function
+- Support python3 dbm.gnu module
+- Create function, get_gdbm_module which will return the core gdbm module on
+python2 or 3
