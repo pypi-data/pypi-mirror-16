@@ -1,0 +1,6 @@
+wavefront_client
+python-dateutil
+logging
+python-daemon
+boto3
+ndg-httpsclient
