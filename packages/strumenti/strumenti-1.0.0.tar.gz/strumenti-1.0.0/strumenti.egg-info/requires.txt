@@ -1,0 +1,7 @@
+matplotlib
+numpy
+Pint
+psycopg2
+pytest
+termcolor
+wrapt

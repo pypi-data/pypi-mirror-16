@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: strumenti
+Version: 1.0.0
+Summary: Common tools universally applicable to Python 3 packages.
+Home-page: UNKNOWN
+Author: Timothy Helton
+Author-email: timothy.j.helton@gmail.com
+License: BSD
+Description: UNKNOWN
+Keywords: common tools utility
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Build Tools
