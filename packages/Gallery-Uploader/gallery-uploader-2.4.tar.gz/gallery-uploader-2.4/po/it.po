@@ -1,0 +1,367 @@
+# Italian translations for Gallery-uploader package
+# Traduzione italiana del programma Gallery-uploader.
+# Copyright © 2010 Pietro Battiston <me@pietrobattiston.it>
+# This file is distributed under the same license as the Gallery Uploader app.
+#
+# Pietro Battiston <me@pietrobattiston.it>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: gallery-uploader 2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-10 15:30+0100\n"
+"PO-Revision-Date: 2010-10-18 00:32+0100\n"
+"Last-Translator: Pietro Battiston <me@pietrobattiston.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italian\n"
+
+#: gallery-uploader.py:113
+#, python-format
+msgid "Name \"%s\" already taken."
+msgstr "Il nome \"%s\" è già utilizzato."
+
+#: gallery-uploader.py:121
+#, python-format
+msgid ""
+"The URL should start with one of the following:\n"
+"%s."
+msgstr ""
+"L'indirizzo dovrebbe cominciare in uno dei seguenti modi:\n"
+"%s."
+
+#: gallery-uploader.py:259
+#, python-format
+msgid "Password for user %(user)s on gallery instance at %(url)s"
+msgstr "Password per l'utente %(user)s sull'installazione di Gallery %(url)s"
+
+#: gallery-uploader.py:480 gallery-uploader.py:516
+msgid "Network error"
+msgstr "Errore di rete"
+
+#: gallery-uploader.py:480
+#, python-format
+msgid ""
+"The URL %s is currently not reachable, or does not point to a Gallery "
+"installation."
+msgstr ""
+"L'indirizzo %s è attualmente non raggiungibile, o non corrisponde ad una "
+"installazione di Gallery."
+
+#: gallery-uploader.py:483
+msgid "Error accessing the Gallery instance:"
+msgstr "Errore nell'accesso all'installazione di Gallery:"
+
+#: gallery-uploader.py:489
+msgid "Error in the SSL connection:"
+msgstr "Errore della connessione SSL:"
+
+#: gallery-uploader.py:511
+#, python-format
+msgid "Uploading picture %(count)d of %(total)d"
+msgstr "Immagine %(count)d di %(total)d"
+
+#: gallery-uploader.py:516
+#, python-format
+msgid ""
+"The URL %s doesn't exist\n"
+"or is currently not reachable."
+msgstr ""
+"L'indirizzo %s non esiste\n"
+"o è attualmente irraggiungibile."
+
+#: gallery-uploader.py:519
+msgid "Error uploading to Gallery:"
+msgstr "Errore durante il caricamento:"
+
+#: gallery-uploader.py:531
+#, python-format
+msgid "Usage: %s [IMAGE1, [IMAGE2 ...]]"
+msgstr "Utilizzo: %s [IMMAGINE1, [IMMAGINE2 ...]]"
+
+#: gallery-uploader.py:561
+#, python-format
+msgid ""
+"Please enter the title of the new album.\n"
+"It will be created as a subalbum of <b>%s</b>."
+msgstr ""
+"Inserire il titolo del nuovo album.\n"
+"Sarà creato come sotto-album di <b>%s</b>."
+
+#: gallery-uploader.py:599
+msgid "No files provided"
+msgstr "Nessun file selezionato"
+
+#: gallery-uploader.py:599
+msgid "There were no files selected for upload."
+msgstr "Non sono stati selezionati file da caricare."
+
+#: gallery-uploader.py:622
+msgid "Refreshing"
+msgstr "Aggiornamento"
+
+#: gallery-uploader.py:622
+msgid ""
+"Please wait while information about remote albums hierarchy is downloaded."
+msgstr "Sto recuperando la struttura degli album da remoto, attendere."
+
+#: gallery-uploader.py:628
+msgid "Album selection"
+msgstr "Selezione dell'album"
+
+#: gallery-uploader.py:628
+msgid "Select the album in which to upload the pictures:"
+msgstr "Scegliere l'album in cui caricare le immagini:"
+
+#: gallery-uploader.py:671
+msgid "Uploading"
+msgstr "Caricamento"
+
+#: gallery-uploader.py:671
+msgid "Uploading pictures. Please be patient."
+msgstr "Sto caricando le immagini. Attendere, prego."
+
+#: gallery-uploader.py:686
+msgid "Gallery selection"
+msgstr "Selezione galleria"
+
+#: gallery-uploader.py:686
+msgid "Select the gallery you want to upload pictures to:"
+msgstr "Scegli l'installazione di Gallery su cui vuoi caricare le immagini:"
+
+#: gallery-uploader.py:704
+#, python-format
+msgid ""
+"Are you sure you want to delete configuration for gallery installation \"%s"
+"\"?"
+msgstr "Sei sicuro di voler cancellare la configurazione \"%s\"?"
+
+#: gallery-uploader.py:748
+msgid "galleryremote not found"
+msgstr "galleryremote non trovata"
+
+#: gallery-uploader.py:749
+msgid ""
+"Sorry, gallery-uploader won't work without the galleryremote library "
+"( http://code.google.com/p/galleryremote ) installed."
+msgstr ""
+"Spiacente, gallery-uploader non può funzionare se non è installata la "
+"libreria galleryremote ( http://code.google.com/p/galleryremote )."
+
+#: gallery-uploader.py:760
+msgid "Old pygtk version"
+msgstr "Versione di pygtk obsoleta"
+
+#: gallery-uploader.py:760
+#, python-format
+msgid ""
+"Impossible to start the pictures browser with the installed pygtk version "
+"(%s).\n"
+"To use gallery-uploader on this version, you need to run it with the "
+"pictures you want to upload as arguments: for instance, by using it as a "
+"Nautilus script."
+msgstr ""
+"È impossibile avviare la finestra di selezione delle immagini con la "
+"versione installata di pygtk, che è (%s).\n"
+"Per utilizzare gallery-uploader con questa versione, è necessario avviarlo "
+"con le immagini da caricare come argomenti: ad esempio, utilizzandolo come "
+"script di Nautilus."
+
+#: gallery-uploader.py:771
+#, python-format
+msgid "Error: file \"%s\" doesn't exist."
+msgstr "Errore: il file \"%s\" non esiste."
+
+#: gallery-uploader.py:775
+#, python-format
+msgid "Error: \"%s\" is not a regular file."
+msgstr "Errore: \"%s\" non è un normale file."
+
+#: gallery-uploader.py:779
+#, python-format
+msgid "Error: can't read file \"%s\"."
+msgstr "Errore: non riesco a leggere \"%s\"."
+
+#: galleryuploader_lib/dialogs.py:19
+msgid "Gallery-uploader is exiting because of the following error:"
+msgstr "Gallery-uploader termina a causa del seguente errore:"
+
+#: stuff/UI_browser.glade:7
+msgid "Select pictures to upload"
+msgstr "Selezionare le immagini da caricare"
+
+#: stuff/UI_browser.glade:27
+msgid "Folder:"
+msgstr "Cartella:"
+
+#: stuff/UI_browser.glade:38
+msgid "Select a folder"
+msgstr "Scegliere una cartella"
+
+#: stuff/UI_bye.glade:7 stuff/UI_bye.glade:11
+msgid "Upload successful"
+msgstr "Caricamento completato"
+
+#: stuff/UI_bye.glade:12
+msgid "Picures were succesfully added to the album."
+msgstr "Le immagini sono state aggiunte all'album."
+
+#: stuff/UI_bye.glade:20
+msgid "Click here to view it in your browser."
+msgstr "Cliccare qui per vederlo nel browser."
+
+#: stuff/UI_choose.glade:71
+msgid "Expand all"
+msgstr "Mostra tutto"
+
+#: stuff/UI_choose.glade:85
+msgid "Collapse all"
+msgstr "Nascondi tutto"
+
+#: stuff/UI_choose.glade:99 stuff/UI_newalbum.glade:7
+msgid "New album"
+msgstr "Nuovo album"
+
+#: stuff/UI_choose.glade:176
+msgid "Manage accounts"
+msgstr "Gestisci profili"
+
+#: stuff/UI_delete.glade:7
+msgid "Delete gallery"
+msgstr "Elminazione galleria"
+
+#: stuff/UI_edit.glade:21
+msgid "Pictures details"
+msgstr "Informazioni immagini"
+
+#: stuff/UI_edit.glade:37
+msgid ""
+"If you want, you can now add a <i>caption</i> and/or a <i>description</i> "
+"for each picture.\n"
+"The former appears in in the album view, the latter only in the specific "
+"picture's page."
+msgstr ""
+"È possibile ora aggiungere una <i>didascalia</i> e/o una <i>descrizione</i> "
+"per ogni immagine.\n"
+"La prima compare nella panoramica dell'album, la seconda solo nella pagina "
+"specifica dell'immagine."
+
+#: stuff/UI_error.glade:7
+msgid "Error"
+msgstr "Errore"
+
+#: stuff/UI_form.glade:7
+msgid "Gallery installation"
+msgstr "Istanza di Gallery"
+
+#: stuff/UI_form.glade:19
+msgid ""
+"Insert informations for this gallery installation\n"
+"(all fields are required):"
+msgstr ""
+"Inserire le informazioni per questa istanza di Gallery\n"
+"(tutti i campi sono necessari):"
+
+#: stuff/UI_form.glade:75
+msgid "Password:"
+msgstr "Password:"
+
+#: stuff/UI_form.glade:88
+msgid "User name:"
+msgstr "Nome utente:"
+
+#: stuff/UI_form.glade:99
+msgid ""
+"URL\n"
+"(e.g. <i>http://www.example.com/gallery</i>):"
+msgstr ""
+"Indirizzo\n"
+"(es: <i>http://www.example.com/gallery</i>):"
+
+#: stuff/UI_form.glade:113
+msgid ""
+"Name of bookmark\n"
+"(choose freely):"
+msgstr ""
+"Nome del segnalibro\n"
+"(scelta libera):"
+
+#: stuff/UI_form.glade:192
+msgid "Save and apply"
+msgstr "Salva e applica"
+
+#: stuff/UI_newalbum.glade:42
+msgid "Below, you can add a description:"
+msgstr "È possibile aggiungere una descrizione qui sotto:"
+
+#: stuff/UI_newalbum.glade:77
+msgid ""
+"Both in the title and in the description, you can use markers, such as:\n"
+"[b]bold[/b],\n"
+"[i]italic[/i],\n"
+"[url=http://www.pietrobattiston.it]website[/url],\n"
+"[color=#E80000]crimson[/color].\n"
+"\n"
+"See Gallery documentation for the full list."
+msgstr ""
+"È possibile utilizzare, sia nel titolo che nella descrizione, dei marcatori, "
+"come:\n"
+"[b]grassetto[/b],\n"
+"[i]corsivo[/i],\n"
+"[url=http://www.pietrobattiston.it]collegamento[/url],\n"
+"[color=#E80000]cremisi[/color].\n"
+"\n"
+"Si veda la documentazione di Gallery per la lista completa."
+
+#: stuff/UI_nognomekeyring.glade:7
+msgid "GNOME Keyring not found."
+msgstr "GNOME Keyring non trovato."
+
+#: stuff/UI_nognomekeyring.glade:12
+msgid ""
+"Gallery-uploader is unable to communicate with GNOME Keyring - it may be not "
+"installed, or not currently active.\n"
+"\n"
+"This means that your password will be stored on the hard disk as plain text."
+msgstr ""
+"Gallery-uploader è incapace di comunicare con il portachiavi di GNOME - "
+"potrebbe non essere installato, o non essere attivo.\n"
+"\n"
+"Di conseguenza, la password inserita sarà salvata sul disco rigido in chiaro."
+
+#: stuff/UI_nognomekeyring.glade:22
+msgid "Don't tell me again"
+msgstr "Non me lo ripetere"
+
+#: stuff/UI_nossl.glade:7
+msgid "Cannot establish SSL connection."
+msgstr "Impossibile stabilire la connessione SSL."
+
+#: stuff/UI_nossl.glade:12
+msgid ""
+"You are requesting a secure (https) connection.\n"
+"\n"
+"However, Gallery-uploader is unable to establish it (probably because "
+"M2Crypto is not installed).\n"
+"\n"
+"As a consequence, the connection will <b>not</b> be secure!"
+msgstr ""
+"È stata richiesta una connessione sicura (https).\n"
+"\n"
+"Tuttavia, Gallery-uploader non può stabilirla (probabilmente perché M2Crypto "
+"non è installato).\n"
+"\n"
+"Di conseguenza, la connessione <b>non</b> sarà sicura!"
+
+#~ msgid "Error while retrieving updated information:"
+#~ msgstr "Errore nella ricezione delle informazioni aggiornate:"
+
+#~ msgid "Invalid credentials"
+#~ msgstr "Credenziali non valide"
+
+#~ msgid ""
+#~ "Could not connect to %s with given username and password: either they are "
+#~ "wrong, or the account is temporarily disabled."
+#~ msgstr ""
+#~ "Impossibile connettersi a %s con nome utente e password indicate: o i "
+#~ "dati sono sbagliati, o l'account è temporaneamente bloccato."

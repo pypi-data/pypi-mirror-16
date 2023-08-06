@@ -1,0 +1,73 @@
+===== What is this app? =====
+gallery-uploader is a program that allows you to easily upload pictures to a
+remote Gallery (http://gallery.menalto.com/) installation. It is particularly
+suggested for use from Nautilus, the default (GNOME) filemanager.
+
+Last version of gallery-uploader can always be found at
+http://www.pietrobattiston.it/gallery_uploader.
+
+It currently supports only Gallery version 2 installations.
+
+===== How do I install it? =====
+There are two ways to install gallery-uploader:
+
+1) Single-user, as Nautilus script: just move into the extracted folder and
+double-click "install.sh". This will uninstall previous versions if detected.
+
+2) System-wide, as standalone program: if you use Debian, or a Debian
+derivative, such as Ubuntu, just install the Debian package; otherwise, download
+and extract the tarball, then open a terminal into the extracted folder and run
+"sudo python setup.py install". Notice this will install it also as a
+system-wide nautilus script: single users can enable it using for instance
+nautilus-scripts-manager
+(see http://www.pietrobattiston.it/nautilus-scripts-manager )
+
+3) Single-user, as standalone program: just open a terminal into the extracted
+folde and run "./gallery-uploader". Do not try to install with "python setup.py"
+to private directories: it won't work.
+
+===== What are its requirements? =====
+
+You need
+  * Python (version 2.6 or higher),
+  * python-xdg,
+  * python-argparse (already present in Python 2.7),
+  * pygtk (2.12 or later should work, though 2.14 is required for usage in standalone mode; the version of the gtk+ libraries must be 2.16 or later),
+all preinstalled in many Linux installations, and
+  * galleryremote ( http://pietrobattiston.it/galleryremote ), which does the real work of communicating with remote Gallery instances.
+    
+If python-gnomekeyring is present, passwords will be safely stored with GNOME
+Keyring.
+
+Gallery-uploader was created to be used from Nautilus, GNOME's default
+filemanager, but it is in no way tied to it: if you prefer, you can use it from
+shell, by giving the names of the images to load as arguments. If it doesn't get
+any argument, it will open a small browser which can be used to select the
+desired pictures. This browser, which makes gallery-uploader a real standalone
+program, requires the additional dependence python-gnome in order to work.
+
+===== Old configuration files =====
+
+Until version 1.11, Gallery-uploader relied on another library: gup.
+Its configuration files may be left in a folder called ".gup" inside your home
+directory. The first time you run a newer version of Gallery-uploader, it will
+import them automatically. Afterwhile, if you do not use gup directly, you can
+safely delete that folder.
+
+===== Who should I blame if this sucks? =====
+
+Pietro Battiston - <me@pietrobattiston.it>
+
+===== How to translate to my language? =====
+
+You must have an account on http://www.transifex.net . Then, visit
+
+http://www.transifex.net/projects/p/galleryuploader/c/default/
+
+Assuming that your language doesn't exist, click "Add a new translation" and
+upload the .po file for your language (which doesn't have to necessarily contain
+translated strings already). This step will soon become unnecessary, but for the
+moment feel free to write me a line, and I'll take care of it.
+
+After that, you can click on the "edit" icon near to your language and start
+filling the fields.

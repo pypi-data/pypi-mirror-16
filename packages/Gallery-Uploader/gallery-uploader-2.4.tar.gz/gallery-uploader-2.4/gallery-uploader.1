@@ -1,0 +1,74 @@
+'\" t
+.\"     Title: GALLERY-UPLOADER
+.\"    Author: Pietro Battiston <me@pietrobattiston.it>
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 03/29/2011
+.\"    Manual: gallery-uploader User Manual
+.\"    Source: gallery-uploader
+.\"  Language: English
+.\"
+.TH "GALLERY\-UPLOADER" "1" "03/29/2011" "gallery-uploader" "gallery-uploader User Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+gallery-uploader \- program to upload pictures and video to Gallery
+.SH "SYNOPSIS"
+.HP \w'\fBgallery\-uploader\fR\ 'u
+\fBgallery\-uploader\fR [\fIFILES\fR]
+.SH "DESCRIPTION"
+.PP
+This manual page documents briefly the
+\fBgallery\-uploader\fR
+command\&.
+.PP
+\fBgallery\-uploader\fR
+is a program that allows to easily upload pictures and video to Gallery installations; Gallery (\m[blue]\fB\%http://gallery.menalto.com\fR\m[]) is an advanced web photo album organizer\&.
+.PP
+If FILES are given, they are the files which must be uploaded\&. If no argument is given instead, a small browser window will open where the user can select items to upload\&.
+.SH "HOW TO ENABLE AS NAUTILUS SCRIPT"
+.PP
+Nautilus, GNOME\*(Aqs default file manager, supports scripts, which can be activated on any selected file(s) from the right\-button menu;
+\fBgallery\-uploader\fR
+plays perfectly the role of a Nautilus script\&.
+.PP
+To enable it, the user can run in a terminal the command:
+.PP
+
+\fBln \-s /usr/share/nautilus\-scripts/Gallery\e Uploader\&.py \e\fR
+\fB~/\&.gnome2/nautilus\-scripts/Gallery\e Uploader\fR
+.PP
+or use a program such as nautilus\-scripts\-manager; see:
+\m[blue]\fB\%http://www.pietrobattiston.it/nautilus-scripts-manager\fR\m[]\&.
+.SH "AUTHOR"
+.PP
+\fBPietro Battiston\fR <\&me@pietrobattiston\&.it\&>
+.RS 4
+developed the program and wrote this manpage\&.
+.RE
+.SH "COPYRIGHT"
+.br
+Copyright \(co 2010 Pietro Battiston
+.br
+.PP
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU General Public License, Version 2 or (at your option) any later version published by the Free Software Foundation\&.
+.PP
+On Debian systems, the complete text of the GNU General Public License can be found in
+/usr/share/common\-licenses/GPL\-2\&.
+.sp

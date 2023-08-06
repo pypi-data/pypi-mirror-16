@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE refentry PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+
+  <!ENTITY dhfirstname "Pietro">
+  <!ENTITY dhsurname   "Battiston">
+  <!ENTITY dhusername  "&dhfirstname; &dhsurname;">
+  <!ENTITY dhemail     "me@pietrobattiston.it">
+  <!ENTITY dhsection   "1">
+  <!ENTITY dhtitle     "gallery-uploader User Manual">
+  <!ENTITY dhucpackage "GALLERY-UPLOADER">
+  <!ENTITY dhpackage   "gallery-uploader">
+]>
+
+<refentry>
+  <refentryinfo>
+    <title>&dhtitle;</title>
+    <productname>&dhpackage;</productname>
+    <authorgroup>
+      <author>
+       <firstname>&dhfirstname;</firstname>
+        <surname>&dhsurname;</surname>
+        <contrib>developed the program and wrote this manpage.</contrib>
+        <address>
+          <email>&dhemail;</email>
+        </address>
+      </author>
+    </authorgroup>
+    <copyright>
+      <year>2010</year>
+      <holder>&dhusername;</holder>
+    </copyright>
+    <legalnotice>
+      <para>Permission is granted to copy, distribute and/or modify this
+        document under the terms of the GNU General Public License,
+        Version 2 or (at your option) any later version published by
+        the Free Software Foundation.</para>
+      <para>On Debian systems, the complete text of the GNU General Public
+        License can be found in
+        <filename>/usr/share/common-licenses/GPL-2</filename>.</para>
+    </legalnotice>
+  </refentryinfo>
+  <refmeta>
+    <refentrytitle>&dhucpackage;</refentrytitle>
+    <manvolnum>&dhsection;</manvolnum>
+  </refmeta>
+  <refnamediv>
+    <refname>&dhpackage;</refname>
+    <refpurpose>program to upload pictures and video to Gallery</refpurpose>
+  </refnamediv>
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>&dhpackage;</command>
+      <arg choice="opt"><replaceable>FILES</replaceable></arg>
+    </cmdsynopsis>
+  </refsynopsisdiv>
+  <refsect1 id="description">
+    <title>DESCRIPTION</title>
+    <para>This manual page documents briefly the
+      <command>&dhpackage;</command> command.</para>
+    <para><command>&dhpackage;</command> is a program that allows to easily
+    upload pictures and video to Gallery installations; Gallery
+    (<ulink url="http://gallery.menalto.com"/>) is an advanced web photo album
+    organizer.</para>
+    <para>If FILES are given, they are the files which must be uploaded. If no
+    argument is given instead, a small browser window will open where the user
+    can select items to upload.</para>
+  </refsect1>
+  <refsect1 id="how_to_enable_as_nautilus_script">
+    <title>HOW TO ENABLE AS NAUTILUS SCRIPT</title>
+    <para>Nautilus, GNOME's default file manager, supports scripts, which can be
+    activated on any selected file(s) from the right-button menu;
+    <command>&dhpackage;</command> plays perfectly the role of a Nautilus
+    script. </para>
+    <para>To enable it, the user can run in a terminal the command:</para>
+    <para>
+    <command>ln -s /usr/share/nautilus-scripts/Gallery\ Uploader.py \</command>
+    <command>~/.gnome2/nautilus-scripts/Gallery\ Uploader</command></para>
+    <para> or use a program such as nautilus-scripts-manager; see:
+    <ulink url="http://www.pietrobattiston.it/nautilus-scripts-manager"/>.
+    </para>
+  </refsect1>
+</refentry>
+
