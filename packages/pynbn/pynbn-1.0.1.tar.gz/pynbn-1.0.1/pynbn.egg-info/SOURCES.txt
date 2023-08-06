@@ -1,0 +1,8 @@
+setup.py
+pynbn/__init__.py
+pynbn.egg-info/PKG-INFO
+pynbn.egg-info/SOURCES.txt
+pynbn.egg-info/dependency_links.txt
+pynbn.egg-info/not-zip-safe
+pynbn.egg-info/requires.txt
+pynbn.egg-info/top_level.txt
