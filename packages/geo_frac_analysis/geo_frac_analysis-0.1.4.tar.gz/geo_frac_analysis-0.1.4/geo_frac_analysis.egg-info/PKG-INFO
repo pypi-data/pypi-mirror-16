@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: geo-frac-analysis
+Version: 0.1.4
+Summary: Python module for the spatial analysis of geological fractures.
+Home-page: https://github.com/TerminusEst/geo_frac_analysis
+Author: Sean Blake
+Author-email: blakese@tcd.ie
+License: MIT
+Description: Python module for the spatial analysis of geological fractures using shapefiles.
+Keywords: geological spatial fracture analysis
+Platform: UNKNOWN
