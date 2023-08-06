@@ -1,0 +1,7 @@
+setup.py
+GNUIndentBear/GNUIndentBear.py
+GNUIndentBear/__init__.py
+GNUIndentBear.egg-info/PKG-INFO
+GNUIndentBear.egg-info/SOURCES.txt
+GNUIndentBear.egg-info/dependency_links.txt
+GNUIndentBear.egg-info/top_level.txt
