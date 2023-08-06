@@ -1,0 +1,3 @@
+[console_scripts]
+update_readme = cli:update_readme
+
