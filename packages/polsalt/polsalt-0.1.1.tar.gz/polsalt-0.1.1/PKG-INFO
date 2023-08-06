@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: polsalt
+Version: 0.1.1
+Summary: SALT Polarimetric Data Reductions
+Home-page: https://github.com/saltastro/polsalt
+Author: K. Nordseick
+Author-email: salthelp@salt.ac.za
+License: BSD
+Description: 
+        This is an Astropy affiliated package.
+        
+Platform: UNKNOWN
