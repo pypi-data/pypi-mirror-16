@@ -1,0 +1,12 @@
+rsstail/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rsstail/__main__.py,sha256=xkHIi258J-DV_Sk4F0uqnS7NaUgG7i2ysxzosTcwGBQ,112
+rsstail/formatter.py,sha256=aTWHiSqn4dAUhh1NDtjcC_mLD_BIFFJetJVYIBilHrM,2722
+rsstail/main.py,sha256=n37YvQb4KKX8TFS0haOENOe6vfsKxJq9CIc4E5czUR0,13861
+rsstail-0.4.0.dist-info/DESCRIPTION.rst,sha256=AhQs9XquCWCbPgSoMsxhQprwLsDzyAa1qh29SHNXd88,659
+rsstail-0.4.0.dist-info/METADATA,sha256=oilLKuGsJK-KZb2EXVH9cJfCCD_iAYOTyLF0brJBY2s,1323
+rsstail-0.4.0.dist-info/RECORD,,
+rsstail-0.4.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+rsstail-0.4.0.dist-info/entry_points.txt,sha256=gxM1aTSA5wi2nAE3LhrobTc-uNhXSdgev-35X5kwgQI,47
+rsstail-0.4.0.dist-info/metadata.json,sha256=K0Hv4nHB0x52FmjWS8iTy6nGJZQDJtMrzOwZcpYeEro,1000
+rsstail-0.4.0.dist-info/top_level.txt,sha256=vipkSMLqUQh-AAjI-M_1ghZJDl9T4KzmSHuv_yUR7TI,8
+rsstail-0.4.0.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
