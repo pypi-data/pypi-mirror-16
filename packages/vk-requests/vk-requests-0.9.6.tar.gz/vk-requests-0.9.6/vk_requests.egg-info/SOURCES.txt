@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+requirements.txt
+setup.cfg
+setup.py
+vk_requests/__init__.py
+vk_requests/api.py
+vk_requests/auth.py
+vk_requests/exceptions.py
+vk_requests/settings.py
+vk_requests/utils.py
+vk_requests.egg-info/PKG-INFO
+vk_requests.egg-info/SOURCES.txt
+vk_requests.egg-info/dependency_links.txt
+vk_requests.egg-info/requires.txt
+vk_requests.egg-info/top_level.txt
