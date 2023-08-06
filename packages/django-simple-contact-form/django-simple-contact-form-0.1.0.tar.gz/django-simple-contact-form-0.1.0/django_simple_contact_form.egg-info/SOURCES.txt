@@ -1,0 +1,16 @@
+setup.py
+contact_form/__init__.py
+contact_form/forms.py
+contact_form/urls.py
+contact_form/views.py
+contact_form/tests/__init__.py
+contact_form/tests/runtests.py
+contact_form/tests/test_forms.py
+contact_form/tests/test_views.py
+contact_form/tests/urls.py
+django_simple_contact_form.egg-info/PKG-INFO
+django_simple_contact_form.egg-info/SOURCES.txt
+django_simple_contact_form.egg-info/dependency_links.txt
+django_simple_contact_form.egg-info/not-zip-safe
+django_simple_contact_form.egg-info/requires.txt
+django_simple_contact_form.egg-info/top_level.txt
