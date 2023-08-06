@@ -1,0 +1,9 @@
+README.rst
+protostrings.py
+setup.cfg
+setup.py
+protostrings.egg-info/PKG-INFO
+protostrings.egg-info/SOURCES.txt
+protostrings.egg-info/dependency_links.txt
+protostrings.egg-info/requires.txt
+protostrings.egg-info/top_level.txt
