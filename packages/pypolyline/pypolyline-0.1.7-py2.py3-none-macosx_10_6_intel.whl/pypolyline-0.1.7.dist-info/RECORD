@@ -1,0 +1,12 @@
+pypolyline/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pypolyline/libpolyline_ffi.dylib,sha256=1Wj9p4B1XQpJdeo1GrE1Sfpm3peCI1ampeClPT3k220,1306896
+pypolyline/util.py,sha256=K0MELHJbD51IlY8MabdZVoukqjG5gmwX4RE1Tqt2Ugw,5689
+pypolyline/libpolyline_ffi.dylib.dSYM/Contents/Resources/DWARF/libpolyline_ffi.dylib,sha256=fTVHWpJRUeDgp8X8snHjXYMkK6aZsy31yRLtol7tnEQ,811759
+pypolyline/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pypolyline/test/test.py,sha256=ZqlQo8XmN-TEzwP8mj5yL0nVCGIwYcx9bhxUzh99V4M,1640
+pypolyline-0.1.7.dist-info/DESCRIPTION.rst,sha256=OKZUd2uNB8RlZGdPVhwiLSz-bit0EOyA2kZE3dqC9Y0,1222
+pypolyline-0.1.7.dist-info/METADATA,sha256=EBtMa3r9GPVwsMp0dkGMmv8V2Be0Jjs1Hi2ti--KWQc,2207
+pypolyline-0.1.7.dist-info/RECORD,,
+pypolyline-0.1.7.dist-info/WHEEL,sha256=4wGjhrzziNgphDvZKz-OXjtHj4-3pQAgfcwVm66TTmI,138
+pypolyline-0.1.7.dist-info/metadata.json,sha256=Z6vehPHbpbJdIwtebjVEznwrgKqpUGO2IMzpWxpKMfM,1135
+pypolyline-0.1.7.dist-info/top_level.txt,sha256=7Gy8gUtBLfqNAieGRPPYYxALZUfJ818K7DtcrH7MWZE,11
