@@ -1,0 +1,3 @@
+[docker_dev.pre_build_hooks]
+python = docker_dev_python:build_python_distributions
+
