@@ -1,0 +1,10 @@
+include README.rst
+include docs/*.rst
+include LICENSE
+include dev-requirements-to-freeze.txt
+include requirements-to-freeze.txt
+include requirements.txt
+include docs/Makefile
+include docs/conf.py
+include docs/make.bat
+include .codeclimate.yml
