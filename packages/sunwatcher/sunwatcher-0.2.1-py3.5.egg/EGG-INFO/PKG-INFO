@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: sunwatcher
+Version: 0.2.1
+Summary: Binding to SolarLog HTTP API
+Home-page: https://bitbucket.org/Lavode/sunwatcher
+Author: Michael Senn
+Author-email: michael@morrolan.ch
+License: Apache License 2.0
+Description: UNKNOWN
+Platform: UNKNOWN
