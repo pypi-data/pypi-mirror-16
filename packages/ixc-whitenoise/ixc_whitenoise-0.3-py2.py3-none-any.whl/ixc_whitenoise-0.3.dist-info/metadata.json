@@ -1,0 +1,1 @@
+{"generator": "bdist_wheel (0.26.0)", "summary": "UNKNOWN", "metadata_version": "2.0", "name": "ixc-whitenoise", "extras": ["pipeline"], "run_requires": [{"requires": ["django-pipeline"], "extra": "pipeline"}, {"requires": ["whitenoise (>=3.1)"]}], "version": "0.3", "extensions": {"python.details": {"document_names": {"description": "DESCRIPTION.rst"}}}}
