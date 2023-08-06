@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: randommac
+Version: 0.1.16a1
+Summary: Python wrappers around nmcli for MAC spoofing
+Home-page: https://github.com/jerabaul29/randommac
+Author: JR
+Author-email: jean.rblt@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: MAC address gestion in systems with Linux NetworkManager
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
