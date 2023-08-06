@@ -1,0 +1,100 @@
+Metadata-Version: 2.0
+Name: arpegio
+Version: 0.1.5
+Summary: Django apps that sound good together
+Home-page: https://gitlab.com/arpegio/arpegio/
+Author: Gildardo Adrian Maravilla Jacome
+Author-email: gilmrjc@gmail.com
+License: MIT
+Platform: all
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.8
+Classifier: Framework :: Django :: 1.9
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: django (>=1.8,<1.10)
+Requires-Dist: pillow (>=3.3.0,<3.4.0)
+
+
+=======
+Arpegio
+=======
+
+.. image:: https://img.shields.io/travis/arpegio-dj/arpegio.svg
+   :target: https://travis-ci.org/arpegio-dj/arpegio
+
+.. image:: https://landscape.io/github/arpegio-dj/arpegio/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/arpegio-dj/arpegio/master
+   :alt: Code Health
+
+.. image:: https://img.shields.io/coveralls/arpegio-dj/arpegio.svg
+   :target: https://coveralls.io/github/arpegio-dj/arpegio
+
+.. image:: https://img.shields.io/codecov/c/github/arpegio-dj/arpegio.svg
+   :target: https://codecov.io/gh/arpegio-dj/arpegio
+
+.. image:: https://img.shields.io/codeclimate/github/arpegio-dj/arpegio.svg
+   :target: https://codeclimate.com/github/arpegio-dj/arpegio
+
+.. image:: https://img.shields.io/codeclimate/issues/github/arpegio-dj/arpegio.svg
+   :target: https://codeclimate.com/github/arpegio-dj/arpegio
+
+.. image:: https://img.shields.io/pypi/v/arpegio.svg
+   :target: https://pypi.python.org/pypi/arpegio
+
+.. image:: https://img.shields.io/pypi/l/arpegio.svg
+   :target: https://pypi.python.org/pypi/arpegio
+
+.. image:: https://img.shields.io/pypi/pyversions/arpegio.svg
+   :target: https://pypi.python.org/pypi/arpegio
+
+.. image:: https://img.shields.io/pypi/status/arpegio.svg
+   :target: https://pypi.python.org/pypi/arpegio
+
+.. image:: https://img.shields.io/github/downloads/arpegio-dj/arpegio/total.svg
+   :target: https://github.com/arpegio-dj/arpegio
+
+.. image:: https://img.shields.io/github/release/arpegio-dj/arpegio.svg
+   :target: https://github.com/arpegio-dj/arpegio
+
+.. image:: https://img.shields.io/github/downloads/arpegio-dj/arpegio/latest/total.svg
+   :target: https://github.com/arpegio-dj/arpegio
+
+------------------------------
+Apps that sound good together.
+------------------------------
+
+Arpegio is a set of apps that work well together and are easily extendable and customizable. Following the best practices in the Django world and the website development Arpegio takes away from you all the boilerplate needed to do an awesome website/webapp.
+
+You can plug all the apps you need for the next big project you're working on. There's no need to learn yet another layer of abstraction. Arpegio is vanilla Django with some helper functions. No new rules to learn.
+
+The template structure makes really simple to create custom themes. For those that say that Django is great for webapps but bad for webdesign will think twice about it now.
+
+License
+=======
+
+These apps are licensed under the MIT license.
+
+----------------------------------
+
+**Note:** Arpegio is `hosted on Gitlab.com
+<https://gitlab.com/arpegio/arpegio>`_ and there is a `mirror on Github
+<https://github.com/arpegio-dj/arpegio>`_ to
+easy collaboration. Please try to commit to the canonical repository instead of
+the mirror.
+
+
