@@ -1,0 +1,17 @@
+MANIFEST.in
+RELEASE-VERSION
+pavement.py
+paver-minilib.zip
+setup.py
+version.py
+microdrop_plugin_template/__init__.py
+microdrop_plugin_template/on_plugin_install.py
+microdrop_plugin_template/properties.yml
+microdrop_plugin_template/requirements.txt
+microdrop_plugin_template.egg-info/PKG-INFO
+microdrop_plugin_template.egg-info/SOURCES.txt
+microdrop_plugin_template.egg-info/dependency_links.txt
+microdrop_plugin_template.egg-info/requires.txt
+microdrop_plugin_template.egg-info/top_level.txt
+microdrop_plugin_template/hooks/Linux/on_plugin_install.sh
+microdrop_plugin_template/hooks/Windows/on_plugin_install.bat
