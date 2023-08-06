@@ -1,0 +1,122 @@
+{#
+# This file is part of Invenio.
+# Copyright (C) 2014, 2015, 2016 CERN.
+#
+# Invenio is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as
+# published by the Free Software Foundation; either version 2 of the
+# License, or (at your option) any later version.
+#
+# Invenio is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Invenio; if not, write to the Free Software Foundation, Inc.,
+# 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
+#}
+
+{%- import "invenio_github/settings/helpers.html" as helpers with context %}
+
+{%- extends config.GITHUB_SETTINGS_TEMPLATE %}
+
+{%- block settings_content %}
+<div class="panel-body">
+  <h1><i class="fa fa-github"></i>&nbsp;{{ repo.name }}</h1>
+  <h2>{{ _('Releases') }}</h2>
+</div>
+<ul class="list-group">
+  {% if not releases %}
+  <li class="list-group-item" align="center">
+    <em>
+      There are no archived releases.<br>
+      Go to <a href="https://github.com/{{ repo.name }}/releases">GitHub</a>
+      and create your first release.
+    </em>
+  </li>
+  {% endif %}
+  {%- for release in releases %}
+  <li class="list-group-item">
+    <div>
+    <p>{{ release.title }}
+    &nbsp;
+    {# PID Badge (specific for the release) #}
+    {# TODO: Move generation of release-specific badges to the badges views #}
+    {% if release.pid %}
+      <a href="https://doi.org/{{release.pid.pid_value}}"><img src="{{ url_for('invenio_formatter_badges.badge', title=release.pid.pid_type, value=release.pid.pid_value, ext='svg') }}" alt="{{ release.pid.pid_value }}"></a>
+    {% endif %}
+    </p>
+    </div>
+    &nbsp;
+    <small>
+      <a class="text-primary" href="https://github.com/{{ repo.name }}/releases/tag/{{ release.model.tag }}">
+        <i class="fa fa-tag"></i> {{ release.model.tag }}
+      </a>
+    </small>
+    &nbsp;
+    <small class="text-{{ release.model.status.color }}">
+      <i class="fa {{ release.model.status.icon }}"></i> {{ release.model.status.title }}
+    </small>
+    &nbsp;
+    {# Edit Button #}
+    {% if release.model.deposit_id %}
+      {# use url_for('invenio_deposit_ui.depid') here... #}
+      <a class="label label-info" href="/deposit/{{ release.model.deposit_id }}"><i class="fa fa-edit"></i> {{_('Edit Deposit')}}
+      </a>
+      &nbsp;
+    {% endif %}
+    <span class="pull-right">
+      <small class="text-muted">
+        {{ release.model.created|naturaltime }}
+      </small>
+      <span class="btn btn-xs btn-default" type="button"
+        data-toggle="collapse" data-target="#{{ release.model.id }}"
+        aria-expanded="false" aria-controls="collapseExample">
+        ...
+      </span>
+    </span>
+    <div class="clearfix"></div>
+    <div id="{{ release.model.id }}" class="collapse">
+      <br/>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <a href="#{{ release.model.id }}-deposit" aria-controls="home" role="tab"
+            data-toggle="tab">{{ _('Deposit') }}</a>
+        </li>
+        <li role="presentation">
+          <a href="#{{ release.model.id }}-event" aria-controls="home" role="tab"
+            data-toggle="tab">{{ _('Event') }}</a>
+        </li>
+        <li role="presentation">
+          <a href="#{{ release.model.id }}-errors" aria-controls="home" role="tab"
+            data-toggle="tab">{{ _('Errors') }}</a>
+        </li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="{{ release.model.id }}-deposit">
+          <h5>{{ _('Metadata') }}</h5>
+          {% if release.record %}
+              <pre>{{ release.record|tojson|prettyjson }}</pre>
+          {% endif %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="{{ release.model.id }}-event">
+          <h5>{{ _('Payload') }}</h5>
+          {% if release.event %}
+            <pre>{{ release.event.payload|tojson|prettyjson }}</pre>
+          {% endif %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="{{ release.model.id }}-errors">
+          {% if release.model.errors %}
+            <h5>{{ _('Errors') }}</h5>
+            <pre>{{ release.model.errors|tojson|prettyjson }}</pre>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{%- endblock %}
