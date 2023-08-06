@@ -1,0 +1,14 @@
+AUTHORS.rst
+HISTORY.rst
+LICENSE
+MANIFEST.in
+setup.cfg
+setup.py
+OpticalRS.egg-info/PKG-INFO
+OpticalRS.egg-info/SOURCES.txt
+OpticalRS.egg-info/dependency_links.txt
+OpticalRS.egg-info/not-zip-safe
+OpticalRS.egg-info/requires.txt
+OpticalRS.egg-info/top_level.txt
+docs/OpticalRS.rst
+docs/modules.rst
