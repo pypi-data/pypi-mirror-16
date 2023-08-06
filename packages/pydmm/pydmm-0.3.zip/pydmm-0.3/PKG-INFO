@@ -1,0 +1,27 @@
+Metadata-Version: 1.0
+Name: pydmm
+Version: 0.3
+Summary: Read data from a dmm
+Home-page: http://pypi.python.org/pypi/pydmm
+Author: Michael Weigend
+Author-email: mw@creative-informatics.de
+License: LICENSE.txt
+Description: =====
+        PyDMM
+        =====
+        
+        PyDMM supports reading data from a digital multimeter (DMM).
+        Typical usage looks like this::
+        
+            from pydmm import read_dmm
+        
+            try:
+                number = read_dmm(port=myport, timeout=3)
+                print(number)
+            except:
+                print("Error")
+        
+        
+        
+Keywords: dmm,digital multimeter
+Platform: UNKNOWN
