@@ -1,0 +1,10 @@
+mastercard_audiences-1.0.0.dist-info/DESCRIPTION.rst,sha256=FxFPKQ_bQUJ63edRYuIHmEPemLxnISPFfxQHVzVv-Rk,28
+mastercard_audiences-1.0.0.dist-info/METADATA,sha256=-m-H2smAwnWxCF38UAanfVJe2akowTDwSCqDxQ7_7c8,854
+mastercard_audiences-1.0.0.dist-info/RECORD,,
+mastercard_audiences-1.0.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+mastercard_audiences-1.0.0.dist-info/metadata.json,sha256=u8qPaY-yIqzKDgs0Mu7F_NHPNeqzBhMlaZJs7mFsBPA,1009
+mastercard_audiences-1.0.0.dist-info/top_level.txt,sha256=-pM1lg9RUpjzdPhCLCkmxZh6Lb_pHf1EXK8GOtacFs8,26
+mastercardaudiences/__init__.py,sha256=xuCVoa6mS-27mYo8L2KTyvNY3IitPDa-shwneGdw1u4,83
+mastercardaudiences/audiencessegment.py,sha256=Fq0wL2q0xTmfNINrpJlKhBTlz3g8dr5glzIrZk_dny8,3118
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_audiencessegment.py,sha256=NFa-3h8jxmBL2CxChIBBOiPL2IOIpGCnu0LEyLBP_8w,3414
