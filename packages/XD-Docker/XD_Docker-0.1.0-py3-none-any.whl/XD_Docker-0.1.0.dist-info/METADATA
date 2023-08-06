@@ -1,0 +1,46 @@
+Metadata-Version: 2.0
+Name: XD-Docker
+Version: 0.1.0
+Summary: Python library for accessing Docker Remote API
+Home-page: https://github.com/XD-embedded/xd-docker
+Author: Esben Haabendal
+Author-email: esben@haabendal.dk
+License: MIT
+Keywords: docker
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: requests
+Requires-Dist: requests-unixsocket
+Requires-Dist: typing
+
+XD-Docker
+=========
+
+XD-Docker aims at providing an easy to use and Pythonic API for working with
+the Docker Remote API in Python.
+
+
+Development status
+------------------
+
+This library is in a early development stage, with only limited functionality
+of the Docker Remote API implemented, and with no guarantees of API stability.
+
+The functionality that is implemented, should be pretty stable though, with
+unit and integration tests in place.
+
+
+Documentation
+-------------
+
+Documentation will be hosted on http://readthedocs.org when I have finished
+the setup for that.
+
+
