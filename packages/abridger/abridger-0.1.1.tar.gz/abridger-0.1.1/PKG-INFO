@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: abridger
+Version: 0.1.1
+Summary: Abridger database subsetting tool
+Home-page: https://github.com/freewilll/abridger
+Author: Will Angenent
+Author-email: w.angenent@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: database,subset,filter,reduce,sqlite,postgresql,sql
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: SQL
+Classifier: Topic :: Database
+Classifier: Topic :: Utilities
