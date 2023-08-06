@@ -1,0 +1,62 @@
+Metadata-Version: 1.1
+Name: plonetheme.sunstrap
+Version: 0.0.7
+Summary: Plone theme
+Home-page: https://github.com/aclark4life/plonetheme.sunstrap
+Author: Alex Clark
+Author-email: aclark@aclark.net
+License: GPL2
+Description: Plone Sunstrap Theme
+        ====================
+        
+        "A theme for all seasons" [1]_
+        
+        .. image:: plonetheme/sunstrap/theme/preview.jpg
+        
+        Plone 4's default theme reimplemented with Diazo Theming Engine, using Bootstrap instead of Deco grid framework. Some popular add-on resources added, too e.g. ``webcouturier.dropdownmenu`` & ``Products.Carousel``.
+        
+        .. [1] https://en.wikipedia.org/wiki/A_Man_for_All_Seasons
+        
+        Changes
+        =======
+        
+        0.0.7 (07-29-2016)
+        ------------------
+        
+        - Fix Carousel JavaScript
+        
+        0.0.6 (07-28-2016)
+        ------------------
+        
+        - Use Bootstrap columns
+        - Add Carousel resources
+        
+        0.0.5 (07-27-2016)
+        ------------------
+        
+        - Include dropdown menu styles
+        
+        0.0.4 (07-27-2016)
+        ------------------
+        
+        - Add MANIFEST
+        
+        0.0.3 (07-27-2016)
+        ------------------
+        
+        - Add CHANGES
+        
+        0.0.2 (07-27-2016)
+        ------------------
+        
+        - Add CHANGES
+        
+        0.0.1 (07-27-2016)
+        ------------------
+        
+        - Initial release
+        
+Keywords: Bootstrap Diazo Modern Plone Sunburst Theme Theming
+Platform: UNKNOWN
+Classifier: Framework :: Plone :: 4.3
+Classifier: Programming Language :: Python :: 2.7
