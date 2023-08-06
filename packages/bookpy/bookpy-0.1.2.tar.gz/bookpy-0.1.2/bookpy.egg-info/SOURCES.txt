@@ -1,0 +1,16 @@
+setup.cfg
+setup.py
+bookpy/__init__.py
+bookpy/book.py
+bookpy/bookpy.py
+bookpy/cli.py
+bookpy/errors.py
+bookpy/pdfhandler.py
+bookpy/utils.py
+bookpy/version.py
+bookpy.egg-info/PKG-INFO
+bookpy.egg-info/SOURCES.txt
+bookpy.egg-info/dependency_links.txt
+bookpy.egg-info/entry_points.txt
+bookpy.egg-info/requires.txt
+bookpy.egg-info/top_level.txt
