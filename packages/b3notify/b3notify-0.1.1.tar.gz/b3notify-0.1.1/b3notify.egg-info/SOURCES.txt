@@ -1,0 +1,9 @@
+b3notify.py
+setup.cfg
+setup.py
+b3notify.egg-info/PKG-INFO
+b3notify.egg-info/SOURCES.txt
+b3notify.egg-info/dependency_links.txt
+b3notify.egg-info/entry_points.txt
+b3notify.egg-info/requires.txt
+b3notify.egg-info/top_level.txt
