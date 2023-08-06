@@ -1,0 +1,17 @@
+Metadata-Version: 1.0
+Name: odl_cfg_analysis
+Version: 0.1.1
+Summary: Small utility visualizing ODLs config subsystem dependencies by parsing xml based config files
+Home-page: https://github.com/marosmars/odl-cfg-analysis
+Author: Maros Mars
+Author-email: maros.mars@gmail.com
+License: Apache2
+Description: ODL config subsystem dependency analysis tool
+        ---------------------------------------------
+        
+        CLI Usage:
+        ----------
+        
+        odl-cfg-analyze --paths-to-analyze /home/projects/hc-deps/ --highlight-modules initializer-registry
+Keywords: opendaylight configuration graph analysis
+Platform: UNKNOWN
