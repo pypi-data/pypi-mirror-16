@@ -1,0 +1,10 @@
+naga/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+naga/persistent_vector.py,sha256=Fiqbmh3fE1ODOJ9hbg-P8FjRiQzp4B-Bxcjqzt1DMfk,4973
+naga/precompyled.py,sha256=SYhighyq83t0OUETfQLHq3yZyY8IJqDQ6iBwbLH2pxI,876
+naga/tools.py,sha256=QtBQe3PkyfBpcVcdaOr0w-xllbkayD7pzKNmaQyMzHQ,8305
+naga-0.1.03.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+naga-0.1.03.dist-info/METADATA,sha256=DBhcvqzrNkpz1pAEUSOnN1wDTsN8veYfT3yZHnXlqyg,283
+naga-0.1.03.dist-info/RECORD,,
+naga-0.1.03.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+naga-0.1.03.dist-info/metadata.json,sha256=dbzNZIZKsVxGvVoZA1j-0LSmLiiSEITwo4TAkfwTTIo,450
+naga-0.1.03.dist-info/top_level.txt,sha256=DLg-1J1wct8J7IkNvxQaqxkYd7CabMtbvA7IK9nQot4,5
