@@ -1,0 +1,7 @@
+matlab_kernel/__init__.py,sha256=af0f05dd1a4019770359bceb5a8eeb7efda92c31527cde1d705f73506610a851,58
+matlab_kernel/__main__.py,sha256=478be00d0c805c245e97e6e3c1784da90639ad255730d8e27cbf3b9960daf643,95
+matlab_kernel/kernel.py,sha256=ca409ba5095cd65460f1cc824287e847ce3489387786d3470e4ca3915229ade9,7519
+matlab_kernel/toolbox/do_matlab_complete.m,sha256=0c5e428463711c6973ac82d3a787bee5f167f0ee60441c90f169def1b0f3481a,2120
+matlab_kernel-0.11.0.dist-info/METADATA,sha256=df94df4753b71e6e715b7d26ec621d213f6533feffbdd6d9a43549a73f1e4f24,1965
+matlab_kernel-0.11.0.dist-info/WHEEL,sha256=179ab117ead8292551ac8315145425836fb851a2b5ad0311cdbc7553a440de5e,99
+matlab_kernel-0.11.0.dist-info/RECORD,,
