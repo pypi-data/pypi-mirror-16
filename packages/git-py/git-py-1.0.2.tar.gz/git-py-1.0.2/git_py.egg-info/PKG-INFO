@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: git-py
+Version: 1.0.2
+Summary: Python bindings for the Git source control system
+Home-page: UNKNOWN
+Author: Rotem Yaari
+Author-email: vmalloc@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Python Software Foundation License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
