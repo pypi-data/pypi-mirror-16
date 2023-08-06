@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: apertium-lint
+Version: 0.12
+Summary: Lint for apertium. Part of GSoC 2016
+Home-page: https://gitlab.com/jpsinghgoud/apertium-lint
+Author: Jaipal Singh Goud
+Author-email: jpsinghgoud@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
