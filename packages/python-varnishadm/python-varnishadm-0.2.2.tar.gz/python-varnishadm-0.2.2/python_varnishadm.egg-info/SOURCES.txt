@@ -1,0 +1,11 @@
+AUTHORS.txt
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.py
+varnishadm.py
+bin/varnish_manager
+python_varnishadm.egg-info/PKG-INFO
+python_varnishadm.egg-info/SOURCES.txt
+python_varnishadm.egg-info/dependency_links.txt
+python_varnishadm.egg-info/top_level.txt
