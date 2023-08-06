@@ -1,0 +1,1 @@
+http://github.com/vgel/summarize.py/tarball/0911f23a500dcb0de7b2722587f2dff3598a443a#egg=summarize-1.0.0
