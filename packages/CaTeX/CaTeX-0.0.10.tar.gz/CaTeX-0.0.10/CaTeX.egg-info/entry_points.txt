@@ -1,0 +1,3 @@
+[console_scripts]
+catex = catex.cli:cli
+
