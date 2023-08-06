@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+README.rst
+setup.py
+tapp_config.py
+tapp_config.egg-info/PKG-INFO
+tapp_config.egg-info/SOURCES.txt
+tapp_config.egg-info/dependency_links.txt
+tapp_config.egg-info/requires.txt
+tapp_config.egg-info/top_level.txt
+test/test_tapp_config.py
