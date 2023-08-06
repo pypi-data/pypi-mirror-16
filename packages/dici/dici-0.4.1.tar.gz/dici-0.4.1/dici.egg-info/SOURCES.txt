@@ -1,0 +1,8 @@
+setup.py
+dici/__init__.py
+dici/dici.py
+dici.egg-info/PKG-INFO
+dici.egg-info/SOURCES.txt
+dici.egg-info/dependency_links.txt
+dici.egg-info/top_level.txt
+test/test_dici.py
