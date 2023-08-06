@@ -1,0 +1,12 @@
+CHANGES.rst
+MANIFEST.in
+README.rst
+segno_quark.py
+setup.cfg
+setup.py
+segno_quark.egg-info/PKG-INFO
+segno_quark.egg-info/SOURCES.txt
+segno_quark.egg-info/dependency_links.txt
+segno_quark.egg-info/entry_points.txt
+segno_quark.egg-info/requires.txt
+segno_quark.egg-info/top_level.txt
