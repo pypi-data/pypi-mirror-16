@@ -1,0 +1,3 @@
+microdrop-plugin-manager
+path-helpers
+pip-helpers
