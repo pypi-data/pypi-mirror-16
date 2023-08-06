@@ -1,0 +1,28 @@
+Metadata-Version: 2.0
+Name: blinktrade
+Version: 0.1.0
+Summary: A python client for BlinkTrade Bitcoin Platform
+Home-page: https://github.com/vinicius-ronconi/blinktrade
+Author: Vinicius Ronconi
+Author-email: vinicius.ronconi@gmail.com
+License: MIT
+Keywords: blinktrade blinktrade v3 client bitcoin exchange foxbit chilebit surbitcoin vbtc urbubit
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: requests
+Provides-Extra: test
+Requires-Dist: coverage; extra == 'test'
+Requires-Dist: mock; extra == 'test'
+Requires-Dist: nose; extra == 'test'
+
+# blinktrade
+A python client for BlinkTrade Bitcoin Platform
+
+
