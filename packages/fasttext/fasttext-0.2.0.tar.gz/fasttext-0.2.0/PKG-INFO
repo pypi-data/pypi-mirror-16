@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: fasttext
+Version: 0.2.0
+Summary: A Python wrapper for Facebook fastText
+Home-page: https://github.com/pyk/fastText.py
+Author: Bayu Aldi Yansyah
+Author-email: bayualdiyansyah@gmail.com
+License: BSD 3-Clause License
+Description: UNKNOWN
+Platform: UNKNOWN
