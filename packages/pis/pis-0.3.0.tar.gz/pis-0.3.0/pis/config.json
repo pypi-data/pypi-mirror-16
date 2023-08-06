@@ -1,0 +1,11 @@
+{
+    "pypi_url": "https://pypi.python.org/pypi/{pkg_name}",
+    "repo_hosts2vcses": {
+        "github.com": ["git"],
+        "bitbucket.org": ["git", "hg"]
+    },
+    "pkg_name2repo_url": {
+        "djangorestframework": "https://github.com/tomchristie/django-rest-framework",
+        "pis": "https://github.com/xliiv/pis"
+    }
+}
