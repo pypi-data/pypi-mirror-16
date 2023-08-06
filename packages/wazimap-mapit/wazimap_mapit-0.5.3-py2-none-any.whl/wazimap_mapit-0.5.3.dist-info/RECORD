@@ -1,0 +1,11 @@
+wazimap_mapit/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wazimap_mapit/geo.py,sha256=IEAuPLYiE2QXN8-QcdHBMdoC8ssFHXfHB-5S_bFgryY,2160
+wazimap_mapit/static/js/maps_mapit.js,sha256=HyiDqxP-pBFufEfbqsyvu2o72Skk_3Xj5AD4w6J7Fj0,4375
+wazimap_mapit/static/js/profile_map_mapit.js,sha256=e9UKTaCVOMKSNh4hljeEY5Cg7ky1eVZ15cbYzcedyr0,3174
+wazimap_mapit/templates/settings_js.html,sha256=WVAbheRpJDpxjoNQGN-VZYzSirlIcXKrbpxlqHou2W8,183
+wazimap_mapit-0.5.3.dist-info/DESCRIPTION.rst,sha256=TQt7ntjMorGAsXsnYYOaKX8TNsVUC6486tGPoXT3YjA,437
+wazimap_mapit-0.5.3.dist-info/METADATA,sha256=qvidQONZenrvX9biIDhU1aHfvlh_vIlsACH95qNzSJ0,1267
+wazimap_mapit-0.5.3.dist-info/metadata.json,sha256=s-XAJiEu_b5cBFvxcnMH9PR_zgl8A2PjW1ydC2l461c,914
+wazimap_mapit-0.5.3.dist-info/RECORD,,
+wazimap_mapit-0.5.3.dist-info/top_level.txt,sha256=VXt_3eLy4y3fpd2CmQEnXYIIRn1DDEOHk_J9MxrLak0,14
+wazimap_mapit-0.5.3.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
