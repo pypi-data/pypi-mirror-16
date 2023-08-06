@@ -1,0 +1,31 @@
+Metadata-Version: 2.0
+Name: endocal
+Version: 16.8.8
+Summary: endocal is a cross-platform, compact GUI application for the optical distortion calibration of fluid-immersed endoscopes.
+Home-page: https://github.com/gift-surg/endocal
+Author: Dzhoshkun Ismail Shakir
+Author-email: d.shakir@ucl.ac.uk
+License: BSD-3-Clause
+Keywords: optical distortion calibration,endoscope,endoscopy,medical imaging,image processing,biomedical engineering,medical physics,image-guided interventions
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Topic :: Scientific/Engineering :: Medical Science Apps.
+Classifier: Topic :: Scientific/Engineering :: Image Recognition
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Topic :: Multimedia :: Video :: Capture
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Dist: PyYAML
+Requires-Dist: numpy
+
+endocal is a cross-platform, compact GUI application for the optical distortion calibration of fluid-immersed endoscopes.
+
+endocal was developed by Dzhoshkun I. Shakir as part of the GIFT-Surg project (http://www.gift-surg.ac.uk) at the Translational Imaging Group in the Centre for Medical Image Computing at University College London (UCL). See the endocal home-page on GitHub for features and manual.
+
+Copyright (c) 2016, University College London. This work was supported through an Innovative Engineering for Health award by the Wellcome Trust [WT101957], the Engineering and Physical Sciences Research Council (EPSRC) and a National Institute for Health Research Biomedical Research Centre UCLH/UCL High Impact Initiative.
+
