@@ -1,0 +1,1060 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html ><head ><title >Python: package AdvancedHTMLParser</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+</head><body bgcolor="#f0f0f8" >
+
+<table cellpadding="2" cellspacing="0" summary="heading" border="0" width="100%" >
+<tr bgcolor="#7799ee" >
+<td valign="bottom" > <br />
+<font color="#ffffff" face="helvetica, arial" > <br /><big ><big ><strong >AdvancedHTMLParser</strong></big></big> (version 6.5.0)</font></td><td align="right" valign="bottom" >
+<font color="#ffffff" face="helvetica, arial" ><a href="AdvancedHTMLParser.html" >index</a><br /><a href="https://raw.githubusercontent.com/kata198/AdvancedHTMLParser/master/AdvancedHTMLParser/__init__.py" >__init__.py</a></font></td></tr></table>
+    <p ><tt ># Copyright (c) 2015 Tim Savannah All Rights Rserved under LGPLv3. See LICENSE (https://gnu.org/licenses/lgpl-3.0.txt) for more information.<br />
+#<br />
+# In general below, all "tag names" (body, div, etc) should be lowercase. The parser will lowercase internally. All attribute names (like `id` in id="123") provided to search functions should be lowercase. Values are not lowercase. This is because doing tons of searches, lowercasing every search can quickly build up. Lowercase it once in your code, not every time you call a function.</tt></p>
+<p >
+<table cellpadding="2" cellspacing="0" summary="section" border="0" width="100%" >
+<tr bgcolor="#aa55cc" >
+<td valign="bottom" colspan="3" > <br />
+<font color="#ffffff" face="helvetica, arial" ><big ><strong >Package Contents</strong></big></font></td></tr>
+    
+<tr ><td bgcolor="#aa55cc" ><tt >      </tt></td><td > </td>
+<td width="100%" ><table summary="list" width="100%" ><tr ><td valign="top" width="25%" ><a href="AdvancedHTMLParser.Formatter.html" >Formatter</a><br />
+<a href="AdvancedHTMLParser.Parser.html" >Parser</a><br />
+</td><td valign="top" width="25%" ><a href="AdvancedHTMLParser.SpecialAttributes.html" >SpecialAttributes</a><br />
+<a href="AdvancedHTMLParser.Tags.html" >Tags</a><br />
+</td><td valign="top" width="25%" ><a href="AdvancedHTMLParser.Validator.html" >Validator</a><br />
+<a href="AdvancedHTMLParser.constants.html" >constants</a><br />
+</td><td valign="top" width="25%" ><a href="AdvancedHTMLParser.exceptions.html" >exceptions</a><br />
+<a href="AdvancedHTMLParser.utils.html" >utils</a><br />
+</td></tr></table></td></tr></table><p >
+<table cellpadding="2" cellspacing="0" summary="section" border="0" width="100%" >
+<tr bgcolor="#ee77aa" >
+<td valign="bottom" colspan="3" > <br />
+<font color="#ffffff" face="helvetica, arial" ><big ><strong >Classes</strong></big></font></td></tr>
+    
+<tr ><td bgcolor="#ee77aa" ><tt >      </tt></td><td > </td>
+<td width="100%" ><dl >
+<dt ><font face="helvetica, arial" ><a href="builtins.html#Exception" >builtins.Exception</a>(<a href="builtins.html#BaseException" >builtins.BaseException</a>)
+</font></dt><dd >
+<dl >
+<dt ><font face="helvetica, arial" ><a href="AdvancedHTMLParser.exceptions.html#HTMLValidationException" >AdvancedHTMLParser.exceptions.HTMLValidationException</a>
+</font></dt><dd >
+<dl >
+<dt ><font face="helvetica, arial" ><a href="AdvancedHTMLParser.exceptions.html#InvalidCloseException" >AdvancedHTMLParser.exceptions.InvalidCloseException</a>
+</font></dt><dt ><font face="helvetica, arial" ><a href="AdvancedHTMLParser.exceptions.html#MissedCloseException" >AdvancedHTMLParser.exceptions.MissedCloseException</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+<dt ><font face="helvetica, arial" ><a href="builtins.html#object" >builtins.object</a>
+</font></dt><dd >
+<dl >
+<dt ><font face="helvetica, arial" ><a href="AdvancedHTMLParser.Tags.html#AdvancedTag" >AdvancedHTMLParser.Tags.AdvancedTag</a>
+</font></dt></dl>
+</dd>
+<dt ><font face="helvetica, arial" ><a href="html.parser.html#HTMLParser" >html.parser.HTMLParser</a>(<a href="_markupbase.html#ParserBase" >_markupbase.ParserBase</a>)
+</font></dt><dd >
+<dl >
+<dt ><font face="helvetica, arial" ><a href="AdvancedHTMLParser.Formatter.html#AdvancedHTMLFormatter" >AdvancedHTMLParser.Formatter.AdvancedHTMLFormatter</a>
+</font></dt><dt ><font face="helvetica, arial" ><a href="AdvancedHTMLParser.Parser.html#AdvancedHTMLParser" >AdvancedHTMLParser.Parser.AdvancedHTMLParser</a>
+</font></dt><dd >
+<dl >
+<dt ><font face="helvetica, arial" ><a href="AdvancedHTMLParser.Parser.html#IndexedAdvancedHTMLParser" >AdvancedHTMLParser.Parser.IndexedAdvancedHTMLParser</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p >
+<table cellpadding="2" cellspacing="0" summary="section" border="0" width="100%" >
+<tr bgcolor="#ffc8d8" >
+<td valign="bottom" colspan="3" > <br />
+<font color="#000000" face="helvetica, arial" ><a name="AdvancedHTMLFormatter" >class <strong >AdvancedHTMLFormatter</strong></a>(<a href="html.parser.html#HTMLParser" >html.parser.HTMLParser</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8" ><td rowspan="2" ><tt >   </tt></td>
+<td colspan="2" ><tt >A formatter for HTML. Note this does not understand CSS, so if you are enabling preformatted text based on css rules, it will not work.<br />
+It does, however, understand "pre", "code" and "script" tags and will not try to format their contents.<br /> </tt></td></tr>
+<tr ><td > </td>
+<td width="100%" ><dl ><dt >Method resolution order:</dt>
+<dd ><a href="AdvancedHTMLParser.Formatter.html#AdvancedHTMLFormatter" >AdvancedHTMLFormatter</a></dd>
+<dd ><a href="html.parser.html#HTMLParser" >html.parser.HTMLParser</a></dd>
+<dd ><a href="_markupbase.html#ParserBase" >_markupbase.ParserBase</a></dd>
+<dd ><a href="builtins.html#object" >builtins.object</a></dd>
+</dl>
+<hr />
+Methods defined here:<br />
+<dl ><dt ><a name="AdvancedHTMLFormatter-__init__" ><strong >__init__</strong></a>(self, indent='  ', encoding='utf-8')</dt><dd ><tt >Create a formatter.<br />
+ <br />
+@param indent - Either a space/tab/newline that represents one level of indent, or an integer to use that number of spaces<br />
+@param encoding - Use this encoding for the document.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-feed" ><strong >feed</strong></a>(self, contents)</dt><dd ><tt >feed - Load contents<br />
+ <br />
+@param contents - HTML contents</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-getHTML" ><strong >getHTML</strong></a>(self)</dt><dd ><tt >getHTML - Get the full HTML as contained within this tree, converted to  valid XHTML<br />
+    @returns - String</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-getRoot" ><strong >getRoot</strong></a>(self)</dt><dd ><tt >getRoot - returns the root Tag <br />
+    @return - <a href="#AdvancedTag" >AdvancedTag</a> at root. If you provided multiple root nodes, this will be a "holder" with tagName value as constants.INVISIBLE_ROOT_TAG</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-getRootNodes" ><strong >getRootNodes</strong></a>(self)</dt><dd ><tt >getRootNodes - Gets all objects at the "root" (first level; no parent). Use this if you may have multiple roots (not children of <html>)<br />
+    Use this method to get objects, for example, in an AJAX request where <html> may not be your root.<br />
+ <br />
+    Note: If there are multiple root nodes (i.e. no <html> at the top), getRoot will return a special tag. This function automatically<br />
+      handles that, and returns all root nodes.<br />
+ <br />
+    @return list<<a href="#AdvancedTag" >AdvancedTag</a>> - A list of AdvancedTags which are at the root level of the tree.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-handle_charref" ><strong >handle_charref</strong></a>(self, charRef)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-handle_comment" ><strong >handle_comment</strong></a>(self, comment)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-handle_data" ><strong >handle_data</strong></a>(self, data)</dt><dd ><tt >handle_data - Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-handle_decl" ><strong >handle_decl</strong></a>(self, decl)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-handle_endtag" ><strong >handle_endtag</strong></a>(self, tagName)</dt><dd ><tt >handle_endtag - Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-handle_entityref" ><strong >handle_entityref</strong></a>(self, entity)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-handle_startendtag" ><strong >handle_startendtag</strong></a>(self, tagName, attributeList)</dt><dd ><tt >handle_startendtag - Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-handle_starttag" ><strong >handle_starttag</strong></a>(self, tagName, attributeList, isSelfClosing=False)</dt><dd ><tt >handle_starttag - Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-parseFile" ><strong >parseFile</strong></a>(self, filename)</dt><dd ><tt >parseFile - Parses a file and creates the DOM tree and indexes<br />
+ <br />
+    @param filename <str/file> - A string to a filename or a file <a href="builtins.html#object" >object</a>. If file <a href="builtins.html#object" >object</a>, it will not be closed, you must close.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-parseStr" ><strong >parseStr</strong></a>(self, html)</dt><dd ><tt >parseStr - Parses a string and creates the DOM tree and indexes.<br />
+ <br />
+    @param html <str> - valid HTML</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-setRoot" ><strong >setRoot</strong></a>(self, root)</dt><dd ><tt >setRoot - Sets the root node, and reprocesses the indexes<br />
+ <br />
+@param root - <a href="#AdvancedTag" >AdvancedTag</a> to be new root</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-unknown_decl" ><strong >unknown_decl</strong></a>(self, decl)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<hr />
+Methods inherited from <a href="html.parser.html#HTMLParser" >html.parser.HTMLParser</a>:<br />
+<dl ><dt ><a name="AdvancedHTMLFormatter-check_for_whole_start_tag" ><strong >check_for_whole_start_tag</strong></a>(self, i)</dt><dd ><tt ># Internal -- check to see if we have a complete starttag; return end<br />
+# or -1 if incomplete.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-clear_cdata_mode" ><strong >clear_cdata_mode</strong></a>(self)</dt></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-close" ><strong >close</strong></a>(self)</dt><dd ><tt >Handle any buffered data.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-error" ><strong >error</strong></a>(self, message)</dt></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-get_starttag_text" ><strong >get_starttag_text</strong></a>(self)</dt><dd ><tt >Return full source of start tag: '<...>'.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-goahead" ><strong >goahead</strong></a>(self, end)</dt><dd ><tt ># Internal -- handle data as far as reasonable.  May leave state<br />
+# and data to be processed by a subsequent call.  If 'end' is<br />
+# true, force handling all data as if followed by EOF marker.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-handle_pi" ><strong >handle_pi</strong></a>(self, data)</dt><dd ><tt ># Overridable -- handle processing instruction</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-parse_bogus_comment" ><strong >parse_bogus_comment</strong></a>(self, i, report=1)</dt><dd ><tt ># Internal -- parse bogus comment, return length or -1 if not terminated<br />
+# see <a href="http://www.w3.org/TR/html5/tokenization.html#bogus-comment-state" >http://www.w3.org/TR/html5/tokenization.html#bogus-comment-state</a></tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-parse_endtag" ><strong >parse_endtag</strong></a>(self, i)</dt><dd ><tt ># Internal -- parse endtag, return end or -1 if incomplete</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-parse_html_declaration" ><strong >parse_html_declaration</strong></a>(self, i)</dt><dd ><tt ># Internal -- parse html declarations, return length or -1 if not terminated<br />
+# See w3.org/TR/html5/tokenization.html#markup-declaration-open-state<br />
+# See also parse_declaration in _markupbase</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-parse_pi" ><strong >parse_pi</strong></a>(self, i)</dt><dd ><tt ># Internal -- parse processing instr, return end or -1 if not terminated</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-parse_starttag" ><strong >parse_starttag</strong></a>(self, i)</dt><dd ><tt ># Internal -- handle starttag, return end or -1 if not terminated</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-reset" ><strong >reset</strong></a>(self)</dt><dd ><tt >Reset this instance.  Loses all unprocessed data.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-set_cdata_mode" ><strong >set_cdata_mode</strong></a>(self, elem)</dt></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-unescape" ><strong >unescape</strong></a>(self, s)</dt><dd ><tt ># Internal -- helper to remove special character quoting</tt></dd></dl>
+
+<hr />
+Data and other attributes inherited from <a href="html.parser.html#HTMLParser" >html.parser.HTMLParser</a>:<br />
+<dl ><dt ><strong >CDATA_CONTENT_ELEMENTS</strong> = ('script', 'style')</dt></dl>
+
+<hr />
+Methods inherited from <a href="_markupbase.html#ParserBase" >_markupbase.ParserBase</a>:<br />
+<dl ><dt ><a name="AdvancedHTMLFormatter-getpos" ><strong >getpos</strong></a>(self)</dt><dd ><tt >Return current line number and offset.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-parse_comment" ><strong >parse_comment</strong></a>(self, i, report=1)</dt><dd ><tt ># Internal -- parse comment, return length or -1 if not terminated</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-parse_declaration" ><strong >parse_declaration</strong></a>(self, i)</dt><dd ><tt ># Internal -- parse declaration (for use by subclasses).</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-parse_marked_section" ><strong >parse_marked_section</strong></a>(self, i, report=1)</dt><dd ><tt ># Internal -- parse a marked section<br />
+# Override this to handle MS-word extension syntax <![if word]>content<![endif]></tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLFormatter-updatepos" ><strong >updatepos</strong></a>(self, i, j)</dt><dd ><tt ># Internal -- update line number and offset.  This should be<br />
+# called for each piece of data exactly once, in order -- in other<br />
+# words the concatenation of all the input strings to this<br />
+# function should be exactly the entire input.</tt></dd></dl>
+
+<hr />
+Data descriptors inherited from <a href="_markupbase.html#ParserBase" >_markupbase.ParserBase</a>:<br />
+<dl ><dt ><strong >__dict__</strong></dt>
+<dd ><tt >dictionary for instance variables (if defined)</tt></dd>
+</dl>
+<dl ><dt ><strong >__weakref__</strong></dt>
+<dd ><tt >list of weak references to the object (if defined)</tt></dd>
+</dl>
+</td></tr></table> <p >
+<table cellpadding="2" cellspacing="0" summary="section" border="0" width="100%" >
+<tr bgcolor="#ffc8d8" >
+<td valign="bottom" colspan="3" > <br />
+<font color="#000000" face="helvetica, arial" ><a name="AdvancedHTMLParser" >class <strong >AdvancedHTMLParser</strong></a>(<a href="html.parser.html#HTMLParser" >html.parser.HTMLParser</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8" ><td rowspan="2" ><tt >   </tt></td>
+<td colspan="2" ><tt ><a href="#AdvancedHTMLParser" >AdvancedHTMLParser</a> - This class parses and allows searching of  documents<br /> </tt></td></tr>
+<tr ><td > </td>
+<td width="100%" ><dl ><dt >Method resolution order:</dt>
+<dd ><a href="AdvancedHTMLParser.Parser.html#AdvancedHTMLParser" >AdvancedHTMLParser</a></dd>
+<dd ><a href="html.parser.html#HTMLParser" >html.parser.HTMLParser</a></dd>
+<dd ><a href="_markupbase.html#ParserBase" >_markupbase.ParserBase</a></dd>
+<dd ><a href="builtins.html#object" >builtins.object</a></dd>
+</dl>
+<hr />
+Methods defined here:<br />
+<dl ><dt ><a name="AdvancedHTMLParser-__init__" ><strong >__init__</strong></a>(self, filename=None, encoding='utf-8')</dt><dd ><tt >__init__ - Creates an Advanced HTML parser <a href="builtins.html#object" >object</a>. For read-only parsing, consider IndexedAdvancedHTMLPaser for faster searching.<br />
+ <br />
+    @param filename <str>         - Optional filename to parse. Otherwise use parseFile or parseStr methods.<br />
+    @param encoding <str>         - Specifies the document encoding. Default utf-8</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-feed" ><strong >feed</strong></a>(self, contents)</dt><dd ><tt >feed - Feed contents. Use  parseStr or parseFile instead.<br />
+ <br />
+@param contents - Contents</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-getElementById" ><strong >getElementById</strong></a>(self, _id, root='root')</dt><dd ><tt >getElementById - Searches and returns the first (should only be one) element with the given ID.<br />
+   <br />
+    @param id <str> - A string of the id attribute.<br />
+    @param root <<a href="#AdvancedTag" >AdvancedTag</a>/'root'> - Search starting at a specific node, if provided. if string 'root' [default], the root of the parsed tree will be used.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-getElementsByAttr" ><strong >getElementsByAttr</strong></a>(self, attrName, attrValue, root='root')</dt><dd ><tt >getElementsByAttr - Searches the full tree for elements with a given attribute name and value combination. This is always a full scan.<br />
+   <br />
+    @param attrName <lowercase str> - A lowercase attribute name<br />
+    @param attrValue <str> - Expected value of attribute<br />
+    @param root <<a href="#AdvancedTag" >AdvancedTag</a>/'root'> - Search starting at a specific node, if provided. if string 'root', the root of the parsed tree will be used.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-getElementsByClassName" ><strong >getElementsByClassName</strong></a>(self, className, root='root')</dt><dd ><tt >getElementsByClassName - Searches and returns all elements containing a given class name.<br />
+   <br />
+    @param className <str> - A one-word class name<br />
+    @param root <<a href="#AdvancedTag" >AdvancedTag</a>/'root'> - Search starting at a specific node, if provided. if string 'root' [default], the root of the parsed tree will be used.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-getElementsByName" ><strong >getElementsByName</strong></a>(self, name, root='root')</dt><dd ><tt >getElementsByName - Searches and returns all elements with a specific name.<br />
+   <br />
+    @param name <str> - A string of the name attribute<br />
+    @param root <<a href="#AdvancedTag" >AdvancedTag</a>/'root'> - Search starting at a specific node, if provided. if string 'root' [default], the root of the parsed tree will be used.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-getElementsByTagName" ><strong >getElementsByTagName</strong></a>(self, tagName, root='root')</dt><dd ><tt >getElementsByTagName - Searches and returns all elements with a specific tag name.<br />
+   <br />
+    @param tagName <lowercase str> - A lowercase string of the tag name. <br />
+    @param root <<a href="#AdvancedTag" >AdvancedTag</a>/'root'> - Search starting at a specific node, if provided. if string 'root', the root of the parsed tree will be used.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-getElementsCustomFilter" ><strong >getElementsCustomFilter</strong></a>(self, filterFunc, root='root')</dt><dd ><tt >getElementsCustomFilter - Scan elements using a provided function<br />
+ <br />
+@param filterFunc <function>(node) - A function that takes an <a href="#AdvancedTag" >AdvancedTag</a> as an argument, and returns True if some arbitrary criteria is met<br />
+ <br />
+@return - TagCollection of all matching elements</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-getElementsWithAttrValues" ><strong >getElementsWithAttrValues</strong></a>(self, attrName, attrValues, root='root')</dt><dd ><tt >getElementsWithAttrValues - Returns elements with an attribute, named by #attrName contains one of the values in the list, #values<br />
+ <br />
+@param attrName <lowercase str> - A lowercase attribute name<br />
+@param attrValues set<str> - A set of all valid values. <br />
+ <br />
+ <br />
+@return - TagCollection of all matching elements</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-getFormattedHTML" ><strong >getFormattedHTML</strong></a>(self, indent='  ')</dt><dd ><tt >getFormattedHTML - Get formatted and xhtml of this document<br />
+ <br />
+@param indent - space/tab/newline of each level of indent, or integer for how many spaces per level<br />
+ <br />
+@return - Formatted html as string</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-getHTML" ><strong >getHTML</strong></a>(self)</dt><dd ><tt >getHTML - Get the full HTML as contained within this tree<br />
+    @returns - String</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-getRoot" ><strong >getRoot</strong></a>(self)</dt><dd ><tt >getRoot - returns the root Tag <br />
+    @return Tag</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-getRootNodes" ><strong >getRootNodes</strong></a>(self)</dt><dd ><tt >getRootNodes - Gets all objects at the "root" (first level; no parent). Use this if you may have multiple roots (not children of <html>)<br />
+    Use this method to get objects, for example, in an AJAX request where <html> may not be your root.<br />
+ <br />
+    Note: If there are multiple root nodes (i.e. no <html> at the top), getRoot will return a special tag. This function automatically<br />
+      handles that, and returns all root nodes.<br />
+ <br />
+    @return list<<a href="#AdvancedTag" >AdvancedTag</a>> - A list of AdvancedTags which are at the root level of the tree.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-handle_charref" ><strong >handle_charref</strong></a>(self, charRef)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-handle_comment" ><strong >handle_comment</strong></a>(self, comment)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-handle_data" ><strong >handle_data</strong></a>(self, data)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-handle_decl" ><strong >handle_decl</strong></a>(self, decl)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-handle_endtag" ><strong >handle_endtag</strong></a>(self, tagName)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-handle_entityref" ><strong >handle_entityref</strong></a>(self, entity)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-handle_startendtag" ><strong >handle_startendtag</strong></a>(self, tagName, attributeList)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-handle_starttag" ><strong >handle_starttag</strong></a>(self, tagName, attributeList, isSelfClosing=False)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-parseFile" ><strong >parseFile</strong></a>(self, filename)</dt><dd ><tt >parseFile - Parses a file and creates the DOM tree and indexes<br />
+ <br />
+    @param filename <str/file> - A string to a filename or a file <a href="builtins.html#object" >object</a>. If file <a href="builtins.html#object" >object</a>, it will not be closed, you must close.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-parseStr" ><strong >parseStr</strong></a>(self, html)</dt><dd ><tt >parseStr - Parses a string and creates the DOM tree and indexes.<br />
+ <br />
+    @param html <str> - valid HTML</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-setRoot" ><strong >setRoot</strong></a>(self, root)</dt><dd ><tt >Sets the root node, and reprocesses the indexes</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-unknown_decl" ><strong >unknown_decl</strong></a>(self, decl)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<hr />
+Methods inherited from <a href="html.parser.html#HTMLParser" >html.parser.HTMLParser</a>:<br />
+<dl ><dt ><a name="AdvancedHTMLParser-check_for_whole_start_tag" ><strong >check_for_whole_start_tag</strong></a>(self, i)</dt><dd ><tt ># Internal -- check to see if we have a complete starttag; return end<br />
+# or -1 if incomplete.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-clear_cdata_mode" ><strong >clear_cdata_mode</strong></a>(self)</dt></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-close" ><strong >close</strong></a>(self)</dt><dd ><tt >Handle any buffered data.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-error" ><strong >error</strong></a>(self, message)</dt></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-get_starttag_text" ><strong >get_starttag_text</strong></a>(self)</dt><dd ><tt >Return full source of start tag: '<...>'.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-goahead" ><strong >goahead</strong></a>(self, end)</dt><dd ><tt ># Internal -- handle data as far as reasonable.  May leave state<br />
+# and data to be processed by a subsequent call.  If 'end' is<br />
+# true, force handling all data as if followed by EOF marker.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-handle_pi" ><strong >handle_pi</strong></a>(self, data)</dt><dd ><tt ># Overridable -- handle processing instruction</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-parse_bogus_comment" ><strong >parse_bogus_comment</strong></a>(self, i, report=1)</dt><dd ><tt ># Internal -- parse bogus comment, return length or -1 if not terminated<br />
+# see <a href="http://www.w3.org/TR/html5/tokenization.html#bogus-comment-state" >http://www.w3.org/TR/html5/tokenization.html#bogus-comment-state</a></tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-parse_endtag" ><strong >parse_endtag</strong></a>(self, i)</dt><dd ><tt ># Internal -- parse endtag, return end or -1 if incomplete</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-parse_html_declaration" ><strong >parse_html_declaration</strong></a>(self, i)</dt><dd ><tt ># Internal -- parse html declarations, return length or -1 if not terminated<br />
+# See w3.org/TR/html5/tokenization.html#markup-declaration-open-state<br />
+# See also parse_declaration in _markupbase</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-parse_pi" ><strong >parse_pi</strong></a>(self, i)</dt><dd ><tt ># Internal -- parse processing instr, return end or -1 if not terminated</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-parse_starttag" ><strong >parse_starttag</strong></a>(self, i)</dt><dd ><tt ># Internal -- handle starttag, return end or -1 if not terminated</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-reset" ><strong >reset</strong></a>(self)</dt><dd ><tt >Reset this instance.  Loses all unprocessed data.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-set_cdata_mode" ><strong >set_cdata_mode</strong></a>(self, elem)</dt></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-unescape" ><strong >unescape</strong></a>(self, s)</dt><dd ><tt ># Internal -- helper to remove special character quoting</tt></dd></dl>
+
+<hr />
+Data and other attributes inherited from <a href="html.parser.html#HTMLParser" >html.parser.HTMLParser</a>:<br />
+<dl ><dt ><strong >CDATA_CONTENT_ELEMENTS</strong> = ('script', 'style')</dt></dl>
+
+<hr />
+Methods inherited from <a href="_markupbase.html#ParserBase" >_markupbase.ParserBase</a>:<br />
+<dl ><dt ><a name="AdvancedHTMLParser-getpos" ><strong >getpos</strong></a>(self)</dt><dd ><tt >Return current line number and offset.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-parse_comment" ><strong >parse_comment</strong></a>(self, i, report=1)</dt><dd ><tt ># Internal -- parse comment, return length or -1 if not terminated</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-parse_declaration" ><strong >parse_declaration</strong></a>(self, i)</dt><dd ><tt ># Internal -- parse declaration (for use by subclasses).</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-parse_marked_section" ><strong >parse_marked_section</strong></a>(self, i, report=1)</dt><dd ><tt ># Internal -- parse a marked section<br />
+# Override this to handle MS-word extension syntax <![if word]>content<![endif]></tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedHTMLParser-updatepos" ><strong >updatepos</strong></a>(self, i, j)</dt><dd ><tt ># Internal -- update line number and offset.  This should be<br />
+# called for each piece of data exactly once, in order -- in other<br />
+# words the concatenation of all the input strings to this<br />
+# function should be exactly the entire input.</tt></dd></dl>
+
+<hr />
+Data descriptors inherited from <a href="_markupbase.html#ParserBase" >_markupbase.ParserBase</a>:<br />
+<dl ><dt ><strong >__dict__</strong></dt>
+<dd ><tt >dictionary for instance variables (if defined)</tt></dd>
+</dl>
+<dl ><dt ><strong >__weakref__</strong></dt>
+<dd ><tt >list of weak references to the object (if defined)</tt></dd>
+</dl>
+</td></tr></table> <p >
+<table cellpadding="2" cellspacing="0" summary="section" border="0" width="100%" >
+<tr bgcolor="#ffc8d8" >
+<td valign="bottom" colspan="3" > <br />
+<font color="#000000" face="helvetica, arial" ><a name="AdvancedTag" >class <strong >AdvancedTag</strong></a>(<a href="builtins.html#object" >builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8" ><td rowspan="2" ><tt >   </tt></td>
+<td colspan="2" ><tt ><a href="#AdvancedTag" >AdvancedTag</a> - Represents a Tag. Used with <a href="#AdvancedHTMLParser" >AdvancedHTMLParser</a> to create a DOM-model<br />
+ <br />
+Keep tag names lowercase.<br />
+ <br />
+Use the getters and setters instead of attributes directly, or you may lose accounting.<br /> </tt></td></tr>
+<tr ><td > </td>
+<td width="100%" >Methods defined here:<br />
+<dl ><dt ><a name="AdvancedTag-__getitem__" ><strong >__getitem__</strong></a>(self, key)</dt></dl>
+
+<dl ><dt ><a name="AdvancedTag-__init__" ><strong >__init__</strong></a>(self, tagName, attrList=None, isSelfClosing=False)</dt><dd ><tt >__init__ - Construct<br />
+ <br />
+    @param tagName - String of tag name. This will be lowercased!<br />
+    @param attrList - A list of tuples (key, value)<br />
+    @param isSelfClosing - True if self-closing tag ( <tagName attrs /> ) will be set to False if text or children are added.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-__setattr__" ><strong >__setattr__</strong></a>(self, name, value)</dt></dl>
+
+<dl ><dt ><a name="AdvancedTag-__str__" ><strong >__str__</strong></a>(self)</dt><dd ><tt >__str__ - Returns start tag, inner text, and end tag</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-addClass" ><strong >addClass</strong></a>(self, className)</dt><dd ><tt >addClass - append a class name if not present</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-appendChild" ><strong >appendChild</strong></a>(self, child)</dt><dd ><tt >appendChild - Append a child to this element.<br />
+ <br />
+@param child <<a href="#AdvancedTag" >AdvancedTag</a>> - Append a child element to this element</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-appendNode" ><strong >appendNode</strong></a> = <a href="#AdvancedTag-appendChild" >appendChild</a>(self, child)</dt></dl>
+
+<dl ><dt ><a name="AdvancedTag-appendText" ><strong >appendText</strong></a>(self, text)</dt><dd ><tt >appendText - append some inner text</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getAttribute" ><strong >getAttribute</strong></a>(self, attrName)</dt><dd ><tt >getAttribute - Gets an attribute on this tag. Be wary using this for classname, maybe use addClass/removeClass. Attribute names are all lowercase.<br />
+    @return - The attribute value, or None if none exists.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getChildren" ><strong >getChildren</strong></a>(self)</dt><dd ><tt >getChildren - returns child nodes as a searchable TagCollection.<br />
+ <br />
+    @return - TagCollection of the immediate children to this tag.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getElementById" ><strong >getElementById</strong></a>(self, _id)</dt><dd ><tt >getElementById - Search children of this tag for a tag containing an id<br />
+ <br />
+@param _id - String of id<br />
+ <br />
+@return - <a href="#AdvancedTag" >AdvancedTag</a> or None</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getElementsByAttr" ><strong >getElementsByAttr</strong></a>(self, attrName, attrValue)</dt><dd ><tt >getElementsByAttr - Search children of this tag for tags with an attribute name/value pair<br />
+ <br />
+@param attrName - Attribute name (lowercase)<br />
+@param attrValue - Attribute value<br />
+ <br />
+@return - TagCollection of matching elements</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getElementsByClassName" ><strong >getElementsByClassName</strong></a>(self, className)</dt><dd ><tt >getElementsByClassName - Search children of this tag for tags containing a given class name<br />
+ <br />
+@param className - Class name<br />
+ <br />
+@return - TagCollection of matching elements</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getElementsByName" ><strong >getElementsByName</strong></a>(self, name)</dt><dd ><tt >getElementsByName - Search children of this tag for tags with a given name<br />
+ <br />
+@param name - name to search<br />
+ <br />
+@return - TagCollection of matching elements</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getElementsCustomFilter" ><strong >getElementsCustomFilter</strong></a>(self, filterFunc)</dt><dd ><tt >getElementsCustomFilter - Searches children of this tag for those matching a provided user function<br />
+ <br />
+@param filterFunc <function> - A function or lambda expression that should return "True" if the passed node matches criteria.<br />
+ <br />
+@return - TagCollection of matching results</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getElementsWithAttrValues" ><strong >getElementsWithAttrValues</strong></a>(self, attrName, attrValues)</dt><dd ><tt >getElementsWithAttrValues - Search children of this tag for tags with an attribute name and one of several values<br />
+ <br />
+@param attrName <lowercase str> - Attribute name (lowercase)<br />
+@param attrValues set<str> - set of acceptable attribute values<br />
+ <br />
+@return - TagCollection of matching elements</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getEndTag" ><strong >getEndTag</strong></a>(self)</dt><dd ><tt >getEndTag - returns the end tag<br />
+ <br />
+@return - String of end tag</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getPeers" ><strong >getPeers</strong></a>(self)</dt><dd ><tt >getPeers - Get elements who share a parent with this element<br />
+ <br />
+@return - TagCollection of elements</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getPeersByAttr" ><strong >getPeersByAttr</strong></a>(self, attrName, attrValue)</dt><dd ><tt >getPeersByAttr - Gets peers (elements on same level) which match an attribute/value combination.<br />
+ <br />
+@param attrName - Name of attribute<br />
+@param attrValue - Value that must match<br />
+ <br />
+@return - None if no parent element (error condition), otherwise a TagCollection of peers that matched.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getPeersByClassName" ><strong >getPeersByClassName</strong></a>(self, className)</dt><dd ><tt >getPeersByClassName - Gets peers (elements on same level) with a given class name<br />
+ <br />
+@param className - classname must contain this name<br />
+ <br />
+@return - None if no parent element (error condition), otherwise a TagCollection of peers that matched.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getPeersByName" ><strong >getPeersByName</strong></a>(self, name)</dt><dd ><tt >getPeersByName - Gets peers (elements on same level) with a given name<br />
+ <br />
+@param name - Name to match<br />
+ <br />
+@return - None if no parent element (error condition), otherwise a TagCollection of peers that matched.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getPeersWithAttrValues" ><strong >getPeersWithAttrValues</strong></a>(self, attrName, attrValues)</dt><dd ><tt >getPeersWithAttrValues - Gets peers (elements on same level) whose attribute given by #attrName <br />
+    are in the list of possible vaues #attrValues<br />
+ <br />
+@param attrName - Name of attribute<br />
+@param attrValues - List of possible values which will match<br />
+ <br />
+@return - None if no parent element (error condition), otherwise a TagCollection of peers that matched.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getStartTag" ><strong >getStartTag</strong></a>(self)</dt><dd ><tt >getStartTag - Returns the start tag<br />
+ <br />
+@return - String of start tag with attributes</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getStyle" ><strong >getStyle</strong></a>(self, styleName)</dt><dd ><tt >getStyle - Gets the value of a style paramater, part of the "style" attribute<br />
+ <br />
+@param styleName - The name of the style<br />
+ <br />
+@return - String of the value of the style. '' is no value.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getStyleDict" ><strong >getStyleDict</strong></a>(self)</dt><dd ><tt >getStyleDict - Gets a dictionary of style attribute/value pairs.<br />
+ <br />
+@return - OrderedDict of "style" attribute.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getTagName" ><strong >getTagName</strong></a>(self)</dt><dd ><tt >getTagName - Gets the tag name of this Tag.<br />
+ <br />
+@return - str</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-getUid" ><strong >getUid</strong></a>(self)</dt></dl>
+
+<dl ><dt ><a name="AdvancedTag-hasAttribute" ><strong >hasAttribute</strong></a>(self, attrName)</dt><dd ><tt >hasAttribute - Checks for the existance of an attribute. Attribute names are all lowercase.<br />
+ <br />
+    @param attrName <str> - The attribute name<br />
+    <br />
+    @return <bool> - True or False if attribute exists by that name</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-hasClass" ><strong >hasClass</strong></a>(self, className)</dt><dd ><tt >hasClass - Test if this tag has a paticular class name<br />
+ <br />
+@param className - A class to search</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-insertAfter" ><strong >insertAfter</strong></a>(self, child, afterChild)</dt><dd ><tt >insertAfter - Inserts a child after @afterChild<br />
+ <br />
+child - Child to insert<br />
+afterChild - Child  to insert after. if None, will  be appended</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-insertBefore" ><strong >insertBefore</strong></a>(self, child, beforeChild)</dt><dd ><tt >insertBefore - Inserts a child before @beforeChild<br />
+ <br />
+child - Child to insert<br />
+beforeChild - Child  to insert before. if None, will  be appended</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-removeAttribute" ><strong >removeAttribute</strong></a>(self, attrName)</dt><dd ><tt >removeAttribute - Removes an attribute, by name.<br />
+ <br />
+@param attrName <str> - The attribute name</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-removeChild" ><strong >removeChild</strong></a>(self, child)</dt><dd ><tt >removeChild - Remove a child, if present.<br />
+ <br />
+    @param child - The child to remove<br />
+    @return - The child [with parentNode cleared] if removed, otherwise None.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-removeClass" ><strong >removeClass</strong></a>(self, className)</dt><dd ><tt >removeClass - remove a class name if present. Returns the class name if  removed, otherwise None.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-removeNode" ><strong >removeNode</strong></a> = <a href="#AdvancedTag-removeChild" >removeChild</a>(self, child)</dt></dl>
+
+<dl ><dt ><a name="AdvancedTag-removeText" ><strong >removeText</strong></a>(self, text)</dt><dd ><tt >removeText - Removes some inner text</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-setAttribute" ><strong >setAttribute</strong></a>(self, attrName, attrValue)</dt><dd ><tt >setAttribute - Sets an attribute. Be wary using this for classname, maybe use addClass/removeClass. Attribute names are all lowercase.<br />
+ <br />
+@param attrName <str> - The name of the attribute<br />
+@param attrValue <str> - The value of the attribute</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-setAttributes" ><strong >setAttributes</strong></a>(self, attributesDict)</dt><dd ><tt >setAttributes - Sets  several attributes at once, using a dictionary of attrName : attrValue<br />
+ <br />
+@param  attributesDict - <str:str> - New attribute names -> values</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-setStyle" ><strong >setStyle</strong></a>(self, styleName, styleValue)</dt><dd ><tt >setStyle - Sets a style param. Example: "display", "block"<br />
+ <br />
+    If you need to set many styles on an element, use setStyles instead. <br />
+    It takes a dictionary of attribute, value pairs and applies it all in one go (faster)<br />
+ <br />
+    To remove a style, set its value to empty string.<br />
+    When all styles are removed, the "style" attribute will be nullified.<br />
+ <br />
+@param styleName - The name of the style element<br />
+@param styleValue - The value of which to assign the style element<br />
+ <br />
+@return - String of current value of "style" after change is made.</tt></dd></dl>
+
+<dl ><dt ><a name="AdvancedTag-setStyles" ><strong >setStyles</strong></a>(self, styleUpdatesDict)</dt><dd ><tt >setStyles - Sets one or more style params. <br />
+    This all happens in one shot, so it is much much faster than calling setStyle for every value.<br />
+ <br />
+    To remove a style, set its value to empty string.<br />
+    When all styles are removed, the "style" attribute will be nullified.<br />
+ <br />
+@param styleUpdatesDict - Dictionary of attribute : value styles.<br />
+ <br />
+@return - String of current value of "style" after change is made.</tt></dd></dl>
+
+<hr />
+Data descriptors defined here:<br />
+<dl ><dt ><strong >__dict__</strong></dt>
+<dd ><tt >dictionary for instance variables (if defined)</tt></dd>
+</dl>
+<dl ><dt ><strong >__weakref__</strong></dt>
+<dd ><tt >list of weak references to the object (if defined)</tt></dd>
+</dl>
+<dl ><dt ><strong >childNodes</strong></dt>
+<dd ><tt >childNodes - returns immediate child nodes as a TagCollection<br />
+ <br />
+@return - TagCollection of child nodes</tt></dd>
+</dl>
+<dl ><dt ><strong >classList</strong></dt>
+<dd ><tt >classList - get the list of class names</tt></dd>
+</dl>
+<dl ><dt ><strong >id</strong></dt>
+</dl>
+<dl ><dt ><strong >innerHTML</strong></dt>
+<dd ><tt >innerHTML - Returns a string of the inner contents of this tag, including children.<br />
+ <br />
+@return - String of inner contents</tt></dd>
+</dl>
+<dl ><dt ><strong >name</strong></dt>
+</dl>
+<dl ><dt ><strong >nextSibling</strong></dt>
+<dd ><tt >nextSibling - Returns the next sibling.  This could be text or an element. use nextSiblingElement to ensure element</tt></dd>
+</dl>
+<dl ><dt ><strong >nextSiblingElement</strong></dt>
+<dd ><tt >nextSiblingElement - Returns the next sibling  that is an element.</tt></dd>
+</dl>
+<dl ><dt ><strong >outerHTML</strong></dt>
+<dd ><tt >outerHTML - Returns start tag, innerHTML, and end tag<br />
+ <br />
+@return - String of start tag, innerHTML, and end tag</tt></dd>
+</dl>
+<dl ><dt ><strong >parentElement</strong></dt>
+<dd ><tt >parentElement - get the parent element</tt></dd>
+</dl>
+<dl ><dt ><strong >peers</strong></dt>
+<dd ><tt >peers - Get elements with same parent as this item<br />
+ <br />
+@return - TagCollection of elements</tt></dd>
+</dl>
+<dl ><dt ><strong >previousSibling</strong></dt>
+<dd ><tt >previousSibling - Returns the previous sibling.  This could be text or an element. use previousSiblingElement to ensure element</tt></dd>
+</dl>
+<dl ><dt ><strong >previousSiblingElement</strong></dt>
+<dd ><tt >previousSiblingElement - Returns the previous  sibling  that is an element.</tt></dd>
+</dl>
+<dl ><dt ><strong >value</strong></dt>
+<dd ><tt >value - The "value" attribute of this element</tt></dd>
+</dl>
+</td></tr></table> <p >
+<table cellpadding="2" cellspacing="0" summary="section" border="0" width="100%" >
+<tr bgcolor="#ffc8d8" >
+<td valign="bottom" colspan="3" > <br />
+<font color="#000000" face="helvetica, arial" ><a name="HTMLValidationException" >class <strong >HTMLValidationException</strong></a>(<a href="builtins.html#Exception" >builtins.Exception</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8" ><td rowspan="2" ><tt >   </tt></td>
+<td colspan="2" ><tt ><a href="#HTMLValidationException" >HTMLValidationException</a> - common baseclass for invalid-HTML validation errors<br /> </tt></td></tr>
+<tr ><td > </td>
+<td width="100%" ><dl ><dt >Method resolution order:</dt>
+<dd ><a href="AdvancedHTMLParser.exceptions.html#HTMLValidationException" >HTMLValidationException</a></dd>
+<dd ><a href="builtins.html#Exception" >builtins.Exception</a></dd>
+<dd ><a href="builtins.html#BaseException" >builtins.BaseException</a></dd>
+<dd ><a href="builtins.html#object" >builtins.object</a></dd>
+</dl>
+<hr />
+Data descriptors defined here:<br />
+<dl ><dt ><strong >__weakref__</strong></dt>
+<dd ><tt >list of weak references to the object (if defined)</tt></dd>
+</dl>
+<hr />
+Methods inherited from <a href="builtins.html#Exception" >builtins.Exception</a>:<br />
+<dl ><dt ><a name="HTMLValidationException-__init__" ><strong >__init__</strong></a>(self, /, *args, **kwargs)</dt><dd ><tt >Initialize self.  See help(type(self)) for accurate signature.</tt></dd></dl>
+
+<dl ><dt ><a name="HTMLValidationException-__new__" ><strong >__new__</strong></a>(*args, **kwargs)<font color="#909090" ><font face="helvetica, arial" > from <a href="builtins.html#type" >builtins.type</a></font></font></dt><dd ><tt >Create and return a new <a href="builtins.html#object" >object</a>.  See help(type) for accurate signature.</tt></dd></dl>
+
+<hr />
+Methods inherited from <a href="builtins.html#BaseException" >builtins.BaseException</a>:<br />
+<dl ><dt ><a name="HTMLValidationException-__delattr__" ><strong >__delattr__</strong></a>(self, name, /)</dt><dd ><tt >Implement delattr(self, name).</tt></dd></dl>
+
+<dl ><dt ><a name="HTMLValidationException-__getattribute__" ><strong >__getattribute__</strong></a>(self, name, /)</dt><dd ><tt >Return getattr(self, name).</tt></dd></dl>
+
+<dl ><dt ><a name="HTMLValidationException-__reduce__" ><strong >__reduce__</strong></a>(...)</dt></dl>
+
+<dl ><dt ><a name="HTMLValidationException-__repr__" ><strong >__repr__</strong></a>(self, /)</dt><dd ><tt >Return repr(self).</tt></dd></dl>
+
+<dl ><dt ><a name="HTMLValidationException-__setattr__" ><strong >__setattr__</strong></a>(self, name, value, /)</dt><dd ><tt >Implement setattr(self, name, value).</tt></dd></dl>
+
+<dl ><dt ><a name="HTMLValidationException-__setstate__" ><strong >__setstate__</strong></a>(...)</dt></dl>
+
+<dl ><dt ><a name="HTMLValidationException-__str__" ><strong >__str__</strong></a>(self, /)</dt><dd ><tt >Return str(self).</tt></dd></dl>
+
+<dl ><dt ><a name="HTMLValidationException-with_traceback" ><strong >with_traceback</strong></a>(...)</dt><dd ><tt ><a href="builtins.html#Exception" >Exception</a>.<a href="#HTMLValidationException-with_traceback" >with_traceback</a>(tb) --<br />
+set self.<strong >__traceback__</strong> to tb and return self.</tt></dd></dl>
+
+<hr />
+Data descriptors inherited from <a href="builtins.html#BaseException" >builtins.BaseException</a>:<br />
+<dl ><dt ><strong >__cause__</strong></dt>
+<dd ><tt >exception cause</tt></dd>
+</dl>
+<dl ><dt ><strong >__context__</strong></dt>
+<dd ><tt >exception context</tt></dd>
+</dl>
+<dl ><dt ><strong >__dict__</strong></dt>
+</dl>
+<dl ><dt ><strong >__suppress_context__</strong></dt>
+</dl>
+<dl ><dt ><strong >__traceback__</strong></dt>
+</dl>
+<dl ><dt ><strong >args</strong></dt>
+</dl>
+</td></tr></table> <p >
+<table cellpadding="2" cellspacing="0" summary="section" border="0" width="100%" >
+<tr bgcolor="#ffc8d8" >
+<td valign="bottom" colspan="3" > <br />
+<font color="#000000" face="helvetica, arial" ><a name="IndexedAdvancedHTMLParser" >class <strong >IndexedAdvancedHTMLParser</strong></a>(<a href="AdvancedHTMLParser.Parser.html#AdvancedHTMLParser" >AdvancedHTMLParser</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8" ><td rowspan="2" ><tt >   </tt></td>
+<td colspan="2" ><tt >An <a href="#AdvancedHTMLParser" >AdvancedHTMLParser</a> that indexes for much much faster searching. If you are doing searching/validation, this is your bet.<br />
+  If you are writing/modifying, you may use this, but be sure to call <a href="#IndexedAdvancedHTMLParser-reindex" >reindex</a>() after changes.<br /> </tt></td></tr>
+<tr ><td > </td>
+<td width="100%" ><dl ><dt >Method resolution order:</dt>
+<dd ><a href="AdvancedHTMLParser.Parser.html#IndexedAdvancedHTMLParser" >IndexedAdvancedHTMLParser</a></dd>
+<dd ><a href="AdvancedHTMLParser.Parser.html#AdvancedHTMLParser" >AdvancedHTMLParser</a></dd>
+<dd ><a href="html.parser.html#HTMLParser" >html.parser.HTMLParser</a></dd>
+<dd ><a href="_markupbase.html#ParserBase" >_markupbase.ParserBase</a></dd>
+<dd ><a href="builtins.html#object" >builtins.object</a></dd>
+</dl>
+<hr />
+Methods defined here:<br />
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-__init__" ><strong >__init__</strong></a>(self, filename=None, encoding='utf-8', indexIDs=True, indexNames=True, indexClassNames=True, indexTagNames=True)</dt><dd ><tt >__init__ - Creates an Advanced HTML parser <a href="builtins.html#object" >object</a>, with specific indexing settings.<br />
+ <br />
+    For the various index* arguments, if True the index will be collected and use (if useIndex=True [default] on get* function)<br />
+ <br />
+    @param filename <str>         - Optional filename to parse. Otherwise use parseFile or parseStr methods.<br />
+    @param encoding <str> - Specifies the document encoding. Default utf-8<br />
+    @param indexIDs <bool>        - True to create an index for getElementByID method.  <default True><br />
+    @param indexNames <bool>      - True to create an index for getElementsByName method  <default True><br />
+    @param indexClassNames <bool> - True to create an index for getElementsByClassName method. <default True><br />
+    @param indexTagNames <bool>   - True to create an index for tag names. <default True><br />
+ <br />
+    For indexing other attributes, see the more generic addIndexOnAttribute</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-addIndexOnAttribute" ><strong >addIndexOnAttribute</strong></a>(self, attributeName)</dt><dd ><tt >addIndexOnAttribute - Add an index for an arbitrary attribute. This will be used by the getElementsByAttr function.<br />
+    You should do this prior to parsing, or call reindex. Otherwise it will be blank. "name" and "id" will have no effect.<br />
+ <br />
+    @param attributeName <lowercase str> - An attribute name. Will be lowercased.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-disableIndexing" ><strong >disableIndexing</strong></a>(self)</dt><dd ><tt >disableIndexing - Disables indexing. Consider using plain <a href="#AdvancedHTMLParser" >AdvancedHTMLParser</a> class.<br />
+  Maybe useful in some scenarios where you want to parse, add a ton of elements, then index<br />
+  and do a bunch of searching.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-getElementById" ><strong >getElementById</strong></a>(self, _id, root='root', useIndex=True)</dt><dd ><tt >getElementById - Searches and returns the first (should only be one) element with the given ID.<br />
+   <br />
+    @param id <str> - A string of the id attribute.<br />
+    @param root <<a href="#AdvancedTag" >AdvancedTag</a>/'root'> - Search starting at a specific node, if provided. if string 'root', the root of the parsed tree will be used.<br />
+    @param useIndex <bool> If useIndex is True and ids are indexed [see constructor] only the index will be used. Otherwise a full search is performed.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-getElementsByAttr" ><strong >getElementsByAttr</strong></a>(self, attrName, attrValue, root='root', useIndex=True)</dt><dd ><tt >getElementsByAttr - Searches the full tree for elements with a given attribute name and value combination. If you want multiple potential values, see getElementsWithAttrValues<br />
+   If you want an index on a random attribute, use the addIndexOnAttribute function.<br />
+   <br />
+    @param attrName <lowercase str> - A lowercase attribute name<br />
+    @param attrValue <str> - Expected value of attribute<br />
+    @param root <<a href="#AdvancedTag" >AdvancedTag</a>/'root'> - Search starting at a specific node, if provided. if string 'root', the root of the parsed tree will be used.<br />
+    @param useIndex <bool> If useIndex is True and this specific attribute is indexed [see addIndexOnAttribute] only the index will be used. Otherwise a full search is performed.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-getElementsByClassName" ><strong >getElementsByClassName</strong></a>(self, className, root='root', useIndex=True)</dt><dd ><tt >getElementsByClassName - Searches and returns all elements containing a given class name.<br />
+   <br />
+    @param className <str> - A one-word class name<br />
+    @param root <<a href="#AdvancedTag" >AdvancedTag</a>/'root'> - Search starting at a specific node, if provided. if string 'root', the root of the parsed tree will be used.<br />
+    @param useIndex <bool> If useIndex is True and class names are indexed [see constructor] only the index will be used. Otherwise a full search is performed.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-getElementsByName" ><strong >getElementsByName</strong></a>(self, name, root='root', useIndex=True)</dt><dd ><tt >getElementsByName - Searches and returns all elements with a specific name.<br />
+   <br />
+    @param name <str> - A string of the name attribute<br />
+    @param root <<a href="#AdvancedTag" >AdvancedTag</a>/'root'> - Search starting at a specific node, if provided. if string 'root', the root of the parsed tree will be used.<br />
+    @param useIndex <bool> If useIndex is True and names are indexed [see constructor] only the index will be used. Otherwise a full search is performed.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-getElementsByTagName" ><strong >getElementsByTagName</strong></a>(self, tagName, root='root', useIndex=True)</dt><dd ><tt >getElementsByTagName - Searches and returns all elements with a specific tag name.<br />
+   <br />
+    @param tagName <lowercase str> - A lowercase string of the tag name. <br />
+    @param root <<a href="#AdvancedTag" >AdvancedTag</a>/'root'> - Search starting at a specific node, if provided. if string 'root', the root of the parsed tree will be used.<br />
+    @param useIndex - If True [default] and tag names are set to be indexed [default, see constructor], only the index will be used. If False, all tags<br />
+      will be searched.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-getElementsWithAttrValues" ><strong >getElementsWithAttrValues</strong></a>(self, attrName, values, root='root', useIndex=True)</dt><dd ><tt >getElementsWithAttrValues - Returns elements with an attribute matching one of several values. For a single name/value combination, see getElementsByAttr<br />
+ <br />
+    @param attrName <lowercase str> - A lowercase attribute name<br />
+    @param attrValues set<str> - List of expected values of attribute<br />
+    @param root <<a href="#AdvancedTag" >AdvancedTag</a>/'root'> - Search starting at a specific node, if provided. if string 'root', the root of the parsed tree will be used.<br />
+    @param useIndex <bool> If useIndex is True and this specific attribute is indexed [see addIndexOnAttribute] only the index will be used. Otherwise a full search is performed.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-handle_starttag" ><strong >handle_starttag</strong></a>(self, tagName, attributeList, isSelfClosing=False)</dt><dd ><tt >internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-reindex" ><strong >reindex</strong></a>(self, newIndexIDs=None, newIndexNames=None, newIndexClassNames=None, newIndexTagNames=None)</dt><dd ><tt >reindex - reindex the tree. Optionally, change what fields are indexed.<br />
+ <br />
+    @param newIndexIDs <bool/None>        - None to leave same, otherwise new value to index IDs<br />
+    @parma newIndexNames <bool/None>      - None to leave same, otherwise new value to index names<br />
+    @param newIndexClassNames <bool/None> - None to leave same, otherwise new value to index class names<br />
+    @param newIndexTagNames <bool/None>   - None to leave same, otherwise new value to index tag names</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-removeIndexOnAttribute" ><strong >removeIndexOnAttribute</strong></a>(self, attributeName)</dt><dd ><tt >    removeIndexOnAttribute - Remove an attribute from indexing (for getElementsByAttr function) and remove indexed data.<br />
+ <br />
+@param attributeName <lowercase str> - An attribute name. Will be lowercased. "name" and "id" will have no effect.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-setRoot" ><strong >setRoot</strong></a>(self, root)</dt><dd ><tt >Sets the root node, and reprocesses the indexes<br />
+ <br />
+@param root - <a href="#AdvancedTag" >AdvancedTag</a> for root</tt></dd></dl>
+
+<hr />
+Methods inherited from <a href="AdvancedHTMLParser.Parser.html#AdvancedHTMLParser" >AdvancedHTMLParser</a>:<br />
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-feed" ><strong >feed</strong></a>(self, contents)</dt><dd ><tt >feed - Feed contents. Use  parseStr or parseFile instead.<br />
+ <br />
+@param contents - Contents</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-getElementsCustomFilter" ><strong >getElementsCustomFilter</strong></a>(self, filterFunc, root='root')</dt><dd ><tt >getElementsCustomFilter - Scan elements using a provided function<br />
+ <br />
+@param filterFunc <function>(node) - A function that takes an <a href="#AdvancedTag" >AdvancedTag</a> as an argument, and returns True if some arbitrary criteria is met<br />
+ <br />
+@return - TagCollection of all matching elements</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-getFormattedHTML" ><strong >getFormattedHTML</strong></a>(self, indent='  ')</dt><dd ><tt >getFormattedHTML - Get formatted and xhtml of this document<br />
+ <br />
+@param indent - space/tab/newline of each level of indent, or integer for how many spaces per level<br />
+ <br />
+@return - Formatted html as string</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-getHTML" ><strong >getHTML</strong></a>(self)</dt><dd ><tt >getHTML - Get the full HTML as contained within this tree<br />
+    @returns - String</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-getRoot" ><strong >getRoot</strong></a>(self)</dt><dd ><tt >getRoot - returns the root Tag <br />
+    @return Tag</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-getRootNodes" ><strong >getRootNodes</strong></a>(self)</dt><dd ><tt >getRootNodes - Gets all objects at the "root" (first level; no parent). Use this if you may have multiple roots (not children of <html>)<br />
+    Use this method to get objects, for example, in an AJAX request where <html> may not be your root.<br />
+ <br />
+    Note: If there are multiple root nodes (i.e. no <html> at the top), getRoot will return a special tag. This function automatically<br />
+      handles that, and returns all root nodes.<br />
+ <br />
+    @return list<<a href="#AdvancedTag" >AdvancedTag</a>> - A list of AdvancedTags which are at the root level of the tree.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-handle_charref" ><strong >handle_charref</strong></a>(self, charRef)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-handle_comment" ><strong >handle_comment</strong></a>(self, comment)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-handle_data" ><strong >handle_data</strong></a>(self, data)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-handle_decl" ><strong >handle_decl</strong></a>(self, decl)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-handle_endtag" ><strong >handle_endtag</strong></a>(self, tagName)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-handle_entityref" ><strong >handle_entityref</strong></a>(self, entity)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-handle_startendtag" ><strong >handle_startendtag</strong></a>(self, tagName, attributeList)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-parseFile" ><strong >parseFile</strong></a>(self, filename)</dt><dd ><tt >parseFile - Parses a file and creates the DOM tree and indexes<br />
+ <br />
+    @param filename <str/file> - A string to a filename or a file <a href="builtins.html#object" >object</a>. If file <a href="builtins.html#object" >object</a>, it will not be closed, you must close.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-parseStr" ><strong >parseStr</strong></a>(self, html)</dt><dd ><tt >parseStr - Parses a string and creates the DOM tree and indexes.<br />
+ <br />
+    @param html <str> - valid HTML</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-unknown_decl" ><strong >unknown_decl</strong></a>(self, decl)</dt><dd ><tt >Internal for parsing</tt></dd></dl>
+
+<hr />
+Methods inherited from <a href="html.parser.html#HTMLParser" >html.parser.HTMLParser</a>:<br />
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-check_for_whole_start_tag" ><strong >check_for_whole_start_tag</strong></a>(self, i)</dt><dd ><tt ># Internal -- check to see if we have a complete starttag; return end<br />
+# or -1 if incomplete.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-clear_cdata_mode" ><strong >clear_cdata_mode</strong></a>(self)</dt></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-close" ><strong >close</strong></a>(self)</dt><dd ><tt >Handle any buffered data.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-error" ><strong >error</strong></a>(self, message)</dt></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-get_starttag_text" ><strong >get_starttag_text</strong></a>(self)</dt><dd ><tt >Return full source of start tag: '<...>'.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-goahead" ><strong >goahead</strong></a>(self, end)</dt><dd ><tt ># Internal -- handle data as far as reasonable.  May leave state<br />
+# and data to be processed by a subsequent call.  If 'end' is<br />
+# true, force handling all data as if followed by EOF marker.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-handle_pi" ><strong >handle_pi</strong></a>(self, data)</dt><dd ><tt ># Overridable -- handle processing instruction</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-parse_bogus_comment" ><strong >parse_bogus_comment</strong></a>(self, i, report=1)</dt><dd ><tt ># Internal -- parse bogus comment, return length or -1 if not terminated<br />
+# see <a href="http://www.w3.org/TR/html5/tokenization.html#bogus-comment-state" >http://www.w3.org/TR/html5/tokenization.html#bogus-comment-state</a></tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-parse_endtag" ><strong >parse_endtag</strong></a>(self, i)</dt><dd ><tt ># Internal -- parse endtag, return end or -1 if incomplete</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-parse_html_declaration" ><strong >parse_html_declaration</strong></a>(self, i)</dt><dd ><tt ># Internal -- parse html declarations, return length or -1 if not terminated<br />
+# See w3.org/TR/html5/tokenization.html#markup-declaration-open-state<br />
+# See also parse_declaration in _markupbase</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-parse_pi" ><strong >parse_pi</strong></a>(self, i)</dt><dd ><tt ># Internal -- parse processing instr, return end or -1 if not terminated</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-parse_starttag" ><strong >parse_starttag</strong></a>(self, i)</dt><dd ><tt ># Internal -- handle starttag, return end or -1 if not terminated</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-reset" ><strong >reset</strong></a>(self)</dt><dd ><tt >Reset this instance.  Loses all unprocessed data.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-set_cdata_mode" ><strong >set_cdata_mode</strong></a>(self, elem)</dt></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-unescape" ><strong >unescape</strong></a>(self, s)</dt><dd ><tt ># Internal -- helper to remove special character quoting</tt></dd></dl>
+
+<hr />
+Data and other attributes inherited from <a href="html.parser.html#HTMLParser" >html.parser.HTMLParser</a>:<br />
+<dl ><dt ><strong >CDATA_CONTENT_ELEMENTS</strong> = ('script', 'style')</dt></dl>
+
+<hr />
+Methods inherited from <a href="_markupbase.html#ParserBase" >_markupbase.ParserBase</a>:<br />
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-getpos" ><strong >getpos</strong></a>(self)</dt><dd ><tt >Return current line number and offset.</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-parse_comment" ><strong >parse_comment</strong></a>(self, i, report=1)</dt><dd ><tt ># Internal -- parse comment, return length or -1 if not terminated</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-parse_declaration" ><strong >parse_declaration</strong></a>(self, i)</dt><dd ><tt ># Internal -- parse declaration (for use by subclasses).</tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-parse_marked_section" ><strong >parse_marked_section</strong></a>(self, i, report=1)</dt><dd ><tt ># Internal -- parse a marked section<br />
+# Override this to handle MS-word extension syntax <![if word]>content<![endif]></tt></dd></dl>
+
+<dl ><dt ><a name="IndexedAdvancedHTMLParser-updatepos" ><strong >updatepos</strong></a>(self, i, j)</dt><dd ><tt ># Internal -- update line number and offset.  This should be<br />
+# called for each piece of data exactly once, in order -- in other<br />
+# words the concatenation of all the input strings to this<br />
+# function should be exactly the entire input.</tt></dd></dl>
+
+<hr />
+Data descriptors inherited from <a href="_markupbase.html#ParserBase" >_markupbase.ParserBase</a>:<br />
+<dl ><dt ><strong >__dict__</strong></dt>
+<dd ><tt >dictionary for instance variables (if defined)</tt></dd>
+</dl>
+<dl ><dt ><strong >__weakref__</strong></dt>
+<dd ><tt >list of weak references to the object (if defined)</tt></dd>
+</dl>
+</td></tr></table> <p >
+<table cellpadding="2" cellspacing="0" summary="section" border="0" width="100%" >
+<tr bgcolor="#ffc8d8" >
+<td valign="bottom" colspan="3" > <br />
+<font color="#000000" face="helvetica, arial" ><a name="InvalidCloseException" >class <strong >InvalidCloseException</strong></a>(<a href="AdvancedHTMLParser.exceptions.html#HTMLValidationException" >HTMLValidationException</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8" ><td rowspan="2" ><tt >   </tt></td>
+<td colspan="2" ><tt ><a href="#InvalidCloseException" >InvalidCloseException</a> - Raised when a tag is closed that shouldn't be closed.<br /> </tt></td></tr>
+<tr ><td > </td>
+<td width="100%" ><dl ><dt >Method resolution order:</dt>
+<dd ><a href="AdvancedHTMLParser.exceptions.html#InvalidCloseException" >InvalidCloseException</a></dd>
+<dd ><a href="AdvancedHTMLParser.exceptions.html#HTMLValidationException" >HTMLValidationException</a></dd>
+<dd ><a href="builtins.html#Exception" >builtins.Exception</a></dd>
+<dd ><a href="builtins.html#BaseException" >builtins.BaseException</a></dd>
+<dd ><a href="builtins.html#object" >builtins.object</a></dd>
+</dl>
+<hr />
+Methods defined here:<br />
+<dl ><dt ><a name="InvalidCloseException-__init__" ><strong >__init__</strong></a>(self, triedToClose, stillOpen)</dt></dl>
+
+<hr />
+Data descriptors inherited from <a href="AdvancedHTMLParser.exceptions.html#HTMLValidationException" >HTMLValidationException</a>:<br />
+<dl ><dt ><strong >__weakref__</strong></dt>
+<dd ><tt >list of weak references to the object (if defined)</tt></dd>
+</dl>
+<hr />
+Methods inherited from <a href="builtins.html#Exception" >builtins.Exception</a>:<br />
+<dl ><dt ><a name="InvalidCloseException-__new__" ><strong >__new__</strong></a>(*args, **kwargs)<font color="#909090" ><font face="helvetica, arial" > from <a href="builtins.html#type" >builtins.type</a></font></font></dt><dd ><tt >Create and return a new <a href="builtins.html#object" >object</a>.  See help(type) for accurate signature.</tt></dd></dl>
+
+<hr />
+Methods inherited from <a href="builtins.html#BaseException" >builtins.BaseException</a>:<br />
+<dl ><dt ><a name="InvalidCloseException-__delattr__" ><strong >__delattr__</strong></a>(self, name, /)</dt><dd ><tt >Implement delattr(self, name).</tt></dd></dl>
+
+<dl ><dt ><a name="InvalidCloseException-__getattribute__" ><strong >__getattribute__</strong></a>(self, name, /)</dt><dd ><tt >Return getattr(self, name).</tt></dd></dl>
+
+<dl ><dt ><a name="InvalidCloseException-__reduce__" ><strong >__reduce__</strong></a>(...)</dt></dl>
+
+<dl ><dt ><a name="InvalidCloseException-__repr__" ><strong >__repr__</strong></a>(self, /)</dt><dd ><tt >Return repr(self).</tt></dd></dl>
+
+<dl ><dt ><a name="InvalidCloseException-__setattr__" ><strong >__setattr__</strong></a>(self, name, value, /)</dt><dd ><tt >Implement setattr(self, name, value).</tt></dd></dl>
+
+<dl ><dt ><a name="InvalidCloseException-__setstate__" ><strong >__setstate__</strong></a>(...)</dt></dl>
+
+<dl ><dt ><a name="InvalidCloseException-__str__" ><strong >__str__</strong></a>(self, /)</dt><dd ><tt >Return str(self).</tt></dd></dl>
+
+<dl ><dt ><a name="InvalidCloseException-with_traceback" ><strong >with_traceback</strong></a>(...)</dt><dd ><tt ><a href="builtins.html#Exception" >Exception</a>.<a href="#InvalidCloseException-with_traceback" >with_traceback</a>(tb) --<br />
+set self.<strong >__traceback__</strong> to tb and return self.</tt></dd></dl>
+
+<hr />
+Data descriptors inherited from <a href="builtins.html#BaseException" >builtins.BaseException</a>:<br />
+<dl ><dt ><strong >__cause__</strong></dt>
+<dd ><tt >exception cause</tt></dd>
+</dl>
+<dl ><dt ><strong >__context__</strong></dt>
+<dd ><tt >exception context</tt></dd>
+</dl>
+<dl ><dt ><strong >__dict__</strong></dt>
+</dl>
+<dl ><dt ><strong >__suppress_context__</strong></dt>
+</dl>
+<dl ><dt ><strong >__traceback__</strong></dt>
+</dl>
+<dl ><dt ><strong >args</strong></dt>
+</dl>
+</td></tr></table> <p >
+<table cellpadding="2" cellspacing="0" summary="section" border="0" width="100%" >
+<tr bgcolor="#ffc8d8" >
+<td valign="bottom" colspan="3" > <br />
+<font color="#000000" face="helvetica, arial" ><a name="MissedCloseException" >class <strong >MissedCloseException</strong></a>(<a href="AdvancedHTMLParser.exceptions.html#HTMLValidationException" >HTMLValidationException</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8" ><td rowspan="2" ><tt >   </tt></td>
+<td colspan="2" ><tt ><a href="#MissedCloseException" >MissedCloseException</a> - Raised when a close was missed<br /> </tt></td></tr>
+<tr ><td > </td>
+<td width="100%" ><dl ><dt >Method resolution order:</dt>
+<dd ><a href="AdvancedHTMLParser.exceptions.html#MissedCloseException" >MissedCloseException</a></dd>
+<dd ><a href="AdvancedHTMLParser.exceptions.html#HTMLValidationException" >HTMLValidationException</a></dd>
+<dd ><a href="builtins.html#Exception" >builtins.Exception</a></dd>
+<dd ><a href="builtins.html#BaseException" >builtins.BaseException</a></dd>
+<dd ><a href="builtins.html#object" >builtins.object</a></dd>
+</dl>
+<hr />
+Methods defined here:<br />
+<dl ><dt ><a name="MissedCloseException-__init__" ><strong >__init__</strong></a>(self, triedToClose, stillOpen)</dt></dl>
+
+<hr />
+Data descriptors inherited from <a href="AdvancedHTMLParser.exceptions.html#HTMLValidationException" >HTMLValidationException</a>:<br />
+<dl ><dt ><strong >__weakref__</strong></dt>
+<dd ><tt >list of weak references to the object (if defined)</tt></dd>
+</dl>
+<hr />
+Methods inherited from <a href="builtins.html#Exception" >builtins.Exception</a>:<br />
+<dl ><dt ><a name="MissedCloseException-__new__" ><strong >__new__</strong></a>(*args, **kwargs)<font color="#909090" ><font face="helvetica, arial" > from <a href="builtins.html#type" >builtins.type</a></font></font></dt><dd ><tt >Create and return a new <a href="builtins.html#object" >object</a>.  See help(type) for accurate signature.</tt></dd></dl>
+
+<hr />
+Methods inherited from <a href="builtins.html#BaseException" >builtins.BaseException</a>:<br />
+<dl ><dt ><a name="MissedCloseException-__delattr__" ><strong >__delattr__</strong></a>(self, name, /)</dt><dd ><tt >Implement delattr(self, name).</tt></dd></dl>
+
+<dl ><dt ><a name="MissedCloseException-__getattribute__" ><strong >__getattribute__</strong></a>(self, name, /)</dt><dd ><tt >Return getattr(self, name).</tt></dd></dl>
+
+<dl ><dt ><a name="MissedCloseException-__reduce__" ><strong >__reduce__</strong></a>(...)</dt></dl>
+
+<dl ><dt ><a name="MissedCloseException-__repr__" ><strong >__repr__</strong></a>(self, /)</dt><dd ><tt >Return repr(self).</tt></dd></dl>
+
+<dl ><dt ><a name="MissedCloseException-__setattr__" ><strong >__setattr__</strong></a>(self, name, value, /)</dt><dd ><tt >Implement setattr(self, name, value).</tt></dd></dl>
+
+<dl ><dt ><a name="MissedCloseException-__setstate__" ><strong >__setstate__</strong></a>(...)</dt></dl>
+
+<dl ><dt ><a name="MissedCloseException-__str__" ><strong >__str__</strong></a>(self, /)</dt><dd ><tt >Return str(self).</tt></dd></dl>
+
+<dl ><dt ><a name="MissedCloseException-with_traceback" ><strong >with_traceback</strong></a>(...)</dt><dd ><tt ><a href="builtins.html#Exception" >Exception</a>.<a href="#MissedCloseException-with_traceback" >with_traceback</a>(tb) --<br />
+set self.<strong >__traceback__</strong> to tb and return self.</tt></dd></dl>
+
+<hr />
+Data descriptors inherited from <a href="builtins.html#BaseException" >builtins.BaseException</a>:<br />
+<dl ><dt ><strong >__cause__</strong></dt>
+<dd ><tt >exception cause</tt></dd>
+</dl>
+<dl ><dt ><strong >__context__</strong></dt>
+<dd ><tt >exception context</tt></dd>
+</dl>
+<dl ><dt ><strong >__dict__</strong></dt>
+</dl>
+<dl ><dt ><strong >__suppress_context__</strong></dt>
+</dl>
+<dl ><dt ><strong >__traceback__</strong></dt>
+</dl>
+<dl ><dt ><strong >args</strong></dt>
+</dl>
+</td></tr></table></p></p></p></p></p></p></p></td></tr></table><p >
+<table cellpadding="2" cellspacing="0" summary="section" border="0" width="100%" >
+<tr bgcolor="#55aa55" >
+<td valign="bottom" colspan="3" > <br />
+<font color="#ffffff" face="helvetica, arial" ><big ><strong >Data</strong></big></font></td></tr>
+    
+<tr ><td bgcolor="#55aa55" ><tt >      </tt></td><td > </td>
+<td width="100%" ><strong >__all__</strong> = ['AdvancedHTMLParser', 'IndexedAdvancedHTMLParser', 'AdvancedHTMLFormatter', 'AdvancedTag', 'TagCollectionValidatingAdvancedHTMLParser', 'MissedCloseException', 'InvalidCloseException', 'HTMLValidationException']<br />
+<strong >__int_version_tuple__</strong> = (6, 5, 0)<br />
+<strong >__version_tuple__</strong> = ('6', '5', '0')</td></tr></table>
+</p></p></p></body></html>
