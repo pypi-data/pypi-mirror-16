@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+pyatfork/__init__.py
+pyatfork.egg-info/PKG-INFO
+pyatfork.egg-info/SOURCES.txt
+pyatfork.egg-info/dependency_links.txt
+pyatfork.egg-info/top_level.txt
+pyatfork/catfork_module/atfork.c
+pyatfork/catfork_module/atfork.h
+pyatfork/catfork_module/catfork_module.c

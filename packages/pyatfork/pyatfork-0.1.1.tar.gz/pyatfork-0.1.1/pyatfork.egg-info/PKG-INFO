@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: pyatfork
+Version: 0.1.1
+Summary: PyAtfork provides API to register fork handlers.
+Home-page: https://github.com/vfreex/pyatfork
+Author: Rayson Zhu
+Author-email: vfreex@gmail.com
+License: MIT
+Description: PyAtfork is a wrapper for the POSIX Pthreads API pthread_atfork(3). I wrote this module because Python's ctype library cannot handle this function correctly.
+Keywords: atfork pthread_atfork
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Operating System :: POSIX
