@@ -1,0 +1,7 @@
+setup.py
+GoVetBear/GoVetBear.py
+GoVetBear/__init__.py
+GoVetBear.egg-info/PKG-INFO
+GoVetBear.egg-info/SOURCES.txt
+GoVetBear.egg-info/dependency_links.txt
+GoVetBear.egg-info/top_level.txt
