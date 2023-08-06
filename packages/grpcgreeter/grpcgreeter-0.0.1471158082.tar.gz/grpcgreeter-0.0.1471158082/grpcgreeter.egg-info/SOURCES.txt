@@ -1,0 +1,8 @@
+setup.py
+grpcgreeter/__init__.py
+grpcgreeter/helloworld_pb2.py
+grpcgreeter.egg-info/PKG-INFO
+grpcgreeter.egg-info/SOURCES.txt
+grpcgreeter.egg-info/dependency_links.txt
+grpcgreeter.egg-info/requires.txt
+grpcgreeter.egg-info/top_level.txt
