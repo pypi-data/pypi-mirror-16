@@ -1,0 +1,12 @@
+django_rtdb-1.2.0.dist-info/DESCRIPTION.rst,sha256=VfDpxKy-tAuskypB-0RstMsMWW2heNm-FbhdtRxHEyM,317
+django_rtdb-1.2.0.dist-info/METADATA,sha256=2mc1RzBTA2MQYzYGXCs0KbpjYcdBQOm2YWcwKAi4Als,1132
+django_rtdb-1.2.0.dist-info/RECORD,,
+django_rtdb-1.2.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+django_rtdb-1.2.0.dist-info/metadata.json,sha256=p6hrhPGYj0a-3QZCpS29fupNpnrKvBX-ii8eMEvSimA,920
+django_rtdb-1.2.0.dist-info/top_level.txt,sha256=llKamDPVUJvCFQ5rb3J9POrDBQMlwxPWth7Ou_jLQqQ,5
+rtdb/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+rtdb/admin.py,sha256=aaUL9C2YB7spHT1PfQsyvsg0XDCpsZp1WjbRBGoaW2U,369
+rtdb/apps.py,sha256=qLPSZnV884Ewlir974vG-NaHEQG1mrJi8y-faG6_hA0,150
+rtdb/models.py,sha256=s33YeLfY0wVu6ZWX_CZV7heatnKvF2pypa_4ZDryIpQ,10152
+rtdb/raw_models.py,sha256=862Qnx4kpMHb81EKMdI7RI826_9bCk56lZFC5FpRGDU,25115
+rtdb/stats.py,sha256=ihTiKp1IYzNKqGq_ks2KFGNLqVzaJAxWTD06r23JHfE,1862
