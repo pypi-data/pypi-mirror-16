@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: blot
+Version: 0.0.9
+Summary: An unassuming static site-generator for Python
+Home-page: http://github.com/dustinlacewell/blot
+Author: Dustin Lacewell
+Author-email: dlacewell@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: site-generator
+Platform: UNKNOWN
