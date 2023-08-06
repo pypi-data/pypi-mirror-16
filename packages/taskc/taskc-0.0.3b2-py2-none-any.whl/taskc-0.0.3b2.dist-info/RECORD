@@ -1,0 +1,14 @@
+taskc/__init__.py,sha256=w0eAilWwNjJCw2upX8k5c8QSYPV9eFBWG1ixZOgo6t8,23
+taskc/errors.py,sha256=QDxUPF60OjZ3CNZdDZyLA3D7jMPZYcEm0N0F49wsGsM,1022
+taskc/simple.py,sha256=a4lL8EdtX0a-l8PwIQPZLGW7S7Mmy1L_G70K3oe89ME,5391
+taskc/simple_test.py,sha256=zHIZC3ZKkxY8L7e4_YPpLXbC6AvF-cshf06uijpUbt8,2798
+taskc/test_simple.py,sha256=UDTw3p1hxssenuRMQQe_oVsylhsMG9AOOhfq7Gq3wlQ,5941
+taskc/test_transaction.py,sha256=isA5fJFUuH82ZqfeXrMRSiW6bON1n12VUEnLGlBNEiM,2594
+taskc/transaction.py,sha256=tgiPpuaomuAM9z4_3p_0S6CtPE810cPAw_9zqvcnjak,1456
+taskc/transaction_test.py,sha256=urouHburRhzvoW74mqUSPhR38kflCn50okdtZmQl46k,2588
+taskc-0.0.3b2.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+taskc-0.0.3b2.dist-info/METADATA,sha256=FkBSZ4SUl3ZBisfaVTadFFSWz9mmf3icz-umCEWIgAg,573
+taskc-0.0.3b2.dist-info/RECORD,,
+taskc-0.0.3b2.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+taskc-0.0.3b2.dist-info/metadata.json,sha256=Y5MNUqqoiP8ZW7WpJ0ZtQWqI0tD107Em6gA_8mZhGZs,734
+taskc-0.0.3b2.dist-info/top_level.txt,sha256=K7FTvzBt2-9xhmTtS1bspELTii0ocS8THlcU4TjV7hQ,6
