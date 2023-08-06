@@ -1,0 +1,14 @@
+To-dos
+======
+
+Basic infrastructure
+--------------------
+
+   - Refactor SQL notebooks into structure and driver
+   - Convert JSON notebooks to use JSON-LD
+   
+Documentation
+-------------
+
+   - UML class diagram
+   
