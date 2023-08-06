@@ -1,0 +1,35 @@
+Metadata-Version: 1.1
+Name: usergrid
+Version: 0.2.2
+Summary: Usergrid SDK for Python
+Home-page: http://usergrid.apache.org
+Author: Jeff West
+Author-email: jwest@apigee.com
+License: UNKNOWN
+Download-URL: https://codeload.github.com/jwest-apigee/usergrid-python/zip/v0.2.2
+Description: **********
+        Overview
+        **********
+        
+        This is a starter project for the Usergrid Python SDK.  It is a work in progress.
+        
+        **************************
+        Installation
+        **************************
+        
+        ================================================
+        Installation From Pypi Using PIP
+        ================================================
+        
+        PIP is a package manager for Python.  For more information please view the information here: `PIP Installation Guide <http://pip.readthedocs.org/en/stable/installing/>`_
+        
+        From the command line::
+        
+          pip install usergrid
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development
