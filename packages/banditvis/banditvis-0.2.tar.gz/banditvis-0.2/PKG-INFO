@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: banditvis
+Version: 0.2
+Summary: A library for simulating and visualizing bandit algorithms.
+Home-page: https://github.com/alexrutar/banditvis
+Author: Alex Rutar
+Author-email: arutar@uwaterloo.ca
+License: MIT
+Description: UNKNOWN
+Keywords: bandit machine learning
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.5
