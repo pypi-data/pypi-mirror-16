@@ -1,0 +1,7 @@
+setup.py
+PyCommentedCodeBear/PyCommentedCodeBear.py
+PyCommentedCodeBear/__init__.py
+PyCommentedCodeBear.egg-info/PKG-INFO
+PyCommentedCodeBear.egg-info/SOURCES.txt
+PyCommentedCodeBear.egg-info/dependency_links.txt
+PyCommentedCodeBear.egg-info/top_level.txt
