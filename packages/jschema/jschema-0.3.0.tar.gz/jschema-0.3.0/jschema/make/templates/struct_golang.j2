@@ -1,0 +1,29 @@
+{% macro struct(name, schema) %}
+type {{name}} struct {
+{% for key, value in schema.properties.iteritems() %}
+  {% if value.get("type") == "array" and value.get("items").pointer %}
+  {{key | upperCamelCase}} []*{{value.get("items").pointer}} `json:"{{key}}"`
+  {% elif value.pointer %}
+  {{key | upperCamelCase}} *{{value.pointer}} `json:"{{key}}"`
+  {%  else %}
+  {{key | upperCamelCase}} {{value | golangType}} `json:"{{key}}"`
+  {% endif %}
+{% endfor %}
+}
+{% endmacro %}
+package {{ns}}
+
+{% if deps %}
+import (
+{% for package in deps %}
+    "{{package}}"
+{% endfor %}
+)
+{% endif %}
+{% if schema.type == "method" %}
+{{struct(name | upperCamelCase + "Params", schema.params)}}
+{{struct(name | upperCamelCase + "Result", schema.result)}}
+var {{name | upperCamelCase}}ParamsSchema string = `{{schema.origin.params | jsonDumps}}`
+{% else %}
+{{struct(name | upperCamelCase, schema)}}
+{%- endif -%}
