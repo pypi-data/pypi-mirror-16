@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+tsincluder/__init__.py
+tsincluder/__main__.py
+tsincluder.egg-info/PKG-INFO
+tsincluder.egg-info/SOURCES.txt
+tsincluder.egg-info/dependency_links.txt
+tsincluder.egg-info/entry_points.txt
+tsincluder.egg-info/requires.txt
+tsincluder.egg-info/top_level.txt

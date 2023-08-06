@@ -1,0 +1,3 @@
+[console_scripts]
+tsincluder = tsincluder.__main__:run
+
