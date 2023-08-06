@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+heroesoflegend/__init__.py
+heroesoflegend/heroesoflegend.py
+heroesoflegend/rolltables.py
+heroesoflegend.egg-info/PKG-INFO
+heroesoflegend.egg-info/SOURCES.txt
+heroesoflegend.egg-info/dependency_links.txt
+heroesoflegend.egg-info/top_level.txt
