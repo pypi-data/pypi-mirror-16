@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: gitmsg
+Version: 0.0.9
+Summary: autogenerate git commit message
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: git
+Platform: UNKNOWN
+Classifier: Topic :: Software Development :: Version Control
