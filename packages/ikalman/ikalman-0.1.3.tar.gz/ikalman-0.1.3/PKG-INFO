@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: ikalman
+Version: 0.1.3
+Summary: Python bindings for the ikalman c library
+Home-page: https://github.com/ruipgil/ikalman
+Author: Joshua Semar
+Author-email: joshua.semar@mapmyfitness.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
