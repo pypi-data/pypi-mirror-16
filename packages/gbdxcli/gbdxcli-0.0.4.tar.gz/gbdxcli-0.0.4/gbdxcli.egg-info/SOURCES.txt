@@ -1,0 +1,11 @@
+README.rst
+setup.py
+gbdxcli/__init__.py
+gbdxcli/_s3creds.py
+gbdxcli/commands.py
+gbdxcli.egg-info/PKG-INFO
+gbdxcli.egg-info/SOURCES.txt
+gbdxcli.egg-info/dependency_links.txt
+gbdxcli.egg-info/entry_points.txt
+gbdxcli.egg-info/requires.txt
+gbdxcli.egg-info/top_level.txt
