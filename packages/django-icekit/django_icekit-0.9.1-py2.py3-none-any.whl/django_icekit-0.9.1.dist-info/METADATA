@@ -1,0 +1,59 @@
+Metadata-Version: 2.0
+Name: django-icekit
+Version: 0.9.1
+Summary: A modular content CMS by Interaction Consortium.
+Home-page: https://github.com/ic-labs/django-icekit
+Author: Interaction Consortium
+Author-email: studio@interaction.net.au
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: django-bootstrap3
+Requires-Dist: django-el-pagination (<3)
+Requires-Dist: django-fluent-contents
+Requires-Dist: django-fluent-pages
+Requires-Dist: django-model-utils (<2.4)
+Requires-Dist: django-mptt (<0.8)
+Requires-Dist: django-polymorphic (<0.8)
+Requires-Dist: django-wysiwyg
+Requires-Dist: django-extensions
+Requires-Dist: Pillow
+Requires-Dist: requests
+Requires-Dist: nltk
+Requires-Dist: unidecode
+Requires-Dist: django-app-namespace-template-loader
+Requires-Dist: html5lib (==0.999)
+Provides-Extra: api
+Requires-Dist: djangorestframework (<3.4); extra == 'api'
+Provides-Extra: brightcove
+Requires-Dist: django-brightcove; extra == 'brightcove'
+Provides-Extra: dev
+Requires-Dist: ipdb; extra == 'dev'
+Requires-Dist: ipython; extra == 'dev'
+Requires-Dist: mkdocs; extra == 'dev'
+Provides-Extra: django17
+Requires-Dist: django-fluent-contents (<1.1); extra == 'django17'
+Requires-Dist: django-polymorphic (<0.8); extra == 'django17'
+Requires-Dist: Django (>=1.7,<1.8); extra == 'django17'
+Provides-Extra: forms
+Requires-Dist: django-forms-builder; extra == 'forms'
+Provides-Extra: publishing
+Requires-Dist: django-model-settings; extra == 'publishing'
+Requires-Dist: django-compressor (<1.6); extra == 'publishing'
+Provides-Extra: search
+Requires-Dist: django-fluent-pages[flatpage,fluentpage]; extra == 'search'
+Requires-Dist: django-haystack; extra == 'search'
+Provides-Extra: test
+Requires-Dist: coverage; extra == 'test'
+Requires-Dist: django-dynamic-fixture; extra == 'test'
+Requires-Dist: django-nose; extra == 'test'
+Requires-Dist: djangorestframework; extra == 'test'
+Requires-Dist: django-webtest; extra == 'test'
+Requires-Dist: micawber; extra == 'test'
+Requires-Dist: mock; extra == 'test'
+Requires-Dist: nose-progressive; extra == 'test'
+Requires-Dist: psycopg2; extra == 'test'
+Requires-Dist: WebTest; extra == 'test'
+
+UNKNOWN
+
+
