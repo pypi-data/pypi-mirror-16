@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: vcompress
+Version: 1.1
+Summary: video compressor for mov files
+Home-page: https://github.com/evgenii-malov/vcompress
+Author: Evgeniy Malov
+Author-email: evgeniiml@gmail.com
+License: GPL
+Description: UNKNOWN
+Keywords: compress,mov
+Platform: any
+Requires: python (>= 2.7)
