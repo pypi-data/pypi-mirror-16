@@ -1,0 +1,17 @@
+mastercard_spending_pulse-1.0.1.dist-info/DESCRIPTION.rst,sha256=FxFPKQ_bQUJ63edRYuIHmEPemLxnISPFfxQHVzVv-Rk,28
+mastercard_spending_pulse-1.0.1.dist-info/METADATA,sha256=vQBQKEMm8mooC-GWGsYhUJRwam3AIfNkaU8wMmDLfKg,876
+mastercard_spending_pulse-1.0.1.dist-info/RECORD,,
+mastercard_spending_pulse-1.0.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+mastercard_spending_pulse-1.0.1.dist-info/metadata.json,sha256=xElSVIeKPSj9EbYlw_BALmsLnjsiJQoNSMfK_W_BQgU,1031
+mastercard_spending_pulse-1.0.1.dist-info/top_level.txt,sha256=kT5gkQfH5inLBfdrWnDPL0taJ05D4NaUKu6WB_hf9qA,30
+mastercardspendingpulse/__init__.py,sha256=t7_BAQ0YvBosZxMBEQg6-XUB79XvNMEYG7q4B2Z6xGs,238
+mastercardspendingpulse/gasweekly.py,sha256=VSI2vFTf6BwiRLlSZA2A0bLrK7VKAmjQ8PvcEhBKSe0,2998
+mastercardspendingpulse/parameters.py,sha256=RdohoVPQXn0Ktkc70Zbfzvk1ZUUBnvv3p244IQk02vM,3004
+mastercardspendingpulse/spendingpulsereport.py,sha256=o3TmwYX7JAXgOw2rAw4FXZZfpCp6RY_PiRgCyH8IFho,3143
+mastercardspendingpulse/subscription.py,sha256=kcbz-Dv2JSB-uDtfDw0sagRZqLnah9CxFlN6jFB1eQo,3016
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/base_test.py,sha256=SWfNM_dCV32W6OAT7yu8a4QRdZGJVSzdYmyjT7U2bAk,852
+tests/test_gasweekly.py,sha256=x4n5Vyglw-mqfXx0TS6xA8_ohAZlQDcBhG7u7nCUVGE,10406
+tests/test_parameters.py,sha256=5O83NuoUiNOkksZzntUeJnMGLx1N8uzBN0Prl7BAp6I,5817
+tests/test_spendingpulsereport.py,sha256=XYGvGwxkiiFmQLU7VgtJlISVboYSvvKFxNhaWEfGrWw,12538
+tests/test_subscription.py,sha256=1jZfBE13IlSTPpGbx1JgMDAW2FpE0gERXwWT4w4pP9U,5029
