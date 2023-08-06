@@ -1,0 +1,6 @@
+rest_framework_queryset
+rest_framework_queryset/rest_framework_queryset
+rest_framework_queryset/web
+rest_framework_queryset/web/migrations
+rest_framework_queryset/api/migrations
+rest_framework_queryset/api
