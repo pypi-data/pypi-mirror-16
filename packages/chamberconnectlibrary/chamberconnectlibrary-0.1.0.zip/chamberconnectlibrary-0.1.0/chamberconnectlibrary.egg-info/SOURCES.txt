@@ -1,0 +1,17 @@
+setup.py
+bin/chamberconnectlibrary-test.py
+chamberconnectlibrary/__init__.py
+chamberconnectlibrary/controllerabstract.py
+chamberconnectlibrary/espec.py
+chamberconnectlibrary/especinteract.py
+chamberconnectlibrary/modbus.py
+chamberconnectlibrary/p300.py
+chamberconnectlibrary/redisLock.py
+chamberconnectlibrary/watlowF4T.py
+chamberconnectlibrary.egg-info/PKG-INFO
+chamberconnectlibrary.egg-info/SOURCES.txt
+chamberconnectlibrary.egg-info/dependency_links.txt
+chamberconnectlibrary.egg-info/not-zip-safe
+chamberconnectlibrary.egg-info/pbr.json
+chamberconnectlibrary.egg-info/requires.txt
+chamberconnectlibrary.egg-info/top_level.txt
