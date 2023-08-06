@@ -1,0 +1,50 @@
+Metadata-Version: 1.1
+Name: usertrue
+Version: 0.1.0
+Summary: Python UserTrue creates user analytics for websites.
+Home-page: https://github.com/usertrueofficial/django-usertrue
+Author: UserTrue
+Author-email: support@usertrue.com
+License: UNKNOWN
+Description: ===============================
+        UserTrue
+        ===============================
+        
+        
+        
+        .. image:: https://pyup.io/repos/github/usertrueofficial/django-usertrue/shield.svg
+             :target: https://pyup.io/repos/github/usertrueofficial/django-usertrue/
+             :alt: Updates
+        
+        
+        Python UserTrue creates user analytics for websites.
+        
+        
+        
+        Features
+        --------
+        
+        * TODO
+        
+        
+        =======
+        History
+        =======
+        
+        0.1.0 (2016-08-03)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: usertrue
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
