@@ -1,0 +1,14 @@
+HISTORY.rst
+MANIFEST.in
+README.rst
+setup.py
+ever2text/__init__.py
+ever2text/converter.py
+ever2text/core.py
+ever2text.egg-info/PKG-INFO
+ever2text.egg-info/SOURCES.txt
+ever2text.egg-info/dependency_links.txt
+ever2text.egg-info/entry_points.txt
+ever2text.egg-info/not-zip-safe
+ever2text.egg-info/requires.txt
+ever2text.egg-info/top_level.txt
