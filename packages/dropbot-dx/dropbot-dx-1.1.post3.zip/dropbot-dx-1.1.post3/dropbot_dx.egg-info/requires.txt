@@ -1,0 +1,2 @@
+base-node-rpc>=0.16.post3
+arduino-rpc>=1.7.post20
