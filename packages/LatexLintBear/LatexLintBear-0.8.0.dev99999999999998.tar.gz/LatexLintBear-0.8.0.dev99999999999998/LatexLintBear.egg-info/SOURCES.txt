@@ -1,0 +1,5 @@
+setup.py
+LatexLintBear.egg-info/PKG-INFO
+LatexLintBear.egg-info/SOURCES.txt
+LatexLintBear.egg-info/dependency_links.txt
+LatexLintBear.egg-info/top_level.txt
