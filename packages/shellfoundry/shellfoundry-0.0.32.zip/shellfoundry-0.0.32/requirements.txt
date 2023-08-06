@@ -1,0 +1,7 @@
+requests
+cookiecutter
+qpm
+click
+pyyaml
+giturlparse.py
+quali-testing-helpers
