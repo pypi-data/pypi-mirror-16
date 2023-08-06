@@ -1,0 +1,5 @@
+pygithub
+click
+jinja2
+tqdm
+requests
