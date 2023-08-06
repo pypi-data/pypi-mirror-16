@@ -1,0 +1,11 @@
+learnosity_sdk/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+learnosity_sdk/exceptions.py,sha256=525fSH8Q241VjxdllBkWi3DiW_-6I1AmG-iHwZBTp4E,47
+learnosity_sdk/request.py,sha256=CGbhVCXC1C_HPPhARV8sVYzBokQLdyBr4pOsT6S9H1U,7465
+learnosity_sdk/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+learnosity_sdk/tests/tests.py,sha256=ylGAxVkuk7yTjORnoE5-mp71kJIakMUc4DYObPwxf3s,1887
+learnosity_sdk-0.0.5.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+learnosity_sdk-0.0.5.dist-info/METADATA,sha256=C9reyV6Gb48Gx4L5rS5Ub5fG9kAs6vRU10d1OYcAJHc,263
+learnosity_sdk-0.0.5.dist-info/RECORD,,
+learnosity_sdk-0.0.5.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+learnosity_sdk-0.0.5.dist-info/metadata.json,sha256=gfAkj04DKwoUIsBb8R8_XueJk2_N--kI1gNx2iPuSpQ,417
+learnosity_sdk-0.0.5.dist-info/top_level.txt,sha256=jsvOw_Xq3AT1Wee616whWdFbe0kEQTi2UVREHcMIZ-k,15
