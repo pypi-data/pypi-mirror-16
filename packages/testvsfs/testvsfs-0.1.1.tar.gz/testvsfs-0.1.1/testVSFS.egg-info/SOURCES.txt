@@ -1,0 +1,14 @@
+MANIFEST.in
+setup.py
+testVSFS/__init__.py
+testVSFS/bix-demo-apps
+testVSFS/bix-demo-apps.tar
+testVSFS/generate_bash.py
+testVSFS/input_apps_database.xlsx
+testVSFS.egg-info/PKG-INFO
+testVSFS.egg-info/SOURCES.txt
+testVSFS.egg-info/dependency_links.txt
+testVSFS.egg-info/entry_points.txt
+testVSFS.egg-info/requires.txt
+testVSFS.egg-info/top_level.txt
+testvsfs.egg-info/SOURCES.txt

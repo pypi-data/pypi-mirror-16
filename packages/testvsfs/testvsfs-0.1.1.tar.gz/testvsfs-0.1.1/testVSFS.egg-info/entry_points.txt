@@ -1,0 +1,3 @@
+[console_scripts]
+testvsfs = testVSFS.generate_bash:main
+
