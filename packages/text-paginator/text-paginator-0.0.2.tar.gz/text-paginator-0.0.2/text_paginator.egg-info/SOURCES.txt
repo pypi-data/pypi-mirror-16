@@ -1,0 +1,9 @@
+README.rst
+setup.cfg
+setup.py
+text_paginator/__init__.py
+text_paginator/text_paginator.py
+text_paginator.egg-info/PKG-INFO
+text_paginator.egg-info/SOURCES.txt
+text_paginator.egg-info/dependency_links.txt
+text_paginator.egg-info/top_level.txt
