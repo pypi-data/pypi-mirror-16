@@ -1,0 +1,19 @@
+Metadata-Version: 2.0
+Name: mklibpy
+Version: 0.1.1
+Summary: Python library created by Michael Kim
+Home-page: https://github.com/MichaelKim0407/mklibpy
+Author: Michael Kim
+Author-email: jinzheng19930407@sina.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Topic :: Software Development :: Libraries
+
+UNKNOWN
+
+
