@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: deus
+Version: 0.1
+Summary: Package scaffolder inspired by Bundler and Mix
+Home-page: http://github.com/ohsabry/deus
+Author: Omar Sabry
+Author-email: ohsabry@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

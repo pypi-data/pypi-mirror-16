@@ -1,0 +1,7 @@
+setup.py
+deus/__init__.py
+deus.egg-info/PKG-INFO
+deus.egg-info/SOURCES.txt
+deus.egg-info/dependency_links.txt
+deus.egg-info/not-zip-safe
+deus.egg-info/top_level.txt
