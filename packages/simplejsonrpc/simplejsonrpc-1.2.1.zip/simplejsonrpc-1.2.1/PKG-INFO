@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: simplejsonrpc
+Version: 1.2.1
+Summary: Simple JSON-RPC 2.0 compilant middleware for python using decorators. With just a few lines of code you get a JSONRPC 2.0 compilant web API running and ready for your needs!
+Home-page: https://github.com/moritz-wundke/simplejsonrpc
+Author: Moritz Wundke
+Author-email: b.thax.dcg@gmail.com
+License: MIT
+Download-URL: https://github.com/moritz-wundke/simplejsonrpc/releases/tag/Release_1.2.1
+Description: UNKNOWN
+Keywords: jsonrpc,rpc,json
+Platform: UNKNOWN
