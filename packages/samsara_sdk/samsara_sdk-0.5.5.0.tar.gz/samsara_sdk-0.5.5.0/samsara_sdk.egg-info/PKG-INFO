@@ -1,0 +1,24 @@
+Metadata-Version: 1.0
+Name: samsara-sdk
+Version: 0.5.5.0
+Summary: A Python Client for Samsaza's Ingestion-API
+Home-page: https://github.com/samsara/samsara
+Author: Samsara Developers
+Author-email: samsara.systems+info@gmail.com
+License: UNKNOWN
+Description: 
+        
+        # Install and use
+        
+        to install use:
+        
+            pip install samsara_sdk
+        
+        to use please refer to the documentation at this website:
+        
+            http://samsara-analytics.io/docs/clients/python-client/
+        
+        
+        
+Keywords: analytics,client,samsara
+Platform: any
