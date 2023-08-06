@@ -1,0 +1,85 @@
+language: python
+python:
+  - 3.4
+  - 3.5
+cache: pip
+
+env:
+  # Run unit test suite for all Python versions
+  - CI_STEP=unit
+
+matrix:
+  include:
+
+    # Run integration test suite with one Python version only, as it will use
+    # Python version provided by Alpine Linux anyway (see
+    # tests/integration/Dockerfile)
+    - python: 3.5
+      env: CI_STEP=integration DOCKER_VERSION=1.11
+    - python: 3.5
+      env: CI_STEP=integration DOCKER_VERSION=1.10
+    - python: 3.5
+      env: CI_STEP=integration DOCKER_VERSION=1.9
+    - python: 3.5
+      env: CI_STEP=integration DOCKER_VERSION=1.8
+    - python: 3.5
+      env: CI_STEP=integration DOCKER_VERSION=1.7
+    - python: 3.5
+      env: CI_STEP=integration DOCKER_VERSION=1.6
+    # Docker HUB does not support 1.5 clients and older
+    # https://forums.docker.com/t/docker-pull-deprecation-for-for-v1-5-clients
+
+    # PEP8 checking
+    - python: 3.5
+      env: CI_STEP=style
+
+    - python: 3.5
+      env: CI_STEP=doc
+
+dist: trusty
+sudo: required
+services:
+  - docker
+install:
+  - pip install -r requirements.txt -r tests/requirements.txt
+      -r docs/requirements.txt
+      coveralls codacy-coverage
+
+script:
+  - ./ci-step.sh ${CI_STEP}
+
+after_success:
+  - coveralls
+  - test -n "$CODACY_PROJECT_TOKEN" -a
+         "$CI_STEP" = "unit" -a
+         "$TRAVIS_PYTHON_VERSION" = "3.5" &&
+    python-codacy-coverage -r coverage.xml -c $TRAVIS_COMMIT
+
+before_deploy:
+  - git fetch --unshallow
+
+deploy:
+  # test pypi
+  - provider: pypi
+    distributions: sdist bdist_wheel
+    server: https://testpypi.python.org/pypi
+    on:
+      python: 3.5
+      condition: $CI_STEP = "unit"
+      branch: master
+      tags: false
+    user: esbenhaabendal
+    password:
+      secure: "Z5ne7AJcxIjlgXPF4dJTQdyknJoSp14523cGv+xD0EIoO6E3KRAmgoRRBYFWFJJFjmaJsMSZP7EYOyuxZ4lagDasYbaVPbYthxDfArdrMDNzBmTW/2tioPo0JInr6eYxy0qS7MphsxX2HMuszpd0t9hnaT2I3WzcJjcqQTkDSZ4="
+
+  # production pypi
+  - provider: pypi
+    distributions: sdist bdist_wheel
+    on:
+      python: 3.5
+      condition: $CI_STEP = "unit"
+      branch: master
+      tags: true
+    user: esbenhaabendal
+    password:
+      secure: "j3wZzZ737pAP2oLSc8vVqPhAsIfPdZPaNW6EaVLlefP0TzoDVCuuvAL5UgCCAtskhdgOc6fR7zWTscocsm0RedlLTUsY9x6LPAl4BqpxkveA2/0jTwEkD9KTCDRI6uPP4Ubb51dMlf3DUhhqX6xeNq1wN9AFhOy1NRF9ZZcs3CE="
