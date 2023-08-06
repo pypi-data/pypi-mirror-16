@@ -1,0 +1,11 @@
+island_backup/__init__.py,sha256=PjIA8bgpJSLUTYC4ESLlokn3hXh5ObODIOH-oJuCW1g,18
+island_backup/main.py,sha256=b8B0jDGwB1walXjYAdDO37-mNygzr1fT90lly7pr1I4,13375
+island_backup/templates/base.html,sha256=0ulRDvC6soG9KJwP37qpeEZdbKfeAh_NIrVz67IpUmI,2717
+island_backup/templates/pages.html,sha256=GT7vNdXB5_Lako7jlWOiG7J42MbOGTGZAOTdpR7rNTc,186
+island_backup-1.2.0.dist-info/DESCRIPTION.rst,sha256=EYkP3W8EnAvk38bvGkEzjGeUiyz7nwlOen2XTiKU0bY,2280
+island_backup-1.2.0.dist-info/METADATA,sha256=12v9yyRO7_XLXfw2Z0qp1QE6P9gZ8VDAVfWl7kYDLjc,2917
+island_backup-1.2.0.dist-info/RECORD,,
+island_backup-1.2.0.dist-info/WHEEL,sha256=VjmaSNf0SLk6zypeQA1PfblrPeO1LqgJWhUjrqbmJrM,93
+island_backup-1.2.0.dist-info/entry_points.txt,sha256=dUQmJtrE7828nhm2tXA0OgyhlQcGrwlC3buDO4QrTi0,58
+island_backup-1.2.0.dist-info/metadata.json,sha256=8FqGATxhWI4axII8mhP3fzhwal7ZFFkKeuF7I-CN60c,970
+island_backup-1.2.0.dist-info/top_level.txt,sha256=_P9dr-kBe31Fmsn9PTneKUF80fhrTvxZ70NggDtj3LE,14
