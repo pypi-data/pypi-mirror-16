@@ -1,0 +1,24 @@
+wave1,wave2,mask_value,comment,sky
+3721.0,3728.0,0.0,*[OII]     3726.0,False
+3721.0,3730.0,0.0,*[OII]     3728.8,False
+3746.0,3749.0,0.0,H12        3750.2,False
+3768.0,3773.0,0.0,H11        3770.6,False
+3887.0,3892.0,0.0,H8HeI      3889.0,False
+4023.0,4025.0,0.0,HeI        4026.2,False
+4065.0,4076.0,0.0,[SII]      4068.6,False
+4654.0,4658.0,0.0,[FeIII]    4658.0,False
+4915.0,4921.0,0.0,HeI        4921.9,False
+4951.0,4962.0,0.0,*[OIII]    4958.9,False
+4999.0,5010.0,0.0,*[OIII]    5006.8,False
+5262.0,5274.0,0.0,[FeIII]    5270.4,False
+6082.0,6085.0,0.0,[FeVII]    6086.3,False
+6305.0,6320.0,0.0,[SIII]     6312.1,False
+6539.0,6561.0,0.0,*[NII]     6548.0,False
+6574.0,6596.0,0.0,*[NII]     6583.5,False
+6673.0,6677.0,0.0,HeI        6678.2,False
+6721.0,6744.0,0.0,*[SII]     6730.8,False
+6845.0,6945.0,0.0,BC03-bug   shifted -5 Angs wrt to what they say.,False
+7165.0,7210.0,0.0,"BC03-bug?  looks like a bug, but not mentioned in BC03.",False
+7550.0,7725.0,0.0,BC03-bug   equal to what they say in their paper.,False
+5880.0,5906.0,0.0,NaD 5890 & 5896 (gm!),False
+9059.0,9079.0,0.0,[SIII]     9069 (gm!),False
