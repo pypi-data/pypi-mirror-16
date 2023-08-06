@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: pystassh
+Version: 1.0.1
+Summary: An easy to use libssh wrapper to execute commands on a remote server via SSH with Python
+Home-page: https://julienc91.github.io/pystassh/
+Author: Julien Chaumont
+Author-email: pystassh@julienc.io
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
