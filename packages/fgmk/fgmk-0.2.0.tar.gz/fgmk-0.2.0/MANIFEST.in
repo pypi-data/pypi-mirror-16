@@ -1,0 +1,2 @@
+include setup.py fgmk AUTHORS README COPYING
+include src/fgmk/data/*.json src/fgmk/data/*.png src/fgmk/data/basegame.tar.gz
