@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: zuoraquery
+Version: 0.1
+Summary: Query Zuora SOAP API using Zuora Object Query Language (ZOQL)
+Home-page: https://github.com/michaelperalta/zuoraquery
+Author: Mike Peralta
+Author-email: michaelperalta1@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

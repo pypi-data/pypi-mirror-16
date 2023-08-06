@@ -1,0 +1,8 @@
+setup.py
+zuoraquery/__init__.py
+zuoraquery.egg-info/PKG-INFO
+zuoraquery.egg-info/SOURCES.txt
+zuoraquery.egg-info/dependency_links.txt
+zuoraquery.egg-info/not-zip-safe
+zuoraquery.egg-info/requires.txt
+zuoraquery.egg-info/top_level.txt
