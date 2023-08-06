@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+# EASY-INSTALL-ENTRY-SCRIPT: 'bprc==0.6.9','console_scripts','bprc'
+__requires__ = 'bprc==0.6.9'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('bprc==0.6.9', 'console_scripts', 'bprc')()
+    )
