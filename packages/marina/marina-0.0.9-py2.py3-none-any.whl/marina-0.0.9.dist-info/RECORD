@@ -1,0 +1,11 @@
+marina/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+marina/build.py,sha256=u9Vry0VhpTQcjtW2PZIk1l_u4DwTJeG8_TsesUdN_a0,24963
+marina/cli.py,sha256=V1WsGQPG9DnqsdG7PFFlA2z5ma_bUh-nrro5WK8unJs,6518
+marina/utils.py,sha256=Ms1ty_YrKb_jssCVkkUIRKf8d-Vz0Ws9J0s-M2PLAio,197
+marina-0.0.9.dist-info/DESCRIPTION.rst,sha256=ihAizrfwZHh391FkixHi-mSuhFTNI4NoU_K3x36xaPY,2449
+marina-0.0.9.dist-info/METADATA,sha256=FykPm5obzDUFca30zherDsC5Uxk7FdYD5h2j5mzf-gc,3250
+marina-0.0.9.dist-info/RECORD,,
+marina-0.0.9.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+marina-0.0.9.dist-info/entry_points.txt,sha256=qfXiXnKyBV9VA9Qieei2KufdJnFAeEzGOFjPmP6OIq0,52
+marina-0.0.9.dist-info/metadata.json,sha256=Ydg1P1Ah5RIW08LHiQEEbcq4P4uERMhauzQy7-vNc9M,1110
+marina-0.0.9.dist-info/top_level.txt,sha256=c6HrSIbdsuAAbVcy0EtRpwE33PT1LCYK2lZ3CtwjTzU,7
