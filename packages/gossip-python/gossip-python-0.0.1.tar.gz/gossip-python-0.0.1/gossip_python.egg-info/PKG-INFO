@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: gossip-python
+Version: 0.0.1
+Summary: Python module for gossip integration
+Home-page: https://stash.bwk-technik.de/projects/PTP/repos/p2p-code/
+Author: Anselm Binninger | Ralph Oliver Schaumann | Thomas Maier
+Author-email: anselm.binninger@tum.de | tom.maier@tum.de
+License: Copyright 2016 Anselm Binninger, Thomas Maier, Ralph Schaumann
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+Download-URL: https://bwk-software.com/builds/gossip/downloads/0.0.1
+Description: gossip-python
+        =============
+        :Team: Shackle Crackdown
+        :Members: - Thomas Maier (ga85how@mytum.de)
+                  - Anselm Binninger (ga85dib@mytum.de)
+                  - Ralph O. Schaumann (ga65gis@mytum.de)
+        :Group no: 09
+        :Sub-project: Gossip
+        
+        .. contents:: Table of Contents
+        .. section-numbering::
+        
+        Installation
+        ------------
+        TODO
+        
+        Basic Use
+        ---------
+        TODO
+        
+        Examples
+        --------
+        TODO
+        
+Keywords: gossip,gossip-python,peertopeer,p2p
+Platform: UNKNOWN
