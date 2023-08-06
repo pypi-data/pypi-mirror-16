@@ -1,0 +1,64 @@
+Metadata-Version: 1.1
+Name: tapp-config
+Version: 0.0.1
+Summary: Configuration for tapps (redis, logger, etc.)
+Home-page: https://github.com/gitguild/tapp-config
+Author: Ira Miller
+Author-email: ira@gitguild.com
+License: MIT
+Description: tapp-config |Build Status| |Coverage Status|
+        ============================================
+        
+        Configuration for tapps (redis, logger, etc.)
+        
+        Usage
+        ~~~~~
+        
+        Reads in a .ini configuration file based on environment variables.
+        
+        | Each TAPP can specify it's own configuration file by setting the
+        | environmental variable that corresponds to it's name. The variable
+        | format is:
+        
+        ``<TAPP_NAME>_CONFIG_FILE``
+        
+        | So, for example, if your TAPP is named 'test', then this package
+        | would expect it's config file to be specified in the
+        ``TEST_CONFIG_FILE``
+        | environmental variable.
+        
+        | If no environmental variable is found, then the local ``cfg.ini`` path
+        | is tried.
+        
+        Contents
+        ~~~~~~~~
+        
+        | While TAPPs can define their own configuration parameters, this
+        | package comes with some universal configuration settings for the
+        | database and logging.
+        
+        ::
+        
+            [db]
+            SA_ENGINE_URI: sqlite:////tmp/test.db
+        
+            [log]
+            LOGFILE: /tmp/test.log
+            LOGLEVEL: DEBUG
+        
+        .. |Build Status| image:: https://travis-ci.org/gitguild/tapp-config.svg?branch=master
+           :target: https://travis-ci.org/gitguild/tapp-config
+        .. |Coverage Status| image:: https://coveralls.io/repos/gitguild/tapp-config/badge.svg?branch=master&service=github
+           :target: https://coveralls.io/github/gitguild/tapp-config?branch=masterVisit https://github.com/gitguild/tapp-config to see the full README, the
+        issue tracker, and others.
+        
+        
+        .. |Build Status| image:: https://travis-ci.org/gitguild/tapp-config.svg?branch=master
+           :target: https://travis-ci.org/gitguild/tapp-config
+        .. |Coverage Status| image:: https://coveralls.io/repos/gitguild/tapp-config/badge.svg?branch=master&service=github
+           :target: https://coveralls.io/github/gitguild/tapp-config?branch=master
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Topic :: Software Development :: Libraries
