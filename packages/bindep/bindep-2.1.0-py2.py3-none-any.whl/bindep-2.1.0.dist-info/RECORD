@@ -1,0 +1,14 @@
+bindep/__init__.py,sha256=F235v0dxHimQCYCKLs-8XX0-6NUH1VgnPA5iFMfBCLs,101
+bindep/depends.py,sha256=7lGEDabenQQiUjZX5BkwwMobC6-ZcA6L89gH1kEJVDQ,14741
+bindep/main.py,sha256=Fxvayp62ISUGZMQ0aSDcVO3wduHSgHM_zzw8pvJy44s,4181
+bindep/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+bindep/tests/test_depends.py,sha256=hClwufZj04RyVFU0oP-9mtmzDe8VFpTZi2ogMvcOYDU,20481
+bindep/tests/test_main.py,sha256=plv-T42DGu_FOh5wYi2ijZLPNek84TgNZTHXqVodqXs,6845
+bindep-2.1.0.dist-info/DESCRIPTION.rst,sha256=6jJTK6wi_wQBHKg-8BC0Yw-G9EZTvvKRFyS3jVCvTwM,6111
+bindep-2.1.0.dist-info/METADATA,sha256=1q3Xa2kDWFmTz7y1kkL_TC79j9pKDKtDaoj8XknDrw8,7244
+bindep-2.1.0.dist-info/RECORD,,
+bindep-2.1.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+bindep-2.1.0.dist-info/entry_points.txt,sha256=ecnO1ixcxomPs-edvzY3UfaSar_c0YAKTH1jG6Vmrqw,45
+bindep-2.1.0.dist-info/metadata.json,sha256=kvzsN4ROXXUxQZzl8LZDjOeWRV8LM2T5xOxKq9eB1uQ,1623
+bindep-2.1.0.dist-info/pbr.json,sha256=hcTu5_1gxsZqCW-jfApER2ujMzQHx87YkampHyFRpEo,46
+bindep-2.1.0.dist-info/top_level.txt,sha256=uAIu1JpCJfZriBpNNDoLnvizZQaTyAtShM7p8dZoVok,7
