@@ -1,0 +1,13 @@
+README.rst
+setup.cfg
+setup.py
+tbvaccine/__init__.py
+tbvaccine/cli.py
+tbvaccine/tbvaccine.py
+tbvaccine/tests.py
+tbvaccine/version.py
+tbvaccine.egg-info/PKG-INFO
+tbvaccine.egg-info/SOURCES.txt
+tbvaccine.egg-info/dependency_links.txt
+tbvaccine.egg-info/entry_points.txt
+tbvaccine.egg-info/top_level.txt
