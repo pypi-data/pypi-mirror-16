@@ -1,0 +1,3 @@
+[console_scripts]
+svn-ignore = svn_ignore:main
+
