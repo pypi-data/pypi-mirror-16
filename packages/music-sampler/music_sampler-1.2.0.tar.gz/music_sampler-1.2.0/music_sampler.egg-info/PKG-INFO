@@ -1,0 +1,31 @@
+Metadata-Version: 1.1
+Name: music-sampler
+Version: 1.2.0
+Summary: A music player which associates each key on the keyboard to a set of actions to run
+Home-page: https://git.immae.eu/?p=perso/Immae/Projets/Python/MusicSampler.git
+Author: Ismaël Bouya
+Author-email: ismael.bouya@normalesup.org
+License: MIT
+Description: Music Sampler is a music player which associates each key on the keyboard to a
+        set of actions to run.
+        
+        See full documentation in french in documentation_fr.md
+        
+        Git repository:
+        https://git.immae.eu/?p=perso/Immae/Projets/Python/MusicSampler.git
+        
+        Bug Tracker:
+        https://git.immae.eu/mantisbt/view_all_bug_page.php?project_id=1
+        
+        Contributors:
+        Ismaël Bouya
+        Denise Maurice
+        
+Keywords: music sampler keyboard
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Multimedia :: Sound/Audio :: Players

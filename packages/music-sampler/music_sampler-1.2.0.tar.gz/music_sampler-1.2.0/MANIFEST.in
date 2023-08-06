@@ -1,0 +1,2 @@
+include music_sampler/music_sampler.kv
+recursive-include music_sampler/locales *

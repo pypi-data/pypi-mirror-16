@@ -1,0 +1,7 @@
+Cython>=0.24
+Kivy>=1.9.1
+pydub>=0.16.4
+Pygame>=1.9.2.dev1
+sounddevice>=0.3.3
+TRANSITIONS>=0.4.1
+PyYAML>=3.11
