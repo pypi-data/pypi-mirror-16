@@ -1,0 +1,16 @@
+AUTHORS.md
+CHANGELOG.md
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+img_percent_diff/__init__.py
+img_percent_diff.egg-info/PKG-INFO
+img_percent_diff.egg-info/SOURCES.txt
+img_percent_diff.egg-info/dependency_links.txt
+img_percent_diff.egg-info/entry_points.txt
+img_percent_diff.egg-info/not-zip-safe
+img_percent_diff.egg-info/requires.txt
+img_percent_diff.egg-info/top_level.txt
+tests/__init__.py
+tests/test_main.py

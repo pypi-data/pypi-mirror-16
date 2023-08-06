@@ -1,0 +1,3 @@
+[console_scripts]
+img-percent-diff = img_percent_diff:main
+
