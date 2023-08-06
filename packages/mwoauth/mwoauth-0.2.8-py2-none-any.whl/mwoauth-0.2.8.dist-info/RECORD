@@ -1,0 +1,11 @@
+mwoauth/__init__.py,sha256=Sly7Ghjiy6NJAtDEpxXjGwK2ZWZ-oY7xKaaGuWXTUk4,428
+mwoauth/functions.py,sha256=J4Cz491mQnNbMVLkDmuZ_reHM9GJnHCeeJx6pLeME1s,9176
+mwoauth/handshaker.py,sha256=HEPGSTlvZqw3Dza3ehEgtMC2YDc5cg5X80nI3RSu6dc,3767
+mwoauth/tokens.py,sha256=dQ_3-S8tmfYQTZ5zCEIBT4nsizyefobkfYkfp7GekA0,1436
+mwoauth/version.py,sha256=G6Dbxq2ws-1ZAXwDD8q0KWueYtso_Y6Uyvtj8sRWsPI,22
+mwoauth-0.2.8.dist-info/DESCRIPTION.rst,sha256=7aUblxf66ZpCLuePWkgz6RzePLg2f-g4S52icewmPhM,1539
+mwoauth-0.2.8.dist-info/METADATA,sha256=KSwz4y9L1Db9zrWQGxqMKOuO01MIOF2seYOZjcD4YjM,2143
+mwoauth-0.2.8.dist-info/RECORD,,
+mwoauth-0.2.8.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+mwoauth-0.2.8.dist-info/metadata.json,sha256=04A1ew8EfE1BbC1CsykaWuB9gqkEdMV8uxrWMLCqwe0,759
+mwoauth-0.2.8.dist-info/top_level.txt,sha256=wJihtIxsFB74ClBXaeSktGXVfUZV8nVwWjt0mK9wO9A,8
