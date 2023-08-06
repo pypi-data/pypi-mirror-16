@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: pyretry
+Version: 1.0.0
+Summary: Separate your retry logic from your business logic
+Home-page: https://github.com/bobbyrenwick/pyretry
+Author: Bob Renwick
+Author-email: bob.renwick@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
