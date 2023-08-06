@@ -1,0 +1,3 @@
+[console_scripts]
+bprc = bprc.__main__:main
+
