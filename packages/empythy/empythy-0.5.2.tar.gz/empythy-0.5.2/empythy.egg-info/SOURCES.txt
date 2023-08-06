@@ -1,0 +1,15 @@
+.gitignore
+LICENSE
+MANIFEST.in
+README.rst
+__init__.py
+requirements.txt
+setup.cfg
+setup.py
+corpora/aggregatedCorpusCleaned.csv
+corpora/aggregatedCorpusCleanedAndFiltered.csv
+empythy.egg-info/PKG-INFO
+empythy.egg-info/SOURCES.txt
+empythy.egg-info/dependency_links.txt
+empythy.egg-info/requires.txt
+empythy.egg-info/top_level.txt
