@@ -1,0 +1,63 @@
+Metadata-Version: 1.1
+Name: ObservableList
+Version: 0.0.2
+Summary: Python library for a list with an observer interface.
+Home-page: https://github.com/niccokunzmann/ObservableList
+Author: Nicco Kunzmann
+Author-email: niccokunzmann@rambler.ru
+License: LGPL
+Description: ObservableList
+        ===============
+        
+        .. image:: https://travis-ci.org/niccokunzmann/ObservableList.svg
+           :target: https://travis-ci.org/niccokunzmann/ObservableList
+           :alt: Build Status
+           
+        .. image:: https://ci.appveyor.com/api/projects/status/3fwlnw09pme0g7k0?svg=true
+           :target: https://ci.appveyor.com/project/AllYarnsAreBeautiful/observablelist
+           :alt: AppVeyor CI build status (Windows)
+           
+        .. image:: https://codeclimate.com/github/niccokunzmann/ObservableList/badges/gpa.svg
+           :target: https://codeclimate.com/github/niccokunzmann/ObservableList
+           :alt: Code Climate
+        
+        .. image:: https://codeclimate.com/github/niccokunzmann/ObservableList/badges/coverage.svg
+           :target: https://codeclimate.com/github/niccokunzmann/ObservableList/coverage
+           :alt: Test Coverage
+        
+        .. image:: https://codeclimate.com/github/niccokunzmann/ObservableList/badges/issue_count.svg
+           :target: https://codeclimate.com/github/niccokunzmann/ObservableList
+           :alt: Issue Count
+        
+        .. image:: https://badge.fury.io/py/ObservableList.svg
+           :target: https://pypi.python.org/pypi/ObservableList
+           :alt: Issue Count
+           
+        .. image:: https://img.shields.io/pypi/dm/ObservableList.svg
+           :target: https://pypi.python.org/pypi/ObservableList#downloads
+           :alt: Downloads from pypi   
+        
+        .. image:: https://landscape.io/github/niccokunzmann/ObservableList/master/landscape.svg?style=flat
+           :target: https://landscape.io/github/niccokunzmann/ObservableList/master
+           :alt: Code Health
+        
+        .. image:: https://badge.waffle.io/niccokunzmann/ObservableList.svg?label=ready&title=issues%20ready
+           :target: https://waffle.io/niccokunzmann/ObservableList
+           :alt: Issues ready to work on
+        
+        For installation instructions and more, `see the documentation
+        <http://ObservableList.readthedocs.io/>`__.
+        
+Keywords: knitting ayab fashion
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Artistic Software
+Classifier: Topic :: Home Automation
+Classifier: Topic :: Utilities
+Classifier: Intended Audience :: Manufacturing
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Development Status :: 5 - Production/Stable
