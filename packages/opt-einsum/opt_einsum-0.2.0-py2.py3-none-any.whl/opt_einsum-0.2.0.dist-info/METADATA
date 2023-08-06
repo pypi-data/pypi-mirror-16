@@ -1,0 +1,28 @@
+Metadata-Version: 2.0
+Name: opt-einsum
+Version: 0.2.0
+Summary: Optimizing numpys einsum function
+Home-page: https://github.com/dgasmith/opt_einsum
+Author: Daniel Smith
+Author-email: dgasmith@icloud.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: numpy (>=1.7)
+Provides-Extra: docs
+Requires-Dist: numpydoc; extra == 'docs'
+Requires-Dist: sphinx (==1.2.3); extra == 'docs'
+Requires-Dist: sphinx-rtd-theme; extra == 'docs'
+Requires-Dist: sphinxcontrib-napoleon; extra == 'docs'
+Provides-Extra: tests
+Requires-Dist: pytest; extra == 'tests'
+Requires-Dist: pytest-cov; extra == 'tests'
+Requires-Dist: pytest-pep8; extra == 'tests'
+Requires-Dist: tox; extra == 'tests'
+
+UNKNOWN
+
+
