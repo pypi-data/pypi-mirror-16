@@ -1,0 +1,13 @@
+README.rst
+setup.cfg
+setup.py
+vimeo_dl/__init__.py
+vimeo_dl/compat.py
+vimeo_dl/extractor.py
+vimeo_dl/vimeo.py
+vimeo_dl/vimeo_internal.py
+vimeo_dl/vimeo_shared.py
+vimeo_dl.egg-info/PKG-INFO
+vimeo_dl.egg-info/SOURCES.txt
+vimeo_dl.egg-info/dependency_links.txt
+vimeo_dl.egg-info/top_level.txt
