@@ -1,0 +1,37 @@
+Metadata-Version: 2.0
+Name: tet.deform
+Version: 0.1
+Summary: Deform integration for tet
+Home-page: http://anttipatterns.com
+Author: Antti Haapala
+Author-email: antti@anttipatterns.com
+License: UNKNOWN
+Keywords: web wsgi bfg pylons pyramid
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Framework :: Pyramid
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Python Software Foundation License
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Requires-Dist: deform (>=2.0a2)
+Requires-Dist: js.deform (>=2.0a2)
+Requires-Dist: tet.fanstatic
+
+tet.deform
+==========
+
+Deform integration for Tet.
+
+
+2015-09-04  Antti Haapala  <antti@haapala.name>
+
+    * initial version
+
+
+
