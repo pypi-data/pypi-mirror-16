@@ -1,0 +1,5 @@
+README.rst
+esf.egg-info/PKG-INFO
+esf.egg-info/SOURCES.txt
+esf.egg-info/dependency_links.txt
+esf.egg-info/top_level.txt
