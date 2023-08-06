@@ -1,0 +1,9 @@
+include *.rst
+include *.txt
+include *.py
+include buildout.cfg
+recursive-include docs *
+recursive-include redturtle *
+
+global-exclude *pyc
+global-include *.mo
