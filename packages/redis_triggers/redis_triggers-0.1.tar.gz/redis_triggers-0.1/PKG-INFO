@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: redis_triggers
+Version: 0.1
+Summary: Redis Key events that executes a function written by you such as on expiry
+Home-page: https://github.com/abhishek246/redis_triggers.git
+Author: Abhishek K gowda
+Author-email: abhishek.k6006@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/abhishek246/redis_triggers.git/tarball/0.1
+Description: UNKNOWN
+Keywords: redis,redis-triggers,redis_triggers,execute function on expiry of a key redis
+Platform: UNKNOWN
