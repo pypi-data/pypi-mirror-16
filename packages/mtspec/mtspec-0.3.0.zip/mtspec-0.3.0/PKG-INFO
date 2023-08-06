@@ -1,0 +1,58 @@
+Metadata-Version: 1.1
+Name: mtspec
+Version: 0.3.0
+Summary: Python bindings for multitaper `mtspec` f90 Library.
+Home-page: https://github.com/krischer/mtspec
+Author:  Lion Krischer, Moritz Beyreuther, and German A. Prieto
+Author-email: krischer@geophysik.uni-muenchen.de
+License: GNU General Public License, version 3 (GPLv3)
+Description: Python wrapper for the multitaper `mtspec` Fortran library::
+        
+            Prieto, G. A., R. L. Parker, F. L. Vernon. (2009),
+            A Fortran 90 library for multitaper spectrum analysis,
+            Computers and Geosciences, 35, pp. 1701-1710.
+        
+        For more information see: https://github.com/krischer/mtspec
+        
+        ::
+        
+            Main Changes in 0.3.0 (July 25, 2016)
+            -------------------------------------
+            * Probably a lot (its been a while since a proper release ...).
+            * Full CI integration.
+            * Nicer docs.
+            * Support for Python 2.7, 3.3, 3.4, and 3.5.
+            * Installs on a lot more platforms.
+        
+            Main Changes in 0.2.6
+            ---------------------
+            * Bugfix #6, access violation on windows
+            * Refactoring parts of the underlying fortran code, now memchecked
+            * Bugfix for NaNs in spectra
+            * Bugfix RMS calculation in tests
+        
+        
+        :copyright:
+            Lion Krischer, Moritz Beyreuther, and German A. Prieto
+        :license:
+            GNU General Public License (GPL)
+Keywords: mtspec,multitaper,seismology,waveform,signal,processing,taper,wigner,ville,multitaper,seismology,signal processing
+Platform: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: MacOS
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Physics
