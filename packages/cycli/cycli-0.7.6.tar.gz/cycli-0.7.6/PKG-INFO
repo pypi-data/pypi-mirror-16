@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: cycli
+Version: 0.7.6
+Summary: A Command Line Interface for Cypher.
+Home-page: https://github.com/nicolewhite/cycli
+Author: Nicole White
+Author-email: nmwhite0131@gmail.com
+License: MIT
+Description: Syntax highlighting and autocomplete.
+Keywords: neo4j cypher cli syntax autocomplete
+Platform: UNKNOWN
