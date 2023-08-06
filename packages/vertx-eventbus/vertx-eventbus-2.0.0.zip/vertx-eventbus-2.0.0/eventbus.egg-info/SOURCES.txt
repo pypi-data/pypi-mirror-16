@@ -1,0 +1,5 @@
+setup.py
+eventbus.egg-info/PKG-INFO
+eventbus.egg-info/SOURCES.txt
+eventbus.egg-info/dependency_links.txt
+eventbus.egg-info/top_level.txt
