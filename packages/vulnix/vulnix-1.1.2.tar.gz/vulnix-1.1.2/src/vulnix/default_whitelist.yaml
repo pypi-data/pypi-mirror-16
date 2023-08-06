@@ -1,0 +1,31 @@
+# Default vulnix whitelist listing common exceptions. The entries given below
+# should be common sense for every Nix installation.
+-
+    cve: CVE-2015-2503
+    comment: |
+         microsoft access, accidentally matching the 'access' derivation
+
+         https://plan.flyingcircus.io/issues/18544
+
+-
+    name: libxslt
+
+-
+    cve: CVE-2015-3197
+
+-
+    cve: CVE-2015-7696
+    name: unzip
+
+-
+    name: libxslt
+    version: '2.0'
+
+-
+    vendor: microsoft
+    product: access
+
+
+-
+    vendor: gethook
+    product: hook
