@@ -1,0 +1,3 @@
+include jds_write/templates/html/nomarkdown_noinput.tpl
+include jds_write/templates/nomarkdown_noinput.tpl
+include jds_write/nomarkdown_noinput.tpl
