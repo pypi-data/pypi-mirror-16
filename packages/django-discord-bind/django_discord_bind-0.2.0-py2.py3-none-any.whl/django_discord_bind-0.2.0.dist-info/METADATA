@@ -1,0 +1,64 @@
+Metadata-Version: 2.0
+Name: django-discord-bind
+Version: 0.2.0
+Summary: A Django app for securely associating a user with a Discord account.
+Home-page: https://github.com/mrogaski/django-discord-bind
+Author: Mark Rogaski
+Author-email: mrogaski@pobox.com
+License: MIT License
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.9
+Classifier: Framework :: Django :: 1.10
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Communications :: Chat
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Dist: Django (>=1.9)
+Requires-Dist: django-appconf (>=1.0)
+Requires-Dist: requests-oauthlib (>=0.6)
+
+django-discord-bind
+===================
+
+*A Django app for securely associating a user with a Discord account.*
+
+.. image:: https://badge.fury.io/py/django-discord-bind.svg
+    :target: https://badge.fury.io/py/django-discord-bind
+    :alt: Git Repository
+.. image:: https://travis-ci.org/mrogaski/django-discord-bind.svg?branch=master
+    :target: https://travis-ci.org/mrogaski/django-discord-bind
+    :alt: Build Status
+.. image:: https://readthedocs.org/projects/django-discord-bind/badge/?version=latest
+    :target: http://django-discord-bind.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
+This is a simple Django application that allows users to associate one or
+more Discord accounts to their Django accounts and automatically join a
+partner Discord server using the
+`OAuth2 functionality of the Discord API <https://discordapp.com/developers/docs/topics/oauth2>`_.
+
+Requirements
+------------
+
+* Python 2.7, 3.4, 3.5
+* Django 1.9, 1.10
+
+License
+-------
+
+django-discord-bind is released under the terms of the MIT license.
+Full details in LICENSE file.
+
+
+
