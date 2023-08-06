@@ -1,0 +1,9 @@
+README.rst
+setup.cfg
+setup.py
+ssltelnet/__init__.py
+ssltelnet.egg-info/PKG-INFO
+ssltelnet.egg-info/SOURCES.txt
+ssltelnet.egg-info/dependency_links.txt
+ssltelnet.egg-info/requires.txt
+ssltelnet.egg-info/top_level.txt
