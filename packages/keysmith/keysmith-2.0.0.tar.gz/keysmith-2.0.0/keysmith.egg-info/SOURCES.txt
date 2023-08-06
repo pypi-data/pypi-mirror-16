@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.rst
+keysmith.py
+setup.cfg
+setup.py
+keysmith.egg-info/PKG-INFO
+keysmith.egg-info/SOURCES.txt
+keysmith.egg-info/dependency_links.txt
+keysmith.egg-info/entry_points.txt
+keysmith.egg-info/top_level.txt
