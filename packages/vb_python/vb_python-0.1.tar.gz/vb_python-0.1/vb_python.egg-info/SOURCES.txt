@@ -1,0 +1,7 @@
+setup.py
+vb_python/__init__.py
+vb_python.egg-info/PKG-INFO
+vb_python.egg-info/SOURCES.txt
+vb_python.egg-info/dependency_links.txt
+vb_python.egg-info/not-zip-safe
+vb_python.egg-info/top_level.txt
