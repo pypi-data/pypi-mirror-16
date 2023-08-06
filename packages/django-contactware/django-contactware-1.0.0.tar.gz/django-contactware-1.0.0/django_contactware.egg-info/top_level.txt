@@ -1,0 +1,5 @@
+contactware
+contactware/management
+contactware/management/commands
+contactware/migrations
+contactware/tests
