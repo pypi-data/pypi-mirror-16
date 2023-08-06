@@ -1,0 +1,10 @@
+_somoclu_wrap.cpython-35m-darwin.so,sha256=aOK-fI4532sx-v_eZHwsT1ZULN823EUz140RxUXODg8,80712
+somoclu/__init__.py,sha256=7nYNeHX6Ix0Q2nM4YVYDFAumVwCpn1-mFUOVBPQQkyc,136
+somoclu/somoclu_wrap.py,sha256=9iN5LPRz1QvtuAvbuAjx5YO7mY8ostHkvRW9jZvW_Gc,3053
+somoclu/train.py,sha256=U4-8V7Lb_WnNG8EKNJ-uhyFXySKHDbQblKhVAme4_tU,22659
+somoclu-1.6.2.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+somoclu-1.6.2.dist-info/METADATA,sha256=Zgbq3rveNIbh78hB9xsctT5a27ns0grL9J9AGyqhuuY,761
+somoclu-1.6.2.dist-info/RECORD,,
+somoclu-1.6.2.dist-info/WHEEL,sha256=Er7DBTU_C2g_rTGCxcwhCKegQSKoYLj1ncusWiwlKwM,111
+somoclu-1.6.2.dist-info/metadata.json,sha256=mM0FpuUNmd8UpoFkOKftMlJSZxtEwDZ_ZFkBzRAAgHI,911
+somoclu-1.6.2.dist-info/top_level.txt,sha256=jtaUADap_KdWP0XOT79n6f-KIOdWd0VfBbNEjAuFCIQ,22
