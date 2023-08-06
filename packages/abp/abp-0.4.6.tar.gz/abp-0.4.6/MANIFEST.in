@@ -1,0 +1,3 @@
+include abp/static/*
+include abp/static/img/*
+include abp/static/scripts/*
