@@ -1,0 +1,68 @@
+Metadata-Version: 1.1
+Name: Orange3-Datasets
+Version: 0.1.1
+Summary: Orange interface for World Bank Data Indicator and Climate APIs
+Home-page: https://github.com/zidarsk8/orange3-datasets
+Author: Miha Zidar
+Author-email: zidarsk8@gmail.com
+License: MIT
+Download-URL: https://github.com/zidarsk8/orange3-datasets/tarball/0.1.1
+Description: Orange3 Example Add-on
+        ======================
+        
+        [![Build Status](https://travis-ci.org/zidarsk8/orange3-data-sets.svg?branch=master)](https://travis-ci.org/zidarsk8/orange3-data-sets/builds)
+        [![codecov.io](https://codecov.io/github/zidarsk8/orange3-data-sets/coverage.svg?branch=master)](https://codecov.io/github/zidarsk8/orange3-data-sets?branch=master)
+        [![Code Climate](https://codeclimate.com/github/zidarsk8/orange3-data-sets/badges/gpa.svg)](https://codeclimate.com/github/zidarsk8/orange3-data-sets)
+        [![Dependency Status](https://www.versioneye.com/user/projects/5739ad4fa0ca35005084183e/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5739ad4fa0ca35005084183e)
+        
+        This is an example add-on for [Orange3](http://orange.biolab.si). Add-on can extend Orange either 
+        in scripting or GUI part, or in both. We here focus on the GUI part and implement a simple (empty) widget,
+        register it with Orange and add a new workflow with this widget to example tutorials.
+        
+        Installation
+        ------------
+        
+        To install the add-on using pip just run
+        
+            pip install --process-dependency-links -e .
+        
+        or install with setup.py
+        
+            python setup.py install 
+        
+        To register this add-on with Orange, but keep the code in the development directory (do not copy it to 
+        Python's site-packages directory), run
+        
+            python setup.py develop
+        
+        Documentation / widget help can be built by running
+        
+            make html htmlhelp
+        
+        from the doc directory.
+        
+        Usage
+        -----
+        
+        After the installation, the widget from this add-on is registered with Orange. To run Orange from the terminal,
+        use
+        
+            python -m Orange.canvas
+        
+        The new widget appears in the toolbox bar under the section Example.
+        
+        ![screenshot](https://github.com/biolab/orange3-example-addon/blob/master/screenshot.png)
+        
+Keywords: orange3 add-on,world bank data,indicator api
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: X11 Applications :: Qt
+Classifier: Environment :: Plugins
+Classifier: Programming Language :: Python
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
