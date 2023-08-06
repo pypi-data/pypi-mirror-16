@@ -1,0 +1,14 @@
+Connor-0.4.dist-info/DESCRIPTION.rst,sha256=jCsXp0JPU8LekFgqoKL2S0uZlueV3YOJxk29vzy3Uec,6109
+Connor-0.4.dist-info/METADATA,sha256=oNF5gn2sLSGM8Z6aYConXO23hmFD8KweUGw5Tct7t4w,6952
+Connor-0.4.dist-info/RECORD,,
+Connor-0.4.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+Connor-0.4.dist-info/entry_points.txt,sha256=S59lj_IyFaTnZ6SDPjMm1sludZKNkQHD4vL-433wetU,47
+Connor-0.4.dist-info/metadata.json,sha256=h29fujt4SZGd2VV6x0r3JMd-kzqsE0U0w3au6ZSm1cA,1229
+Connor-0.4.dist-info/top_level.txt,sha256=a5U0dI1qz9rjJbd-C5T2HcJf-JqddrUkodyD2lzlh_U,7
+connor/__init__.py,sha256=XS7jokJxwt5Jz1m67HjCoJuIkOXxpZq0y16wzhrxpPU,20
+connor/__main__.py,sha256=m04ESuaj9zRcSEk8xQpRkYfQABjj374GNQAS9v_Tvno,122
+connor/command_validator.py,sha256=lZPgeS7AhITMyHDueFCF2QqkQZ7YhqNweZPhNqUiu9U,7552
+connor/connor.py,sha256=luC7yWb7ZZ9qBu_yEBVzXNL7xY9Xcm5c7XcgzX94urY,25841
+connor/familyhandler.py,sha256=rKBdO3p16a9l-FllYjp8Dus_GWvR9FdexF8_z7gqVnU,4595
+connor/samtools.py,sha256=S50ifrZRp_vV86E4n6d_gME28oPQ5_s7lCzY_ctzMlA,16185
+connor/utils.py,sha256=JdT4KAZ0iC3JhGOvQfo2AwmbcxQ4_EbYLpPWRcC0vYU,4479
