@@ -1,0 +1,26 @@
+0.0.5
+-----
+
+* Bug fix to lsm303d raw_heading
+
+0.0.4
+-----
+
+* Tidy up of read functions in bmp280
+* Fixed incorrect call to pressure method
+
+0.0.3
+-----
+
+* Python3 fix
+
+0.0.2
+-----
+
+* Bug fixes
+
+0.0.1
+-----
+
+* Initial release
+
