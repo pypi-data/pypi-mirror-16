@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: named-decorator
+Version: 0.1.4
+Summary: 
+    Utility to name wrappers based on their callees, dynamically. This makes it
+    easy to trace calls in large codebases with heavily used decorators.
+    
+Home-page: https://github.com/Yelp/named_decorator
+Author: Yelp Performance Team
+Author-email: no-reply+use_github_issues@yelp.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: all
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
