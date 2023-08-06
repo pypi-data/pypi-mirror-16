@@ -1,0 +1,7 @@
+setup.py
+asciify.egg-info/PKG-INFO
+asciify.egg-info/SOURCES.txt
+asciify.egg-info/dependency_links.txt
+asciify.egg-info/entry_points.txt
+asciify.egg-info/requires.txt
+asciify.egg-info/top_level.txt
