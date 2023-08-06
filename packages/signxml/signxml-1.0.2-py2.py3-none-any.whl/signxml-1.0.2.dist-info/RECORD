@@ -1,0 +1,11 @@
+signxml/__init__.py,sha256=R4iiqhtOZpjD6XGNaCokgxgtw7UqPvCrFH3oySL_sX0,38669
+signxml/schemas/xmldsig-core-schema.xsd,sha256=Nc-Bl9qBLIXkDVeJGzXJQYdWntR0otrIE85QkNr801w,10293
+signxml/schemas/xmldsig1-schema.xsd,sha256=m-orGKAgmw7xvzFJpWuve_evr3fYqKOo0g6a6rP8P28,900
+signxml/schemas/xmldsig11-schema.xsd,sha256=XgHXhZCn02KhS3Q74RjcDRpLGEom3UylbW2xU2o0LeI,4664
+signxml/util/__init__.py,sha256=ZiguRiqP-nq_5cg9lRz9XGGyu6Vd9oHDt6jf3o-_W98,3014
+signxml-1.0.2.dist-info/DESCRIPTION.rst,sha256=T6qY0_xGbYPX9xCuf9oIVNwhUaWEBot_3ne2VLZTXvE,10476
+signxml-1.0.2.dist-info/METADATA,sha256=jyt98gJlWvf7v0DWfUTVWHgajjC0rl-eXkMFpru3tfM,11591
+signxml-1.0.2.dist-info/RECORD,,
+signxml-1.0.2.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+signxml-1.0.2.dist-info/metadata.json,sha256=KUO9KN6HKnymG8AT7Ri5pUURz3XunCPIPxtj-WLgYW4,1257
+signxml-1.0.2.dist-info/top_level.txt,sha256=UFxQApp8IHn9VHB4OwA_BWNKDtZEYWkdLEYao2Oi-JI,8
