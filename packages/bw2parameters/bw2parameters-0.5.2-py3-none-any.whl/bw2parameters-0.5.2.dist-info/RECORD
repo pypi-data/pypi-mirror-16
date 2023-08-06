@@ -1,0 +1,11 @@
+bw2parameters/__init__.py,sha256=3EVUor4oDF7njHjiBwM_sAy0ixaEDYgr0gDaOm_0NNg,65
+bw2parameters/errors.py,sha256=0OOzKipyV3vZnt3n9P0k3B1_MNsMP1MUCKhWGD_lGLk,340
+bw2parameters/parameter_set.py,sha256=WzwQ1m5qapC6vgP1KkvRQ0FLu3SLPDt4M6UpIewAafM,8348
+bw2parameters/utils.py,sha256=0mz7havBSUAUIWd6ZyhzMG83HbvLlut2DPhrexOlbq4,1310
+bw2parameters/tests/__init__.py,sha256=W1sCzE4lp5NNDOoGKnPZxxk273swIgryS5EgQbD-zuQ,8002
+bw2parameters-0.5.2.dist-info/DESCRIPTION.rst,sha256=SuR7iGId2MADh3CoNEApNhH3KjvS1UOKdgoimJ_cV5o,3066
+bw2parameters-0.5.2.dist-info/METADATA,sha256=_lHDM-L0NH9XuDMNORftwXEYYB9p7xhftJcFW9PniZo,3376
+bw2parameters-0.5.2.dist-info/RECORD,,
+bw2parameters-0.5.2.dist-info/WHEEL,sha256=zX7PHtH_7K-lEzyK75et0UBa3Bj8egCBMXe1M4gc6SU,92
+bw2parameters-0.5.2.dist-info/metadata.json,sha256=MoWdW2AuEdTzfl7PDRHmQDydoRvWpp1eGUOEBz9x1h4,538
+bw2parameters-0.5.2.dist-info/top_level.txt,sha256=mj4dQzCAEkStcb229hirGmc1NJpgKka8aJFCgyXA2q4,14
