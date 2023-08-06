@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        mc=mc_cli:cli
+    

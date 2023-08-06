@@ -1,0 +1,14 @@
+setup.py
+mc_cli/__init__.py
+mc_cli/api.py
+mc_cli/cli.py
+mc_cli.egg-info/PKG-INFO
+mc_cli.egg-info/SOURCES.txt
+mc_cli.egg-info/dependency_links.txt
+mc_cli.egg-info/entry_points.txt
+mc_cli.egg-info/requires.txt
+mc_cli.egg-info/top_level.txt
+mc_cli/bot/__init__.py
+mc_cli/bot/instance.py
+mc_cli/bot/testing.py
+mc_cli/model/__init__.py
