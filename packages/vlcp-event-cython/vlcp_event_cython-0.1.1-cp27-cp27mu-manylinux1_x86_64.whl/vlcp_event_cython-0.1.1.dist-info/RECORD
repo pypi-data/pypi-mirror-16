@@ -1,0 +1,10 @@
+vlcp_event_cython-0.1.1.dist-info/WHEEL,sha256=K393SHwcz7KWfaAX1vI5Mn-fHxOX6ngCsqegCXacWE8,110
+vlcp_event_cython-0.1.1.dist-info/top_level.txt,sha256=JEVReFjQ2KTPyGBV6ZeR4Gxi-xBOFlOJnT2-VitC8Z4,18
+vlcp_event_cython-0.1.1.dist-info/metadata.json,sha256=FZ7muvmxWrg8m1wa0E1_faN0onHvf7IJWRNZBji_-DU,489
+vlcp_event_cython-0.1.1.dist-info/RECORD,,
+vlcp_event_cython-0.1.1.dist-info/METADATA,sha256=6JuWLFVP_Z9wwgoWi2ICndAkKR1JeZhE4xy-y2uYQgs,300
+vlcp_event_cython-0.1.1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+vlcp_event_cython/event.so,sha256=Wko7yxfmx2iT9lC_OYRozprdXTWtdKGSbYbJuWii00k,558785
+vlcp_event_cython/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vlcp_event_cython/pqueue.so,sha256=IG8DEU4FD807evz01qiqsbXmZEJzwkVAHsAiAyJp4Bc,1612341
+vlcp_event_cython/matchtree.so,sha256=Rr-Lyg8rPy9x4lIY3hWXq-6-QAochbaSXFavilf957g,329474
