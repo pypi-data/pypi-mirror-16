@@ -1,0 +1,5 @@
+    [console_scripts]
+    fseventwatcher = supervisor_event_listeners.fseventwatcher:main
+    processrestarter = supervisor_event_listeners.processrestarter:main
+    eventexec = supervisor_event_listeners.eventexec:main
+    
