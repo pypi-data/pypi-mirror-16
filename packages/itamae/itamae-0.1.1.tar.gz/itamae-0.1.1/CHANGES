@@ -1,0 +1,9 @@
+itamae CHANGES
+
+v 0.0.0 to 0.1.0
+ o PoC
+v 0.1.0
+ o tinkering
+v 0.1.1 (first release)
+ o RTAP is more user friendly requiring less 'manual' parsing of fields
+  - exposes via '.' most common found fields

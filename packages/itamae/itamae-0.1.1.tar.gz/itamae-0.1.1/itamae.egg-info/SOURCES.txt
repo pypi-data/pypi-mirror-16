@@ -1,0 +1,17 @@
+CHANGES
+LICENSE
+MANIFEST.in
+README.md
+TODO
+setup.cfg
+setup.py
+itamae/__init__.py
+itamae/bits.py
+itamae/dot11u.py
+itamae/mcs.py
+itamae/mpdu.py
+itamae/radiotap.py
+itamae.egg-info/PKG-INFO
+itamae.egg-info/SOURCES.txt
+itamae.egg-info/dependency_links.txt
+itamae.egg-info/top_level.txt

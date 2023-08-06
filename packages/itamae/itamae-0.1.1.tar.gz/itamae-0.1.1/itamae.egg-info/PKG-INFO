@@ -1,0 +1,30 @@
+Metadata-Version: 1.1
+Name: itamae
+Version: 0.1.1
+Summary: Python 802.11 MPDU and Radiotap parsing
+Home-page: http://wraith-wireless.github.io/itamae/
+Author: Dale Patterson
+Author-email: wraith.wireless@yandex.com
+License: GPL v3.0
+Download-URL: https://github.com/wraith-wireless/itamae/archive/0.1.1.tar.gz
+Description: 
+        Itamae is a simple yet robust raw 802.11 frame parser. It is designed to be easy
+        and fast to use providing all 802.11 MPDU fields/values and radiotap fields/values.
+        
+        Itamae is not designed to replace Scapy but is meant to be used when speed of
+        parsing is important.
+        
+Keywords: 802.11 wireless WLAN WiFi parser MPDU,radiotap
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: System :: Networking
+Classifier: Topic :: Utilities
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
