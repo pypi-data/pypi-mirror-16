@@ -1,0 +1,37 @@
+Metadata-Version: 1.1
+Name: LordKey
+Version: 0.0.2
+Summary: Detect the sequence element by identifier or the identifier by element of sequence.
+Home-page: https://github.com/valsorym/lordkey/
+Author: Davydenko Myroslav
+Author-email: i@valsorym.com
+License: MIT
+Description: 
+            LordKey
+        
+            It solves the problem of determining the combination in a sequence based on
+            the some alphabet with a given length, and use combination to determine the
+            iteration index.
+        
+        
+            The problem.
+        
+            There are several elements to iterate - a, b and c. How many possible
+            combinations for unique enumeration if key size is 3? Or which combination
+            is at the tenth iteration? Or which iteration corresponds the `acc`
+            combination?
+        
+            For `abc` alphabet and 3 key size can be created the next iterations:
+        
+                 0. aaa      1. aab      2. aac      3. aba      4. abb      5. abc
+                 6. aca      7. acb      8. acc      9. baa     10. bab     11. bac
+                12. bba     13. bbb     14. bbc     15. bca     16. bcb     17. bcc
+                18. caa     19. cab     20. cac     21. cba     22. cbb     23. cbc
+                24. cca     25. ccb     26. ccc
+        
+            So, the maximum number of iterations - 27, for 10 iteration corresponds to
+            `baa` combination and the `acc` combination - it is 7 iteration.
+        
+            
+Platform: UNKNOWN
+Provides: lordkey
