@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.rst
+requirements.txt
+runtests.sh
+setup.cfg
+setup.py
+cdf2cim/__init__.py
+cdf2cim/constants.py
+cdf2cim/find_files.py
+cdf2cim/find_simulations.py
+cdf2cim.egg-info/PKG-INFO
+cdf2cim.egg-info/SOURCES.txt
+cdf2cim.egg-info/dependency_links.txt
+cdf2cim.egg-info/not-zip-safe
+cdf2cim.egg-info/requires.txt
+cdf2cim.egg-info/top_level.txt
