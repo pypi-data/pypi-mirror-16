@@ -1,0 +1,10 @@
+README.rst
+setup.py
+titanium/__init__.py
+titanium/activation.py
+titanium/evaluation.py
+titanium.egg-info/PKG-INFO
+titanium.egg-info/SOURCES.txt
+titanium.egg-info/dependency_links.txt
+titanium.egg-info/requires.txt
+titanium.egg-info/top_level.txt
