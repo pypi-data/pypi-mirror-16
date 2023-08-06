@@ -1,0 +1,4 @@
+crcmod
+django
+django-cache
+mock
