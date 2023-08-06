@@ -1,0 +1,4 @@
+[console_scripts]
+snf-image-creator = image_creator.dialog_main:main
+snf-mkimage = image_creator.main:main
+

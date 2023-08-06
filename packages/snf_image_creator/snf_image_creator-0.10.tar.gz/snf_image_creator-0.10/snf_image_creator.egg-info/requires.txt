@@ -1,0 +1,5 @@
+sh
+ansicolors
+progress>=1.0.2
+kamaki>=0.9
+argparse
