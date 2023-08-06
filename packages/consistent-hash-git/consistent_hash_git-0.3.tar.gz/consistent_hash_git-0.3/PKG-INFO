@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: consistent_hash_git
+Version: 0.3
+Summary: Implements consistent hashing with Python.
+Home-page: https://github.com/yummybian
+Author: Yummy Bian
+Author-email: yummy.bian@gmail.com
+License: BSD
+Description: UNKNOWN
+Keywords: consistent hash hashing
+Platform: Any
