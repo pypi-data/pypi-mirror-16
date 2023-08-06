@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta template-name="laminate_default">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  {% block meta %}{% endblock %}
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" type="text/css" href="assets/index.css" />
+  {% block header %}{% endblock %}
+</head>
+<body>
+  {% block content %}{% endblock %}
+  <script src="assets/index.js" charset="utf-8"></script>
+  {% block body_end %}{% endblock %}
+</body>
+</html>
