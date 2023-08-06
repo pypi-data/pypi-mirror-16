@@ -1,0 +1,10 @@
+
+magic-admin.js:
+  output: gen/magic/admin.js
+  contents:
+      - MagicAdmin/js/admin.js
+
+magic-admin.css:
+  output: gen/magic/admin.css
+  contents:
+      - MagicAdmin/css/admin.css

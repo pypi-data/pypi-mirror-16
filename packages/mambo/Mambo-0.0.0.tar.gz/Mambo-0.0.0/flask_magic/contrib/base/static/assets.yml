@@ -1,0 +1,30 @@
+
+jquery.js:
+  output: gen/jquery.js
+  contents:
+      - Magic/vendor/jquery/jquery.min.js
+
+magic-all.js:
+  output: gen/magic-all.js
+  contents:
+      - Magic/vendor/bootstrap/js/bootstrap.min.js
+      #- Magic/authomatic/authomatic.js
+      - Magic/vendor/jquery-lazy/jquery.lazy.min.js
+      - Magic/jquery-oembed/jquery.oembed.js
+      - Magic/vendor/jssocials/jssocials.js
+      - Magic/vendor/js-cookie/js.cookie.js
+      - Magic/vendor/jquery-form-validator/jquery.form-validator.min.js
+      - Magic/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js
+      - Magic/lib/js/magic.js
+
+magic-all.css:
+  output: gen/magic-all.css
+  contents:
+      - Magic/vendor/bootstrap/css/bootstrap.min.css
+      - Magic/vendor/bootstrap-social/bootstrap-social.css
+      - Magic/jquery-oembed/jquery.oembed.css
+      - Magic/vendor/jssocials/jssocials.css
+      - Magic/vendor/jssocials/jssocials-theme-flat.css
+      - Magic/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css
+      - Magic/lib/css/magic.css
+

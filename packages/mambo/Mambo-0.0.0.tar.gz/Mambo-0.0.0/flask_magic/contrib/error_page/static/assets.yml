@@ -1,0 +1,5 @@
+
+magic-error.css:
+  output: gen/magic/error.css
+  contents:
+      - ErrorPage/css/error_page.css
