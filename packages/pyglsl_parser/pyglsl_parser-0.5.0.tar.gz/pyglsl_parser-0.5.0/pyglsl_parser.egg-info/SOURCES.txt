@@ -1,0 +1,11 @@
+setup.py
+glsl-parser/ast.cpp
+glsl-parser/lexer.cpp
+glsl-parser/parser.cpp
+glsl-parser/util.cpp
+pyglsl_parser/parser.cpp
+pyglsl_parser.egg-info/PKG-INFO
+pyglsl_parser.egg-info/SOURCES.txt
+pyglsl_parser.egg-info/dependency_links.txt
+pyglsl_parser.egg-info/top_level.txt
+test/test_parser.py
