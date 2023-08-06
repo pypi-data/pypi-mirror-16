@@ -1,0 +1,67 @@
+Metadata-Version: 1.1
+Name: django-rlog
+Version: 1.0.7
+Summary: Save rlog's Pub/Sub Log to Disk
+Home-page: https://github.com/django-xxx/django-rlog
+Author: Hackathon
+Author-email: kimi.huang@brightcells.com
+License: UNKNOWN
+Description: ===========
+        django-rlog
+        ===========
+        
+        Save rlog's Pub/Sub Log to Disk
+        
+        Installation
+        ============
+        
+        ::
+        
+            pip install django-rlog
+        
+        
+        Usage
+        =====
+        
+        Start rlog::
+        
+            python manage.py rlog [channel] [filename] [handler] [when] [maxBytes] [backupCount] [debug]
+        
+        
+        Start rlistlog::
+        
+            python manage.py rlistlog [key] [timeout] [filename] [handler] [when] [maxBytes] [backupCount] [debug]
+        
+        
+        Stop rlog::
+        
+            python manage.py rstop [channel]
+        
+        
+        Stop rlistlog::
+        
+            python manage.py rliststop [key]
+        
+        
+        Redis Connection
+        ================
+        
+        ::
+        
+            def get_connection():
+                for key in ['REDIS_CONN', 'REDIS_CLIENT', 'REDIS_CACHE']:
+                    if hasattr(settings, key):
+                        return getattr(settings, key)
+        
+        
+        * Get ``Redis Connection`` from settings
+        * ``Redis Connection`` in settings refer to [Django Cook Book](https://github.com/xxx-cook-book/django-cook-book/tree/master/Caches/Redis)
+Keywords: django-rlog
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Office/Business :: Financial :: Spreadsheet
