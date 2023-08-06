@@ -1,0 +1,11 @@
+python_slippery-1.0.0.dist-info/DESCRIPTION.rst,sha256=aYUnHsT0wEijd89TYoXQQwBasS9HtsI6A5QZax9Iagw,3123
+python_slippery-1.0.0.dist-info/METADATA,sha256=MyAVBrTexoW2pg-8BwMPdDxWW9TifXQOYjM42aJIrSM,4078
+python_slippery-1.0.0.dist-info/RECORD,,
+python_slippery-1.0.0.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+python_slippery-1.0.0.dist-info/metadata.json,sha256=Jwm5yjBPTUWSb7ERY_ujspD04ct_wM7PwsKMMfZVQ7Q,1181
+python_slippery-1.0.0.dist-info/top_level.txt,sha256=_ChuyzA4D0QVmWU_RkNVDopQDMeWFAq4E9cC3BGa7rw,9
+slippery/__init__.py,sha256=snzQAeJhkKUbc6UgFOXrGLc54QpWt-JmvxEgW-Z8YKM,1328
+slippery/burner_email.py,sha256=sJ0gj24T_wF4gRNKKrRsyUQPsg827eg-ebpzOS0g_EQ,5745
+slippery/parser.py,sha256=MD5_KpJEIeIgSymhsVziqgS9eQ2FGXXfMeblvUuiEVU,2395
+slippery/proxy.py,sha256=AKTsxkOSx1uylpPX5S_rJALFP2W401HU_EEf47fwVUI,1227
+slippery/validator.py,sha256=QZsltcZJujk_nVO8PAwxoH4tf4id4gieVqcNd1g-RXY,1270
