@@ -1,0 +1,12 @@
+skosprovider_sqlalchemy/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+skosprovider_sqlalchemy/providers.py,sha256=_zc-MMP1gb6TfvTg1KgrfWtckP8IEC3BdVaLeZeI06M,16245
+skosprovider_sqlalchemy/utils.py,sha256=3qXlkhS7I1FTptHDi5rxWt4LF9Q0xnMZV-EWA_gUPYc,9376
+skosprovider_sqlalchemy/models.py,sha256=W4KK-PGmYSUTOYPvSZn9J8CB4Qo-B6-zAxL7W5Idw4I,18879
+skosprovider_sqlalchemy-0.5.0.dist-info/RECORD,,
+skosprovider_sqlalchemy-0.5.0.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
+skosprovider_sqlalchemy-0.5.0.dist-info/METADATA,sha256=UJJdu5eZ-Fv_7Ev1uSSq1P5jQUX2h8ru2PZAinJEps8,2181
+skosprovider_sqlalchemy-0.5.0.dist-info/metadata.json,sha256=CWGWY60Yyptg5Gm94_jvowO2-KWMG7pqpsLrE2BecEc,1279
+skosprovider_sqlalchemy-0.5.0.dist-info/pbr.json,sha256=p9AlZnouYeTtwRpJ0N2C0vcO53qnK16Dn77s2yarBCw,47
+skosprovider_sqlalchemy-0.5.0.dist-info/top_level.txt,sha256=QJIYnOg57GlxdyDRWZqyqVJGHKHklvycsNqhFwR2TlU,24
+skosprovider_sqlalchemy-0.5.0.dist-info/entry_points.txt,sha256=HDwwJUxOXi7f9gC_n_BLDx5PINb6BSs7VUbGv-Wo5rM,170
+skosprovider_sqlalchemy-0.5.0.dist-info/DESCRIPTION.rst,sha256=8EnvvV_dQvIZIhxw9mjhTzPuWq1tEgWTmNrVKbAAM_8,1416
