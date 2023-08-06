@@ -1,0 +1,33 @@
+Metadata-Version: 2.0
+Name: transip
+Version: 0.2
+Summary: transip is a Python implementation of the TransIP SOAP API
+Home-page: https://github.com/LordGaav/python-transip
+Author: Nick Douma
+Author-email: n.douma@nekoconeko.nl
+License: GPLv3
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: POSIX :: BSD
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: Utilities
+Requires-Dist: M2Crypto
+Requires-Dist: configobj
+Requires-Dist: requests
+Requires-Dist: requests[security]
+Requires-Dist: suds
+
+UNKNOWN
+
+

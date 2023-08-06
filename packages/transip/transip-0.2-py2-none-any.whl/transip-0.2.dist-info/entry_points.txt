@@ -1,0 +1,3 @@
+[console_scripts]
+transip = transip.cli:main
+
