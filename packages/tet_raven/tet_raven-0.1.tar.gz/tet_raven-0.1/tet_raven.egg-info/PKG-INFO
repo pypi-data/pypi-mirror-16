@@ -1,0 +1,28 @@
+Metadata-Version: 1.1
+Name: tet-raven
+Version: 0.1
+Summary: Unearthly intelligent batteries-included application framework built on Pyramid
+Home-page: http://anttipatterns.com
+Author: Antti Haapala
+Author-email: antti@haapala.name
+License: UNKNOWN
+Description: tet_raven
+        =========
+        
+        raven for tet
+        
+        
+        
+Keywords: web wsgi bfg pylons pyramid
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Framework :: Pyramid
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Python Software Foundation License
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
