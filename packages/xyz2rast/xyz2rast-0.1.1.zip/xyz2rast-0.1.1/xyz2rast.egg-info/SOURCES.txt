@@ -1,0 +1,8 @@
+setup.py
+xyz2rast/__init__.py
+xyz2rast/xyz2rast.py
+xyz2rast.egg-info/PKG-INFO
+xyz2rast.egg-info/SOURCES.txt
+xyz2rast.egg-info/dependency_links.txt
+xyz2rast.egg-info/not-zip-safe
+xyz2rast.egg-info/top_level.txt
