@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: Facebook-Bot-Library
+Version: 0.1
+Summary: A facebook messaging SDK for Flask
+Home-page: https://github.com/boosted-lab/Facebook-Bot-Library
+Author: boostedLab
+Author-email: issues@boostedlab.ru
+License: UNKNOWN
+Download-URL: https://github.com/boosted-lab/Facebook-Bot-Libraryt/tarball/0.1
+Description: UNKNOWN
+Keywords: Facebook,Messenger,SDK,Bot,Flask
+Platform: UNKNOWN
