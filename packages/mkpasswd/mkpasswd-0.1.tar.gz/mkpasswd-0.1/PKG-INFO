@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: mkpasswd
+Version: 0.1
+Summary: A simple tool to create crypt hashed passwords
+Home-page: https://github.com/izzabudaka/mkpasswd
+Author: Izz Abudaka
+Author-email: izz.abudaka@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/izzabudaka/mkpasswd/tarball/0.1
+Description: UNKNOWN
+Keywords: sha512,hash,password,md5,sha256
+Platform: UNKNOWN
