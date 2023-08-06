@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: python-placebo
+Version: 1.0.0
+Summary: Placebo is a tool for mocking external API's in python applications.
+Home-page: https://github.com/huseyinyilmaz/placebo
+Author: Huseyin Yilmaz
+Author-email: yilmazhuseyin@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
