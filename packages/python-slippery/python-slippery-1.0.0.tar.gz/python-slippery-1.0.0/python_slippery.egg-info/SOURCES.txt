@@ -1,0 +1,17 @@
+COPYING
+LICENSE
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+python_slippery.egg-info/PKG-INFO
+python_slippery.egg-info/SOURCES.txt
+python_slippery.egg-info/dependency_links.txt
+python_slippery.egg-info/requires.txt
+python_slippery.egg-info/top_level.txt
+slippery/__init__.py
+slippery/burner_email.py
+slippery/parser.py
+slippery/proxy.py
+slippery/validator.py
