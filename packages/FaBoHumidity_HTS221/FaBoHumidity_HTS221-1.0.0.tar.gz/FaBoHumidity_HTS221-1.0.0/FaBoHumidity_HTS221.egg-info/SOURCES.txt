@@ -1,0 +1,7 @@
+setup.py
+FaBoHumidity_HTS221/HTS221.py
+FaBoHumidity_HTS221/__init__.py
+FaBoHumidity_HTS221.egg-info/PKG-INFO
+FaBoHumidity_HTS221.egg-info/SOURCES.txt
+FaBoHumidity_HTS221.egg-info/dependency_links.txt
+FaBoHumidity_HTS221.egg-info/top_level.txt
