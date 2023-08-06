@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+numtheory/__init__.py
+numtheory.egg-info/PKG-INFO
+numtheory.egg-info/SOURCES.txt
+numtheory.egg-info/dependency_links.txt
+numtheory.egg-info/top_level.txt
+numtheory.egg-info/zip-safe

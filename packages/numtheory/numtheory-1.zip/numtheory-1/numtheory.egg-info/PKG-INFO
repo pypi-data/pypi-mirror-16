@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: numtheory
+Version: 1
+Summary: Common number theory functions for Python
+Home-page: https://github.com/lightningleaf/numtheory
+Author: lightningleaf
+Author-email: lightningleaf0@gmail.com
+License: None
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Intended Audience :: Science/Research
