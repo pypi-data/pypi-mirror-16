@@ -1,0 +1,7 @@
+setup.py
+funniestcsjoke/__init__.py
+funniestcsjoke.egg-info/PKG-INFO
+funniestcsjoke.egg-info/SOURCES.txt
+funniestcsjoke.egg-info/dependency_links.txt
+funniestcsjoke.egg-info/not-zip-safe
+funniestcsjoke.egg-info/top_level.txt
