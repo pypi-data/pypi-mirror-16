@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: yandc
+Version: 0.2b
+Summary: Yet Another Networked Device Client module
+Home-page: https://github.com/inetuid/yandc
+Author: Matt Ryan
+Author-email: inetuid@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/inetnet/yandc/tarball/0.2
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires: paramiko
+Requires: pysnmp
