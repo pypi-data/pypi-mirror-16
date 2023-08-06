@@ -1,0 +1,2 @@
+tornado_botocore==1.0.2
+boto==2.42.0
