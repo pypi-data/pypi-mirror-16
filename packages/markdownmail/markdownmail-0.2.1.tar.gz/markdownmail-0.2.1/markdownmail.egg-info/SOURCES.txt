@@ -1,0 +1,11 @@
+README
+setup.cfg
+setup.py
+markdownmail/__init__.py
+markdownmail/styles.py
+markdownmail/tests.py
+markdownmail.egg-info/PKG-INFO
+markdownmail.egg-info/SOURCES.txt
+markdownmail.egg-info/dependency_links.txt
+markdownmail.egg-info/requires.txt
+markdownmail.egg-info/top_level.txt
