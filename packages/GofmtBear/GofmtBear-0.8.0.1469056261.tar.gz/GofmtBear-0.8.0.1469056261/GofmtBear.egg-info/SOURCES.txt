@@ -1,0 +1,7 @@
+setup.py
+GofmtBear/GofmtBear.py
+GofmtBear/__init__.py
+GofmtBear.egg-info/PKG-INFO
+GofmtBear.egg-info/SOURCES.txt
+GofmtBear.egg-info/dependency_links.txt
+GofmtBear.egg-info/top_level.txt
