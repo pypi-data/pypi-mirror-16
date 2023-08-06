@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+# EASY-INSTALL-SCRIPT: 'names==1.0.0','names'
+__requires__ = 'names==1.0.0'
+__import__('pkg_resources').run_script('names==1.0.0', 'names')
