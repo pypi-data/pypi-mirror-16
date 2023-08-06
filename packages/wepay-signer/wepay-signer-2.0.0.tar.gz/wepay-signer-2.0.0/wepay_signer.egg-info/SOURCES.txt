@@ -1,0 +1,13 @@
+LICENSE.rst
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+wepay/__init__.py
+wepay/signer/__init__.py
+wepay_signer.egg-info/PKG-INFO
+wepay_signer.egg-info/SOURCES.txt
+wepay_signer.egg-info/dependency_links.txt
+wepay_signer.egg-info/requires.txt
+wepay_signer.egg-info/top_level.txt
