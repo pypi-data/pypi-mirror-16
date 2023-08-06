@@ -1,0 +1,13 @@
+asyncwatch-0.1.dist-info/RECORD,,
+asyncwatch-0.1.dist-info/WHEEL,sha256=FO-U_qE3v9UVkqkcibgzGqYSuGIvACgOboyXHbsAhvw,109
+asyncwatch-0.1.dist-info/METADATA,sha256=DFfpxrRw2wtaD2YA-tpqVf4k_6ij62TOfI4btldba-8,777
+asyncwatch-0.1.dist-info/top_level.txt,sha256=NLvUrcHGJfWmrdnoSQK8Yjxo9M7H2mRn2IXSWqNFJJY,11
+asyncwatch-0.1.dist-info/metadata.json,sha256=g9GJxW3K9-9vwSYOw2lpLk7ztDjCzCS12CIJb0rKiO0,576
+asyncwatch-0.1.dist-info/DESCRIPTION.rst,sha256=WchSR-6K4Ll8fVJXN_lCncNnrG_z0eOLNPdKCrYQD_g,335
+asyncwatch/inotify.cpython-35m-x86_64-linux-gnu.so,sha256=KHvnlNLgienOKgMZCDTW1L2pLzausEhUJ7ip0hels3M,30098
+asyncwatch/constants.py,sha256=DVhPdyNRom9PrZbdKTjIaleSqtuFYRVrnEwre2SdJck,1329
+asyncwatch/ffibuilder.py,sha256=TPdFT0R9uZZt9aKH5CGrM03ICwAwKTzRLxppMJ0fxRA,331
+asyncwatch/__init__.py,sha256=wBfW7kX3iW4VxQVRheQ7gZFTaYK9m4orbhDRoBnrWeM,87
+asyncwatch/monitor.py,sha256=tm1MELloYu6EKM4DaXtzR1g6GcmWtkwzH9YJ0P9BtEA,4490
+asyncwatch/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+asyncwatch/tests/test_monitor.py,sha256=HPBrPfLsFUe8VawcGRvgQX1w8yomX8Br_WMN8bvRXiY,2484
