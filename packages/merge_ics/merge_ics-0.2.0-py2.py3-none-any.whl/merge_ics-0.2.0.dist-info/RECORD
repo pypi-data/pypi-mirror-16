@@ -1,0 +1,10 @@
+merge_ics/__init__.py,sha256=FVHPBGkfhbQDi_z3v0PiKJrXXqXOx0vGW_1VaqNJi7U,22
+merge_ics/__main__.py,sha256=KvQBh3UBJ2p7TRTPGjTHVq8M7ZbcFlxpu6iOMZyoaME,36
+merge_ics/merge_ics.py,sha256=BlCgVC-CDW095vSrpMKHBaZvj3D2LQ2JVcOPV4KJ_LI,2800
+merge_ics-0.2.0.dist-info/DESCRIPTION.rst,sha256=wJ3eYH1k-ywpikz6CrF66VCuLaQJAR8F1uowqF_o1qI,2803
+merge_ics-0.2.0.dist-info/METADATA,sha256=OZO3ScKlOBHAJQ6eSEyI-GOktLJCuZqJsW6qKu2-TxU,3455
+merge_ics-0.2.0.dist-info/RECORD,,
+merge_ics-0.2.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+merge_ics-0.2.0.dist-info/entry_points.txt,sha256=QMNTIp3Nj_l8X6tTVcDbiKH8h2PLlqouFP9xlE1-sOQ,56
+merge_ics-0.2.0.dist-info/metadata.json,sha256=gfNFX2ERmRcrHiMNDhj6lbWVXWgFmc_7LPxWrzOxPQU,1002
+merge_ics-0.2.0.dist-info/top_level.txt,sha256=4hutZbLM1Cv9SB24pjwBLAFIAEJ6nAXjyBwRwa39k9Q,10
