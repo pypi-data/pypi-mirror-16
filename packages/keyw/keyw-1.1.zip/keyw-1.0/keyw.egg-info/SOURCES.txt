@@ -1,0 +1,13 @@
+README.txt
+News/__init__.py
+News/admin.py
+News/apps.py
+News/models.py
+News/tests.py
+News/views.py
+News/migrations/__init__.py
+keyw.egg-info/PKG-INFO
+keyw.egg-info/SOURCES.txt
+keyw.egg-info/dependency_links.txt
+keyw.egg-info/requires.txt
+keyw.egg-info/top_level.txt

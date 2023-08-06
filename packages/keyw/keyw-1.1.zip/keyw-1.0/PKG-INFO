@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: keyw
+Version: 1.0
+Summary: layout and transcription from rus to eng, eng to rus, eng to am, am to rus
+Home-page: https://github.com/YaSargis/keyw-1.0
+Author: Kazaryan Sargis
+Author-email: basandbuddy@mail.ru
+License: MIT License
+Description: UNKNOWN
+Keywords: Armenian Russian English layout-changer transcription
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Text Processing :: Linguistic :: Python Modules
