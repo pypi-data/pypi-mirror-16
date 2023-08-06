@@ -1,0 +1,9 @@
+astunparse
+decorator
+docopt
+pathlib
+pytest
+stevedore
+tinydb
+transducer
+celery
