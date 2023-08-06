@@ -1,0 +1,7 @@
+setup.py
+GoTypeBear/GoTypeBear.py
+GoTypeBear/__init__.py
+GoTypeBear.egg-info/PKG-INFO
+GoTypeBear.egg-info/SOURCES.txt
+GoTypeBear.egg-info/dependency_links.txt
+GoTypeBear.egg-info/top_level.txt
