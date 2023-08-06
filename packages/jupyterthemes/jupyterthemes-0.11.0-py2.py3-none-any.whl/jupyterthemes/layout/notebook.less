@@ -1,0 +1,581 @@
+/*****************************************************************
+ Notebook stylization  (toolbars, lists, menus, scroll & buttons)
+*****************************************************************/
+
+/********************************************************/
+/****** SET NOTEBOOK, CELL, & OUTPUT FONT SETTINGS ******/
+/********************************************************/
+body {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    color: @notebook-fg;
+    background-color: @notebook-bg;
+    line-height: 1;
+}
+a {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    color: @notebook-fg;
+}
+div#notebook {
+    font-family: @monofont, monospace;
+    font-size: @monofontsize;
+    line-height: @cc-line-height;
+    color: @cc-input-fg;
+}
+
+/*********************************************************/
+/*** INTRO-PAGE TOOLBAR, LIST CONTAINERS, AND NAV TABS ***/
+/*********************************************************/
+div#notebook_toolbar div.dynamic-instructions {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    display: inline-block;
+}
+.toolbar_info {
+    font-family: @notebook-fontfamily;
+    color: @notebook-fg;
+    border: none;
+    text-shadow: none !important;
+}
+.list_container {
+    font-size: @nb-fontsize-sub;
+    color: @notebook-fg;
+    border: none;
+    text-shadow: none !important;
+}
+.list_container > div {
+    border-bottom: 1px solid @selected-third;
+    font-size: @nb-fontsize-sub;
+}
+.list_container a {
+    font-size: @nb-fontsize-sub;
+    color: @notebook-fg;
+    border: none;
+    text-shadow: none !important;
+}
+div.list_container a:hover {
+    color: @selected-fg;
+}
+.list_header {
+    font-weight: normal;
+    background-color: @notebook-bg;
+    color: @notebook-fg;
+}
+div#notebook_list_header.row.list_header {
+    background-color: @notebook-bg;
+}
+ul#selector-menu.dropdown-menu > li > a {
+    padding: none;
+}
+#tree-selector {
+    padding: 0px;
+}
+div.list_item:hover {
+    background-color: @selected-tenth;
+}
+.breadcrumb>li {
+    font-size: @nb-fontsize-sub;
+    color: @notebook-fg;
+    border: none;
+    text-shadow: none !important;
+}
+div.tab-content > .active {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    line-height: 1.45;
+    display: block;
+    padding-top: 4px;
+}
+ul#tabs a {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    font-style: normal;
+    border-color: transparent;
+    text-shadow: none !important;
+}
+.nav-tabs {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    font-style: normal;
+    text-shadow: none !important;
+    border-color: transparent;
+    border-bottom: 1px solid @selected-third;
+}
+.nav-tabs > li > a:hover,
+.nav-tabs > li > a:active,
+.nav-tabs > li > a:focus,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    font-style: normal;
+    color: @selected-fg-bright;
+    background: @notebook-bg;
+    background-color: @selected-bg;
+    border-color: transparent;
+    background-image: none;
+    text-shadow: none !important;
+}
+
+/********************************************************/
+/***************** NOTEBOOK PAGE SETTINGS ***************/
+/********************************************************/
+div#notebook {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    padding-top: 5px;
+}
+.notebook_app {
+    background-color: @notebook-bg;
+}
+#notebook-container {
+    padding: 13px;
+    background-color: @notebook-bg;
+    min-height: 0px;
+    box-shadow: none;
+}
+.container {
+    width: @cell-width;
+}
+
+/********************************************************/
+/************** NOTEBOOK PAGE HEADER AND NA *************/
+/********************************************************/
+.notebook_app #header {
+    box-shadow: none !important;
+    background-color: @notebook-bg;
+    border-bottom: 1px solid @selected-third;
+}
+#header {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    box-shadow: none;
+    background-color: @notebook-bg;
+}
+#header .header-bar {
+    background: @notebook-bg;
+    background-color: @notebook-bg;
+}
+body > #header .header-bar {
+    width: 100%;
+    background: @notebook-bg;
+    margin-bottom: -1px;
+}
+.navbar-default {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    background-color: @notebook-bg;
+    border-color: @notebook-bg;
+    padding-bottom: 0px;
+    border: 0;
+}
+#menubar {
+    padding-top: 10px;
+    background-color: @notebook-bg;
+}
+#menubar .navbar, .navbar-default {
+    background-color: @notebook-bg;
+    margin-bottom: 0px;
+}
+.navbar-default .navbar-nav > li > a {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    color: @notebook-fg;
+    display: block;
+    line-height: 1.2;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: @selected-fg;
+    background-color: @selected-third;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: @selected-fg-bright;
+    background-color: @selected-active;
+    border-color: @selected-active;
+}
+.nav {
+    margin-bottom: 0;
+}
+/****************************************/
+/********* ICONS and INDICATORS *********/
+/****************************************/
+.command_mode .modal_indicator:before {
+    font-size: @nb-fontsize-sub;
+}
+.item_icon {
+    color: @item-blue;
+}
+.item_buttons .kernel-name {
+    color: @item-blue;
+}
+.running_notebook_icon:before {
+    color: @item-green !important;
+}
+.item_buttons .running-indicator {
+    padding-top: 2px;
+    color: @item-green;
+}
+#modal_indicator {
+    float: right !important;
+    color: @item-cyan;
+}
+#kernel_indicator {
+    float: right !important;
+    color: @item-cyan;
+    font-size: 13pt;
+}
+#kernel_indicator .kernel_indicator_name {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 13pt;
+}
+#project-name > .breadcrumb {
+    font-weight: normal;
+    color: @item-cyan;
+}
+.notification_widget.info {
+    color: #fff;
+    background-color: @item-cyan;
+    border-color: @item-cyan;
+    width: 100%;
+}
+span.checkpoint_status, span.autosave_status {
+    font-size: small;
+    padding-left: 10px;
+}
+div#ipython_notebook {
+    display: none;
+}
+#kernel_logo_widget, #kernel_logo_widget .current_kernel_logo {
+    display: none;
+}
+/****************************************/
+/************ DROPDOWN MENUS ************/
+/****************************************/
+.dropdown-menu {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    box-shadow: none;
+    padding: 0px;
+    text-align: left;
+    border: 2px solid @selected-third;
+    background-color: @notebook-base;
+    background: @notebook-base;
+    line-height: 1.2;
+}
+.dropdown-menu:hover {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    border: 2px solid @selected-third;
+    background-color: @notebook-base;
+    box-shadow: none;
+    line-height: 1.2;
+}
+.dropdown-header {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize;
+    display: block;
+    color: @notebook-fg;
+    text-decoration: underline;
+    text-decoration-color: @selected-third;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+.dropdown-menu > li > a {
+    font-family: @notebook-fontfamily;
+    font-size: 11pt;
+    display: block;
+    clear: both;
+    padding: 9px 19px;
+    font-weight: normal;
+    line-height: 1.2;
+    color: @notebook-fg;
+    white-space: nowrap;
+    background-color: @notebook-base;
+    background: @notebook-base;
+}
+.dropdown-menu > li > a:hover {
+    font-family: @notebook-fontfamily;
+    font-size: 11pt;
+    color: @selected-fg;
+    display: block;
+    clear: both;
+    padding: 9px 19px;
+    font-weight: normal;
+    line-height: 1.2;
+    white-space: nowrap;
+    background-color: @selected-third;
+    background: @selected-third;
+}
+.dropdown-menu .divider {
+    height: 2px;
+    margin: 0px 0px;
+    overflow: hidden;
+    background-color: @divider;
+}
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -2px;
+    margin-left: 0px;
+    padding-top: 0px;
+}
+.dropdown-menu > .disabled > a,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+    font-family: @notebook-fontfamily;
+    font-size: 11pt;
+    font-weight: normal;
+    color: @disabled;
+    padding: none;
+    display: block;
+    clear: both;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/****************************************/
+/**************** BUTTONS ***************/
+/****************************************/
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:focus,
+.open > .dropdown-toggle.btn-default:hover {
+    color: @selected-fg-bright;
+    background-color: @selected-active;
+    border-color: @selected-active;
+}
+.btn {
+    color: @notebook-fg;
+    background: @button-bg;
+    background-color: @button-bg;
+    border: 1px solid darken(@button-bg, 3%) !important;
+    border-radius: 2px;
+    box-shadow: none !important;
+    text-shadow: none;
+}
+.btn:hover {
+    color: @selected-fg-bright;
+    background: @selected-active;
+    background-color: @selected-active;
+    border-color: @selected-active;
+    background-image: none;
+}
+.btn-group > .btn-mini {
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    border-radius: 2px;
+    color: @notebook-fg;
+    background: @button-bg;
+    background-color: @button-bg;
+    box-shadow: none !important;
+    text-shadow: none;
+    background-image: none;
+}
+.btn-group > .btn-mini:hover {
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    color: @selected-fg-bright;
+    background: @selected-active;
+    background-color: @selected-active;
+    border-color: @selected-active;
+    background-image: none;
+}
+.btn-xs, .btn-group-xs > .btn {
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    border-radius: 2px;
+    display: table-row-group;
+    background: @button-bg;
+    background-color: @button-bg;
+}
+.btn-sm, .btn-group-sm > .btn {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    border-radius: 2px;
+    background: @button-bg;
+    background-color: @button-bg;
+}
+.btn-group-sm > .btn:hover {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    color: @selected-fg-bright;
+    background: @selected-active;
+    background-color: @selected-active;
+}
+.btn-group, .btn-group-vertical {
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    border-radius: 2px;
+    background: @button-bg;
+    background-color: @button-bg;
+    background-image: none;
+    vertical-align: bottom;
+}
+.btn-group-vertical:hover {
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    color: @selected-fg-bright;
+    background: @selected-active;
+    background-color: @selected-active;
+    background-image: none;
+}
+.alternate_upload .btn-upload {
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    border-radius: 2px;
+    height: inherit;
+    background: transparent;
+    background-color: @button-bg;
+    display: inline-table;
+}
+.alternate_upload .btn-upload:hover {
+    font-size: @nb-fontsize-sub;
+    font-weight: normal;
+    border-radius: 2px;
+    height: inherit;
+    color: @selected-fg-bright;
+    background: @selected-active;
+    background-color: @selected-active;
+    display: inline-table;
+}
+.alternate_upload input.fileinput {
+    display: none;
+    width: 11.5ex;
+}
+#button-select-all {
+    padding-top: 4px;
+    min-width: 50px;
+}
+button#tree-selector-btn {
+    padding-top: 4px;
+}
+button.close {
+    padding: 0px;
+    cursor: pointer;
+    background: transparent none repeat scroll 0% 0%;
+    border: 0px none;
+}
+.close {
+    float: right;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+    color: @button-color;
+    text-shadow: 0px 1px 0px @selected-tenth;
+    opacity: 0.3;
+}
+.close:hover {
+    color: @item-cyan;
+    text-shadow: 0px 1px 0px @selected-tenth;
+    opacity: 0.9;
+}
+
+/**************************************************/
+/********** MODAL, PANELS, & FORM CONTROL *********/
+/**************************************************/
+.modal-content {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    position: relative;
+    background-color: @notebook-base;
+    border: 1px solid @selected-third;
+    border-radius: 3px;
+    box-shadow: 0px 3px 9px @selected-third;
+    background-clip: padding-box;
+    outline: 0px none;
+}
+.modal-header {
+    font-family: @notebook-fontfamily;
+    font-size: @nb-fontsize-sub;
+    padding: 15px;
+    border-bottom: 1px solid @selected-half;
+    min-height: 16.4286px;
+}
+.panel-default {
+    border-color: @selected-third;
+}
+.panel {
+    font-size: @nb-fontsize-sub;
+    margin-bottom: 18px;
+    background-color: @notebook-bg;
+    color: @notebook-fg;
+    border: 0px;
+    box-shadow: none;
+}
+#running .panel-group .panel .panel-heading {
+    font-size: @nb-fontsize;
+    background-color: @notebook-bg;
+    padding: 4px 7px;
+    line-height: 22px;
+}
+#running .panel-group .panel .panel-heading a:hover {
+    font-size: @nb-fontsize;
+    color: @item-cyan;
+}
+#running .panel-group .panel .panel-body .list_container .list_item {
+    border-bottom: 1px solid @selected-half;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 4px 9px;
+    font-size: @nb-fontsize-sub;
+    color: @selected-fg;
+    background-color: @cc-input-bg;
+    background-image: none;
+    border: 1px solid @selected-third;
+    border-radius: 2px;
+    box-shadow: none;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+.list_item input:not([type="checkbox"]) {
+    margin-right: 0px;
+    padding-right: 0px;
+    height: 80%;
+    width: 30%;
+}
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid @selected-half;
+}
+.input-form-control:hover:active {
+    background-color:  @selected-tenth;
+    selected:  @selected-tenth;
+}
+
+/****************************************/
+/************** SCROLL BARS *************/
+/****************************************/
+div.output.output_scroll {
+    box-shadow: none;
+}
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.11);
+	background-color: @scroll-trough;
+	border-radius: 10px;
+}
+::-webkit-scrollbar {
+    width: 11px;
+    height: 10px;
+    background-color: @scroll-trough;
+    border-radius: 7px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    background-image:
+        -webkit-gradient(linear, 40% 0%, 75% 86%,
+            from(darken(@scrollbar, 5%)),
+            color-stop(0.5, lighten(@scrollbar, 5%)),
+            to(darken(@scrollbar, 5%)));
+    min-height: 40px;
+    border-radius: 7px;
+}
