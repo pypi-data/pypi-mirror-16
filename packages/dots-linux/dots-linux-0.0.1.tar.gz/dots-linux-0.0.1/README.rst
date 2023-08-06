@@ -1,0 +1,74 @@
+Dots…
+=====
+
+(Connect the dots!)
+
+| |Unix Build Status| |Coverage Status| |PyPI Version| |PyPI Downloads|
+
+Coming Soon
+-----------
+
+-  Manage dot-config files. (backup, restore, publish)
+-  Compose as many desktop environments as you need (work, games,
+   projects, etc.)
+-  Install a list of applications via the package manager of your
+   choice.
+-  Install AUR-applications.
+-  Install system fonts, services, and other dependencies.
+
+Getting Started
+---------------
+
+Requirements
+~~~~~~~~~~~~
+
+-  Python 3.5+
+-  xdotool
+-  wmctrl
+
+Installation
+~~~~~~~~~~~~
+
+Install Dots with pip:
+
+::
+
+    $ pip install dots-linux
+
+or directly from the source code:
+
+::
+
+    $ git clone https://github.com/hoytnix/dots.git
+    $ cd dots
+    $ python setup.py install
+
+Basic Usage
+-----------
+
+After installation, the package can be initiated from your terminal.
+
+``$ dots``
+
+Documentation
+-------------
+
+Documentation isn’t currently available in HTML-format online, however you can
+compile it:
+
+::
+
+    $ git clone https://github.com/hoytnix/dots.git
+    $ cd dots
+    $ make doc
+    $ cd docs/_build/html
+    $ xdg-open index.html
+
+.. |Unix Build Status| image:: http://img.shields.io/travis/hoytnix/dots/master.svg
+   :target: https://travis-ci.org/hoytnix/dots
+.. |Coverage Status| image:: http://img.shields.io/coveralls/hoytnix/dots/master.svg
+   :target: https://coveralls.io/r/hoytnix/dots
+.. |PyPI Version| image:: http://img.shields.io/pypi/v/dots-linux.svg
+   :target: https://pypi.python.org/pypi/Dots
+.. |PyPI Downloads| image:: http://img.shields.io/pypi/dm/dots-linux.svg
+   :target: https://pypi.python.org/pypi/Dots

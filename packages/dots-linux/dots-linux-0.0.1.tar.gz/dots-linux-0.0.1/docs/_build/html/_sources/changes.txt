@@ -1,0 +1,17 @@
+Changes
+=======
+
+This is the changelog for Dots...!
+
+This documents attempts to conform to `Keep a CHANGELOG <http://keepachangelog.com>`_.
+
+
+[0.0.1] (2016-07-22)
+--------------------
+
+Added
+^^^^^
+* Ability to dump the characteristics (position, desktop, title, etc.) of the
+  windows open in your desktop-environment.
+* Ability to modify the dimensions and positions of windows on your desktop.
+* Includes a simple demo.
