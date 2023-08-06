@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+SVN_Ignore.egg-info/PKG-INFO
+SVN_Ignore.egg-info/SOURCES.txt
+SVN_Ignore.egg-info/dependency_links.txt
+SVN_Ignore.egg-info/entry_points.txt
+SVN_Ignore.egg-info/top_level.txt
+src/__init__.py
+src/cli.py
+src/svn_ignore.py
+test/test_cli.py
+test/test_svn_ignore.py
