@@ -1,0 +1,15 @@
+HISTORY.rst
+MANIFEST.in
+README.rst
+setup.py
+awordaday/__init__.py
+awordaday/generators.py
+awordaday.egg-info/PKG-INFO
+awordaday.egg-info/SOURCES.txt
+awordaday.egg-info/dependency_links.txt
+awordaday.egg-info/not-zip-safe
+awordaday.egg-info/top_level.txt
+awordaday/django/__init__.py
+awordaday/django/middleware.py
+samples/excuses.txt
+samples/marvel-names.txt
