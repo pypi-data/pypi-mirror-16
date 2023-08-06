@@ -1,0 +1,18 @@
+Metadata-Version: 2.0
+Name: strictdict3
+Version: 0.4.5
+Summary: Strict Dict
+Home-page: https://github.com/PushAMP/strictdict3
+Author: Dmitry Zhiltsov
+Author-email: dzhiltsov@me.com
+License: MIT
+Platform: any
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: msgpack-python (==0.4.8)
+
+UNKNOWN
+
+

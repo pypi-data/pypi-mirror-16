@@ -1,0 +1,16 @@
+strictdict/__init__.py,sha256=JLoR4xIX1uEXgxjm-rE4KTphDZCla4ZlLRsmaDGxi-4,84
+strictdict/api/__init__.py,sha256=3HyKG55FBz_SAQYuojN9b1Ef8s8EEVkT0k0tfwUI_fE,1358
+strictdict/fields/__init__.py,sha256=STBY57xk5HJ83ZIuXP-8AilJLLzbaEyJtg_iFtAb4XY,5341
+strictdict/simplifiers/__init__.py,sha256=TN26IjpHWwa8v3NgGJZySfoDg8yhROJlzdqaNjej3FU,2848
+strictdict/strictbase/__init__.py,sha256=S_GoYOixtrFfqWLK4xwUVG9tn_nG9uRAL7_YKK3cREI,26
+strictdict/strictbase/strictdict.py,sha256=rjyNt8IEbDrYnX3hZmwofHNmXHvjo0ibCY_a4xMSd4U,7945
+strictdict/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+strictdict/tests/test_fields.py,sha256=TrfxduQtvgUyS4A2BIudneYMK7wDAt7BY1looHRpnE8,1656
+strictdict/tests/test_strict_dict.py,sha256=Nh1QSQQuTixJlD41KzbDoDJmO5Y3D5xg-NrJJE7at74,10790
+strictdict/validators/__init__.py,sha256=VAMosfm6l_o3mBEWKSfUjHUg_ryAxN_MfpbSMHgBTEI,4802
+strictdict3-0.4.5.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+strictdict3-0.4.5.dist-info/METADATA,sha256=iAXq_A0XxK48d6XeAgOZ9z3xJ1URArWY1x0MNxf3iVM,470
+strictdict3-0.4.5.dist-info/RECORD,,
+strictdict3-0.4.5.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+strictdict3-0.4.5.dist-info/metadata.json,sha256=uRuv3ftye-ybEgfYXbNeDkk5KdxBKEGohzRzCu8fUMA,758
+strictdict3-0.4.5.dist-info/top_level.txt,sha256=wqkZHE8xBp9YT-Z94JxY_T_6JMJ2NWYmdZ_x2_HMnvU,11
