@@ -1,0 +1,137 @@
+MANIFEST.in
+setup.py
+pyFresnel/COPYING
+pyFresnel/README
+pyFresnel/__init__.py
+pyFresnel/constants.py
+pyFresnel/effective_medium.py
+pyFresnel/fresnel.py
+pyFresnel/materials.py
+pyFresnel/optical_plate.py
+pyFresnel/pyFresnel.pdf
+pyFresnel/uniaxial_plate.py
+pyFresnel/uniaxial_plate2.py
+pyFresnel/blogger/Thumbs.db
+pyFresnel/blogger/Absorption by a Stack of Slabs (3)/Anisotropic_ThinFilm_example.py
+pyFresnel/blogger/Absorption by a Stack of Slabs (3)/Thumbs.db
+pyFresnel/blogger/Absorption by a Stack of Slabs (3)/Transfer_Matrix.py
+pyFresnel/blogger/Absorption by a Stack of Slabs (3)/Uniaxial_Thin_Film.png
+pyFresnel/blogger/Absorption by a Stack of Slabs (3)/Uniaxial_Thin_Film.svg
+pyFresnel/blogger/Absorption by a Stack of Slabs (3)/Uniaxial_Thin_Film_spectra.png
+pyFresnel/blogger/Absorption by a Stack of Slabs (3)/matplotlibrc
+pyFresnel/blogger/Effective Medium/Effective Medium.zip
+pyFresnel/blogger/Effective Medium/Effective_Medium_Thin_Film.svg
+pyFresnel/blogger/Effective Medium/Effective_Medium_example.png
+pyFresnel/blogger/Effective Medium/Effective_Medium_example_B.png
+pyFresnel/blogger/Effective Medium/Thumbs.db
+pyFresnel/blogger/Effective Medium/Transfer_Matrix.py
+pyFresnel/blogger/Effective Medium/Uniaxial_Plate2.py
+pyFresnel/blogger/Effective Medium/effective_medium.py
+pyFresnel/blogger/Effective Medium/material_class.py
+pyFresnel/blogger/Optical Absorption by a Slab (1)/Thumbs.db
+pyFresnel/blogger/Optical Absorption by a Slab (1)/slab_abs_45degl_inc.png
+pyFresnel/blogger/Optical Absorption by a Slab (1)/slab_abs_45degl_inc.svg
+pyFresnel/blogger/Optical Absorption by a Slab (1)/slab_abs_45degl_inc_b.png
+pyFresnel/blogger/Optical Absorption by a Slab (1)/slab_abs_45degl_inc_c.png
+pyFresnel/blogger/Optical Absorption by a Slab (1)/slab_abs_normal_inc.png
+pyFresnel/blogger/Optical Absorption by a Slab (1)/slab_abs_normal_inc.svg
+pyFresnel/blogger/Optical Absorption by a Slab (1)/slab_abs_normal_inc_b.png
+pyFresnel/blogger/Optical Absorption by a Slab (1)/slab_abs_normal_inc_c.png
+pyFresnel/blogger/Optical Absorption by a Slab (3)/Absorbing_Slab_example.py
+pyFresnel/blogger/Optical Absorption by a Slab (3)/Fresnel_equations.py
+pyFresnel/blogger/Optical Absorption by a Slab (3)/Lorentzian_example.png
+pyFresnel/blogger/Optical Absorption by a Slab (3)/Optical Absorption by a Slab (3).zip
+pyFresnel/blogger/Optical Absorption by a Slab (3)/Optical_Plate.py
+pyFresnel/blogger/Optical Absorption by a Slab (3)/Thumbs.db
+pyFresnel/blogger/Optical Absorption by a Slab (3)/matplotlibrc
+pyFresnel/blogger/Optical Absorption by a Slab (4)/Absorbing_Anisotropic_Slab_example.py
+pyFresnel/blogger/Optical Absorption by a Slab (4)/Fresnel_equations.py
+pyFresnel/blogger/Optical Absorption by a Slab (4)/Optical Absorption by a Slab (4).zip
+pyFresnel/blogger/Optical Absorption by a Slab (4)/Optical_Plate.py
+pyFresnel/blogger/Optical Absorption by a Slab (4)/Thumbs.db
+pyFresnel/blogger/Optical Absorption by a Slab (4)/matplotlibrc
+pyFresnel/blogger/Optical Absorption by a Slab (4)/uniaxial_slab_example.png
+pyFresnel/doc/pyFresnel.lyx
+pyFresnel/examples/Absorbing_Anisotropic_Slab_example.py
+pyFresnel/examples/Absorbing_Slab_example.py
+pyFresnel/examples/Effective_Medium_test.py
+pyFresnel/examples/Glass_Interface2.py
+pyFresnel/examples/Glass_Interface3.py
+pyFresnel/examples/Gold reference mirror.py
+pyFresnel/examples/Gold reference mirror2.py
+pyFresnel/examples/Gold reference mirror3.py
+pyFresnel/examples/__init__.py
+pyFresnel/examples/pyFresnelInit.py
+pyFresnel/examples/pyFresnelInit.pyc
+pyLuminous/COPYING
+pyLuminous/README
+pyLuminous/Uniaxial_Transfer_Matrix_Theory_Notes.pdf
+pyLuminous/__init__.py
+pyLuminous/constants.py
+pyLuminous/incoherent_transfer_matrix.py
+pyLuminous/install_sopra_data.py
+pyLuminous/layer_types.py
+pyLuminous/pyFresnel.pdf
+pyLuminous/transfer_matrix.py
+pyLuminous.egg-info/PKG-INFO
+pyLuminous.egg-info/SOURCES.txt
+pyLuminous.egg-info/dependency_links.txt
+pyLuminous.egg-info/not-zip-safe
+pyLuminous.egg-info/top_level.txt
+pyLuminous/transfer_matrix_examples/AU.MAT
+pyLuminous/transfer_matrix_examples/Anisotropic_ThinFilm_example.py
+pyLuminous/transfer_matrix_examples/ITO2.MAT
+pyLuminous/transfer_matrix_examples/Isotropic_dielectric_filters.py
+pyLuminous/transfer_matrix_examples/Isotropic_incoherent_filters.py
+pyLuminous/transfer_matrix_examples/Isotropic_metallic_filters.py
+pyLuminous/transfer_matrix_examples/MQW ccp139.py
+pyLuminous/transfer_matrix_examples/Ohta1990.py
+pyLuminous/transfer_matrix_examples/Pettersson1999.py
+pyLuminous/transfer_matrix_examples/QW ISBT microcavity.py
+pyLuminous/transfer_matrix_examples/TIR.py
+pyLuminous/transfer_matrix_examples/Troparevsky2010.py
+pyLuminous/transfer_matrix_examples/al.nk
+pyLuminous/transfer_matrix_examples/au.nk
+pyLuminous/transfer_matrix_examples/effective_medium_thin_film_comparison.py
+pyLuminous/transfer_matrix_examples/finite_well.py
+pyLuminous/transfer_matrix_examples/finite_well.pyc
+pyLuminous/transfer_matrix_examples/hdpe.nk
+pyLuminous/transfer_matrix_examples/hdpe2.nk
+pyLuminous/transfer_matrix_examples/metals_nk.py
+pyLuminous/transfer_matrix_examples/metals_nk.pyc
+pyLuminous/transfer_matrix_examples/pyFresnelInit.py
+pyLuminous/transfer_matrix_examples/pyFresnelInit.pyc
+pyLuminous/transfer_matrix_examples/testing_Transfer_Matrix 2.py
+pyLuminous/transfer_matrix_examples/testing_Transfer_Matrix 3.py
+pyLuminous/transfer_matrix_examples/testing_Transfer_Matrix.py
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/PEDOT-PSS-1-2.5-k.csv
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/PEDOT-PSS-1-2.5-n.csv
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/PEDOT-PSS-1-6-k.csv
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/PEDOT-PSS-1-6-n.csv
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/PEDOT-PSS-b.png
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/PEDOT-PSS.png
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.10.png
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.11.png
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.12.png
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.4.png
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.4_k.csv
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.4_n.csv
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.5.png
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.5_k.csv
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.5_k2.csv
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.5_kb.csv
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.5_n.csv
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.6.png
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.7.png
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.8.png
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Pettersson1999fig.9.png
+pyLuminous/transfer_matrix_examples/Pettersson1999_data/Thumbs.db
+pyLuminous/transfer_matrix_examples/Troparevsky2010_data/SICR.MAT
+pyLuminous/transfer_matrix_examples/Troparevsky2010_data/Thumbs.db
+pyLuminous/transfer_matrix_examples/Troparevsky2010_data/fig2.png
+pyLuminous/transfer_matrix_examples/Troparevsky2010_data/fig3.png
+pyLuminous/transfer_matrix_examples/Troparevsky2010_data/fig4.png
+pyQW/COPYING
+pyQW/QW_modelling_RSteed_2013.pdf
+pyQW/__init__.py
+pyQW/finite_well.py

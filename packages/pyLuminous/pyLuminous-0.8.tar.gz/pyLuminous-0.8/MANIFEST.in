@@ -1,0 +1,14 @@
+include pyFresnel/COPYING
+include pyFresnel/README
+#include pyFresnel/python_header
+include pyFresnel/pyFresnel.pdf
+recursive-include pyFresnel/doc *
+recursive-include pyFresnel/blogger *
+recursive-include pyFresnel/examples *
+include pyLuminous/COPYING
+include pyLuminous/README
+include pyLuminous/pyFresnel.pdf
+include pyLuminous/Uniaxial_Transfer_Matrix_Theory_Notes.pdf
+recursive-include pyLuminous/transfer_matrix_examples *
+include pyQW/COPYING
+include pyQW/QW_modelling_RSteed_2013.pdf

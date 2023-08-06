@@ -1,0 +1,47 @@
+pyFresnel - A library for calculating various optical properties of a stack of 
+dielectric layers using the transfer matrix method. Unusually, can also include
+uniaxial layers with their extraordinary axes perpendicular to the interface
+planes.
+
+Author - Robert Steed
+Date - 10th Dec 2012 (updated 16th Aug 2016)
+Email - rjsteed@talk21.com
+License - GPL
+
+Requirements - numpy, matplotlib
+
+######################
+
+There are many such thin films codes in existance but this library can also calculate
+emission and reflection for a uniaxial layers under the condition that the layer's
+optical axis is perpendicular to the plane of the slab. This is useful for certain
+types of semiconductor structures and in my case, the intersubband transitions
+of quantum wells.
+
+These modules are for people who are happy to program in python, they rely on python's
+flexibility with regard to types and so the inputs are not rigorously checked for
+correctness (this is not a good example of rigorous programming). Despite that, 
+the code works pretty well and I have striven instead to write code that can be 
+easily understood.
+
+Each module contains example code that demonstrates the modules in action. There
+are more examples in the examples directory, they use the module init.py to find
+the pyLuminous modules in case you have chosen not to install the package into your 
+python site-packages directory.
+
+
+
+Summary:
+
+transfer_matrix.py
+Contains 6 classes Layer, LayerUniaxial, Layer_eps, LayerUniaxial_eps, Filter_base
+and Filter. See the file for a description of usage.
+
+layer_types.py
+Material types (basically materials.py adjusted for transfer_matrix compatability).
+
+
+incoherent_transfer_matrix.py
+Contains IncoherentFilter (based on Filter_base) - to mix coherent and incoherent 
+filters use this as the top class.
+
