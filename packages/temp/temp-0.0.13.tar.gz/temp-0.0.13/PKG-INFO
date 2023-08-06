@@ -1,0 +1,72 @@
+Metadata-Version: 1.0
+Name: temp
+Version: 0.0.13
+Summary: tempdir(), tempfile() functions
+Home-page: https://github.com/russianidiot/temp.py
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: .. README generated with readmemako.py (github.com/russianidiot/readme-mako.py) and .README dotfiles (github.com/russianidiot-dotfiles/.README)
+        
+        Install
+        ```````
+        
+        :code:`[sudo] pip install temp`
+        
+        Usage
+        `````
+        
+        .. code:: python
+        
+        	>>> from temp import tempdir, tempfile, TMPDIR
+        	
+        	>>> tempdir() # dir
+        	>>> tempfile() # file
+        
+        Example
+        ```````
+        
+        .. code:: python
+        
+        	>>> tempdir() # dir
+        	'/var/folders/rv/gy6_gnfs1d7_pd1518p27tsr0000gn/T/tmpqlLDxb'
+        	
+        	>>> tempfile() # file
+        	'/var/folders/rv/gy6_gnfs1d7_pd1518p27tsr0000gn/T/tmpsctFHJ'
+        	
+        	>>> TMPDIR
+        	'/var/folders/rv/gy6_gnfs1d7_pd1518p27tsr0000gn/T'
+        
+        `Examples/`_
+        
+        .. _Examples/: https://github.com/russianidiot/temp.py/tree/master/Examples
+        
+        Feedback |github_issues| |gitter| |github_follow|
+        
+        .. |github_issues| image:: https://img.shields.io/github/issues/russianidiot/temp.py.svg
+        	:target: https://github.com/russianidiot/temp.py/issues
+        
+        .. |github_follow| image:: https://img.shields.io/github/followers/russianidiot.svg?style=social&label=Follow
+        	:target: https://github.com/russianidiot
+        
+        .. |gitter| image:: https://badges.gitter.im/russianidiot/temp.py.svg
+        	:target: https://gitter.im/russianidiot/temp.py
+Keywords: temp tempdir tempfile
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Natural Language :: Russian
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.0
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
