@@ -1,0 +1,7 @@
+setup.py
+LineLengthBear/LineLengthBear.py
+LineLengthBear/__init__.py
+LineLengthBear.egg-info/PKG-INFO
+LineLengthBear.egg-info/SOURCES.txt
+LineLengthBear.egg-info/dependency_links.txt
+LineLengthBear.egg-info/top_level.txt
