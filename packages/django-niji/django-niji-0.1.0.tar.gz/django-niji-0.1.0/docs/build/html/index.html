@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Django-Niji &#8212; django-niji 0.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="django-niji 0.1.0 documentation" href="#" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="django-niji">
+<h1>Django-Niji<a class="headerlink" href="#django-niji" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div>Django-NIJI is a pluggable forum APP for Django projects</div></blockquote>
+<div class="section" id="demo">
+<h2>Demo<a class="headerlink" href="#demo" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://demo.nijiforun.com/">https://demo.nijiforun.com/</a></p>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<p>Django-NIJI is tested with the following Django and Python versions</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">Django</span> <span class="kn">from</span> <span class="mf">1.8</span> <span class="n">to</span> <span class="mf">1.10</span>
+<span class="n">Python</span> <span class="kn">from</span> <span class="mf">2.7</span> <span class="mf">3.4</span> <span class="mf">3.5</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-the-package">
+<h3>Get the package<a class="headerlink" href="#get-the-package" title="Permalink to this headline">¶</a></h3>
+<p>Django-NIJI is available on pypi, so just run</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">django</span><span class="o">-</span><span class="n">niji</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="tweak-project-settings">
+<h4>Tweak project settings<a class="headerlink" href="#tweak-project-settings" title="Permalink to this headline">¶</a></h4>
+<p>Required Settings:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">INSTALLED_APPS</span> <span class="o">+=</span> <span class="p">[</span>
+    <span class="s1">&#39;django.contrib.humanize&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;crispy_forms&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;niji&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rest_framework&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Template context_processors</span>
+<span class="n">TEMPLATES</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;OPTIONS&#39;</span><span class="p">][</span><span class="s1">&#39;context_processors&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;niji.context_processors.niji_processor&quot;</span><span class="p">)</span>
+
+<span class="c1"># Media related settings are required for avatar uploading to function properly</span>
+<span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;media&#39;</span><span class="p">)</span>
+<span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="s1">&#39;/media/&#39;</span>
+</pre></div>
+</div>
+<p>Other Settings:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Form UI Settings</span>
+<span class="n">CRISPY_TEMPLATE_PACK</span> <span class="o">=</span> <span class="s1">&#39;bootstrap3&#39;</span>
+
+<span class="c1"># Configure where to link to from the Login and Reg buttons in the forum</span>
+<span class="n">NIJI_LOGIN_URL_NAME</span> <span class="o">=</span> <span class="s2">&quot;account:login&quot;</span>
+<span class="n">NIJI_REG_URL_NAME</span> <span class="o">=</span> <span class="s2">&quot;account:reg&quot;</span>
+
+<span class="c1"># Site Name</span>
+<span class="n">NIJI_SITE_NAME</span> <span class="o">=</span> <span class="s2">&quot;A lovely forum&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-urls">
+<h4>Configure URLs<a class="headerlink" href="#configure-urls" title="Permalink to this headline">¶</a></h4>
+<p>Simply include the urls</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="k">import</span> <span class="n">url</span><span class="p">,</span> <span class="n">include</span>
+<span class="kn">from</span> <span class="nn">niji</span> <span class="k">import</span> <span class="n">urls</span> <span class="k">as</span> <span class="n">niji_urls</span>
+
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="n">url</span><span class="p">(</span><span class="s1">r&#39;&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="n">niji_urls</span><span class="p">,</span> <span class="n">namespace</span><span class="o">=</span><span class="s2">&quot;niji&quot;</span><span class="p">)),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configure-celery">
+<h4>Configure Celery<a class="headerlink" href="#configure-celery" title="Permalink to this headline">¶</a></h4>
+<p>Django-NIJI requires celery to send notifications.</p>
+<p><strong>If you already have a celery configured for you Django project, you can use just that.</strong></p>
+<p>Otherwise, follow these simple steps:</p>
+<div class="section" id="create-celery-py-inside-project-directory">
+<h5>Create <code class="docutils literal"><span class="pre">celery.py</span></code> inside project directory<a class="headerlink" href="#create-celery-py-inside-project-directory" title="Permalink to this headline">¶</a></h5>
+<p><strong>Please replace ``project_name`` with your project&#8217;s name</strong></p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">celery</span> <span class="k">import</span> <span class="n">Celery</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="k">import</span> <span class="n">settings</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s1">&#39;DJANGO_SETTINGS_MODULE&#39;</span><span class="p">,</span> <span class="s1">&#39;project_name.settings&#39;</span><span class="p">)</span> <span class="c1"># Change this to the project name</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Celery</span><span class="p">(</span><span class="s1">&#39;project_name&#39;</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">config_from_object</span><span class="p">(</span><span class="s1">&#39;django.conf:settings&#39;</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">autodiscover_tasks</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">settings</span><span class="o">.</span><span class="n">INSTALLED_APPS</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="modify-project-init-py">
+<h5>Modify project <code class="docutils literal"><span class="pre">__init__.py</span></code><a class="headerlink" href="#modify-project-init-py" title="Permalink to this headline">¶</a></h5>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">absolute_import</span>
+<span class="kn">from</span> <span class="nn">.celery</span> <span class="k">import</span> <span class="n">app</span> <span class="k">as</span> <span class="n">celery_app</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-setting-entries">
+<h5>Add setting entries<a class="headerlink" href="#add-setting-entries" title="Permalink to this headline">¶</a></h5>
+<p><strong>Please adjust some of the settings according to your case</strong></p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">BROKER_URL</span> <span class="o">=</span> <span class="s1">&#39;redis://localhost:6379/0&#39;</span>
+<span class="n">CELERY_ACCEPT_CONTENT</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;json&#39;</span><span class="p">]</span>
+<span class="n">CELERY_TASK_SERIALIZER</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
+<span class="n">CELERY_RESULT_SERIALIZER</span> <span class="o">=</span> <span class="s1">&#39;json&#39;</span>
+</pre></div>
+</div>
+<p>If you don&#8217;t want to run a celery worker separately, include these
+entries:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">BROKER_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;memory&#39;</span>
+<span class="n">CELERY_EAGER_PROPAGATES_EXCEPTIONS</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">CELERY_ALWAYS_EAGER</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Otherwise, you&#8217;ll need to run <code class="docutils literal"><span class="pre">celery</span> <span class="pre">-A</span> <span class="pre">project_name</span> <span class="pre">worker</span> <span class="pre">-l</span> <span class="pre">INFO</span></code></p>
+</div>
+</div>
+<div class="section" id="configure-editor-optional">
+<h4>Configure Editor (Optional)<a class="headerlink" href="#configure-editor-optional" title="Permalink to this headline">¶</a></h4>
+<p>If you have <code class="docutils literal"><span class="pre">pagedown</span></code> in your <code class="docutils literal"><span class="pre">settings.py</span></code>, Django-NIJI will
+enable that editor automatically.</p>
+<p>In order not to break the layout you may need to include the following
+settings:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Pagedown Editor</span>
+<span class="n">PAGEDOWN_WIDGET_CSS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;pagedown/demo/browser/demo.css&#39;</span><span class="p">,</span> <span class="s2">&quot;css/editor.css&quot;</span><span class="p">,)</span>
+<span class="n">PAGEDOWN_WIDGET_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;niji/widgets/pagedown.html&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="migrate">
+<h3>Migrate<a class="headerlink" href="#migrate" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">migrate</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="collect-static-assets">
+<h3>Collect Static Assets<a class="headerlink" href="#collect-static-assets" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">collectstatic</span>
+</pre></div>
+</div>
+<p>Now, login to your project&#8217;s admin page and add some Nodes before you can post anything.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Shen Li.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/index.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

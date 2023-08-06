@@ -1,0 +1,42 @@
+Metadata-Version: 1.1
+Name: django-niji
+Version: 0.1.0
+Summary: A pluggable forum APP for Django
+Home-page: https://github.com/ericls/niji
+Author: Shen Li
+Author-email: dustet@gmail.com
+License: MIT License
+Description: NIJI
+        ====
+        
+        |Build Status| |Documentation Status|
+        
+        Django-NIJI is a pluggable forum APP for Django projects.
+        
+        Demo
+        ^^^^
+        
+            https://demo.nijiforum.com/
+        
+        Docs
+        ^^^^
+        
+            http://django-niji.rtfd.io
+        
+        .. |Build Status| image:: https://travis-ci.org/ericls/niji.svg?branch=master
+           :target: https://travis-ci.org/ericls/niji
+        .. |Documentation Status| image:: https://readthedocs.org/projects/django-niji/badge/?version=latest
+           :target: http://django-niji.readthedocs.io/en/latest/?badge=latest
+        
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
