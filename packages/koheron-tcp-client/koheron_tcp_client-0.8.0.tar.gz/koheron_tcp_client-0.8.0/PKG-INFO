@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: koheron_tcp_client
+Version: 0.8.0
+Summary: Client for Koheron TCP server
+Home-page: https://github.com/Koheron/tcp-server/tree/master/apis/python
+Author: Koheron
+Author-email: hello@koheron.com
+License: MIT
+Description: Koheron TCP server API
+        ==========================
+        
+        https://github.com/Koheron/tcp-server
+        
+Keywords: TCP server FPGA Instrumentation
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: System :: Hardware
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
