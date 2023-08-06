@@ -1,0 +1,73 @@
+Metadata-Version: 2.0
+Name: boto3-retry
+Version: 0.1.2
+Summary: A tool for easily retring failed AWS requests via boto3 based on the error code
+Home-page: https://github.com/timmmartin19/boto3_retry
+Author: Tim Martin
+Author-email: tim@timmartin.me
+License: MIT license
+Keywords: boto3_retry
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: boto3
+Requires-Dist: retrying
+Requires-Dist: wrapt
+
+===============================
+boto3-retry
+===============================
+
+
+.. image:: https://img.shields.io/pypi/v/boto3_retry.svg
+        :target: https://pypi.python.org/pypi/boto3_retry
+
+.. image:: https://img.shields.io/travis/timmmartin19/boto3_retry.svg
+        :target: https://travis-ci.org/timmmartin19/boto3_retry
+
+.. image:: https://readthedocs.org/projects/boto3-retry/badge/?version=latest
+        :target: https://boto3-retry.readthedocs.io/en/latest/?badge=latest
+        :alt: Documentation Status
+
+.. image:: https://pyup.io/repos/github/timmmartin19/boto3_retry/shield.svg
+     :target: https://pyup.io/repos/github/timmmartin19/boto3_retry/
+     :alt: Updates
+
+
+A tool for easily retring failed AWS requests via boto3 based on the error code
+
+
+* Free software: MIT license
+* Documentation: https://boto3-retry.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+Credits
+---------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+
+=======
+History
+=======
+
+0.1.0 (2016-08-02)
+------------------
+
+* First release on PyPI.
+
+
