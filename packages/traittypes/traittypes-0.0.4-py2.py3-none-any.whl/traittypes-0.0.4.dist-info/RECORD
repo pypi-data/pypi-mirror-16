@@ -1,0 +1,11 @@
+traittypes/__init__.py,sha256=AL--R6Hsf-dwV7hcfUjBNM-9PO8IOJRcZU9z4n8dIxA,74
+traittypes/_version.py,sha256=P7f90JjUvFfzzWaZuZhLxFpSUghO_IBx0k7IOa6ITx8,72
+traittypes/traittypes.py,sha256=Qzh9f6rsBn98yb9DfEik0ZOa89lGXCvH0_SclopXPdg,1212
+traittypes/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+traittypes/tests/test_traittypes.py,sha256=La5agM3ZCtGiaoTSur5ynVlQygFFEXL3GdU1Mjwkk6U,1903
+traittypes-0.0.4.dist-info/DESCRIPTION.rst,sha256=GAMaNRvicg1EW7K4b8k_hFPGRZTXmSFvpmJnVRpP_xM,47
+traittypes-0.0.4.dist-info/METADATA,sha256=i3HpwxVni6w3EC3p8zkoHI45jfA1htOU0868NSLreuA,785
+traittypes-0.0.4.dist-info/RECORD,,
+traittypes-0.0.4.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+traittypes-0.0.4.dist-info/metadata.json,sha256=2cc5IB_835Gio_j9mwtATH9T8TIes73aOzznBfBQIJA,895
+traittypes-0.0.4.dist-info/top_level.txt,sha256=w9jK3J0KkU-Vhgi_puy6BpNpjCHRvuIBdBVT6BnNUtA,11
