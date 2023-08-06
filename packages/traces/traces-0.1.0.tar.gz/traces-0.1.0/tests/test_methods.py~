@@ -1,0 +1,41 @@
+    def __iter__(self):
+    def default(self):
+    def get(self, time):
+    def set(self, time, value, compact=False):
+    def compact(self):
+    def items(self):
+    def remove(self, time):
+    def n_measurements(self):
+    def domain(self):
+    def __len__(self):
+    def __repr__(self):
+    def iterintervals(self, value=None, n=2, pad=False, fillvalue=None):
+    def iterperiods(self, start_time=None, end_time=None):
+    def slice(self, start_time, end_time):
+    def regularize(self, window_size, sampling_period, start_time, end_time):
+    def mean(self, start_time, end_time):
+    def distribution(self, start_time=None, end_time=None,
+                     normalized=True, mask=None):
+    def _check_time_series(self, other):
+    def operation(self, other, function):
+    def _scalar_op(self, scalar, function, **kwargs):
+    def scale_by(self, scalar, **kwargs):
+    def to_bool(self, **kwargs):
+    def sum(self, other):
+    def difference(self, other):
+    def multiply(self, other):
+    def logical_and(self, other):
+    def logical_or(self, other):
+    def logical_xor(self, other):
+    def __setitem__(self, time, value):
+    def __getitem__(self, time):
+    def __delitem__(self, time):
+    def __add__(self, other):
+    def __radd__(self, other):
+    def __sub__(self, other):
+    def __mul__(self, other):
+    def __and__(self, other):
+    def __or__(self, other):
+    def __xor__(self, other):
+    def get_by_index(self, index):
+    def last(self):

@@ -1,0 +1,22 @@
+import nose
+
+import traces
+
+import random
+
+def test_compact():
+    
+    # make two time series, one compact and one not
+    test_ts = traces.TimeSeries()
+    compact_ts = traces.TimeSeries()
+    for t in range(1000):
+        value = random.randint(0, 2)
+        test_ts.set(t, value)
+        compact_ts.set(t, value, compact=True)
+
+    test_ts.compact()
+
+    # should have the same number of measurements
+    assert test_ts.n_measurements() == compact_ts.n_measurements()
+    assert test_ts.domain() == compact_ts.domain()
+
