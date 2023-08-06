@@ -1,0 +1,13 @@
+goenv/__init__.py,sha256=_1d-HEFuGT7BSuKskQmHX_RW1MT3B-6KOHyFqCPVzYw,2516
+goenv/compat.py,sha256=IX4-3246STnWXyw5iiCAfyjIO-44d3IDNDv-psEq9oM,102
+goenv/constants.py,sha256=OsoZnVKXorTCB__EaiBPFPBdTgHI4RyvZA3hdQX3f7g,616
+goenv/platform_dependent.py,sha256=mNxdQFJuTsqy67WRuaXZMKJ_SUQPnGJKlOI2UIBfp9E,5998
+goenv/utils.py,sha256=lKQ0P8BBTTVRrPMLonRxxT6Pf3H5GL4fXKNG3CaB3wA,2040
+pygoenv-1.7.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+pygoenv-1.7.0.dist-info/METADATA,sha256=fhapdzseWd0lqdOqXQcfxK1y8ap04ytn30QiBHNFhdo,386
+pygoenv-1.7.0.dist-info/RECORD,,
+pygoenv-1.7.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+pygoenv-1.7.0.dist-info/entry_points.txt,sha256=a816oUa_SD8lOkuAJVt-QABEopd7sqpSpna2RGSaLDA,38
+pygoenv-1.7.0.dist-info/metadata.json,sha256=vUvai3T8_9_ZgNA65es3_dMja767wSdMESoLBpODu-8,688
+pygoenv-1.7.0.dist-info/top_level.txt,sha256=RKyDiDzX6b6wLj0UsLcVJq2bPakQNJfNz2zDQAJ_vc0,12
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
