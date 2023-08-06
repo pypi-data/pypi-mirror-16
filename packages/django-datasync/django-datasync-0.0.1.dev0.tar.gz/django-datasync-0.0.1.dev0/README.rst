@@ -1,0 +1,47 @@
+datasync
+========
+
+Management command to sync environment data.
+
+Syncs database and media, for example when deploying an acceptance environment.
+
+Quick Start
+-----------
+
+* pip install django-datasync
+
+* add 'datasync' to INSTALLED APPS
+
+* configure settings 
+
+::
+
+ DATASYNC = {
+     'HOST': '{{ remote_host_address }}',
+     'PORT': {{ remote_ssh_port }}
+     'USER': '{{ remote_username }}',
+     'PASSWORD': '{{ remote_user_password }}',
+     'MEDIA_REMOTE': '{{ remote_media_directory }}',
+     'MEDIA_TARGET': '{{ local_media_directory }}',
+     'DATABASE': {
+         'HOST': '{{ db_host_address }}',
+         'USER': '{{ db_username }}',
+         'PASSWORD': '{{ db_password }}',
+         'NAME': '{{ db_name }}',
+         'PORT': {{ db_port }}
+     },
+ }
+
+
+You will now have access to the management command 'sync_environment'. Run that command from the target machine, perhaps as a cron job. Or add to ansible-playbooks setup.
+
+Supported Databases: Postgres.
+
+You will also have to edit the following postgres conf file in order to allow access from your target machine(s)
+
+``/etc/postgresql/9.3/main/pg_hba.conf``
+
+
+
+
+
