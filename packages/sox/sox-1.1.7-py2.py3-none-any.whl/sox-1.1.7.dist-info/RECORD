@@ -1,0 +1,13 @@
+sox/__init__.py,sha256=Gxx8Xr_tG_4qDHJVMyoNXaS118wTyjaEf4ZZqjzV4EI,601
+sox/combine.py,sha256=zLHK8Ud2dYd2xXOHaZtujUqc0hOkJdALEsg55mThUAA,7922
+sox/core.py,sha256=QTBn_htwo_8NHnIARNF3ZxplE7bvrLDh1fTRW5SebHc,4853
+sox/file_info.py,sha256=dLmBvDkprroJS-_h2NMVe5EKqGjKIDSWupzvCL8Cq-4,8054
+sox/transform.py,sha256=3yastTcwsL4HpixF4GrSiJD4cR7S8znLME8J8QwDxQE,57396
+sox/utilities.py,sha256=0xqAullqzAS1WjLaiHZ70CfdPjLaNvvJyAQxByYv-2g,2862
+sox-1.1.7.dist-info/DESCRIPTION.rst,sha256=tmig9ReU0VoPQiY9kOVlexj52vDhrzN8fvnVej_GHJc,29
+sox-1.1.7.dist-info/METADATA,sha256=QeIh7XzEEc-R3-BfbF5Cw9hHWoL4-CePzqsuiiD-o_Y,695
+sox-1.1.7.dist-info/RECORD,,
+sox-1.1.7.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+sox-1.1.7.dist-info/metadata.json,sha256=-EGJqVNhpfbvEVECYCF-OtAk5rOFtW5GtXZacl3Flgc,735
+sox-1.1.7.dist-info/pbr.json,sha256=QwWZlOOldN_QPqOnKWIm_wQUZRDCOQ3Wuwcs2BrvZ48,47
+sox-1.1.7.dist-info/top_level.txt,sha256=7p10ZwbiSGrQeo7iZYY5zfZ-QzPmWqn-InQEFseJpT8,4
