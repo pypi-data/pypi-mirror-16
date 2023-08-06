@@ -1,0 +1,9 @@
+elastic_doc_manager-0.2.0.dist-info/DESCRIPTION.rst,sha256=skHz8hW05ayfX1SZDqpNyYC7GD3wBpd-K8d-E7wWkd4,3696
+elastic_doc_manager-0.2.0.dist-info/METADATA,sha256=Nj5Rrk-tPUqd6l4AIxev3up0DfjWq48p57Hu_aePUvc,4879
+elastic_doc_manager-0.2.0.dist-info/RECORD,,
+elastic_doc_manager-0.2.0.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+elastic_doc_manager-0.2.0.dist-info/metadata.json,sha256=W2AiAX_zG40Z40XavkDYNjeZJ9OL0GO0_cdbWVymAEs,1386
+elastic_doc_manager-0.2.0.dist-info/top_level.txt,sha256=IxGEIUlqrOyK-5NlkDu2qmKmYCzeDWUyv9I_b30ZpFE,16
+mongo_connector/__init__.py,sha256=QDJyS5jtJnGFsSuOx43ZvLBCOrHImm8NrZk5f9URWdk,75
+mongo_connector/doc_managers/__init__.py,sha256=QDJyS5jtJnGFsSuOx43ZvLBCOrHImm8NrZk5f9URWdk,75
+mongo_connector/doc_managers/elastic_doc_manager.py,sha256=6lk_u050bgaUJwgDf7wtZirr_GfqcMRiygZaTqptMfU,13281
