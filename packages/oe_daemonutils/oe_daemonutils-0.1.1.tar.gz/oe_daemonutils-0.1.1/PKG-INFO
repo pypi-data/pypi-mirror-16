@@ -1,0 +1,33 @@
+Metadata-Version: 1.1
+Name: oe_daemonutils
+Version: 0.1.1
+Summary: Daemon Utility Library
+Home-page: https://github.com/OnroerendErfgoed/oe_daemonutils
+Author: Flanders Heritage Agency
+Author-email: ict@onroerenderfgoed.be
+License: MIT
+Description: oe_daemonutils
+        ==============
+        
+        Utils to read and parse a feed.
+        
+        0.1.0 (25-07-2016)
+        ------------------
+        
+        -  Initial version
+        
+        0.1.1 (25-07-2016)
+        ------------------
+        
+        -  Remove oeauth requirement
+Keywords: oe daemon utility
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
