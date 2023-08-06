@@ -1,0 +1,123 @@
+{% extends "iptables/__base.html" %}
+{% load i18n %}
+
+{% block headtitle %}{% trans 'Edit Chain &middot; Silent Dune' noop %}{% endblock %}
+
+{% block page-content %}
+
+  <ol class="breadcrumb">
+    <li><a href="/dashboard/">Dashboard</a></li>
+    <li><a href="/rules/machine_subsets/">Chains</a></li>
+    <li>Create Chain</li>
+  </ol>
+
+
+  <h3 class="page-header">Create Chain</h3>
+  
+ 
+    
+  <div class=" col-xs-0 col-sm-0 col-md-1 col-lg-2"></div>
+  
+  <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">    
+    <div class="panel-group">
+      <form id="chainset_form"  role="form" method="POST" action="#">{% csrf_token %}
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h4 class="panel-title">Create Chain</h4>
+        </div>
+        <div class="panel-body">
+           <div class="col-xs-12 col-sm-10 col-md-9 col-lg-9" > 
+            <div class="input-group input-group-sm" >
+              <span class="input-group-addon  ">Chain Name</span>
+              <input type="text" class="form-control" aria-label="..." value="" name="chain_name" id="chain_name" >
+            </div>
+          </div>    
+          
+          <div class="col-xs-12 col-sm-10 col-md-9 col-lg-9" >                     
+            <div class="input-group input-group-sm" style="margin-top: 10px;" >
+              <span class="input-group-addon input-group-rule">Platform</span>
+              <input type="text" class="form-control" aria-label="..." value="IPTables" name="platform" id="platform" >
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" id="platform-dd">
+                  {% for platform in platforms %}
+                  <li><a href="#">{{ platform.1 }}</a></li>
+                  {% endfor %}                  
+                </ul>
+              </div>   
+            </div>
+          </div>  
+            
+          <div class="col-xs-12 col-sm-10 col-md-9 col-lg-9" >            
+            <div class="input-group input-group-sm" style="margin-top: 10px;" >
+              <span class="input-group-addon input-group-rule">Slot</span>
+              <input type="text" class="form-control" aria-label="..." value="Administration" name="slots" id="slots" >
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default dropdown-toggle"   data-toggle="dropdown" 
+                        aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                <ul class="dropdown-menu dropdown-menu-right" id="slots-dd">
+                  {% for slot in slots %}
+                  <li><a href="#">{{ slot.1 }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>   
+            </div>
+          </div>
+          
+          <div class="col-xs-12 col-sm-10 col-md-9 col-lg-9" >              
+            <div class="input-group input-group-sm" style="margin-top: 10px;">
+              <span class="input-group-addon ">Description</span>
+              <input type="text" class="form-control" aria-label="..." value="" name="desc" id="desc" >
+            </div>
+          </div>
+          
+          <div class="col-xs-12 col-sm-10 col-md-9 col-lg-9" >            
+            <div class="input-group " style="margin-top: 10px;">
+              <span class="input-group-addon "  >Notes</span>
+              <textarea class="form-control" rows="4" name="notes" id="notes" ></textarea>
+            </div>   
+          </div>  
+          
+            {% if can_edit %}
+          <div class="col-xs-12 col-sm-10 col-md-9 col-lg-9" >            
+            <div class="input-group " style="margin-top: 10px;" >
+              <div style="margin: 0px; float: left;"> <input class="btn btn-primary" type="submit" value="Save"></div>
+              <div style="float: left; margin-left: 10px;"> <input class="btn btn-primary" id="create_rule" type="button" value="Create Rule"></div>
+            </div> 
+            <input type="hidden" id="rule" name="rule" value="false" >
+          </div>   
+            {% endif %}                         
+          </div>
+ 
+      </div>  <!-- close panel body -->    
+      </div>
+      </form>
+    </div>
+  </div>  
+  
+
+{% endblock page-content %}
+
+{% block script %}
+  <script>
+  var chainset_form = $("#chainset_form")
+
+  // setup for creating a rule
+  $("#create_rule").click(function(){
+    $("#rule").val("true")
+    chainset_form.submit()
+  });
+    
+  // enabled 'slots' button drop down
+  $("#slots-dd li a").click(function(){
+    $("#slots").val($(this).text());
+  });
+  
+  // enabled 'platform' button drop down
+  $("#platform-dd li a").click(function(){
+    $("#platform").val($(this).text());
+  });  
+  </script>
+{% endblock script %}

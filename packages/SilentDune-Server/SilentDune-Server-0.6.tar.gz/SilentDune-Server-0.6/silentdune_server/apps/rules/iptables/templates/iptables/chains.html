@@ -1,0 +1,57 @@
+{% extends "iptables/__base.html" %}
+{% load i18n %}
+
+{% block headtitle %}{% trans 'Bundles &middot; Silent Dune' noop %}{% endblock %}
+
+{% block page-content %}
+
+  <ol class="breadcrumb">
+    <li><a href="/dashboard/">Dashboard</a></li>
+    <li><a href="/rules/{{ module }}/">Chains</a></li>
+    <li>IPTables</li>
+  </ol>
+
+
+  <h3 class="page-header">IPTables Chains</h3>
+
+  <span style="float: right; margin-top: -52px; font-size: large;" class="glyphicon glyphicon-question-sign"></span>
+
+  <div style="margin-bottom: 10px; display: block;">
+      <input type="text" placeholder="Search Chains"> &nbsp;<span class="glyphicon glyphicon-search"></span>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Chain Group</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        {% for chain in chains %}
+        <tr>
+          <td>Administrative</td>
+          <td>Basic Admin Access</td>
+          <td>SSH Access Only</td>
+          <td >
+            <div class="btn-group" role="group" aria-label="...">
+              <a href="chain/{{ chain.id }}" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></a>
+              <a href="chain/{{ chain.id }}/edit/" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a href="chain/{{ chain.id }}/delete/" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove"></span></a>
+            </div>
+          </td>
+        </tr>   
+        
+        {% endfor %}
+        
+      </table>
+    </div>
+  </div>
+
+
+{% endblock page-content %}
+
+{% block script %}{% endblock script %}

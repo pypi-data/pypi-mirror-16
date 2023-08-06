@@ -1,0 +1,78 @@
+{% extends "accounts/__base.html" %}
+{% load i18n %}
+
+
+
+{% block headtitle %}{% trans 'View User Profile' noop %}{% endblock %}
+
+{% block page-content %}
+ 
+
+ 
+  
+<div class="row" >  
+  <div class="col-sm-12 col-md-12 col-lg-12">    
+    <ol class="breadcrumb" style="margin-top: 0px;">
+      <li><a href="/dashboard/">{% trans 'Dashboard' %}</a> </li>
+      <li><a href="/accounts/profiles/">{% trans 'Profiles' %}</a></li>
+      <li>{% trans 'View' %}</li>
+    </ol>
+    <h3 class="page-header"> {% trans 'View User Profile' %}</h3>
+  </div>
+</div>
+      
+<div class="row" > 
+  <div class=" col-md-2 col-lg-2">   
+  </div>    
+  <div class="col-sm-12 col-md-8 col-lg-8"> 
+    <form method="POST" action="#">{% csrf_token %}
+      <div class="form-group">
+        <label for="username">{% trans 'Username' %}</label>
+        <input type="text" class="form-control" id="username" name="username" disabled value="{{user_data.user.username}}">
+      </div>   
+      <div class="form-group">
+        <label for="first_name">{% trans 'First name' %}</label>  
+        <input type="text" class="form-control" id="first_name" name="first_name" disabled value="{{user_data.user.first_name}}">
+      </div>  
+      <div class="form-group">
+        <label for="last_name">{% trans 'Last name' %}</label>  
+        <input type="text" class="form-control" id="last_name" name="last_name" disabled value="{{user_data.user.last_name}}">
+      </div>
+      <div class="form-group">
+        <label for="email_address">{% trans 'Email address' %}</label>  
+        <input type="text" class="form-control" id="email_address" name="email" disabled value="{{user_data.user.email}}">
+      </div>
+      <div class="form-group">
+        <label for="email_address">{% trans 'Oauth type' %}</label> 
+          <br />
+          <label class="radio-inline">           
+            <input type="radio" name="oauth_scope" {% if user_data.oauth_scope == 'read write' %}checked{% endif %} 
+                id="oauth_scope_1" value="read write">
+            Read/Write
+          </label>   
+          <label class="radio-inline">           
+            <input type="radio" name="oauth_scope" {% if user_data.oauth_scope == 'read' %}checked{% endif %}  
+                id="oauth_scope_2" value="read">
+            Read Only
+          </label>         
+      </div>
+      <input type="hidden" name="user_id"  value="{{user_data.user.id}}" >
+    </form>
+    
+    {% if edit_msg %}
+    <div class="panel panel-info" style="margin-top: 30px;">
+        <div class="panel-heading">Message:</div>
+        <div class="panel-body">
+            {{edit_msg}}
+        </div>
+    </div>
+    {% endif %}
+    
+  </div>
+  <div class=" col-md-2 col-lg-2">   
+  </div>
+</div>
+
+{% endblock page-content %}
+
+ 

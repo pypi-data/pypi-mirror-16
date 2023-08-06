@@ -1,0 +1,39 @@
+{% extends "__auth_base.html" %}
+{% load staticfiles %}
+{% load smarturl %}
+{% load i18n %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/accounts.css' %}" />
+{% endblock stylesheet %}
+
+{% block content %}
+    {% comment %}
+    <div id="accounts-nav-box" class="uibox listbox" >
+        <h2 class="boxtitle">{% trans 'Account Settings' noop %}</h2>
+        <div id="dashboard-tab" class="scroller">
+            <ul class="listing iconized">
+                {% url 'accounts:profile' as surl %}<li id="dash-tab-overview" class="listitem icon-pencil{{ surl.active }}">
+                    <a id="lnbtn01" href="{{ surl }}" role="button" tabindex="0">{% trans 'Profile' noop %}</a>
+                </li>
+                {% url 'accounts:billing' as surl %}<li id="dash-tab-charts" class="listitem icon-chart{{ surl.active }}">
+                    <a id="lnbtn02" href="{{ surl }}" role="button" tabindex="0">{% trans 'Billing' noop %}</a>
+                </li>
+                {% url 'accounts:history' as surl %}<li id="dash-tab-packages" class="listitem icon-package{{ surl.active }}">
+                    <a id="lnbtn02" href="{{ surl }}" role="button" tabindex="0">{% trans 'Payment History' noop %}</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    {% endcomment %}
+    
+<div class="container-fluid">
+  {% block page-content %}{% endblock page-content %}
+</div>    
+
+{% endblock content %}
+
+{% block app-base-script %}
+    sdsys.set_env({'app':'accounts'});
+{% endblock app-base-script %}

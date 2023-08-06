@@ -1,0 +1,25 @@
+{% extends "__auth_base.html" %}
+{% load staticfiles %}
+{% load smarturl %}
+{% load i18n %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}" />
+{% endblock stylesheet %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="container-fluid">
+{% block page-content %}{% endblock page-content %}
+  </div>
+</div>
+
+{% endblock content %}
+
+{% block app-base-script %}
+    sdsys.set_env({'app':'dashboard'});
+{% endblock app-base-script %}
+
+
+

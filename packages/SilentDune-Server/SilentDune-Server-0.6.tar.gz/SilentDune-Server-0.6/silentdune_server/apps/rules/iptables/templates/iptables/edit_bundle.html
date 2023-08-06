@@ -1,0 +1,181 @@
+{% extends "iptables/__base.html" %}
+{% load i18n %}
+
+{% block headtitle %}{% trans 'Edit Bundle &middot; Silent Dune' noop %}{% endblock %}
+
+{% block page-content %}
+
+  <ol class="breadcrumb">
+    <li><a href="/dashboard/">Dashboard</a></li>
+    <li><a href="/rules/bundles/">Bundles</a></li>
+    <li>Bundle</li>
+  </ol>
+
+
+  <h3 class="page-header">{{ bundle.name }}</h3>
+
+  <span style="float: right; margin-top: -52px; font-size: large;" class="glyphicon glyphicon-question-sign"></span>
+
+  <form role="form" action="#" method="POST" >{% csrf_token %}
+    <div class="row">
+      <div class="col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="col-sm-10 col-md-10 col-lg-10">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Bundle Information </div>
+            <div class="panel-body">
+              <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" style="margin-top: 10px;">
+                <label for="name">Lockdown State:</label><br>
+                 <span class="label label-{% if bundle.locked_count > 0 %}danger{% else %}success{% endif %}" style="font-size: 22px; float: left; " >
+                   {% if bundle.locked_count > 0 %} Locked! {% else %} Unlocked {% endif %}
+                 </span> 
+              </div>
+              
+              {% if can_edit %}
+              <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" >
+                <label for="name">&nbsp;</label><br>
+                {% if bundle.locked_count == 0 %}
+                <input class="btn btn-warning" type="button" value="Lock" id="lock_all" style=" background: red; font-size: 22px; font-weight: bold;">
+                {% else %}
+                <input class="btn btn-warning" type="button" value="Lock" id="lock_all" style=" background: red; font-size: 22px; font-weight: bold;">
+                <input class="btn btn-warning" type="button" value="Unlock All" id="unlock_all" style=" background: green; font-size: 22px; font-weight: bold;">
+                {% endif %}
+                <div>{% if bundle.locked_count > 0 %} {{bundle.locked_count}} out of {{bundle.total_count}} nodes are locked. {% else %} Total nodes: {{bundle.total_count}} {% endif %}</div>
+              </div>
+              {% endif %}  
+              
+              <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8" style="margin-top: 20px;">
+                <label for="name">Name</label>
+                <input class="form-control" id="name" type="text" {% if not can_edit %} disabled {% endif %} value="{{ bundle.name }}" name="name">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8" style="margin-top: 10px;">
+                <label for="description">Description</label>
+                <input class="form-control" id="description" type="text" {% if not can_edit %} disabled {% endif %} value="{{ bundle.descr }}" name="desc" >
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8" style="margin-top: 10px;">
+                <label for="notes">Notes</label>
+                <textarea class="form-control" id="notes" name="notes" rows="2" {% if not can_edit %} disabled {% endif %} style="resize: vertical;" >{{ bundle.notes }}</textarea>
+              </div>
+              
+              <div class="col-xs-12 col-sm-10 col-md-5 col-lg-5" style="margin-top: 10px;">
+                <label for="name">Add Chain</label>
+                <div class="input-group input-group-sm" >
+                  <span class="input-group-addon">Select Chain</span>
+                  <input type="text" class="form-control" aria-label="..." value="{{ chains.0.name }}" {% if not can_edit %} disabled {% endif %} 
+                      name="machine_subset" id="machine_subset" style="background: white;">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" 
+                            aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                    <ul class="dropdown-menu dropdown-menu-right" id="machine_subset-dd">
+                      {% for machine_subset in available_machine_subsets %}
+                      <li><a href="#">{{ machine_subset.name }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>  
+              <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3" style="margin-top: 10px;">
+                <label for="name">&nbsp;</label>
+                <div class="input-group input-group-sm" >
+                  <span class="input-group-addon" >Chain Enabled </span>
+                  <span class="input-group-addon" >
+                    <input type="checkbox" aria-label="..." {% if not can_edit %} disabled {% endif %} name="machine_subset_enabled"  >
+                  </span>                  
+                </div>               
+              </div> 
+              
+            </div> <!-- close panel body -->
+          </div>
+        </div>
+
+    </div>
+    <br />
+    
+  
+    <div class="row">
+      <div class="col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="col-sm-10 col-md-10 col-lg-10">
+        
+           <!-- from here 
+          <div class="panel panel-{{ group.panel }}">  -->
+          <div class="panel panel-success">
+            <div class="panel-heading">All Chains</div>
+            <div class="panel-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Sel</th>
+                    <th>Chain Name</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                {% for group in machine_subset_groups %}
+                 {% for this_chain in group.sets %}
+                  <tr>
+                    <td>
+                      <input type="checkbox"  name="chain_{{this_chain.0.id}}" {% if not can_edit %} disabled {% endif %} 
+                          {% if this_chain.1 %} checked {% endif %}>
+                    </td>
+                    <td>{{ this_chain.0.name }}</td>
+                    <td>{{ this_chain.0.desc }}</td>
+                  </tr>
+                 {% endfor %}
+               {% endfor %}   
+              </table>
+            </div>
+          </div>
+          
+          <!-- from here -->
+          <input type="hidden" name="bundle_id" value="{{ bundle.id }}" >     
+          {% if can_edit %}
+          <input class="btn btn-primary" type="submit" value="Save">
+          {% endif %}   
+ 
+      </div>
+
+    </div>
+
+  </form>
+
+{% endblock page-content %}
+
+
+
+{% block script %}
+
+<script>
+  
+  $("#toggle, #lock_all, #unlock_all").click(function event(){
+    var bundle_id = "{{ bundle.id }}"
+    var parameter = this.id;
+    
+    $.ajax({
+        type: "POST",
+        url: "/rules/iptables/bundles/bundle/alter_bundle_nodes/",
+        crossDomain: true,
+        data: { csrfmiddlewaretoken: "{{ csrf_token }}",   // < here 
+                bundle_id: bundle_id,
+                parameter: parameter
+              },
+        dataType: "text",      
+    })   
+    
+        .done(function(data){
+         // alert("bundle: {{bundle.name}} is now in lockdown.");
+          location.reload();
+        })
+        
+        .fail(function(jqXHR, status, error){
+          alert("bundle: {{bundle.name}} node's update has failed.");
+        })    
+    
+    });
+  
+
+  // enabled button drop down
+  $("#machine_subset-dd li a").click(function(){
+    $("#machine_subset").val($(this).text());
+  });
+  
+</script>  
+
+{% endblock script %}

@@ -1,0 +1,46 @@
+{% extends "__auth_base.html" %}
+{% load staticfiles %}
+{% load smarturl %}
+{% load i18n %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/iptables.css' %}" />
+{% endblock stylesheet %}
+
+{% block content %}
+
+  <div class="container-fluid">
+    <div class="row">
+      {% comment %}
+      <div class="col-sm-3 col-md-2 ">
+        <ul class="nav nav-sidebar">
+          <li><a href="/rules/{{ module }}/"><span class="glyphicon glyphicon-fire"></span> All</a></li>
+          <li class="active"><a href="/rules/iptables/{{ module }}/"><span class="glyphicon glyphicon-fire"></span> IPTables</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      {% endcomment %}
+ 
+      
+      <div class="col-sm-12 col-md-12 col-lg-12">  
+
+{% block page-content %}{% endblock page-content %}
+
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
+
+
+{% block app-base-script %}
+
+    $(function () {
+      sdsys.set_env({'app':'iptables'});
+      $('[data-toggle="popover"]').popover()
+    });
+
+{% endblock app-base-script %}
+
+
+

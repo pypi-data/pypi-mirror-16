@@ -1,0 +1,141 @@
+{% extends "rules/__base.html" %}
+{% load i18n %}
+
+{% block headtitle %}{% trans 'Bundles &middot; Silent Dune' noop %}{% endblock %}
+
+{% block page-content %}
+
+  <ol class="breadcrumb">
+    <li><a href="/dashboard/">Dashboard</a></li>
+    <li><a href="/rules/bundles/">Bundles</a></li>
+     <li>Create Bundle</li>
+  </ol>
+
+
+  <h3 class="page-header">Create Bundle</h3>
+
+  <span style="float: right; margin-top: -52px; font-size: large;" class="glyphicon glyphicon-question-sign"></span>
+
+  <div style="margin-bottom: 10px; display: block;">
+          
+  </div>
+
+  <div class="row">
+    <div class=" col-md-1 col-lg-1"> </div>
+    <div class="col-sm-12 col-md-10 col-lg-10">
+       <div class="panel panel-primary">
+          <div class="panel-heading">Create Bundle</div>
+          <div class="panel-body">
+            <form id="bundle_form"  role="form" method="POST" action="#">{% csrf_token %}
+            <table class="table" style="white-space: nowrap;">
+              <tr>
+                <td></td>
+                <td>
+                  <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+                  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10" >                  
+                    <div class="input-group input-group-sm" style="float:left;">
+                      <span class="input-group-addon">Name</span>
+                      <input type="text" class="form-control" aria-label="..." value="" style="background: white;"  name="bundle_name">
+                    </div>
+                  </div>
+                </td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+                  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10" >                   
+                    <div class="input-group input-group-sm" style="float:left;">
+                      <span class="input-group-addon">Description</span>
+                      <input type="text" class="form-control" aria-label="..." value="" style="background: white;"  name="description">
+                    </div>
+                  </div>  
+                </td>
+                <td style="vertical-align: middle;"><span>Description </span></td>
+              </tr>
+              
+              <tr>
+                <td> 
+ 
+                </td>
+                <td>
+                  <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+                  <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" >                   
+                    <div class="input-group input-group-sm" >
+                      <span class="input-group-addon">Platform</span>
+                      <input type="text" class="form-control" aria-label="..." value="{{ platforms.0.1 }}" name="platform" id="platform"
+                             style="background: white;">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" 
+                                aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" id="platform-dd">
+                          {% for platform in platforms %}
+                          <li><a href="#">{{ platform.1 }}</a></li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                    <!-- /input-group -->
+                  </div>  
+                </td>
+                <td style="vertical-align: middle;"><span>Set platform for this bundle</span></td>
+              </tr>
+              
+              <tr>
+                <td></td>
+                <td>
+                  <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+                  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10" >                   
+                    <div class="input-group " >
+                      <span class="input-group-addon">Notes</span>
+                         <textarea class="form-control" id="notes" name="notes" rows="4" style="resize: vertical;" ></textarea>
+                    </div>
+                    <!-- /input-group -->
+                  </div>  
+                </td>
+                <td style="vertical-align: middle;"><span>&nbsp;</span></td>
+              </tr>
+                  
+            </table>
+            {% if can_edit %}
+            <div style="margin-left:30px;"> <input class="btn btn-primary" type="submit" value="Save"></div>
+            {% endif %}
+            </form>
+          </div>
+        </div>  <!-- end of rule details panel -->
+    </div>
+  </div>
+
+
+
+{% endblock page-content %}
+
+{% block script %}
+<script>
+
+function delete_bundle()
+{
+   var delete_bundle = false;
+   
+   delete_bundle = confirm("Are you sure you want to delete this bundle?")
+   return delete_bundle;
+}
+
+
+
+  // source platform drop down
+  $("#platform-dd li a").click(function(){
+    $("#platform").val($(this).text());
+  });
+  
+  // source platform drop down
+  $("#machine_subset-dd li a").click(function(){
+    $("#machine_subset").val($(this).text());
+  });  
+
+</script>
+
+
+{% endblock script %}

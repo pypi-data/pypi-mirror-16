@@ -1,0 +1,10 @@
+
+#
+# Views Info #
+#
+
+# Default URL
+ Default URL is set in proj/views.py
+
+# Set custom error message on field
+ form._errors['field_name'] = ErrorList([u'Some Error Message'])

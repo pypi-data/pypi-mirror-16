@@ -1,0 +1,91 @@
+{% extends "rules/__base.html" %}
+{% load i18n %}
+
+{% block headtitle %}{% trans 'Bundles &middot; Silent Dune' noop %}{% endblock %}
+
+{% block page-content %}
+
+  <ol class="breadcrumb">
+    <li><a href="/dashboard/">Dashboard</a></li>
+    <li>Bundles</li>
+  </ol>
+
+
+  <h3 class="page-header">Bundles</h3>
+
+  <span style="float: right; margin-top: -52px; font-size: large;" class="glyphicon glyphicon-question-sign"></span>
+
+  <div style="margin-bottom: 10px; display: block;">
+    <form id="bundle_search"  role="form" method="POST" action="#"  >{% csrf_token %}
+      <input type="text" placeholder="Search Bundles" name="search_term"> &nbsp;<button type="submit" ><span class="glyphicon glyphicon-search"></span></button>
+      <div class="btn-group" style="margin-left: 40px; ">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All <span class="caret"></span> 
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">All</a></li>  
+          <li><a href="#">IPTables</a></li>
+        </ul>
+      </div>
+
+    <div class="btn-group" style="margin-left: 40px; ">
+      <a  class="btn btn-primary" href="/rules/bundles/create/"  aria-haspopup="true" aria-expanded="false">
+         Create Bundle 
+      </a>
+    </div> 
+    </form>           
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Chains</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        {% for bundle in all_bundles %}
+        <tr>
+          <td>{{ bundle.platform }}</td>
+          <td>{{ bundle.name }}</td>
+          <td>{{ bundle.desc }}</td>
+          <td align="middle">{% for bundle_count in counts %}  {% if bundle.id == bundle_count.0 %} {{ bundle_count.1 }} {% endif %} {% endfor %}</td>
+          <td>
+            <div class="btn-group" role="group" aria-label="...">
+              <a href="/rules/{{ bundle.platform }}/bundles/bundle/{{ bundle.id }}" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></a>
+              {% if can_edit %}
+              <a href="/rules/{{ bundle.platform }}/bundles/bundle/{{ bundle.id }}/edit/" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a href="/rules/{{ bundle.platform }}/bundles/bundle/{{ bundle.id }}/delete/" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove" onclick="return delete_bundle();"></span></a>
+              {% endif %}
+            </div>
+          </td>
+        </tr>        
+        {% endfor %}
+        
+      </table>
+    </div>
+  </div>
+
+
+
+{% endblock page-content %}
+
+{% block script %}
+<script>
+
+function delete_bundle()
+{
+   var delete_bundle = false;
+   
+   delete_bundle = confirm("Are you sure you want to delete this bundle?")
+   return delete_bundle;
+}
+
+</script>
+
+
+{% endblock script %}

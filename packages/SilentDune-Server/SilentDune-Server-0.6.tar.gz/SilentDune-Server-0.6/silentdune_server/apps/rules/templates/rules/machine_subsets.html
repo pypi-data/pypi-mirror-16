@@ -1,0 +1,91 @@
+{% extends "rules/__base.html" %}
+{% load i18n %}
+
+{% block headtitle %}{% trans 'Chains &middot; Silent Dune' noop %}{% endblock %}
+
+{% block page-content %}
+
+  <ol class="breadcrumb">
+    <li><a href="/dashboard/">Dashboard</a></li>
+    <li>Chains</li>
+  </ol>
+
+
+  <h3 class="page-header">Chains</h3>
+
+  <span style="float: right; margin-top: -52px; font-size: large;" class="glyphicon glyphicon-question-sign"></span>
+
+  <div style="margin-bottom: 10px; display: block;">
+    <form id="bundle_search"  role="form" method="POST" action="#"  >{% csrf_token %}
+      <input type="text" placeholder="Search Chains" name="search_term"> &nbsp;<button type="submit" ><span class="glyphicon glyphicon-search"></span></button>
+      <div class="btn-group" style="margin-left: 40px; ">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          All <span class="caret"></span> 
+        </button>
+        <ul class="dropdown-menu">
+          <li><a href="#">All</a></li>  
+          <li><a href="#">IPTables</a></li>
+        </ul>
+      </div>
+      <div class="btn-group" style="margin-left: 40px; ">
+        <a  class="btn btn-primary" href="/rules/iptables/machine_subset/create/"  aria-haspopup="true" aria-expanded="false">
+           Create Chain 
+        </a>
+      </div> 
+    </form>    
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Chain Group</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        {% for machine_subset in all_machine_subsets %}
+        <tr>
+          <td>{{ machine_subset.platform }}</td>
+          <td>{{ machine_subset.get_slot_display }}</td>
+          <td>{{ machine_subset.name }}</td>
+          <td>{{ machine_subset.desc }}</td>
+          <td>
+            <div class="btn-group" role="group" aria-label="...">
+              <a href="/rules/iptables/machine_subset/{{ machine_subset.id }}" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></a>
+              {% if can_edit %}
+              <a href="/rules/iptables/machine_subset/{{ machine_subset.id }}/edit/" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
+              <a href="/rules/iptables/machine_subset/{{ machine_subset.id }}/delete/" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove" onclick="return delete_machine_subset();" ></span></a>
+              {% endif %}
+            </div>
+          </td>
+        </tr>        
+        {% endfor %}
+ 
+      </table>
+    </div>
+  </div>
+
+
+{% endblock page-content %}
+
+{% block script %}
+
+<script>
+
+function delete_machine_subset()
+{
+   var delete_machine_subset = false;
+   
+   delete_machine_subset = confirm("Are you sure you want to delete this Machine Subset?")
+   return delete_machine_subset;
+}
+
+
+</script>
+
+
+{% endblock script %}

@@ -1,0 +1,300 @@
+{% extends "iptables/__base.html" %}
+{% load i18n %}
+
+{% block headtitle %}
+    {% if can_edit %}{% trans 'Edit Chain &middot; Silent Dune' noop %}{% else %}
+       {% trans 'View Chain &middot; Silent Dune' noop %}
+    {% endif %}   
+{% endblock %}
+
+{% block page-content %}
+
+  <ol class="breadcrumb">
+    <li><a href="/dashboard/">Dashboard</a></li>
+    <li><a href="/rules/machine_subsets/">Chains</a></li>
+    <li>Chain</li>
+  </ol>
+
+
+  <h3 class="page-header">{% if can_edit %}Edit{% else %}View{% endif %} Chain</h3>
+
+  <span style="float: right; margin-top: -52px; font-size: large;" class="glyphicon glyphicon-question-sign"></span>
+
+  <form role="form" method="post" action="#" >{% csrf_token %}
+    
+    <div class="row">
+      <div class="col-sm-0 col-md-1 col-lg-1"></div>
+      <div class="col-sm-12 col-md-10 col-lg-10">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Chain Information</div>
+            <div class="panel-body">
+              <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6">
+                <label for="name">Name</label>
+                <input class="form-control" id="name" name="name" type="text" {% if not can_edit %}disabled{% endif %} value="{{ machine_subset.name }}">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+                <label for="description">Description</label>
+                <input class="form-control" id="description" name="descr" type="text" {% if not can_edit %}disabled{% endif %} value="{{ machine_subset.descr }}">
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+                <label for="notes">Notes</label>
+                <textarea class="form-control" id="notes" name="notes" rows="2" {% if not can_edit %}disabled{% endif %} style="resize: vertical;">{{ machine_subset.notes }}</textarea>
+              </div>
+            </div>
+            <input type="hidden" name="chain_id" value="{{ machine_subset.id }}" />
+          </div>
+          {% if can_edit %}
+          <div class="btn-group" style="margin-bottom: 20px; ">
+            <input id="submit" name="submit" type="submit" value="Save" class="btn btn-primary">
+          </div>
+          {% endif %}          
+        </div>
+       
+
+    </div>
+     
+    
+
+    <div class="row">
+      
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        {% if edit %}
+        <table class="table" >
+          <thead>
+            <tr>
+              <th colspan="5">Rule Status Chart</th>
+            </tr>
+          </thead>
+          <tr style="border:none;">
+            <td>Enabled: </td>
+            <td><span class="glyphicon glyphicon-ok-circle" style="color: green;"></span> Accept</td>
+            <td><span class="glyphicon glyphicon-ban-circle" style="color: red;"></span> Reject</td>
+            <td><span class="glyphicon glyphicon-remove-circle" style="color: red;"></span> Drop</td>
+            <td><span class="glyphicon glyphicon-exclamation-sign" style="color: blue;"></span> Log</td>
+             
+          </tr>
+          <tr>
+            <td>Disabled: </td>
+            <td><span class="glyphicon glyphicon-ok-circle" style="color: grey;"></span> Accept</td>
+            <td><span class="glyphicon glyphicon-ban-circle" style="color: grey;"></span> Reject</td>
+            <td><span class="glyphicon glyphicon-remove-circle" style="color: grey;"></span> Drop</td>
+            <td><span class="glyphicon glyphicon-exclamation-sign" style="color: grey;"></span> Log</td>
+            
+          </tr>
+        </table>
+        {% endif %}
+        
+        {% if can_edit %}
+        <div class="btn-group" style="margin-bottom: 20px; ">
+          <a  class="btn btn-primary" href="/rules/iptables/rules/rule/create/0/{{ machine_subset.id }}/"  aria-haspopup="true" aria-expanded="false">
+             Create New Rule
+          </a>
+        </div>
+        {% endif %}
+
+       {% for chain in chains %}
+        <div class="panel panel-success">
+          <div class="panel-heading">{{ chain.name }}</div>
+          <div class="panel-body">
+            
+            {% for ring in chain.rings %}
+            <div class="panel panel-default">
+              <div class="panel-heading">{{ ring.name }}</div>
+              <div class="panel-body">  
+                <table class="table rule-table">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Proto</th>
+                      <th>iface</th>
+                      <th>oface</th>
+                      <th>Source</th>
+                      <th>Port</th>
+                      <th>Dest</th>
+                      <th>Port</th>
+                      <th>Jump</th>
+                      <th class="rule-desc">Desc</th>
+                      <th></th>
+                    </tr>
+                  </thead>  
+                  
+                  {% for rule in ring.rules  %}
+                  <tr >
+                    <td>
+                      <span class=" glyphicon {{rule.jump_target.1}} enable " 
+                                      style="color: {% if rule.enabled == True %} {{rule.jump_target.2}} {% else %}grey{% endif %};" id="{{ rule.id }}"  >
+                      </span>
+                      
+                      {% if can_edit %}
+                      <span class="glyphicon glyphicon-arrow-down down" id="{{ rule.id }}"></span>
+                      <span class="glyphicon glyphicon-arrow-up up"  id="{{ rule.id }}" ></span>
+                      {% endif %}
+                      
+                    </td>
+                    <td>{{ rule.ip_protocol_name }}</td>
+                    <td>{{ rule.ifacein_name }}</td>
+                    <td>{{ rule.ifaceout_name }}</td>
+                    <td>{{ rule.source_address }}</td>
+                    <td>*</td>
+                    <td>{{ rule.dest_address }}</td>
+                    <td>*</td>
+                    <td>{{ rule.jump_target.0}}</td>
+                    <td class="rule-desc" title="{{ rule.desc }}">{{ rule.desc }}</td>
+                    
+                    <td class="rule-options">
+                      {% if can_edit %}
+                      <div class="btn-group" role="group" aria-label="...">
+                        <a href="/rules/iptables/rules/rule/{{ rule.id }}/edit" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span></a>
+                        <a href="/rules/iptables/rules/rule/{{ rule.id }}/delete" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove" onclick="return delete_rule();" ></span></a>
+                      </div>
+                      {% endif %}
+                    </td>
+                  </tr>
+                  {% endfor %}
+              
+                </table>
+                {% if can_edit %}
+                <div class="btn-group" style="margin-left: 40px; ">
+                  <a  class="btn btn-default" href="/rules/iptables/rules/rule/create/{{ ring.id }}/0/"  aria-haspopup="true" aria-expanded="false">
+                     Create New Rule
+                  </a>
+                </div>                    
+                {% endif %}
+              </div> <!-- close ring panel -->
+            </div> <!-- close ring -->
+            {% endfor %}  
+ 
+          </div>  <!-- close chain panel -->
+        </div>  <!-- close chain -->
+        {% endfor %} 
+        
+      </div>   
+    </div> <!-- close row -->
+  </form>
+
+{% endblock page-content %}
+
+{% block script %}
+<script>
+  
+$(".up,.down").click(function(event){
+    var row = $(this).parents("tr:first");
+    var up = true;
+    if ($(this).is(".up")) {
+        row.insertBefore(row.prev());
+    } else {
+        up = false;
+        row.insertAfter(row.next());
+    }
+ 
+    // send data to the server so that database can be updated with the new order
+    var rule_id = event.target.id;
+    $.ajax({
+        type: "POST",
+        url: "/rules/iptables/rings/ring/move/",
+        crossDomain: true,
+        data: { csrfmiddlewaretoken: "{{ csrf_token }}",   // < here 
+                rule_id: rule_id,
+                up: up
+              },
+        dataType: "text",      
+    })   
+    
+    .done(function(data){
+      
+    })
+    
+    .fail(function(jqXHR, status, error){
+      
+    })
+    
+});  
+
+{% if can_edit %}
+
+$(".enable").click(function(event){
+    
+    // update the page icon with the new colour
+    
+    var enabled = true;
+    var rule_id = event.target.id;
+    var class_names = $(event.target).attr('class')
+    
+    if( $(event.target).css("color") !== "rgb(128, 128, 128)" )
+    {
+       enabled = false;
+       $(event.target).css("color", "rgb(128, 128, 128)") 
+    }
+    else
+    {
+       var colour = null;
+       
+       // check for which icon style was clicked and set the correct colour for it
+       if( class_names.search('remove') > 0)
+       {
+           $(event.target).css("color", "red" ) ;
+       }
+       else if(class_names.search('ok') > 0)
+       {
+           $(event.target).css("color", "green" ) ;           
+       }
+       else if(class_names.search('ban') > 0)
+       {
+           $(event.target).css("color", "red" ) ;                  
+       }
+       else if(class_names.search('exclamation') > 0)
+       {
+           $(event.target).css("color", "blue") ;                     
+       }  
+       else if(class_names.search('record') > 0)
+       {
+           $(event.target).css("color", "orange") ;                     
+       }                    
+       
+       enabled = true;
+    }
+    
+    // send data to the server so that database can be updated with the new enabled value
+    $.ajax({
+        type: "POST",
+        url: "/rules/iptables/rules/rule/enable/",
+        crossDomain: true,
+        data: { csrfmiddlewaretoken: "{{ csrf_token }}",   // < here 
+                rule_id: rule_id,
+                enabled: enabled
+              },
+        dataType: "text",      
+        
+    })   
+    
+    .done(function(data){
+      
+    })
+    
+    .fail(function(jqXHR, status, error){
+      
+    })
+    
+}); 
+  
+{% endif %}
+    
+
+  $("#create_rule").click(function(){
+    $("#rule").val("true")
+    chainset_form.submit()
+  });
+  
+  
+function delete_rule()
+{
+   var delete_rule = false;
+   
+   
+   delete_rule = confirm("Are you sure you want to delete this rule?")
+   return delete_rule;
+}  
+  
+</script>  
+
+{% endblock script %}

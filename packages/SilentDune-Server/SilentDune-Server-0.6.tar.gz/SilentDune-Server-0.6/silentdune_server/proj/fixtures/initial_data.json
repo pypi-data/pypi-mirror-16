@@ -1,0 +1,82 @@
+[
+    {
+        "fields": {
+            "domain": "example.com",
+            "name": "example.com"
+        },
+        "model": "sites.site",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "date_joined": "2016-01-14T17:06:20Z",
+            "email": "tester@testing.com",
+            "first_name": "",
+            "groups": [],
+            "is_active": true,
+            "is_staff": true,
+            "is_superuser": true,
+            "last_login": "2016-02-03T16:29:09.451Z",
+            "last_name": "",
+            "password": "pbkdf2_sha256$24000$vGEl7zcKUbTV$pV1o/SiioawMSSwP6sZCaybV+XCUuSTVYHPBBn4ZaJE=",
+            "user_permissions": [],
+            "username": "tester"
+        },
+        "model": "auth.user",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "accepted_terms": false,
+            "account_activated": false,
+            "email_reg_code": "sdfsdfsdfsdfsdf",
+            "oauth_scope": "read write",
+            "user": 1
+        },
+        "model": "accounts.userprofile",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "authorization_grant_type": "password",
+            "client_id": "8ym0KhEwQzTcMSVEAZv1jyc2FqzKVmoGbAJZaePc",
+            "client_secret": "mMhPn4pLUiQNAnTSNtSshnv6R8XcNpfgT0eEdYdXxX16TULpXq6dWUfWq2t9ZyQxnZni854cD3aZPxEbk5NiVu1I0iTz646N3s9dyE0dwkACTmotSzlgnD5s0MxazUMb",
+            "client_type": "confidential",
+            "name": "silentdune",
+            "redirect_uris": "",
+            "skip_authorization": false,
+            "user": 1
+        },
+        "model": "oauth2_provider.application",
+        "pk": 1
+    },
+    {
+        "fields": {
+            "application": 1,
+            "expires": "2016-02-04T02:29:09.494Z",
+            "scope": "read write",
+            "token": "malkXXP4AgdWFZLOiG8q4w0OhGihKI",
+            "user": 1
+        },
+        "model": "oauth2_provider.accesstoken",
+        "pk": 131
+    },
+    {
+        "fields": {
+            "access_token": 131,
+            "application": 1,
+            "token": "QPX9ioHZ5V5sEM6RyAaMsybRthqlfc",
+            "user": 1
+        },
+        "model": "oauth2_provider.refreshtoken",
+        "pk": 131
+    },
+    {
+        "fields": {
+            "lockdown_slot_level": 120,
+            "polling_interval": 60
+        },
+        "model": "proj.globalpreferences",
+        "pk": 1
+    }
+]

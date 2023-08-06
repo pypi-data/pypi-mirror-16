@@ -1,0 +1,14 @@
+django>=1.9,<=1.10
+django-oauth-toolkit
+djangorestframework
+django-compressor
+django-celery
+django-celery-with-redis
+django-countries
+django-axes
+django-filter
+cryptography
+mysqlclient
+requests
+raven
+sqlparse

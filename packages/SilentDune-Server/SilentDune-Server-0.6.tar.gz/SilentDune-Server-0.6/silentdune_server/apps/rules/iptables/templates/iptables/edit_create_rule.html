@@ -1,0 +1,1099 @@
+{% extends "iptables/__base.html" %}
+{% load i18n %}
+
+{% block headtitle %}{% trans 'Edit Rule &middot; Silent Dune' noop %}{% endblock %}
+
+{% block page-content %}
+
+  <ol class="breadcrumb">
+    <li><a href="/dashboard/">Dashboard</a></li>
+    <li><a href="/rules/machine_subsets/">Chains</a></li>
+    {% if machine_subset_id %}
+    <li><a href="/rules/iptables/machine_subset/{{ machine_subset_id }}/edit/">Chain</a></li>
+    {% endif %}
+    <li>Create Rule</li>
+  </ol>
+
+
+  <h3 class="page-header">{{ function }} Rule</h3>
+
+  <span style="float: right; margin-top: -52px; font-size: large;" class="glyphicon glyphicon-question-sign"></span>
+
+  <form role="form" method="POST" action="#">{% csrf_token %}
+    <div class="row">
+      <div class="col-xs-0 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="col-sm-12 col-md-10 col-lg-10">
+        <div class="panel panel-primary">
+          <div class="panel-heading">Rule Information</div>
+          <div class="panel-body">
+            
+            <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+            <div class="col-xs-8 col-sm-4 col-md-4 col-lg-4" style='background: none;'>
+              <div class="input-group input-group-sm" >
+                <span class="input-group-addon input-group-rule">Rule</span>
+                <input type="text" class="form-control" aria-label="..." value="{% if rule_edit %}{{ rule.enabled }} {% else %}Disabled {% endif %}" 
+                          id="enabled" name="enabled" style="background: white;">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false"><span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-right" id="enabled-dd">
+                    <li><a href="#">Enabled</a></li>
+                    <li><a href="#">Disabled</a></li>
+                  </ul>
+                </div> <!-- /btn-group -->
+              </div> <!-- /input-group -->
+            </div>  <!-- bootstrap div -->                    
+              
+            <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0" ></div>
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10" style='background: none; margin-top: 10px;'>
+                <label for="description">Description</label>
+                <input class="form-control" name="description" type="text" value="{{ rule.descr }}">
+            </div>
+          </div> <!-- close panel body -->
+        </div> <!-- close panel class -->
+      </div>  <!-- close bootstrap columns definition -->
+    </div> <!-- close class 'row' -->
+
+    <div class="row">
+       <div class="col-sm-0 col-md-1 col-lg-1"></div>
+      <div class="col-sm-12 col-md-10 col-lg-10">
+
+        <div class="panel panel-success">
+          <div class="panel-heading">Rule Details</div>
+          <div class="panel-body">
+ 
+      
+            <table  class="table table-reflow"   >  
+              <tbody style="white-space: nowrap;">
+ 
+              <tr>
+                <td></td>
+                <td style='background: none;  '>
+                  <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+                  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-6" style="background: none">                  
+                    <div class="input-group input-group-sm" >
+                      <span class="input-group-addon input-group-rule">Transport</span>
+                      <input type="text" class="form-control" aria-label="..." value="{{ transport }}" name="transport" id="transport"
+                             style="background: white;">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" 
+                                aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" id="transport-dd">
+                          <li><a href="#">ipv4</a></li>
+                          <li><a href="#">ipv6</a></li>
+                          <li><a href="#">both</a></li>
+                        </ul>
+                      </div> <!-- /btn-group -->
+                    </div> <!-- /input-group -->
+                  </div>
+                </td>
+                <td style="vertical-align: middle;   " >
+                    <p class="text-left"> Select transport version. </p>
+                </td>   
+              </tr>
+             
+              <tr>
+                <td> 
+                  <div class="input-group input-group-sm" >
+                    <span class="input-group-addon input-group-rule" >Invert </span>
+                    <span class="input-group-addon input-group-rule" >
+                      <input type="checkbox" aria-label="..." name="protocol_invert" {% if rule.ip_protocol_invert %} checked {% endif %} >
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+                  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-6" >                  
+                    <div class="input-group input-group-sm" style="float: left;">
+                      <span class="input-group-addon input-group-rule">Protocol</span>
+                      <input type="text" class="form-control" aria-label="..." value="{{ rule.ip_protocol_name }}" name="protocol" id="protocol"  
+                             style="background: white;">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"  ><span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" id="protocol-dd" >
+                          <li><a href="#">All</a></li>
+                          <li><a href="#">tcp</a></li>
+                          <li><a href="#">udp</a></li>
+                          <li><a href="#">icmp</a></li>
+                          <li><a href="#">--- ADVANCED ---</a></li>
+                          <li><a href="#">udplite</a></li>
+                          <li><a href="#">esp</a></li>
+                          <li><a href="#">ah</a></li>
+                          <li><a href="#">sctp</a></li>
+                        </ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                    <!-- /input-group -->
+                  </div>  
+                </td>
+                <td style="vertical-align: middle;  overflow: hidden; text-overflow: ellipsis;  ">
+                  Match packets to be sent to this address.  
+                </td>   
+              </tr>
+                    
+              <tr>
+                <td></td>
+                <td>
+                  <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+                  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-6" >                  
+                    <div class="input-group input-group-sm" >
+                      <span class="input-group-addon input-group-rule">Table</span>
+                      <input type="text" class="form-control" aria-label="..." value="{{ table }}"   id="table" name="table"
+                             style="background: white;">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" id="table-dd" >
+                          <li><a href="#">filter</a></li>
+                          <li><a href="#">nat</a></li>
+                          <li><a href="#">--- ADVANCED ---</a></li>
+                          <li><a href="#">mangle</a></li>
+                          <li><a href="#">raw</a></li>
+                          <li><a href="#">security</a></li>
+                          <li><a href="#">all</a></li>
+                        </ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                    <!-- /input-group -->
+                  </div>  
+                </td>
+                <td style="vertical-align: middle; "><span>Choose the Table the rule should routed through.</span></td>
+              </tr>
+              
+              <tr>
+                <td></td>
+                <td>
+                  <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+                  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-6" >                  
+                    <div class="input-group input-group-sm" >
+                      <span class="input-group-addon input-group-rule">Chain</span>
+                      <input type="text" class="form-control" aria-label="..." value="{{ chain }}"  id="chain" name="chain"
+                             style="background: white;">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" id="chain-dd" >
+                          <li><a href="#">Input</a></li>
+                          <li><a href="#">Output</a></li>
+                          <li><a href="#">Forwarding</a></li>
+                          <li><a href="#">Prerouting</a></li>
+                          <li><a href="#">Postrouting</a></li>
+                        </ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                    <!-- /input-group -->
+                  </div>  
+                </td>
+                <td style="vertical-align: middle; "><span>Choose the Chain to attach the Rule to.</span></td>
+              </tr>
+              
+              <tr>
+                <td>
+                  <div class="input-group input-group-sm" >
+                    <span class="input-group-addon input-group-rule" >Invert </span>
+                    <span class="input-group-addon input-group-rule" >
+                      <input type="checkbox" aria-label="..." name="ifacein_invert" {% if rule.ifacein_invert %} checked {% endif %} >
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+                  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-6" >                  
+                    <div class="input-group input-group-sm" style="float: left">
+                      <span class="input-group-addon input-group-rule">Iface In</span>
+                      <input type="text" class="form-control" aria-label="..." value="{{ rule.ifacein_name }}"  id="ifacein" name="ifacein"
+                             style="background: white;">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" 
+                                aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" id="ifacein-dd" >
+                          <li><a href="#">All</a></li>
+                          <li><a href="#">Lo</a></li>
+                          <li><a href="#">eth0</a></li>
+                          <li><a href="#">eth1</a></li>
+                          <li><a href="#">eth2</a></li>
+                          <li><a href="#">enp0s25</a></li>
+                        </ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                    <!-- /input-group -->
+                  </div>  
+                </td>
+                <td style="vertical-align: middle; "><span>Match packets received on this interface.</span></td>
+              </tr>
+              
+              <tr>
+                <td>
+                  <div class="input-group input-group-sm" >
+                    <span class="input-group-addon input-group-rule" >Invert </span>
+                    <span class="input-group-addon input-group-rule" >
+                      <input type="checkbox" aria-label="..." name="ifaceout_invert" {% if rule.ifaceout_invert %} checked {% endif %}>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+                  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-6" >                  
+                    <div class="input-group input-group-sm" style="float: left;">
+                      <span class="input-group-addon input-group-rule">Iface Out</span>
+                      <input type="text" class="form-control" aria-label="..." value="{{ rule.ifaceout_name }}" id="ifaceout" name="ifaceout"
+                             style="background: white;">
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right"  id="ifaceout-dd">
+                          <li><a href="#">All</a></li>
+                          <li><a href="#">Lo</a></li>
+                          <li><a href="#">eth0</a></li>
+                          <li><a href="#">eth1</a></li>
+                          <li><a href="#">eth2</a></li>
+                          <li><a href="#">enp0s25</a></li>
+                        </ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                    <!-- /input-group -->
+                  </div>  
+                </td>
+                <td style="vertical-align: middle; ">
+                    <span>Match packets to be sent on this interface.</span>
+                </td>
+              </tr>
+              
+
+              <tr>
+                <td>
+                  <div class="input-group input-group-sm" >
+                    <span class="input-group-addon input-group-rule" >Invert </span>
+                    <span class="input-group-addon input-group-rule" >
+                      <input type="checkbox" aria-label="..." name="source_invert" {% if rule.source_invert %} checked {% endif %} >
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+                  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-6" >                  
+                    <div class="input-group input-group-sm" style=" float: none;">
+                      <span class="input-group-addon input-group-rule">Source</span>
+                      <input type="text" class="form-control" aria-label="..." value="{{ rule.source_address }}" style="background: white;"  name="source-address">
+                    </div>
+                    <div class="input-group input-group-sm" style="margin-top: 5px;">
+                      <span class="input-group-addon">Mask</span>
+                      <input type="text" class="form-control" aria-label="..." value="{{ rule.source_mask }}" id="source-mask" name="source-mask"
+                             style="background: white;">
+
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" id="source-mask-dd" >
+                          <li><a href='#'>&nbsp;</a></li>
+                          {% for i in mask %}
+                          <li><a href="#">{{ i }}</a></li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                    <!-- /input-group -->
+                  </div>  
+                </td>
+                <td style="vertical-align: middle; ">
+                    <span>Match packets received from this address.</span>
+                </td>
+              </tr>
+              
+              <tr>
+                <td>
+                  <div class="input-group input-group-sm" >
+                    <span class="input-group-addon input-group-rule" >Invert </span>
+                    <span class="input-group-addon input-group-rule" >
+                      <input type="checkbox" aria-label="..." name="dest_invert"  {% if rule.dest_invert %} checked {% endif %}>
+                    </span>
+                  </div>
+                </td>
+                <td>
+                  <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+                  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-6" style="background: none" >                  
+                    <div class="input-group input-group-sm" >
+                      <span class="input-group-addon input-group-rule">Destination</span>
+                      <input type="text" class="form-control" aria-label="..." value="{{ rule.dest_address }}" style="background: white;" name="dest-address">
+                    </div>
+                    <div class="input-group input-group-sm" style="margin-top: 5px;">
+                      <span class="input-group-addon">Mask</span>
+                      <input type="text" class="form-control" aria-label="..." value="{{ rule.dest_mask }}" id="dest-mask" name="dest-mask"
+                             style="background: white;">
+
+                      <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right" id="dest-mask-dd" >
+                          <li><a href='#'>&nbsp;</a></li>
+                          {% for i in mask2 %}
+                          <li><a href="#">{{ i }}</a></li>
+                          {% endfor %}
+                        </ul>
+                      </div>
+                      <!-- /btn-group -->
+                    </div>
+                    <!-- /input-group -->
+                  </div>  
+                </td>
+                <td style="vertical-align: middle; "><span>Match packets to be sent to this address.</span></td>
+              </tr>
+                    
+              </tbody>
+            </table>
+            
+            
+            {% if can_edit %}
+            <div> <input class="btn btn-primary" type="submit" value="Save"> <a href='{{ request.path }}'> <button type="button" class="btn btn-primary" >Cancel</button></a></div>
+            {% endif %}
+          </div>
+        </div>  <!-- end of rule details panel -->
+        
+      </div>
+    </div> <!-- close 'row' -->
+    
+    <div class="row">
+      <div class="col-sm-0 col-md-1 col-lg-1"></div>
+      <div class="col-sm-12 col-md-10 col-lg-10">
+
+        <div class="panel panel-info">
+          <div class="panel-heading" style='vertical-align: middle; height: 60px;'>
+              <div style="float: left;" >Rule Matches </div>
+              <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+              <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3" style="background: none; margin-left: 30%;" >
+                <div class="input-group input-group-sm" style="float: right;">
+                    <span class='input-group-addon' >Match</span> 
+                    <input type='text' class='form-control' aria-label='...' value='tcp'  id='match' name='match' style='background: white;'>
+
+                    <div class='input-group-btn'>
+                      <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' 
+                              aria-haspopup='true' aria-expanded='false'><span class='caret'></span></button>
+                      <ul class='dropdown-menu dropdown-menu-right' id='match-dd' >
+ 
+                      </ul>
+                    </div>
+                </div>   
+              </div>  <!-- close bootstrap div -->  
+              
+              <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+              <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="background: none" >                        
+                  <div class="input-group input-group-sm" style="float: right;">
+                    <button type='button' class='btn btn-default ' onclick='add_match()'>    
+                      <span class="glyphicon glyphicon-plus  " style="vertical-align: middle; margin-right: 5px;"  title='Click here to create a match of the selected type.' > </span>
+                    </button>
+                  </div>
+              </div>  <!-- close bootstrap div --> 
+          </div>  <!-- close panel heading -->
+          
+          <div class="panel-body">
+            
+            <table class="table" id="rule" style="border-collapse: separate; border-spacing: 0 15px">
+              <tbody>
+                 
+               {% for match in matches %}
+                
+                <tr id='row_{{ forloop.counter0 }}'>
+                    
+                  <td colspan='3'>
+                  <table style='border-collapse: separate; border-spacing: 0 1px;'>
+                  
+                  <tr style='font-weight: normal; background: #bcc7d4;'>
+
+                    <th>
+                    </th>
+                  
+                    <th>
+                     <div class='input-group input-group-sm'  > 
+                       <span class='input-group-addon' style='border: 1px solid #cccccc; text-align: middle'>{{ match.name }} Match</span> 
+                     </div>
+                       <!-- /btn-group --> 
+                     <!-- /input-group -->
+                    </th>                                                 
+                                                  
+                    <th style='vertical-align: middle; padding-left: 10px; '> 
+                       <div class="btn-group" role="group" aria-label="..."  >
+                          <a   class="btn btn-default btn-xs"   ><span id='glyph_{{ forloop.counter0 }}' class='glyphicon glyphicon-collapse-up ' onclick='toggle_match({{ forloop.counter0 }})'    ></span></a>
+                          <a   class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove" onclick='delete_match({{ forloop.counter0 }}, {{ match.id }})' ></span></a>
+                       </div>                        
+                    </th> 
+
+                  </tr>
+                  <tbody id='match_collapse_{{ forloop.counter0 }}' >
+                  <input type='hidden' name='{{ match.prefix }}' >
+                
+                   {% for option in match.options.all %}
+                   
+                  <tr  >
+ 
+                    <td style='border: 0px;'> 
+                      <div class='input-group input-group-sm' >
+                        {% if option.invertible %} 
+                        <span class='input-group-addon' >Invert</span> 
+                        <span class='input-group-addon' > 
+                          <input type='checkbox' aria-label='...' name='oldindex_{{ match.prefix }}_{{ option.option }}_cb' {% if option.invert %} checked {% endif %} > 
+                        </span>
+                        {% else %}
+                          <div style="width: 85px; height: 15px; background: white">&nbsp;</div> 
+                        {% endif %}
+                       </div>                               
+                      
+                    </td>
+                
+                    <td style='border: 0px; padding-left: 20px; '>
+                      <div class='input-group input-group-sm' style=' border: 0px; solid white;'> 
+                         <span class='input-group-addon'>{{ option.option }} </span> 
+                         <input type='text' class='form-control' aria-label='...' value='{{ option.value }}'  id='chain' name='oldindex_{{ match.prefix }}_{{ option.option }}'  style='background: white;'>
+           
+                        <!-- /btn-group --> 
+                      </div>
+                      <!-- /input-group -->
+                    </td > 
+                                                  
+                    <td style='vertical-align: middle; border: 0px; padding-left: 20px;'> <span>Option comment here.</span></td> 
+                  </tr>
+                   
+                   {% empty %}
+                   <tr ><th></th><th></th><th></th></tr>
+                   
+                   {% endfor %}
+
+                  </tbody>  
+                  </table>
+                  </td>  
+                  </tr>                 
+                
+                {% endfor %}
+ 
+              </tbody>
+              
+            </table>
+            
+            {% if can_edit %}
+            <div> <input class="btn btn-primary" type="submit" value="Save"><a href='{{ request.path }}'> <button type="button" class="btn btn-primary" >Cancel</button></a></div>
+            {% endif %}
+          </div>
+        </div>  <!-- end of rule details panel --> 
+        <div id="delete_me" style="display: none ">
+         </div>        
+       </div>
+     </div>      
+     
+     
+    <div class="row">
+      <div class="col-sm-0 col-md-1 col-lg-1"></div>
+      <div class="col-sm-12 col-md-10 col-lg-10">
+
+        <div class="panel panel-warning">
+          <div class="panel-heading" style='height: 50px;vertical-align: middle;'>
+            <div style="float: left;" >Rule Jump </div> 
+              <div class="col-xs-0 col-sm-0 col-md-0 col-lg-0"></div>
+              <div class="col-xs-5 col-sm-5 col-md-3 col-lg-3" style="background: none; margin-left: 30%;" >
+                <div class="input-group input-group-sm" style=" float: right;">
+                  <span class='input-group-addon' >Jump Option</span> 
+                  
+                  <input type='text' class='form-control' aria-label='...' value='{{jump_target|default:"Accept" }}'  id='jump' name='jump_target' style='background: white; width: 120px;'>
+                  <div class='input-group-btn'>
+                    <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown' 
+                           aria-haspopup='true' aria-expanded='false'><span class='caret'></span></button>
+                    <ul class='dropdown-menu dropdown-menu-right' id='jump-dd' >
+ 
+                    </ul>
+                  </div>
+                </div>           
+              </div>  <!-- close bootstrap div --> 
+          </div>   <!-- close panel heading --> 
+          
+          <div class="panel-body">
+            
+            <table class="table" id="jump" style="border-collapse: separate; border-spacing: 0 0px">
+              <tbody style="white-space: nowrap;">
+              {% for option in jump_options %}
+                <tr   >
+ 
+                  <td style='border: 0px; '> &nbsp;</td>
+                  
+              
+                  <td style='border: 0px;  margin-left: 0px;'>
+                    <div class="col-xs-0 col-sm-1 col-md-2 col-lg-2"></div>
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6" >                    
+                      <div class='input-group input-group-sm' style='border: 0px; solid white;'>         
+                        <span class='input-group-addon'> {{option.name}}</span> 
+                        <input type='text' class='form-control' aria-label='...' value='{{option.value}}'  id='jump' name='{{option.name}}_jump' 
+                            style='background: white;'>
+                      </div>  <!-- /input-group -->
+                    </div>  <!-- close bootstrap row -->
+                  </td > 
+                                            
+                  <td style='vertical-align: middle; border: 0px; padding-left: 20px;'><span>Choose the Chain to attach the Rule to.</span></td> 
+                </tr>
+              
+              {% empty %}   
+              <tr ><th></th><th></th><th></th></tr>
+              {% endfor %} 
+              </tbody>
+            </table>
+            
+            {% if can_edit %}
+            <div> <input class="btn btn-primary" type="submit" value="Save"><a href='{{ request.path }}'> <button type="button" class="btn btn-primary" >Cancel</button></a></div>
+            {% endif %}
+          </div>
+        </div>  <!-- end of rule details panel --> 
+        <div id="delete_me" style="display: none ">
+         </div>        
+       </div>
+     </div>                               
+    
+  </form>
+
+
+{% endblock page-content %}
+
+
+
+
+{% block script %}
+
+<script>
+ 
+
+// state variables for managing the Match UI    
+ 
+var match_fields = {
+                    'tcp':[{'name':'source-port','invertible':'True'}, {'name':'destination-port','invertible':'True'},
+                           {'name':'tcp-flags', 'invertible':'True'}, {'name':'syn','invertible':'True'},
+                           {'name':'tcp-option', 'invertible':'True'}],
+                    'state':[{'name':'state', 'invertible':'True'}],
+                    'conntrack':[{'name':'ctstate', 'invertible':'True'}, {'name':'ctproto', 'invertible':'True'}, 
+                                 {'name':'ctorigsrc', 'invertible':'True'}, {'name':'ctorigdst', 'invertible':'True'}, 
+                                 {'name':'ctorigsrcport', 'invertible':'True'}, {'name':'ctoringdstport', 'invertible':'True'}, 
+                                 {'name':'ctrepldstport', 'invertible':'True'}, {'name':'cstatus', 'invertible':'True'}, 
+                                 {'name':'ctexpire', 'invertible':'True'}, {'name':'ctdir', 'invertible':'True'}],
+                    '===ADVANCED===':{'':''},
+                    'addrtypes':[{'name':'src-type','invertible':'True'}, {'name':'dst-type','invertible':'True'}, 
+                                {'name':'limit-iface-in','invertible':'False'}, {'name':'limit-iface-out','invertible':'False'}],
+                    'ah-ipv6':[{'name':'ahspi','invertible':'True'}, {'name':'ahlen','invertible':'True'}, 
+                               {'name':'ahres','invertible':'False'}],
+                    'ah-ipv4':[{'name':'ahspi','invertible':'True'}],
+                    'bpf':[{'name':'bytecode','invertible':'False'}],
+                    'cluster':[{'name':'cluster-total-nodes','invertible':'False'}, {'name':'cluster-local-node','invertible':'True'},
+                               {'name':'cluster-local-nodemask','invertible':'True'}, {'name':'cluster-hash-seed','invertible':'False'}],
+                    'comment':[{'name':'comment','invertible':'False'}],
+                    'connbytes':[{'name':'connbytes','invertible':'True'}, {'name':'connbytes-dir','invertible':'False'}, 
+                                 {'name':'connbytes-mode','invertible':'False'}],
+                    'connlabel':[{'name':'label','invertible':'True'}, {'name':'set', 'invertible':'False'}],
+                    'connlimit':[{'name':'connlimit-upto','invertible':'False'}, {'name':'connlimit-above', 'invertible':'False'},
+                                 {'name':'connlimit-mask','invertible':'False'}, {'name':'connlimit-saddr', 'invertible':'False'},
+                                 {'name':'connlimit-daddr','invertible':'False'} ],
+                    'connmark':[{'name':'mark','invertible':'True'}],
+                    'cpu':[{'name':'cpu','invertible':'True'}],
+                    'dccp':[{'name':'source-port','invertible':'True'}, {'name':'destination-port','invertible':'True'}, 
+                            {'name':'dccp-types','invertible':'True'}, {'name':'dccp-option','invertible':'True'}],
+                    'devgroup':[{'name':'src-group','invertible':'True'}, {'name':'dst-group', 'invertible':'True'}],
+                    'dscp':[{'name':'dscp','invertible':'True'}, {'name':'dscp-class', 'invertible':'True'}],
+                    'dst':[{'name':'dst-len','invertible':'True'}, {'name':'dst-opts', 'invertible':'False'}],
+                    'ecn':[{'name':'ecn-tcp-cwr','invertible':'True'}, {'name':'ecn-tcp-ece','invertible':'True'}, 
+                           {'name':'ecn-ip-ect','invertible':'True'}],
+                    'esp':[{'name':'espspi','invertible':'True'}],
+                    'eui64':[],
+                    'frag':[{'name':'fragid','invertible':'True'}, {'name':'fraglen','invertible':'True'},
+                            {'name':'fragres', 'invertible':'False'}, {'name':'fragfirst','invertible':'False'},
+                            {'name':'fragmore', 'invertible':'False'}, {'name':'fraglast', 'invertible':'False'}],
+                    'hashlimit':[{'name':'hashlimit-upto', 'invertible':'False'}, {'name':'hashlimit-above', 'invertible':'False'}, 
+                                 {'name':'hashlimit-burst', 'invertible':'False'}, {'name':'hashlimit-mode', 'invertible':'False'}, 
+                                 {'name':'hashlimit-srcmask', 'invertible':'False'}, {'name':'hashlimit-dstmask', 'invertible':'False'}, 
+                                 {'name':'hashlimit-name', 'invertible':'False'}, {'name':'hashlimit-htable-size', 'invertible':'False'}, 
+                                 {'name':'hashlimit-htable-max', 'invertible':'False'}, {'name':'hashlimit-htable-expire', 'invertible':'False'}, 
+                                 {'name':'hashlimit-htable-gcinterval', 'invertible':'False'}],
+                    'hbh':[{'name':'hbh-len','invertible':'True'}, {'name':'hbh-opts','invertible':'False'}],
+                    'helper':[{'name':'helper','invertible':'True'}],
+                    'hl':[{'name':'hl-eq','invertible':'True'}, {'name':'hl-lt','invertible':'False'},
+                          {'name':'hl-gt','invertible':'False'}],
+                    'icmp':[{'name':'icmp-type','invertible':'True'}],
+                    'icmp6':[{'name':'icmpv6-type','invertible':'True'}],
+                    'iprange':[{'name':'src-range','invertible':'True'}, {'name':'dst-range', 'invertible':'True'}],
+                    'ipv6header':[{'name':'soft', 'invertible':'False'}, {'name':'header', 'invertible':'True'}, 
+                                  {'name':'hop', 'invertible':'False'}, {'name':'dst', 'invertible':'False'}, 
+                                  {'name':'route', 'invertible':'False'}, {'name':'frag', 'invertible':'False'}, 
+                                  {'name':'auth', 'invertible':'False'}, {'name':'esp', 'invertible':'False'}, 
+                                  {'name':'none', 'invertible':'False'}, {'name':'proto', 'invertible':'False'}],
+                    'ipvs':[{'name':'ipvs','invertible':'True'}, {'name':'vproto', 'invertible':'True'},
+                            {'name':'vaddr','invertible':'True'}, {'name':'vport', 'invertible':'True'},
+                            {'name':'vdir','invertible':'False'}, {'name':'vmethod', 'invertible':'True'},                                 
+                            {'name':'vportctl','invertible':'True'} ],
+                    'length':[{'name':'length','invertible':'True'}],
+                    'limit':[{'name':'limit','invertible':'False'}, {'name':'limit-burst', 'invertible':'False'}],
+                    'mac':[{'name':'mac-source','invertible':'True'}],
+                    'mark':[{'name':'mark','invertible':'True'}],
+                    'mh':[{'name':'mh-type','invertible':'True'}],
+                    'multiport':[{'name':'source-ports','invertible':'True'}, {'name':'destination-ports','invertible':'True'},
+                                 {'name':'ports','invertible':'True'}],
+                    'nfacct':[{'name':'nfacct-name','invertible':'False'}],
+                    'osf':[{'name':'genre','invertible':'True'}, {'name':'ttl','invertible':'False'}, 
+                           {'name':'log','invertible':'False'}],
+                    'owner':[{'name':'uid-owner','invertible':'True'}, {'name':'uid-owner', 'invertible':'True'},
+                             {'name':'gid-owner','invertible':'True'}, {'name':'gid-owner', 'invertible':'True'},
+                             {'name':'socket-exists','invertible':'True'}],
+                    'physdev':[{'name':'physdev-in','invertible':'True'}, {'name':'physdev-out', 'invertible':'True'},
+                               {'name':'physdev-is-in','invertible':'True'}, {'name':'physdev-is-out', 'invertible':'True'},
+                               {'name':'physdev-is-bridged','invertible':'True'}],
+                    'pkttype':[{'name':'pkt-type','invertible':'True'}],
+                    'policy': [{'name':'dir', 'invertible':'False'}, {'name':'pol', 'invertible':'False'}, 
+                               {'name':'strict', 'invertible':'False'}, {'name':'reqid', 'invertible':'True'}, 
+                               {'name':'spi', 'invertible':'True'}, {'name':'proto', 'invertible':'True'}, 
+                               {'name':'mode', 'invertible':'True'}, {'name':'tunnel-src', 'invertible':'True'}, 
+                               {'name':'tunnel-dst', 'invertible':'True'}, {'name':'next', 'invertible':'False'}],
+                    'quota':[{'name':'quota','invertible':'True'}],
+                    'raatest':[{'name':'raatest-delta', 'invertible':'False'}, {'name':'raatest-lt', 'invertible':'True'}, 
+                               {'name':'raatest-gt', 'invertible':'True'}, {'name':'raatest-eq', 'invertible':'True'}, 
+                               {'name':'raatest', 'invertible':'False'}, {'name':'raatest1', 'invertible':'False'}, 
+                               {'name':'raatest2', 'invertible':'False'}, {'name':'raatest-bps', 'invertible':'False'}, 
+                               {'name':'raatest-pps', 'invertible':'False'}, {'name':'raatest-bps1', 'invertible':'False'},
+                               {'name':'raatest-bps2', 'invertible':'False'}, {'name':'raatest-pps1', 'invertible':'False'},
+                               {'name':'raatest-pps2', 'invertible':'False'}],
+                    'realm':[{'name':'realm','invertible':'True'}],
+                    'recent':[{'name':'name', 'invertible':'False'}, {'name':'set', 'invertible':'True'}, 
+                              {'name':'rsource', 'invertible':'False'}, {'name':'rdest', 'invertible':'False'}, 
+                              {'name':'mask', 'invertible':'False'}, {'name':'rcheck', 'invertible':'True'}, 
+                              {'name':'update', 'invertible':'True'}, {'name':'remove', 'invertible':'True'},
+                              {'name':'seconds', 'invertible':'False'}, {'name':'reap', 'invertible':'False'},
+                              {'name':'hitcount', 'invertible':'False'}, {'name':'rttl', 'invertible':'False'}],
+                    'rpfilter':[{'name':'loose','invertible':'False'}, {'name':'validmark','invertible':'False'}, 
+                                {'name':'accept-local','invertible':'False'}, {'name':'invert','invertible':'False'}],
+                    'rt':[{'name':'rt-type','invertible':'True'}, {'name':'rt-segsleft','invertible':'True'},
+                          {'name':'rt-len', 'invertible':'True'}, {'name':'rt-0-res','invertible':'False'},
+                          {'name':'rt-0-addrs', 'invertible':'False'}, {'name':'rt-0-not-strict', 'invertible':'False'}],
+                    'sctp':[{'name':'source-port','invertible':'True'}, {'name':'destination-port','invertible':'True'}, 
+                            {'name':'chunk-types','invertible':'True'}],
+                    'set':[{'name':'match-set', 'invertible':'True'}, {'name':'return-nomatch', 'invertible':'False'}, 
+                           {'name':'update-counters', 'invertible':'True'}, {'name':'update-subcounters', 'invertible':'True'}, 
+                           {'name':'packets-eq', 'invertible':'True'}, {'name':'packets-lt', 'invertible':'False'}, 
+                           {'name':'packets-gt', 'invertible':'False'}, {'name':'bytes-eq', 'invertible':'True'}, 
+                           {'name':'bytes-lt', 'invertible':'False'}, {'name':'bytes-gt', 'invertible':'False'}],
+                    'socket':[{'name':'transplant','invertible':'False'}, {'name':'nowildcard', 'invertible':'False'}],
+                    'statistic':[{'name':'mode','invertible':'False'}, {'name':'probability','invertible':'True'},
+                           {'name':'every','invertible':'True'}, {'name':'packet','invertible':'False'}],
+                    'string':[{'name':'algo','invertible':'False'}, {'name':'from', 'invertible':'False'},
+                              {'name':'to','invertible':'False'}, {'name':'string', 'invertible':'True'},
+                              {'name':'hex-string','invertible':'True'}],
+                    'tcpmss':[{'name':'mss','invertible':'True'}],
+                    'time':[{'name':'datestart', 'invertible':'False'}, {'name':'datestop', 'invertible':'False'},
+                            {'name':'timestart', 'invertible':'False'}, {'name':'timestop', 'invertible':'False'},
+                            {'name':'monthdays', 'invertible':'True'}, {'name':'weekdays', 'invertible':'True'},
+                            {'name':'contiguous', 'invertible':'False'}, {'name':'kerneltz', 'invertible':'False'}],
+                    'tos':[{'name':'tos','invertible':'True'}, {'name':'tos', 'invertible':'True'}],
+                    'ttl':[{'name':'ttl-eq','invertible':'True'}, {'name':'ttl-gt','invertible':'False'}, 
+                            {'name':'ttl-lt','invertible':'False'}],
+                    'u32':[{'name':'u32', 'invertible':'True'}],        
+                    'udp':[{'name':'source-port','invertible':'True'}, {'name':'destination-port','invertible':'True'}],
+                    'unclean':[{'name':'assert','invertible':'False'}]
+                     
+                    };
+                    
+                    
+var jump_fields = {
+                   'drop': [],
+                   'accept': [],
+                   'masquerade':['to_ports', 'random'],
+                   'log': ['level', 'prefix', 'tcp-sequence', 'tcp-options', 'ip-options', 'uid'],
+                   '===ADVANCED===': [''],
+                   'audit':['type'],
+                   'checksum':['checksum-fill'],
+                   'classify':['set-class'],
+                   'clusterip':['new','hashmode', 'clustermac', 'total-nodes', 'local-node', 'hash-init'],
+                   'connmark':['set-xmark', 'save-mark', 'restore-mark', 'and-mark', 'or-mark', 'xor-mark', 'set-mark', 'save-mark', 'restore-mark'],
+                   'connsecmark':['save','restore'],
+                   'ct':['notrack', 'helper', 'ctevents', 'expevents', 'zone', 'timeout'],
+                   'dnat':['to-destination', 'random', 'persistant'],
+                   'dnpt':['src-pfx', 'dst-pfx'],
+                   'dscp':['set-dscp','set-dscp-class'],
+                   'ecn':['ecn-tcp-remove'],
+                   'hl':['hl-set','hl-dec', 'hl-inc'],
+                   'hmark':['hmark-tuple', 'hmark-mod', 'hmark-offset', 'hmark-src-prefix', 'hmark-dst-prefix', 'hmark-sport-mask', 
+                            'hmark-dport-mask', 'hmark-spi-mask', 'hmark-proto-mask', 'hmark-rnd'],
+                   'ideltimer':['timeout', 'label'],
+                   'led':['led-trigger', 'led-delay', 'led-always-blink'],
+                   'mark':['set-xmark', 'set-mark', 'and-mark', 'or-mark', 'xor-mark'],
+                   'mirror':[],
+                   'netmap':['to'],
+                   'nflog':['nflog-group', 'nflog-prefix', 'nflog-range', 'nflog-threshold'],
+                   'nfqueue':['queue-num', 'queue-balance', 'queue-bypass', 'queue-cpu-fanout'],
+                   'notrack':[],
+                   'rateest':['rateest-name', 'rateest-interval', 'rateest-ewmalog'],
+                   'redirect':['to-ports', 'random'],
+                   'reject-ipv6': ['reject-with'], 
+                   'reject-ipv4': ['reject-with'],
+                   'same':['to', 'nodst', 'random'],
+                   'secmark':['selctx'],
+                   'set':['add-set', 'del-set', 'timeout', 'exit'],
+                   'snat':['ro-source', 'random', 'persistent'],
+                   'snpt':['src-pfx', 'dst-pfx'],
+                   'tcpmss':['set-mss', 'clamp-mss-to-mptu'],
+                   'tcpoptstrip':['strip-options'],
+                   'tee':['gateway'],
+                   'tos':['set-tos', 'set-tos', 'and-tos', 'or-tos', 'xor-tos'],
+                   'tproxy':['on-port', 'on-ip', 'tproxy-mark'],
+                   'trace':[],
+                   'ttl':['ttl-set', 'ttl-dec', 'ttl-inc'],
+                   'ulog':['ulog-nlgroup', 'ulog-prefix', 'ulog-cprange', 'ulog-qthreshold'],
+                    
+                   };                    
+ 
+// add all the match_fields to the #match-dd dropdown            
+for( var match in match_fields)
+{
+    $("ul#match-dd").append("<li><a href='#'>"+ match +"</a></li>");
+};
+
+// add all the jump_fields to the #jump-dd dropdown            
+for( var jump in jump_fields)
+{
+    $("ul#jump-dd").append("<li><a href='#'>"+ jump +"</a></li>");
+};
+
+
+
+
+//var jump_fields = {{ jump_fields|safe }}; 
+var total_row_index = {{ total_matches }}-1;
+var match_count = {{ total_matches }};  
+var option_count = {{ total_options }}; 
+
+    
+ function add_match()
+ {
+     // Add a match of the type selected in the UI
+   
+   var row_index_exists = false;
+   var all_fields = "";
+   var match_type = $('#match').val();
+   var row_index = total_row_index;
+   var this_row = row_index + 1;
+   
+   
+   if(match_type == '===ADVANCED==='){ return };
+   
+   for (var i = 0; i < match_fields[match_type].length ; i++)
+   { 
+     // add the required fields for this match type
+     var field_name = match_fields[match_type][i].name.toLowerCase().replace(" ","_");
+     var invertible = match_fields[match_type][i].invertible;
+     var comment = "Choose the Chain to attach the Rule to.";
+     var invert_html = null;
+     
+
+      
+       
+       
+     
+     var match_id = null;
+     
+     if( i == 0 )
+     {
+       match_id = "<input type='hidden' name='" + match_type +"_" + match_count + "' >"  
+     }
+     
+    // Adjust the html according to whether or not an 'invert' checkbox is required 
+     if(invertible == "True")
+     {
+        invert_html = "    <div class='input-group input-group-sm'  > "
+        + "            <span class='input-group-addon' >Invert</span> "
+        + "            <span class='input-group-addon' > "
+        + "              <input type='checkbox' aria-label='...' name='" + field_name + "_new" + match_count + "_cb' > "
+        + "            </span> "        
+        + "    </div>"         
+         
+         
+         
+       }else{
+         
+        invert_html =  "<div style='width: 85px; height: 15px; background: white'>&nbsp;</div> "
+         
+       };      
+     
+    // create html for all the fields of the current match type 
+     var this_field = 
+          "<tr>"
+        + "  <td style='border: 0px;'> "
+        + invert_html
+        + "  </td>"
+        + "  <td style='border: 0px; '>"
+        + "    <div class='input-group input-group-sm' style='border: 0px; solid white;'> "        
+        + "      <span class='input-group-addon' style='background: white; border: 0px;' >  </span>"                                             
+        + "      <span class='input-group-addon input-group-rule'>" + field_name + "</span> "        
+        + "      <input type='text' class='form-control' aria-label='...' value=''  id='chain' name='" + field_name + "_new" + match_count + "' "
+        + "           style='background: white;'>"
+        + "      <!-- /btn-group --> "
+        + "    </div>"
+        + "  <!-- /input-group -->"
+        + "  </td > "
+                                      
+        + "  <td style='vertical-align: middle; border: 0px; padding-left: 20px;'><span>" + comment + "</span></td> "
+        + "</tr>"     
+     
+      
+      all_fields += this_field;
+     
+   }  
+   
+
+                                                // insert the new match entry into the table
+   var new_match_row =                            "<tr id='row_"+ this_row +"'>"
+                                                  
+                                                + "<td colspan='3'>"
+                                                + "<table style='border-collapse: separate; border-spacing: 0 1px;'>"
+                                                
+                                                + "<tr style='font-weight: normal; background: #bcc7d4;'>" 
+                                                + "  <th>"
+                                                + "  </th>"
+                                                
+                                                + "  <th>"
+                                                + "    <div class='input-group input-group-sm' > "
+                                                + "      <span class='input-group-addon' style='border: 1px solid #cccccc; text-align: middle'>" + match_type +" Match</span> "
+                                                + "    </div>"                                                
+                                                + "      <!-- /btn-group --> "
+                                                + "    <!-- /input-group -->"
+                                                + "  </th> "                                                
+                                                                                
+                                                + "  <th style='vertical-align: middle; padding-left: 10px;'> "
+                                                
+                                                + "    <div class='btn-group' role='group' aria-label='...'  > "
+                                                + "      <a   class='btn btn-default btn-xs'   ><span id='glyph_" + match_count + "' class='glyphicon glyphicon-collapse-up ' onclick='toggle_match(" + match_count + ")'    ></span></a>"
+                                                + "      <a   class='btn btn-default btn-xs'><span class='glyphicon glyphicon-remove' onclick='delete_match(" + this_row + ")' ></span></a>"
+                                                + "    </div>"                                                  
+                                                + "  </th> "
+                         
+                                                + "</tr>"    
+                                                + "<tbody id='match_collapse_"+match_count+"' >" 
+                                                + "<input type='hidden' name='newindex_" + match_type +"_" + match_count + "' >" 
+                                              
+                                                + all_fields
+ 
+                                                + "</tbody>  "
+                                                + "</table>"
+                                                + "</td>  "
+                                                + "</tr>"                                                
+           
+                                              
+    if (row_index < 0)                                          
+    {
+      // table is empty so append new row
+      $('#rule tbody').append( new_match_row);
+    }
+    else
+    {
+      // table has at least one row so insert new row at the bottom
+      $("#rule > tbody > tr").eq(row_index).after( new_match_row );
+    }
+    
+   // update counters for new row added.
+   total_row_index += 1;
+   match_count += 1;
+ }
+
+   
+  // Match button drop down
+  $("#match-dd li a").click(function(){
+    $("#match").val($(this).text());
+  });
+  
+ 
+    
+    
+  function delete_match(the_row, match_id)
+  {
+    // remove the row (match) from the table as required
+    // add a hidden input value to remove an existing match on POST if needed
+     
+      var delete_it = confirm("Are you sure you want to delete this Match?");
+      
+      if(delete_it == true)
+      {
+         $('#row_' + the_row).remove();
+         total_row_index -= 1;
+         
+         if(match_id != null)
+         {
+           $('#delete_me').append("<input type='hidden' value='" + match_id + "' name='delete_" + match_id + "' >");
+         }
+      }   
+  };     
+    
+     
+  function toggle_match( count )  
+  {
+    // display (or hide) the parameters of a match in the UI
+      var collapse_id = "#match_collapse_" + count;
+      var glyph_id = "#glyph_" + count;
+      
+      if( $(collapse_id).is(":visible") )
+      {
+          $(collapse_id).hide();
+          $(glyph_id).removeClass("glyphicon-collapse-up ").addClass("glyphicon-collapse-down")
+      } else 
+      
+      {
+          $(collapse_id).show();
+          $(glyph_id).removeClass("glyphicon-collapse-down").addClass("glyphicon-collapse-up")
+      }
+  }
+  
+
+  
+ 
+  
+  
+  // Jump drop down
+  $("#jump-dd li a").click(function(){
+    var jump_value = $(this).text()
+    if(jump_value == '===ADVANCED==='){ return };
+    
+    $("#jump").val(jump_value);
+    
+    var all_fields = null;
+    
+   for (var i = 0; i < jump_fields[jump_value].length ; i++)
+   { 
+     // add the required fields for this match type
+     var field_name = jump_fields[jump_value][i].toLowerCase().replace(" ","_");
+     
+     var match_id = null;
+     
+     var this_field = 
+          "<tr   >"
+        + "<td style='border: 0px;'> "
+        +   "&nbsp;</td>"
+        
+        + "<td style='border: 0px;  margin-left: 0px;'>"
+
+        + "  <div class='col-xs-0 col-sm-0 col-md-0 col-lg-0'></div>"
+        + "  <div class='col-xs-12 col-sm-10 col-md-10 col-lg-6' > "        
+        
+        + "    <div class='input-group input-group-sm' > "        
+        + "       <span class='input-group-addon'>" + jump_fields[jump_value][i] + "</span> "
+        + "       <input type='text' class='form-control' aria-label='...' value=''  id='jump' name='" + field_name + "_jump' "
+        + "             style='background: white;'>"
+        + "      <!-- close btn-group --> "
+        + "   </div>"
+        + "  <!-- close bootstrap div -->"
+        + "  </div> " 
+        + "</td > "
+                                      
+        + "    <td style='vertical-align: middle; border: 0px; padding-left: 20px;'><span>Choose the Chain to attach the Rule to.</span></td> "
+        + "</tr>"     
+     
+      
+      all_fields += this_field;
+     
+   } 
+    
+    $('#jump tbody').html( all_fields );
+    
+  });  
+    
+    
+  var protocol_regular = ["all", "tcp", "udp", "icmp"] ;  
+  var protocol_advanced = ["all", "tcp", "udp", "icmp", "udplite", "esp", "ah", "sctp"] ;
+  var table_regular = ["filter", "nat"] ;
+  var table_advanced = ["filter", "nat", "mangle", "raw", "security", "all"] ;
+    
+  // adjust protocol and tables dropdown values (advanced or basic)
+  $("#advanced").click(function(){
+    
+       var protocol = protocol_regular;
+       var table = table_regular;
+       
+       if($("#advanced").is(':checked')) 
+       {
+           protocol = protocol_advanced;
+           table = table_advanced;
+       }
+       
+       var protocol_length = protocol.length;
+       var table_length = table.length;
+       
+       $("#protocol-dd").empty()
+       $("#table-dd").empty()
+       
+       
+       for ( var i = 0; i < protocol_length; i++)
+       {
+           $("#protocol-dd").append('<li><a href=\"#\">'+protocol[i]+'</a></li>');
+       }
+       
+       for ( var i = 0; i < table_length; i++)
+       {
+           $("#table-dd").append('<li><a href=\"#\">'+table[i]+'</a></li>');
+       }   
+   
+  });    
+  
+// Functions to handle the Rule dropdowns
+    
+  // enabled button drop down
+  $("#enabled-dd li a").click(function(){
+    $("#enabled").val($(this).text());
+  });
+  
+  // transport drop down
+  $("#transport-dd li a").click(function(){
+    $("#transport").val($(this).text());
+  });  
+  
+  // protocol drop down
+  $("#protocol-dd li a").click(function(){
+    $("#protocol").val($(this).text());
+  });  
+  
+  {% comment %}
+  // action drop down
+  $("#action-dd li a").click(function(){
+    $("#action").val($(this).text());
+  });  
+  {% endcomment %}
+  
+  // table drop down
+  $("#table-dd li a").click(function(){
+    $("#table").val($(this).text());
+  });
+  
+   // chain drop down
+  $("#chain-dd li a").click(function(){
+    $("#chain").val($(this).text());
+  });
+  
+  // ifacein drop down
+  $("#ifacein-dd li a").click(function(){
+    $("#ifacein").val($(this).text());
+  });
+  
+  // ifaceout drop down
+  $("#ifaceout-dd li a").click(function(){
+    $("#ifaceout").val($(this).text());
+  });
+  
+  // source mask drop down
+  $("#source-mask-dd li a").click(function(){
+    $("#source-mask").val($(this).text());
+  });
+  
+  // destination mask drop down
+  $("#dest-mask-dd li a").click(function(){
+    $("#dest-mask").val($(this).text());
+  });  
+        
+    
+    $(document).ready(function () {
+ 
+      
+    });
+  </script>
+
+{% endblock script %}
