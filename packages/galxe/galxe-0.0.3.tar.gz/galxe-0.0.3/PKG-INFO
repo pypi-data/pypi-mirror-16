@@ -1,0 +1,32 @@
+Metadata-Version: 1.1
+Name: galxe
+Version: 0.0.3
+Summary: graph algorithm c extensions for python
+Home-page: https://github.com/aachalat/galxe.git
+Author: Andrew Chalaturnyk
+Author-email: code.aachalat@gmail.com
+License: Apache License, Version 2.0
+Description: 
+            Various algorithms from graph theory.
+        
+            Using a c library and cython to create python extension classes.
+        
+            Started as a re-imagining of thesis work from:
+            https://github.com/aachalat/hamilton_cycle.git
+        
+            
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Cython
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Education
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
