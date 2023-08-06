@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: orm-creator
+Version: 1.0.0
+Summary: Automatically maps sql tables and generates classes for ORM manipulation
+Home-page: https://github.com/shravan97/ORM-Creator
+Author: Shravan Murali
+Author-email: shravanmurali@gmail.com
+License: MIT License
+Description: UNKNOWN
+Keywords: sqlalchemy,automate,ORM,MySql
+Platform: UNKNOWN
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Education

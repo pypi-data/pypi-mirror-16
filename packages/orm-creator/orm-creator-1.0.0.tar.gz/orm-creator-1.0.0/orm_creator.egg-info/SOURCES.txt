@@ -1,0 +1,14 @@
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+orm_creator/__init__.py
+orm_creator/main.py
+orm_creator/ormCreator.py
+orm_creator.egg-info/PKG-INFO
+orm_creator.egg-info/SOURCES.txt
+orm_creator.egg-info/dependency_links.txt
+orm_creator.egg-info/entry_points.txt
+orm_creator.egg-info/requires.txt
+orm_creator.egg-info/top_level.txt
