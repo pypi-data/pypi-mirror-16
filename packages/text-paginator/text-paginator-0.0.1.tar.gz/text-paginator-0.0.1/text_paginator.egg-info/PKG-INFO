@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: text-paginator
+Version: 0.0.1
+Summary: Modern Factory Text Paginator
+Home-page: https://github.com/modernfactory/text-paginator
+Author: Marcin Szepczynski, Grzegorz Waszkowiak
+Author-email: marcin@modernfactory.pl, grzegorz.waszkowiak@modernfactory.pl
+License: MIT
+Description: Text paginator.
+Platform: UNKNOWN
