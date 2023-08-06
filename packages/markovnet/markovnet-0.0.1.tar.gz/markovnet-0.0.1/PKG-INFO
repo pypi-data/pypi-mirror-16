@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: markovnet
+Version: 0.0.1
+Summary: Drop-in probabilistic programming.
+Home-page: https://github.com/LukeB42/markovnet
+Author: Luke Brooks
+Author-email: luke@psybernetics.org.uk
+License: UNKNOWN
+Download-URL: https://github.com/LukeB42/markovnet
+Description: UNKNOWN
+Keywords: probabilistic programming,dynamic programming,markov,markov networks
+Platform: UNKNOWN

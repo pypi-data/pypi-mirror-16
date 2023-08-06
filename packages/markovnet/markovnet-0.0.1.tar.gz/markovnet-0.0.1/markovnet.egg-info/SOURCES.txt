@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+markovnet/__init__.py
+markovnet.egg-info/PKG-INFO
+markovnet.egg-info/SOURCES.txt
+markovnet.egg-info/dependency_links.txt
+markovnet.egg-info/top_level.txt
