@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config>
+  <datasets/>
+  <cache enabled="${enablecache}">
+    <inMemorySizeMB>${inMemorySizeMB}</inMemorySizeMB>
+    <elementLifetimeMinutes>${elementLifetimeMinutes}</elementLifetimeMinutes>
+  </cache>
+  <dynamicServices>
+% for dynamic_service in dynamic_services:
+    <dynamicService alias="${dynamic_service[0]}" servicePath="${dynamic_service[1]}" datasetIdMatch=".*" dataReaderClass="" copyrightStatement="" moreInfoUrl="" disabled="false" queryable="true" downloadable="true"/>
+% endfor
+  </dynamicServices>
+  <contact>
+    <name>${contact}</name>
+    <organization>${organization}</organization>
+    <telephone></telephone>
+    <email>${email}</email>
+  </contact>
+  <server>
+    <title>${title}</title>
+    <allowFeatureInfo>true</allowFeatureInfo>
+    <maxImageWidth>1024</maxImageWidth>
+    <maxImageHeight>1024</maxImageHeight>
+    <abstract>${abstract}</abstract>
+    <keywords>${keywords}</keywords>
+    <url>${url}</url>
+    <allowglobalcapabilities>${allowglobalcapabilities}</allowglobalcapabilities>
+  </server>
+</config>
+
+
