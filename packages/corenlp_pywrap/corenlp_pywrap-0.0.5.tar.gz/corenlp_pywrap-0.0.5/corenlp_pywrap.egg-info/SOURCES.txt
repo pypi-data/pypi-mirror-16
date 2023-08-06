@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+corenlp_pywrap/__init__.py
+corenlp_pywrap/pywrap.py
+corenlp_pywrap.egg-info/PKG-INFO
+corenlp_pywrap.egg-info/SOURCES.txt
+corenlp_pywrap.egg-info/dependency_links.txt
+corenlp_pywrap.egg-info/requires.txt
+corenlp_pywrap.egg-info/top_level.txt

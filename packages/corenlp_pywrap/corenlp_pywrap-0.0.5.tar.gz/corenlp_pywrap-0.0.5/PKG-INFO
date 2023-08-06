@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: corenlp_pywrap
+Version: 0.0.5
+Summary: A powerful python wraper for Stanford CoreNLP
+Home-page: https://www.github.com/hhsecond/corenlp_pywrap
+Author: hhsecond
+Author-email: sherinct@live.com
+License: MIT
+Description: this is a long description
+Keywords: stanford corenlp wrapper
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: OSI Approved :: MIT License
