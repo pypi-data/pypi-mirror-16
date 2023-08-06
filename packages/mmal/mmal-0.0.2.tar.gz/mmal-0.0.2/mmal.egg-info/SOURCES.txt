@@ -1,0 +1,16 @@
+setup.py
+bin/mmal
+mmal/__init__.py
+mmal/client.py
+mmal/server.py
+mmal/service.py
+mmal/utils.py
+mmal.egg-info/PKG-INFO
+mmal.egg-info/SOURCES.txt
+mmal.egg-info/dependency_links.txt
+mmal.egg-info/requires.txt
+mmal.egg-info/top_level.txt
+mmal/bin/__init__.py
+mmal/bin/cli.py
+mmal/bin/client.py
+mmal/bin/server.py

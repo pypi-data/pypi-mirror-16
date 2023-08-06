@@ -1,0 +1,3 @@
+mmal-proto
+grpcio
+sqlalchemy
