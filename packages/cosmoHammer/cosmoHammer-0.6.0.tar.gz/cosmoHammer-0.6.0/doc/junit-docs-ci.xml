@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?><testsuite errors="0" failures="1" name="pytest" skips="0" tests="2" time="12.229"><testcase classname="doc.check_sphinx" file="doc/check_sphinx.py" line="7" name="test_linkcheck" time="10.5126578808"><failure message="CalledProcessError: Command &apos;[&apos;sphinx-build&apos;, &apos;-blinkcheck&apos;, &apos;-d&apos;, &apos;/private/var/folders/k_/ttz9cd4d3kj2kbh3lvtn6tkm0000gn/T/pytest-of-jakeret/pytest-6/test_linkcheck0/doctrees&apos;, &apos;./source&apos;, &apos;/private/var/folders/k_/ttz9cd4d3kj2kbh3lvtn6tkm0000gn/T/pytest-of-jakeret/pytest-6/test_linkcheck0/html&apos;]&apos; returned non-zero exit status 1">E   CalledProcessError: Command &apos;[&apos;sphinx-build&apos;, &apos;-blinkcheck&apos;, &apos;-d&apos;, &apos;/private/var/folders/k_/ttz9cd4d3kj2kbh3lvtn6tkm0000gn/T/pytest-of-jakeret/pytest-6/test_linkcheck0/doctrees&apos;, &apos;./source&apos;, &apos;/private/var/folders/k_/ttz9cd4d3kj2kbh3lvtn6tkm0000gn/T/pytest-of-jakeret/pytest-6/test_linkcheck0/html&apos;]&apos; returned non-zero exit status 1</failure><system-out>Running Sphinx v1.4.5
+making output directory...
+loading pickled environment... not yet created
+building [mo]: targets for 0 po files that are out of date
+building [linkcheck]: targets for 11 source files that are out of date
+updating environment: 11 added, 0 changed, 0 removed
+reading sources... [  9%] api
+reading sources... [ 18%] authors
+reading sources... [ 27%] contributing
+reading sources... [ 36%] history
+reading sources... [ 45%] index
+reading sources... [ 54%] user/HowToCosmoHammer
+reading sources... [ 63%] user/benchmark
+reading sources... [ 72%] user/install
+reading sources... [ 81%] user/parallelization
+reading sources... [ 90%] user/pso
+reading sources... [100%] user/usage
+
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+writing output... [  9%] api
+
+writing output... [ 18%] authors
+
+writing output... [ 27%] contributing
+
+writing output... [ 36%] history
+
+writing output... [ 45%] index
+
+(line    3) ok        https://travis-ci.org/cosmo-ethz/CosmoHammer
+(line    3) ok        http://arxiv.org/abs/1212.1721
+(line   19) ok        http://arxiv.org/abs/1202.3665
+(line    3) redirect  https://coveralls.io/r/cosmo-ethz/CosmoHammer - permanently to https://coveralls.io/github/cosmo-ethz/CosmoHammer
+(line    3) redirect  http://badge.fury.io/py/cosmoHammer - permanently to https://pypi.python.org/pypi/cosmoHammer/0.5.0
+(line   19) redirect  http://msp.berkeley.edu/camcos/2010/5-1/p04.xhtml - permanently to http://msp.org/camcos/2010/5-1/p04.xhtml
+(line   25) ok        http://www.fhnw.ch/engineering/i4ds/homepage
+(line   27) redirect  http://github.com/cosmo-ethz/CosmoHammer - permanently to https://github.com/cosmo-ethz/CosmoHammer
+(line   27) redirect  https://pypi.python.org/pypi/CosmoHammer - permanently to https://pypi.python.org/pypi/cosmoHammer
+(line   25) ok        http://www.fhnw.ch/homepage
+(line   54) ok        http://www.gnu.org/licenses/
+(line   29) redirect  http://github.com/cosmo-ethz/CosmoHammerPlugins - permanently to https://github.com/cosmo-ethz/CosmoHammerPlugins
+(line   27) redirect  http://cosmohammer.readthedocs.org/ - permanently to http://cosmohammer.readthedocs.io/en/latest/
+(line   23) broken    http://authors.elsevier.com/sd/article/S221313371300022X - &lt;urlopen error timed out&gt;
+writing output... [ 54%] user/HowToCosmoHammer
+
+writing output... [ 63%] user/benchmark
+
+(line    8) redirect  http://aws.amazon.com/ec2/ - permanently to https://aws.amazon.com/ec2/
+writing output... [ 72%] user/install
+
+(line   14) ok        https://pypi.python.org/pypi/mpi4py
+(line   35) ok        https://github.com/cosmo-ethz/CosmoHammerPlugins
+writing output... [ 81%] user/parallelization
+
+(line   16) ok        https://pypi.python.org/pypi/mpi4py/0.6.0
+(line   16) ok        https://pypi.python.org/pypi/mpi4py/0.6.0
+(line   12) redirect  http://docs.python.org/library/multiprocessing.html - permanently to https://docs.python.org/3/library/multiprocessing.html
+(line   12) ok        http://camb.info/
+(line   12) redirect  http://openmp.org - with Found to http://openmp.org/wp/
+writing output... [ 90%] user/pso
+
+writing output... [100%] user/usage
+
+
+build finished with problems, 11 warnings.
+</system-out><system-err>../README.rst:None: WARNING: nonlocal image URI found: https://badge.fury.io/py/cosmoHammer.png
+../README.rst:None: WARNING: nonlocal image URI found: https://travis-ci.org/cosmo-ethz/CosmoHammer.png?branch=master
+../README.rst:None: WARNING: nonlocal image URI found: https://coveralls.io/repos/cosmo-ethz/CosmoHammer/badge.svg
+../README.rst:None: WARNING: nonlocal image URI found: http://img.shields.io/badge/arXiv-1212.1721-orange.svg?style=flat
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/parallelization.rst:28: ERROR: Unexpected indentation.
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/parallelization.rst:36: ERROR: Unexpected indentation.
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/parallelization.rst:44: ERROR: Unexpected indentation.
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/parallelization.rst:58: ERROR: Unexpected indentation.
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/parallelization.rst:66: ERROR: Unexpected indentation.
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/parallelization.rst:74: ERROR: Unexpected indentation.
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/pso.rst:19: WARNING: Inline interpreted text or phrase reference start-string without end-string.
+</system-err></testcase><testcase classname="doc.check_sphinx" file="doc/check_sphinx.py" line="14" name="test_build_docs" time="1.67892313004"><system-out>Running Sphinx v1.4.5
+making output directory...
+loading pickled environment... not yet created
+building [mo]: targets for 0 po files that are out of date
+building [html]: targets for 11 source files that are out of date
+updating environment: 11 added, 0 changed, 0 removed
+reading sources... [  9%] api
+reading sources... [ 18%] authors
+reading sources... [ 27%] contributing
+reading sources... [ 36%] history
+reading sources... [ 45%] index
+reading sources... [ 54%] user/HowToCosmoHammer
+reading sources... [ 63%] user/benchmark
+reading sources... [ 72%] user/install
+reading sources... [ 81%] user/parallelization
+reading sources... [ 90%] user/pso
+reading sources... [100%] user/usage
+
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+writing output... [  9%] api
+writing output... [ 18%] authors
+writing output... [ 27%] contributing
+writing output... [ 36%] history
+writing output... [ 45%] index
+writing output... [ 54%] user/HowToCosmoHammer
+writing output... [ 63%] user/benchmark
+writing output... [ 72%] user/install
+writing output... [ 81%] user/parallelization
+writing output... [ 90%] user/pso
+writing output... [100%] user/usage
+
+generating indices... genindex py-modindex
+highlighting module code... [  7%] cosmoHammer.exceptions
+highlighting module code... [ 15%] cosmoHammer.pso.ParticleSwarmOptimizer
+highlighting module code... [ 23%] cosmoHammer.pso.MpiParticleSwarmOptimizer
+highlighting module code... [ 30%] cosmoHammer.LikelihoodComputationChain
+highlighting module code... [ 38%] cosmoHammer.util.SampleBallPositionGenerator
+highlighting module code... [ 46%] cosmoHammer.util.SampleFileUtil
+highlighting module code... [ 53%] cosmoHammer.ConcurrentMpiCosmoHammerSampler
+highlighting module code... [ 61%] cosmoHammer.CosmoHammerSampler
+highlighting module code... [ 69%] cosmoHammer.MpiCosmoHammerSampler
+highlighting module code... [ 76%] cosmoHammer.util.Params
+highlighting module code... [ 84%] cosmoHammer.ChainContext
+highlighting module code... [ 92%] cosmoHammer.util.InMemoryStorageUtil
+highlighting module code... [100%] cosmoHammer.util.FlatPositionGenerator
+
+writing additional pages... search
+copying images... [ 25%] user/parallelisation.jpg
+copying images... [ 50%] user/chscheme.jpg
+copying images... [ 75%] user/benchmark.png
+copying images... [100%] user/pso.gif
+
+copying static files... done
+copying extra files... done
+dumping search index in English (code: en) ... done
+dumping object inventory... done
+build succeeded, 11 warnings.
+</system-out><system-err>../README.rst:None: WARNING: nonlocal image URI found: https://badge.fury.io/py/cosmoHammer.png
+../README.rst:None: WARNING: nonlocal image URI found: https://travis-ci.org/cosmo-ethz/CosmoHammer.png?branch=master
+../README.rst:None: WARNING: nonlocal image URI found: https://coveralls.io/repos/cosmo-ethz/CosmoHammer/badge.svg
+../README.rst:None: WARNING: nonlocal image URI found: http://img.shields.io/badge/arXiv-1212.1721-orange.svg?style=flat
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/parallelization.rst:28: ERROR: Unexpected indentation.
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/parallelization.rst:36: ERROR: Unexpected indentation.
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/parallelization.rst:44: ERROR: Unexpected indentation.
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/parallelization.rst:58: ERROR: Unexpected indentation.
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/parallelization.rst:66: ERROR: Unexpected indentation.
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/parallelization.rst:74: ERROR: Unexpected indentation.
+/Users/jakeret/workspace/CosmoHammer/doc/source/user/pso.rst:19: WARNING: Inline interpreted text or phrase reference start-string without end-string.
+</system-err></testcase></testsuite>
