@@ -1,0 +1,30 @@
+Metadata-Version: 2.0
+Name: cch
+Version: 0.1.0
+Summary: Cloud CLI for Humans
+Home-page: https://github.com/rushiagr/cch
+Author: Rushi Agrawal
+Author-email: rushi.agr@gmail.com
+License: BSD
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Unix
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: click
+Requires-Dist: awscli
+Requires-Dist: boto3
+Requires-Dist: prettytable
+
+
+Cloud CLI for Humans
+
+
