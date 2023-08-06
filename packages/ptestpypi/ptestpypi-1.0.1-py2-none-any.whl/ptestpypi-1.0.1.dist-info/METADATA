@@ -1,0 +1,20 @@
+Metadata-Version: 2.0
+Name: ptestpypi
+Version: 1.0.1
+Summary: Payments API
+Home-page: https://ptestpypi.com/
+Author: ptestpypi
+Author-email: dev@ptestpypi.com
+License: MIT License
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: coreapi (==1.20.0)
+Requires-Dist: twine (==1.8.1)
+Requires-Dist: wac
+
+# ptestpypi
+
+
