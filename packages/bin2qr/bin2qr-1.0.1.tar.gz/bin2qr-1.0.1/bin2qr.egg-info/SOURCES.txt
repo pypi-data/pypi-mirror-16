@@ -1,0 +1,8 @@
+MANIFEST.in
+setup.py
+bin/bin2qr
+bin2qr.egg-info/PKG-INFO
+bin2qr.egg-info/SOURCES.txt
+bin2qr.egg-info/dependency_links.txt
+bin2qr.egg-info/requires.txt
+bin2qr.egg-info/top_level.txt
