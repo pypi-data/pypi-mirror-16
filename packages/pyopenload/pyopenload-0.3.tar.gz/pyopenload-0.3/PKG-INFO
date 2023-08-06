@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: pyopenload
+Version: 0.3
+Summary: Just a python wrapper for openload.co API
+Home-page: https://github.com/mohan3d/PyOpenload
+Author: Mohaned Magdy
+Author-email: mohan3d94@gmail.com
+License: MIT
+Download-URL: https://github.com/mohan3d/PyOpenload/tarball/0.3
+Description: UNKNOWN
+Keywords: openload,wrapper,api wrapper
+Platform: UNKNOWN
