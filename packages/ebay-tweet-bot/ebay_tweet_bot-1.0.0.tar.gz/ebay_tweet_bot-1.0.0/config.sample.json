@@ -1,0 +1,46 @@
+{
+    "bitly_access_token": "$BITLY_ACCESS_TOKEN",
+    "ebay_api_app_id": "$EBAY_API_APP_ID",
+    "last_run": "2016-08-16T00:59:09.085143",
+    "search_profile": {
+        "categories": [
+            "139973",
+            "54968",
+            "38583"
+        ],
+        "filters": [
+            {
+                "name": "MinPrice",
+                "value": "100"
+            },
+            {
+                "name": "MaxPrice",
+                "value": "500"
+            }
+        ],
+        "output_selectors": [
+            "PictureURLLarge",
+            "PictureURLSuperSize"
+        ],
+        "search_terms": [
+            {
+                "clause": "all",
+                "keywords": "all, these, must, exist"
+            },
+            {
+                "clause": "any",
+                "keywords": "any, of, these, can, exist"
+            },
+            {
+                "clause": "not",
+                "keywords": "none, of, these, must, exist"
+            }
+        ]
+    },
+    "twitter_api_config": {
+        "access_token_key": "$TWITTER_ACCESS_TOKEN_KEY",
+        "access_token_secret": "$TWITTER_ACCESS_TOKEN_SECRET",
+        "consumer_key": "$TWITTER_CONSUMER_KEY",
+        "consumer_secret": "$TWITTER_CONSUMER_SECRET"
+    }
+}
