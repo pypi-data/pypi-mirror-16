@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: django_staticimport
+Version: 0.0.2
+Summary: Add static files never was so easy.
+Home-page: https://github.com/leoxnidas/django_staticimport
+Author: Leonardo Javier Esparis Meza
+Author-email: leo.leo.leoxnidas.c.14@gmail.com
+License: BSD
+Description: UNKNOWN
+Keywords: django_staticimport,static_import,static files,static
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Utilities
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

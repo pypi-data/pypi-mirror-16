@@ -1,0 +1,12 @@
+{% load static from staticfiles %}
+{% if is_css %}
+<link rel="stylesheet" href="{% static filename %}" {{custom}}>
+{% elif is_js %}
+<script type="text/javascript" src="{% static filename %}" {{custom}}></script>
+{% elif is_img %}
+<img
+ {% if css %}class="{{css}}"{% endif %}
+ {% if id %}id="{{id}}"{% endif %}
+ {% if style %}style="{{style}}"{% endif %}
+ {{custom}} src="{% static filename %}">
+{% endif %}
