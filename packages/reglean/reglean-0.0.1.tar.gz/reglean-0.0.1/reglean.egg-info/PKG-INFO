@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: reglean
+Version: 0.0.1
+Summary: Glean metadata from a filename
+Home-page: https://github.com/julianirwin/reglean
+Author: Julian Irwin
+Author-email: julian.irwin@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: re
+Platform: UNKNOWN
+Classifier: Topic :: Text Processing

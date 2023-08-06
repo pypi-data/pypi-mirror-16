@@ -1,0 +1,11 @@
+setup.cfg
+setup.py
+reglean/__init__.py
+reglean/gleaner.py
+reglean.egg-info/PKG-INFO
+reglean.egg-info/SOURCES.txt
+reglean.egg-info/dependency_links.txt
+reglean.egg-info/entry_points.txt
+reglean.egg-info/not-zip-safe
+reglean.egg-info/requires.txt
+reglean.egg-info/top_level.txt
