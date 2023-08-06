@@ -1,0 +1,7 @@
+setup.py
+code/__init__.py
+code/exp10it.py
+exp10it.egg-info/PKG-INFO
+exp10it.egg-info/SOURCES.txt
+exp10it.egg-info/dependency_links.txt
+exp10it.egg-info/top_level.txt
