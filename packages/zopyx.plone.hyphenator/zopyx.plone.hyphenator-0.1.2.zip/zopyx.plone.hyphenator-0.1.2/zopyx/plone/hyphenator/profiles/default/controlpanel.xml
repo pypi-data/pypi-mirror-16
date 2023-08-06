@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<object
+    name="portal_controlpanel"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="zopyx.plone.hyphenator"
+    purge="False">
+
+    <configlet
+        title="Hyphenator"
+        action_id="zopyx.plone.hyphenator"
+        appId="zopyx.plone.hyphenator"
+        category="Products"
+        condition_expr=""
+        url_expr="string:${portal_url}/@@hyphenator-settings"
+        visible="True"
+        i18n:attributes="title">
+            <permission>Manage portal</permission>
+    </configlet>
+
+</object>

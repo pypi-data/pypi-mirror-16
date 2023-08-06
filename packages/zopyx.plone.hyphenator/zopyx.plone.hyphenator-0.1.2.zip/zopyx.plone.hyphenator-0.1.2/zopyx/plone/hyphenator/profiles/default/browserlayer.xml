@@ -1,0 +1,4 @@
+<layers>
+    <layer name="zopyx.plone.hyphenator"
+        interface="zopyx.plone.hyphenator.interfaces.IBrowserLayer" />
+</layers>
