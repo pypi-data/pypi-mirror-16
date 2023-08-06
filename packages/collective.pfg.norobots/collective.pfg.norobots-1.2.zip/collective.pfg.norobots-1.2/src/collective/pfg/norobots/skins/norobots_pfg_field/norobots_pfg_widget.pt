@@ -1,0 +1,25 @@
+<metal:view_macro define-macro="edit"
+                  i18n:domain="collective.pfg.norobots">
+
+<metal:use use-macro="field_macro | here/widgets/field/macros/edit">
+  <metal:widget_body fill-slot="widget_body" tal:define="question here/@@norobots/get_question;">
+  
+  <strong><span i18n:translate="">Question</span></strong>:
+  <span i18n:domain="collective.z3cform.norobots" i18n:translate="" tal:content="python:question['title']" /><br />
+
+  <strong><span i18n:translate="">Your answer</span></strong>:
+  
+  <input type="text" tabindex="" name="" size="10" value=""
+       tal:attributes="name fieldName"/>
+                     
+  <input type="hidden" name="fieldName_question_id" value=""
+         tal:attributes="value python:question['id'];
+                         name  python:'%s_question_id' % fieldName" />
+  <input type="hidden" name="fieldName_id_check" value=""
+         tal:attributes="value python:question['id_check'];
+                         name  python:'%s_id_check' % fieldName" />
+         
+  </metal:widget_body>
+</metal:use>
+
+</metal:view_macro>

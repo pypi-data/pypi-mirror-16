@@ -1,0 +1,20 @@
+Changelog
+------------
+
+1.2 (2016-07-21)
+~~~~~~~~~~~~~~~~
+
+- Unified widget with the other PFG widgets to make it work with QuickEdit.
+  [lewicki]
+
+1.1 (2015-04-13)
+~~~~~~~~~~~~~~~~
+
+- Added Dutch translation.
+  [kcleong]
+
+1.0 (2012-10-03)
+~~~~~~~~~~~~~~~~
+
+- Initial release
+  [sylvainb]
