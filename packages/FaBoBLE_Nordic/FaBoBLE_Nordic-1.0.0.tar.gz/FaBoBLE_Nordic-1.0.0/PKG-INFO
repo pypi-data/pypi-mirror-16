@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: FaBoBLE_Nordic
+Version: 1.0.0
+Summary: This is a library for the FaBo BLE Nordic Brick.
+Home-page: https://github.com/FaBoPlatform/FaBoBLE-Nordic-Python
+Author: FaBo
+Author-email: info@fabo.io
+License: Apache License 2.0
+Description: FaBoBLE-Nordic-Python
+        =====================
+        
+        How to install.
+        ---------------
+        
+        ::
+        
+            pip install FaBoBLE_Nordic
+        
+        FaBo BLE Nordic Serial Brick
+        ----------------------------
+        
+        　`#307 BLE Nordic Serial Brick <http://fabo.io/307.html>`__
+        
+        MDBT40
+        ------
+        
+        　Nordic NRF51 BLE module.
+        
+        MDBT40 Datasheet
+        ~~~~~~~~~~~~~~~~
+        
+        　`MDBT40
+        Datasheet <http://www.raytac.com/download/MDBT40/MDBT40%20spec-Version%20A4.pdf>`__
+        
+        Releases
+        --------
+        
+        -  1.0.0 Initial release.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development
+Classifier: Topic :: System :: Hardware

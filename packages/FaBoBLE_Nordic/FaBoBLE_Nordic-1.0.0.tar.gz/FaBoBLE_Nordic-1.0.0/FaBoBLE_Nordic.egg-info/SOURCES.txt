@@ -1,0 +1,7 @@
+setup.py
+FaBoBLE_Nordic/Nordic.py
+FaBoBLE_Nordic/__init__.py
+FaBoBLE_Nordic.egg-info/PKG-INFO
+FaBoBLE_Nordic.egg-info/SOURCES.txt
+FaBoBLE_Nordic.egg-info/dependency_links.txt
+FaBoBLE_Nordic.egg-info/top_level.txt
