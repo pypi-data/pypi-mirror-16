@@ -1,0 +1,9 @@
+pyramid_letsencrypt/__init__.py,sha256=vKg0O1viXH-Pjs7jVPgG-sop0MNTN52kt-HQmyTIIj8,1096
+pyramid_letsencrypt/letsencrypt.py,sha256=GjIt33BYLm4fwehU2cohu_9CyPlnju9CynEBCQsbn4Y,314
+pyramid_letsencrypt/nose_fix.py,sha256=NymdYMuMYc9mpnGq3HGXGfi1YBnTskscHAHhwcKh-Hc,60
+pyramid_letsencrypt-0.1.dist-info/DESCRIPTION.rst,sha256=aM6QKLGzM6afMbOdOf_KVvHbr2mIo08NM9LvhOyfIS0,1305
+pyramid_letsencrypt-0.1.dist-info/METADATA,sha256=oFM-j-i-bSMTKKSV64dRq_4D8d04lJG4_rwBLVrxOAY,2227
+pyramid_letsencrypt-0.1.dist-info/RECORD,,
+pyramid_letsencrypt-0.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+pyramid_letsencrypt-0.1.dist-info/metadata.json,sha256=v_ZySZEXfEnZLtwxYvvkfu4bd1luyZN-PdkIfW8y98I,1033
+pyramid_letsencrypt-0.1.dist-info/top_level.txt,sha256=7v9JWDpThIdT3GG0J-vD9N14kh9dB4A_PXkp7HakYBQ,20
