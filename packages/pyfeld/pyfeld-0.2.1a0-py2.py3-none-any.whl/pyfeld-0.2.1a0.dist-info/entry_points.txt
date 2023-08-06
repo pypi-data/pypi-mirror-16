@@ -1,0 +1,4 @@
+[console_scripts]
+pyfeld = pyfeld.rfcmd:run_main
+pyfeld-ui = pyfeld.rfcmd:run_ui
+
