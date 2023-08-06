@@ -1,0 +1,23 @@
+Metadata-Version: 2.0
+Name: layer-cake
+Version: 0.1.4
+Summary: Service Discovery and Configuration for Application Containers
+Home-page: https://github.com/bcsaller/layercake
+Author: Benjamin Saller
+Author-email: benjamin.saller@canonical.com
+License: Apache 2
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: aio-etcd
+Requires-Dist: aioconsul
+Requires-Dist: docker-py
+Requires-Dist: jsonschema
+Requires-Dist: pyyaml
+Requires-Dist: request
+
+UNKNOWN
+
+

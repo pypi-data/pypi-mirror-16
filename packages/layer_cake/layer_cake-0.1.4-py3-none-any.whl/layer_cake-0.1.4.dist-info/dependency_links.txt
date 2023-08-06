@@ -1,0 +1,1 @@
+https://api.github.com/repos/M-o-a-T/python-aio-etcd/tarball/master#aio-etcd

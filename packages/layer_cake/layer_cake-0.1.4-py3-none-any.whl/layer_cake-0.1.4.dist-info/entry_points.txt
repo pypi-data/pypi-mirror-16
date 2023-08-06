@@ -1,0 +1,4 @@
+[console_scripts]
+cake = layer_cake.cake:main
+disco = layer_cake.disco:main
+
