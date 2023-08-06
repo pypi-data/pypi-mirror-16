@@ -1,0 +1,11 @@
+__transformers__/__init__.py,sha256=lO9MKnu5_M9XtMxP2CXYS2k7uFiRYJ5aXXPF_Xt0MSY,47
+__transformers__/__main__.py,sha256=LMIyGETi5DMu5zKOUyLosoRADF8Z8c5LhqP3Ugv_OYQ,397
+__transformers__/ellipsis_partial.py,sha256=bwakwEmLwNbFWg4DQNrEgXSvkv0LFh9zoOh5TKzVaAY,1468
+__transformers__/loader.py,sha256=vsPBNEQ205ALsrYq79i0ihZ5hkG2LxcF8vdKeDvgUj8,1472
+__transformers__/matmul_pipe.py,sha256=_Uc8pYLj3w4b8AY5uiwhjle5uMiT0BTVmv4mKYVskEY,509
+transformers-0.1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+transformers-0.1.dist-info/METADATA,sha256=qbzqbM-epgfM97_pVHVfiiUvI_7R4ZTrmORxoBRb3YU,260
+transformers-0.1.dist-info/RECORD,,
+transformers-0.1.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+transformers-0.1.dist-info/metadata.json,sha256=eaNQlnNIy7g-IFVVA3xnGNEcKuNg1tlqBwf52mfCX5o,436
+transformers-0.1.dist-info/top_level.txt,sha256=VdB3gPB4LKPFXeD3HbE98Yy-byZSobrFZ-RHTWM3X-o,17
