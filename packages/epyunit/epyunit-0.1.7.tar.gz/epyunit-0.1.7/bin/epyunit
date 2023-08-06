@@ -1,0 +1,502 @@
+#!/usr/bin/env python
+"""'epyunit' - Command line interface
+
+The epyunit commandline interface provides a call wrapper
+for unit and regression tests of arbitrary executables.
+The wrapper internally relies on the standard packages 'PyUnit'
+and integrates into Eclipse by 'PyDev'. Thus unit tests could
+be applied in particular for shell scripts and intermixed 
+application processes implemented in multiple programming 
+languages.
+
+The call is simply a prefix to the actual testee including 
+it's options. The wrapper itself provides various criteria 
+for the indication of the success and/or failure of the test 
+case. Therefore correlation of stdout, stderr, and exit 
+values is provided. 
+
+
+SYNOPSIS:
+
+  epyunit [OPTIONS] [--] <testee> [<testee-options>]
+
+OPTIONS:
+
+  --appname=<arbitrary-name-of-app>
+    An arbitrary application name to be inserted into record 
+    headers.
+    
+  --csv
+    Prints complete test result CSV format including header.
+
+  -d --debug
+     Debug entries, does NOT work with 'python -O ...'.
+     Developer output, aimed for filtering.
+
+  --default-nok
+    When multiple options match, prioritize a 
+    matching NOK option as success.
+
+  --default-ok
+    When multiple options match, prioritize a 
+    matching OK option as success.
+
+  --environment
+    Include platform info into header.
+
+  --exit=<exit-value>
+    Indicates success when exit value is equal to the provided 
+    value.
+
+  --exit-ignore
+    Ignore exit value, as default '0' is
+    required for success. 
+
+  --exit-nok
+    Exit value '!=0' indicates success.
+
+  --exit-ok
+    Exit value '0' indicates success.
+
+  -h --help
+     This help.
+
+  --pass-through
+    Pass through the testee results on STDOUT and STDERR.
+    The exit value is interpreted by rules, else the
+    execution state of the framework defines the exit 
+    value.
+    
+  --pass-through-all
+    Pass through the testee result on STDOUT and STDERR,
+    also passes transparently the received exit value.
+    Else the execution state of the framework defines 
+    the exit value.
+
+  --prio-nok
+    In case of present failure and success conditions,
+    the success condition dominates.
+
+  --prio-ok
+    In case of present failure and success conditions,
+    the failure condition dominates.
+
+  --pydev-remote-debug[=host[:port]]
+    Activates remote debugging with PyDev plugin of Eclipse.
+
+  --repr
+    Prints complete test result by Python call of 'repr()'.
+
+  --stderr-nok=<nok-string>
+    Error string on stderr indicates success.
+
+  --stdout-nok=<nok-string>
+    Error string on stdout indicates success.
+
+  --stderr-ok=<ok-string>
+    OK string on stderr indicates success.
+
+  --stdout-ok=<ok-string>
+    OK string on stdout indicates success.
+
+  --selftest
+
+     Performs a basic functional selftest by executing the 
+     basic examples based on 'myscript.sh'.
+
+  --test-id=<arbitrary-identifier-for-record-header>
+    Prints the test-id with the formats 'csv', and 'xml'.
+    Too be applied in case of multiple test case calls.
+
+  --timestamp
+    Includes date and time into record header.
+
+  -Version --Version
+     Current version - detailed.
+
+  -v --verbose
+     Verbose, some relevant states for basic analysis.
+     When '--selftest' is set, repetition raises the display 
+     level.
+
+  -version --version
+     Current version - terse.
+
+  --xml
+    Prints complete test result XML format.
+
+
+ARGUMENTS:
+
+  [--] 
+     The ambigous options and arguments exist, the first match
+     terminates the evaluatoin of the wrapper options.
+
+  <testee> 
+     The wrapped testee.
+
+  [<testee-options>]
+     Options of the testee.
+
+
+ENVIRONMENT:
+
+  * PYTHON OPTIONS:
+    -O, -OO: Eliminates '__debug__' code.
+ 
+
+EXAMPLES:
+
+  Basic call examples are provided:
+
+  * `CLI: command line interface <epyunit_example_cli.html>`_ 
+
+  * `Eclipse: PyDev integration <epyunit_example_eclipse.html>`_ 
+
+  For detailed examples refer to the subdirectories of the 
+  source package for:
+
+  * Unit tests 
+
+  * UseCases
+  
+COPYRIGHT:
+  Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez
+  Copyright (C)2015-2016 Arno-Can Uestuensoez
+
+"""
+from __future__ import absolute_import
+from epyunit.SubprocUnit import SubprocessUnit,SUnitRules
+#from __future__ import print_function
+
+__author__ = 'Arno-Can Uestuensoez'
+__license__ = "Artistic-License-2.0 + Forced-Fairplay-Constraints"
+__copyright__ = "Copyright (C) 2010-2016 Arno-Can Uestuensoez @Ingenieurbuero Arno-Can Uestuensoez"
+__version__ = '0.1.0'
+__uuid__='9de52399-7752-4633-9fdc-66c87a9200b8'
+
+__docformat__ = "restructuredtext en"
+
+#
+#--- fetch options
+#
+import getopt, os, sys, datetime
+import platform
+
+try:
+    from epyunit.SystemCalls import SystemCalls
+except Exception as e:
+    print "\n#\n#*** Set 'PYTHONPATH' ("+str(e)+")\n#\n"
+    sys.exit(1)
+
+import epyunit.SubprocUnit
+
+# name of application, used for several filenames as default
+_APPNAME = "epyunit"
+
+
+# runtime environment 
+_host = platform.node()
+_user = "testuser"
+_osu = platform.os.uname()
+_os = _osu[0]
+_osver = _osu[2]
+_arch = _osu[-1]
+_dist, _distver,_x = platform.dist()
+
+def usage():
+    if __name__ == '__main__':
+        import pydoc
+        #FIXME: literally displayed '__main__'
+        print pydoc.help(__name__)
+    else:
+        help(str(os.path.basename(sys.argv[0]).split('.')[0]))
+
+_longopts = [
+    "help","debug","verbose","version","Version","selftest",
+    "default-nok", "default-ok","exit=","exit-ignore","exit-nok",
+    "exit-ok","stderr-nok","stdout-nok","stderr-ok","stdout-ok",
+    "prio-nok", "prio-ok",
+    "repr", "xml", "csv", "pass-through", "pass-through-all",
+    "test-id=", "timestamp", "environment",
+    "rdbg",
+]
+_sopts = "a:hdv"
+
+def usagemin():
+    print "\nAvailable options:"
+    slst = ""
+    nl = 0
+    print "\nshortopts:"
+    for s in _sopts:
+        if nl == 10:
+            print "  "+slst
+            nl = -1
+            slst = ""
+        if s == ':':
+            continue
+        slst += "-%s "%(s)
+    if slst:
+        print "  "+slst
+        
+    ilst = ""
+    nl = 0
+    print "\nlongopts:"
+    for i in sorted(_longopts):
+        if nl == 2  or nl>=len(_longopts):
+            print "  "+ilst
+            nl = -1
+            ilst = ""
+        ilst += "--%-20s "%(i)
+        nl += 1
+    if ilst:
+        print "  "+ilst
+    print """
+Examples:
+
+  epyunit -v --selftest
+  epyunit -v myscript.sh NOK
+  epyunit -v --exit=8 myscript.sh EXIT8
+
+
+set PATH for 'myscript.sh' to 'epyunit' directory
+use 'myscript.sh -h' for all response pattern
+use '--help' for complete help
+
+"""
+
+
+_kargs={}
+try:
+    _opts, _args = getopt.getopt(sys.argv[1:], _sopts, _longopts)
+except getopt.GetoptError, err:
+    print str(err)
+    usagemin()
+    sys.exit(2)
+
+
+#
+# defaults
+#
+
+# name of tested application
+_appname = None
+
+# test id, to be printed with result data records
+_testid = 0
+
+# perform hard-coded basic selftest
+_selftest = False
+
+# verbose output
+_verbose = 0
+
+# debug output
+_debug = 0
+
+_rdbg = None
+_rdbg_default = "localhost:5678"
+#
+_default = 'OK'
+
+# when OK and NOK conditions met the "NOK" defines the result
+_prio = "NOK"
+
+# exit value defined as success, or ignored: OK(0) | NOK(!=0) | IGNORE
+_exit = "OK"
+
+
+# activate check of exit code: OK(0) else NOK(>0)
+_chk_exit = True
+
+# a strings to be checked in stderr stream
+_chk_stderr = False
+_CHK_STDERR_OK = [] # list of provided strings: OK condition
+_CHK_STDERR_NOK = [] # list of provided strings: NOK condition
+
+# a strings to be checked in stdout stream
+_chk_stdout = False
+_CHK_STDOUT_OK = [] # list of provided strings: OK condition
+_CHK_STDOUT_NOK = [] # list of provided strings: NOK condition
+
+
+# counter values for occured matches
+_result = 0 # overall
+_result_ok = 0 # number of matched success criteria 
+_result_nok = 0 # number of matched failure criteria
+
+# full result value display
+_out = None
+_timestamp = False
+_environment = False
+
+#
+# for now one of each, last wins
+_myRulesMap = {}
+
+# pydev remote debug
+_rdbg = None
+
+for _o,_a in _opts:
+    
+    #
+    # *** rules ***
+    #
+    if _o in ("--default-ok",):
+        _myRulesMap['default'] = 'OK'
+    elif _o in ("--default-nok",):
+        _myRulesMap['default'] = 'NOK'
+    
+    elif _o in ("--exit",):
+        _myRulesMap['exit'] = "VAL"
+        _myRulesMap['exitval'] = int(_a)
+    elif _o in ("--exit-ignore",):
+        _myRulesMap['exit'] = "IGN"
+    elif _o in ("--exit-nok",):
+        _myRulesMap['exit'] = "NOK"
+    elif _o in ("--exit-ok",):
+        _myRulesMap['exit'] = "OK"
+        
+    elif _o in ("--stderr-nok",):
+        _CHK_STDERR_NOK.append(_a)
+    elif _o in ("--stdout-nok",):
+        _CHK_STDOUT_NOK.append(_a)
+    elif _o in ("--stderr-ok",):
+        _CHK_STDERR_OK.append(_a)
+    elif _o in ("--stdout-ok",):
+        _CHK_STDOUT_OK.append(_a)
+
+    elif _o in ("--prio-nok",):
+        _myRulesMap['prio'] = "NOK"
+    elif _o in ("--prio-ok",):
+        _myRulesMap['prio'] = "OK"
+
+    #
+    # ** output format ***
+    #
+    elif _o in ("--repr",):
+        _out = "repr"
+    elif _o in ("--xml",):
+        _out = "xml"
+    elif _o in ("--csv",):
+        _out = "csv"
+
+    #
+    # *** misc ***
+    #
+    elif _o in ("--pass-through",):
+        _out = "pass"
+
+    elif _o in ("-a","--appname",):
+        _appname = _a
+    elif _o in ("--test-id",):
+        _testid = _a
+    elif _o in ("--timestamp",):
+        _timestamp = True
+    elif _o in ("--environment",):
+        _environment = True
+
+    elif _o == "--selftest":
+        _selftest = True
+
+    elif _o in ("-d","--debug",):
+        _kargs['debug'] = True
+        _debug += 1
+    elif _o in ("-v","--verbose",):
+        _verbose += 1
+
+    elif _o in ("--rdbg",):
+        if _a:
+            _rdbg = _a
+        else:
+            _rdbg = _rdbg_default
+        
+    elif _o in ("-h",):
+        usagemin()
+        sys.exit()
+
+    elif _o in ("--help",):
+        usage()
+        sys.exit()
+
+    elif _o in ("--version",):
+        print str(__version__)
+        sys.exit()
+
+    elif _o in ("--Version",):
+        print "app:      "+str(_APPNAME)
+        print "version:  "+str(__version__)
+        print "author:   "+str(__author__)
+        print "copyright:"+str(__copyright__)
+        print "license:  "+str(__license__)
+        print "file:     "+str(os.path.basename(__file__))
+        sys.exit()
+
+    else:
+        assert False, "unhandled option"
+
+
+if _rdbg:
+    import epyunit.PyDevERDbg
+    epyunit.PyDevERDbg.PYDEVD.startDebug()
+    #
+    # remote breakpoints could be set from here on...
+    #
+#
+# assembled collections for rules
+#
+if _CHK_STDERR_NOK:
+    _myRulesMap["stderrnok"] = _CHK_STDERR_NOK
+if _CHK_STDERR_OK:
+    _myRulesMap["stderrok"] = _CHK_STDERR_OK
+if _CHK_STDOUT_NOK:
+    _myRulesMap["stdoutnok"] = _CHK_STDOUT_NOK
+if _CHK_STDOUT_OK:
+    _myRulesMap["stdoutok"] = _CHK_STDOUT_OK
+
+
+if _selftest:
+    import epyunit.selftest
+    
+    _myargs = {}
+    if _verbose and not _out:
+        _myargs['out'] = 'str'
+    if _verbose:
+        _myargs['verbose'] = _verbose
+    if _debug:
+        _myargs['debug'] = _debug
+    epyunit.selftest.selftest(**_myargs)
+    sys.exit(0)
+
+#
+# normal procedure...
+#
+
+if _verbose>0:
+    _kargs['verbose'] = _verbose 
+if _debug > 0:
+    _kargs['debug'] = _debug 
+
+if _out == "pass":
+    _kargs['raw'] = True
+
+sx = SystemCalls(**_kargs)
+if _debug > 0:
+    print str(sx)+"\n"
+ret = sx.callit(' '.join(_args))
+if ret[0] == 126:
+    print >>sys.stderr ,"check exec permissions of 'myscript.sh'"
+if _verbose+_debug > 0:
+    print ret
+
+
+
+
+sx.displayit(ret)    
+if _out == "pass":
+    exit(ret[0])
+
+if _verbose or _debug:
+    print "epyunit => "+str(_result)
+exit(_result)
+    
