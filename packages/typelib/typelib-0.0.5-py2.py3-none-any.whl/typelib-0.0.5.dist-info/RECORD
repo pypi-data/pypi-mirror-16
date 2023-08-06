@@ -1,0 +1,17 @@
+typelib/__init__.py,sha256=kehBPLSSuLegRE0oPnNigJVOfTQmi0JYz6VaPR2cTnw,170
+typelib/annotations.py,sha256=ktXiL78_K6oNzhgP3JGofxNa7-WStczXtlzYnd3GXHM,1316
+typelib/core.py,sha256=ycdYs1w8s3b0OvH_mx7MvzZWZnncRdgLWHzVYXXsN24,8665
+typelib/derivations.py,sha256=I7LcWd8bBdRmpLLeNeXJdVwsAvhA-1_yupOSw06mHQE,32738
+typelib/enums.py,sha256=NTp0dLQNcBj4ovA4nAaO3utn962DluFcao7Go-uFDtE,1495
+typelib/errors.py,sha256=c4iSGmwdt6ptnwXj8RHOrVuHYcVyMzVfKRS3qi6VTaw,1096
+typelib/records.py,sha256=9zsBunhMQae94jZ6BF_k0rNfReVorhTxKTHe6Dr7gYA,2770
+typelib/registry.py,sha256=eN2uy2cneBMhkKJfAEsdRLPVvHbI75lxLnfiuZCR_Ys,6429
+typelib/utils.py,sha256=TVu0oJOd6tkS6vqGfnKeOqmDBHftMWkz9KwPzm4h0E0,890
+typelib-0.0.5.data/scripts/clean_install.sh,sha256=ZGtZSMHyDVR_zAQvcFzz29Qu5yyA_mkrPszBEDyQoZI,338
+typelib-0.0.5.data/scripts/package.sh,sha256=nHfVbShWf7vSxiUYwhB9IqZPIaeMrP3S4Y51M4L7kZk,132
+typelib-0.0.5.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+typelib-0.0.5.dist-info/METADATA,sha256=0oRTFa5I5cpvzafBY0a6mSnHARCCDkRSPOKANMsQqnk,1012
+typelib-0.0.5.dist-info/metadata.json,sha256=RAZUNWsOw8r7FujyqpOYe8_5xhdDiNPRkNFr0-eLAMY,1079
+typelib-0.0.5.dist-info/RECORD,,
+typelib-0.0.5.dist-info/top_level.txt,sha256=Ef6elMg3vTaQJnSwedWzfrB3N9Aiery01LCSYK4lZfU,8
+typelib-0.0.5.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
