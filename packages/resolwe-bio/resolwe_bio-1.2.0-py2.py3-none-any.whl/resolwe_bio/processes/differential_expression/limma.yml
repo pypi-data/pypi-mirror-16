@@ -1,0 +1,73 @@
+# =================================================
+# Differential Expression - Limma (microarray data)
+# =================================================
+#
+---
+
+- slug: differentialexpression-limma
+  name: Limma
+  data_name: 'Differential expression (case vs. control)'
+  version: 1.0.2
+  type: data:differentialexpression:limma
+  category: analyses
+  persistence: CACHED
+  description: >
+    Find differentially expressed genes.
+  input:
+    - name: case
+      label: Case
+      type: list:data:expression
+      description: >
+        Case samples (replicates)
+    - name: control
+      label: Control
+      type: list:data:expression
+      description: >
+        Control samples (replicates)
+  output:
+    - name: diffexp
+      label: Differential expression
+      type: basic:file
+    - name: volcano_plot
+      label: Volcano plot
+      type: basic:json
+  run:
+    runtime: polyglot
+    bash: |
+      {% for c in control %}
+        controls=$controls"{{c.exp.file}} "
+        contVec=$contVec"1,"
+        caseVec=$caseVec"0,"
+      {% endfor %}
+
+      {% for t in case %}
+        {% if t not in control %}
+          cases=$cases"{{t.exp.file}} "
+          contVec=$contVec"0,"
+          caseVec=$caseVec"1,"
+        {% else %}
+          re-error "DE analysis failed. Case and Control groups must contain unique samples."
+        {% endif %}
+      {% endfor %}
+
+      contVec=${contVec%?}
+      caseVec=${caseVec%?}
+
+      cases=${cases%?}
+      sampleFiles=$controls"$cases"
+
+      re-progress 0.1
+
+      expressionmerge.py ${sampleFiles} --experiments ${sampleFiles} --intersection --out 'counts.tab'
+      re-checkrc "Error merging expression data."
+
+      run_limma.R counts.tab --control ${contVec} --case ${caseVec} --out diffexp_limma.tab
+      re-checkrc "Error computing differential expression (limma)."
+
+      re-progress 0.95
+
+      volcanoplot.py 'diffexp_limma.tab'
+      re-checkrc "Error computing Volcano plot."
+
+      gzip 'diffexp_limma.tab'
+      re-save-file diffexp diffexp_limma.tab.gz

@@ -1,0 +1,69 @@
+# ===================
+# Import - Annotation
+# ===================
+---
+
+- slug: upload-gff3
+  name: Annotation (GFF3)
+  data_name: '{{ src.file }}'
+  version: 1.0.13
+  type: data:annotation:gff3
+  category: upload
+  persistence: RAW
+  description: >
+    Upload annotation in GFF3 format.
+  input:
+    - name: src
+      label: Annotation (GFF3)
+      type: basic:file
+      description: >
+        Annotation in GFF3 format. Supported extensions are: .gff, .gff3 and .gtf
+      required: true
+      validate_regex: '\.(gff|gff3|gtf)(|\.gz|\.bz2|\.tgz|\.tar\.gz|\.tar\.bz2|\.zip|\.rar|\.7z)$'
+  output:
+    - name: gff
+      label: Uploaded file
+      type: basic:file
+  run:
+    runtime: polyglot
+    bash: |
+      re-import "{{ src.file_temp|default:src.file }}" "{{ src.file }}" "gff|gff3|gtf" "gff" 0.1
+
+      gt gff3validator ${NAME}.gff
+      re-checkrc
+      re-progress 0.2
+      re-save-file gff ${NAME}.gff
+
+- slug: upload-gtf
+  name: Annotation (GTF2.2)
+  data_name: '{{ src.file }}'
+  version: 1.0.15
+  type: data:annotation:gtf
+  category: upload
+  persistence: RAW
+  description: >
+    Upload annotation in GTF format.
+  input:
+    - name: src
+      label: Annotation (GTF)
+      type: basic:file
+      description: >
+        Annotation in GTF format.
+      required: true
+      validate_regex: '\.(gtf)(|\.gz|\.bz2|\.tgz|\.tar\.gz|\.tar\.bz2|\.zip|\.rar|\.7z)$'
+  output:
+    - name: gtf
+      label: Uploaded file
+      type: basic:file
+  run:
+    runtime: polyglot
+    bash: |
+      re-import "{{ src.file_temp|default:src.file }}" "{{ src.file }}" "gtf" "gtf" 0.3
+
+      echo "Converting GTF to GFF3:"
+      cat ${NAME}.gtf | sed '/^##/d' > "${NAME}.tmp.gtf"
+      xgtf2gff.py -p "UCSC" "${NAME}.tmp.gtf" "${NAME}.gff"
+      re-checkrc
+      re-progress 0.7
+
+      re-save-file gtf ${NAME}.gtf
