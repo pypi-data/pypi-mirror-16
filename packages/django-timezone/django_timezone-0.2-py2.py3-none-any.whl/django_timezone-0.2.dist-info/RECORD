@@ -1,0 +1,11 @@
+django_timezone-0.2.dist-info/DESCRIPTION.rst,sha256=oFTrpQ0taxaso6oOlx0804sGAs7-MJC2tKKxAvSr6B8,232
+django_timezone-0.2.dist-info/METADATA,sha256=OkV5N9CgZtnOl7EGJG4LEceSv2tHtlTj0-sSUU6d520,1002
+django_timezone-0.2.dist-info/RECORD,,
+django_timezone-0.2.dist-info/WHEEL,sha256=GrqQvamwgBV4nLoJe0vhYRSWzWsx7xjlt74FT0SWYfE,110
+django_timezone-0.2.dist-info/metadata.json,sha256=YlRbuAQHe2D7GvBmdubiJA3e3Aq9f8ILY5g2WOgUB6w,759
+django_timezone-0.2.dist-info/top_level.txt,sha256=rahO8lVbqfF3rE9_Mf4o_pl5IjX6A3_IMP8o1hM4al4,9
+timezone/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+timezone/timezone.py,sha256=eVRfgn3wpNoVN2nw-EicVaUd0Wtmp2IbmQCZLolBGGw,2806
+timezone/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+timezone/tests/settings.py,sha256=pkqQJVX3c4cYZtvSAcrRBCbIRZeOxDaUnCunP6XOGak,323
+timezone/tests/tests.py,sha256=6XFK1nQV0_yMWhQrttU3QRytC8bjjEfoWLZRDeCr6D8,1007
