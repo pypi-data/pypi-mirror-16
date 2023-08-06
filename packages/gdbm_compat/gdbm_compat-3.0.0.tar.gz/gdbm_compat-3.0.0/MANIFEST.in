@@ -1,0 +1,7 @@
+include README.rst
+include setup.py
+include MANIFEST.in
+include ChangeLog
+include gdbm-compat-convert
+recursive-include gdbm_compat *.py
+recursive-include doc *.html

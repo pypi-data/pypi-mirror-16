@@ -1,0 +1,103 @@
+#!/usr/bin/env python
+
+import os
+import shutil
+import sys
+
+import gdbm_compat
+
+def usage():
+    sys.stderr.write('''Usage: %s [-1.8/-1.10] [input filename] [output filename]
+  Changes the magic number on a gdbm database, to make it accessable on different platforms.
+
+Changing to either version 1.8 or 1.10 are supported, provide that as the first argument.
+
+If no "output filename" is provided, the change will be made inline.
+
+
+There is no guarentee that the database will function completely correctly,
+  but it will at least work and the data will be available.
+''' %(os.path.basename(sys.argv[0]),))
+
+
+
+if __name__ == '__main__':
+
+    toMode = None
+    inputFilename = None
+    outputFilename = None
+    magicNumber = None
+
+    args = sys.argv[1:]
+    for arg in args:
+        if arg in ('-h', '--help'):
+            usage()
+            sys.exit(1)
+        elif arg == '-1.10':
+            if toMode is not None:
+                sys.stderr.write('Cannot specify both "%s" and "%s", choose one.\n' %(toMode, arg))
+                sys.exit(1)
+            toMode = '1.10'
+            magicNumber = gdbm_compat.MAGIC_1_10
+
+        elif arg == '-1.8':
+            if toMode is not None:
+                sys.stderr.write('Cannot specify both "%s" and "%s", choose one.\n' %(toMode, arg))
+                sys.exit(1)
+            toMode = '1.8'
+            magicNumber = gdbm_compat.MAGIC_1_8
+        else:
+            if inputFilename is not None:
+                if outputFilename is not None:
+                    sys.stderr.write('Too many arguments.\n\n')
+                    usage()
+                    sys.exit(1)
+                else:
+                   outputFilename = arg
+            else:
+                inputFilename = arg
+        
+
+    
+    if toMode is None:
+        sys.stderr.write('Missing conversion mode.\n\n')
+        usage()
+        sys.exit(1)
+
+    if inputFilename is None:
+        sys.stderr.write('Missing inputFilename to convert.\n\n')
+        usage()
+        sys.exit(1)
+
+
+    if not os.path.exists(inputFilename) or not os.access(inputFilename, os.R_OK):
+        sys.stderr.write('%s does not exist or cannot read from it.\n' %(inputFilename,))
+        sys.exit(2)
+
+
+    if outputFilename is None:
+        outputFilename = inputFilename
+        if not os.access(outputFilename, os.W_OK):
+            sys.stderr.write('Cannot write back to %s . Specify an explicit destination.\n' %(outputFilename,))
+            sys.exit(3)
+    else:
+        try:
+            f = open(outputFilename, 'w')
+            f.close()
+        except:
+            sys.stderr.write('Cannot write/create %s\n' %(outputFilename,))
+            sys.exit(3)
+
+
+    newFilename = gdbm_compat.replace_magic_number(inputFilename, magicNumber)
+        
+    try:
+        os.unlink(outputFilename)
+    except:
+        pass
+
+    try:
+        shutil.move(newFilename, outputFilename)
+    except:
+        sys.stderr.write('Cannot write/create %s\n' %(outputFilename,))
+        sys.exit(3)
