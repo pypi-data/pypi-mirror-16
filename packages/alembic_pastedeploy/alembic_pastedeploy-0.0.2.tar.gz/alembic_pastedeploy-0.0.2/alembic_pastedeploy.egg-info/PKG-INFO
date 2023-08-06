@@ -1,0 +1,38 @@
+Metadata-Version: 1.1
+Name: alembic-pastedeploy
+Version: 0.0.2
+Summary: Let alembic read pastedeploy-flavored ini config files.
+Home-page: https://github.com/moriyoshi/alembic-pastedeploy
+Author: Moriyoshi Koizumi
+Author-email: mozo@mozo.jp
+License: MIT
+Description: alembic-pastedeploy
+        ===================
+        
+        This is a thin-wrapper of alembic which allows alembic to read pastedeploy-flavored ini config files.
+        
+        
+        Supported features
+        ------------------
+        
+        - Importing defaults by ``get`` and ``set`` directive::
+        
+            [alembic]
+            get sqlalchemy.url = sqlalchemy.url
+        
+        - Giving global-conf interpolants by ``--paste-global`` option from the commandline::
+        
+          $ alembic_pastedeploy --paste-global sqlalchemy.url=sqlite:///test.db upgrade head
+        
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Database :: Front-Ends
+Classifier: Framework :: Paste

@@ -1,0 +1,11 @@
+README.rst
+setup.py
+alembic_pastedeploy/__init__.py
+alembic_pastedeploy.egg-info/PKG-INFO
+alembic_pastedeploy.egg-info/SOURCES.txt
+alembic_pastedeploy.egg-info/dependency_links.txt
+alembic_pastedeploy.egg-info/entry_points.txt
+alembic_pastedeploy.egg-info/not-zip-safe
+alembic_pastedeploy.egg-info/requires.txt
+alembic_pastedeploy.egg-info/top_level.txt
+alembic_pastedeploy/tests/__init__.py
