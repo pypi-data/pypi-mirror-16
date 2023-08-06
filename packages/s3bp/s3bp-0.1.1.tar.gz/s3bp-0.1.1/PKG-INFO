@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: s3bp
+Version: 0.1.1
+Summary: Read and write pandas DataFrames from/to S3.
+Home-page: https://github.com/shaypal5/s3bp
+Author: Shay Palachy
+Author-email: shaypal5@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/shaypal5/s3bp/tarball/0.1.1
+Description: UNKNOWN
+Keywords: pandas,dataframe,s3
+Platform: UNKNOWN
