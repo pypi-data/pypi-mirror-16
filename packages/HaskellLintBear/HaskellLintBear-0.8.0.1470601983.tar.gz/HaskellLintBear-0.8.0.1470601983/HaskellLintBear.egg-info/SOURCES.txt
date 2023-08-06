@@ -1,0 +1,7 @@
+setup.py
+HaskellLintBear/HaskellLintBear.py
+HaskellLintBear/__init__.py
+HaskellLintBear.egg-info/PKG-INFO
+HaskellLintBear.egg-info/SOURCES.txt
+HaskellLintBear.egg-info/dependency_links.txt
+HaskellLintBear.egg-info/top_level.txt
