@@ -1,0 +1,12 @@
+Plone
+plone.api>=1.3
+plone.app.dexterity
+plone.dexterity
+setuptools
+
+[tests]
+ftw.builder
+ftw.testing
+ftw.testbrowser
+plone.app.testing
+plone.testing
