@@ -1,0 +1,9 @@
+setup.py
+pymessagefocus2/__init__.py
+pymessagefocus2/client.py
+pymessagefocus2/fault.py
+pymessagefocus2/transport.py
+pymessagefocus2.egg-info/PKG-INFO
+pymessagefocus2.egg-info/SOURCES.txt
+pymessagefocus2.egg-info/dependency_links.txt
+pymessagefocus2.egg-info/top_level.txt
