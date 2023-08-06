@@ -1,0 +1,3 @@
+[console_scripts]
+gif2xls = gif2xls:main
+
