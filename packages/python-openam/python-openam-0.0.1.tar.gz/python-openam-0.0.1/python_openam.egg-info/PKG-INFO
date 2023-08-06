@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: python-openam
+Version: 0.0.1
+Summary: Managing OpenAM via rest API
+Home-page: http://python-openam.readthedocs.io/en/latest/
+Author: Werner Dijkerman
+Author-email: ikben@werner-dijkerman.nl
+License: Apache License 2.0
+Download-URL: http://github.com/dj-wasabi/python-openam
+Description: UNKNOWN
+Keywords: openam
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 2.7
