@@ -1,0 +1,15 @@
+setup.cfg
+setup.py
+analyticscloud/__init__.py
+analyticscloud/commandline.py
+analyticscloud/uploader.py
+analyticscloud/importers/__init__.py
+analyticscloud/importers/db.py
+analyticscloud/importers/utils.py
+pyAnalyticsCloud.egg-info/PKG-INFO
+pyAnalyticsCloud.egg-info/SOURCES.txt
+pyAnalyticsCloud.egg-info/dependency_links.txt
+pyAnalyticsCloud.egg-info/entry_points.txt
+pyAnalyticsCloud.egg-info/not-zip-safe
+pyAnalyticsCloud.egg-info/requires.txt
+pyAnalyticsCloud.egg-info/top_level.txt
