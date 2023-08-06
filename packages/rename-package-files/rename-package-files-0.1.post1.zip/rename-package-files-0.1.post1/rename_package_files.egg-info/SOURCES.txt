@@ -1,0 +1,12 @@
+MANIFEST.in
+RELEASE-VERSION
+pavement.py
+paver-minilib.zip
+setup.py
+version.py
+rename_package_files/__init__.py
+rename_package_files.egg-info/PKG-INFO
+rename_package_files.egg-info/SOURCES.txt
+rename_package_files.egg-info/dependency_links.txt
+rename_package_files.egg-info/requires.txt
+rename_package_files.egg-info/top_level.txt
