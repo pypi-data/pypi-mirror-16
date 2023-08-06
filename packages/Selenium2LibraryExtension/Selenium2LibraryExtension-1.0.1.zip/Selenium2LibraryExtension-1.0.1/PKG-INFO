@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: Selenium2LibraryExtension
+Version: 1.0.1
+Summary: This library was created as an expansion to Selenium2Library. It was initially created as a solution to specific test cases that required overhead (such as calling inline javascripts or using many steps for one action). It also features bugfixes.
+Home-page: https://github.com/axon-id/Selenium2LibraryExtension
+Author: Axon-id
+Author-email: olivier.verville@axon-id.com
+License: Apache License 2.0
+Download-URL: https://github.com/axon-id/Selenium2LibraryExtension/tarball/1.0.0
+Description: UNKNOWN
+Keywords: Robot Framework,Robot-Framework,Selenium,WebDriver,Selenium2Library
+Platform: UNKNOWN
+Classifier: Framework :: Robot Framework
