@@ -1,0 +1,32 @@
+Metadata-Version: 1.1
+Name: django-generate-fixtures
+Version: 0.2.0
+Summary: Easy way to generate fixtures (in json) for django following the links of a given object
+Home-page: https://github.com/aRkadeFR/django-generate-fixtures
+Author: aRkadeFR
+Author-email: contact@arkade.info
+License: GPLv3+
+Description: # django-generate-fixtures
+        
+        This module aims to generate easily fixtures for testing.  It generate all the
+        hierarchy objects from a given parent object.
+        
+        
+Keywords: django
+fixtures
+generate
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.6
+Classifier: Framework :: Django :: 1.7
+Classifier: Framework :: Django :: 1.8
+Classifier: Framework :: Django :: 1.9
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
