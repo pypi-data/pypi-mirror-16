@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: getdns
+Version: v1.0.0b1
+Summary: Python bindings for getdns
+Home-page: http://getdns.readthedocs.org
+Author: Melinda Shore
+Author-email: melinda.shore@nomountain.net
+License: BSD
+Description: getdns is a set of wrappers around the getdnslibrary (http://www.getdnsapi.net), providingPython language bindings for the API
+Keywords: DNS DNSSEC DANE
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Topic :: Internet :: Name Service (DNS)
+Classifier: Topic :: Security
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
