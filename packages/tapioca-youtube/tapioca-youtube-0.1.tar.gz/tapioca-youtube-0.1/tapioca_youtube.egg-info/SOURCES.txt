@@ -1,0 +1,10 @@
+setup.py
+tapioca_youtube/__init__.py
+tapioca_youtube/resource_mapping.py
+tapioca_youtube/tapioca_youtube.py
+tapioca_youtube.egg-info/PKG-INFO
+tapioca_youtube.egg-info/SOURCES.txt
+tapioca_youtube.egg-info/dependency_links.txt
+tapioca_youtube.egg-info/not-zip-safe
+tapioca_youtube.egg-info/requires.txt
+tapioca_youtube.egg-info/top_level.txt
