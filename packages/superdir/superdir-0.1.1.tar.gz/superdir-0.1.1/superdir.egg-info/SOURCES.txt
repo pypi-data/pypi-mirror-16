@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+superdir/__init__.py
+superdir/__main__.py
+superdir/superdir.py
+superdir/tree.py
+superdir/utils.py
+superdir/validator.py
+superdir/walk_funcs.py
+superdir.egg-info/PKG-INFO
+superdir.egg-info/SOURCES.txt
+superdir.egg-info/dependency_links.txt
+superdir.egg-info/entry_points.txt
+superdir.egg-info/requires.txt
+superdir.egg-info/top_level.txt
