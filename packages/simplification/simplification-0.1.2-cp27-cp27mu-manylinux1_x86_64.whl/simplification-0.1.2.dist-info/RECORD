@@ -1,0 +1,13 @@
+simplification-0.1.2.dist-info/RECORD,,
+simplification-0.1.2.dist-info/top_level.txt,sha256=lJID9g5MiPOFux6Cv4ykfEGrZoG7aOrKCU27q-bVaXA,15
+simplification-0.1.2.dist-info/METADATA,sha256=ckGU-8HuhhN0WBsUkV7RMOG5nzcilD8GeN9L5CI2IXk,2165
+simplification-0.1.2.dist-info/metadata.json,sha256=vPT_CX8vzARjSF4_wumTH_sGyGqyfSpgaKFOV3KZu70,1134
+simplification-0.1.2.dist-info/WHEEL,sha256=K393SHwcz7KWfaAX1vI5Mn-fHxOX6ngCsqegCXacWE8,110
+simplification-0.1.2.dist-info/DESCRIPTION.rst,sha256=sJZ2SqbaJEKYaVzZLRpm60vltCgT1M8duuyudRgQZ3E,1184
+simplification/librdp.so,sha256=GHe8-OMI1ztdAPjaL8bcvCZsqzyxo_CFUsqyTZSNFJo,1643680
+simplification/util.py,sha256=sVHiaY--aiv6JV1oFkmHbUbQpudvm-NH1CTYIPSQUc0,3928
+simplification/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+simplification/cutil.so,sha256=oiEdE81y9mLI4NQbPnug9ZeWosKqLQ4g5vSRfCb0A8Y,735346
+simplification/cutil.c,sha256=5ixmN5nsbG-Qw1DrUAyMYnqvLPyS86DxPdw2BrdBSHw,667662
+simplification/test/test.py,sha256=NVLpxM_ES_poQnoJrxjz2Hh-fInvEaB5efG1P4bHDUc,1517
+simplification/test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
