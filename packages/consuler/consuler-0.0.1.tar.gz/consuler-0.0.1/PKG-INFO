@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: consuler
+Version: 0.0.1
+Summary: A basic client for Consul
+Home-page: https://github.com/t0mmyt/python-consuler
+Author: Tom Taylor
+Author-email: tom+pypi@tomm.yt
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
