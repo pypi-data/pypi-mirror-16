@@ -1,0 +1,9 @@
+csodium/__init__.py,sha256=xAamaWK39BNm7pRe3TDhObrCOxVvxs0gepQ80XA12hI,8942
+csodium/_build.py,sha256=uQ5v3CkscvoWAqbvls1Xq7SnJ6ygFmdJsGDFRIwjBLM,4189
+csodium/_impl.so,sha256=CqY1QXQmGZthuiPyHLwqh5Adj4B2iqYiUz1ba1wWflQ,35852
+csodium-0.0.2.dist-info/DESCRIPTION.rst,sha256=Z-YtwMigUHqcmqUKF7Da7Ntk_n2RSgfay9nLhIBqzOk,153
+csodium-0.0.2.dist-info/METADATA,sha256=wImjYF3V1NQcXCKDpV26pEAHCW55q3GLByGrgKbjb58,832
+csodium-0.0.2.dist-info/RECORD,,
+csodium-0.0.2.dist-info/WHEEL,sha256=wZqrB8SHEs2pGWhRrROCb4aifKl998wWSyIAKGYxCmQ,112
+csodium-0.0.2.dist-info/metadata.json,sha256=zTTBSKcZMjW9BaZqD_9HpsREZ1WodQmgkmKZ-HQtaQo,821
+csodium-0.0.2.dist-info/top_level.txt,sha256=eCTZ9oWeQYrQO4Pc0f0Ap8u9FO2j_l1M9G-8cq_zJcc,8
