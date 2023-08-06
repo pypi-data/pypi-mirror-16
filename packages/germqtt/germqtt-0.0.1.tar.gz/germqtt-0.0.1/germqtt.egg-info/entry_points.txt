@@ -1,0 +1,3 @@
+[console_scripts]
+germqtt = germqtt.germqtt:main
+

@@ -1,0 +1,11 @@
+CHANGES
+=======
+
+0.0.1
+-----
+
+* Add real documentation to the README
+* Handle pulling the project from ref-updated events
+* Fix a bug with setting project on topic
+* Add topic hierarchy
+* Initial commit
