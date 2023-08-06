@@ -1,0 +1,4 @@
+[console_scripts]
+get_k = anonymizer.anonymity:get_k
+local_aggregation = anonymizer.anonymity:local_aggregation
+
