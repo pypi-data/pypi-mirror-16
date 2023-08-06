@@ -1,0 +1,9 @@
+README.rst
+setup.py
+simple_venn/__init__.py
+simple_venn/venn.py
+simple_venn.egg-info/PKG-INFO
+simple_venn.egg-info/SOURCES.txt
+simple_venn.egg-info/dependency_links.txt
+simple_venn.egg-info/requires.txt
+simple_venn.egg-info/top_level.txt
