@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: boto3-policygen
+Version: 0.2
+Summary: Generates policy documents from calls to boto3 / botocore
+Home-page: https://github.com/kierandoonan/boto3_policygen
+Author: Kieran Doonan
+Author-email: kieran@doonan.net
+License: MIT
+Download-URL: https://github.com/kierandoonan/boto3_policygen/archive/0.1.tar.gz
+Description: UNKNOWN
+Keywords: boto,boto3,iam,policy
+Platform: UNKNOWN
