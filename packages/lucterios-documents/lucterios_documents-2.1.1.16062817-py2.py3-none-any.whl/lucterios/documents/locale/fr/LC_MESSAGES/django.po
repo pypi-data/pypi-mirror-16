@@ -1,0 +1,217 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-19 22:23+0000\n"
+"PO-Revision-Date: 2016-01-14 21:49+0000\n"
+"Last-Translator: b'Paul ARULATEDA <paul531@orange.fr>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.7.8\n"
+
+#: __init__.py:41
+msgid "Lucterios documents"
+msgstr "Documents Lucterios "
+
+#: editors.py:90
+msgid "File not found!"
+msgstr "Ficher non trouvé !"
+
+#: models.py:44 models.py:157
+msgid "name"
+msgstr "nom"
+
+#: models.py:45 models.py:158
+msgid "description"
+msgstr "description"
+
+#: models.py:47
+msgid "parent"
+msgstr "parent"
+
+#: models.py:49
+msgid "viewer"
+msgstr "visionneur"
+
+#: models.py:51 models.py:160
+msgid "modifier"
+msgstr "modificateur"
+
+#: models.py:53
+msgid "Available group viewers"
+msgstr "groupes de visionneurs disponibles"
+
+#: models.py:53
+msgid "Chosen group viewers"
+msgstr "groupes de visionneurs choisis"
+
+#: models.py:55
+msgid "Available group modifiers"
+msgstr "groupes de modificateurs disponibles"
+
+#: models.py:55
+msgid "Chosen group modifiers"
+msgstr "groupes de modificateurs choisis"
+
+#: models.py:59 models.py:63
+msgid "001@Info"
+msgstr "001@Info"
+
+#: models.py:59 models.py:63
+msgid "001@Permission"
+msgstr "001@Permission"
+
+#: models.py:149 models.py:156
+msgid "folder"
+msgstr "dossier"
+
+#: models.py:150
+msgid "folders"
+msgstr "dossiers"
+
+#: models.py:162
+msgid "date modification"
+msgstr "date de modification"
+
+#: models.py:164
+msgid "creator"
+msgstr "créateur"
+
+#: models.py:166
+msgid "date creation"
+msgstr "date de création"
+
+#: models.py:196
+msgid "document"
+msgstr "document"
+
+#: models.py:197
+msgid "documents"
+msgstr "documents"
+
+#: views.py:54
+msgid "Document"
+msgstr "Gestion documentaire"
+
+#: views.py:57
+msgid "Management of document's folders"
+msgstr "Gestion des dossiers de documents"
+
+#: views.py:59
+msgid "Folders"
+msgstr "Dossiers"
+
+#: views.py:72
+msgid "Add folder"
+msgstr "Ajouter un dossier"
+
+#: views.py:73
+msgid "Modify folder"
+msgstr "Modifier le dossier"
+
+#: views.py:79
+msgid "Delete folder"
+msgstr "Supprimer le dossier"
+
+#: views.py:124 views.py:127
+msgid "Import"
+msgstr "Importer"
+
+#: views.py:132
+msgid "zip file"
+msgstr "fichier zip"
+
+#: views.py:163 views.py:166
+msgid "Extract"
+msgstr "Extraire"
+
+#: views.py:207
+msgid "Office"
+msgstr "Bureautique"
+
+#: views.py:207
+msgid "Office tools"
+msgstr "Outils bureautiques"
+
+#: views.py:210 views.py:215
+msgid "Documents"
+msgstr "Documents"
+
+#: views.py:210
+msgid "Documents storage tools"
+msgstr "Outils de stockage de documents"
+
+#: views.py:213
+msgid "Management of documents"
+msgstr "Gestion de documents"
+
+#: views.py:229
+msgid "current folder:"
+msgstr "dossier courant"
+
+#: views.py:252
+msgid "add"
+msgstr "ajouter"
+
+#: views.py:258
+msgid "edit"
+msgstr "éditer"
+
+#: views.py:311 views.py:320 views.py:348 views.py:377
+msgid "No allow to view!"
+msgstr "Visualisation non autorisée !"
+
+#: views.py:333
+msgid "Add document"
+msgstr "Ajouter un document"
+
+#: views.py:334
+msgid "Modify document"
+msgstr "Modifier le document"
+
+#: views.py:350 views.py:379
+msgid "No allow to write!"
+msgstr "Écriture non autorisée !"
+
+#: views.py:357
+msgid "Show document"
+msgstr "Afficher le document"
+
+#: views.py:366
+msgid "Delete document"
+msgstr "Supprimer le document"
+
+#: views.py:383
+msgid "To find a document following a set of criteria."
+msgstr "Pour trouver un document suivant un ensemble de critères."
+
+#: views.py:385
+msgid "Document search"
+msgstr "Recherche de document"
+
+#: views.py:404
+msgid "Document management"
+msgstr "Gestion documentaire"
+
+#: views.py:416
+msgid "no file currently available"
+msgstr "aucun fichier actuellement accessible"
+
+#: views.py:418
+msgid "one file currently available"
+msgstr "un fichier actuellement accessible"
+
+#: views.py:420
+#, python-format
+msgid "%d files currently available"
+msgstr "%d fichiers actuellement accessibles"
