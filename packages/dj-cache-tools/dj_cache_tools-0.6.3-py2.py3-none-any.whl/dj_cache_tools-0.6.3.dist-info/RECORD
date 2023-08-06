@@ -1,0 +1,10 @@
+cache_tools/__init__.py,sha256=zxULpZyC7NW2Zq0whtMM09g1EZhySuUPTKEwrk0EwNI,73
+cache_tools/conf.py,sha256=etgy2trkuqiAm3TZ_hp87QBnOTOxChrxHTK_jwCuMpQ,175
+cache_tools/fields.py,sha256=tnoFE1Otpy4wkdSBOQ4bnqSlFGZ_RyuHiDKjELZo3lg,4543
+cache_tools/utils.py,sha256=WkiB4N_4cVhaTKE2jvy4pWh2Fwm81pfgaPLwiEIcMhA,6511
+dj_cache_tools-0.6.3.dist-info/DESCRIPTION.rst,sha256=npFOkzQ1wq6aub_VmA2SjpL2fF9ATFoWSO0cN_HnJdA,1659
+dj_cache_tools-0.6.3.dist-info/METADATA,sha256=dfQVcqd0h4UKhgr0oUOekhnYgFEamSEOE6fYAYzMztY,2642
+dj_cache_tools-0.6.3.dist-info/RECORD,,
+dj_cache_tools-0.6.3.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+dj_cache_tools-0.6.3.dist-info/metadata.json,sha256=aBNhZ_Fpjp3P1E-9xcucLQ2Sp_m4ZDdXYZj4EGOa6Rg,1151
+dj_cache_tools-0.6.3.dist-info/top_level.txt,sha256=cmyssGaPmZtzmbOaPE4X_CqV3TTFX3OFc7vlRCN87gs,12
