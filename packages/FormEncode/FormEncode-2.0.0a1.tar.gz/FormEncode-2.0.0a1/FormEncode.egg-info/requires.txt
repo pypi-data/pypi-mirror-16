@@ -1,0 +1,6 @@
+six
+
+[testing]
+nose
+pycountry
+dnspython
