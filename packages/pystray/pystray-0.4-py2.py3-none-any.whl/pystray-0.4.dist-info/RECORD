@@ -1,0 +1,15 @@
+pystray/__init__.py,sha256=9qMMTDfH2Y5IGkvQ9o82b7cbgrh2icjvH7KoBiLyTOc,1493
+pystray/_base.py,sha256=GMGfq3qu1KlWOFS0WYAXXI1-U7GO2JjXQIqqYZQMcqQ,5759
+pystray/_darwin.py,sha256=7qmVdutcpobcl1n-eDMuDLI0h6mtKRIjzNMRaxs5j4w,4051
+pystray/_gtk.py,sha256=xeePrgIFdORfsEXh5XHQxhAxqBkaER6NPSC0M8vQ_Uo,3124
+pystray/_info.py,sha256=DBlYFRtqpXpS3-XHdQdpeYczwfWvviEpsN2VvTwM4iU,67
+pystray/_win32.py,sha256=yqcmQn3BRELmu25joH4JhHTRLhJIBuRQWSEjE_BtyMg,10975
+pystray/_xorg.py,sha256=eRp9vCr33YWPcZiszatNa78cJEoaftH6dMQjjjLtzwg,14288
+pystray-0.4.dist-info/DESCRIPTION.rst,sha256=ndNT-SJPhoqJlIHgZfFhVqauW3QD4ZI2KyKdH34mzQA,1328
+pystray-0.4.dist-info/METADATA,sha256=EggFT_khig5Th48N6JMigQc5wMHC0Roc_NnbIaCOgVM,2196
+pystray-0.4.dist-info/RECORD,,
+pystray-0.4.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+pystray-0.4.dist-info/metadata.json,sha256=jue-5NU2WNAxUD9fhdK7VseXAwdGsOgv9Ffz8wZWnJ4,1062
+pystray-0.4.dist-info/pbr.json,sha256=Vlb1KIfpc75JzBhsLeVEkNLPzm3huUNR1aUsbfNbdVo,46
+pystray-0.4.dist-info/top_level.txt,sha256=6xvZ5fFN6P3IotgMJLAHeWonXXZzDdf47BhMLsXEHlg,8
+pystray-0.4.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
