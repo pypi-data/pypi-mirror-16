@@ -1,0 +1,7 @@
+setup.py
+tpscompare/__init__.py
+tpscompare/main.py
+tpscompare.egg-info/PKG-INFO
+tpscompare.egg-info/SOURCES.txt
+tpscompare.egg-info/dependency_links.txt
+tpscompare.egg-info/top_level.txt
