@@ -1,0 +1,12 @@
+MANIFEST.in
+setup.py
+yaoguang.thrift
+yaoguang/__init__.py
+yaoguang/entity.py
+yaoguang/lead.py
+yaoguang_python_client.egg-info/PKG-INFO
+yaoguang_python_client.egg-info/SOURCES.txt
+yaoguang_python_client.egg-info/dependency_links.txt
+yaoguang_python_client.egg-info/not-zip-safe
+yaoguang_python_client.egg-info/requires.txt
+yaoguang_python_client.egg-info/top_level.txt
