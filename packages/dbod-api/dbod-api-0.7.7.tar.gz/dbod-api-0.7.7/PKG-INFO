@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: dbod-api
+Version: 0.7.7
+Summary: DB On Demand REST API
+Home-page: https://github.com/cerndb/dbod-api
+Author: Ignacio Coterillo
+Author-email: icot@cern.ch
+License: GPLv3
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires: ConfigParser
+Requires: tornado
+Requires: nose
+Requires: mock
+Requires: requests
