@@ -1,0 +1,17 @@
+setup.cfg
+setup.py
+example/__init__.py
+example/simplebot.py
+pyrclib/__init__.py
+pyrclib/bot.py
+pyrclib/channels.py
+pyrclib/connection.py
+pyrclib/events.py
+pyrclib/linehandler.py
+pyrclib/linereceiver.py
+pyrclib/linesender.py
+pyrclib/user.py
+pyrclib.egg-info/PKG-INFO
+pyrclib.egg-info/SOURCES.txt
+pyrclib.egg-info/dependency_links.txt
+pyrclib.egg-info/top_level.txt

@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: pyrclib
+Version: 0.2.5
+Summary: Python IRC bot framework
+Home-page: https://github.com/martinsileno/pyrclib
+Author: Martin Sileno
+Author-email: martin@1way.it
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
