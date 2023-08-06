@@ -1,0 +1,7 @@
+knittingpattern==0.1.15
+Pillow==3.2.0
+webcolors==1.5
+xmltodict==0.10.2
+AYABInterface==0.0.3
+crc8==0.0.3
+pyserial==3.1.1
