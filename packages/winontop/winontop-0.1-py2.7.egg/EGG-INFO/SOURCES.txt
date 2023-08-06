@@ -1,0 +1,11 @@
+README
+setup.cfg
+setup.py
+winontop/__init__.py
+winontop/__main__.py
+winontop/winontop.py
+winontop.egg-info/PKG-INFO
+winontop.egg-info/SOURCES.txt
+winontop.egg-info/dependency_links.txt
+winontop.egg-info/entry_points.txt
+winontop.egg-info/top_level.txt
