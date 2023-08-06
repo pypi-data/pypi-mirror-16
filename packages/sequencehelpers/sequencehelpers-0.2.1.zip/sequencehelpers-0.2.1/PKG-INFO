@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: sequencehelpers
+Version: 0.2.1
+Summary: A library consisting of functions for interacting with sequences and iterables.
+Home-page: https://github.com/2achary/sequencehelpers
+Author: Zach Swift
+Author-email: cras.zswift@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/2achary/sequence/tarball/0.2.1
+Description: UNKNOWN
+Keywords: sequence,single,distinct
+Platform: UNKNOWN
