@@ -1,0 +1,13 @@
+livingdocs/.maker.py.swp,sha256=KJx2m4hIYzOshbYHTPexFrQ1QaiCH2rZCCioj5gwoXk,12288
+livingdocs/__init__.py,sha256=kUR5RAFc7HCeiqdlX36dZOHkUI5wI6V_43RpEcD8b-0,22
+livingdocs/__main__.py,sha256=H-M1VjiwrC47-8Qk9PyHvvUg4fUqtJNCyYfCnz7W944,367
+livingdocs/cli.py,sha256=Iv7uhjoXqd-hbFLeIIa7ws4b5NErhq_OFfs4LG9kvWQ,741
+livingdocs/hugo_doc.py,sha256=hTI3WhSYWEJ2uJv2p68bs_UpZFB9ybH1mjeN_dGyPmQ,976
+livingdocs/maker.py,sha256=Tq8vCG8jN5GoyMWSYX6n2P6sInJRzHJ1NJzVA245wto,3083
+livingdocs-0.1.0.dist-info/DESCRIPTION.rst,sha256=AofflkO2v24qS1xP_dnxRaD_zDoJPWnxfglADDbv6D8,1730
+livingdocs-0.1.0.dist-info/METADATA,sha256=ao9VSmmZ3lCJlzC6I5NNcJs291ohfdgOzSPOJegir30,2597
+livingdocs-0.1.0.dist-info/RECORD,,
+livingdocs-0.1.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+livingdocs-0.1.0.dist-info/entry_points.txt,sha256=TiPXHoBhfYqAy_iCUPVN3DR50eQYDAAR0UJ2qV7hs5g,52
+livingdocs-0.1.0.dist-info/metadata.json,sha256=YMblqEduprUw-g88AimsPpFd5XjkNJhT8jVcV4LZvJk,1143
+livingdocs-0.1.0.dist-info/top_level.txt,sha256=FAnhIA5ETfj5o1xhZOo8IH8ZYHpFUTynqfmcKWXIRyQ,11
