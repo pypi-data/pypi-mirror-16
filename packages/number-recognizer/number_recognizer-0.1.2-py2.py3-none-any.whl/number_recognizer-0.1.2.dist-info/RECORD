@@ -1,0 +1,10 @@
+number_recognizer-0.1.2.dist-info/DESCRIPTION.rst,sha256=eXEn_0TTFbN3SEYGIclGv5oXiXS3rbO_ZnpqqmJcAmU,1631
+number_recognizer-0.1.2.dist-info/METADATA,sha256=3niVyTAXysBXeWV3w6FPONo0ZHDmp3oZR5XeQtvuxbU,2550
+number_recognizer-0.1.2.dist-info/RECORD,,
+number_recognizer-0.1.2.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+number_recognizer-0.1.2.dist-info/entry_points.txt,sha256=M6xc66yTx5_hqqu7zC8nDTbSUigxBj0W7QUxuU-7VEw,52
+number_recognizer-0.1.2.dist-info/metadata.json,sha256=nytuut-9i04xTtfMFv0DCX6tGxnkFDKyez0LSWuIuL0,1196
+number_recognizer-0.1.2.dist-info/top_level.txt,sha256=nx2bbOPZew6FQZDYwFUOlbE3OBflUJ86oHYVdixMlCs,11
+recognizer/__init__.py,sha256=62YkyL0p5fVQ210JDysGA8garIlUx_0qQZyftjphHJo,128
+recognizer/cli.py,sha256=vJHDJtfdtrK5DaNbJqWu_arB3mdvgxJviQBghYZLeAw,4069
+recognizer/recognizer.py,sha256=JieExGfcEWwfAxXKW49VYWLrriZHtZec7xscXkHUIr4,2075
