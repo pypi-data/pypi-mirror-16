@@ -1,0 +1,27 @@
+CHANGES
+=======
+
+1.0.0
+-----
+
+* Corrections to setup.cfg
+* Update for Kilo versioning
+* Separate version number trains for OpenStack releases
+* Remove unneeded code
+* Enable aggregation of samples across a stack
+* Remove DevStack Plugin from README
+* Fix pep8 errors
+* Add More Meters
+* Lock the requirements to pysnmp 4.2.5
+* Fix reference to oslo_log which does not exist in Juno
+* Fix requirements
+* Back port to stable/juno
+* Update README with detail
+* Add discovery tests
+* Reworked and Filter non-NIOS
+* Missed files from last commit
+* Add SNMP Polling of Instances
+* Get tests passing
+* DevStack integration
+* Fix copyrights
+* Initial cookiecutter commit
