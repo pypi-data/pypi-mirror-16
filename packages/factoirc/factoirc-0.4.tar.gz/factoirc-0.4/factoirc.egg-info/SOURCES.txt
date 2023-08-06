@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+config.example.ini
+setup.py
+factoirc/__init__.py
+factoirc/rcon.py
+factoirc.egg-info/PKG-INFO
+factoirc.egg-info/SOURCES.txt
+factoirc.egg-info/dependency_links.txt
+factoirc.egg-info/requires.txt
+factoirc.egg-info/top_level.txt
