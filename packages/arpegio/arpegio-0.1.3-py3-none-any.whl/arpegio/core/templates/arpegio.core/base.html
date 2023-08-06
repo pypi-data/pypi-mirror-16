@@ -1,0 +1,29 @@
+{% spaceless %}<!DOCTYPE html>
+<html{% if LANGUAGE_CODE %} lang="{{ LANGUAGE_CODE }}"{% endif %}>
+  <head>
+    {% block head %}
+      {% include 'arpegio.core/head.html' %}
+    {% endblock %}
+  </head>
+  <body>
+    {% block menu %}
+      {% include 'arpegio.core/menu.html' %}
+    {% endblock %}
+    {% block header %}
+      {% include 'arpegio.core/header.html' %}
+    {% endblock %}
+    <div>
+      {% block content %}
+      {% endblock %}
+    </div>
+    <footer>
+      {% block footer %}
+        {% include 'arpegio.core/footer.html' %}
+      {% endblock %}
+    </footer>
+    {% block scripts %}
+      {% include 'arpegio.core/scripts.html' %}
+    {% endblock %}
+  </body>
+</html>
+{% endspaceless %}
