@@ -1,0 +1,8 @@
+tutorial_package_karrenbelt/__init__.py,sha256=xcnpIQlDYzH7mB72Q0c-0j6g9E3m9mqvE3iqrs7lDEY,20
+tutorial_package_karrenbelt/greet.py,sha256=CNqdhpfIFfg1SThTxpDcIEmYyig2uC5UsuUtoqq8s0I,276
+tutorial_package_karrenbelt-0.0.2.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+tutorial_package_karrenbelt-0.0.2.dist-info/METADATA,sha256=6n_4fHrfBptLWrGg8uc5_oX5bv11UtzmdnJ08LE4-5Y,279
+tutorial_package_karrenbelt-0.0.2.dist-info/RECORD,,
+tutorial_package_karrenbelt-0.0.2.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+tutorial_package_karrenbelt-0.0.2.dist-info/metadata.json,sha256=uFlzxqzOCERfhu0OnOoTaxfJdpbzCdlpsVaTjqOvsCw,434
+tutorial_package_karrenbelt-0.0.2.dist-info/top_level.txt,sha256=EKMTTZI6zZ3qg1eCUfYcsVCrpj4wBOYKA4K75Vis_Hc,28
