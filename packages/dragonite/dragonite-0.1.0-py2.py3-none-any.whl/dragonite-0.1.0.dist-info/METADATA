@@ -1,0 +1,64 @@
+Metadata-Version: 2.0
+Name: dragonite
+Version: 0.1.0
+Summary: Dragon Con command line utility
+Home-page: https://github.com/neuroticnerd/dragoncon-bot
+Author: Bryce Eggleton
+Author-email: eggleton.bryce@gmail.com
+License: Apache License, Version 2.0
+Keywords: dragonite,dragoncon,dragon,con
+Platform: any
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Utilities
+Requires-Dist: Jinja2 (>=2.8)
+Requires-Dist: SQLAlchemy (>=1.1.0b3)
+Requires-Dist: Unidecode (>=0.4.18)
+Requires-Dist: armory (>=0.1.2)
+Requires-Dist: beautifulsoup4 (>=4.4.1)
+Requires-Dist: click (>=5.1)
+Requires-Dist: fuzzywuzzy (>=0.7.0)
+Requires-Dist: gevent (>=1.1b6)
+Requires-Dist: greenlet (>=0.4.9)
+Requires-Dist: lxml (>=3.4.4)
+Requires-Dist: python-Levenshtein (>=0.12.0)
+Requires-Dist: python-dateutil (>=2.4.2)
+Requires-Dist: requests (>=2.8.1)
+Requires-Dist: simplejson (>=3.8.2)
+Provides-Extra: dev
+Requires-Dist: coverage (>=4.0.3); extra == 'dev'
+Requires-Dist: flake8 (>=2.5.0); extra == 'dev'
+Requires-Dist: pytest (>=2.8.4); extra == 'dev'
+Requires-Dist: twine (>=1.8.1); extra == 'dev'
+
+Dragonite
+============
+
+Dragonite is a command-line utility which gathers room availability
+information from the host hotels of the annual
+`Dragon Con <http://www.dragoncon.org/>`_ event.
+
+
+Installation
+--------------
+
+.. code:: bash
+
+    pip install dragonite
+
+
+Usage
+--------
+
+.. code:: bash
+
+    dragonite --help
+
+
