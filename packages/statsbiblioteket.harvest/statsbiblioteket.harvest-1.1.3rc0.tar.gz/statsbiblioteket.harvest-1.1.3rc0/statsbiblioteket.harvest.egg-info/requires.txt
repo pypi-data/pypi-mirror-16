@@ -1,0 +1,7 @@
+requests
+requests_oauthlib
+typing
+inflection
+sqlalchemy
+argparse
+python_log_indenter
