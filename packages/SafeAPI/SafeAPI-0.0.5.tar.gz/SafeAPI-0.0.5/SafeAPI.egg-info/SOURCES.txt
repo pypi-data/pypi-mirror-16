@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+SafeAPI.egg-info/PKG-INFO
+SafeAPI.egg-info/SOURCES.txt
+SafeAPI.egg-info/dependency_links.txt
+SafeAPI.egg-info/requires.txt
+SafeAPI.egg-info/top_level.txt
+safeAPI/__init__.py
+safeAPI/safeAPI.py
