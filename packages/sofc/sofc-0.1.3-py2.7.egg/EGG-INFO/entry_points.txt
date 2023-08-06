@@ -1,0 +1,3 @@
+[console_scripts]
+sofc = sofc.sofc:main
+
