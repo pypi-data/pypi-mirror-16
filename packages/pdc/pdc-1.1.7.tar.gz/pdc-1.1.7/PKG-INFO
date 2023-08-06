@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: pdc
+Version: 1.1.7
+Summary: Python Device Communication.
+Home-page: https://github.com/sergiorb/pdc
+Author: Sergio Romero Barra
+Author-email: s.romerobarra@gmail.com
+License: MIT
+Download-URL: https://github.com/sergiorb/pdc/tarball/1.1.7
+Description: UNKNOWN
+Keywords: arduino serial communication
+Platform: UNKNOWN
