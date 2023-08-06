@@ -1,0 +1,22 @@
+Metadata-Version: 2.0
+Name: zerodb-server
+Version: 0.2.0b1
+Summary: ZeroDB server
+Home-page: http://zerodb.io
+Author: ZeroDB Inc.
+Author-email: michael@zerodb.io
+License: AGPLv3
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Requires-Dist: PyOpenSSL
+Requires-Dist: click
+Requires-Dist: ecdsa
+Requires-Dist: falcon
+Requires-Dist: ipython (>=1.0.0)
+Requires-Dist: meinheld
+Requires-Dist: zerodb (>=0.99.0b1)
+Requires-Dist: zope.testing
+
+UNKNOWN
+
+

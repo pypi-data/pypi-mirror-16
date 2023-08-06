@@ -1,0 +1,16 @@
+zerodb_server-0.2.0b1-py3.5-nspkg.pth,sha256=0DYfE8ja4rz6xlkEpy42KTuI2c19-Ea4kBY3zUm9ndw,314
+zerodb_server-0.2.0b1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+zerodb_server-0.2.0b1.dist-info/METADATA,sha256=cdwm62dHI-KMPYyJBheORyfgr0JemRKZq6TDtFXfLpM,460
+zerodb_server-0.2.0b1.dist-info/RECORD,,
+zerodb_server-0.2.0b1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+zerodb_server-0.2.0b1.dist-info/entry_points.txt,sha256=I_icVs0Q16L9q-UxwTCDcNRLGjprlFe5R3PvO3-sb7A,139
+zerodb_server-0.2.0b1.dist-info/metadata.json,sha256=le4I1S5OC7JYR03L-kYM5cC7l5wF3oZfnhd5MWWrnkc,940
+zerodb_server-0.2.0b1.dist-info/namespace_packages.txt,sha256=X_fQtGft_2suKryfrOuB03KAzb_rGoNIfK6QEjKw9EE,10
+zerodb_server-0.2.0b1.dist-info/top_level.txt,sha256=X_fQtGft_2suKryfrOuB03KAzb_rGoNIfK6QEjKw9EE,10
+zerodbext/api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zerodbext/api/api.py,sha256=_9yifpU3-mp3TuiZdebANbKp2p8a3RZdBZT68BgYqc8,8193
+zerodbext/api/default_conf.py,sha256=i3FpYUpaWVsxT90svqEuarEoLbsOZWdoichI6u4sT7o,364
+zerodbext/server/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zerodbext/server/cert.py,sha256=Th2TwMz5ICeA7h2XNMBV4Xpa_oZ1q2ICbYBhDZDNfJo,943
+zerodbext/server/manage.py,sha256=KapwkrZOVHeCThukUmCOkZmRA9oz2HegodqmejmfDIc,6706
+zerodbext/server/run.py,sha256=KrwWYMH4Ij_U-1QRLuYdW9VAA2HuTohcdT-jfMbTWXw,482
