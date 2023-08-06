@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: levis
+Version: 0.4.0
+Summary: A toolkit for genetic algorithms in Python.
+Home-page: https://github.com/rawg/levis
+Author: Jeremy Fisher
+Author-email: jeremy@rentawebgeek.com
+License: UNKNOWN
+Download-URL: https://github.com/rawg/levis/archive/v0.4.0.tar.gz
+Description: UNKNOWN
+Keywords: genetic,evolutionary,optimization,combinatorial,search
+Platform: UNKNOWN
