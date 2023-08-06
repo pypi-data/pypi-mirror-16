@@ -1,0 +1,50 @@
+Metadata-Version: 1.1
+Name: pyfeld
+Version: 0.2.0a0
+Summary: Raumfeld controlled by python scripts
+Home-page: http://github.com/scjurgen/pyfeld
+Author: Jürgen Schwietering
+Author-email: scjurgen@yahoo.com
+License: MIT
+Description: 
+        Synopsis
+        ========
+        
+        Small tools to Raumfeld functionalities using python.
+        With these simple tools you can control the following things in Raumfeld:
+        
+        - playsettings: volume, position, pause, stop
+        - rooms: list rooms 
+        - zones: list, create, drop
+        - media: browse and search, play in zone
+        - macro operations: fade, wait for conditions (volume, position, title)
+        
+        
+        Installation
+        ============
+        the easist way is to use pip
+        
+        pip install pyfeld
+        
+        Usage
+        =====
+        you need nmap and/or gssdp_discover
+        
+        on mac:
+        	brew install nmap
+        
+        on linux:
+        	you know the drill ;-)
+        
+        
+        
+        
+Keywords: raumfeld wlan-speakers loudspeakers upnp audio media
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
