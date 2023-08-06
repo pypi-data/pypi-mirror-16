@@ -1,0 +1,3 @@
+[console_scripts]
+coala-bears-create = coala_bears_create.coala_bears_create:main
+

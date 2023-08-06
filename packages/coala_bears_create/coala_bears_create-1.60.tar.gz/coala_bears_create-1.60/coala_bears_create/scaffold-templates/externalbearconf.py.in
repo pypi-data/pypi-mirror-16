@@ -1,0 +1,24 @@
+import os
+
+from coalib.bearlib.abstractions.ExternalBearWrap import external_bear_wrap
+
+
+@external_bear_wrap(executable='$executable',
+                    settings=$settings)
+class $name:
+    """
+    $description
+    """
+    LANGUAGES = $language
+    REQUIREMENTS = $requirements
+    AUTHORS = $authors
+    AUTHORS_EMAILS = $authors_emails
+    LICENSE = '$license'
+
+    @staticmethod
+    def create_arguments():
+        /*
+            Add executable arguments here
+            e.g. For interpreted languages add script here
+        */
+        return $arguments

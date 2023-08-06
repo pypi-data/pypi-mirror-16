@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+coala_bears_create/__init__.py
+coala_bears_create/coala_bears_create.py
+coala_bears_create.egg-info/PKG-INFO
+coala_bears_create.egg-info/SOURCES.txt
+coala_bears_create.egg-info/dependency_links.txt
+coala_bears_create.egg-info/entry_points.txt
+coala_bears_create.egg-info/requires.txt
+coala_bears_create.egg-info/top_level.txt
+coala_bears_create/scaffold-templates/bearconf.in
+coala_bears_create/scaffold-templates/externalbearconf.py.in
+coala_bears_create/scaffold-templates/testconf.in

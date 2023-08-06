@@ -1,0 +1,23 @@
+from coalib.bearlib.abstractions.Linter import linter
+
+# The bear configurations, filled by coala-bears-create app.
+# Tutorial for Linter Bear is available at:
+# https://coala.readthedocs.io/en/latest/Users/Tutorials/Linter_Bears.html
+
+
+@linter(executable='$executable',
+        output_format='$bear_type')
+class $name:
+    """
+    $description
+    """
+    LANGUAGES = $language
+    REQUIREMENTS = $requirements
+    AUTHORS = $authors
+    AUTHORS_EMAILS = $authors_emails
+    LICENSE = '$license'
+
+    @staticmethod
+    def create_arguments(filename, file, config_file):
+        # Add executable arguments here.
+        return (filename,)
