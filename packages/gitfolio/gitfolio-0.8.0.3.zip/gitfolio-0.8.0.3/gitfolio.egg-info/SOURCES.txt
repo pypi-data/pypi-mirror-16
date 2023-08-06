@@ -1,0 +1,6 @@
+setup.py
+gitfolio/gitfolio-run.py
+gitfolio.egg-info/PKG-INFO
+gitfolio.egg-info/SOURCES.txt
+gitfolio.egg-info/dependency_links.txt
+gitfolio.egg-info/top_level.txt
