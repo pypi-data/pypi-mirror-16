@@ -1,0 +1,10 @@
+setup.py
+Oto.egg-info/PKG-INFO
+Oto.egg-info/SOURCES.txt
+Oto.egg-info/dependency_links.txt
+Oto.egg-info/not-zip-safe
+Oto.egg-info/top_level.txt
+oto/__init__.py
+oto/response.py
+tests/__init__.py
+tests/test_response.py
