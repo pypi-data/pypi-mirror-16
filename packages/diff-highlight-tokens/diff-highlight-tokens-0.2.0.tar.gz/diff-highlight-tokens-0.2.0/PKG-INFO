@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: diff-highlight-tokens
+Version: 0.2.0
+Summary: A command line tool to apply language-specific highlighting to git diffs
+Home-page: https://github.com/Met48/diff-highlight-tokens
+Author: Andrew Sutton
+Author-email: me@andrewcsutton.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Version Control
