@@ -1,0 +1,10 @@
+[VARIABLES]
+good-names=i,j,x,y,z
+dummy-variables-rgx=_|dummy
+
+[MESSAGES CONTROL]
+disable= logging-format-interpolation, I
+
+[SIMILARITIES]
+# Ignore imports when computing similarities.
+ignore-imports=yes

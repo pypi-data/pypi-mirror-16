@@ -1,0 +1,8 @@
+image: python
+
+before_script:
+  - pip install tox
+
+tox:
+  script:
+    - tox
