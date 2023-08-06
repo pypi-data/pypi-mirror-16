@@ -1,0 +1,3 @@
+stevedore
+matplotlib
+pandas>=0.17.1
