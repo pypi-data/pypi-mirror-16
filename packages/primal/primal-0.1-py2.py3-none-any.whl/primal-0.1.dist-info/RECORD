@@ -1,0 +1,10 @@
+primal/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+primal/version.py,sha256=B5gaXa_iv3KKAmR9gppWSb7F1Iaba-sVO-73URL8e70,20
+primal/tests/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+primal/tests/tests.py,sha256=TLY670Ad80pqubWRXbCu_s2X7FwMw0EOmTN17jiGiWE,123
+primal-0.1.dist-info/DESCRIPTION.rst,sha256=A_LGwY4n5K0TGgOdQomZqEfC3r-p4ZUT7X9bpEoI1ng,395
+primal-0.1.dist-info/METADATA,sha256=KngcaShQuh_CiXFIQ7W9eUy3e5jqtU1l0wCX2Bb_Mlw,1628
+primal-0.1.dist-info/RECORD,,
+primal-0.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+primal-0.1.dist-info/metadata.json,sha256=xOTSv9xoI5IDHW4QnJHOtNI3x4o4koNDym8S6XBMC7A,1203
+primal-0.1.dist-info/top_level.txt,sha256=DuP0x3HFq6rqBlV4IViAx2F0c3JIp31TKpjcuIkeTng,7
