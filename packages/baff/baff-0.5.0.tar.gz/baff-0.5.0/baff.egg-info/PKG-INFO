@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: baff
+Version: 0.5.0
+Summary: Process spawner and monitor
+Home-page: https://bitbucket.org/gamikun/baff
+Author: Gamaliel Espinoza Macedo
+Author-email: gamaliel.espinoza@gmail.com
+License: UNKNOWN
+Description: Hello World!
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2.7
