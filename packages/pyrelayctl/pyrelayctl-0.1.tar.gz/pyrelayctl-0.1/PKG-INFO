@@ -1,0 +1,38 @@
+Metadata-Version: 1.1
+Name: pyrelayctl
+Version: 0.1
+Summary: Library for FT232R controlled relay boards
+Home-page: https://github.com/xypron/pyrelayctl
+Author: Heinrich Schuchardt
+Author-email: xypron.glpk@gmx.de
+License: BSD
+Description: 
+        PyRelayCtl is a library to control FTDI FT245R based relay boards.
+        This includes the SainSmart 4-channel 5V USB relay board.
+        The outlets can be switched on and off via USB.
+        
+        The library depends on PyUSB (https://github.com/walac/pyusb).
+        
+        On Debian PyUSB can be installed using::
+        
+            apt-get install python3-usb
+        
+        Per default, only root is allowed to use devices directly, therefore the
+        library also only works as root.
+        
+        To allow group relayctl access create file /lib/udev/rules.d/60-relayctl.rules
+        with the following content::
+        
+            SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6001", GROUP="relayctl", MODE="660"
+        
+        Then reload the udev rules with::
+        
+            udevadm control --reload-rules
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: System :: Hardware :: Hardware Drivers
