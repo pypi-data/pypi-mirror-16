@@ -1,0 +1,10 @@
+README.rst
+setup.py
+cwcli/__init__.py
+cwcli/meta.py
+cwcli.egg-info/PKG-INFO
+cwcli.egg-info/SOURCES.txt
+cwcli.egg-info/dependency_links.txt
+cwcli.egg-info/entry_points.txt
+cwcli.egg-info/requires.txt
+cwcli.egg-info/top_level.txt
