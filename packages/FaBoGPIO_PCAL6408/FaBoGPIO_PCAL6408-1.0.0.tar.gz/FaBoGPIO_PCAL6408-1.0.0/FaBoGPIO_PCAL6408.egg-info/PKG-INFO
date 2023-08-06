@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: FaBoGPIO-PCAL6408
+Version: 1.0.0
+Summary: This is a library for the FaBo GPIO I2C Brick.
+Home-page: https://github.com/FaBoPlatform/FaBoGPIO-PCAL6408-Python/
+Author: FaBo
+Author-email: info@fabo.io
+License: Apache License 2.0
+Description: FaBoGPIO-PCAL6408-Python
+        ========================
+        
+        How to install.
+        ---------------
+        
+        ::
+        
+            pip install FaBoGPIO_PCAL6408
+        
+        FaBo GPIO I2C Brick
+        -------------------
+        
+        　`#210 GPIO I2C Brick <http://fabo.io/210.html>`__
+        
+        PCAL6408A
+        ---------
+        
+        　PCAL6408A is 8bit I2C I/O expander.
+        
+        PCAL6408A Datasheet
+        ~~~~~~~~~~~~~~~~~~~
+        
+        　`PCAL6408A
+        Datasheet <http://www.nxp.com/documents/data_sheet/PCAL6408A.pdf>`__
+        
+        Releases
+        --------
+        
+        -  1.0.0 Initial release.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development
+Classifier: Topic :: System :: Hardware
