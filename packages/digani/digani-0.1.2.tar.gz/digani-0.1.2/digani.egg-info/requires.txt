@@ -1,0 +1,9 @@
+pnmatcher
+pygtrie
+digpe
+inflection
+nose2
+phonenumbers
+python-dateutil
+six
+wsgiref
