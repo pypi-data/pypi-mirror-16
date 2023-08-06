@@ -1,0 +1,5 @@
+setup.py
+autoRebootTest.egg-info/PKG-INFO
+autoRebootTest.egg-info/SOURCES.txt
+autoRebootTest.egg-info/dependency_links.txt
+autoRebootTest.egg-info/top_level.txt
