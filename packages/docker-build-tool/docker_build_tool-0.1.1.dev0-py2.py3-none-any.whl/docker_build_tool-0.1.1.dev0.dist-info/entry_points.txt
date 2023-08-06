@@ -1,0 +1,3 @@
+[console_scripts]
+docker-build = docker_builder.__main__:main
+
