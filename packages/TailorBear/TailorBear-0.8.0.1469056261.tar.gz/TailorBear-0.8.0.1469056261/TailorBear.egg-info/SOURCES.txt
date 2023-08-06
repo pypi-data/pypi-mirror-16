@@ -1,0 +1,7 @@
+setup.py
+TailorBear/TailorBear.py
+TailorBear/__init__.py
+TailorBear.egg-info/PKG-INFO
+TailorBear.egg-info/SOURCES.txt
+TailorBear.egg-info/dependency_links.txt
+TailorBear.egg-info/top_level.txt
