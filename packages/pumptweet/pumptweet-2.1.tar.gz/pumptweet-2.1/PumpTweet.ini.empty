@@ -1,0 +1,12 @@
+[pump]
+username = 
+
+[twitter]
+key = 
+secret = 
+token = 
+token_secret = 
+
+[history]
+recent = 
+published = 

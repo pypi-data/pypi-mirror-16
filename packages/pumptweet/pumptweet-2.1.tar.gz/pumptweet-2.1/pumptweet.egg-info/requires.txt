@@ -1,0 +1,2 @@
+pypump >= 0.7
+python-twitter >= 3.1
