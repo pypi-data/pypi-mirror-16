@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: jMonochrome
+Version: 0.9
+Summary: Make your photos black and white with jMonochrome !
+Home-page: https://github.com/javadmokhtarikoushyar/jmonochrome
+Author: Javad Mokhtari Koushyar
+Author-email: UNKNOWN
+License: MIT
+Description: UNKNOWN
+Keywords: jmonochrome make black and white images
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4

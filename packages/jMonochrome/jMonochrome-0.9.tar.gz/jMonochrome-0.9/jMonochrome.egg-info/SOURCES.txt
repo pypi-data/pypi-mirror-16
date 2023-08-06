@@ -1,0 +1,6 @@
+README.rst
+jMonochrome.egg-info/PKG-INFO
+jMonochrome.egg-info/SOURCES.txt
+jMonochrome.egg-info/dependency_links.txt
+jMonochrome.egg-info/requires.txt
+jMonochrome.egg-info/top_level.txt
