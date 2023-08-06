@@ -1,0 +1,7 @@
+setup.py
+SQLintBear/SQLintBear.py
+SQLintBear/__init__.py
+SQLintBear.egg-info/PKG-INFO
+SQLintBear.egg-info/SOURCES.txt
+SQLintBear.egg-info/dependency_links.txt
+SQLintBear.egg-info/top_level.txt
