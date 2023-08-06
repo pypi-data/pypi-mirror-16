@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+
+import accenter
+import argparse
+
+parser = argparse.ArgumentParser(prog='accenter')
+parser.add_argument('--text', help='text to change using accenter. (hint: use quotes)')
+
+args = parser.parse_args()
+
+if args.text is not None:
+    print accenter.run(args.text)
+else:
+    print 'Please supply a text parameter.. eg:\n accenter', \
+        '--text "some text"'
