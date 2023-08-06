@@ -1,0 +1,8 @@
+ci_jira_releaser/__init__.py,sha256=io8-gamsNubdcTq2LONNFE8mphmtr1064PHUxdW7h04,3281
+ci_jira_releaser-0.3.8.7.data/scripts/ci-jira-releaser,sha256=7FTHBcowVXCXljlpCnrSjlgqm66Ec1dAMi_aj14FmsM,4134
+ci_jira_releaser-0.3.8.7.dist-info/DESCRIPTION.rst,sha256=od3iXXYdOkrAxR6MFSyZDnkcA47vcqNGRi3Q31k-Yao,2207
+ci_jira_releaser-0.3.8.7.dist-info/METADATA,sha256=HctOwvsQBey1gE-9CVrShG7Tn4SkxJJHiY9NezOtq-c,2538
+ci_jira_releaser-0.3.8.7.dist-info/RECORD,,
+ci_jira_releaser-0.3.8.7.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+ci_jira_releaser-0.3.8.7.dist-info/metadata.json,sha256=6Y8tgwCdWO9b_H7HWcdXco8DJfil0FvXSSLtRxBNHBk,529
+ci_jira_releaser-0.3.8.7.dist-info/top_level.txt,sha256=8r4jyJJHKI0tBOz0vVbqshh7wb7O4qmtcRm0qyT7M7U,17
