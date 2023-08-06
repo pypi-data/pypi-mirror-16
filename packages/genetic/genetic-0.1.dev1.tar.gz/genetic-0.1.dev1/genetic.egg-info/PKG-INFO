@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: genetic
+Version: 0.1.dev1
+Summary: A versatile distributable genetic algorithm build withflexibility and ease of use in mind
+Home-page: https://github.com/grayfall/genetic.git
+Author: Ilia Korvigo
+Author-email: ilia.korvigo@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: genetic algorithm,multiprocessing,numerical optimisation,stochastic optimisation
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Scientific/Engineering 
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
