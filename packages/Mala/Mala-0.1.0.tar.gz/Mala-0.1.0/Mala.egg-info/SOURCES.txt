@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.rst
+mala.py
+requirements.txt
+setup.cfg
+setup.py
+Mala.egg-info/PKG-INFO
+Mala.egg-info/SOURCES.txt
+Mala.egg-info/dependency_links.txt
+Mala.egg-info/not-zip-safe
+Mala.egg-info/requires.txt
+Mala.egg-info/top_level.txt
