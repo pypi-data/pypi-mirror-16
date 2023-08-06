@@ -1,0 +1,13 @@
+CHANGES.rst
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+django_compoundqueryset.egg-info/PKG-INFO
+django_compoundqueryset.egg-info/SOURCES.txt
+django_compoundqueryset.egg-info/dependency_links.txt
+django_compoundqueryset.egg-info/requires.txt
+django_compoundqueryset.egg-info/top_level.txt
+djcompoundqueryset/__init__.py
+djcompoundqueryset/apps.py
