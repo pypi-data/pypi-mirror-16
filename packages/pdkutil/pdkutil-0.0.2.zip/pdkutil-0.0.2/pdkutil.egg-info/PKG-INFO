@@ -1,0 +1,60 @@
+Metadata-Version: 1.1
+Name: pdkutil
+Version: 0.0.2
+Summary: Stores a pdk file to a barbican container.
+Home-page: https://github.com/cloudbase/pdkutil
+Author: Simona Iuliana Toader
+Author-email: info@cloudbasesolutions.com
+License: Apache 2.0
+Description: PDKUtil
+        =============================================
+        
+        Stores a pdk file to a barbican container.
+        
+        Installation
+        ------------
+        
+        Pip is the preferred way to install PDKUtil: ::
+        
+            pip install pdkutil
+        
+        Command-line interface
+        ----------------------
+        
+        PDKUtil uses Keystone for identity management. Credentials and endpoints can
+        be provided via environment variables or command line parameters in the same
+        way supported by most OpenStack command line interface (CLI) tools, e.g.: ::
+        
+            export OS_AUTH_URL=http://example.com:5000/v2.0
+            export OS_USERNAME=admin
+            export OS_PASSWORD=password
+            export OS_TENANT_NAME=admin
+        
+        
+        Store a pdk file
+        ----------------
+        
+        This command stores the specified pdk file to a container, returning
+        container's reference: ::
+        
+            pdkutil store <filename> <container-name>
+        
+        Get container's information
+        ---------------------------
+        
+        This command retrieves container's information (container's name,
+        secrets references, etc) by its specified reference: ::
+        
+            pdkutil get <container-reference>
+        
+Keywords: pdk shieldedvms
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Topic :: System :: Systems Administration
