@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+clean_fields/__init__.py
+clean_fields/decorators.py
+clean_fields/exc.py
+clean_fields/models.py
+clean_fields/utils.py
+django_clean_fields.egg-info/PKG-INFO
+django_clean_fields.egg-info/SOURCES.txt
+django_clean_fields.egg-info/dependency_links.txt
+django_clean_fields.egg-info/requires.txt
+django_clean_fields.egg-info/top_level.txt
+django_clean_fields.egg-info/zip-safe
