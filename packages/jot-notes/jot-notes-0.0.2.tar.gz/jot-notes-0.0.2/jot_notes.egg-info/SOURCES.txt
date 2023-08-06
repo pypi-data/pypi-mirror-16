@@ -1,0 +1,9 @@
+README.rst
+jot.py
+setup.py
+jot_notes.egg-info/PKG-INFO
+jot_notes.egg-info/SOURCES.txt
+jot_notes.egg-info/dependency_links.txt
+jot_notes.egg-info/entry_points.txt
+jot_notes.egg-info/requires.txt
+jot_notes.egg-info/top_level.txt
