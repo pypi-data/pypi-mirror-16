@@ -1,0 +1,86 @@
+{
+    "Archiving": {
+        "Archive Size": {
+            "Field Type": "Entry",
+            "Is Path Type": false,
+            "Value": "0"
+        },
+        "Archive Time Interval": {
+            "Field Type": "Entry",
+            "Is Path Type": false,
+            "Value": "5"
+        },
+        "File Format": {
+            "Field Type": "Option",
+            "Selected": "tar",
+            "Values": [
+                "zip",
+                "tar"
+            ]
+        },
+        "Size Check Period": {
+            "Field Type": "Entry",
+            "Is Path Type": false,
+            "Value": "0"
+        }
+    },
+    "General": {
+        "Exe Path": {
+            "Field Type": "Entry",
+            "Is Path Type": false,
+            "Value": "tShark.exe"
+        },
+        "Extension": {
+            "Field Type": "Option",
+            "Selected": ".pcap",
+            "Values": [
+                ".txt",
+                ".pcap"
+            ]
+        },
+        "Flags": {
+            "Field Type": "Entry",
+            "Is Path Type": false,
+            "Value": "-i \\Device\\NPF_{04851497-5286-4C50-A8F6-49C3D0851FD4} -w"
+        },
+        "Is Enabled": {
+            "Field Type": "Option",
+            "Selected": true,
+            "Values": [
+                true,
+                false
+            ]
+        },
+        "Is Standalone": {
+            "Field Type": "Option",
+            "Selected": true,
+            "Values": [
+                true,
+                false
+            ]
+        },
+        "Output": {
+            "Field Type": "Entry",
+            "Is Path Type": false,
+            "Value": "raw"
+        },
+        "Parser": {
+            "Field Type": "Entry",
+            "Is Path Type": true,
+            "Value": "plugins.parsers.tshark.tshark_parser,TSharkParser"
+        },
+        "Plugin Name": {
+            "Field Type": "Label",
+            "Value": "tshark"
+        },
+        "Type": {
+            "Field Type": "Option",
+            "Selected": "plugin",
+            "Values": [
+                "plugin",
+                "multi",
+                "schedulable"
+            ]
+        }
+    }
+}
