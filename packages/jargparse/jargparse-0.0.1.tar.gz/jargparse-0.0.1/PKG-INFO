@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: jargparse
+Version: 0.0.1
+Summary: A tiny super-dumb python module just because I like to see the usage info on stdout on an error
+Home-page: https://github.com/justinccdev/jargparse
+Author: Justin Clark-Casey
+Author-email: justincc@justincc.org
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: logging
+Platform: UNKNOWN
