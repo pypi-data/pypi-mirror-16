@@ -1,0 +1,14 @@
+taggit_selectize/__init__.py,sha256=Vyf6P6UCZKFeQtRzYujPmFfdlqSfnc01VEMWE3O0ZrA,22
+taggit_selectize/conf.py,sha256=wUWNxDbmaeYEbGtSA0Q6Vte-1uYnrYCQJDOiACipfq0,735
+taggit_selectize/managers.py,sha256=9YporyAkgSqxZBs17aaPsBt7uSWQLYdchp7oCTwY9nk,534
+taggit_selectize/urls.py,sha256=PpGsRCxpuii2T33PO1zmQcZTGFo9otcXhf0kLnrQd3U,163
+taggit_selectize/views.py,sha256=xKQdwASBcP7Vuo6Qry7DuTeLyx7VJVUOCaexlY9p_ao,727
+taggit_selectize/widgets.py,sha256=jrofMbVI5qt4OpsoBoI2hLU9jX-tlhv2t6MhwOfh-NE,4998
+taggit_selectize/static/taggit_selectize/css/selectize.django.css,sha256=BQVsWxVmox09ZQJhHt7jf-BTO8KBSKNOtbBlADQVDcw,10889
+taggit_selectize/static/taggit_selectize/js/selectize.js,sha256=S1w5mjjiY4Xfxhx1q9w0P-4_OM1KcwCiMY1AAr-WFSQ,98434
+taggit_selectize-2.2.0.dist-info/DESCRIPTION.rst,sha256=RIexZ_Jv6ynjQWFr5oZIHbyZjTa0Hx6P5aMql4rgpiA,51
+taggit_selectize-2.2.0.dist-info/METADATA,sha256=JdkRsBqM-xuibD5jNOTPVco_nsYMHlq_-SUkHQPsD4g,634
+taggit_selectize-2.2.0.dist-info/RECORD,,
+taggit_selectize-2.2.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+taggit_selectize-2.2.0.dist-info/metadata.json,sha256=ALiHzN4ypxTvSp4Wh6mmNngTE6JA6vk4p1SSIH7_RF0,730
+taggit_selectize-2.2.0.dist-info/top_level.txt,sha256=IqdtBZpyOCKqRUwoE_enw0H_hunavkwNHEDuVBQZP2E,17
