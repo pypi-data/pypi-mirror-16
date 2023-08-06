@@ -1,0 +1,7 @@
+setup.py
+tasks_for_notebook/__init__.py
+tasks_for_notebook/tasks_for_notebook.py
+tasks_for_notebook.egg-info/PKG-INFO
+tasks_for_notebook.egg-info/SOURCES.txt
+tasks_for_notebook.egg-info/dependency_links.txt
+tasks_for_notebook.egg-info/top_level.txt
