@@ -1,0 +1,70 @@
+Metadata-Version: 1.1
+Name: climesync
+Version: 0.1.1
+Summary: Climesync - CLI Frontend for the OSUOSL TimeSync API
+Home-page: https://github.com/osuosl/climesync
+Author: OSU Open Source Lab
+Author-email: support@osuosl.org
+License: Apache Version 2.0
+Description: CLI for the TimeSync API
+        
+        Climesync is a CLI frontend to submit times to a TimeSync implementation.
+        
+        IMPORTANT: Please upgrade your setuptools before installing ClimeSync, 
+        we recommend version >= 23.1.0 
+        
+        $ pip install -U setuptools
+        
+        To run the program, type
+        
+        $ climesync
+        
+        climesync accepts args like so:
+        
+        $ climesync --connect <timesync baseurl> --user <username> --password <password>
+        
+        or with short options:
+        
+        $ climesync -c <timesync baseurl> -u <username> -p <password>
+        
+        If all three args are provided, climesync will connect to timesync and
+        authenticate your username and password for you.
+            
+        
+        Once climesync is running, you can complete the following tasks:
+        
+        c - connect
+        dc - disconnect
+        s - sign in
+        so - sign out/reset credentials
+        
+        ct - submit time
+        ut - update time
+        gt - get times
+        st - sum times
+        dt - delete time
+        
+        cp - create project
+        up - update project
+        gp - get projects
+        dp - delete project
+        
+        ca - create activity
+        ua - update activity
+        ga - get activities
+        da - delete activity
+        
+        cu - create user
+        uu - update user
+        gu - get users
+        du - delete user
+        
+        q - exit
+        
+        See detailed documentation at http://climesync.readthedocs.io/en/latest/
+        
+Keywords: timesync pymesync cli frontend
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2.7
