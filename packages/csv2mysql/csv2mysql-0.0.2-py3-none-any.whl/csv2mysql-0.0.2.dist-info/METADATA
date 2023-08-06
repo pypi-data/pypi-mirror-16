@@ -1,0 +1,16 @@
+Metadata-Version: 2.0
+Name: csv2mysql
+Version: 0.0.2
+Summary: Generate MYSQL scripts to load csv files
+Home-page: https://github.com/leonweber/csv_to_mysql
+Author: Leon Weber
+Author-email: leonweber@posteo.de
+License: GPLv3
+Keywords: sql,mysql,csv,conversion,convert
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Requires-Dist: click
+
+UNKNOWN
+
+

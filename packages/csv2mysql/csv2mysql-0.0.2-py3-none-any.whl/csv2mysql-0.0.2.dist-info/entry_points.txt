@@ -1,0 +1,3 @@
+[console_scripts]
+csv2mysql = csv2mysql.csv2mysql:main
+
