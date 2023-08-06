@@ -1,0 +1,16 @@
+mock
+numpy
+six
+future
+pandas
+nitime
+nilearn
+dipy
+nipype
+niworkflows
+lockfile
+jinja2
+seaborn
+rst2pdf
+pyPdf2
+PyYAML
