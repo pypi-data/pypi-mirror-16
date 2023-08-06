@@ -1,0 +1,12 @@
+albatross/__init__.py,sha256=MyeJAPd_7k3WJLUZa9iTNu6lvAPKADE3oElTOoP4CPI,194
+albatross/http_error.py,sha256=wXLfuzI0LqMj3lQsgH7VBgpnT0IZfjJVaTjtrX9CbQc,145
+albatross/request.py,sha256=E9itz56ZKwMjkq_kuXHe4K1WAZQYA76xeidjWftTca0,1871
+albatross/response.py,sha256=9cjOlXUmbhyddB_bYdMOT0P33izCZTtQyOOroZYdQ2Q,1012
+albatross/server.py,sha256=mVvuBT0vhlyH_vQbfo8zFgrKxF9bGONY9ldKVyNHs9E,5832
+albatross/status_codes.py,sha256=IEWsE_ZJTc7HHcxWMhT7Jh6xplOUEawdyqBVdxjlK-k,5536
+albatross3-0.1.8.dist-info/DESCRIPTION.rst,sha256=mxTsCgttDZOmECb2sGJV7Q_od_uen5scwv2oRT4xhWo,559
+albatross3-0.1.8.dist-info/METADATA,sha256=DwzCxcFa5yXvriBwx3Zcr0aZ1Ak4jrlsNlp8QsKXOI0,1061
+albatross3-0.1.8.dist-info/RECORD,,
+albatross3-0.1.8.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+albatross3-0.1.8.dist-info/metadata.json,sha256=JlmJZ0R1tjPQjjNYmLC6UqcxSAXPhcL8HgN-D2GPOlU,671
+albatross3-0.1.8.dist-info/top_level.txt,sha256=nFF9t9hiN_WeGkxLSzdxHxumdg0l6rnI12sH27iJIow,10
