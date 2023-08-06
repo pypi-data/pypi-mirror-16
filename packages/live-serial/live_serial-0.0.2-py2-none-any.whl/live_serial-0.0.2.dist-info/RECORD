@@ -1,0 +1,15 @@
+live_serial-0.0.2.data/scripts/livemon.py,sha256=isU7AGqTdbfWhys0m7gJ6oHSGSOVPSAB2cSEaFE82hk,11274
+live_serial-0.0.2.dist-info/DESCRIPTION.rst,sha256=ljXJw54HYvRc5v3_oHil9VihsMn3Kpk8V7YXUnGgK1M,1679
+live_serial-0.0.2.dist-info/METADATA,sha256=3pEWTL_9gOWD5FPGLfp-mhiM6lCIxBdg1zXFwvw_BJs,2573
+live_serial-0.0.2.dist-info/RECORD,,
+live_serial-0.0.2.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+live_serial-0.0.2.dist-info/metadata.json,sha256=7ZPtOLvKwFY2HAxr_ZjV0LdSUTXGbRal57WaJsDf0mU,1036
+live_serial-0.0.2.dist-info/top_level.txt,sha256=bNZ1Ld3LvBz9lxhcZ9W9xhM6r1CGakyQzKo-GyANE50,11
+liveserial/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+liveserial/base.py,sha256=4c_AvGlhDC9xvmgULq5PXKZbtXQ-T5HjNhqbGkX-JOg,2206
+liveserial/livemon.py,sha256=u_fvM-63CYgUNStya7e4O2mVPGRrz6gxZlE7eOhViLM,11283
+liveserial/logging.py,sha256=-po2u-mDo2MXLu7FwEL8Xt2DWsWb8cZFrcPNY8gpkwM,6732
+liveserial/monitor.py,sha256=iPIYNnzLhWN82HreJALEYfJzxVYB4JZbV3R6JgZeQjI,8196
+liveserial/msg.py,sha256=cmpSPrr9S_22UK4khxBNMZ9YHJQsqlSQNghjOAyeY24,4615
+liveserial/plotting.py,sha256=DWm1ZFSscKFD_RjrfzB0FK9krj8I5q_FmYoE-YLcz8I,5491
+liveserial/simport.py,sha256=5u8j8cSjH2Q1o7k9cNmOQ8GYFwsZ5KpWdTu-sGugxG4,3788
