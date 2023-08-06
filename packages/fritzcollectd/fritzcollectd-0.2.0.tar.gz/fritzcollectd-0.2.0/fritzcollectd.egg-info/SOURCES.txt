@@ -1,0 +1,9 @@
+README.rst
+fritzcollectd.py
+setup.py
+fritzcollectd.egg-info/PKG-INFO
+fritzcollectd.egg-info/SOURCES.txt
+fritzcollectd.egg-info/dependency_links.txt
+fritzcollectd.egg-info/pbr.json
+fritzcollectd.egg-info/requires.txt
+fritzcollectd.egg-info/top_level.txt
