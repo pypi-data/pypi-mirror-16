@@ -1,0 +1,14 @@
+MANIFEST.in
+RELEASE-VERSION
+pavement.py
+paver-minilib.zip
+setup.py
+version.py
+dropbot_elisa_analysis/__init__.py
+dropbot_elisa_analysis/plot.py
+dropbot_elisa_analysis.egg-info/PKG-INFO
+dropbot_elisa_analysis.egg-info/SOURCES.txt
+dropbot_elisa_analysis.egg-info/dependency_links.txt
+dropbot_elisa_analysis.egg-info/pbr.json
+dropbot_elisa_analysis.egg-info/requires.txt
+dropbot_elisa_analysis.egg-info/top_level.txt
