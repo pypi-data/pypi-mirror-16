@@ -1,0 +1,8 @@
+[approved.subcommands.1]
+delete = approved.store.cli:delete
+load = approved.parse.cli:load
+show = approved.store.cli:show
+
+[console_scripts]
+approved = approved.cli:root
+

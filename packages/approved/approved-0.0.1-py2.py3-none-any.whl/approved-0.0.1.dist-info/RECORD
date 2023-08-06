@@ -1,0 +1,15 @@
+approved/__init__.py,sha256=kjo7H1g2L5P9gndGNrsB5y0WB53UPhnCszSjl3ndvNs,634
+approved/cli.py,sha256=qw13BtG4sK6DfOjOO4d_QsnxYobamtHyRspkkhDTZps,2407
+approved/parse/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+approved/parse/cli.py,sha256=-nTBCWe6nGLrCIt9haWIJs-36p4OpLHZ-KfGF45pXnw,1678
+approved/parse/mip.py,sha256=QgrQq4FgxxokyUwzkQVX6BqAryHy3GCMYbDC73g9w5E,5041
+approved/store/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+approved/store/cli.py,sha256=Cm03Hc9MxUc9cT6FJMCEZxAHjKradF9pfSA1OwT05h4,797
+approved/store/models.py,sha256=ROxvlhFmndMr5ReY2FDY-LgDe1Pnm_YRLCb8EJwo1c8,2658
+approved-0.0.1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+approved-0.0.1.dist-info/METADATA,sha256=gcAWiKQzMDqTunZVrcNQ6vaJTwJmQmU0NUMTM9IO3Z0,697
+approved-0.0.1.dist-info/RECORD,,
+approved-0.0.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+approved-0.0.1.dist-info/entry_points.txt,sha256=KdLEkvWn_78D144OGFaS7r_43QeR0Jr6wurfRQAgt60,171
+approved-0.0.1.dist-info/metadata.json,sha256=h20aqXdRT4GoNK1PR5hhKJW4ESCvVTggTuVfWcmDOXw,1109
+approved-0.0.1.dist-info/top_level.txt,sha256=f4UY99temlUEn0nE6m1uj1CWlSMeYMvWB7yzbIinWhQ,9
