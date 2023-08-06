@@ -1,0 +1,38 @@
+Metadata-Version: 1.1
+Name: arq
+Version: 0.0.2
+Summary: Job queues in python with asyncio, redis and msgpack.
+Home-page: https://github.com/samuelcolvin/arq
+Author: Samuel Colvin
+Author-email: s@muelcolvin.com
+License: MIT
+Description: 
+        |Build Status| |Coverage|
+        
+        Job queues in python with asyncio, redis and msgpack.
+        
+        rq meets asyncio.
+        
+        See `github <https://github.com/samuelcolvin/arq>`__ for more details.
+        
+        .. |Build Status| image:: https://travis-ci.org/samuelcolvin/arq.svg?branch=master
+           :target: https://travis-ci.org/samuelcolvin/arq
+        .. |Coverage| image:: https://codecov.io/github/samuelcolvin/arq/coverage.svg?branch=master
+           :target: https://codecov.io/github/samuelcolvin/arq?branch=master
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Unix
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Internet
+Classifier: Topic :: System :: Distributed Computing
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: System :: Monitoring
