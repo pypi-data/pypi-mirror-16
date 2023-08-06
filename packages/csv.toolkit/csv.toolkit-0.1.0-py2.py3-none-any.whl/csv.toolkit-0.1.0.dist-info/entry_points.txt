@@ -1,0 +1,3 @@
+[console_scripts]
+csvtoolkit = csv.toolkit.scripts:main
+
