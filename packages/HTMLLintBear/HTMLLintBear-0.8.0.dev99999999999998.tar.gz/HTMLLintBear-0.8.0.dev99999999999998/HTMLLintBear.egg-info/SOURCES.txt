@@ -1,0 +1,5 @@
+setup.py
+HTMLLintBear.egg-info/PKG-INFO
+HTMLLintBear.egg-info/SOURCES.txt
+HTMLLintBear.egg-info/dependency_links.txt
+HTMLLintBear.egg-info/top_level.txt
