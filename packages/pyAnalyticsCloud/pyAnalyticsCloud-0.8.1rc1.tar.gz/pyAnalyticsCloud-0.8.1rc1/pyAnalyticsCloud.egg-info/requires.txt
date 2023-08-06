@@ -1,0 +1,4 @@
+sqlalchemy
+unicodecsv
+salesforce-python-toolkit
+psycopg2
