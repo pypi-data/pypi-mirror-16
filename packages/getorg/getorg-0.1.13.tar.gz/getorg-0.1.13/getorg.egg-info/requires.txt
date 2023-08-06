@@ -1,0 +1,5 @@
+pygithub
+ipywidgets
+ipyleaflet
+geopy
+datetime
