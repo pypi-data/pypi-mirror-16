@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: pydmm
+Version: 0.1
+Summary: Read data from a dmm
+Home-page: https://github.com/mweigend/pydmm
+Author: Michael Weigend
+Author-email: mw@creative-informatics.de
+License: Creative Commons Attribution-Noncommercial-Share Alike license
+Download-URL: https://github.com/mweigend/pydmm/tarball/0.1
+Description: UNKNOWN
+Keywords: dmm,digital multimeter
+Platform: UNKNOWN
