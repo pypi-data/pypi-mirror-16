@@ -1,0 +1,99 @@
+Metadata-Version: 2.0
+Name: twelve-tone
+Version: 0.1.0
+Summary: Twelve-tone matrix to generate dodecaphonic melodies
+Home-page: https://github.com/accraze/python-twelve-tone
+Author: Andy Craze
+Author-email: accraze@gmail.com
+License: BSD
+Keywords: music,composition,matrix,atonal
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Utilities
+Requires-Dist: click
+Requires-Dist: numpy
+
+========
+Overview
+========
+
+
+
+Twelve-tone matrix to generate dodecaphonic melodies.
+
+Following a process created by the composer Arnold Schoenberg, this library
+computes a matrix to create twelve-tone serialism melodies which compose each
+of the 12 semitones of the chromatic scale with equal importance.
+
+
+* Free software: BSD license
+
+Installation
+============
+
+::
+
+    pip install twelve-tone
+
+Quick Start
+===========
+
+::
+
+    >>> from twelve_tone.composer import Composer
+    >>> c = Composer()
+    >>> c.compose()
+    >>> c.get_melody()
+    ['C# / Db', 'A# / Bb', 'F', 'D', 'G# / Ab', 'D# / Eb', 'F# / Gb',
+        'A', 'C', 'G', 'B', 'E']
+
+Documentation
+=============
+
+https://python-twelve-tone.readthedocs.io/
+
+Development
+===========
+
+To run the all tests run::
+
+    tox
+
+Note, to combine the coverage data from all the tox environments run:
+
+.. list-table::
+    :widths: 10 90
+    :stub-columns: 1
+
+    - - Windows
+      - ::
+
+            set PYTEST_ADDOPTS=--cov-append
+            tox
+
+    - - Other
+      - ::
+
+            PYTEST_ADDOPTS=--cov-append tox
+
+
+Changelog
+=========
+
+0.1.0 (2016-08-18)
+-----------------------------------------
+
+* First release on PyPI.
+
+
