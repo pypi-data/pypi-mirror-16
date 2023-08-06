@@ -1,0 +1,9 @@
+setup.py
+loom/__init__.py
+loom/glm.py
+loom/loom.py
+loompy.egg-info/PKG-INFO
+loompy.egg-info/SOURCES.txt
+loompy.egg-info/dependency_links.txt
+loompy.egg-info/requires.txt
+loompy.egg-info/top_level.txt
