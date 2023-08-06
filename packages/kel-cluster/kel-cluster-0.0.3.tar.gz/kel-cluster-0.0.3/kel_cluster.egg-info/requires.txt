@@ -1,0 +1,5 @@
+cryptography
+google-api-python-client
+Jinja2
+pykube
+PyYAML
