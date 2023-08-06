@@ -1,0 +1,9 @@
+django_embed_template/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_embed_template/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_embed_template/templatetags/embed.py,sha256=mAI1Qj0pwE--80Qsqc8lP0qI0M4Ofl-92h52taD1qqw,3341
+django_embed_template-0.2.0.dist-info/DESCRIPTION.rst,sha256=3hJQ4P9TyXmC5TtooqA0tavwNp-JUw1k2S-kZPFP0fY,4063
+django_embed_template-0.2.0.dist-info/METADATA,sha256=eeDuxuB4btQQUgs678X_Z3TVWHRNZWa7JfdYFcN5WAY,4973
+django_embed_template-0.2.0.dist-info/RECORD,,
+django_embed_template-0.2.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+django_embed_template-0.2.0.dist-info/metadata.json,sha256=F02TWsgi9x19UJDsdXUequtuREctwpAmcByhypEiQIw,1063
+django_embed_template-0.2.0.dist-info/top_level.txt,sha256=EBajdNe7fJBVB_qLX7ZefH2MK5qVPysKDLwqPCDT0jw,22
