@@ -1,0 +1,10 @@
+setup.py
+gitfolio/gitfolio-run.py
+gitfolio.egg-info/PKG-INFO
+gitfolio.egg-info/SOURCES.txt
+gitfolio.egg-info/dependency_links.txt
+gitfolio.egg-info/top_level.txt
+gitfolio/mygitfolio/builder.py
+gitfolio/mygitfolio/ghAuth.py
+gitfolio/mygitfolio/summarize_v1.py
+gitfolio/mygitfolio/summarize_v2.py
