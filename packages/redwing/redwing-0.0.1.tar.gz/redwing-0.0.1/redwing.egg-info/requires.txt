@@ -1,0 +1,8 @@
+click
+sqlalchemy
+
+[test]
+coverage
+
+[dev]
+check-manifest

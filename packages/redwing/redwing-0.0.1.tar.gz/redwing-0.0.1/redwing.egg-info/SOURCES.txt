@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+bin/redwing
+redwing/__init__.py
+redwing/redwing.py
+redwing/tests.py
+redwing.egg-info/PKG-INFO
+redwing.egg-info/SOURCES.txt
+redwing.egg-info/dependency_links.txt
+redwing.egg-info/requires.txt
+redwing.egg-info/top_level.txt
