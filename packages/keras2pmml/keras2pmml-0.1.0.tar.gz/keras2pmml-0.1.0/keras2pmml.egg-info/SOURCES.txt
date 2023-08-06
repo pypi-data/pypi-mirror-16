@@ -1,0 +1,8 @@
+README.rst
+setup.py
+keras2pmml/__init__.py
+keras2pmml.egg-info/PKG-INFO
+keras2pmml.egg-info/SOURCES.txt
+keras2pmml.egg-info/dependency_links.txt
+keras2pmml.egg-info/requires.txt
+keras2pmml.egg-info/top_level.txt
