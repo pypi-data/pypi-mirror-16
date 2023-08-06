@@ -1,0 +1,14 @@
+[console_scripts]
+mptcpanalyzer = mptcpanalyzer.cli:cli
+mptcpexporter = mptcpanalyzer.exporter:main
+
+[mptcpanalyzer.plots]
+dss = mptcpanalyzer.plots.dsn:DSSOverTime
+dss_len = mptcpanalyzer.plots.dsn:DssLengthHistogram
+interarrival = mptcpanalyzer.plots.dsn:InterArrivalTimes
+latency = mptcpanalyzer.plots.latency:LatencyHistogram
+misc = mptcpanalyzer.plots.dsn:PerSubflowTimeVsX
+ns3 = mptcpanalyzer.plots.ns3:PlotTraceSources
+owd = mptcpanalyzer.plots.owd:OneWayDelay
+xinterarrival = mptcpanalyzer.plots.dsn:CrossSubflowInterArrival
+
