@@ -1,0 +1,3 @@
+chimpy==0.2b2
+trytond_nereid >= 4.0, < 4.1
+trytond >= 4.0, < 4.1
