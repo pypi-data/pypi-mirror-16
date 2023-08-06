@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: gh2conf
+Version: 0.1
+Summary: A script for synchronizing GitHub wiki repositories with Confluence
+Home-page: https://github.com/mesozoic/gh2conf
+Author: Alex Levy
+Author-email: mesozoic@polynode.com
+License: UNKNOWN
+Download-URL: https://github.com/mesozoic/gh2conf/archive/v0.1.tar.gz
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5

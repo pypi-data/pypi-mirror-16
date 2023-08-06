@@ -1,0 +1,5 @@
+attrs
+markdown
+pyyaml
+requests
+six
