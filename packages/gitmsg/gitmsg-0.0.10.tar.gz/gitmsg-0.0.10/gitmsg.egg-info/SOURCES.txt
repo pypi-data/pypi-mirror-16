@@ -1,0 +1,13 @@
+MANIFEST.in
+classifiers.txt
+description.txt
+keywords.txt
+requirements.txt
+setup.py
+version.txt
+Examples/.init.sh
+bin/gitmsg
+gitmsg.egg-info/PKG-INFO
+gitmsg.egg-info/SOURCES.txt
+gitmsg.egg-info/dependency_links.txt
+gitmsg.egg-info/top_level.txt
