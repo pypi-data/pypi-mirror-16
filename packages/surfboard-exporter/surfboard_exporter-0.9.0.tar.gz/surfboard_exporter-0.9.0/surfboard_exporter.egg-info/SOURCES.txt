@@ -1,0 +1,10 @@
+setup.py
+scripts/surfboard_exporter
+surfboard_exporter/__init__.py
+surfboard_exporter/collector.py
+surfboard_exporter/http.py
+surfboard_exporter.egg-info/PKG-INFO
+surfboard_exporter.egg-info/SOURCES.txt
+surfboard_exporter.egg-info/dependency_links.txt
+surfboard_exporter.egg-info/requires.txt
+surfboard_exporter.egg-info/top_level.txt
