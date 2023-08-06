@@ -1,0 +1,394 @@
+###################
+##### Aliases #####
+
+aliases:
+# for files
+  music1:
+    file: "short_blues.mp3"
+  music2:
+    file: "to_the_Fantasy_war.mp3"
+  noise:
+    file: "croco.mp3"
+# aliases for colors
+  blue:
+    color: [50, 50, 255]
+  orange:
+    color: [255, 126, 0]
+  yellow: 
+    color: [250, 250, 0]
+  red:
+    color: [255, 20, 20]
+  light_blue:
+    color: [100, 150, 255]
+  green:
+    color: [50, 180, 50]
+  light_green:
+    color: [150, 255, 100]
+  purple:
+    color: [190, 110, 236]
+  pink:
+    color: [255, 50, 255]
+
+####################################################
+##### Music properties: name and general gain ######
+
+music_properties:
+  "short_blues.mp3":
+    name: Short Blues (music 1)
+  "to_the_Fantasy_war.mp3":
+    name: To the Fantasy War (music 2)
+  "croco.mp3":
+    name: Crocodile noise
+    gain: 1.2
+
+####################################################
+##### Key properties: how do the key look like #####
+
+key_properties:
+  'a':
+    description:
+      -  
+      - Music 1
+    include: light_blue
+  'z':
+    description:
+      -  
+      - Music 2
+    include: light_blue
+  'e':
+    description:
+      - 
+      - Noise
+    include: light_blue
+  't':
+    description:
+      - 
+      - Crossfade
+      - music 2
+    include: green
+    repeat_delay: 5
+  'y':
+    description:
+      - 
+      - Stop wait
+      - music 2
+    include: green
+  'u':
+    description:
+      - 
+      - Noise
+      - + Music 2
+    include: green
+
+  'g':
+    description:
+      - 
+      - Music 1
+      - Seek 30/60
+    include: purple
+
+  'i':
+    description:
+      -
+      - Noise
+      - +low vol
+    include: green
+
+  'h':
+    description:
+      -
+      - Noise
+      - 3 times
+    include: purple
+    repeat_delay: 2
+
+  'm':
+    description:
+      - 
+      - Musics
+      - 1 & 2
+    include: purple
+
+  'n':
+    description:
+      -
+      - Low vol
+      - Up vol
+    include: green
+
+  'home':
+    description:
+      - 
+      - vlc
+    include: orange
+
+
+## Some general useful keys
+
+  'ESC':
+    description:
+      - "!"
+      - STOP!
+    include: red
+
+  'F5':
+    description:
+      - "||"
+      - PAUSE
+    include: light_green
+
+  'F6':
+    description:
+      - ">"
+      - UNPAUSE
+    include: light_green
+
+  'F1':
+    description:
+      -   
+      - Stop
+      - fade
+    include: orange
+
+  'F2':
+    description:
+      - 
+      - Stop
+      - actions
+    include: orange
+
+  'F4':
+    description:
+      -   
+      - Skip
+      - wait
+    include: pink
+
+  'F12':
+    description:
+      - 
+      - vol+
+    include: yellow
+
+  'F11':
+    description:
+      - 
+      - "vol-"
+    include: yellow
+
+  'right':
+    description:
+      - 
+      - +10s
+    include: blue
+
+  'left':
+    description:
+      - 
+      - -10s
+    include: blue
+
+#################################################################
+##### Keys: what do the key actually do when you press them #####
+
+keys:
+# Play the songs
+  'a':
+    - play:
+        include: music1
+  'z': 
+    - play:
+        include: music2
+  'e':
+    - play:
+        include: noise
+
+# Crossfade from any music to music 2
+  't':
+    - stop:
+        fade_out: 5
+    - play:
+        include: music2
+        fade_in: 5
+
+# Fade out, then wait and start music 2
+  'y':
+    - stop: 
+        fade_out: 3
+        wait: true
+        set_wait_id: y1
+    - wait:
+        duration: 3
+        set_wait_id: y2
+    - play: 
+        include: music2
+
+# Play the noise, stop music 1, wait a bit then start music 2
+  'u':
+    - play:
+        include: noise
+    - wait:
+        duration: 0.2
+    - stop:
+        include: music1
+    - wait:
+        duration: 3
+        set_wait_id: u
+    - play: 
+        include: music2
+
+# Play music 1, starting at 30 seconds then seeks at 60 after 5 seconds
+  'g':
+    - play: 
+        include: music1
+        start_at: 30
+    - wait: 
+        duration: 5
+        set_wait_id: g
+    - seek:
+        include: music1
+        delta: false
+        value: 60
+
+# Play music 1 and 2, after stopping all musics with a fade_out (and wait for this fade out)
+  'm':
+    - stop:
+        fade_out: 2
+        wait: true
+    - play:
+        include: music1
+    - wait:
+        include: music1
+        set_wait_id: m
+    - play:
+        include: music2
+
+# Lowers the volume of music 1 and 2 (if playing), during the duration of noise + 1 second
+  'i':
+    - volume:
+        include: music1
+        value: 50
+    - volume:
+        include: music2
+        value: 50
+    - play:
+        include: noise
+    - wait:
+        include: noise
+        duration: 1
+        set_wait_id: i
+    - volume:
+        include: music1
+        value: 100
+        fade: 1
+    - volume:
+        include: music2
+        value: 100
+        fade: 1
+
+# Lowers the volume of music 1 and 2 (if playing) down to 10% with a 5 seconds fade, then back to 100% 
+  'n' :
+    - volume:
+        include: music1
+        value: 10
+        fade: 5
+    - volume:
+        include: music2
+        value: 10
+        fade: 5
+    - wait:
+        duration: 5
+        set_wait_id: n
+    - volume:
+        include: music1
+        value: 100
+        fade: 5
+    - volume:
+        include: music2
+        value: 100
+        fade: 5
+
+# Stops all musics, then plays noise repeated twice (3 times)
+  'h':
+    - stop:
+        fade_out: 0.5
+    - play:
+        include: noise
+        loop: 2
+
+  'home':
+    - run_command:
+        command: vlc *.mp3
+        wait: true
+
+
+##### Useful keys (good to have them all the time)
+
+# Emergency stop!
+  'ESC':
+    - stop_all_actions:
+        other_only: true
+    - stop:
+
+
+
+# Pause and unpause
+  'F5': 
+    - pause:
+
+  'F6':
+    - unpause:
+
+# Stopping all musics, with a short fade (sounds natural)
+  'F1':
+    - stop:
+        fade_out: 1
+
+# Stopping all actions
+  'F2':
+    - stop_all_actions:
+
+# Skip wait
+  'F4':
+    - interrupt_wait:
+        wait_id: n
+    - interrupt_wait:
+        wait_id: m
+    - interrupt_wait:
+        wait_id: i
+    - interrupt_wait:
+        wait_id: y1
+    - interrupt_wait:
+        wait_id: y2
+    - interrupt_wait:
+        wait_id: u
+    - interrupt_wait:
+        wait_id: g
+
+
+# Changing volume
+  'F12':
+    - volume:
+        delta: true
+        value: +10
+        fade: 0.5
+
+  'F11':
+    - volume:
+        delta: true
+        value: -10
+        fade: 0.5
+  
+
+# Seek +- 10 seconds
+  'right':
+    - seek:
+        value: 10
+        delta: true
+
+  'left':
+    - seek:
+        value: -10
+        delta: true
+
+
