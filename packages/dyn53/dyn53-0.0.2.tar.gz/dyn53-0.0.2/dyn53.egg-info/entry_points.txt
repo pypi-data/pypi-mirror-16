@@ -1,0 +1,4 @@
+
+      [console_scripts]
+      dyn53=dyn53.dyn53:run
+      
