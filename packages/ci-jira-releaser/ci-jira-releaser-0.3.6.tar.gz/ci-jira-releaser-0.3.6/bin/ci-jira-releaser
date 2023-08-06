@@ -1,0 +1,47 @@
+#!/usr/bin/env python
+from ci_jira_releaser import JiraReleaser
+import argparse
+import os
+
+JIRA_USER_KEY = 'JIRA_USER'
+JIRA_PASSWORD_KEY = 'JIRA_PASSWORD'
+BUILD_NUMBER_KEY = 'BUILD_NUMBER'
+
+def main():
+	parser = argparse.ArgumentParser()
+	parser.add_argument('-p', '--project-key', required=True)
+	parser.add_argument('-u', '--jira-url', required=True)
+	parser.add_argument('-r', '--repo-root', required=False)
+	parser.add_argument('-U', '--jira-username', required=False)
+	parser.add_argument('-P', '--jira-password', required=False)
+	parser.add_argument('--from-commit', help="Hash of git commit to start grabbing issues from", required=True)
+	parser.add_argument('--to-commit')
+	parser.add_argument('-n', '--project-name')
+	parser.add_argument('--build-number')
+	parser.add_argument('--development', action='store_true')
+	parser.add_argument('--production', action='store_true')
+	args = parser.parse_args()
+	jira_username = os.environ.get(JIRA_USER_KEY, None)
+	jira_password = os.environ.get(JIRA_PASSWORD_KEY, None)
+	build_number = os.environ.get(BUILD_NUMBER_KEY, None)
+	if jira_username is not None and jira_password is not None and build_number is None:
+		updater = JiraReleaser(args.project_key, args.jira_url, jira_username=jira_username, \
+			jira_password=jira_password, repo_root=args.repo_root, from_commit=args.from_commit, \
+			to_commit=args.to_commit, is_development=args.is_development, is_production=args.is_production, \
+			build_number=args.build_number)
+	elif jira_username is not None and jira_password is not None and build_number is not None:
+		updater = JiraReleaser(args.project_key, args.jira_url, jira_username=jira_username, \
+			jira_password=jira_password, repo_root=args.repo_root, from_commit=args.from_commit, \
+			to_commit=args.to_commit, is_development=args.is_development, is_production=args.is_production, \
+			build_number=build_number)
+	if args.production:
+		version = updater.create_jira_version()
+		updater.update_issues_version(updater.get_issues(updater.list_commits()))
+		version.update(fields={'released': True})
+	elif args.development:
+		label = updater.create_jira_label()
+		update.update_issues_labels(update.get_issues(update.list_commits()))
+
+
+if __name__ == '__main__':
+	main()
