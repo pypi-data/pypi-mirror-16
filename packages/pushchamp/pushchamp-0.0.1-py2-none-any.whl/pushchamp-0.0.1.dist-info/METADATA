@@ -1,0 +1,23 @@
+Metadata-Version: 2.0
+Name: pushchamp
+Version: 0.0.1
+Summary: The PushChamp SDK for Python
+Home-page: https://github.com/pushchamp/pushchamp-python
+Author: Pushchamp Technologies
+Author-email: info@pushchamp.com
+License: Apache License 2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+
+PushChamp SDK for Python
+========================
+
+This SDK helps python developers to use PushChamp's APIs to send Email, SMS(in 
+limited countries), Push notifications(On apps and web browsers) and track
+multiple events.
+
