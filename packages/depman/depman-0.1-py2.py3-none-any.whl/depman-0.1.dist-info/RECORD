@@ -1,0 +1,10 @@
+depman-0.1.dist-info/RECORD,,
+depman-0.1.dist-info/entry_points.txt,sha256=mecHszolYh_36EBqXfrbjm03GtcLbE0ARuXCmX1rNsU,45
+depman-0.1.dist-info/metadata.json,sha256=u4AhhWLFFXRjV4Uv3AX82oYtGkesfsfErsduHeLpHfE,1118
+depman-0.1.dist-info/METADATA,sha256=Dj1cldUI6lt8EdRH17qzUuOR867JLI2GE55R0UtxX2o,5735
+depman-0.1.dist-info/DESCRIPTION.rst,sha256=XiE7Dlc4KIuI4QKsRJ4udSU9eDiqkaP9R90qI1ppRnE,4898
+depman-0.1.dist-info/top_level.txt,sha256=5ROuFUxxcNV5QxdUB0RGbTBP3RLDdSCUViK0ObfO1rA,7
+depman-0.1.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+depman/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+depman/dependency.py,sha256=CBTlxS3k9r7d3r8GkDMu8ybNIABBzvKOE_f0E5TFQo8,6504
+depman/main.py,sha256=wzi0rE5-KW6ntxP4CscpglKXnU6_XvJZQYQvRpLJLi4,1771
