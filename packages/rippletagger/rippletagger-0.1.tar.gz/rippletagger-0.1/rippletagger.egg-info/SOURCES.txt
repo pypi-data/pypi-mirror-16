@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+rippletagger/__init__.py
+rippletagger/models.py
+rippletagger/tagger.py
+rippletagger.egg-info/PKG-INFO
+rippletagger.egg-info/SOURCES.txt
+rippletagger.egg-info/dependency_links.txt
+rippletagger.egg-info/top_level.txt
