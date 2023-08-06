@@ -1,0 +1,14 @@
+COPYING
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+passgen/__init__.py
+passgen/simple_passgen.py
+simple_passgen.egg-info/PKG-INFO
+simple_passgen.egg-info/SOURCES.txt
+simple_passgen.egg-info/dependency_links.txt
+simple_passgen.egg-info/entry_points.txt
+simple_passgen.egg-info/not-zip-safe
+simple_passgen.egg-info/top_level.txt
