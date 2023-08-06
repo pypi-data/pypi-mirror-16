@@ -1,0 +1,11 @@
+README.rst
+setup.cfg
+setup.py
+pyCardDeck/__init__.py
+pyCardDeck/cards.py
+pyCardDeck/deck.py
+pyCardDeck/errors.py
+pyCardDeck.egg-info/PKG-INFO
+pyCardDeck.egg-info/SOURCES.txt
+pyCardDeck.egg-info/dependency_links.txt
+pyCardDeck.egg-info/top_level.txt
