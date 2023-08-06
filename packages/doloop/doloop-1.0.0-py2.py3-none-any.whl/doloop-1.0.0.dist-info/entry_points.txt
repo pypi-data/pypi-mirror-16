@@ -1,0 +1,3 @@
+[console_scripts]
+create-doloop-table = doloop:_main_for_create_doloop_table
+
