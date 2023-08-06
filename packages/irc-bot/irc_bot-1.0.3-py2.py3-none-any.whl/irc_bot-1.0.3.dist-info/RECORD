@@ -1,0 +1,9 @@
+irc_bot/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+irc_bot/irc_bot.py,sha256=03yE44JNBONiupSp1byci1XVQCwlgEJoeweeBFmbK5Y,17153
+irc_bot/numeric_replies.py,sha256=g34L8JOCLwmXb7xIfy6SKqNG55mspFdoYh6vRYfAtmY,10327
+irc_bot-1.0.3.dist-info/DESCRIPTION.rst,sha256=5hewZHjLjBjmi7y6bC7tqfLQlUXORwzg1RUFvW6RAHc,102
+irc_bot-1.0.3.dist-info/METADATA,sha256=Lxs4SOmTCb-0ftTBJLISgyKsy_aRP6CbZxFAJASPJUE,954
+irc_bot-1.0.3.dist-info/RECORD,,
+irc_bot-1.0.3.dist-info/WHEEL,sha256=9Z5Xm-eel1bTS7e6ogYiKz0zmPEqDwIypurdHN1hR40,116
+irc_bot-1.0.3.dist-info/metadata.json,sha256=Lm1n6wnjR5yemb8IXsHzHtqpkF57IhOR2YEplEbC5uA,998
+irc_bot-1.0.3.dist-info/top_level.txt,sha256=wlcQOrNaZOpNSYw64iOkXUcQL6U18E4ueUZTiVtQkrE,8
