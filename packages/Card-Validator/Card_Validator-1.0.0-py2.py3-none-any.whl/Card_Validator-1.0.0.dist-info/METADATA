@@ -1,0 +1,16 @@
+Metadata-Version: 2.0
+Name: Card-Validator
+Version: 1.0.0
+Summary: Module to validate, generate and determine the format of card numbers.
+Home-page: https://github.com/chetan92/CardValidator.git
+Author: Chetan Chadha
+Author-email: chetanchadha92@gmail.com
+License: MIT
+Keywords: credit debit card generate validate numbers
+Platform: UNKNOWN
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
+
+UNKNOWN
+
+
