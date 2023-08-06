@@ -1,0 +1,16 @@
+AUTHORS
+ChangeLog
+README.md
+requirements.txt
+setup.cfg
+setup.py
+movie_info/__init__.py
+movie_info/movie.py
+movie_info.egg-info/PKG-INFO
+movie_info.egg-info/SOURCES.txt
+movie_info.egg-info/dependency_links.txt
+movie_info.egg-info/entry_points.txt
+movie_info.egg-info/not-zip-safe
+movie_info.egg-info/pbr.json
+movie_info.egg-info/requires.txt
+movie_info.egg-info/top_level.txt
