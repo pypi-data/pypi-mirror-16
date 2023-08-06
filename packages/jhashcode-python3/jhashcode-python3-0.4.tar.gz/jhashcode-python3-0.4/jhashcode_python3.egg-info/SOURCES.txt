@@ -1,0 +1,11 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+jhashcode/__init__.py
+jhashcode_python3.egg-info/PKG-INFO
+jhashcode_python3.egg-info/SOURCES.txt
+jhashcode_python3.egg-info/dependency_links.txt
+jhashcode_python3.egg-info/entry_points.txt
+jhashcode_python3.egg-info/not-zip-safe
+jhashcode_python3.egg-info/top_level.txt
