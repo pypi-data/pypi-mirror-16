@@ -1,0 +1,10 @@
+proso_tasks
+proso_subscription
+proso_concepts
+proso_configab
+proso_user
+proso_flashcards
+proso_common
+proso
+proso_feedback
+proso_models
