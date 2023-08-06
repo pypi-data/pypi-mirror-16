@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: heroesoflegend
+Version: 0.1.2
+Summary: Converting Heroes of Legend to a python package
+Home-page: https://github.com/venn177/heroesoflegend.py
+Author: venn177
+Author-email: venn177@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: testing,dnd
+Platform: UNKNOWN
