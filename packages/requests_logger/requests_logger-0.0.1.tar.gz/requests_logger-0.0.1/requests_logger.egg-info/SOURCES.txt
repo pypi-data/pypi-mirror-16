@@ -1,0 +1,6 @@
+setup.cfg
+setup.py
+requests_logger.egg-info/PKG-INFO
+requests_logger.egg-info/SOURCES.txt
+requests_logger.egg-info/dependency_links.txt
+requests_logger.egg-info/top_level.txt
