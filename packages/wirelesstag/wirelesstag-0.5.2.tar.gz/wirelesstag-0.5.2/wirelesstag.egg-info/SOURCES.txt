@@ -1,0 +1,7 @@
+setup.py
+wirelesstag/__init__.py
+wirelesstag.egg-info/PKG-INFO
+wirelesstag.egg-info/SOURCES.txt
+wirelesstag.egg-info/dependency_links.txt
+wirelesstag.egg-info/not-zip-safe
+wirelesstag.egg-info/top_level.txt

@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: wirelesstag
+Version: 0.5.2
+Summary: Simple API to access WirelessTag data from any python script.
+Home-page: https://github.com/wwidurek/wirelesstag
+Author: Wojtek Widurek
+Author-email: wwidurek@gmail.com
+License: Open Source
+Description: UNKNOWN
+Platform: UNKNOWN
