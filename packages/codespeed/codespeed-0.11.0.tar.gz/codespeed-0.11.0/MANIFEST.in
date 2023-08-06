@@ -1,0 +1,4 @@
+include README.md CHANGELOG LICENSE requirements.txt
+recursive-include codespeed/fixtures timeline_tests.json
+recursive-include codespeed/templates/codespeed *
+recursive-include codespeed/static *
