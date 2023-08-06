@@ -1,0 +1,16 @@
+anpy/__init__.py,sha256=vUeK9rgmbrDoq8vh__RLwLC-3YmbswAdagRTt1qzSYY,61
+anpy/__version.py,sha256=V7LnX330m3uiAO0EYQbPUYETPj2br2y1Pv-a7ApMj40,21
+anpy/model.py,sha256=299MKkVehgtE7Apf7OIBqcPVEK8uS4NnQfjEkKzfNsg,3841
+anpy/service.py,sha256=Y2LT5mla2eY8U5oIEe5glThfsZa8bZSnkmXsMQ1gClk,3921
+anpy/parsing/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+anpy/parsing/amendement_parser.py,sha256=2qCZPZa6acBEc8ZK6UNBtBK8s2SQtVAU-2pgjXwdhbY,3222
+anpy/parsing/dossier_legislatif_parser.py,sha256=OQ10VjDtWPGGWdBXo2GllARETLjAcww3NJLsGXhGA_U,335
+anpy/parsing/question_parser.py,sha256=0v4S3zEbpXDQk3OPbmr3LHXxfwbmMQgszQvbYl6FSk8,160
+anpy/parsing/question_search_result_parser.py,sha256=ZYZDHWRg2_DsCKyHXhLiv-yrLZTQLxz6Sb9XTpyl6Dk,1306
+anpy-0.1.7.data/scripts/anpy-cli.py,sha256=9C7yKrRZ0MDn2vruDZSHw32_X4PXaNWGQ9KchWZaVhY,1758
+anpy-0.1.7.dist-info/DESCRIPTION.rst,sha256=ILlqEH_FlySP9EYuFN3Y9NtRPGtHBVjKrWBofyIRqJU,1577
+anpy-0.1.7.dist-info/METADATA,sha256=gbCPRnXO68kRsnsDrJfdwGqfs0oDTQtpKD0CSvFAX70,2253
+anpy-0.1.7.dist-info/metadata.json,sha256=9SuNu5nSOfzVHt7sxKD8dqea12qkrAiEKMt2WWO-e-s,823
+anpy-0.1.7.dist-info/RECORD,,
+anpy-0.1.7.dist-info/top_level.txt,sha256=2sWm1NlgHLvf3W3FhE2jG6qJoHn4Kp0psfBuw4UJjKY,5
+anpy-0.1.7.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
