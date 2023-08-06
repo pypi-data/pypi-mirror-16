@@ -1,0 +1,165 @@
+Metadata-Version: 1.1
+Name: thecut-emailfield
+Version: 1.0.2
+Summary: A Django email field which validates by checking for an MX record on the domain.
+Home-page: https://projects.thecut.net.au/projects/thecut-emailfield
+Author: The Cut
+Author-email: development@thecut.net.au
+License: Apache Software License 2.0
+Description: =================
+        thecut-emailfield
+        =================
+        
+        
+        .. image:: https://travis-ci.org/thecut/thecut-emailfield.svg
+          :target: https://travis-ci.org/thecut/thecut-emailfield
+        
+        .. image:: https://codecov.io/github/thecut/thecut-emailfield/coverage.svg
+          :target: https://codecov.io/github/thecut/thecut-emailfield
+        
+        .. image:: https://readthedocs.org/projects/thecut-emailfield/badge/?version=latest
+          :target: http://thecut-emailfield.readthedocs.io/en/latest/?badge=latest
+          :alt: Documentation Status
+        
+        A Django email field which validates by checking for an MX record on the domain.
+        
+        
+        Documentation
+        -------------
+        
+        The full documentation is at https://thecut-emailfield.readthedocs.org.
+        
+        
+        Quickstart
+        ----------
+        
+        Install ``thecut-emailfield`` using the installation instructions found in the project documentation.
+        
+        An example ``models.py``::
+        
+            # -*- coding: utf-8 -*-
+            from __future__ import absolute_import, unicode_literals
+            from django.db import models
+            from thecut.emailfield.models import EmailField
+        
+        
+            class EmailModel(models.Model):
+        
+                email = EmailField()
+        
+        
+        An example ``forms.py``::
+        
+            # -*- coding: utf-8 -*-
+            from __future__ import absolute_import, unicode_literals
+            from django import forms
+            from thecut.emailfield.forms import EmailField
+        
+        
+            class EmailForm(forms.Form):
+        
+                email = EmailField()
+        
+        
+        Credits
+        -------
+        
+        See ``AUTHORS.rst``.
+        
+        .. :changelog:
+        
+        =======
+        History
+        =======
+        
+        
+        1.0.2 (2016-08-16)
+        ------------------
+        
+        * Documentation bug fixes.
+        
+        
+        1.0.1 (2016-08-16)
+        ------------------
+        
+        * Documentation bug fixes.
+        
+        
+        1.0 (2016-08-16)
+        ----------------
+        
+        * Testing improvements
+        * Documentation improvements.
+        
+        
+        0.4 (2016-06-28)
+        ----------------
+        
+        * Redesigned testing environment.
+        * Added basic documentation.
+        
+        
+        0.3 (2016-06-28)
+        ----------------
+        
+        * Stop automated testing for Django 1.5 and Django 1.6.
+        * Improved code coverage exception list.
+        * Improved code coverage reporting with Travis.
+        * Removed pre-Django 1.5 email validation code.
+        
+        
+        0.2.4 (2016-03-11)
+        ------------------
+        
+        * Configured code coverage exceptions.
+        * Unicode packaging fix (``version.py``).
+        
+        
+        0.2.3 (2015-11-23)
+        ------------------
+        
+        * Configured continuous integration via Travis.
+        * Configured code coverage tracking via codecov.
+        
+        
+        0.2.2 (2015-11-23)
+        ------------------
+        
+        * Added unit tests.
+        * Added basic unit test environment (with ``tox``).
+        * Accounted for ``dnspython`` incompatibility with Python 3.
+        
+        
+        0.2.1 (2015-01-13)
+        ------------------
+        
+        * Added ``LICENSE``, ``README``.etc
+        
+        
+        0.2 (2014-09-18)
+        ----------------
+        
+        * Added Python 3 packging support.
+        * Added extra validation of email addresses in Django 1.4
+        
+        
+        0.1 (2014-06-17)
+        ----------------
+        
+        * First release.
+        
+Platform: any
+Classifier: Programming Language :: Python
+Classifier: Development Status :: 4 - Beta
+Classifier: Natural Language :: English
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.8
+Classifier: Framework :: Django :: 1.9
+Classifier: Framework :: Django :: 1.10
