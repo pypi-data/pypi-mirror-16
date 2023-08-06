@@ -1,0 +1,10 @@
+pypi2cwl/__init__.py,sha256=s0K7iEih_dV7AeI95mA6iVw_wQflczpoga9QU9iO_Tg,19
+pypi2cwl/pypi2cwl.py,sha256=BNYeLEqVl9tUl9BAVmAbzB89QT1xliKfAgJ38n8xeNc,4286
+pypi2cwl/test_pypi2cwl.py,sha256=2v2Zkeq4c7DDqvCfQjLx7CjA5Bj0bUHpGqHohMq3Oig,782
+pypi2cwl-0.1.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+pypi2cwl-0.1.0.dist-info/METADATA,sha256=LNImnEwnnaQhirRKc8yZv6wpB7JSG8fmeQctbx_Osy4,548
+pypi2cwl-0.1.0.dist-info/RECORD,,
+pypi2cwl-0.1.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+pypi2cwl-0.1.0.dist-info/entry_points.txt,sha256=txzDLKzcDP5FZjw6UWkrAUAQoDKnL5g6WW76tXXNThw,53
+pypi2cwl-0.1.0.dist-info/metadata.json,sha256=9zij6prXlIDUyDLhqemcAu1JAmgjtnnLy5PXfDy5FaQ,830
+pypi2cwl-0.1.0.dist-info/top_level.txt,sha256=OcB-erv6v41ZJg_qdS-c0aUxm5khCKSkRi8aAnEbogc,9
