@@ -1,0 +1,4 @@
+gitpython>=0.3.2RC1
+sh
+configobj
+ansicolors
