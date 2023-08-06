@@ -1,0 +1,68 @@
+Metadata-Version: 1.0
+Name: osascript
+Version: 0.0.14
+Summary: osascript(applescript, flags=None) function - osascript (AppleScript) python implementation (OS X)
+Home-page: https://github.com/russianidiot/osascript.py
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: .. README generated with readmemako.py (github.com/russianidiot/readme-mako.py) and .README dotfiles (github.com/russianidiot-dotfiles/.README)
+        
+        Install
+        ```````
+        
+        :code:`[sudo] pip install osascript`
+        
+        Usage
+        `````
+        
+        .. code:: python
+        
+        	>>> from osascript import osascript
+        	
+        	>>> returncode,stdout,stderr = osascript(code)
+        
+        Example
+        ```````
+        
+        .. code:: python
+        
+        	>>> returncode,stdout,stderr = osascript('display dialog "42"')
+        
+        `Examples/`_
+        
+        .. _Examples/: https://github.com/russianidiot/osascript.py/tree/master/Examples
+        
+        Feedback |github_issues| |gitter| |github_follow|
+        
+        .. |github_issues| image:: https://img.shields.io/github/issues/russianidiot/osascript.py.svg
+        	:target: https://github.com/russianidiot/osascript.py/issues
+        
+        .. |github_follow| image:: https://img.shields.io/github/followers/russianidiot.svg?style=social&label=Follow
+        	:target: https://github.com/russianidiot
+        
+        .. |gitter| image:: https://badges.gitter.im/russianidiot/osascript.py.svg
+        	:target: https://gitter.im/russianidiot/osascript.py
+Keywords: osascript applescript osx
+Platform: UNKNOWN
+Classifier: Environment :: Console
+Classifier: Environment :: MacOS X
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Natural Language :: Russian
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.0
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
