@@ -1,0 +1,3 @@
+[console_scripts]
+bs-node = bsnode:cli
+

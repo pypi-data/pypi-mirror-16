@@ -1,0 +1,20 @@
+[program:{{ node_name }}]
+command = /home/{{ node_name }}/{{ game }}/srcds_run -game {{ mod }} -port {{ port }} +map {{ map }} +maxplayers_override {{ max_players }} +game_mode 0 +game_type 0 +sv_lan 0
+directory = /home/{{ node_name }}/{{ game }}
+startretries = 3
+autostart = true
+autorestart = true
+stopwaitsecs = 1
+stderr_logfile = /var/log/supervisor/{{ node_name }}_err.log
+stdout_logfile = /var/log/supervisor/{{ node_name }}_out.log
+stdout_logfile_maxbytes = 6MB
+stderr_logfile_maxbytes = 6MB
+user = {{ node_name }}
+group = {{ node_name }}
+stopasgroup = true
+killasgroup = true
+environment =
+  USER="{{ node_name }}",
+  LOGNAME="{{ node_name }}",
+  LD_LIBRARY_PATH=".:bin:",
+  HOME="/home/{{ node_name }}"
