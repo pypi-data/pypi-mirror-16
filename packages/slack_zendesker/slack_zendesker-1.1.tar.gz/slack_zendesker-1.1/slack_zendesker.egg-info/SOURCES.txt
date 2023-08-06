@@ -1,0 +1,12 @@
+setup.py
+slack_zendesker/__init__.py
+slack_zendesker/bot.py
+slack_zendesker/main.py
+slack_zendesker/zendesk.py
+slack_zendesker.egg-info/PKG-INFO
+slack_zendesker.egg-info/SOURCES.txt
+slack_zendesker.egg-info/dependency_links.txt
+slack_zendesker.egg-info/entry_points.txt
+slack_zendesker.egg-info/not-zip-safe
+slack_zendesker.egg-info/requires.txt
+slack_zendesker.egg-info/top_level.txt

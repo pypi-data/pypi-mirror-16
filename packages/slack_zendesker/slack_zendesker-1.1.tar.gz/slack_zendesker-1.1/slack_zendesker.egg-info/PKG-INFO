@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: slack-zendesker
+Version: 1.1
+Summary: Slack Zendesk URL expander
+Home-page: https://github.com/kotnik/slack-zendesker
+Author: Nikola Kotur
+Author-email: kotnick@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/kotnik/slack-zendesker/archive/1.1.zip
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
