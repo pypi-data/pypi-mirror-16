@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: onering
+Version: 0.0.4
+Summary: A toolchain for declaratively specifying transformations between schemas and instances of schemas to help track dependencies across schemas.
+Home-page: https://github.com/panyam/onering
+Author: Sri Panyam
+Author-email: sri.panyam@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
