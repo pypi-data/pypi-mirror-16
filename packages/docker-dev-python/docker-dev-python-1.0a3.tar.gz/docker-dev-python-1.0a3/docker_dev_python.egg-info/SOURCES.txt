@@ -1,0 +1,13 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+VERSION.txt
+docker_dev_python.py
+setup.py
+docker_dev_python.egg-info/PKG-INFO
+docker_dev_python.egg-info/SOURCES.txt
+docker_dev_python.egg-info/dependency_links.txt
+docker_dev_python.egg-info/entry_points.txt
+docker_dev_python.egg-info/pbr.json
+docker_dev_python.egg-info/requires.txt
+docker_dev_python.egg-info/top_level.txt
