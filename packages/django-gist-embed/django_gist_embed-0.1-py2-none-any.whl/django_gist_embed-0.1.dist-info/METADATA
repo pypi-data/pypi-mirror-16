@@ -1,0 +1,23 @@
+Metadata-Version: 2.0
+Name: django-gist-embed
+Version: 0.1
+Summary: A simple Django app that comes with a gist-embed tag.
+Home-page: https://www.fubel.io/
+Author: Fabian Herzog
+Author-email: fabianfubel@gmail.com
+License: BSD License
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.10
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+
+
+
+
