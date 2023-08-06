@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: arclist
+Version: 0.4.1
+Summary: lists open phabricator diffs and their build / accept statuses
+Home-page: https://github.com/bjryan2/arclist
+Author: Brendan Ryan
+Author-email: ryan.brendanjohn@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/bjryan2/arclist
+Description: UNKNOWN
+Platform: UNKNOWN
