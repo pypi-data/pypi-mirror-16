@@ -1,0 +1,5 @@
+setup.py
+SpaceConsistencyBear.egg-info/PKG-INFO
+SpaceConsistencyBear.egg-info/SOURCES.txt
+SpaceConsistencyBear.egg-info/dependency_links.txt
+SpaceConsistencyBear.egg-info/top_level.txt
