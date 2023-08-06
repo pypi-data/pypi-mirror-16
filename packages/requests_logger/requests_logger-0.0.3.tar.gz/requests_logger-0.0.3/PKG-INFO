@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: requests_logger
+Version: 0.0.3
+Summary: Wrapper around Requests to add logging
+Home-page: https://github.com/mdmedley/requests_logger
+Author: Marcus Medley
+Author-email: mdmeds@gmail.com
+License: ['# Copyright 2016-2017 Marcus Medley\n', '#\n', '# Licensed under the Apache License, Version 2.0 (the "License");\n', '# you may not use this file except in compliance with the License.\n', '# You may obtain a copy of the License at\n', '#\n', '#    http://www.apache.org/licenses/LICENSE-2.0\n', '#\n', '# Unless required by applicable law or agreed to in writing, software\n', '# distributed under the License is distributed on an "AS IS" BASIS,\n', '# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n', '# See the License for the specific language governing permissions and\n', '# limitations under the License.\n']
+Description: UNKNOWN
+Keywords: requests,logging,request
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
