@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: pyfeld
+Version: 0.0.4a0
+Summary: Raumfeld controlled by python scripts
+Home-page: http://github.com/scjurgen/pyfeld
+Author: Jürgen Schwietering
+Author-email: scjurgen@yahoo.com
+License: MIT
+Description: Raumfeld controlled by python scripts
+Keywords: raumfeld wlan-speakers loudspeakers upnp audio media
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
