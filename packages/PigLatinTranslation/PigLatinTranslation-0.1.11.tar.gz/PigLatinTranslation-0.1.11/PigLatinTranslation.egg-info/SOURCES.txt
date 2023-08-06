@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+PigLatinTranslation.egg-info/PKG-INFO
+PigLatinTranslation.egg-info/SOURCES.txt
+PigLatinTranslation.egg-info/dependency_links.txt
+PigLatinTranslation.egg-info/not-zip-safe
+PigLatinTranslation.egg-info/requires.txt
+PigLatinTranslation.egg-info/top_level.txt
+piglatintranslation/__init__.py
+piglatintranslation/__main__.py
+piglatintranslation/pig_latin_translation.py
+piglatintranslation/views.py
+piglatintranslation/static/style.css
+piglatintranslation/templates/base.html
+piglatintranslation/templates/index.html
