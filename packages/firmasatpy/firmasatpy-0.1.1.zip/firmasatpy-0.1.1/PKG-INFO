@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: firmasatpy
+Version: 0.1.1
+Summary: Python interface to CryptoSys FirmaSAT
+Home-page: http://www.cryptosys.net/firmasat/
+Author: David Ireland
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: Windows
