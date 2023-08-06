@@ -1,0 +1,16 @@
+idealreport/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+idealreport/createhtml.py,sha256=ix1tJIv8MM4_kUHJWlu6NNpUkQDA1d72uMME28o7S1g,7115
+idealreport/reporter.py,sha256=2H7SiEXFomR3wrbHvsiTm06wrUv8tXdiwn89cBtOsTQ,4730
+idealreport/template.html,sha256=q-3r7TkFQWFiGZsCaK2gjs_2Cj_bfxdx_4uAgvp5O34,750
+idealreport/htmlLibs/normalize.css,sha256=9NfoJQ-PEk-LfQh-XiYHZqNLB5_dxD57INjBjKHpLlE,7797
+idealreport/htmlLibs/plotly.js,sha256=xiO_C2EYHj3W29LD3TSbmFfBNIRIDGW0NuXXaUk828k,2714697
+idealreport/htmlLibs/plotly.min.js,sha256=PVZvwy4yrj-Lf-UOg048YGDRN37LhYWifsSeCsGMnMY,1160459
+idealreport/htmlLibs/plotting.js,sha256=Kjqqj6sdd-tlMOY3Ge-bsGs86gg3aERwWp7ruWZnohk,7597
+idealreport/htmlLibs/raleway-300-400-600.css,sha256=hD2PQIs_UlZ6F7o_KMySrIy1VDqHwXPsnrTImfxdgZE,2278
+idealreport/htmlLibs/skeleton.css,sha256=LHOpf5WqlttBlvsHSGuYoZ8c9uLFyranEsmkDBQYT90,9187
+idealreport-0.121.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+idealreport-0.121.dist-info/METADATA,sha256=K_EL4_XV_n3kqtPbiX459tJ_ttzud2q6F9FbKEiLMTk,452
+idealreport-0.121.dist-info/RECORD,,
+idealreport-0.121.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+idealreport-0.121.dist-info/metadata.json,sha256=nygyzRJeWinWHBAniT78oqMQJbQZYAFFN52R86imNik,633
+idealreport-0.121.dist-info/top_level.txt,sha256=8GQTKUB-XNP7AWYTqIN9__ecVEMX8I6RiwX7ZF-FYa0,12
