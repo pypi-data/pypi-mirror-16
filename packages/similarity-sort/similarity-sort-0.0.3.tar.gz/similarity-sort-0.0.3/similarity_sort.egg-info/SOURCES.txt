@@ -1,0 +1,9 @@
+README.rst
+setup.cfg
+setup.py
+similarity_sort/__init__.py
+similarity_sort/similarity_sort.py
+similarity_sort.egg-info/PKG-INFO
+similarity_sort.egg-info/SOURCES.txt
+similarity_sort.egg-info/dependency_links.txt
+similarity_sort.egg-info/top_level.txt
