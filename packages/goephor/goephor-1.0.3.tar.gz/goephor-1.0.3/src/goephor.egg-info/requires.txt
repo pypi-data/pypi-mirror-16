@@ -1,0 +1,3 @@
+requests
+PyYAML==3.10
+GitPython==2.0.2
