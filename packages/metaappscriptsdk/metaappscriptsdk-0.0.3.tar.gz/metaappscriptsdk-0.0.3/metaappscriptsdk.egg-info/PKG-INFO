@@ -1,0 +1,44 @@
+Metadata-Version: 1.1
+Name: metaappscriptsdk
+Version: 0.0.3
+Summary: Meta App Scripts SDK
+Home-page: https://github.com/rw-meta/meta-app-script-py-sdk
+Author: Artur Geraschenko
+Author-email: arturgspb@gmail.com
+License: MIT
+Description: =========================
+        Meta App Script SDK
+        =========================
+        
+        
+        Install
+        =======
+        pip install metaappscriptsdk
+        
+        
+        Usage
+        =====
+        .. code-block:: python
+        
+            # coding=utf-8
+            import logging
+            import starter_api
+            from metaappscriptsdk import MetaApp
+        
+            # Инициализация приложения
+            # конфигурирует логгер и пр.
+            META = MetaApp(service_id='MyService', debug=True)  # debug для того, чтобы не писать логи в службу логирования
+        
+            # работает стандартный логгер
+            logging.info('Hello, from Meta App Script!')
+        
+            # Поставновка задач в Запускатор
+            starter_api.build_submit('YOUR_SERVICE')
+            # или
+            META.starter.build_submit('YOUR_SERVICE')
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
