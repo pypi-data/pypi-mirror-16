@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: nose-deadline
+Version: 0.1.1
+Summary: Enforced timelimits for nosetests
+Home-page: https://github.com/manuels/nose-deadline
+Author: Manuel Schoelling
+Author-email: manuel.schoelling@gmx.de
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
