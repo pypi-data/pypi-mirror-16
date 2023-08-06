@@ -1,0 +1,12 @@
+asciify/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+asciify/asciify.py,sha256=X9m9L5jRv8xvLevK94BY7dkJcT3g8vAMHOpVLl_gh9s,427
+asciify/letter_profiles.py,sha256=p_wWbLHhSpPIplT150y4b_Z83zzmXlcpbx7YpG1K9ug,7366
+asciify/word_creator.py,sha256=dyO7gyCkBPUSpVBTXSl5I9HbVRudtTlMzHbbhGEHDS4,594
+asciify/word_renderer.py,sha256=hbsxnxvgiiaFsuZxSJZ_s6FiC_UIos6yuqqVcrpoPck,1113
+asciify-0.0.2.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+asciify-0.0.2.dist-info/METADATA,sha256=VyER8VPNjGM3ghCGR9bzHVuzp8odTGFnyr_V1yYv7Fk,321
+asciify-0.0.2.dist-info/RECORD,,
+asciify-0.0.2.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+asciify-0.0.2.dist-info/entry_points.txt,sha256=0RUt-C-1rpkNvWA9YuGbMiEy-Jy3tUQOMy56fTNbo9Q,50
+asciify-0.0.2.dist-info/metadata.json,sha256=NBbOgtHNhBjXZ3mlAAHHOljfigt9LtwT_8lGBUjqoMs,691
+asciify-0.0.2.dist-info/top_level.txt,sha256=jA_TmR57J32cXGJrOvnii_JJWH3OlrB1PXjBjSNAaEI,8
