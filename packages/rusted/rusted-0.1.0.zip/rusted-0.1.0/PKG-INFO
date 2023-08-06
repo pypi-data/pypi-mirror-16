@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: rusted
+Version: 0.1.0
+Summary: Simple tool to highlight rustc --explain output
+Home-page: https://github.com/messense/rusted
+Author: Messense Lv
+Author-email: messense@icloud.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: rust explain error
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Utilities
