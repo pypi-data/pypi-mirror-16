@@ -1,0 +1,4 @@
+ * Support PyQt
+ * Python 3
+ * Make close button optional
+ * Maximize button
