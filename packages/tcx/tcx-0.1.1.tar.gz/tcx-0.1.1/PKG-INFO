@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: tcx
+Version: 0.1.1
+Summary: TXC to GeoJson-like dict parser
+Home-page: http://github.com/cwygoda/tcx
+Author: Christian Wygoda
+Author-email: info@wygoda.net
+License: MIT
+Download-URL: https://github.com/cwygoda/tcx/tarball/v0.1.1
+Description: UNKNOWN
+Keywords: tcx,geojson
+Platform: UNKNOWN

@@ -1,0 +1,2 @@
+include versioneer.py
+include tcx/__version__.py
