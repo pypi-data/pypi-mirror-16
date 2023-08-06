@@ -1,0 +1,17 @@
+CHANGES
+=======
+
+0.1.1
+-----
+
+* Add should_create_verifier method
+
+0.1.0
+-----
+
+* Support building wheels
+* Fix releasenotes building
+* Add signature_utils module
+* Add hacking note for copyrights
+* Initial cookiecutter commit
+* Added .gitreview
