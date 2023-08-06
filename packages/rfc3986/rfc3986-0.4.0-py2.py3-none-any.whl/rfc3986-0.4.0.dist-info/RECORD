@@ -1,0 +1,14 @@
+rfc3986/__init__.py,sha256=f0J7KAhk_5Il-KjyAfUcHxoUTA5-84VYRzXBwf6Z-KY,1407
+rfc3986/api.py,sha256=q7CiSiKAa80poAiUV8uqrrJshk3aLps0nW5xozdIA68,3383
+rfc3986/compat.py,sha256=cIQft_SFZDRgaDmm0wKiiInDKTQp9sQI7EoRI__W87c,936
+rfc3986/exceptions.py,sha256=9pDPf44YteheX0PO2h7mZo7_4f7ItBs084sVYzQmypU,617
+rfc3986/misc.py,sha256=hDypy9tdjbOrLl8ag7tKAkIpw1i1fY2G0p8Bne4U76k,7877
+rfc3986/normalizers.py,sha256=FIgqCLsr02alkzcTPRe_jkbts-nVZyvqmuC6pvDdo-8,3416
+rfc3986/parseresult.py,sha256=MxE14FOwvedU9SRJdhhxqRV20V8d6HlSqMxS6Odpmug,13423
+rfc3986/uri.py,sha256=gA5xWj-NdmUv76_jKHY2_xxSxp4H5gfYGJoJJ_nSAs4,14665
+rfc3986-0.4.0.dist-info/DESCRIPTION.rst,sha256=P80LtF6RWjN6qedYfrUOG8QOB34LZ9ixyzFY8zvv_3I,7295
+rfc3986-0.4.0.dist-info/METADATA,sha256=66R1zLzltPnACqXroWlhUjmxFTwbkhxnVgDwiGA2GP8,8032
+rfc3986-0.4.0.dist-info/RECORD,,
+rfc3986-0.4.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+rfc3986-0.4.0.dist-info/metadata.json,sha256=ammmTdAMemR6y_AnxWckhmwK05sjC27r99foVvDXrFM,850
+rfc3986-0.4.0.dist-info/top_level.txt,sha256=Z10Qesb0UV9AbxlTIV9AnOAwk-343WnE85K8xfN4OmA,8
