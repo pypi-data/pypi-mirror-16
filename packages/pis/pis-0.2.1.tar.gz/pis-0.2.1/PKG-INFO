@@ -1,0 +1,38 @@
+Metadata-Version: 1.1
+Name: pis
+Version: 0.2.1
+Summary: Install python package as cloned repo from guessed VCS (git, hg, etc.) repository.
+Home-page: http://github.com/xliiv/pis
+Author: xliiv
+Author-email: tymoteusz.jankowski@gmail.com
+License: MIT
+Description: ![alt text](https://travis-ci.org/xliiv/pis.svg?branch=travis)
+        
+        
+        # pis (Pis Installs Sources)
+        
+        pis: Install python package as cloned repo from guessed VCS (git, hg, etc.)
+        repository.
+        
+        
+        ## Example:
+        
+        ```
+        $ pis requests
+        
+        TODO Rest of content
+        
+        ```
+        
+        ## Installation
+        
+        `pip install pis`
+        
+        
+        ## TODO:
+        
+        * install package from tag, like `pis requests==2.7.0`
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
