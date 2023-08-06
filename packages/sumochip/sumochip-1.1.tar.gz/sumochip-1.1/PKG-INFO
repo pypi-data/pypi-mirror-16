@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: sumochip
+Version: 1.1
+Summary: SumoCHIP is an extremely low-budget robotics platform based on CHIP single-board computer
+Home-page: http://github.com/laurivosandi/sumochip
+Author: Lauri Võsandi
+Author-email: lauri.vosandi@gmail.com
+License: MIT
+Description: SumoCHIP is an extremely low-budget robotics platform based on CHIP single-board computer
+Keywords: sumorobot robot nextthingco getchip allwinner arm python flask
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
