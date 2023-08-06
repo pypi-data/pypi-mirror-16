@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: blind_magic
+Version: 0.1.2
+Summary: blind sql injection manually
+Home-page: https://github.com/truongtn/blind_magic
+Author: TRAN NHAT TRUONG
+Author-email: truongtn0806@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: sql injection,blind sql injection,manual
+Platform: UNKNOWN
