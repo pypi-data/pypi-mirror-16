@@ -1,0 +1,4 @@
+django-extras
+
+[csv]
+unicodecsv
