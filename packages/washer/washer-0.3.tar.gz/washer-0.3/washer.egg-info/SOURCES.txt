@@ -1,0 +1,8 @@
+setup.py
+washer.py
+washer.egg-info/PKG-INFO
+washer.egg-info/SOURCES.txt
+washer.egg-info/dependency_links.txt
+washer.egg-info/entry_points.txt
+washer.egg-info/requires.txt
+washer.egg-info/top_level.txt
