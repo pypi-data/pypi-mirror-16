@@ -1,0 +1,3 @@
+recursive-include djangocms_video/templates *
+recursive-include djangocms_video/static *
+recursive-include djangocms_video/locale *
