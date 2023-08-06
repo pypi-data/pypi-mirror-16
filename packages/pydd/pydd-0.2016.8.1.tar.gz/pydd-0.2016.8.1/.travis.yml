@@ -1,0 +1,45 @@
+sudo: false
+language: python
+python:
+  - "nightly"
+  - "3.5-dev"
+  - "3.5"
+  - "3.4"
+  - "3.3"
+  - "pypy3"
+# command to install dependencies
+install:
+  - pip install .
+  - pip install -r requirements.txt
+  - pip install codecov
+  - pip install coveralls
+  - pip install pytest
+# command to run tests
+script:
+  coverage run --source=pydd setup.py test
+
+#install: pip install tox
+#script: tox
+
+notifications:
+  email: false
+
+after_success:
+  - codecov -e tests/
+  - coveralls
+
+#cache:
+#  directories:
+#    - $HOME/.cache/pip/wheels
+
+branches:
+  only:
+  - master
+
+
+#install:
+#   - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then
+#            travis_retry pip install futures mock monotonic trollius; fi
+#   - if [[ $TRAVIS_PYTHON_VERSION == 'pypy' ]]; then ... ; fi
+#   - if [[ $TRAVIS_PYTHON_VERSION != 'pypy'* ]]; then travis_retry pip
+#            install pycares; fi

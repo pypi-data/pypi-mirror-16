@@ -1,0 +1,3 @@
+# temporary, until freeze
+-r requirements-to-freeze.txt
+-r dev-requirements-to-freeze.txt

@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        pyddc=pydd.cli:main
+    
