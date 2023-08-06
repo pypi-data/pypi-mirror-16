@@ -1,0 +1,9 @@
+CHANGES
+=======
+
+0.0.1
+-----
+
+* Fix issue when number of threads is the number of devices
+* Add console script entrypoint for dallas-mqtt
+* Initial Commit

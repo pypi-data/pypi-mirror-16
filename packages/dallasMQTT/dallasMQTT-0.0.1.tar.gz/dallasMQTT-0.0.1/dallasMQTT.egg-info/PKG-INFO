@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: dallasMQTT
+Version: 0.0.1
+Summary: Publish readings from Dallas 1 wire sensors to MQTT
+Home-page: UNKNOWN
+Author: Matthew Treinish
+Author-email: mtreinish@kortar.org
+License: UNKNOWN
+Description: ==========
+        dallasMQTT
+        ==========
+        dallasMQTT is a service that will periodically poll an arbitray number of
+        dallas 1 wire sensors and publish the data to an MQTT broker.
+        
+        
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
