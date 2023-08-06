@@ -1,0 +1,9 @@
+pytest_falcon/__init__.py,sha256=6whTVkHCSaloA8VEFL8Hnt5xec5dKrecPNj30MRfzII,230
+pytest_falcon/plugin.py,sha256=e-wt7CToOgiVKjpI_Cf3XJZsZ08ZLQsqScJp8IBJZq4,6511
+pytest_falcon-0.4.1.dist-info/DESCRIPTION.rst,sha256=lT7e6Qv0ynJRLQOYRlkLUeD92TBEWhAiqN5A9xxaHCw,1336
+pytest_falcon-0.4.1.dist-info/METADATA,sha256=6vOKrM6OpGKwUc-jXptXYIYBjDqrPZdhkWnkR71WIl4,2126
+pytest_falcon-0.4.1.dist-info/RECORD,,
+pytest_falcon-0.4.1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+pytest_falcon-0.4.1.dist-info/entry_points.txt,sha256=zB9wMLWRgA5_AZyMl2H45tq3SwP_BwijEmS1LFAvlOo,42
+pytest_falcon-0.4.1.dist-info/metadata.json,sha256=oJukE8HtZsofbAc89YsjiudUD8hB6N1stZyINUdpdHA,1018
+pytest_falcon-0.4.1.dist-info/top_level.txt,sha256=MBy-sfA5TR-5C6Ilt37blFArHnV3kouRhdKkLdwRV70,14
