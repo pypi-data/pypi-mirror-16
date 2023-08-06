@@ -1,0 +1,7 @@
+setup.py
+JavaPMDBear/JavaPMDBear.py
+JavaPMDBear/__init__.py
+JavaPMDBear.egg-info/PKG-INFO
+JavaPMDBear.egg-info/SOURCES.txt
+JavaPMDBear.egg-info/dependency_links.txt
+JavaPMDBear.egg-info/top_level.txt
