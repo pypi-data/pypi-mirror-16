@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: pwntools
+Version: 3.0.0
+Summary: CTF framework and exploit development library.
+Home-page: https://pwntools.com
+Author: Zach Riggle
+Author-email: zachriggle@gmail.com
+License: Mostly MIT, some GPL/BSD, see LICENSE-pwntools.txt and LICENSE-pwntools.txt
+Download-URL: https://pwntools.com/tarball/master
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Topic :: Security
+Classifier: Environment :: Console
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Intended Audience :: Developers
