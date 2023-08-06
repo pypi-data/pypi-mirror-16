@@ -1,0 +1,16 @@
+[ceilometer.discover]
+nios_instances = ceilometer_infoblox.discovery:NIOSDiscovery
+
+[ceilometer.poll.compute]
+nios.dhcp.acks = ceilometer_infoblox.pollsters.dhcp:AcksPollster
+nios.dhcp.declines = ceilometer_infoblox.pollsters.dhcp:DeclinesPollster
+nios.dhcp.discovers = ceilometer_infoblox.pollsters.dhcp:DiscoversPollster
+nios.dhcp.informs = ceilometer_infoblox.pollsters.dhcp:InformsPollster
+nios.dhcp.nacks = ceilometer_infoblox.pollsters.dhcp:NacksPollster
+nios.dhcp.offers = ceilometer_infoblox.pollsters.dhcp:OffersPollster
+nios.dhcp.others = ceilometer_infoblox.pollsters.dhcp:OthersPollster
+nios.dhcp.releases = ceilometer_infoblox.pollsters.dhcp:ReleasesPollster
+nios.dhcp.requests = ceilometer_infoblox.pollsters.dhcp:RequestsPollster
+nios.dns.chr = ceilometer_infoblox.pollsters.dns:CHRPollster
+nios.dns.qps = ceilometer_infoblox.pollsters.dns:QPSPollster
+

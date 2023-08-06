@@ -1,0 +1,2 @@
+CEILOMETER_INFOBLOX_DIR=$DEST/ceilometer-infoblox
+enable_service ceilometer-infoblox
