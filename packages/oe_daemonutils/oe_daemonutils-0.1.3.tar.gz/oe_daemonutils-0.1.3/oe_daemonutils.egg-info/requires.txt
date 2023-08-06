@@ -1,0 +1,6 @@
+sqlalchemy
+feedparser
+requests
+pytz
+zope.sqlalchemy
+transaction
