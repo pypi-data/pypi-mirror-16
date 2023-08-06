@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: dictsheet
+Version: 0.0.7
+Summary: Dict wrapper for google spreadsheet
+Home-page: https://github.com/previa/dictsheet
+Author: Chandler Huang, Xander Li
+Author-email: previa@gmail.com
+License: MIT License
+Description: UNKNOWN
+Keywords: dictsheet,spreadsheet,gspread
+Platform: any
