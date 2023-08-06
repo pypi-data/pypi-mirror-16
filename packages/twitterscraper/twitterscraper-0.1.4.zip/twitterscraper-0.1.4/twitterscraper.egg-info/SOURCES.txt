@@ -1,0 +1,9 @@
+setup.py
+twitterscraper/TwitterScraper.py
+twitterscraper/__init__.py
+twitterscraper.egg-info/PKG-INFO
+twitterscraper.egg-info/SOURCES.txt
+twitterscraper.egg-info/dependency_links.txt
+twitterscraper.egg-info/not-zip-safe
+twitterscraper.egg-info/requires.txt
+twitterscraper.egg-info/top_level.txt
