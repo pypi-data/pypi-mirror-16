@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: fabext
+Version: 0.1
+Summary: Extentions for Fabric
+Home-page: https://gprohorenko@bitbucket.org/gprohorenko/fabext
+Author: blinchik
+Author-email: prohorenko_gena_@mail.ru
+License: MIT License
+Download-URL: https://bitbucket.org/gprohorenko/fabext/downloads/fabext.tar.gz
+Description: ======
+        fabext
+        ======
+        
+        Модуль - набор скриптов для fabric, для установки python проектов на сервер.
+        
+Platform: UNKNOWN

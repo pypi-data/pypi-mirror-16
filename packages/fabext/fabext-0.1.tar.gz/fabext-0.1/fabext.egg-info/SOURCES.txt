@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.py
+fabext/__init__.py
+fabext/debian8.py
+fabext/utils.py
+fabext.egg-info/PKG-INFO
+fabext.egg-info/SOURCES.txt
+fabext.egg-info/dependency_links.txt
+fabext.egg-info/not-zip-safe
+fabext.egg-info/requires.txt
+fabext.egg-info/top_level.txt
