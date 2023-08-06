@@ -1,0 +1,14 @@
+buildbot_profiler/VERSION,sha256=axN4nkPlSFY0Uz3hamXYup00xMl1hYi2ZYBUNfgOsRU,5
+buildbot_profiler/__init__.py,sha256=X4e2JgeOK2MuM-xoaPp1I7BYUK_jHhQy5Pco9c8zVf8,232
+buildbot_profiler/api.py,sha256=dMshhUTYIetyH877__erw9a-yOYNM-RWvGeV3C6k3Bw,6124
+buildbot_profiler/static/fixtures.js,sha256=mCAwIXmzJ-7ohaok-LmVrUY7FHdt6MPE2rYmartRLSE,6849444
+buildbot_profiler/static/scripts.js,sha256=VMaY7ExdNxNBHtWZ7TIKTTv0dCXuNLg6dKUO9RGoGP4,407735
+buildbot_profiler/static/styles.css,sha256=HvdpRc50-Le17XEVWOGmdTkOWPKTI_ZvcQCBGnfTPCM,10691
+buildbot_profiler/static/tests.js,sha256=al25MvoQQ7Ki2KR3QwH7SnGPjUVbhriN_djU0VuDv_w,1958139
+buildbot_profiler-0.0.1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+buildbot_profiler-0.0.1.dist-info/METADATA,sha256=V2emhT1fGG0rkUvH-Ik2caT0qjAYm-WVGspnwno3ZOM,297
+buildbot_profiler-0.0.1.dist-info/RECORD,,
+buildbot_profiler-0.0.1.dist-info/WHEEL,sha256=JTb7YztR8fkPg6aSjc571Q4eiVHCwmUDlX8PhuuqIIE,92
+buildbot_profiler-0.0.1.dist-info/entry_points.txt,sha256=sCMesdHkCv-pGT-lYHPlIr4kjW6hJ2Uao1ge_KXVsiQ,67
+buildbot_profiler-0.0.1.dist-info/metadata.json,sha256=uMCZPVe2-DZFBjMvjdEfWArZtsmlxcW-NmJHzMl2XRU,585
+buildbot_profiler-0.0.1.dist-info/top_level.txt,sha256=6FghsI4e8iAOZyeDi-L01syhGrkc-nRLWmZ_S5fQbcY,18

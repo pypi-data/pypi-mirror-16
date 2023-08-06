@@ -1,0 +1,14 @@
+Metadata-Version: 2.0
+Name: buildbot-profiler
+Version: 0.0.1
+Summary: "Profiler for buildbot master and its UI"
+Home-page: https://github.com/tardyp/buildbot_profiler
+Author: Buildbot contributors
+Author-email: devel@buildbot.net
+License: GNU GPL
+Platform: UNKNOWN
+Requires-Dist: klein
+
+UNKNOWN
+
+
