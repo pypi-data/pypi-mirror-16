@@ -1,0 +1,38 @@
+Metadata-Version: 1.0
+Name: plonetheme.sunstrap
+Version: 0.0.3
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: Alex Clark
+Author-email: aclark@aclark.net
+License: UNKNOWN
+Description: Plone Sunstrap Theme
+        ====================
+        
+        "A theme for all seasons" [1]_
+        
+        .. image:: plonetheme/sunstrap/theme/preview.jpg
+        
+        Plone 4's default theme reimplemented with Diazo Theming Engine, using Bootstrap instead of Deco grid framework.
+        
+        .. [1] https://en.wikipedia.org/wiki/A_Man_for_All_Seasons
+        
+        Changes
+        =======
+        
+        0.0.3 (07-27-2016)
+        ------------------
+        
+        - Add CHANGES
+        
+        0.0.2 (07-27-2016)
+        ------------------
+        
+        - Add CHANGES
+        
+        0.0.1 (07-27-2016)
+        ------------------
+        
+        - Initial release
+        
+Platform: UNKNOWN
