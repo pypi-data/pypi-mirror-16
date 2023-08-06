@@ -1,0 +1,4 @@
+[console_scripts]
+bubuku = bubuku.daemon:main
+bubuku-cli = bubuku.cli:cli
+
