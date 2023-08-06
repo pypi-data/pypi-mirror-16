@@ -1,0 +1,2 @@
+django >= 1.7
+kerberos >= 1.2.5
