@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: ringo-contact
+Version: 0.2
+Summary: Contact extension for the ringo webframework
+Home-page: https://github.com/ringo-framework/ringo_contact
+Author: Torsten Irländer
+Author-email: torsten@irlaender.de
+License: GNU General Public License v2 or later (GPLv2+)
+Description: UNKNOWN
+Keywords: ringo pyramid extension
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)

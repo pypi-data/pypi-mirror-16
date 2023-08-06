@@ -1,0 +1,115 @@
+# German translations for ringo_contact.
+# Copyright (C) 2015 ORGANIZATION
+# This file is distributed under the same license as the ringo_contact
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ringo_contact 0.0.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2015-04-16 12:57+0200\n"
+"PO-Revision-Date: 2015-02-16 23:05+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+
+#. Label for first_name column in overview table config
+#. Label for first_name field in form config
+#: ringo_contact/contacts.json:2 ringo_contact/contacts.xml:1
+msgid "First Name"
+msgstr "Vorname"
+
+#. Label for last_name column in overview table config
+#. Label for last_name field in form config
+#: ringo_contact/contacts.json:3 ringo_contact/contacts.xml:2
+msgid "Last Name"
+msgstr "Nachname"
+
+#. Label for gender column in overview table config
+#. Label for gender field in form config
+#: ringo_contact/contacts.json:4 ringo_contact/contacts.xml:7
+msgid "Gender"
+msgstr "Geschlecht"
+
+#. Label for bday column in overview table config
+#. Label for bday field in form config
+#: ringo_contact/contacts.json:5 ringo_contact/contacts.xml:6
+msgid "Birthday"
+msgstr "Geburtsdatum"
+
+#. Label for organisation column in overview table config
+#. Label for organisation field in form config
+#: ringo_contact/contacts.json:6 ringo_contact/contacts.xml:4
+msgid "Organisation"
+msgstr "Organisation"
+
+#. Label for title field in form config
+#: ringo_contact/contacts.xml:3
+msgid "Title"
+msgstr "Titel"
+
+#. Label for role field in form config
+#: ringo_contact/contacts.xml:5
+msgid "Role"
+msgstr "Rolle"
+
+#. Label for note field in form config
+#: ringo_contact/contacts.xml:8
+msgid "Notes"
+msgstr "Noitzen"
+
+#. Label for postcode field in form config
+#: ringo_contact/contacts.xml:9
+msgid "Postal Code"
+msgstr "Postleitzahl"
+
+#. Label for city field in form config
+#: ringo_contact/contacts.xml:10
+msgid "City"
+msgstr "Ort"
+
+#. Label for street field in form config
+#: ringo_contact/contacts.xml:11
+msgid "Street"
+msgstr "Strasse und Hausnummer"
+
+#. Label for url field in form config
+#: ringo_contact/contacts.xml:12
+msgid "Webseite"
+msgstr ""
+
+#. Label for phone field in form config
+#: ringo_contact/contacts.xml:13
+msgid "Phone"
+msgstr "Telefon"
+
+#. Label for email field in form config
+#: ringo_contact/contacts.xml:14
+msgid "Email"
+msgstr "E-Mail"
+
+#: ringo_contact/contacts.xml:15
+msgid "Address"
+msgstr "Adresse"
+
+#: ringo_contact/contacts.xml:16
+msgid "Contact"
+msgstr "Kontakt"
+
+#: ringo_contact/contacts.xml:17
+msgid "not specified"
+msgstr "keine Angabe"
+
+#: ringo_contact/contacts.xml:18
+msgid "female"
+msgstr "weiblich"
+
+#: ringo_contact/contacts.xml:19
+msgid "male"
+msgstr "männlich"
+

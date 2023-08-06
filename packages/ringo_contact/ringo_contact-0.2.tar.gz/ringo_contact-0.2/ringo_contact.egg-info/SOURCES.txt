@@ -1,0 +1,16 @@
+LICENSE.txt
+MANIFEST.in
+setup.cfg
+setup.py
+ringo_contact/__init__.py
+ringo_contact/model.py
+ringo_contact/views.py
+ringo_contact.egg-info/PKG-INFO
+ringo_contact.egg-info/SOURCES.txt
+ringo_contact.egg-info/dependency_links.txt
+ringo_contact.egg-info/entry_points.txt
+ringo_contact.egg-info/not-zip-safe
+ringo_contact.egg-info/requires.txt
+ringo_contact.egg-info/top_level.txt
+ringo_contact/locale/ringo_contact.pot
+ringo_contact/locale/de/LC_MESSAGES/ringo_contact.po

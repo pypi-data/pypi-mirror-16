@@ -1,0 +1,9 @@
+include README.rst *.txt COPYING
+recursive-include docs *
+recursive-include examples *
+recursive-include contrib *
+recursive-include test *.xml
+recursive-include ringo_contact/locale *.po *.mo *.pot
+recursive-include ringo_contact/static *
+recursive-include ringo_contact/templates *.mako
+global-exclude *.orig
