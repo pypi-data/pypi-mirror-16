@@ -1,0 +1,48 @@
+Metadata-Version: 1.1
+Name: simex
+Version: 0.1.1
+Summary: Ultra-simple human readable DSL for matching text.
+Home-page: https://github.com/crdoconnor/simex
+Author: Colm O'Connor
+Author-email: colm.oconnor.github@gmail.com
+License: MIT
+Description: SimpleMatch
+        ===========
+        
+        SimpleMatch is a replacement for regular expressions that lets you write non-developer
+        readable/writeable matching expressions.
+        
+        To install::
+        
+          $ pip install simex
+        
+        To use::
+        
+          >>> from simex import simex
+          >>> LINK_EXPRESSION = """<a href="{{ url }}">{{ anything }}</a>"""
+          >>> exp = simex(LINK_EXPRESSION, url=r"(.*?)", anything=r".*?")
+          >>> exp.match("""<a href="http://www.cnn.com">CNN</a>""") is not None
+          True
+        
+          >>> exp = simex(LINK_EXPRESSION, url=r"(.*?)")
+          >>> assert exp.match("""<a href="http://www.cnn.com">{{ anything }}</a>""")
+          True
+        
+          >>> exp = simex(LINK_EXPRESSION, url=r"(.*?)")
+          >>> assert exp.search("""Pre text <a href="http://x.com">{{ anything }}</a> post text""")
+          True
+Keywords: regex text matching
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Operating System :: Unix
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
