@@ -1,0 +1,11 @@
+setup.py
+meipai/__init__.py
+meipai/api.py
+meipai/cache.py
+meipai/player.py
+meipai.egg-info/PKG-INFO
+meipai.egg-info/SOURCES.txt
+meipai.egg-info/dependency_links.txt
+meipai.egg-info/entry_points.txt
+meipai.egg-info/requires.txt
+meipai.egg-info/top_level.txt
