@@ -1,0 +1,7 @@
+setup.py
+RuboCopBear/RuboCopBear.py
+RuboCopBear/__init__.py
+RuboCopBear.egg-info/PKG-INFO
+RuboCopBear.egg-info/SOURCES.txt
+RuboCopBear.egg-info/dependency_links.txt
+RuboCopBear.egg-info/top_level.txt
