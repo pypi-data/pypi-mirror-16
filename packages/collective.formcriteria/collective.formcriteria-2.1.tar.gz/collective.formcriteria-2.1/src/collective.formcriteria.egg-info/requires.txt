@@ -1,0 +1,11 @@
+setuptools
+Plone
+plone.browserlayer
+
+[chameleon]
+five.pt>2.1.1
+
+[tests]
+plone.app.testing
+collective.monkeypatcher
+zope.testbrowser>3.3
