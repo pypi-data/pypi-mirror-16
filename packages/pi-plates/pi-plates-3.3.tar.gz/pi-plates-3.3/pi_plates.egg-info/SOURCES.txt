@@ -1,0 +1,14 @@
+MANIFEST.in
+README.txt
+setup.py
+pi_plates.egg-info/PKG-INFO
+pi_plates.egg-info/SOURCES.txt
+pi_plates.egg-info/dependency_links.txt
+pi_plates.egg-info/top_level.txt
+piplates/DAQChelp.txt
+piplates/DAQCplate.py
+piplates/MOTORhelp.txt
+piplates/MOTORplate.py
+piplates/RELAYhelp.txt
+piplates/RELAYplate.py
+piplates/__init__.py
