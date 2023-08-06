@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: dottorrent
+Version: 1.0.0
+Summary: This is an Example Package
+Home-page: https://github.com/kz26/dottorrent
+Author: Kevin Zhang
+Author-email: kevin@kevinzhang.me
+License: MIT
+Description: UNKNOWN
+Keywords: bittorrent torrent bencode
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
