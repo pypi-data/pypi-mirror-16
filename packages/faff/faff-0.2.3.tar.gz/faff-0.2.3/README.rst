@@ -1,0 +1,70 @@
+====
+Faff
+====
+
+.. image:: https://img.shields.io/pypi/v/faff.svg?style=flat-square
+  :target: https://pypi.python.org/pypi/faff
+
+.. image:: https://img.shields.io/pypi/status/faff.svg?style=flat-square
+  :target: https://pypi.python.org/pypi/faff
+
+.. image:: https://img.shields.io/pypi/l/faff.svg?style=flat-square
+  :target: https://pypi.python.org/pypi/faff
+
+.. image:: https://img.shields.io/travis/mojzu/faff/master.svg?style=flat-square
+  :target: http://travis-ci.org/mojzu/faff
+
+.. image:: https://img.shields.io/coveralls/mojzu/faff.svg?style=flat-square
+  :target: https://coveralls.io/github/mojzu/faff
+
+Faff is a Make build tool substitute written in Python. An input file similar
+to a ``Makefile`` defines rules used to update arbitrary targets that can have
+file or other rule dependencies.
+
+------------
+Installation
+------------
+
+Install using pip.
+
+.. code:: shell
+
+  $ pip install faff
+
+----------
+Quickstart
+----------
+
+Compile and execute a C hello world program. Create a directory populated with
+files from the `gcc_hello_world`_ example. The example assumes that the ``gcc``
+command is available in the system path and compiles source files for the host
+platform.
+
+.. _gcc_hello_world: https://github.com/mojzu/faff/tree/master/examples/gcc_hello_world
+
+.. code:: shell
+
+  $ mkdir -p gcc_hello_world
+  $ cd gcc_hello_world
+  $ # copy example files
+
+Run the default rule of the input file. Similarly to Make, running ``faff``
+will run the ``all`` default rule.
+
+.. code:: shell
+
+  $ faff
+  faff: gcc gcc_hello_world/main.c -o gcc_hello_world/build/main
+  faff: main
+  Hello, world!
+  faff: `all` updated (1/1 0.694s)
+
+-------------
+Documentation
+-------------
+
+- `User`_
+- `Developer`_
+
+.. _User: https://pythonhosted.org/faff/user/
+.. _Developer: https://pythonhosted.org/faff/developer/
