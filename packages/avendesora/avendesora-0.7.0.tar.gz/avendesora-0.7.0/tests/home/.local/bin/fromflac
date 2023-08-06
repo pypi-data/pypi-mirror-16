@@ -1,0 +1,4 @@
+#!/usr/bin/python2.7
+# EASY-INSTALL-SCRIPT: 'metadata==0.0.0','fromflac'
+__requires__ = 'metadata==0.0.0'
+__import__('pkg_resources').run_script('metadata==0.0.0', 'fromflac')
