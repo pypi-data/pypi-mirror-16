@@ -1,0 +1,3 @@
+CaseInsensitiveDict
+Click>=6.0
+py-env-config
