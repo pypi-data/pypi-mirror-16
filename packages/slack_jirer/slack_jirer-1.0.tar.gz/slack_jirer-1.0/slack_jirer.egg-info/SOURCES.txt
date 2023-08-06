@@ -1,0 +1,12 @@
+setup.py
+slack_jirer/__init__.py
+slack_jirer/bot.py
+slack_jirer/jira_wrapper.py
+slack_jirer/main.py
+slack_jirer.egg-info/PKG-INFO
+slack_jirer.egg-info/SOURCES.txt
+slack_jirer.egg-info/dependency_links.txt
+slack_jirer.egg-info/entry_points.txt
+slack_jirer.egg-info/not-zip-safe
+slack_jirer.egg-info/requires.txt
+slack_jirer.egg-info/top_level.txt

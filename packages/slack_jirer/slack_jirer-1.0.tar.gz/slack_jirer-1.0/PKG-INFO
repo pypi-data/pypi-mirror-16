@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: slack_jirer
+Version: 1.0
+Summary: Slack JIRA URL expander
+Home-page: https://github.com/kotnik/slack-jirer
+Author: Nikola Kotur
+Author-email: kotnick@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/kotnik/slack-jirer/archive/1.0.zip
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
