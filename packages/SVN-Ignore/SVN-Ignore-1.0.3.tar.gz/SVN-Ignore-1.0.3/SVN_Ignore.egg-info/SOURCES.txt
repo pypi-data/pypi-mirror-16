@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.py
+SVN_Ignore.egg-info/PKG-INFO
+SVN_Ignore.egg-info/SOURCES.txt
+SVN_Ignore.egg-info/dependency_links.txt
+SVN_Ignore.egg-info/entry_points.txt
+SVN_Ignore.egg-info/top_level.txt
+src/__init__.py
+src/index.py
