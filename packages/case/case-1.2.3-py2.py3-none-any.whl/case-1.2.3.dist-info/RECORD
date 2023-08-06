@@ -1,0 +1,12 @@
+case/__init__.py,sha256=Y4ciQiCq1YkPF7eF4iFftg2oMprHRyOM3_iSgWoPCNk,997
+case/case.py,sha256=pqQqqf7OavSgJehAENBAc-ZdnFstdUliHgNHnzsySsQ,9271
+case/mock.py,sha256=3M5KcOjmx5QkZnA9yGlFYW82t3QOVVrhJckM9jHgbXM,18340
+case/skip.py,sha256=i_35-ffBHrPP0Etbw63RDGzFviwGV23DsBGe0UU8dJ0,7443
+case/utils.py,sha256=h0GOBZPZZ5FOL3cRb0odxPjFWW5qzc8Yy7INTMneX5A,5828
+case/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+case-1.2.3.dist-info/DESCRIPTION.rst,sha256=zW6wkFMswIuR6aQDRH5KHUvNdMq8oSK2HSlydMMZ2v0,1753
+case-1.2.3.dist-info/METADATA,sha256=4dSua_Gxp1jHDfjflc0ksKqZKez0VOsmLZsVgzNS98U,2692
+case-1.2.3.dist-info/RECORD,,
+case-1.2.3.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+case-1.2.3.dist-info/metadata.json,sha256=Val3_O9NwXuizwbrQddt9VOJWtC2fnZJDHnBKOA0Lxw,1100
+case-1.2.3.dist-info/top_level.txt,sha256=HfF7xuqqQ1bhSERcf0xOarBv_L2pKy4pBG6ZcEC2G9Y,5
