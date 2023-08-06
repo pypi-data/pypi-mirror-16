@@ -1,0 +1,6 @@
+MANIFEST.in
+README.rst
+VERSION
+filegardener.py
+setup.py
+./tmp/egg-info/filegardener.egg-info/SOURCES.txt
