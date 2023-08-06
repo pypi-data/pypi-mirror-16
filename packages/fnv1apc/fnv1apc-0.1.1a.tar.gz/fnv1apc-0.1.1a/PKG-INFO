@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: fnv1apc
+Version: 0.1.1a
+Summary: pure c fnv1a_32 implement.
+Home-page: https://github.com/ZhangYet/fnv1apc
+Author: zhangyet
+Author-email: zhangyet@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
