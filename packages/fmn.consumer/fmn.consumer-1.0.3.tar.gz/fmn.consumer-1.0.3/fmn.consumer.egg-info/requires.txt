@@ -1,0 +1,7 @@
+fmn.lib
+fedmsg
+requests
+arrow
+bleach
+pika
+redis
