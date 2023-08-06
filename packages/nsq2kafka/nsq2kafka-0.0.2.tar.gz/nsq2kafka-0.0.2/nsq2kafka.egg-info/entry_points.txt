@@ -1,0 +1,3 @@
+[console_scripts]
+nsq2kafka = nsq2kafka.__main__:main
+
