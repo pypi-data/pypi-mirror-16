@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: gitconfig
+Version: 0.0.12
+Summary: Gitconfig class and gitconfig variable for ~/.gitconfig
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: git config
+Platform: UNKNOWN
+Classifier: Topic :: Software Development :: Version Control
