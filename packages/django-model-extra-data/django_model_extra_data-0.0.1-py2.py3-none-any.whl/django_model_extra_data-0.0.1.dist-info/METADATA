@@ -1,0 +1,42 @@
+Metadata-Version: 2.0
+Name: django-model-extra-data
+Version: 0.0.1
+Summary: Flexible django model
+Home-page: https://github.com/NZME/django-model-extra-data
+Author: NZME
+Author-email: sysadmin@grabone.co.nz
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: Django (>=1.6)
+Requires-Dist: json-encoder (>=0.4.3)
+Provides-Extra: all
+Requires-Dist: djangorestframework; extra == 'all'
+Requires-Dist: singledispatch (>=3.4.0.3); extra == 'all'
+Provides-Extra: rest_framework
+Requires-Dist: djangorestframework; extra == 'rest_framework'
+Requires-Dist: singledispatch (>=3.4.0.3); extra == 'rest_framework'
+
+django-model-extra-data
+=======================
+
+It makes django model flexible without changing table structure.
+
+.. image:: https://travis-ci.org/NZME/django-model-extra-data.svg?branch=master
+    :target: https://travis-ci.org/NZME/django-model-extra-data
+
+Installation
+------------
+
+.. code-block:: bash
+
+    $ pip install django-model-extra-data
+
+
