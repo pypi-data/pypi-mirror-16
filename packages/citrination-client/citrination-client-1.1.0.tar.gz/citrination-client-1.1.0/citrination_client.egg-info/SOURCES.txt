@@ -1,0 +1,9 @@
+setup.cfg
+setup.py
+citrination_client/__init__.py
+citrination_client/citrination_client.py
+citrination_client.egg-info/PKG-INFO
+citrination_client.egg-info/SOURCES.txt
+citrination_client.egg-info/dependency_links.txt
+citrination_client.egg-info/requires.txt
+citrination_client.egg-info/top_level.txt
