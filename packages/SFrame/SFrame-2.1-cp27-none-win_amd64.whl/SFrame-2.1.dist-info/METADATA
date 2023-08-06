@@ -1,0 +1,36 @@
+Metadata-Version: 2.0
+Name: SFrame
+Version: 2.1
+Summary: SFrame is an scalable, out-of-core dataframe, which allows you to work with datasets that are larger than the amount of RAM on your system.
+Home-page: https://turi.com
+Author: Turi
+Author-email: contact@turi.com
+License: BSD
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Other Audience
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Dist: awscli (==1.6.2)
+Requires-Dist: boto (==2.33.0)
+Requires-Dist: certifi (==2015.04.28)
+Requires-Dist: decorator (==4.0.9)
+Requires-Dist: multipledispatch (>=0.4.7)
+Requires-Dist: prettytable (==0.7.2)
+Requires-Dist: requests (==2.9.1)
+Requires-Dist: tornado (==4.3)
+
+UNKNOWN
+
+
