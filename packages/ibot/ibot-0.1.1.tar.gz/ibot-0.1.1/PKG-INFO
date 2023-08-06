@@ -1,0 +1,72 @@
+Metadata-Version: 1.1
+Name: ibot
+Version: 0.1.1
+Summary: a bot
+Home-page: https://github.com/wwj718/ibot
+Author: wenjie wu
+Author-email: wuwenjie718@gmail.com
+License: MIT license
+Description: ===============================
+        ibot
+        ===============================
+        
+        
+        .. image:: https://img.shields.io/pypi/v/ibot.svg
+                :target: https://pypi.python.org/pypi/ibot
+        
+        .. image:: https://img.shields.io/travis/wwj718/ibot.svg
+                :target: https://travis-ci.org/wwj718/ibot
+        
+        .. image:: https://readthedocs.org/projects/ibot/badge/?version=latest
+                :target: https://ibot.readthedocs.io/en/latest/?badge=latest
+                :alt: Documentation Status
+        
+        .. image:: https://pyup.io/repos/github/wwj718/ibot/shield.svg
+             :target: https://pyup.io/repos/github/wwj718/ibot/
+             :alt: Updates
+        
+        
+        a bot
+        
+        
+        * Free software: MIT license
+        * Documentation: https://ibot.readthedocs.io.
+        
+        
+        Features
+        --------
+        
+        * TODO
+        
+        Credits
+        ---------
+        
+        This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+        
+        .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+        .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+        
+        
+        
+        =======
+        History
+        =======
+        
+        0.1.0 (2016-07-20)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: ibot
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
