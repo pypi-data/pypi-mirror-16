@@ -1,0 +1,11 @@
+mocka/__init__.py,sha256=3jNDP_6rujCUkhpR8aWVuuxCrPx8wr-shp6ThGO68vM,108
+mocka/mocka.py,sha256=16ETScexLwqlJ5y4WUK9Sm2F2kpGg_mIFr86X_iPRqQ,5553
+mocka-0.0.7.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+mocka-0.0.7.dist-info/METADATA,sha256=zSOqSELP0FkAFXzlwUC0_zTXrFYJ7XkQ-reb8a0jAlM,1075
+mocka-0.0.7.dist-info/RECORD,,
+mocka-0.0.7.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+mocka-0.0.7.dist-info/entry_points.txt,sha256=z1y-TwLcIUovuNNAMoEMTig7Adqw-ecUfLK_hV_Ig4U,44
+mocka-0.0.7.dist-info/metadata.json,sha256=LBzPpJUJeLr_pdZpsDPig-QxFX8hcErmgdalKkJ7sFI,1312
+mocka-0.0.7.dist-info/top_level.txt,sha256=1y98TgnYV1ViECme2Y9Ew0BPAXZnt4bguRK_DCID284,12
+tests/__init__.py,sha256=z8fS-euUKoWiDYzA4qVRU4omNMK4VxbDtSSmg1KntMo,31
+tests/run_test.py,sha256=O4uePvR43iXzmknNBRnuWYfK-K4IZXk87-Q7RRTr3eE,63
