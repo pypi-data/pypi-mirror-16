@@ -1,0 +1,18 @@
+Metadata-Version: 2.0
+Name: dropbot-elisa-analysis
+Version: 0.0.post19
+Summary: Code for analysing Measles/Rubella immunoassay data.
+Requires-Dist: arrow
+Requires-Dist: dstat-interface (>=1.3.post6)
+Requires-Dist: matplotlib
+Requires-Dist: microdrop (>=2.0.post50)
+Requires-Dist: numpy
+Requires-Dist: pandas (>=0.15)
+Requires-Dist: path-helpers (>=0.2)
+
+Home-page: http://github.com/wheeler-microfluidics/dropbot-elisa-analysis.git
+Author: Ryan Fobel
+Author-email: ryan@fobel.net
+License: GPLv2
+Description: UNKNOWN
+Platform: UNKNOWN
