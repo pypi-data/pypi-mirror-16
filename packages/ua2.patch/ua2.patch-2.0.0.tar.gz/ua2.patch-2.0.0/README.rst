@@ -1,0 +1,112 @@
+:Author: avk
+
+What this package does?
+=======================
+
+This package provides an easy half-manual and controlled way to define
+and run SQL, Python and Shell script for your project.
+
+Supported backends
+==================
+
+-  MySQL
+-  PostgreSQL
+
+Supported Django versions
+=========================
+
+-  Django >= 1.8
+
+Supported OS
+============
+
+-  Linux
+
+   -  Ubuntu 14.04
+   -  Ubuntu 16.04
+
+Why to use this package if there is django-migrations and South?
+================================================================
+
+The differencies between Django migrations and ua2.patch are in purpose:
+
+-  django-migrations primary purpose is to propogate changes you make to
+   your models into your database
+-  ua2.patch purpose is to create & maintain patches, written by big
+   development team
+
+This package could be used in parallel to existing django-migrations
+module, or it can completely replace the job done by migrations. You, as
+developer, decide where you should use one or another.
+
+We are not going to replicate all migration features, the core idea of
+this package is to provide easy to use tool to create and maintain
+(SQL\|Python\|Shell) patches for big team of people, working in parallel
+on different branches.
+
+What are benefits of using ua2.patch ?
+======================================
+
+Simple way to automate running custom patches
+---------------------------------------------
+
+It is very easy to create patches for your data.
+
+Installation
+============
+
+Install package from pip
+------------------------
+
+First, install package via pip:
+
+.. code:: example
+
+    pip install ua2.patch
+
+And then, add it to your Django INSTALLED\ :sub:`APPS`:
+
+.. code:: example
+
+    INSTALLED_APPS = [
+        ...
+        'ua2.patch',
+    ]
+
+Usage examples
+==============
+
+Create SQL patch
+----------------
+
+.. code:: example
+
+    ./manage.py patch next
+    File .../patches/00002-johnsmith-014.sql has been created
+        size: 0
+
+Now, you can open & edit the file. *Note*: until file size is zero, it
+would not be applied, but will be treated as *reserved* patch for future
+use.
+
+Create Python patch
+-------------------
+
+.. code:: example
+
+    ./manage.py patch next -e py
+    File .../patches/00002-johnsmith-022.py has been created
+        size: 0
+
+*Note:* patch body should have function main() which returns True. If
+you don't return True, the system will run the patch and exit on this
+place, preventing other scripts to run.
+
+Create Shell patch
+------------------
+
+.. code:: example
+
+    ./manage.py patch next -e sh
+    File .../patches/00003-johnsmith-022.sh has been created
+        size: 0
