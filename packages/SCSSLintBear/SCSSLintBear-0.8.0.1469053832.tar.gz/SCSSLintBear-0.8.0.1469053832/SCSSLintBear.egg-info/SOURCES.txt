@@ -1,0 +1,7 @@
+setup.py
+SCSSLintBear/SCSSLintBear.py
+SCSSLintBear/__init__.py
+SCSSLintBear.egg-info/PKG-INFO
+SCSSLintBear.egg-info/SOURCES.txt
+SCSSLintBear.egg-info/dependency_links.txt
+SCSSLintBear.egg-info/top_level.txt
