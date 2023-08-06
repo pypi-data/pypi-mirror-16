@@ -1,0 +1,9 @@
+README.rst
+setup.cfg
+setup.py
+twelvefactor.py
+twelvefactor.egg-info/PKG-INFO
+twelvefactor.egg-info/SOURCES.txt
+twelvefactor.egg-info/dependency_links.txt
+twelvefactor.egg-info/not-zip-safe
+twelvefactor.egg-info/top_level.txt
