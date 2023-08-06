@@ -1,0 +1,68 @@
+Metadata-Version: 2.0
+Name: django-discord-bind
+Version: 0.1.2
+Summary: A Django app for securely associating a user with a Discord account.
+Home-page: https://github.com/mrogaski/django-discord-bind
+Author: Mark Rogaski
+Author-email: mrogaski@pobox.com
+License: MIT License
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.9
+Classifier: Framework :: Django :: 1.10
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Communications :: Chat
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Dist: Django (>=1.9)
+Requires-Dist: requests-oauthlib (==0.6.2)
+
+===================
+django-discord-bind
+===================
+
+This is a simple Django app that allows users to bind their Discord accounts
+to their Django accounts and join a partner Discord server using the OAuth2
+functionality of the Discord API.
+
+Quick start
+-----------
+
+1. Add "discord_bind" to your INSTALLED_APPS setting like this::
+
+    INSTALLED_APPS = [
+        ...
+        'discord_bind',
+    ]
+
+2. Include the polls URLconf in your project urls.py like this::
+
+    url(r'^discord/', include('discord_bind.urls')),
+
+3. Run `python manage.py migrate` to create the discord_bind models.
+
+4. Start the development server and visit http://127.0.0.1:8000/admin/
+   to add a Discord invite code (you'll need the Admin app enabled).
+
+5. Visit https://discordapp.com/developers/applications/me to create
+   an application.  Add http://127.0.0.1:8000/discord/cb as a redirect URI.
+
+6. Add the Client ID and Secret values to the project settings.py file::
+
+    DISCORD_CLIENT_ID = 212763200357720576
+    DISCORD_CLIENT_SECRET = MfpBbcX2Ga3boNhoQoBTdHNUS2B1xX8f
+
+5. Visit http://127.0.0.1:8000/discord/ to bind your Discord account and
+   auto-accept the invite code.
+
+
