@@ -1,0 +1,7 @@
+lxml
+
+[doc]
+lxml
+Sphinx
+sphinx-rtd-theme
+sphinxcontrib-napoleon
