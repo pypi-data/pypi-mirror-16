@@ -1,0 +1,10 @@
+fake-factory
+
+[django]
+django
+
+[peewee]
+peewee
+
+[sqlalchemy]
+sqlalchemy
