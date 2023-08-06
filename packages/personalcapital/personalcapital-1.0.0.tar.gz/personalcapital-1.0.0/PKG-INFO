@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: personalcapital
+Version: 1.0.0
+Summary: Personal Capital library for accessing its API
+Home-page: https://github.com/haochi/personalcapital
+Author: Haochi Chen
+Author-email: pypi@ihaochi.com
+License: UNKNOWN
+Download-URL: https://github.com/peterldowns/mypackage/tarball/1.0.0
+Description: UNKNOWN
+Keywords: personal capital,financial,money
+Platform: UNKNOWN
