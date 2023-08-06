@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+atmo/__init__.py
+atmo/atmo.cfg
+atmo/atmo.py
+atmo.egg-info/PKG-INFO
+atmo.egg-info/SOURCES.txt
+atmo.egg-info/dependency_links.txt
+atmo.egg-info/entry_points.txt
+atmo.egg-info/top_level.txt
