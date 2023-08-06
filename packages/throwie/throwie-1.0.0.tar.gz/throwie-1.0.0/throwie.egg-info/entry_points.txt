@@ -1,0 +1,3 @@
+[console_scripts]
+throwie = throwie.cli:main
+
