@@ -1,0 +1,3 @@
+[console_scripts]
+icekit = icekit.bin.icekit:main
+

@@ -1,0 +1,98 @@
+Metadata-Version: 2.0
+Name: django-icekit
+Version: 0.9
+Summary: A modular content CMS by Interaction Consortium.
+Home-page: https://github.com/ic-labs/django-icekit
+Author: Interaction Consortium
+Author-email: studio@interaction.net.au
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: Pillow
+Requires-Dist: django-app-namespace-template-loader
+Requires-Dist: django-bootstrap3
+Requires-Dist: django-el-pagination (<3)
+Requires-Dist: django-extensions
+Requires-Dist: django-fluent-contents
+Requires-Dist: django-fluent-pages
+Requires-Dist: django-model-utils (<2.4)
+Requires-Dist: django-mptt (<0.8)
+Requires-Dist: django-polymorphic (<0.8)
+Requires-Dist: django-wysiwyg
+Requires-Dist: html5lib (==0.999)
+Requires-Dist: nltk
+Requires-Dist: requests
+Requires-Dist: unidecode
+Provides-Extra: api
+Requires-Dist: djangorestframework (<3.4); extra == 'api'
+Provides-Extra: brightcove
+Requires-Dist: django-brightcove; extra == 'brightcove'
+Provides-Extra: dev
+Requires-Dist: ipdb; extra == 'dev'
+Requires-Dist: ipython; extra == 'dev'
+Requires-Dist: mkdocs; extra == 'dev'
+Provides-Extra: django17
+Requires-Dist: Django (>=1.7,<1.8); extra == 'django17'
+Requires-Dist: django-fluent-contents (<1.1); extra == 'django17'
+Requires-Dist: django-polymorphic (<0.8); extra == 'django17'
+Provides-Extra: forms
+Requires-Dist: django-forms-builder; extra == 'forms'
+Provides-Extra: publishing
+Requires-Dist: django-compressor (<1.6); extra == 'publishing'
+Requires-Dist: django-model-settings; extra == 'publishing'
+Provides-Extra: search
+Requires-Dist: django-fluent-pages[flatpage,fluentpage]; extra == 'search'
+Requires-Dist: django-haystack; extra == 'search'
+Provides-Extra: test
+Requires-Dist: WebTest; extra == 'test'
+Requires-Dist: coverage; extra == 'test'
+Requires-Dist: django-dynamic-fixture; extra == 'test'
+Requires-Dist: django-nose; extra == 'test'
+Requires-Dist: django-webtest; extra == 'test'
+Requires-Dist: djangorestframework; extra == 'test'
+Requires-Dist: micawber; extra == 'test'
+Requires-Dist: mock; extra == 'test'
+Requires-Dist: nose-progressive; extra == 'test'
+Requires-Dist: psycopg2; extra == 'test'
+
+Getting started
+===============
+
+The easiest way to run an ICEkit project is with Docker. It works on OS
+X, Linux, and Windows.
+
+If you are not yet familiar with Docker, check out our `Docker Quick
+Start <https://github.com/ic-labs/django-icekit/docs/docker-quick-start.md>`__
+guide and then come back here.
+
+If you are still not yet ready for Docker, check out our `Manual
+Setup <https://github.com/ic-labs/django-icekit/docs/manual-setup-guide.md>`__
+guide, which covers all the things that Docker would otherwise take care
+of.
+
+Creating a new ICEkit project
+=============================
+
+::
+
+    $ bash <(curl -L https://raw.githubusercontent.com/ixc/ixc-project-template/master/startproject.sh) <project_name> [destination_dir]
+
+This script will create a new ICEkit project in a directory named
+``<project_name>`` in the current working directory (or
+``[destination_dir]``), ready to hack on.
+
+It might need to install ``pip`` and ``virtualenv`` into your global
+environment, and will prompt for confirmation if it does.
+
+Running an ICEkit project with Docker
+=====================================
+
+::
+
+    $ cd <project_name>
+    $ docker-compose up
+
+Some local setup will be performed on first run, which might take a
+while, so make yourself a cup of tea. Subsequent runs will skip the
+local setup unless the project dependencies have been updated.
+
+
