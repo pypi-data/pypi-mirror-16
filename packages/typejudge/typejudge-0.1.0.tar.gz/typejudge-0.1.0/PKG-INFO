@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: typejudge
+Version: 0.1.0
+Summary: Automatically check for semver compliance based on type hints
+Home-page: https://github.com/kragniz/typejudge
+Author: Louis Taylor
+Author-email: louis@kragniz.eu
+License: UNKNOWN
+Description: =========
+        typejudge
+        =========
+        
+        Judgement as a Service.
+        
+        Typejudge will automatically check for semver compliance based on type hints.
+        If the type signature for a function changes, it will judge this to be an API
+        change and recommend a major version bump.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
