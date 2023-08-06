@@ -1,0 +1,41 @@
+Metadata-Version: 1.1
+Name: filegardener
+Version: 1.0.1
+Summary: filegardener file utilities dedup, only file copy detection, empty dir detection
+Home-page: http://TODO
+Author: Steve Morin
+Author-email: steve@stevemorin.com
+License: UNKNOWN
+Description: filegardener
+        ============
+        File gardener - file maintenance utilities - file dedup, only copy detection, prune empty dirs
+        
+        
+        .. image:: https://img.shields.io/smorin/v/filegardener.svg
+           :target: https://pypi.python.org/smorin/filegarderner
+        
+        .. image:: https://img.shields.io/travis/smorin/filegardener/master.svg
+           :target: http://travis-ci.org/smorin/filegardener
+        
+        .. image:: https://readthedocs.org/projects/filegardener/badge/?version=stable
+           :target: https://readthedocs/en/stable
+        
+        
+        * `Github Page <https://github.com/smorin/filegardener>`_
+        * `Issue Tracking <https://github.com/smorin/filegardener/issues>`_
+        
+        
+        
+Keywords: dedup,file cleanup,empy dirs,duplicate file detection
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX :: BSD
