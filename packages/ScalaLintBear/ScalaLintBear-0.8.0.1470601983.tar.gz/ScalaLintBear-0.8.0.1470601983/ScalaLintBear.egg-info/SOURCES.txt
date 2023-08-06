@@ -1,0 +1,7 @@
+setup.py
+ScalaLintBear/ScalaLintBear.py
+ScalaLintBear/__init__.py
+ScalaLintBear.egg-info/PKG-INFO
+ScalaLintBear.egg-info/SOURCES.txt
+ScalaLintBear.egg-info/dependency_links.txt
+ScalaLintBear.egg-info/top_level.txt
