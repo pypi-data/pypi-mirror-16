@@ -1,0 +1,26 @@
+Metadata-Version: 1.1
+Name: dojo-toolkit
+Version: 0.1.1
+Summary: A Toolkit for Python Coding Dojos
+Home-page: https://github.com/grupy-sanca/dojo-toolkit
+Author: Grupy-Sanca
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: # Dojo Toolkit
+        Toolkit for coding dojo 
+        
+        ## Features:
+        - Timer for change who is coding
+        - Notify the audience for when is ok to talk
+        
+        ## Notification build in [Libnotify](https://developer.gnome.org/libnotify)
+        
+        ## How to use:
+        - pip install -r requirements.txt
+        - python main.py path/to/directory
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
