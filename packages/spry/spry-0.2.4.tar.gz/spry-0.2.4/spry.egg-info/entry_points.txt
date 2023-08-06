@@ -1,0 +1,3 @@
+[console_scripts]
+spry = sprypy.spry:main
+
