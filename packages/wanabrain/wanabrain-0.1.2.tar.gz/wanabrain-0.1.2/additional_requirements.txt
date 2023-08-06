@@ -1,0 +1,2 @@
+pygraphml (install from source)
+opencv (install from source then symbolic link)
