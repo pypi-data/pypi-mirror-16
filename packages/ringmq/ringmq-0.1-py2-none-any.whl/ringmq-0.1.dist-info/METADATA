@@ -1,0 +1,20 @@
+Metadata-Version: 2.0
+Name: ringmq
+Version: 0.1
+Summary: UNKNOWN
+Home-page: http://github.com/mar29th/ring
+Author: Douban Inc.
+Author-email: platform@douban.com
+License: http://www.apache.org/licenses/LICENSE-2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: System :: Networking
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 2.7
+Classifier: License :: OSI Approved :: Apache Software License
+
+UNKNOWN
+
+
