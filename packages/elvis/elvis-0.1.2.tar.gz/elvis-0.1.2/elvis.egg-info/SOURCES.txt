@@ -1,0 +1,15 @@
+setup.cfg
+setup.py
+elvis/__init__.py
+elvis/elvis2nif.py
+elvis/elvis2xml.py
+elvis/entity_linking.py
+elvis/homogenizer.py
+elvis/similarity.py
+elvis/utils.py
+elvis/voting.py
+elvis.egg-info/PKG-INFO
+elvis.egg-info/SOURCES.txt
+elvis.egg-info/dependency_links.txt
+elvis.egg-info/requires.txt
+elvis.egg-info/top_level.txt
