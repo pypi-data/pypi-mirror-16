@@ -1,0 +1,1 @@
+https://github.com/berkeley-cocosci/psiTurk/zipball/wallace3#egg=psiturk-2.1.1.w
