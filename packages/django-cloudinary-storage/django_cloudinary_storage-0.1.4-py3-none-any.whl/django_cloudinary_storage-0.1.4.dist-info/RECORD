@@ -1,0 +1,17 @@
+cloudinary_storage/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cloudinary_storage/app_settings.py,sha256=lhDtqe5dFuCSR10jUywVN6oisEVKugI4jtZtbRKN2c8,1422
+cloudinary_storage/apps.py,sha256=6ls-tNOY0Y_TZUGncI-ju5mT1gcFt_XJ92FLwzXhgII,115
+cloudinary_storage/helpers.py,sha256=vce72fyW7YSw6y8KjUrtE9NAj6tWKKQzzb4TJjL1za4,1310
+cloudinary_storage/storage.py,sha256=2WfCxJoe_jxsghfYF5NKY1fE-w2Ijrw4TnanY8jPj4o,9768
+cloudinary_storage/validators.py,sha256=EFs2e3YJDSD8GCjUmwbtsK79aTqFfPasbsIIoP6yCGw,586
+cloudinary_storage/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cloudinary_storage/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cloudinary_storage/management/commands/collectstatic.py,sha256=0IqYutWpLdNr0PTcCPF33wilnZAPu2fqMMez72-87zA,1400
+cloudinary_storage/management/commands/deleteorphanedmedia.py,sha256=Z_LtXEv_HJBrYRC26wFfhyF_I0uKgfQajkZAzjtaIZA,4490
+cloudinary_storage/management/commands/deleteredundantstatic.py,sha256=7C3eP1ULfc_I0sekIrgK25gY6PRwd9O53Ywr-kIaBw0,2129
+django_cloudinary_storage-0.1.4.dist-info/DESCRIPTION.rst,sha256=m_i5-0iycBHcD3tJBG-4F2g9pJS5qhYjAHblxQKDBqs,378
+django_cloudinary_storage-0.1.4.dist-info/METADATA,sha256=qPq3e8EtbbOy0_ZPMHYJBGxQrRMjojak67eOAXMw3uw,1442
+django_cloudinary_storage-0.1.4.dist-info/RECORD,,
+django_cloudinary_storage-0.1.4.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+django_cloudinary_storage-0.1.4.dist-info/metadata.json,sha256=xmY_3hndGEkPJcgn9_JEStITWbUZyGD253XTis4PsLg,1194
+django_cloudinary_storage-0.1.4.dist-info/top_level.txt,sha256=CRRFHxsK0_pocG97ZxdOMC2IqI2gwuOCQ293zGxhqg8,19
