@@ -1,0 +1,16 @@
+msrest/__init__.py,sha256=ZfffpxRqPds-4N7QDdqa2QYmyW_r0NyuF193wzBMxWY,1606
+msrest/authentication.py,sha256=5FMTiCBG_Qd-dDfTdVU4ofYyQZbF-Q9dFyFDXY9ZZVQ,4108
+msrest/configuration.py,sha256=qq89T87vANK-5-iMv7CEAp4-rqVlLm_YtCJbTkuZQ-0,6471
+msrest/exceptions.py,sha256=Achp313Rr89xU5qocl6GQ19FberrLDTLeMzFYWExfxs,5698
+msrest/http_logger.py,sha256=HvUJ8ep7xyupmFwA0dXrNg3sbI3ccPYSAmsdUZK-1Pk,3764
+msrest/paging.py,sha256=AIYuleC8Ga_r37Y0RAuSE4CDhERwM9Xtu7WkdthTVUU,3636
+msrest/pipeline.py,sha256=kITI1a7MjlZMeQ3ueoUKOIT7q4DucmBqTJe7IoogGl0,15554
+msrest/serialization.py,sha256=-xnJFdBAiEuCz0K2aysMMVT-OpAjhMlg_LGSj7bWhwk,42056
+msrest/service_client.py,sha256=HRiD-S6-U1EpaM-PCDjVhouZNQinpmIUrcQQJi1uZpo,12826
+msrest/version.py,sha256=ngTjisJy6hWyxM_bnlHQxlRKftrzcQd4SkN7EbKtmx8,1333
+msrest-0.4.2.dist-info/DESCRIPTION.rst,sha256=oZirkPpgSpFXrMwi0Z6l_cAgtkJszLS-riE_dIoteq4,3002
+msrest-0.4.2.dist-info/METADATA,sha256=aSmiIrza0hwFDH7hStww-PNrXsjhdbCunZ5HlgRzRu0,4010
+msrest-0.4.2.dist-info/RECORD,,
+msrest-0.4.2.dist-info/WHEEL,sha256=JTb7YztR8fkPg6aSjc571Q4eiVHCwmUDlX8PhuuqIIE,92
+msrest-0.4.2.dist-info/metadata.json,sha256=qo9GXb0OplwUndvxpHe_xTE2oB9cb11vD2X5n5Za3eA,1065
+msrest-0.4.2.dist-info/top_level.txt,sha256=fTM0WfmxiY5eFZgIwGfhfCMBAq84y9Uw6zfp_Ctbr0s,7
