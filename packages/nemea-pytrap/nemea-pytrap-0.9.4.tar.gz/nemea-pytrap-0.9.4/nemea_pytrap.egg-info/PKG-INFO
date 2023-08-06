@@ -1,0 +1,28 @@
+Metadata-Version: 1.1
+Name: nemea-pytrap
+Version: 0.9.4
+Summary: Python extension of the NEMEA project.
+Home-page: https://github.com/CESNET/Nemea-Framework
+Author: Tomas Cejka
+Author-email: cejkat@cesnet.cz
+License: BSD
+Description: The pytrap module is a native Python extension that allows for writing NEMEA modules in Python.
+Platform: Linux
+Platform: linux_x86_64
+Platform: cp34-cp34m-linux_x86_64
+Platform: cp27-cp27mu-linux_x86_64
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: System :: Networking :: Monitoring
+Requires: libtrap
+Requires: libtrap_devel
+Requires: unirec
+Provides: nemea_pytrap
