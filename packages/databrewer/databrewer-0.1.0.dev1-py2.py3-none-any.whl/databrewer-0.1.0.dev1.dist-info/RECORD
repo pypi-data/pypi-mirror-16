@@ -1,0 +1,15 @@
+databrewer/__init__.py,sha256=3L0bTVzFNB_c4P7gQIoClkusYWyHUzPlaldPREyQcbE,116
+databrewer/__main__.py,sha256=L8GfmdY3cBdsCmsyW0Ooh5fWcT4IAnB5NZL1U7EZDA0,303
+databrewer/cli.py,sha256=0mqsr8knya8TjYvBv2mQByMPskaWXcaeGtjsFfWmmG8,9493
+databrewer/config.py,sha256=TA3D4NsJf1_VWWT9NZtWV9Mjws1ykmmiTcdRBY3y3Y8,2433
+databrewer/core.py,sha256=J53oyZElz-nUk8WC2F8CS7rP6ZzyRUs03eAILRGhYNc,347
+databrewer/recipes.py,sha256=vw1EaNILfrV1EV8d6D2Do7AwcR8ww_ZD-mpBTrpUqL4,2165
+databrewer/search.py,sha256=aGMdg4GgWs5U7NBJj6qGrK12opytK8iT8hTX8e5lmag,2404
+databrewer/utils.py,sha256=38z0YpjyWqCqmcDBTW2CkkOhwW-hNrWAC3zMlsI5IDM,3994
+databrewer-0.1.0.dev1.dist-info/DESCRIPTION.rst,sha256=zQEjbxz7wOMy33P58SSLLWkszODkQ8MZ-ID3GMBnAK8,1632
+databrewer-0.1.0.dev1.dist-info/METADATA,sha256=DA8tSJv2bC_BScFdpmSn0ADq9omSUGVxEYlpv7Dp6VM,2584
+databrewer-0.1.0.dev1.dist-info/RECORD,,
+databrewer-0.1.0.dev1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+databrewer-0.1.0.dev1.dist-info/entry_points.txt,sha256=Zvp1z5rZIhKludZq154WDhQsgFXrJh6m49BZRCK3WsI,57
+databrewer-0.1.0.dev1.dist-info/metadata.json,sha256=2cE5jMPYlIc50Rl4Lx60ISU3C29hO8q0-qIkX1I6Arg,1197
+databrewer-0.1.0.dev1.dist-info/top_level.txt,sha256=mB13VmKTDZimRHPTPI7M5eW0_W7VF6-epPE9YPdsQzs,11
