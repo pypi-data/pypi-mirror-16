@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: pybotbuilder
+Version: 0.0.2
+Summary: Python interface for Microsoft BotFramework
+Home-page: https://github.com/daikeren/pyBotBuilder
+Author: Andy Dai
+Author-email: daikeren@gmail.com
+License: Creative Commons Attribution-Noncommercial-Share Alike license
+Description: Python interface for Microsoft BotFramework
+Platform: UNKNOWN
