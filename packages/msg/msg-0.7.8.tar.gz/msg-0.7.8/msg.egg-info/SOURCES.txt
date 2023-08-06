@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+msg/__init__.py
+msg/config.py
+msg/models.py
+msg/msg.py
+msg.egg-info/PKG-INFO
+msg.egg-info/SOURCES.txt
+msg.egg-info/dependency_links.txt
+msg.egg-info/requires.txt
+msg.egg-info/top_level.txt
