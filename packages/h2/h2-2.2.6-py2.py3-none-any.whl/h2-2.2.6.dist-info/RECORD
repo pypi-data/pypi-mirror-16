@@ -1,0 +1,15 @@
+h2/__init__.py,sha256=Cn-tbWpqfeJT8SryvBiMMilbor3Suq8Vm2B6x-UwbfY,86
+h2/connection.py,sha256=h8a9PhrsW1HKkqsSCDaiWhqCATULoEY17HJAmMbP6LQ,51971
+h2/errors.py,sha256=pCGYlc_3DkbVMZRzFAdoMdqfx0CVjNFYVyhdUx17yWM,1616
+h2/events.py,sha256=7qhOKUVHjpULY4zdUeWFDOPSnJQgBvX2qYZN5e_CIys,13679
+h2/exceptions.py,sha256=YXw06yJPI1vd3-RZ2ywScnaQbp5X42QGAsc5i7Uvwwo,4333
+h2/frame_buffer.py,sha256=j20DL8vm1kt0cd1TW4wtlY1tgSTld3-pXV9BVhau5Kk,7155
+h2/settings.py,sha256=lOE892Bnaca_uBFDuD0eWIdlrld9BucIxCqFkSjuZrQ,8313
+h2/stream.py,sha256=2yVlnnXXQbzhzYSPAzCKWUAF8OXQw3kzoutyjkpfu2k,35748
+h2/utilities.py,sha256=e0AfWtDnabY1DIVPvW3TAodzAmXcAis1sBTVWNYGzbU,5870
+h2-2.2.6.dist-info/DESCRIPTION.rst,sha256=groiN8fI6vu6NiZX2COI2fYVbms-DEixvZu_2xrKLUQ,13641
+h2-2.2.6.dist-info/METADATA,sha256=AVnIPc0ovU5zMFpG0jBERllYai75f8Nn0-gnDEXmemg,14669
+h2-2.2.6.dist-info/RECORD,,
+h2-2.2.6.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+h2-2.2.6.dist-info/metadata.json,sha256=hHq7wcKeTZ9DApa_JEEKnjZkFjv3YJhU2YqrWrZfQ-Q,1172
+h2-2.2.6.dist-info/top_level.txt,sha256=Hiulx8KxI2jFUM1dG7-CZeRkO3j50MBwCLG36Vrq-kI,3
