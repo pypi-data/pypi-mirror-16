@@ -1,0 +1,15 @@
+CHANGES
+=======
+
+0.4.1
+-----
+
+* Get ready for pypi
+
+0.4.0
+-----
+
+* Add --version flag
+* Remove PBR from install dependencies
+* Tell flake8 to ignore .tox
+* Initial open source commit
