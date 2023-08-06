@@ -1,0 +1,7 @@
+setup.py
+produtils/__init__.py
+produtils.egg-info/PKG-INFO
+produtils.egg-info/SOURCES.txt
+produtils.egg-info/dependency_links.txt
+produtils.egg-info/not-zip-safe
+produtils.egg-info/top_level.txt
