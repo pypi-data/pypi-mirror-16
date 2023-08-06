@@ -1,0 +1,16 @@
+django_tag_parser-3.0.dist-info/DESCRIPTION.rst,sha256=yN-7eG-vf7CJG4NOqAlMomIsHZ-LZ8eD6SEvhpUZmas,7281
+django_tag_parser-3.0.dist-info/METADATA,sha256=SDNAFAb59lXQKH9FYGJtIU11chRtoSmopAO4a25lRr8,8235
+django_tag_parser-3.0.dist-info/RECORD,,
+django_tag_parser-3.0.dist-info/WHEEL,sha256=GrqQvamwgBV4nLoJe0vhYRSWzWsx7xjlt74FT0SWYfE,110
+django_tag_parser-3.0.dist-info/metadata.json,sha256=b0QnHZxmuW4mkm9NtmK7QFmCT9qQ6zKikVPljquoCE0,1054
+django_tag_parser-3.0.dist-info/pbr.json,sha256=xL9gabeeZT3xjhMWFzk_BQzehTqEI6fMygKnrSa1IGQ,47
+django_tag_parser-3.0.dist-info/top_level.txt,sha256=pYcfzMT2I5dg_dmwqoBJDQ5HRpsZEQ0N4_cBlAdCOAw,11
+tag_parser/__init__.py,sha256=jS2_9SC310-iuzC61TEUrZrAoz_K3wF8oIm7dvaXSCg,204
+tag_parser/basetags.py,sha256=9_KHyIl-Rk5gGM5QYreh0DsLQt3mQnmAnsrnTf3f5S0,16122
+tag_parser/decorators.py,sha256=lFf1DOckfBH5yw9mb-bho8UMmQTT8enpAlgGs4zXPQ4,874
+tag_parser/models.py,sha256=jBA_-VUJM8Nfl-sn5Lnr-N2yObjom3b-1KTnrLe3GcY,27
+tag_parser/parser.py,sha256=_EEk7TbpqFib6vwiITzV0OoKTFfnmby6B14xWpnLrhE,3242
+tag_parser/tests/__init__.py,sha256=kJkPwzZNbzU53v_Z4sCIE5uJPBz3uSQLMzvQmwoT6gQ,45
+tag_parser/tests/test_tags.py,sha256=M3iaDU6G7vIuTZGQ-d-5kTUd02rvljjVicUvIbSO4Us,3675
+tag_parser/tests/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tag_parser/tests/templatetags/tag_parser_test_tags.py,sha256=AwbxdD0JWUOpVVFLDVpHbTd9P4S14V67oK1SSpzUGFE,650
