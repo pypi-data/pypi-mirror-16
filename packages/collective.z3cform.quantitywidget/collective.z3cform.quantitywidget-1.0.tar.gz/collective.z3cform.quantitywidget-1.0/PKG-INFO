@@ -1,0 +1,35 @@
+Metadata-Version: 1.1
+Name: collective.z3cform.quantitywidget
+Version: 1.0
+Summary: HTML5 number type input implementation with unit
+Home-page: http://svn.plone.org/svn/collective/
+Author: Martronic SA
+Author-email: martronic@martronic.ch
+License: GPL
+Description: Introduction
+        ============
+        
+        
+        
+        numberwidget, HTML5 input type number implementation.
+        It is called Quantity Widget because you can specify a quantity unit.
+        
+        Properties added to the widget:
+          step : increment
+          min_value
+          max_value
+          unit : the quantity unit (as text)
+          unit_display : unit position (hidden, before, after)
+        
+        Changelog
+        =========
+        
+        1.0dev (unreleased)
+        -------------------
+        
+        - Initial release
+        
+Keywords: number,input,widget,quantity
+Platform: UNKNOWN
+Classifier: Framework :: Plone
+Classifier: Programming Language :: Python

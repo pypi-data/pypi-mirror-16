@@ -1,0 +1,292 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-09-29 16:57+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.z3cform.quantitywidget\n"
+
+#: ../profiles/default/types/Martronic.Odoo4Plone.Product.xml
+msgid "A product that is linked with Odoo Product"
+msgstr ""
+
+#: ../browser/cart.py:372
+#: ../browser/widgets.py:361
+#: ../viewlets/product.py:291
+msgid "Add to cart"
+msgstr ""
+
+#: ../interfaces.py:42
+msgid "Address of your Odoo (8060)"
+msgstr ""
+
+#: ../browser/cart.py:388
+msgid "Apply"
+msgstr ""
+
+#: ../browser/cart.py:124
+msgid "Apply changes on line"
+msgstr ""
+
+#: ../browser/interfaces.py:33
+msgid "Attributes"
+msgstr ""
+
+#: ../browser/widgets.py:377
+#: ../viewlets/product.py:314
+msgid "Cannot connect to Odoo servers. Please contact web site administration."
+msgstr ""
+
+#: ../browser/interfaces.py:169
+msgid "Cart Lines"
+msgstr ""
+
+#: ../browser/widgets.py:284
+#: ../viewlets/product.py:382
+msgid "Choose"
+msgstr ""
+
+#: ../viewlets/product.py:348
+msgid "Choose the variant"
+msgstr ""
+
+#: ../viewlets/product.py:408
+msgid "Choose your variant"
+msgstr ""
+
+#: ../browser/widgets.py:165
+msgid "Chosse the variant"
+msgstr ""
+
+#: ../browser/interfaces.py:180
+msgid "Currency"
+msgstr ""
+
+#: ../browser/interfaces.py:29
+msgid "Currency name"
+msgstr ""
+
+#: ../browser/interfaces.py:22
+msgid "Description"
+msgstr ""
+
+#: ../browser/interfaces.py:21
+msgid "Designation"
+msgstr ""
+
+#: ../profiles/default/types/Martronic.Odoo4Plone.Product.xml
+msgid "Edit"
+msgstr ""
+
+#: ../interfaces.py:37
+msgid "Host URL of your Odoo (localhost)"
+msgstr ""
+
+#: ../browser/interfaces.py:20
+msgid "ID"
+msgstr ""
+
+#: ../browser/interfaces.py:87
+msgid "Link"
+msgstr ""
+
+#: ../browser/interfaces.py:103
+msgid "Linked line"
+msgstr ""
+
+#: ../profiles/default/actions.xml
+#: ../profiles/uninstall/actions.xml
+msgid "My Cart"
+msgstr ""
+
+#: ../interfaces.py:57
+msgid "Name of your Odoo database"
+msgstr ""
+
+#: ../browser/widgets.py:365
+#: ../viewlets/product.py:307
+msgid "No Product provided. Please contact the site administration."
+msgstr ""
+
+#: ../browser/cart.py:203
+msgid "No changes made."
+msgstr ""
+
+#: ../viewlets/product.py:296
+msgid "Odoo4Plone is not configured in site setup. Please contact the site administration."
+msgstr ""
+
+#: ../browser/interfaces.py:71
+msgid "Option ID"
+msgstr ""
+
+#: ../browser/interfaces.py:105
+msgid "Option lines"
+msgstr ""
+
+#: ../viewlets/product-variants.pt:2
+msgid "Other variants:"
+msgstr ""
+
+#: ../interfaces.py:52
+msgid "Password for the username"
+msgstr ""
+
+#: ../viewlets/product.py:337
+msgid "Please fill in all the fields"
+msgstr ""
+
+#: ../browser/widgets.py:261
+#: ../viewlets/product.py:388
+msgid "Please fill in all the fields."
+msgstr ""
+
+#: ../browser/interfaces.py:23
+msgid "Price"
+msgstr ""
+
+#: ../browser/interfaces.py:27
+msgid "Price Extra"
+msgstr ""
+
+#: ../browser/interfaces.py:91
+msgid "Price Reduce"
+msgstr ""
+
+#: ../profiles/default/types/Martronic.Odoo4Plone.Product.xml
+msgid "Product"
+msgstr ""
+
+#: ../browser/interfaces.py:75
+msgid "Quantity"
+msgstr ""
+
+#: ../browser/cart.py:380
+msgid "Remove"
+msgstr ""
+
+#: ../viewlets/interfaces.py:44
+msgid "Return URL"
+msgstr ""
+
+#: ../browser/cart.py:202
+msgid "Some of your changes could not be applied."
+msgstr ""
+
+#: ../browser/interfaces.py:93
+msgid "Sub total"
+msgstr ""
+
+#: ../browser/cart.py:201
+msgid "Successfully updated"
+msgstr ""
+
+#: ../browser/interfaces.py:174
+msgid "TOTAL"
+msgstr ""
+
+#: ../browser/interfaces.py:176
+msgid "Tax amount"
+msgstr ""
+
+#: ../browser/widgets.py:379
+#: ../viewlets/product.py:316
+msgid "The product has been added to you cart."
+msgstr ""
+
+#: ../browser/widgets.py:288
+msgid "This variant is not available."
+msgstr ""
+
+#: ../browser/interfaces.py:30
+msgid "Unit"
+msgstr ""
+
+#: ../browser/interfaces.py:175
+msgid "Untaxed Amount"
+msgstr ""
+
+#: ../interfaces.py:47
+msgid "User name for accessing your Odoo database."
+msgstr ""
+
+#: ../browser/interfaces.py:73
+#: ../viewlets/interfaces.py:30
+msgid "Variant"
+msgstr ""
+
+#: ../browser/interfaces.py:31
+msgid "Variants"
+msgstr ""
+
+#: ../browser/interfaces.py:32
+msgid "Variants IDs"
+msgstr ""
+
+#: ../profiles/default/types/Martronic.Odoo4Plone.Product.xml
+msgid "View"
+msgstr ""
+
+#: ../viewlets/interfaces.py:45
+msgid "Where the user is taken after the form is successfully submitted"
+msgstr ""
+
+#: ../browser/cart.py:297
+msgid "Your cart"
+msgstr ""
+
+#: ../browser/cart.py:296
+msgid "Your cart is empty"
+msgstr ""
+
+#. Default: "Quantity"
+#: ../viewlets/interfaces.py:43
+msgid "add_qty"
+msgstr ""
+
+#. Default: "Configure"
+#: ../browser/templates/admin-overview.pt:17
+msgid "heading_configure"
+msgstr ""
+
+#. Default: "General Information"
+#: ../browser/templates/admin-overview.pt:27
+msgid "heading_general_information"
+msgstr ""
+
+#. Default: "Odoo4Plone Setup"
+#: ../browser/templates/settings-template.pt:35
+msgid "heading_odoo_setup"
+msgstr ""
+
+#. Default: "Martronic.Odoo4Plone Version:"
+#: ../browser/templates/admin-overview.pt:29
+msgid "label_odoo_version"
+msgstr ""
+
+#. Default: "Up to Odoo Setup"
+#: ../browser/templates/settings-template.pt:38
+msgid "label_up_to_odoo_setup"
+msgstr ""
+
+#. Default: "No Product provided."
+#: ../browser/cart.py:63
+msgid "product_id_missing_error"
+msgstr ""
+
+#. Default: "There has been an error on the server."
+#: ../browser/odoo.py:111
+msgid "proxy_message_error"
+msgstr ""
+
