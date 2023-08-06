@@ -1,0 +1,7 @@
+setup.py
+PHPLintBear/PHPLintBear.py
+PHPLintBear/__init__.py
+PHPLintBear.egg-info/PKG-INFO
+PHPLintBear.egg-info/SOURCES.txt
+PHPLintBear.egg-info/dependency_links.txt
+PHPLintBear.egg-info/top_level.txt
