@@ -1,0 +1,11 @@
+MANIFEST.in
+README.rst
+crop_explained.png
+setup.py
+hearthstonecarddetector/__init__.py
+hearthstonecarddetector.egg-info/PKG-INFO
+hearthstonecarddetector.egg-info/SOURCES.txt
+hearthstonecarddetector.egg-info/dependency_links.txt
+hearthstonecarddetector.egg-info/not-zip-safe
+hearthstonecarddetector.egg-info/requires.txt
+hearthstonecarddetector.egg-info/top_level.txt
