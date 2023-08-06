@@ -1,0 +1,17 @@
+Metadata-Version: 2.0
+Name: braid
+Version: 0.1
+Summary: Deep Learning library in Tensorflow
+Home-page: UNKNOWN
+Author: Chintak Sheth
+Author-email: chintak@arya.ai
+License: MIT
+Download-URL: http://github.com/Arya-ai/braid
+Platform: UNKNOWN
+Requires-Dist: easydict
+Requires-Dist: numpy
+Requires-Dist: tensorflow
+
+Deep Learning library in Tensorflow.
+
+
