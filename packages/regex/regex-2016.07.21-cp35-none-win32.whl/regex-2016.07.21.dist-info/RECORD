@@ -1,0 +1,11 @@
+_regex.pyd,sha256=WXbAhXFpxF5aktAujxYW-kA1Gf_PgGisbNqSCE1dUd4,353280
+_regex_core.py,sha256=wNCLxT1TJvjow9HHmoeK6WYYBxggCFgYxcPwYG3VHgY,139064
+regex.py,sha256=0moiI_TbjEjtqleRAKL7S-cZeYtJOWhbNqBIOq6lTgE,30252
+test_regex.py,sha256=07UQzyJxJeTMbDhPrD_oOTFBow0i2Jw5ZS-9T4aCR-s,185792
+regex-2016.07.21.dist-info/DESCRIPTION.rst,sha256=e3bvb2GXHUA3CzqHpAifEjJt3DW_jKNpV-ZUropKuuU,36598
+regex-2016.07.21.dist-info/METADATA,sha256=10sA2wK6Zad77JCn4EEnpXDBtvbC1h2o6HtPCNFm_fM,37744
+regex-2016.07.21.dist-info/RECORD,,
+regex-2016.07.21.dist-info/WHEEL,sha256=6wnUzulUPtamWQw9fduxmONJSMzqWZJWY62pN0Z3sA8,101
+regex-2016.07.21.dist-info/metadata.json,sha256=c_Q0LTQIuLhavGBJ9xuKh_BHA-lwQetr6ZneRbO2euQ,1031
+regex-2016.07.21.dist-info/top_level.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+regex-2016.07.21.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
