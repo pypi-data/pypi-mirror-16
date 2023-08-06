@@ -1,0 +1,3 @@
+[console_scripts]
+skidl = skidl.__main__:main
+
