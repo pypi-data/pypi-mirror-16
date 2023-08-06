@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: popsc
+Version: 1.0.1
+Summary: PopSc is a toolkit for computing 45 basic statistics inmolecular population genetics, mainly including (i) genetic diversity of DNA sequences, (ii) statistical tests for neutral evolution, and (iii) measures of genetic differentiation among populations.
+Home-page: http://www.chenshiyi.com/popsc.html
+Author: Shi-Yi Chen
+Author-email: sychensau@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
