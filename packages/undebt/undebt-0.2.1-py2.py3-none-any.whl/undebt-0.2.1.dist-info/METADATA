@@ -1,0 +1,26 @@
+Metadata-Version: 2.0
+Name: undebt
+Version: 0.2.1
+Summary: No More Code Debt
+Home-page: https://github.com/Yelp/undebt
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: Copyright Yelp, Inc. 2016
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Classifier: Environment :: Console
+Classifier: Operating System :: OS Independent
+Requires-Dist: argparse
+Requires-Dist: pyparsing
+Provides-Extra: testing
+Requires-Dist: coverage; extra == 'testing'
+Requires-Dist: flake8; extra == 'testing'
+Requires-Dist: mock; extra == 'testing'
+Requires-Dist: pytest; extra == 'testing'
+
+UNKNOWN
+
+
