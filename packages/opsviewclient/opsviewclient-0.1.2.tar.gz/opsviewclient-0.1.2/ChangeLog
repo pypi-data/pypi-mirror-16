@@ -1,0 +1,21 @@
+CHANGES
+=======
+
+0.1.2
+-----
+
+* Fix static requirements
+* Move to pbr
+* Remove pyc files and bump version
+
+0.1.1
+-----
+
+* Remove erroneous file
+* Initial requirements
+
+0.1
+---
+
+* Initial commit and implementation
+* Initial commit
