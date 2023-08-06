@@ -1,0 +1,14 @@
+text_cleaner/__init__.py,sha256=fme4MpIke6ZqFL7bArvfpagyFe88vQrJtI-eCtpfRDQ,715
+text_cleaner/main.py,sha256=WZvcWr-o8ZwnRin7Ee9O0xiyjVho5WoeoGEa3HugyJc,270
+text_cleaner/metadata.py,sha256=h0RlDjA3TzOHWZQO6DhQhMlsfpoiu6jeDnSb5Qiwvi0,292
+text_cleaner/processor/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+text_cleaner/processor/chinese.py,sha256=uuuzCgYGff7zHgtF1G9ix-mqm1C-uOhMBFZv-1yJIy4,1737
+text_cleaner/processor/common.py,sha256=OgCW1_NIiGNe_L0Sr-gWQva4PljAOUVoAQutD1h9OfY,1736
+text_cleaner/processor/misc.py,sha256=2F65diVqFMbEBGTa7WXh0c1PA4PVqEX2XcScTIX5v54,4814
+text_cleaner/processor/processor.py,sha256=YgpJE7qjtc3Gh0ctYvewjzrBShu1rHlmBw5EQuKdEcs,2947
+text_cleaner-0.2.2.dist-info/DESCRIPTION.rst,sha256=tVpTnbV3IB5EHSQ3_xnzloZCPKfSEMLnCzMcnhGDQTo,3127
+text_cleaner-0.2.2.dist-info/METADATA,sha256=42Skl731KFSzfEstnZrymcG168Qjw9tbgHsVq_Vbg50,3743
+text_cleaner-0.2.2.dist-info/RECORD,,
+text_cleaner-0.2.2.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+text_cleaner-0.2.2.dist-info/metadata.json,sha256=PaQNA13l6QMWdK9LS-NrLu3lBEyAuyO_TrhQtfd_1I8,724
+text_cleaner-0.2.2.dist-info/top_level.txt,sha256=JSE-SQfkjNxXvdMt75eqK8KZ31SqV_MjLDECBbiV5EQ,13
