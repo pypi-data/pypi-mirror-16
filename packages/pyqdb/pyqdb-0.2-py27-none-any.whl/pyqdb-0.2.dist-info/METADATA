@@ -1,0 +1,29 @@
+Metadata-Version: 2.0
+Name: pyqdb
+Version: 0.2
+Summary: A QDB library for python
+Home-page: http://github.com/pjz/pyqdb
+Author: Paul Jimenez
+Author-email: pj@place.org
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: No Input/Output (Daemon)
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Database :: Front-Ends
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: requests
+Provides-Extra: tests
+Requires-Dist: pytest; extra == 'tests'
+Requires-Dist: pytest-timeout; extra == 'tests'
+Requires-Dist: pytest-cov; extra == 'tests'
+
+UNKNOWN
+
+
