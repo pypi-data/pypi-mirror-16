@@ -1,0 +1,21 @@
+Metadata-Version: 2.0
+Name: ted-tools
+Version: 0.1.0
+Summary: Scripts to monitor your car using the OBD-II connector and an ELM327 adapter
+Home-page: https://github.com/orangetux/ted
+Author: Auke Willem Oosterhoff
+Author-email: auke@orangetux.nl
+License: MPL
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: obd (==0.6.1)
+Requires-Dist: pyserial (==3.1.1)
+Requires-Dist: pyzmq (==15.4.0)
+
+UNKNOWN
+
+
