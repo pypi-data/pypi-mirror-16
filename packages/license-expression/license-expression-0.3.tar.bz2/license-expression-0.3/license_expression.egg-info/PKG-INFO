@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: license-expression
+Version: 0.3
+Summary: license-expression is small utility library to parse, compare simplify and normalize license expressions using bollean logic.It uses boolean.py for parsing and boolean logic.
+Home-page: https://github.com/nexB/license-expression
+Author: nexB Inc.
+Author-email: info@nexb.
+License: apache-2.0
+Description: license-expression is small utility library to parse, compare simplify and normalize license expressions using bollean logic.It uses boolean.py for parsing and boolean logic.
+Keywords: license,spdx,license expression,open source,boolean
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Utilities
