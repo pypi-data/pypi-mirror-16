@@ -1,0 +1,10 @@
+include version.py
+include LICENSE
+include README.md
+
+graft xbmcjson
+graft tests
+
+
+global-exclude __pycache__
+global-exclude *.py[co]
