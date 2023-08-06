@@ -1,0 +1,6 @@
+Change log
+==========
+
+0.0.1
+---
+* Decorator for views that tries getting the page from the cache but only if user is not logged
