@@ -1,0 +1,6 @@
+setup.py
+knowlify/__init__.py
+knowlify.egg-info/PKG-INFO
+knowlify.egg-info/SOURCES.txt
+knowlify.egg-info/dependency_links.txt
+knowlify.egg-info/top_level.txt
