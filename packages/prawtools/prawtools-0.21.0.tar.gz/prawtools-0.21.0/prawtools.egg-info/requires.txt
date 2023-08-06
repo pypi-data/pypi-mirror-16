@@ -1,0 +1,2 @@
+praw >=4.0.0b11, <5
+update_checker ==0.11
