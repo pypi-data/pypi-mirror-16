@@ -1,0 +1,12 @@
+dose/__init__.py,sha256=I9OOXISPPTk23YybRQ_iqo2aTZEw22WS2shsNmjWZQU,189
+dose/__main__.py,sha256=y3SRpMFUzL0R22oW-QuAqqQ4V9bdKjRy_82cJvMATpY,858
+dose/_legacy.py,sha256=d61VMYBIgqiYiYrZxioS8NmLP_i3IdyOoqrVbTtI_gY,23392
+dose/runner.py,sha256=y57QLn5ox6SL_LesQGJOCYHW4x3IjPyv8o-UU5AOVHE,3575
+dose/watcher.py,sha256=FLGCBv_QDwfaF49x7sOI6o1dXQxOwxgrTXotNvaRsYA,704
+dose-1.1.0.dist-info/DESCRIPTION.rst,sha256=5FafqhpuoqNJZ73ubJyCE4pWv98xZfep05UmjBPRBNg,1465
+dose-1.1.0.dist-info/METADATA,sha256=qMkbNWO9U6q8AGoQyiwY48xcRR8eaUXkWOVSSDv44_4,2689
+dose-1.1.0.dist-info/RECORD,,
+dose-1.1.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+dose-1.1.0.dist-info/entry_points.txt,sha256=9XJ-ZGclX7UaLefM69uqYoNdyWFNYcbZFvSSKewpQJ8,45
+dose-1.1.0.dist-info/metadata.json,sha256=HgNbCDsWHnzuo6IC18cdcbr6l8bN_27H6oO1zsainDg,1450
+dose-1.1.0.dist-info/top_level.txt,sha256=meo76ARj5nQh4XDojfbRaETUf4YOe08slOQmlArYMMY,5
