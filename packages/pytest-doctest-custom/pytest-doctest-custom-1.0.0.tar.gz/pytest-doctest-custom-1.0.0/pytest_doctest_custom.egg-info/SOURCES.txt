@@ -1,0 +1,16 @@
+.travis.yml
+COPYING.txt
+MANIFEST.in
+README.rst
+conftest.py
+fix_coverage_path.py
+pytest_doctest_custom.py
+setup.py
+test_pytest_doctest_custom.py
+tox.ini
+pytest_doctest_custom.egg-info/PKG-INFO
+pytest_doctest_custom.egg-info/SOURCES.txt
+pytest_doctest_custom.egg-info/dependency_links.txt
+pytest_doctest_custom.egg-info/entry_points.txt
+pytest_doctest_custom.egg-info/requires.txt
+pytest_doctest_custom.egg-info/top_level.txt
