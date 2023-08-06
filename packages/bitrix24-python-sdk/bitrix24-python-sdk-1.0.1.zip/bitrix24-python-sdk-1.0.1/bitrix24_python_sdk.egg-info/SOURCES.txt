@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+bitrix24/__init__.py
+bitrix24/bitrix24.py
+bitrix24_python_sdk.egg-info/PKG-INFO
+bitrix24_python_sdk.egg-info/SOURCES.txt
+bitrix24_python_sdk.egg-info/dependency_links.txt
+bitrix24_python_sdk.egg-info/requires.txt
+bitrix24_python_sdk.egg-info/top_level.txt

@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: bitrix24-python-sdk
+Version: 1.0.1
+Summary: Bitrix24 REST API wrapper
+Home-page: https://github.com/gebvlad/bitrix24-python-sdk
+Author: Vladislav Sikach
+Author-email: github@sijmusic.info
+License: MIT
+Description: UNKNOWN
+Keywords: bitrix24 api rest
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: Russian
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
