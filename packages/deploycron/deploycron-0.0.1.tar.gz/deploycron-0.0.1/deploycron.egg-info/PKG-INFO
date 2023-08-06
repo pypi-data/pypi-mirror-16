@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: deploycron
+Version: 0.0.1
+Summary: a small crontab deploy/install tool for python
+Home-page: https://github.com/monklof/deploycron
+Author: monklof
+Author-email: monklof@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: crontab,cron,initialize
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
