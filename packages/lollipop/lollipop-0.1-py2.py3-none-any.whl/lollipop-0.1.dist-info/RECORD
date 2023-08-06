@@ -1,0 +1,12 @@
+lollipop/__init__.py,sha256=eCDAbE5WKIgQhkn9LHg2VNWBNL40hfGFqVe-T1_ECrQ,48
+lollipop/compat.py,sha256=vqKVQLIXbSMQTWPQh0o5ADK6reVkNwk8uU2FhIm6mAs,544
+lollipop/errors.py,sha256=WU672gqdMZQQxBEMN6ulGrk0THKxQ2CcZa2JAYG449g,5632
+lollipop/types.py,sha256=wUza9XJtEnfWHmFKRe_-_G7L5z-7YCgFc15VeAuc2OQ,27295
+lollipop/utils.py,sha256=89yO97IKLLcoTVJgdYBdr07a0_kP7TWiPrmcs1ZDdHs,826
+lollipop/validators.py,sha256=T-5OVg4yrDqIOwJElct-MWqrSpNjFLgKokEDXeuQEuM,8677
+lollipop-0.1.dist-info/DESCRIPTION.rst,sha256=SxuCz071R8v4E3rt_OwClEMndwwulLqUwf-vbubW7Bs,2178
+lollipop-0.1.dist-info/METADATA,sha256=2ZDuVkh-MlQKgnVOt8z1LgrZX8Hu5jUuSy0Vg7ViV0w,3137
+lollipop-0.1.dist-info/RECORD,,
+lollipop-0.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+lollipop-0.1.dist-info/metadata.json,sha256=w21UuS-Y7nevAdzxXcxRGE6zgSZzVXKH-YELxORF2hI,1130
+lollipop-0.1.dist-info/top_level.txt,sha256=lpT7zJydX9RetokAeDp99_WNqkKlVGeXIEPanjuE7t4,9
