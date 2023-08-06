@@ -1,0 +1,11 @@
+pulsar_django-0.1.1.dist-info/DESCRIPTION.rst,sha256=wNl__Q8s456YPALRL0v7zMUnz1lv8Izgxwm4_ywHpD8,3749
+pulsar_django-0.1.1.dist-info/METADATA,sha256=UKyE260edEGZ-PB46Pdyngk511jNNkUEc01m7-4HL8c,4468
+pulsar_django-0.1.1.dist-info/RECORD,,
+pulsar_django-0.1.1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+pulsar_django-0.1.1.dist-info/metadata.json,sha256=ihWudeSPpPXY6e8yJlpoFQy_GEANLT4vD9uER1B0aZE,865
+pulsar_django-0.1.1.dist-info/top_level.txt,sha256=gQdwpJBbAgjgx7qW49yUgv8h89nOedqh1oGgfnxmR_g,6
+pulse/__init__.py,sha256=Df4hTlI36Y7bXvLb6_JfaabU-rFhyD4HkvtbEeJRH6g,93
+pulse/wsgi.py,sha256=RPtKLrfyPm9MlLDz5Z36gKEPqfpBQ1AiqMjnxB077WU,932
+pulse/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pulse/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pulse/management/commands/pulse.py,sha256=_01-1gHGkrAtZ_7cs12OLFAK3b89VtTCZ8bVk5khPqY,2366
