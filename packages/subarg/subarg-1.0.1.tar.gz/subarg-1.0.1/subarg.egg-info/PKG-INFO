@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: subarg
+Version: 1.0.1
+Summary: Parse sub-arguments in `[` and `]` recursively
+Home-page: https://github.com/keik/subarg
+Author: keik
+Author-email: k4t0.kei@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5

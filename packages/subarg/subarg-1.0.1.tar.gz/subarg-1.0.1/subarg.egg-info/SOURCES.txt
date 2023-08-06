@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+subarg/__init__.py
+subarg/subarg.py
+subarg.egg-info/PKG-INFO
+subarg.egg-info/SOURCES.txt
+subarg.egg-info/dependency_links.txt
+subarg.egg-info/top_level.txt
