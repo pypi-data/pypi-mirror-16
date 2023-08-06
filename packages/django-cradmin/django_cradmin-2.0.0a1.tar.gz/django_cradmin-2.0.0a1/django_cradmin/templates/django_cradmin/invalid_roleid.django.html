@@ -1,0 +1,10 @@
+{% extends "django_cradmin/layouts/standalone/focused.django.html" %}
+{% load i18n %}
+
+{% block pageheader-inner %}
+    <h1>{% trans "Invalid role" %}: {{ roleid }}</h1>
+{% endblock pageheader-inner %}
+
+{% block content %}
+    <p>{% trans "The requested role does not exist." %}</p>
+{% endblock content %}

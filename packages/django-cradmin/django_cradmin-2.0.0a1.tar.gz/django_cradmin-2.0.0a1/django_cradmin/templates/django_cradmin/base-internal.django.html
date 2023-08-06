@@ -1,0 +1,42 @@
+{% extends "django_cradmin/standalone-base.django.html" %}
+{% load cradmin_tags %}
+
+
+{% block bodyclass %}
+    layout
+    {% block bodylayout-variant %}
+        {% if not cradmin_hide_menu %}
+            layout--leftsidebar-content
+        {% endif %}
+    {% endblock bodylayout-variant %}
+{% endblock bodyclass %}
+
+{% block body %}
+    {% block menu %}
+        {% if not cradmin_hide_menu %}
+            <div class="layout__item">
+                {% cradmin_render_menu %}
+            </div>
+        {% endif %}
+    {% endblock menu %}
+
+    <div class="layout__item">
+        {% if not hide_pageheader and not DJANGO_CRADMIN_HIDE_PAGE_HEADER %}
+            {% block pageheader %}
+            {% comment %}
+                The page header can be hidden in two ways:
+                - Set hide_pageheader = True in the template context.
+                - Set the DJANGO_CRADMIN_HIDE_PAGE_HEADER setting.
+            {% endcomment %}
+                {% block pageheader-inner %}{% endblock pageheader-inner %}
+            {% endblock pageheader %}
+        {% endif %}
+
+        {% block messages %}
+            {% include "django_cradmin/include/messages.django.html" %}
+        {% endblock messages %}
+
+        {% block content %}{% endblock content %}
+    </div>
+
+{% endblock body %}

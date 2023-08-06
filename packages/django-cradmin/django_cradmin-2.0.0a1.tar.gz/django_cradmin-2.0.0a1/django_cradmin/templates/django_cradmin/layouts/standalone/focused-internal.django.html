@@ -1,0 +1,19 @@
+{% extends "django_cradmin/standalone-base.django.html" %}
+{% comment %}
+    You never extend this directly - extend
+    ``django_cradmin/layouts/standalone/focused.django.html`` instead.
+{% endcomment %}
+
+{% block body %}
+    <section class="{% block wrapperclass %}page-section {% block wrapperclass-modifier %}page-section--tight page-section--focus{% endblock %}{% endblock %}">
+        {% block messages %}
+            {% include "django_cradmin/include/messages.django.html" %}
+        {% endblock messages %}
+
+        {% block pageheader %}
+            {% block pageheader-inner %}{% endblock pageheader-inner %}
+        {% endblock pageheader %}
+
+        {% block content %}{% endblock content %}
+    </section>
+{% endblock body %}
