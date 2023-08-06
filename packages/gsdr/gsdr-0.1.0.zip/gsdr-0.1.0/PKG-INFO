@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: gsdr
+Version: 0.1.0
+Summary: Generative Sparse Distributed Representations, a fast generative model
+Home-page: https://github.com/ToraxXx/gsdr
+Author: Robin Kahlow (Toraxxx)
+Author-email: xtremegosugaming@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: any
+Requires: numpy
