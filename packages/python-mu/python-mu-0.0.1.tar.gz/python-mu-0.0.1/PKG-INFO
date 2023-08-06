@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: python-mu
+Version: 0.0.1
+Summary: Python module and CLI to package and upload python lambda functions to AWS Lambda.
+Home-page: https://github.com/sivel/mu
+Author: Matt Martz
+Author-email: matt@sivel.net
+License: Apache License, Version 2.0
+Description: UNKNOWN
+Keywords: aws amazon lambda
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Environment :: Console
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: Apache Software License
