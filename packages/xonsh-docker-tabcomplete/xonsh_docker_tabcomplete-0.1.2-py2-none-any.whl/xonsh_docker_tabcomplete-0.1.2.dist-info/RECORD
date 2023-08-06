@@ -1,0 +1,10 @@
+docker_tabcomplete/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+docker_tabcomplete/parser.py,sha256=UrCS49LZMifALAH6Rgxqi_G0YZ8D7bp_y6snwfscEcA,1345
+docker_tabcomplete/queries.py,sha256=uyM2ZtkiuhH5rPHZWGg_O3asXfWAS9eoezHrcK0gjEY,2977
+xonsh_docker_tabcomplete-0.1.2.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+xonsh_docker_tabcomplete-0.1.2.dist-info/METADATA,sha256=9HgmzwqC6Qzmvw3xRD4mfpnwvuAvGgQee6H5lcfMQpQ,616
+xonsh_docker_tabcomplete-0.1.2.dist-info/RECORD,,
+xonsh_docker_tabcomplete-0.1.2.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+xonsh_docker_tabcomplete-0.1.2.dist-info/metadata.json,sha256=qyoRezZgaI_jV6Sq--WTpgf8k4W-AN_HU5b9uhT3R4U,782
+xonsh_docker_tabcomplete-0.1.2.dist-info/top_level.txt,sha256=vS8X8o1IAF9myh4LBOTSobm8PeQfhOBMtGLURejTWjM,27
+xontrib/docker_tabcomplete.xsh,sha256=c1sRqrao_EBX3bMVDlVCM9SPfPphNcEGyG-mymi2YwM,5950
