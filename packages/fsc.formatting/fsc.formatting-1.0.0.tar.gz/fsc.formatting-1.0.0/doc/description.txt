@@ -1,0 +1,1 @@
+This modules offers convenient string formating operations.
