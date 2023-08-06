@@ -1,0 +1,10 @@
+README.rst
+setup.py
+jar_manifest/__init__.py
+jar_manifest/manifest.py
+jar_manifest.egg-info/PKG-INFO
+jar_manifest.egg-info/SOURCES.txt
+jar_manifest.egg-info/dependency_links.txt
+jar_manifest.egg-info/not-zip-safe
+jar_manifest.egg-info/top_level.txt
+jar_manifest/bin/read_manifest
