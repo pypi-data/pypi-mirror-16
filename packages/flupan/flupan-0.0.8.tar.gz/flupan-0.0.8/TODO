@@ -1,0 +1,6 @@
+# To do
+
+ - Start new log file when object initialized.
+ - why is there an extra tables/ folder in dist-packages?
+
+
