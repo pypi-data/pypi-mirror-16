@@ -1,0 +1,17 @@
+lambkin/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lambkin/aws.py,sha256=bTgRo_sx1fzKYJFxLDB6NgZJlKpt4dn3RPrISZebTN4,1187
+lambkin/exceptions.py,sha256=G84lKHGZ_CBwuL7R1GYYIUOOmdE_61pMg9Qtpn-xWss,33
+lambkin/lambkin.py,sha256=HpTRsMuZF_YCuiGm_NQx5luTD3aFn2OCZzkTYDchmWA,7277
+lambkin/metadata.py,sha256=GboCgYELpw-GWlKPAbPEt1BUp0Y0-nXVnshNjTvRuKo,779
+lambkin/runtime.py,sha256=TcKT6FohVbgUIdX4Sa9fc86d4Ot5O5wrp-fDZeWXAzU,1007
+lambkin/template.py,sha256=4Zi-102_XyXBQcsJNnxXTO0CXp6EjdFvkBawR2gg4Xo,3595
+lambkin/ux.py,sha256=Kv8LvPN1buw9Sd_B-6kkbeVu1Qtdg3ZtNnaBQ5j8H9o,318
+lambkin/virtualenv.py,sha256=OGlcYnL8fSoJgzSJzGyE-wjv5U87Yv9mR3HpnwaAUV0,385
+lambkin/zip.py,sha256=kqeQjx59eCHi4Shy3o0fv5cEjVni00e8dXc8wuojvdE,1500
+lambkin-0.1.0.dist-info/DESCRIPTION.rst,sha256=XL5mgV7S8bmVOQSr-pU7U_LHegEP389zxI4ppzyfKZ4,2629
+lambkin-0.1.0.dist-info/METADATA,sha256=wVHS1baGIz-ZzqnUU1F_4fxOrV9ah4pxECO8HWay6FM,3224
+lambkin-0.1.0.dist-info/RECORD,,
+lambkin-0.1.0.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+lambkin-0.1.0.dist-info/entry_points.txt,sha256=hLu9vZ-8zKPY_inSGNJVnqALxDA6GqUhOiu79ddEWcQ,50
+lambkin-0.1.0.dist-info/metadata.json,sha256=T3vf70i1TUvN8zmadHiRNkbm8YEW1r8BA6R8uG3D6OA,884
+lambkin-0.1.0.dist-info/top_level.txt,sha256=cB4mfm6Bk7rjpMZxaRbFN3VQsb-iMkDfy2SNCEPi-R0,8
