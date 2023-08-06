@@ -1,0 +1,51 @@
+Metadata-Version: 1.1
+Name: coala-install
+Version: 0.1.2
+Summary: Installation tool for coala-bears
+Home-page: UNKNOWN
+Author: Adrian Zatreanu
+Author-email: adrianzatreanu1@gmail.com
+License: AGPL-3.0
+Description: ## Bear Installation Tool
+        
+        coala features a Bear Installation Tool that helps installing bears one by one
+        or all of them. This tool is helpful as it also manages to install the bears'
+        external dependencies.
+        
+        ## Installation
+        
+        To install the tool, simply run:
+        
+            $ pip3 install coala-install
+        
+        ## Usage
+        
+        
+        To use the tool, run
+        
+            $ coala-install
+        
+        and a question will pop-up. To install all the bears, simple type ``All``.
+        If you want just a few bears, type ``Some``. Then, a list with all the
+        bears, collected from PyPI, will pop up. You will now have to choose the bears
+        you want to install, separated by commas, and along with the dependencies,
+        the bears will install. To quit, simply type anything else.
+        
+        The tool features syntax highlighting, which highlights the options that are
+        in the given lists, and also autocompletion.
+Platform: any
+Classifier: Environment :: Console
+Classifier: Environment :: MacOS X
+Classifier: Environment :: Win32 (MS Windows)
+Classifier: Environment :: X11 Applications :: Gnome
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Text Processing :: Linguistic
