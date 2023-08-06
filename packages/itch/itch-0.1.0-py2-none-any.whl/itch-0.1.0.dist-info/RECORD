@@ -1,0 +1,13 @@
+itch/log.py,sha256=EyTro1_SxN5GsIDM6Hl_DGjOfF9qqIMbKyIXknEtKns,454
+itch/__init__.py,sha256=mWjEqND2oma39_IF_hqCHQWokymbJmiLhmDnpgamyUY,1324
+itch/times.py,sha256=wFxoR3pcw6HEmZpJM7lj6zGFSVdPZ5JLEJemP73_5NA,357
+itch/models.py,sha256=Y7N1XmPfivEsTr2RW0qGper4OL3xrfXp3agBQkO42X8,7339
+cache/filetree.py,sha256=xLzpXXLK1DzPICT9E6g3YdPcK2D6kK1jY8l-BArPLro,964
+cache/__init__.py,sha256=RWR8R20clBAdcu3AJcdzewgW4CPz1qlZt15HkDx3zuc,1180
+reports/__init__.py,sha256=3qXZpkh35QW98GVjuwrHFx3Bq_73PKWUciasErlxD_8,1160
+itch-0.1.0.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
+itch-0.1.0.dist-info/RECORD,,
+itch-0.1.0.dist-info/metadata.json,sha256=ReFgPBVf4hJqccikVc20yfQ2MkLZM6g54bSu3R9crCY,457
+itch-0.1.0.dist-info/DESCRIPTION.rst,sha256=QPdaz4j5iE7dHbldDe_BaSUEVKiGIYdDAo0OO-EfR28,3107
+itch-0.1.0.dist-info/top_level.txt,sha256=ja3Z4ZJWAplW_VY1s04XkFUKBqrsEuN8dRnMsBguEYY,19
+itch-0.1.0.dist-info/METADATA,sha256=uxRZVK7VqAErzmkpGIZU6V_5vZAsgfj_7LpACYlsSAs,3369
