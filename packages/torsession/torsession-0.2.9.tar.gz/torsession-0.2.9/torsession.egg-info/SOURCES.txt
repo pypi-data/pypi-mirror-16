@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.py
+torsession/__init__.py
+torsession/async.py
+torsession/sync.py
+torsession.egg-info/PKG-INFO
+torsession.egg-info/SOURCES.txt
+torsession.egg-info/dependency_links.txt
+torsession.egg-info/not-zip-safe
+torsession.egg-info/requires.txt
+torsession.egg-info/top_level.txt
