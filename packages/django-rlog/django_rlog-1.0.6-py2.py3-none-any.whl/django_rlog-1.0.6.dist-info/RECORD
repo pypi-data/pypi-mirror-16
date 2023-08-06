@@ -1,0 +1,15 @@
+django_rlog/__init__.py,sha256=-JxECvmLMOzJpHT1wKhWvN-8rvHHYUSTWqZ50pjalKM,80
+django_rlog/defaults.py,sha256=QquJr5Dj-njiXbH9WkqF1mfi5BLeL79crndXSYjILnk,639
+django_rlog/logger.py,sha256=5nyTc-_LsQ37U39Es0FtdjnGWHBXbUCkz-tDxgWoWnc,1124
+django_rlog/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_rlog/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_rlog/management/commands/_arguments.py,sha256=_q7tqBkMTX68M9_EqR2VKS8CzHewQNaZDzBUqSr_Rh4,1248
+django_rlog/management/commands/rlistlog.py,sha256=CWAZyzgedY9CIfhBE6B9KWUGnn-u63FANQo8l6ECwdk,1279
+django_rlog/management/commands/rlog.py,sha256=KleAkJ_jh64J_DnPfGrSSAeXXyeYqHerrA0C_RY2D2k,1063
+django_rlog/management/commands/rstop.py,sha256=hVo0nCidzrcrxoDYpSX1tHbjjqyeNHaWsevnZMFxSJI,580
+django_rlog-1.0.6.dist-info/DESCRIPTION.rst,sha256=TQ_tIIEYIFVnyutfltAgcow_rNQdWB7-5RDyHTntls4,437
+django_rlog-1.0.6.dist-info/METADATA,sha256=z3G9mWjRN-9lEyElqii2zdAwLmImROtRQKiDPHrHH4E,1085
+django_rlog-1.0.6.dist-info/RECORD,,
+django_rlog-1.0.6.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+django_rlog-1.0.6.dist-info/metadata.json,sha256=4uY6x7KhfPz02chQc70ju0gQUeXMWiQc8F9saF7K0L0,809
+django_rlog-1.0.6.dist-info/top_level.txt,sha256=_80Nk1HsrPURFYoysd9J2sUoHWJCUloSjbzmbL_6R0A,12
