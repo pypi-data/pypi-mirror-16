@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+fauxgeo/__init__.py
+fauxgeo/affine.py
+fauxgeo/raster_factory.py
+fauxgeo.egg-info/PKG-INFO
+fauxgeo.egg-info/SOURCES.txt
+fauxgeo.egg-info/dependency_links.txt
+fauxgeo.egg-info/not-zip-safe
+fauxgeo.egg-info/requires.txt
+fauxgeo.egg-info/top_level.txt
+tests/__init__.py
+tests/test_raster_factory.py

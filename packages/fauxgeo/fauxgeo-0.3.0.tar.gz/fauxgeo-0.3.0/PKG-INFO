@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: fauxgeo
+Version: 0.3.0
+Summary: programmatically generate geospatial rasters for testing
+Home-page: https://github.com/wbierbower/fauxgeo
+Author: Will Bierbower
+Author-email: wbierbower@gmail.com
+License: BSD
+Description: UNKNOWN
+Keywords: fauxgeo
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Operating System :: MacOS
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
