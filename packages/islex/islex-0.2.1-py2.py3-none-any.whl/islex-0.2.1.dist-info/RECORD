@@ -1,0 +1,12 @@
+islex/__init__.py,sha256=cKTNWEFQQj-jPNHczpFh1uILsswoaEkcLElSi-VnXyY,110
+islex/load.py,sha256=DM-ObwFNN5jQBQ652B4CWDn6YOytOV4G8_nnre8hK5Q,1624
+islex/tokens.py,sha256=aHveUMKj1i6etl74rV3xav5vcKA7MiILFt7xoeaSxsg,6832
+islex/data/__init__.py,sha256=G-d438vPx7m_ks5e9XTtM3u7LDRO5dSSukibukWmyPM,56
+islex-0.2.1.dist-info/DESCRIPTION.rst,sha256=GRofKUwGq2gn5ygM6rkXjyT3Le5f_H156jr0PdS54UI,2465
+islex-0.2.1.dist-info/METADATA,sha256=zzWEfRo-FgkRskmkLvMOuYtdu-ouehHczE_7v15qN4U,3357
+islex-0.2.1.dist-info/RECORD,,
+islex-0.2.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+islex-0.2.1.dist-info/entry_points.txt,sha256=ygfeDPWnKrD9i2kzoCx3_Nu35TWpmLakgjS4SrXqKzc,71
+islex-0.2.1.dist-info/metadata.json,sha256=BS5yUpvmuKVGj0sSz0z6u6ORvzFqOxNxnXx9ftc0Fx8,1266
+islex-0.2.1.dist-info/top_level.txt,sha256=lVQb9LJt9lasHApkzm3n13Exw89s4J8cr3I1_g7DdYU,6
+islex-0.2.1.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
