@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+config.json
+setup.cfg
+setup.py
+sulley/__init__.py
+sulley/config.py
+sulley/exceptions.py
+sulley/matcher.py
+sulley/message.py
+sulley/sulley.py
+sulley.egg-info/PKG-INFO
+sulley.egg-info/SOURCES.txt
+sulley.egg-info/dependency_links.txt
+sulley.egg-info/requires.txt
+sulley.egg-info/top_level.txt
