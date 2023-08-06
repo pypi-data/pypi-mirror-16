@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: mixtures
+Version: 0.0.2
+Summary: Fixtures library for mongoengine
+Home-page: https://github.com/agamdua/mixtures
+Author: Agam Dua
+Author-email: UNKNOWN
+License: BSD
+Description: UNKNOWN
+Keywords: mongo mongoengine
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Testing
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5

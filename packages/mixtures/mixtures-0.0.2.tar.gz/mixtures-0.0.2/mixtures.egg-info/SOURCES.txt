@@ -1,0 +1,17 @@
+LICENSE.rst
+MANIFEST.in
+requirements-tests.txt
+requirements.txt
+setup.cfg
+setup.py
+mixtures/__init__.py
+mixtures/__init__.pyc
+mixtures/field_values.py
+mixtures/field_values.pyc
+mixtures/mixtures.py
+mixtures/mixtures.pyc
+mixtures.egg-info/PKG-INFO
+mixtures.egg-info/SOURCES.txt
+mixtures.egg-info/dependency_links.txt
+mixtures.egg-info/requires.txt
+mixtures.egg-info/top_level.txt
