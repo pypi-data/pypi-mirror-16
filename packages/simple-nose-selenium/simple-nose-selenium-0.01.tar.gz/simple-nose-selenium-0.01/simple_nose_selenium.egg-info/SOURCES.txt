@@ -1,0 +1,9 @@
+README.rst
+setup.py
+simple_nose_selenium.py
+simple_nose_selenium.egg-info/PKG-INFO
+simple_nose_selenium.egg-info/SOURCES.txt
+simple_nose_selenium.egg-info/dependency_links.txt
+simple_nose_selenium.egg-info/entry_points.txt
+simple_nose_selenium.egg-info/requires.txt
+simple_nose_selenium.egg-info/top_level.txt
