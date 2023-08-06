@@ -1,0 +1,22 @@
+Metadata-Version: 2.0
+Name: netx
+Version: 0.4
+Summary: Python wrapper for NetX Digital Asset Management API.
+Home-page: https://github.com/ixc/python-netx
+Author: Interaction Consortium
+Author-email: studio@interaction.net.au
+License: MIT
+Keywords: netx,dma,digital asset management
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Requires-Dist: requests
+
+UNKNOWN
+
+
