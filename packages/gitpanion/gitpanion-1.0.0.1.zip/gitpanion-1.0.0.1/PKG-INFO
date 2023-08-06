@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: gitpanion
+Version: 1.0.0.1
+Summary: A module to make using the github v3 REST api in python 3 easy.
+Home-page: https://github.com/CalderWhite/gitpanion
+Author: Calder White
+Author-email: calderwhite1@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/CalderWhite/gitpanion/archive/master.zip
+Description: UNKNOWN
+Platform: UNKNOWN
