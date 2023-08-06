@@ -1,0 +1,11 @@
+update_checker_app/__init__.py,sha256=CXJQ5ITeTHfXljQvyT8UR8BNc8iCT05U3jcKJRdzHpQ,567
+update_checker_app/controllers.py,sha256=lLaOGWmCpafzKqL7U5oNQ_Phtu5UEwB1X3S3br06O48,2970
+update_checker_app/helpers.py,sha256=lQ0dIFYr5Y7aOoiblUZkEpkLcEXGMrYSPLB-WMfT0aQ,4068
+update_checker_app/models.py,sha256=u3OTjd4zZFDicEZQ6hfLwEVjwFKoeKPNy7EN0lbZ-gM,3001
+update_checker_app-0.6.dist-info/DESCRIPTION.rst,sha256=nTkPVAld_paL5smJYDBszBetPPyN7HNqmfEnj11eqQ0,213
+update_checker_app-0.6.dist-info/METADATA,sha256=Kpij_BPLLV7rEmyCjyoQwPwyIREdyetqXV4PJmp3_rA,933
+update_checker_app-0.6.dist-info/RECORD,,
+update_checker_app-0.6.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+update_checker_app-0.6.dist-info/entry_points.txt,sha256=o4C7x7poVBTZLY5YlevcOIYY9RbqVufJp-JlPJ5RTK4,64
+update_checker_app-0.6.dist-info/metadata.json,sha256=MHYC1xNO8Jawv2FySohx2M8ToyG_-8W-_np1wBkMqkk,1069
+update_checker_app-0.6.dist-info/top_level.txt,sha256=WGu_nkz_3sGvcMX1nZlTgN0Yo5IaHhj-2owZ_eTY2q4,19
