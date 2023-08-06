@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: FaBoBLE_BLE113
+Version: 1.0.0
+Summary: This is a library for the FaBo BLE SiliconLabs Brick.
+Home-page: https://github.com/FaBoPlatform/FaBoBLE-BLE113-Python
+Author: FaBo
+Author-email: info@fabo.io
+License: Apache License 2.0
+Description: FaBoBLE-BLE113-Python
+        =====================
+        
+        How to install.
+        ---------------
+        
+        ::
+        
+            pip install FaBoBLE_BLE113
+        
+        FaBo BLE SiliconLabs Serial Brick
+        ---------------------------------
+        
+        　`#301 BLE SiliconLabs Serial Brick <http://fabo.io/301.html>`__
+        
+        BLE113
+        ------
+        
+        　BLE113 is SiliconLabs's BLE module.
+        
+        BLE113 Datasheet
+        ~~~~~~~~~~~~~~~~
+        
+        　`BLE113
+        Datasheet <http://www.mouser.com/catalog/specsheets/Bluegiga_Technologies_BLE113_Datasheet.pdf>`__
+        
+        Releases
+        --------
+        
+        -  1.0.0 Initial release.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development
+Classifier: Topic :: System :: Hardware
