@@ -1,0 +1,13 @@
+depman-0.2.dist-info/RECORD,,
+depman-0.2.dist-info/entry_points.txt,sha256=mecHszolYh_36EBqXfrbjm03GtcLbE0ARuXCmX1rNsU,45
+depman-0.2.dist-info/metadata.json,sha256=0oDfXCDuQDHTQNX2tm8XhlQ61sLq9fmebnGJALwo0Q4,1114
+depman-0.2.dist-info/METADATA,sha256=m7U2cHtT7hXs2-9NbSGUR_wHzbuSJ_6kjcrYkF34Yyg,5714
+depman-0.2.dist-info/DESCRIPTION.rst,sha256=jLtNHbGM0nzveR-fmIu48fQ8QXKDmpruDhQGnkVZ8uw,4881
+depman-0.2.dist-info/top_level.txt,sha256=5ROuFUxxcNV5QxdUB0RGbTBP3RLDdSCUViK0ObfO1rA,7
+depman-0.2.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+depman/operation.py,sha256=t_iodRouVpD5gk9LWlZM4CtF1RFmvxJGxantrUAGFcI,5299
+depman/__init__.py,sha256=uq84HzZp5zZ1j1ePh0-emdtuaKj_A_EGZXjR3D195XA,89
+depman/dependency.py,sha256=Jc9hldTzme22XoCzySy0PMwnXe5kB8NjrmmtPAmfrt4,5416
+depman/main.py,sha256=wzi0rE5-KW6ntxP4CscpglKXnU6_XvJZQYQvRpLJLi4,1771
+depman/apt.py,sha256=9_SwbkdnEb-m3XKoywj3pBW6AVEFLifqSz41n8PT9d0,1326
+depman/pip.py,sha256=vUXNCzlVm8I8QgRDCTfkdY1fb1gmlok8xK1rCz1OFmY,1886
