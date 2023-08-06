@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: asyncio-map-pool
+Version: 0.1
+Summary: class-less map pool for asyncio coroutines
+Home-page: https://github.com/evgenii-malov/asyncio-map
+Author: Evgeniy Malov
+Author-email: evgeniiml@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: asyncio,map,imap,pool
+Platform: UNKNOWN
+Requires: python (>= 3.5)
