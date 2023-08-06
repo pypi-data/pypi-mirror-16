@@ -1,0 +1,12 @@
+spark_df_profiling/__init__.py,sha256=ghUYcjj4Z7m148y5Cr31Dp8aEY_nDOIh8Y9v5xcllko,1761
+spark_df_profiling/base.py,sha256=Fbv5La83WpbKSeIT8JPTeriveLn3cEDjZbQEbRYw91A,30314
+spark_df_profiling/formatters.py,sha256=VJpL1t6qFW1iiXpW7TAhnPwOog9RFpeweodjIVN0T7E,2037
+spark_df_profiling/spark_df_profiling.mplstyle,sha256=mkIMkMLvTuVwC26KWiAABf5Q-4fMPq6XfqC71ZloOhA,1272
+spark_df_profiling/templates.py,sha256=mXO_QeQV9e_xGWrvw6ROBFLBcIVb7i9mz8R4fb3u1MM,3331
+spark_df_profiling/tests.py.old.py,sha256=jLlbN8fJdV27X9D9QS4DplvdJ4BNiQnh1-8SvIHfqt4,10648
+spark_df_profiling-1.1.5.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+spark_df_profiling-1.1.5.dist-info/METADATA,sha256=-k3i-4NDeCl-0IVm1U_soHTMOd8XnjPbFLIdB3FVYtk,1144
+spark_df_profiling-1.1.5.dist-info/RECORD,,
+spark_df_profiling-1.1.5.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+spark_df_profiling-1.1.5.dist-info/metadata.json,sha256=vx7xtMyKNmsA5XWg2dtb6N6YoNrBm_j8EykiCdaeRes,1257
+spark_df_profiling-1.1.5.dist-info/top_level.txt,sha256=_r6tkhCXGF5mOtdfwEg-SUkAglvw4aOATh1_qvWth4w,19
