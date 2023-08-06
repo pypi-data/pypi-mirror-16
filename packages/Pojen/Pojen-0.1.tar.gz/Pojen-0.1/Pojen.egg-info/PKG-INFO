@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: Pojen
+Version: 0.1
+Summary: Generates POJO based on JSON structure
+Home-page: https://github.com/giuseongit/pojen
+Author: Giuseppe Pagano
+Author-email: giuseppe.pagano.p@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: POJO java json mapper
+Platform: UNKNOWN
