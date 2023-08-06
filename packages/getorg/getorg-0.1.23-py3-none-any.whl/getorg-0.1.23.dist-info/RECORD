@@ -1,0 +1,13 @@
+getorg/__init__.py,sha256=Qy7JI2G-eg1MSojZqz9UKDxIALNaiB5txjeSFDyl4Mo,92
+getorg/core.py,sha256=M0f27czuxSY8oPuifP68pCR8DyJgw0t4440Y1_rutXM,737
+getorg/getorg.py,sha256=-dD646KdX5iP-7Dr5D1u6br1VOTKFvSwElfL6Qo-Q1s,7552
+getorg/maporg.py,sha256=QgikmoEHEtRJUlVW58bKppdi8-D44UJFAHwU6j_Xncg,7431
+getorg/orgevents.py,sha256=EoHdiNQgyX5Hrk6yVeCDNNRCkM2kF7cwjUZ9S6fSf_o,1872
+getorg/orgmap.py,sha256=4qD3L9KP2rHN7X47mzg5EwaS4jiQfhls5FWzpTsMS7o,11501
+getorg/test.py,sha256=FqjCQWqTT7pApQ7E1F-RABZQ3V23d76d2cwMg4CglxM,1076
+getorg-0.1.23.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+getorg-0.1.23.dist-info/METADATA,sha256=RdqqcsF19JeL0jMzsKCbkatbpmYm2S4OfrIvMJLs7Io,327
+getorg-0.1.23.dist-info/RECORD,,
+getorg-0.1.23.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+getorg-0.1.23.dist-info/metadata.json,sha256=VvEbifE9MG5DG67beQux4cijRbg7qO5Z-qDEreugB-8,515
+getorg-0.1.23.dist-info/top_level.txt,sha256=VWszHK2Unk7S3oL0t-vwb9wcQgQ6tMb1WV2w0IVeYG0,7

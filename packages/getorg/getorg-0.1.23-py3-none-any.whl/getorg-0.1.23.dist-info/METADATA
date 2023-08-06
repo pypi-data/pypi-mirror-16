@@ -1,0 +1,16 @@
+Metadata-Version: 2.0
+Name: getorg
+Version: 0.1.23
+Summary: Information and analytics about GitHub organizations
+Home-page: http://github.com/getorg/getorg
+Author: Stuart Geiger
+Author-email: stuart@stuartgeiger.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: datetime
+Requires-Dist: geopy
+Requires-Dist: pygithub
+
+UNKNOWN
+
+
