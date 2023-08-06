@@ -1,0 +1,7 @@
+setup.py
+greeter/__init__.py
+greeter.egg-info/PKG-INFO
+greeter.egg-info/SOURCES.txt
+greeter.egg-info/dependency_links.txt
+greeter.egg-info/requires.txt
+greeter.egg-info/top_level.txt
