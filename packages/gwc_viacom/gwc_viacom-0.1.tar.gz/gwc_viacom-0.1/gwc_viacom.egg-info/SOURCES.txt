@@ -1,0 +1,7 @@
+setup.py
+gwc_viacom/__init__.py
+gwc_viacom.egg-info/PKG-INFO
+gwc_viacom.egg-info/SOURCES.txt
+gwc_viacom.egg-info/dependency_links.txt
+gwc_viacom.egg-info/not-zip-safe
+gwc_viacom.egg-info/top_level.txt
