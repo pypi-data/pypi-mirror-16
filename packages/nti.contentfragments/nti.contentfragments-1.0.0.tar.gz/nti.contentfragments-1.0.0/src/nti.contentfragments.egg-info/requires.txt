@@ -1,0 +1,19 @@
+setuptools
+html5lib[datrie]
+lxml
+repoze.lru
+zope.component
+zope.event
+zope.interface
+zope.mimetype >= 2.1.0
+zope.security
+zope.cachedescriptors
+nti.schema
+
+[:python_version == "2.7"]
+dolmen.builtins
+
+[test]
+pyhamcrest
+zope.testing
+nti.testing
