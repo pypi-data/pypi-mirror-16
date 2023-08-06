@@ -1,0 +1,17 @@
+genetables/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+genetables/filereader.py,sha256=LemsliZ1T-YeP8N6k-ncnfSatWJshfWW3fbUqzELJek,4354
+genetables/gff.py,sha256=Qmhv3h28A9hkJCvtima_q-fD4jhhmLpVwFJQebcg37c,1462
+genetables/gtbed.py,sha256=q399U7FxFPuO1xK0TGPlee3JYtG0I3yzGxRT0gumdeI,1678
+genetables/nucleotides.py,sha256=zmrV9n_Y1aD-NtH7gvhVRxnJNhKs0mRQfbbpVZ8EYdg,3766
+genetables/reader.py,sha256=DiudVv8Hl70_JugP7sKXTIbzRymShsvRS2rtJe9dFZI,2268
+genetables-0.1.1.data/scripts/famap,sha256=MTTt4nBQ9knjTdsRhCxT9RMYFnoxCIe2unJu_2gn13s,4545
+genetables-0.1.1.data/scripts/gffspace,sha256=2gkJum8FpXpOWjJTqmNSjfg2WKXJh3TI4ZvecmljRK8,5680
+genetables-0.1.1.data/scripts/ntxtab,sha256=wXX2w9inCRTCbi8eBmqCttKTFbePBOfSFzRtl1AWM90,3596
+genetables-0.1.1.data/scripts/rnafolder,sha256=O5u3nZLqL84-VKkVPJ4dfUaa2QNar1eDDfQwzatuQGE,3771
+genetables-0.1.1.data/scripts/tadlads,sha256=LUkGZfr7PYcijuAL7a9PVg0AqWIdrRP8aPZdPtEm-gc,6597
+genetables-0.1.1.dist-info/DESCRIPTION.rst,sha256=RnEXsMZLastnAmMDVDaMFph5gv1NJ-plE66diZe8sAQ,1204
+genetables-0.1.1.dist-info/METADATA,sha256=Yr_s1P5iF8u8PzSfl3u3IkbVSJCYAQ0DjBBkaD1J0ig,1584
+genetables-0.1.1.dist-info/RECORD,,
+genetables-0.1.1.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+genetables-0.1.1.dist-info/metadata.json,sha256=1VYUPef0Q5QqxYF3-sch-jpIJCIWQ5iVpNfIF-J6TAw,578
+genetables-0.1.1.dist-info/top_level.txt,sha256=6kyy1prFNUqZD44z9sGSyOgswO4_johA6_t8ey1tgAw,11
