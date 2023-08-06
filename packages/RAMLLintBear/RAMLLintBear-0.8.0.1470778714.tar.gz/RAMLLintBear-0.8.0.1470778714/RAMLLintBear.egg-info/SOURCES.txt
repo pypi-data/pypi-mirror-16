@@ -1,0 +1,7 @@
+setup.py
+RAMLLintBear/__init__.py
+RAMLLintBear.egg-info/PKG-INFO
+RAMLLintBear.egg-info/SOURCES.txt
+RAMLLintBear.egg-info/dependency_links.txt
+RAMLLintBear.egg-info/entry_points.txt
+RAMLLintBear.egg-info/top_level.txt
