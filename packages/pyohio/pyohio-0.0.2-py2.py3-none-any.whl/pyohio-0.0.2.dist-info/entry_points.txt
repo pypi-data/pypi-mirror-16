@@ -1,0 +1,3 @@
+[console_scripts]
+pyohio = pyohio.cli:pyohio_cli
+

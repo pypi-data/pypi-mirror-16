@@ -1,0 +1,55 @@
+Metadata-Version: 2.0
+Name: pyohio
+Version: 0.0.2
+Summary: PyOhio-related tools.
+Home-page: https://github.com/tylerdave/pyohio
+Author: Dave Forgac
+Author-email: tylerdave@tylerdave.com
+License: MIT
+Keywords: pyohio
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: click
+
+===============================
+PyOhio
+===============================
+
+.. image:: https://img.shields.io/travis/tylerdave/pyohio.svg
+        :target: https://travis-ci.org/tylerdave/pyohio
+
+.. image:: https://img.shields.io/pypi/v/pyohio.svg
+        :target: https://pypi.python.org/pypi/pyohio
+
+
+PyOhio-related tools.
+
+* Free software: MIT license
+* Documentation: (COMING SOON!) https://pyohio.readthedocs.org.
+
+Features
+--------
+
+* TODO
+
+
+
+
+History
+-------
+
+0.0.1 (2016)
+---------------------
+
+None yet.
+
+
