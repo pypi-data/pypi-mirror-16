@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: docker-dev
+Version: 1.0a2
+Summary: Development tools for Docker
+Home-page: https://github.com/2degrees/docker-dev
+Author: 2degrees
+Author-email: 2degrees-floss@googlegroups.com
+License: UNKNOWN
+Description: Development tools for Docker
+        ============================
+Platform: UNKNOWN
