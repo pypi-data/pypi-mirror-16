@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: jupyterhub-client
+Version: 0.1.0
+Summary: Client for JupyterHub REST API
+Home-page: http://github.com/minrk/jupyterhub-client
+Author: Min Ragan-Kelley
+Author-email: benjaminrk@gmail.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4

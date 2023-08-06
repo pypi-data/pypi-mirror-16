@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+jupyterhub_client/__init__.py
+jupyterhub_client/async.py
+jupyterhub_client/base.py
+jupyterhub_client/sync.py
+jupyterhub_client.egg-info/PKG-INFO
+jupyterhub_client.egg-info/SOURCES.txt
+jupyterhub_client.egg-info/dependency_links.txt
+jupyterhub_client.egg-info/requires.txt
+jupyterhub_client.egg-info/top_level.txt
