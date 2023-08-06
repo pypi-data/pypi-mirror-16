@@ -1,0 +1,6 @@
+django >= 1.9, < 1.10
+bottle
+commonmark
+waitress
+bleach
+future
