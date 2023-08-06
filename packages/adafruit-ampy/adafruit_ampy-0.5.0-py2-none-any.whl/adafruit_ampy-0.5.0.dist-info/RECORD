@@ -1,0 +1,11 @@
+adafruit_ampy-0.5.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+adafruit_ampy-0.5.0.dist-info/METADATA,sha256=I9iku2WWVxLISb83iK6FZ_E7EU_IazaY0dmr5Kl9KMc,891
+adafruit_ampy-0.5.0.dist-info/RECORD,,
+adafruit_ampy-0.5.0.dist-info/WHEEL,sha256=JTb7YztR8fkPg6aSjc571Q4eiVHCwmUDlX8PhuuqIIE,92
+adafruit_ampy-0.5.0.dist-info/entry_points.txt,sha256=zTIIUmlgcc2fs6jESYBEpIg6vF6O0rHJrTPpe0FVhdM,39
+adafruit_ampy-0.5.0.dist-info/metadata.json,sha256=NrEhC982yBB9NnACTTR2A5x4u_3fMObKSnh0UfkzEFw,1153
+adafruit_ampy-0.5.0.dist-info/top_level.txt,sha256=V20_LZHKhLbhLQGa8h22OpV1VD6ngxxFNEukjkCBn2c,5
+ampy/__init__.py,sha256=fKdZ4aysUzy7wenWDyg1sF2CTzR3er7n6ZaL-k3idrU,52
+ampy/cli.py,sha256=qwz0u4oS_RhMLfAYWrm95azTygKPOqRzSLKAGM54kEs,6307
+ampy/files.py,sha256=nZpTOfVrLG8VJgGRZkK0191YEzm1_E8AmtdbkriBanc,6409
+ampy/pyboard.py,sha256=fo6Zpls36Zko8qDd5OwfbX8JTT3ASFrprFjO0xAcQdc,11601
