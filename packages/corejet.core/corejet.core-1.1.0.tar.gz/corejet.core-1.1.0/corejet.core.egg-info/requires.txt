@@ -1,0 +1,7 @@
+setuptools
+lxml
+argparse
+python-dateutil
+unittest2
+zope.interface
+zope.schema
