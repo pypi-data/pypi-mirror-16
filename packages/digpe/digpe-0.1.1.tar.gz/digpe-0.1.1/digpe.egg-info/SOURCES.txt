@@ -1,0 +1,13 @@
+setup.py
+digpe/__init__.py
+digpe/extractor.py
+digpe/normalizer.py
+digpe/preprocessor.py
+digpe.egg-info/PKG-INFO
+digpe.egg-info/SOURCES.txt
+digpe.egg-info/dependency_links.txt
+digpe.egg-info/requires.txt
+digpe.egg-info/top_level.txt
+digpe/unit/__init__.py
+digpe/unit/price_units.py
+digpe/unit/time_units.py
