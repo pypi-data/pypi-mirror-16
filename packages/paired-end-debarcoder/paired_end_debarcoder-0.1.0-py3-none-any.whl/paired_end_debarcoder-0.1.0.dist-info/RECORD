@@ -1,0 +1,13 @@
+paired_end_debarcoder/__init__.py,sha256=bvm645UXsU-bfBiTkseS_3sdmLgsE0aCwO3K2t-vnRg,26
+paired_end_debarcoder/barcodes.py,sha256=tJGWXuVBYN99UAV0QW2syiLLL2A1eldPqpBVZl-2fWY,5815
+paired_end_debarcoder/demultiplexfasta.py,sha256=GNmbfqWuQQDaWP-vX-U4gtVTrrpFtRvcGA3E-TdyiBY,7611
+paired_end_debarcoder/demultiplexfasta_parallel.py,sha256=hVu-YJjYD8KBdLbWDwOu3OTTEDCNcUJjYouhqAbREhY,7046
+paired_end_debarcoder/demultiplexfastq.py,sha256=ZRy3qeRWnDf-aegmsegA2EfZqso5cSbqoBb55X0kXFw,6650
+paired_end_debarcoder/fastq_concat.py,sha256=M-7YgrU1g-cZhl9qO_y8Re2UBFvtCw0anSoqJP6t-VQ,4490
+paired_end_debarcoder-0.1.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+paired_end_debarcoder-0.1.0.dist-info/METADATA,sha256=B68EnsZk6lqsQaBRwl3AWZPIG2y7sVTbR0-c55sB1w4,324
+paired_end_debarcoder-0.1.0.dist-info/RECORD,,
+paired_end_debarcoder-0.1.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+paired_end_debarcoder-0.1.0.dist-info/entry_points.txt,sha256=IYi-FFt4iltFY-HBPvmlrkVjYl_7cXJxtm-5MjOtpW4,366
+paired_end_debarcoder-0.1.0.dist-info/metadata.json,sha256=zJzFZIUMTU16JgXrE4UeRke5SA9cI4FxOvKDQALy_cI,1119
+paired_end_debarcoder-0.1.0.dist-info/top_level.txt,sha256=z-aysJr3rtoAf0RbuGppchnSKcPANuH5fNnHS0fzyxI,22

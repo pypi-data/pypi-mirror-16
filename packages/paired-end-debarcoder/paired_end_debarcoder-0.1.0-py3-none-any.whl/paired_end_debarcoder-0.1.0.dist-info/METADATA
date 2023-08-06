@@ -1,0 +1,18 @@
+Metadata-Version: 2.0
+Name: paired-end-debarcoder
+Version: 0.1.0
+Summary: UNKNOWN
+Home-page: UNKNOWN
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: Biopython (>=1.6.5)
+Requires-Dist: Click (>=0.6.0)
+Requires-Dist: cytoolz
+Requires-Dist: multiprocess
+Requires-Dist: schema
+
+UNKNOWN
+
+
