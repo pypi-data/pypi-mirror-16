@@ -1,0 +1,10 @@
+README.rst
+setup.cfg
+setup.py
+typejudge.py
+typejudge.egg-info/PKG-INFO
+typejudge.egg-info/SOURCES.txt
+typejudge.egg-info/dependency_links.txt
+typejudge.egg-info/entry_points.txt
+typejudge.egg-info/requires.txt
+typejudge.egg-info/top_level.txt
