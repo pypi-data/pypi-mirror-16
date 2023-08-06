@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: FaBo7Seg_TLC59208
+Version: 1.0.0
+Summary: This is a library for the FaBo 7segment LED I2C Brick.
+Home-page: https://github.com/FaBoPlatform/FaBo7Segment-TLC59208-Python
+Author: FaBo
+Author-email: info@fabo.io
+License: Apache License 2.0
+Description: FaBo7Segment-TLC59208-Python
+        ============================
+        
+        How to install.
+        ---------------
+        
+        ::
+        
+            pip install FaBo7Seg_TLC59208
+        
+        FaBo 7Segment LED I2C Brick
+        ---------------------------
+        
+        　`#211 7Segment LED I2C Brick <http://fabo.io/211.html>`__
+        
+        TLC59208
+        --------
+        
+        　8-Bit I2C Bus LED Driver.
+        
+        TLC59208 Datasheet
+        ~~~~~~~~~~~~~~~~~~
+        
+        　`TLC59208
+        Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/ADT7410.pdf>`__
+        
+        Releases
+        --------
+        
+        -  1.0.0 Initial release.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development
+Classifier: Topic :: System :: Hardware
