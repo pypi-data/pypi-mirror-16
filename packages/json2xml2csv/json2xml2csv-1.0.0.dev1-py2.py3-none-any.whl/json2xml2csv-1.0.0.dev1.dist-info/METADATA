@@ -1,0 +1,34 @@
+Metadata-Version: 2.0
+Name: json2xml2csv
+Version: 1.0.0.dev1
+Summary: JSON/XML/CSV Converter
+Home-page: https://github.com/jeremychen0127/Json2Xml2Csv
+Author: Jeremy Chen
+Author-email: jeremychen0127@gmail.com
+License: MIT
+Keywords: JSON XML CSV convert converter conversion library
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+
+# Json2Xml2Csv
+
+Json2Xml2Csv is an utility for converting data files. Currently only support JSON to XML. The others are still being implemented
+
+### Execute as Converter
+After cloning or downloading Json2Xml2Csv, go into the project directory.
+
+Simply run `./json2xml SOURCE_JSON_FILE_PATH`
+
+The converted XML file will be in the same directory as this script
+
+

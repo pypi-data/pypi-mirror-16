@@ -1,0 +1,11 @@
+json2xml2csv/json_to_xml_utils.py,sha256=ant_E9bdqpsaq0rEAA1EWIr_KkddpGyRO17fL7PVvBs,1925
+json2xml2csv/__init__.py,sha256=F0Vqxzplyi9q75E-1XzytHhotb-0KzWxZsvWaOPIOVU,26
+json2xml2csv/json_to_xml.py,sha256=zdrK8Kfkz5PMx5SduW4ImIkPU4nBhikmrj0TggPVVIc,1775
+json2xml2csv/args.py,sha256=mrOP53GpkYI2jYOtlnIxz4rBz44Vqbl_sYPRkt_49ts,496
+json2xml2csv-1.0.0.dev1.dist-info/RECORD,,
+json2xml2csv-1.0.0.dev1.dist-info/entry_points.txt,sha256=vQjs04SscJz_lO_5ja1z18gVGwJqjHsOnRvk20xb_G8,64
+json2xml2csv-1.0.0.dev1.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+json2xml2csv-1.0.0.dev1.dist-info/METADATA,sha256=kCekH34GxdYmqnQZz-MMt5i2AtZrf7WXj7V8BXttOAU,1211
+json2xml2csv-1.0.0.dev1.dist-info/DESCRIPTION.rst,sha256=yF8-mK6FarCHVQAMCXMYgE8iuidw7zpReXUVl6SxqLc,363
+json2xml2csv-1.0.0.dev1.dist-info/top_level.txt,sha256=42hrtkRHdN037MDafD4PDI-1-K2uFL9o7qm_1i8Rz_k,13
+json2xml2csv-1.0.0.dev1.dist-info/metadata.json,sha256=hRVnghZCedX6uQ5sUJZyh6lg3H4_67EePFK-e3b3Wv4,1155
