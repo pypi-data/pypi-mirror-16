@@ -1,0 +1,10 @@
+XStatic_smart_table-1.4.13.0.dist-info/DESCRIPTION.rst,sha256=ys6_H1ha4gpwIgdF1ebVodWMQLTjeHwexNVEY6bsR78,608
+XStatic_smart_table-1.4.13.0.dist-info/METADATA,sha256=5r1L86uMQMdj8mxav9GXDqaQ4vF-fai_eNCeBbgY-6A,685
+XStatic_smart_table-1.4.13.0.dist-info/RECORD,,
+XStatic_smart_table-1.4.13.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+XStatic_smart_table-1.4.13.0.dist-info/metadata.json,sha256=CKai8qMHLnS397ZUvDQU6MUwui_HbU8IhO-d0Ei2IQ0,223
+XStatic_smart_table-1.4.13.0.dist-info/top_level.txt,sha256=tDpXyaHF81JGnzDNskkXZNoFrs3YW_a1ueuzoAmLNas,8
+xstatic/__init__.py,sha256=G-d438vPx7m_ks5e9XTtM3u7LDRO5dSSukibukWmyPM,56
+xstatic/pkg/__init__.py,sha256=G-d438vPx7m_ks5e9XTtM3u7LDRO5dSSukibukWmyPM,56
+xstatic/pkg/angular_smart_table/__init__.py,sha256=OTsd5CmeMKmIMeUQ1erCvl_gdt2QRMBV4qxvgs6DbqQ,2007
+xstatic/pkg/angular_smart_table/data/smart-table.js,sha256=1XAbvOS9CcqGRSp_y9sdsepFtLACIsk7ioXbS2_8ULY,37946
