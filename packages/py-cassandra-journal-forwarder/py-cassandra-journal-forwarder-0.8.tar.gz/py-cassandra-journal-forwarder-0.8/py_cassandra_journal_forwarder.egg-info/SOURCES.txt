@@ -1,0 +1,9 @@
+MANIFEST.in
+settings.yaml
+setup.py
+py_cassandra_journal_forwarder/__init__.py
+py_cassandra_journal_forwarder.egg-info/PKG-INFO
+py_cassandra_journal_forwarder.egg-info/SOURCES.txt
+py_cassandra_journal_forwarder.egg-info/dependency_links.txt
+py_cassandra_journal_forwarder.egg-info/requires.txt
+py_cassandra_journal_forwarder.egg-info/top_level.txt

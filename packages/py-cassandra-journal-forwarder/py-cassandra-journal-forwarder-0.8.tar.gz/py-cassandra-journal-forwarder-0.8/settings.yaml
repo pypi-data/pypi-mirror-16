@@ -1,0 +1,26 @@
+# YAML
+#
+#
+# These are the settings used by cassandra-journal-forwarder.py
+#
+# These are specific to the cassandra cluster you are connecting to to save
+# your journal entries. This program communicates using the native Cassandra
+# protocol, so whatever you connect to cqlsh with is what you should set here.
+#
+# keyspace and table should be fairly self explanatory.
+#
+cassandra:
+  port: 9042
+  keyspace: logging
+  table: ingest
+  contact_points: ['192.168.1.151', '192.168.1.152', '192.168.1.153']
+# 
+# cursor_file is the location to save the journal cursor/position the scraper
+# is up to, make sure the user running this program has read/write privilages
+# for the file.
+# You can specify an absolute path or, using quotes can have a path relative
+# to the home directory of the user to run the scraper
+#
+# eg.
+# "{home}/.cursor
+cursor_file: "{home}/.cursor"
