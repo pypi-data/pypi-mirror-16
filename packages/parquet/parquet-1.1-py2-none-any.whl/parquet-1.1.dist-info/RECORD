@@ -1,0 +1,14 @@
+parquet/__init__.py,sha256=cUTfRm5YjXKvxGvGUAYt_0wCvMJMgSc_hHsoOXCGhFY,20094
+parquet/__main__.py,sha256=0kDkTYSadeF5ZMtau2q1PWcjAHxNGPp-sDy5v0k7GyM,2265
+parquet/bitstring.py,sha256=3S4igX0VwwovObc3s-vWTrDm2M13847G3XeNT9qk6Sc,568
+parquet/encoding.py,sha256=uds1AY9bPN-O0CHQvL3s6qXNr9gNdC77jlChyORZXoU,7371
+parquet/parquet.thrift,sha256=K-2LXmuqtnxEioPmyKkecDzkegux60GYIHMgj_DOBUQ,17356
+parquet/schema.py,sha256=1tHNMxeImHH3-xTXllPYXQjC5-lpX4xt-Bcbbzs-bk8,1738
+parquet/thrift_filetransport.py,sha256=8C4wLxcpK7XdVVHOtCPt6RkCFhEL0l1g-g26XlsHTlU,424
+parquet-1.1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+parquet-1.1.dist-info/METADATA,sha256=CEnX8xMI0SBS0BLCnf7Bjuy-VF2OdvOtuNf2-iFtr8I,1009
+parquet-1.1.dist-info/RECORD,,
+parquet-1.1.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+parquet-1.1.dist-info/entry_points.txt,sha256=9x0SK9KrbBnrZkJMFt_IINk9lf477aqKZC3kM3wBnNM,51
+parquet-1.1.dist-info/metadata.json,sha256=OhMlS0y-hbLBNOQ3KmKW_UVqlfBu1Oyid1XbtiWfRsI,1293
+parquet-1.1.dist-info/top_level.txt,sha256=LIDfh7-4PoWpqSCvq-bId_hx4Q-sKLCCto4jh82_0es,8
