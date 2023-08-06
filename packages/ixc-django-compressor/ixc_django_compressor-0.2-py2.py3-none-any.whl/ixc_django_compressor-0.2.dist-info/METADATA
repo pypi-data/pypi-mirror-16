@@ -1,0 +1,20 @@
+Metadata-Version: 2.0
+Name: ixc-django-compressor
+Version: 0.2
+Summary: Improvements to django-compressor.
+Home-page: https://github.com/ixc/ixc-django-compressor
+Author: Interaction Consortium
+Author-email: studio@interaction.net.au
+License: MIT
+Platform: UNKNOWN
+
+What is this?
+=============
+
+Improvements to
+`django-compressor <https://github.com/django-compressor/django-compressor>`__:
+
+-  Add an offline context generator that yields all possible
+   combinations of required and optional context variables.
+
+
