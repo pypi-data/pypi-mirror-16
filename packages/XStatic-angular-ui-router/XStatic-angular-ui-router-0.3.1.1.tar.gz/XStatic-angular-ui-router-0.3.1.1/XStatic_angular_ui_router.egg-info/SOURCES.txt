@@ -1,0 +1,14 @@
+.gitignore
+MANIFEST.in
+README.txt
+setup.cfg
+setup.py
+XStatic_angular_ui_router.egg-info/PKG-INFO
+XStatic_angular_ui_router.egg-info/SOURCES.txt
+XStatic_angular_ui_router.egg-info/dependency_links.txt
+XStatic_angular_ui_router.egg-info/top_level.txt
+xstatic/__init__.py
+xstatic/pkg/__init__.py
+xstatic/pkg/ui_router/__init__.py
+xstatic/pkg/ui_router/data/angular-ui-router.js
+xstatic/pkg/ui_router/data/angular-ui-router.min.js
