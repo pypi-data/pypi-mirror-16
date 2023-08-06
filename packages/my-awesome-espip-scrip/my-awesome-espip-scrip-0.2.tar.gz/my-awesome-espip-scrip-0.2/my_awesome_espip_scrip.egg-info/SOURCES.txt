@@ -1,0 +1,5 @@
+setup.py
+my_awesome_espip_scrip.egg-info/PKG-INFO
+my_awesome_espip_scrip.egg-info/SOURCES.txt
+my_awesome_espip_scrip.egg-info/dependency_links.txt
+my_awesome_espip_scrip.egg-info/top_level.txt
