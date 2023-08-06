@@ -1,0 +1,9 @@
+setup.py
+giti/__init__.py
+giti/config.py
+giti/giti.py
+giti.egg-info/PKG-INFO
+giti.egg-info/SOURCES.txt
+giti.egg-info/dependency_links.txt
+giti.egg-info/entry_points.txt
+giti.egg-info/top_level.txt
