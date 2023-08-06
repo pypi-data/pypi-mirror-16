@@ -1,0 +1,14 @@
+setup.py
+ftn_jsd.egg-info/PKG-INFO
+ftn_jsd.egg-info/SOURCES.txt
+ftn_jsd.egg-info/dependency_links.txt
+ftn_jsd.egg-info/not-zip-safe
+ftn_jsd.egg-info/requires.txt
+ftn_jsd.egg-info/top_level.txt
+src/generated/__init__.py
+src/generated/base_generator.py
+src/generated/execute.py
+src/generated/generate.py
+src/generated/generate_django.py
+src/generated/generate_play.py
+src/generated/root.py
