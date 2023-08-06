@@ -1,0 +1,16 @@
+{% extends 'arpegio-core/base.html' %}
+
+{% block head %}
+  {% with title=page.title %}
+    {{ block.super }}
+  {% endwith %}
+{% endblock %}
+
+{% block content %}
+<div>
+  <h2>{{ page.title }}</h2>
+  <div>
+    {{ page.content }}
+  </div>
+</div>
+{% endblock %}
