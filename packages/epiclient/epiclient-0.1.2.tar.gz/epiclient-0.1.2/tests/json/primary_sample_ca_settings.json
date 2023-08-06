@@ -1,0 +1,87 @@
+{
+    "role": "primary",
+    "ca_name_id": "my_dev_epiphan",
+    "ca_url": "http://epiphan.pearl.url",
+    "ca_capture_card_id": "D12345678",
+    "ca_serial_number": "ED123456",
+    "cluster_name_id": "cluster-name",
+    "cluster_env": "dev",
+    "mh_admin_url": "http://cluster.dev.url.edu",
+    "firmware_version": "epiphan_firmware_version",
+    "mhpearl_version": "some_version",
+    "mhpearl_file_search_range": 58,
+    "mhpearl_update_frequency": 123,
+    "mh_ca_name": "my-dev-epiphan",
+    "location_name_id": "lab",
+    "pr_vconnector": "sdi",
+    "pr_vinput": "a",
+    "pn_vconnector": "hdmi",
+    "pn_vinput": "b",
+    "source_deinterlacing": "on",
+    "date_and_time": {
+        "ntp_server": "0.nz.pool.ntp.org",
+        "timezone": "US/Alaska"
+    },
+    "touchscreen": {
+        "episcreen_timeout": 579
+    },
+    "maintenance": {
+        "permanent_logs": "on"
+    },
+    "channel_encodings": {
+        "codec": "h.264",
+        "vprofile": "100",
+        "vencpreset": "5",
+        "vkeyframeinterval": 1,
+        "fpslimit": 30,
+        "audio": "on",
+        "audiochannels": "1",
+        "audiopreset": "libfaac;44100"
+    },
+    "channels": {
+        "dce_pr": {
+            "channel_id": "1",
+            "encodings": {
+                "framesize": "1280x720",
+                "vbitrate": 9000,
+                "audiobitrate": 160
+            }
+        },
+        "dce_pn": {
+            "channel_id": "2",
+            "encodings": {
+                "framesize": "1920x1080",
+                "vbitrate": 9000,
+                "audiobitrate": 160
+            }
+        },
+        "dce_live": {
+            "channel_id": "3",
+            "encodings": {
+                "framesize": "1920x1080",
+                "vbitrate": 4000,
+                "audiobitrate": 96
+            },
+            "rtmp_url": "rtmp://p.blobblob.i.streamingservice.org/EntryPoint",
+            "stream_name": "my-dev-epiphan"
+        },
+        "dce_live_lowbr": {
+            "channel_id": "4",
+            "encodings": {
+                "framesize": "960x270",
+                "vbitrate": 250,
+                "audiobitrate": 64
+            },
+            "rtmp_url": "rtmp://p.blobblob.i.streamingservice.org/EntryPoint",
+            "stream_name": "my-dev-epiphan"
+        }
+    },
+    "recorders": {
+        "dce_prpn": {
+            "recorder_id": "1",
+            "timelimit": 360,
+            "sizelimit": 64000000,
+            "output_format": "avi"
+        }
+    }
+}

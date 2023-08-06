@@ -1,0 +1,333 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "dce_role_settings",
+    "description": "Settings for a DCE epiphan-pearl with configured role",
+    "allOf": [
+        {"$ref": "#/definitions/mhcluster_properties"},
+        {"$ref": "#/definitions/ca_properties"},
+        {"$ref": "#/definitions/mhpearl_settings"},
+        {"$ref": "#/definitions/location_settings"},
+        {"$ref": "#/definitions/vendor_settings"},
+        {"$ref": "#/definitions/firmware_versions"},
+
+        {
+            "required": ["role", "channel_encodings", "channels", "recorders"],
+            "properties": {
+                "role": {
+                    "enum": ["primary", "secondary", "experimental"]
+                },
+                "channels": {
+                    "type": "object",
+                    "required": ["dce_pr", "dce_pn", "dce_live", "dce_live_lowbr"],
+                    "properties": {
+                        "dce_pr": {
+                            "$ref": "#/definitions/channel_settings"
+                        },
+                        "dce_pn": {
+                            "$ref": "#/definitions/channel_settings"
+                        },
+                        "dce_live": {
+                            "allOf": [
+                            {"$ref": "#/definitions/channel_settings"},
+                            {"$ref": "#/definitions/live_settings"}
+                            ]
+                        },
+                        "dce_live_lowbr": {
+                            "allOf": [
+                            {"$ref": "#/definitions/channel_settings"},
+                            {"$ref": "#/definitions/live_settings"}
+                            ]
+                        }
+                    }
+                },
+                "channel_encodings": {
+                    "allOf": [{
+                    "$ref": "#/definitions/common_encodings_settings"}]
+                },
+                "recorders": {
+                    "type": "object",
+                    "required": ["dce_prpn"],
+                    "properties": {
+                        "dce_prpn": {
+                            "type": "object",
+                            "description": "presenter-presentation merged recorder",
+                            "required": ["timelimit", "sizelimit", "output_format"],
+                            "properties": {
+                                "recorder_id": {
+                                    "type": "string",
+                                    "description": "number id for this recorder"
+                                },
+                                "timelimit": {
+                                    "type": "integer",
+                                    "description": "max time, in minutes",
+                                    "default": 360
+                                },
+                                "sizelimit": {
+                                    "type": "integer",
+                                    "description": "max size, in kb",
+                                    "default": 64000000
+                                },
+                                "output_format": {
+                                    "enum": ["avi", "ts", "mov", "mp4"],
+                                    "description": "recording file type",
+                                    "default": "avi"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "definitions": {
+        "ca_properties": {
+            "type": "object",
+            "description": "properties for a epiphan-pearl capture agent",
+            "required": ["ca_name_id", "ca_url"],
+            "properties": {
+                "ca_name_id": {
+                    "type": "string",
+                    "description": "unique name given within dce for this device"
+                },
+                "ca_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "url to access device webui and http api"
+                },
+                "ca_capture_card_id": {
+                    "type": "string",
+                    "description": "capture_card_id(source)"
+                },
+                "ca_serial_number": {
+                    "type": "string",
+                    "description": "device serial number"
+                }
+            }
+        },
+        "live_settings": {
+            "type": "object",
+            "required": ["rtmp_url", "stream_name"],
+            "properties": {
+                "rtmp_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "rtmp akamai url the capture agent must push live streaming to"
+                },
+                "stream_name": {
+                    "type": "string"
+                }
+            }
+        },
+        "channel_settings": {
+            "type": "object",
+            "required": ["encodings"],
+            "properties": {
+                "channel_id": {
+                    "type": "string",
+                    "description": "number id assigned for this channel"
+                },
+                "encodings": {
+                    "type": "object",
+                    "description": "encodings settings specific for a channel",
+                    "required": ["framesize", "vbitrate", "audiobitrate"],
+                    "properties": {
+                        "framesize": {
+                            "type": "string",
+                            "default": "1280x720"
+                        },
+                        "vbitrate": {
+                            "type": "integer",
+                            "default": 9000
+                        },
+                        "audiobitrate": {
+                            "type": "integer",
+                            "default": 160
+                        }
+                    }
+                }
+            }
+        },
+        "common_encodings_settings": {
+            "type": "object",
+            "description": "encodings settings for an epiphan-pearl",
+            "properties": {
+                "autoframesize": {
+                    "enum": ["", "on"],
+                    "default": ""
+                },
+                "codec": {
+                    "enum": ["h.264", "mpeg4", "mjpeg"],
+                    "default": "h.264"
+                },
+                "vprofile": {
+                    "enum": ["66", "77", "100"],
+                    "default": "100"
+                },
+                "vencpreset": {
+                    "enum": ["0", "5"],
+                    "default": "5"
+                },
+                "vkeyframeinterval": {
+                    "enum": [0, 0.5, 1, 2, 3, 4, 5],
+                    "default": 1
+                },
+                "fpslimit": {
+                    "type": "integer",
+                    "default": 30
+                },
+                "audio": {
+                    "enum": ["on", null],
+                    "default": "on"
+                },
+                "audiochannels": {
+                    "enum": ["1", "2"],
+                    "default": "1"
+                },
+                "audiopreset": {
+                    "enum": [
+                        "pcm_s16le;22050",
+                        "pcm_s16le;44100",
+                        "pcm_s16le;48000",
+                        "libmp3lame;22050",
+                        "libmp3lame;44100",
+                        "libmp3lame;48000",
+                        "libfaac;16000",
+                        "libfaac;22050",
+                        "libfaac;44100",
+                        "libfaac;48000"
+                    ],
+                    "default": "libfaac;44100"
+                }
+            }
+        },
+        "mhpearl_settings": {
+            "type": "object",
+            "description": "settings for DCE mhpearl",
+            "properties": {
+                "mhpearl_file_search_range": {
+                    "type": "integer",
+                    "description": "range within which a recording is searched, in seconds",
+                    "default": 120
+                },
+                "mhpearl_update_frequency": {
+                    "type": "integer",
+                    "description": "frequency to poll for scheduling info",
+                    "default": 120
+                },
+                "mh_ca_name": {
+                    "type": "string",
+                    "description": "capture agent name, under which this epiphan must ask matterhorn admin host for the recordings schedule"
+                }
+            }
+        },
+        "mhcluster_properties": {
+            "type": "object",
+            "description": "settings for dce matterhorn cluster",
+            "required": ["cluster_name_id", "cluster_env", "mh_admin_url"],
+            "properties": {
+                "cluster_name_id": {
+                    "type": "string",
+                    "description": "unique name given within dce to this cluster"
+                },
+                "cluster_env": {
+                    "enum": ["prod", "stage", "dev"],
+                    "description": "which environment this cluster functions in"
+                },
+                "mh_admin_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "url for matterhorn admin host"
+                }
+            }
+        },
+        "vendor_settings": {
+            "type": "object",
+            "properties": {
+                "source_deinterlacing": {
+                    "enum": ["on", null],
+                    "description": "enable/disable deinterlacing of video sources",
+                    "default": "on"
+                },
+                "date_and_time": {
+                    "type": "object",
+                    "description": "ntp settings",
+                    "required": ["ntp_server", "timezone"],
+                    "properties": {
+                        "ntp_server": {
+                            "type": "string",
+                            "description": "ntp server ip address",
+                            "default": "0.pool.ntp.org"
+                        },
+                        "timezone": {
+                            "type": "string",
+                            "default": "US/Eastern"
+                        }
+                    }
+                },
+                "touchscreen": {
+                    "type": "object",
+                    "description": "touch screen configuration",
+                    "required": ["episcreen_timeout"],
+                    "properties": {
+                        "episcreen_timeout": {
+                            "type": "integer",
+                            "description": "device screen timeout in seconds",
+                            "default": 600
+                        }
+                    }
+                },
+                "maintenance": {
+                    "type": "object",
+                    "description": "maintenance settings",
+                    "required": ["permanent_logs"],
+                    "properties": {
+                        "permanent_logs": {
+                            "enum": ["on", ""],
+                            "default": "on"
+                        }
+                    }
+                }
+            }
+        },
+        "location_settings": {
+            "type": "object",
+            "description": "Settings for a DCE location",
+            "required": ["location_name_id"],
+            "properties": {
+                "location_name_id": {
+                    "type": "string",
+                    "description": "unique name given within dce to this location"
+                },
+                "pr_vconnector": {
+                    "enum": ["sdi", "hdmi"],
+                    "default": "sdi"
+                },
+                "pr_vinput": {
+                    "enum": ["a", "b"],
+                    "default": "a"
+                },
+                "pn_vconnector": {
+                    "enum": ["sdi", "hdmi"],
+                    "default": "sdi"
+                },
+                "pn_vinput": {
+                    "enum": ["a", "b"],
+                    "default": "b"
+                }
+            }
+        },
+        "firmware_versions": {
+            "type": "object",
+            "properties": {
+                "firmware_version": {
+                    "type": "string",
+                    "description": "version of epiphan firmware"
+                },
+                "mhpearl_version": {
+                    "type": "string",
+                    "description": "tag of mhpearl injected into epiphan firmware"
+                }
+            }
+        }
+    }
+}
