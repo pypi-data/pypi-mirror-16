@@ -1,0 +1,6 @@
+pymongo
+python-logstash
+requests
+celery
+flower
+uwsgi
