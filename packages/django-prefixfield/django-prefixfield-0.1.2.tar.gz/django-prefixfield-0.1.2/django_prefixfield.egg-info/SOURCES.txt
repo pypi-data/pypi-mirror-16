@@ -1,0 +1,15 @@
+MANIFEST.in
+setup.py
+django_prefixfield/__init__.py
+django_prefixfield/admin.py
+django_prefixfield/apps.py
+django_prefixfield/fields.py
+django_prefixfield/lookups.py
+django_prefixfield/models.py
+django_prefixfield/tests.py
+django_prefixfield/views.py
+django_prefixfield.egg-info/PKG-INFO
+django_prefixfield.egg-info/SOURCES.txt
+django_prefixfield.egg-info/dependency_links.txt
+django_prefixfield.egg-info/requires.txt
+django_prefixfield.egg-info/top_level.txt

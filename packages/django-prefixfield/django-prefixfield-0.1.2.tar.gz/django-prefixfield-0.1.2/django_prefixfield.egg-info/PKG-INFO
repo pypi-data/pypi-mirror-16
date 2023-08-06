@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: django-prefixfield
+Version: 0.1.2
+Summary: Adds a prefix field for use with Django models
+Home-page: https://github.com/Metalgrid/django-prefixfield
+Author: Iskren Hadzhinedev
+Author-email: i.hadzhinedev@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Database
