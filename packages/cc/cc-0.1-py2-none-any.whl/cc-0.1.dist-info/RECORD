@@ -1,0 +1,12 @@
+cc/words.db,sha256=eVh9CtiwWagTE-sZ7A3eH2bjOIOkZHJ81i3bH3E2pDY,3072
+cc/__main__.py,sha256=JEPjS-BeTLZRifBygMsALWQJGdQi1pOs5F02aLAYVTM,36
+cc/c.py,sha256=bGPDKLOUL2WEtEibreyVk_AH2-rsAcG87xI8_W3JOgw,3780
+cc/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cc/create_db.py,sha256=-LLL4vRYsJIzZ0TXoVc731os5VDqG34iLGaJJAfzTJA,563
+cc-0.1.dist-info/metadata.json,sha256=MZ3B1m24yBGm58n-FUvfhquwSxVQOu-N1i6ZdY1oP6o,939
+cc-0.1.dist-info/RECORD,,
+cc-0.1.dist-info/entry_points.txt,sha256=aOGaVbpUlDWbR21gIDPxJV559F5biUR5hhozbAcZ53w,37
+cc-0.1.dist-info/top_level.txt,sha256=o5YPSLsfk-ISzR6mI7m1ilDZOh6HbwFyuMB8NIJKUPE,3
+cc-0.1.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
+cc-0.1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+cc-0.1.dist-info/METADATA,sha256=t_fSxb5MDJ5k4yIqkS7vcJ0skVyE_h11jDwGarAPW6E,604
