@@ -1,0 +1,14 @@
+fishbowl/__init__.py,sha256=EIdckcj-V33sHJz26lrq8MO1O8vzaLHTGmbpy376M8g,734
+fishbowl/axes.py,sha256=nOL0TnHze4DK9QvDruu5VTH6bTScVdbUNmmT14WxAAM,1138
+fishbowl/base.py,sha256=SkqPLWDCUuMccidp4HEzoa3dDgznlNsirbBNsa55RoY,2222
+fishbowl/color.py,sha256=8PvNYO7exlW_XYrXNq5tH36A9IUin_QP8F-AwrwjhmQ,3944
+fishbowl/core.py,sha256=DKUaKlmSbgzdhONRASeNtxa2sUn3ayR95IzSqlf6lL0,3590
+fishbowl/font.py,sha256=ICD59p79R3-GW6_flU9AtknBq_HEy8Ed4eadUcVNYH0,1078
+fishbowl/config/fishbowl.axes.json,sha256=FvYdqb6xW7375uz9vmxyxJPbolM2RJvNsx63rB0hPJ4,426
+fishbowl/config/fishbowl.palettes.json,sha256=jSm67h1_ilJcBgHD8490b1Bz72vQGoEf6XDr1SFjOF0,228
+fishbowl-0.1.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+fishbowl-0.1.0.dist-info/METADATA,sha256=LQ5wyPnZaQn43ON_nysxulHsk9OpGrtHJf3Q7dNy4MI,722
+fishbowl-0.1.0.dist-info/RECORD,,
+fishbowl-0.1.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+fishbowl-0.1.0.dist-info/metadata.json,sha256=vp1A8FSazIiwrgaFpsialVem1EZnkcqwgxSN8dHuH90,892
+fishbowl-0.1.0.dist-info/top_level.txt,sha256=yFgsUdLF2Q59g9sw7BI7u-83A1AUOzXtce8ATtmS7NY,9
