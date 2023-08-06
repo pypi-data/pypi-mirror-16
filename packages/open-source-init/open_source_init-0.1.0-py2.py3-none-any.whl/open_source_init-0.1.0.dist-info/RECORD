@@ -1,0 +1,13 @@
+open_source_init/__init__.py,sha256=W4P7DrMyboizGWLo0m8dWZ1fUZ78IowKCo2sYXbn8pI,104
+open_source_init/cli.py,sha256=pCbHtUEn7q0INOAcBZKD6Lr0RfJhA9neIkRozkweqBk,1816
+open_source_init/credentials.py,sha256=Xb7melScKff5BNSriI5HCDTeXhya2iqCcsBE9vzkTyk,519
+open_source_init/github_init.py,sha256=K0AS6Oa89azAs0VafzlTM10TCka6_k5A0Kry5xc7tfI,1609
+open_source_init/pypi_init.py,sha256=YzO6D5effLN0DQlq_RZASYj0TcOYTZCXGmbNSJQSjO8,1185
+open_source_init/travis_init.py,sha256=qaa-NGJ_SdhrEzTEmlpHbjdSH0gPqs4-HkdVZRZaOMI,3426
+open_source_init-0.1.0.dist-info/DESCRIPTION.rst,sha256=Vb27DYdovwwj9qif3KQClUsaBzTojHOMJ-U1mBSiFv0,1352
+open_source_init-0.1.0.dist-info/METADATA,sha256=eVtpV0cDYzrziIX9qusVVNOn_FN6lwUc8EP5Iz4PF0U,2522
+open_source_init-0.1.0.dist-info/RECORD,,
+open_source_init-0.1.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+open_source_init-0.1.0.dist-info/entry_points.txt,sha256=sGDRhEUAfYdBmoKGBVjG1aZR9yT95xaXnjzxhoCSDx4,63
+open_source_init-0.1.0.dist-info/metadata.json,sha256=bnWO82zkUmRJKh7-A40zGXJu-V4hfwZxrKwMT45mAj4,1422
+open_source_init-0.1.0.dist-info/top_level.txt,sha256=qMQyxhcATqlVA8fBxeeFTKU6tWwl0wkI94rMyZQE9K0,17
