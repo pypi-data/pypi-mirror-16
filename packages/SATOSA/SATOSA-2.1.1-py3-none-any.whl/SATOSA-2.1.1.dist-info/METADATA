@@ -1,0 +1,23 @@
+Metadata-Version: 2.0
+Name: SATOSA
+Version: 2.1.1
+Summary: Protocol proxy (SAML/OIDC).
+Home-page: https://github.com/its-dirg/SATOSA
+Author: DIRG
+Author-email: dirg@its.umu.se
+License: Apache 2.0
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.4
+Requires-Dist: oic (==0.8.4.0)
+Requires-Dist: pyjwkest (==1.1.5)
+Requires-Dist: pysaml2 (==4.0.3)
+Requires-Dist: requests (==2.9.1)
+Requires-Dist: PyYAML (==3.11)
+Requires-Dist: gunicorn (==19.4.1)
+Requires-Dist: Werkzeug (==0.11.2)
+Requires-Dist: click (==6.6)
+
+UNKNOWN
+
+
