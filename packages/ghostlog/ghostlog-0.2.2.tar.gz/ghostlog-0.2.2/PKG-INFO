@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: ghostlog
+Version: 0.2.2
+Summary: Easily log to syslog or stdout.
+Home-page: https://bitbucket.org/spctr/spectro-ghostlog
+Author: Ezequiel Pochiero
+Author-email: ezequiel@spect.ro
+License: UNKNOWN
+Download-URL: https://bitbucket.org/spctr/spectro-ghostlog/get/v0.2.2.zip
+Description: UNKNOWN
+Keywords: log,logging,syslog
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Utilities
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Logging
+Classifier: Topic :: System :: Systems Administration
