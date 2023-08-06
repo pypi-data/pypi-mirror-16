@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: py-cassandra-journal-forwarder
+Version: 0.3
+Summary: Forwards systemd journal to a cassandra cluster
+Home-page: UNKNOWN
+Author: Max Chesterfield
+Author-email: UNKNOWN
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
