@@ -1,0 +1,20 @@
+Metadata-Version: 2.0
+Name: skywise-insight
+Version: 1.0.4
+Summary: SkyWise Insight API Python Client Library
+Home-page: https://github.com/wdtinc/skywise-insight-py
+Author: Weather Decision Technologies
+Author-email: jstewart@wdtinc.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Requires-Dist: skywise-rest-client (>=1.0.1)
+Requires-Dist: voluptuous (>=0.8.8)
+
+UNKNOWN
+
+
