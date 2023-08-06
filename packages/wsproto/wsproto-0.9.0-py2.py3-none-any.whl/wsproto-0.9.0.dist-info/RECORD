@@ -1,0 +1,11 @@
+wsproto/__init__.py,sha256=_uo57z1Ylf4iiWYpngNWtlrJlDFGQK_m63xugX_EUKQ,96
+wsproto/connection.py,sha256=OvDLAScSTb4lAarZGLccxqsJKQZAnSzH7gJd2jAVlkE,12317
+wsproto/events.py,sha256=QcEBi0fCqsAwCX1OtfmvhW8iRYxBE0-j1BgyOu3yhss,1667
+wsproto/extensions.py,sha256=9DZK4mN57YW749Wf1zw2yK2_-IUvTpcd_kjXUoKps6Q,7435
+wsproto/frame_protocol.py,sha256=ybXw-l_eVjU_qPXzP-04zJF2bul8B9wM3-lK3bQVchM,13815
+wsproto-0.9.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+wsproto-0.9.0.dist-info/METADATA,sha256=KMEw3c6ExhH4h7t8Ydw35R0-Lb5TjMnMBqoRdXjpxzU,819
+wsproto-0.9.0.dist-info/RECORD,,
+wsproto-0.9.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+wsproto-0.9.0.dist-info/metadata.json,sha256=tVHtTGWDFnFD0Y8PEoHRJxwMMTqWNi2ZCEmyA8g6kdY,955
+wsproto-0.9.0.dist-info/top_level.txt,sha256=BUdIrwL11zET0fkWkYRJ1yZKrEfvDF9DZqjhABOio6Y,8
