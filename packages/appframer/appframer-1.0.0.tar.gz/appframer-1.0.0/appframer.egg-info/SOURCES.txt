@@ -1,0 +1,11 @@
+MANIFEST.in
+setup.py
+appframer/__init__.py
+appframer/app.py
+appframer.egg-info/PKG-INFO
+appframer.egg-info/SOURCES.txt
+appframer.egg-info/dependency_links.txt
+appframer.egg-info/entry_points.txt
+appframer.egg-info/not-zip-safe
+appframer.egg-info/requires.txt
+appframer.egg-info/top_level.txt
