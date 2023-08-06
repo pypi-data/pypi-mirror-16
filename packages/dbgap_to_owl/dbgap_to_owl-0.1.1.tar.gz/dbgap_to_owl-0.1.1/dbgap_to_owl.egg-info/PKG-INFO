@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: dbgap-to-owl
+Version: 0.1.1
+Summary: Utility to convert dbgap schema to OWL representation
+Home-page: http://github.com/crDDI/dbgap_to_owl
+Author: Harold Solbrig
+Author-email: solbrig.harold@mayo.edu
+License: Apache License 2.0
+Description: Convert dbGaP schema to OWL
+Platform: UNKNOWN
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
