@@ -1,0 +1,8 @@
+setup.py
+xonsh_docker_tabcomplete.egg-info/PKG-INFO
+xonsh_docker_tabcomplete.egg-info/SOURCES.txt
+xonsh_docker_tabcomplete.egg-info/dependency_links.txt
+xonsh_docker_tabcomplete.egg-info/not-zip-safe
+xonsh_docker_tabcomplete.egg-info/requires.txt
+xonsh_docker_tabcomplete.egg-info/top_level.txt
+xontrib/docker_tabcomplete.xsh
