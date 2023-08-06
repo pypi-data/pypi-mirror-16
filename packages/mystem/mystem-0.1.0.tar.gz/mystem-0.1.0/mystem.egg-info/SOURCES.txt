@@ -1,0 +1,7 @@
+mystem.py
+setup.py
+mystem.egg-info/PKG-INFO
+mystem.egg-info/SOURCES.txt
+mystem.egg-info/dependency_links.txt
+mystem.egg-info/requires.txt
+mystem.egg-info/top_level.txt
