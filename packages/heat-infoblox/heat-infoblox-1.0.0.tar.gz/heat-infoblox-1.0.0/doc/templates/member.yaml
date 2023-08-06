@@ -1,0 +1,19 @@
+heat_template_version: 2014-10-16
+description: An Infoblox Grid Member
+parameters:
+  lan1_port:
+    type: string
+    description: the Neutron port for the LAN1 interface
+resources:
+  grid_member:
+    type: Infoblox::Grid::Member
+    properties:
+      connection: { url: "https://dnsvnf-gm/wapi/v2.3/", username: admin, password: infoblox, sslverify: False }
+      name: nios-test.infoblox.local
+      model: IB-VM-820
+      LAN1: { get_param: lan1_port }
+      licenses: ["vnios", "dns", "enterprise"]
+      gm_ip: 172.22.138.160
+outputs:
+  user_data:
+    value: { get_attr: [grid_member, user_data] }

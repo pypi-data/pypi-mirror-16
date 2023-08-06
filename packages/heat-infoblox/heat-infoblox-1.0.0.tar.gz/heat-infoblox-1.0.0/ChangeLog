@@ -1,0 +1,90 @@
+CHANGES
+=======
+
+1.0.0
+-----
+
+* update README with HaPair description
+* add anycast_loopback update support
+* fix kilo tag in test-requriments
+* Fix GridMember._resolve_attribute
+* Added locks on ns_group update
+* Add build status for stable/kilo
+
+1.0.0.b1
+--------
+
+* HA pair templates for Grid Master and Member
+* Add resource HA pair support
+* fix test requirements
+* Skip adding lan1 info if dhcp is enabled
+* Add tests for Bgp and Bgp Neighbor
+* Add 'enable_dns' field for Anycast resource
+* Enable Travis CI testing
+* Fix pep8 error
+* Add BGP AS and BGP Neighbor resources
+* Add heat template for Infoblox::Grid::Bgp resource
+* Implement update method for OSPF
+* Add tests for OSPF resource
+* Replace hardcoded path for 'plugin_dirs'
+* Load data from properties on delete
+* Make new resources compatible with kilo
+* Add template for OSPF resource
+* Update OSPF resource
+* Add 'cidr_prefix' field for ipv6 anycast address
+* Update requirements
+* Fix requirements
+* Documentation and Devstack updates
+* Refactor NetMRI Resources
+* Remove non-unicode characters
+* Set defaults for AnycastLoopback template
+* Store members as identifier for AnycastLoopback
+* Simple template for Anycast Loopback
+* Update NetMRI resources
+* Use two argument form for support_status
+* Use develop mode for install
+* Add OSPF resource
+* Add Anycast Loopback resource
+* Add Anycast Loopback resource
+* Move connection info from heat.conf to template
+* Enable use of multi-line certificate strings
+* Move connection info from heat.conf to template
+* Update README.rst
+* Install heat-infoblox requirements in devstack
+* Add NetMRI job resource
+* Add metering stack metadata back in to aggregate statistics for the stack
+* Fix unit test
+* Fix problem with delete when in autoscale group
+* Add unit test for NameServerGroupMember
+* Add additional unit tests for grid member
+* Add DNS settings unit tests
+* Add unit tests for MGMT and LAN2 Fix pep8 errors Add additional debug for NS group member deletion
+* Demo and Setup Tweaks
+* Support for MGMT and LAN2 configuration
+* Fix requirements and setup
+* Modify setup.sh to work for Juno
+* Fix pep8 errors
+* Clean up pep8 errors
+* Clean up pep8 errors
+* Back port to Juno. Add retries on HTTP requests
+* Back port to Kilo
+* Update README with more detail, add setup.sh
+* NS Group Integration
+* Add ability to enable DNS on the member
+* Unit test for WAPI params from config file
+* Move WAPI connectivity to heat.conf
+* Adjust some autoscale parameters for easier demo
+* Make scaling at very low usage for testing
+* Additional Unit Tests
+* Auto-scaling without load balancing
+* Add unit tests. Fix some test failures
+* Add admin_password property
+* Fix flake8 errors. Fix IPv6. Add handle_delete
+* Add constraints for list properties
+* Basic spin up and join, with example templates. Still rough
+* Plugin install needs sudo
+* Fix Plugin Installation
+* Initial Infoblox::Grid::Member Resource
+* Add devstack plugin
+* Add files from initial cookiecutter repository
+* Initial commit
