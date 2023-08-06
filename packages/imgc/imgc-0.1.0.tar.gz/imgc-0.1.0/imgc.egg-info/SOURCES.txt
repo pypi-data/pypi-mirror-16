@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+imgc/__init__.py
+imgc/wrap.py
+imgc.egg-info/PKG-INFO
+imgc.egg-info/SOURCES.txt
+imgc.egg-info/dependency_links.txt
+imgc.egg-info/entry_points.txt
+imgc.egg-info/requires.txt
+imgc.egg-info/top_level.txt
