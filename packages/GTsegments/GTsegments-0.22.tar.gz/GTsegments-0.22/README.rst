@@ -1,0 +1,297 @@
+Genomic & Transcriptomic segments (GTsegments)
+==============================================
+
+This program is designed to work with
+``python 2.7``, ``python 3.2+`` and ``pypy``. It will install the following libraries:
+
+- `Biopython <https://pypi.python.org/pypi/biopython/>`_
+- `NetworkX <https://pypi.python.org/pypi/networkx/>`_
+- `numpy <https://pypi.python.org/pypi/numpy>`_ (``pypy`` users, please follow the `numpypy install process <http://pypy.org/download.html#installing-numpy>`_)
+- `UFx <https://pypi.python.org/pypi/UFx>`_
+
+In addition, you can install the following library in order to display a nice progress bar and a computation time estimation:
+
+- `progressbar2 <https://pypi.python.org/pypi/progressbar2>`_
+
+
+Quick install
+-------------
+.. code-block::
+
+    pip install GTsegments
+
+Parameters
+----------
+.. code-block::
+
+    usage: gts.py [-h] [--genome_type {gbk,tsv,seq}] [--graph_type {gexf,list}]
+                  [-min INT] [-max INT] [-d THRESHOLD] [--no_filter] [-o FILE]
+                  [-no_dom] [-m | --no_gene_list | --sgs_like_headers] [-q]
+                  COEXP_GRAPH [GENOME [GENOME ...]]
+
+    Compute the list of GTsegments from a genome and a coexpression network.
+
+    example:
+    gts.py -min 2 -max 50 -d 0.6 coexp_graph.gexf genome.gbk
+
+    positional arguments:
+      COEXP_GRAPH           Coexpression graph
+      GENOME                genome file(s) containing genomic organization of
+                            chromosomes
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -q, --quiet           Quiet mode: display only critical errors
+
+    File type:
+      --genome_type {gbk,tsv,seq}
+                            Type of the genome file(s) (default: gbk)
+      --graph_type {gexf,list}
+                            Type of the coexpression graph file (default: gexf)
+
+    GTsegments size:
+      -min INT, --min_size INT
+                            Minimum length of a GTsegment (default: 2)
+      -max INT, --max_size INT
+                            Maximum length of a GTsegment (default: maximum
+                            possible)
+
+    Density option:
+      -d THRESHOLD, --density THRESHOLD
+                            Select GTsegments with a genomic density ≥ THRESHOLD
+                            in ]0,1] (default: 0.6)
+      --no_filter           Do not apply density filtering
+
+    Output options:
+      -o FILE, --output FILE
+                            Output file name
+      -no_dom, --no_domination
+                            Keep all the GTsegments instead of the dominant ones
+      -m, --matrix          Output the density matrix instead of the listing of
+                            GTsegments
+      --no_gene_list        Do not add the gene list column in the listing of
+                            GTsegments
+      --sgs_like_headers    Produce a listing of GTsegments with headers from
+                            listing of SGS
+
+Inputs
+------
+
+The program ``gty.py`` asks two types of data: an unweighted coexpression network and some genome files describing the genomic organisation of one or many oragnisms. Missing genes and unmatched genes in the coexpression graph are allowed.
+
+
+Coexpression graph
+++++++++++++++++++
+
+The program ``gty.py`` accepts coexpression files under the ``.gexf`` file format or text file containing a listing of nodes and vertices.
+
+The ``.gexf`` format
+::::::::::::::::::::
+
+When using the ``.gexf`` format (option ``graph_type gexf``), the string in the  field `label` of each node is considered as the id of the gene associated to its node.
+
+The listing format
+::::::::::::::::::
+
+The listing format (option ``graph_type list``) is quite simple. It is a list of nodes (optional) and edges describing the coexpression network. Only one node or edge is allowed per line. Nodes are gene ids and edges are couple of nodes separated by a blank character (tabulation, space, etc.)
+
+Comments are allowed by using # at the begining of a line. Using # elsewhere won't be a considered as a comment.
+
+Example
+,,,,,,,
+
+The following file ``graph.txt`` is a list of nodes and edges. It will be used as support later in this documentation.
+
+.. code-block::
+
+    # a line that begins with # is a comment (but # elsewhere won't be a considered as a comment)
+    0
+    1
+    # nodes are not mandatory but can exist in the graph file
+    2       4
+    4       5
+    7       8
+    6       9
+    6       10
+    9       10
+    12      16
+    14      15
+    14      16
+    14      18
+    11      17
+    17      23
+    25      1
+    # The node 26 does not exist in the genome (commented) and will ignored
+    25      26
+
+
+Genome
+++++++
+
+The program ``gty.py`` accepts genome files under the GenBank file format (``--genome_type gbk``), files listing the genomic informations (``--genome_type tsv``) or simply text files giving each the sequence of genes of a chromome (``--genome_type seq``).
+
+The GenBank format
+::::::::::::::::::::
+
+The program ``gty.py`` can use `GenBank <http://www.insdc.org/documents/feature_table.html>`_ files as input under the following restriction:
+
+(1) considered genes are only ``CDS`` features, and
+(2) each ``CDS`` must have a field ``locus_tag`` which will be the gene id.
+
+The ``.tsv`` format
+::::::::::::::::::::
+
+As an alternative of Genbank files that are not always easy to manipulate, ``gty.py`` can use a ``.tsv`` file as a description of one or many genome. The ``.tsv`` file must be formatted such that the first line contains the names of the columns (i.e. the header) and the next lines must describe a gene each.
+
+The header must contains the at least the following columns names:
+
+.. code-block::
+
+    chromosome_id	gene_id	left_end_position	right_end_position
+
+where:
+
+- ``chromosome_id`` is the id of the chromosome in wich the gene exists,
+- ``gene_id`` is the id of the gene,
+- ``left_end_position`` is the left end position of the gene (in number of nucleotides) when reading the main strand,
+- ``right_end_position`` is the right end position of the gene (in number of nucleotides) when reading the main strand.
+
+
+
+
+The sequence format
+::::::::::::::::::::
+
+The sequence format is simply a text file with a gene id per line such as the genes are sorted by their ascending position in the chromosome. if multiple chromosomes exist a file per chromosome is required.
+
+
+Example
+,,,,,,,
+
+In the following documentation, we will use the following ``seq.txt`` file as genome example data.
+
+.. code-block::
+
+    # a line that begins with # is a comment (but # elsewhere won't be a considered as a comment)
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    11
+    12
+    13
+    14
+    15
+    16
+    17
+    18
+    19
+    20
+    21
+    22
+    23
+    24
+    25
+    #26 <- this gene will be ignored because of the comment
+
+
+
+
+Outputs
+-------
+
+Default output
+++++++++++++++
+
+By default, ``gts.py`` outputs a ``.tsv`` formated text. It can be write into by using the ``> output_file`` redirection or the the ``-o``/``--output`` option.
+
+The first line of the output of ``gts.py`` contains the name of each columns and is called header. Following lines are the data where each line is a GTsegments. Each gtsegment is unique and appears once in the listing.
+
+The names of the columns in header are the following:
+
+.. code-block::
+
+    chromosome	start	end	length	active_genes	density	list_of_active_genes
+
+- ``chromosome`` contains the id of the chromosome in which the GTsegment appears. When the inputed gemone files are sequence files (i.e. ``--genome_type seq``), the chromosome id is then the filename.
+- ``start`` contains the position of the first gene (i.e. the starting gene) of the GTsegment. The position of a gene is the index of this gene (i.e. the i:sup:`th` gene has the index i)
+- ``end`` contains the position of the last gene (i.e. the ending gene) of a GTsegment.
+- ``length`` contains the length of the GTsegment which the number of genes that are in the GTsegment (``end`` - ``start`` + 1 modulo the number of genes into the chromosome).
+- ``active_genes`` column contains the number of genes of the GTsegment that are coexpressed with the starting and ending genes.
+- ``density`` column contains the the genomic density of a GTsegment which is the ratio between ``active_genes`` and ``length``.
+- ``list_of_active_genes`` column contains the listing of active genes of the GTsegment (i.e. genes in the GTsegment that are coexpressed with the starting and ending genes). This column can be disabled with the ``--no_gene_list`` option, which can be usefull when querying large GTsegments (see the parameter ``-max``/``--max_size``)
+
+Example
+:::::::
+
+The following command ...
+
+.. code-block::
+
+    gts.py graph.txt seq.txt --graph_type list --genome_type seq
+
+will produce the following output:
+
+.. code-block::
+
+    chromosome	start	end	length	active_genes	density	list_of_active_genes
+    seq.txt	2	5	4	3	0.75	2 4 5
+    seq.txt	4	5	2	2	1.0	4 5
+    seq.txt	6	10	5	3	0.6	6 9 10
+    seq.txt	7	8	2	2	1.0	7 8
+    seq.txt	9	10	2	2	1.0	9 10
+    seq.txt	12	16	5	4	0.8	12 14 15 16
+    seq.txt	12	18	7	5	0.714285714286	12 14 15 16 18
+    seq.txt	14	16	3	3	1.0	14 15 16
+    seq.txt	14	18	5	4	0.8	14 15 16 18
+    seq.txt	25	1	2	2	1.0	25 1
+
+
+SGS like output
++++++++++++++++
+
+The option ``--sgs_like_headers`` allows to produce listing of GTsegments that is compatible the outputs produced by `sgs-utils <https://pypi.python.org/pypi/sgs-utils/>`_.
+
+Matrix output
++++++++++++++
+
+When the option matrix is choosen, the output won't be the previous listing, but a concatenation of density matrices in `.csv` format where cells are separated by `;`. The indexes of lines and columns are the position of the genes on the chromosomes (i.e. the i:sup:`th` gene of a chromosome has the index i in the line and the column of the corresponding matrix). As density matrices are square matrices that appear in the same order than the chromosomes given as inputs, separate distinct matrices is possible.
+
+
+Example
+:::::::
+
+The example with the matrix option...
+
+.. code-block::
+
+    gts.py graph.txt seq.txt --graph_type list --genome_type seq --matrix
+
+will produce the following output:
+
+.. code-block::
+
+    1.000000;0.000000;1.000000;0.000000;0.000000;0.000000;0.000000;0.750000;0.000000;0.000000;0.000000
+    0.000000;1.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000
+    0.000000;0.000000;1.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000
+    0.000000;0.000000;0.000000;1.000000;1.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000
+    0.000000;0.000000;0.000000;0.000000;1.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000
+    0.000000;0.000000;0.666667;0.000000;0.000000;1.000000;0.000000;1.000000;0.000000;0.000000;0.000000
+    0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;1.000000;0.000000;0.000000;0.000000;0.000000
+    0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;1.000000;0.000000;0.000000;0.000000
+    0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;1.000000;1.000000;0.000000
+    0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;1.000000;0.000000
+    0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;0.000000;1.000000
+
+
+
+Acknowledgement
+---------------
+
+This work was supported by grants Fondap 15090007, Basal program PFB-03 CMM, IntegrativeBioChile INRIA Assoc. Team and CIRIC-INRIA Chile (line Natural Resources).
