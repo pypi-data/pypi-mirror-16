@@ -1,0 +1,11 @@
+Scikit_Qfit-0.1.4.dist-info/DESCRIPTION.rst,sha256=9h4vwyHquLSdlBsrQ1snz9h2vRgeH4gdyawxPh-Xmlc,2957
+Scikit_Qfit-0.1.4.dist-info/METADATA,sha256=y-zTG5qwUHASeSlfxSmXJ1WNsFwjD03XHkmxlH3iCHc,3209
+Scikit_Qfit-0.1.4.dist-info/RECORD,,
+Scikit_Qfit-0.1.4.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+Scikit_Qfit-0.1.4.dist-info/metadata.json,sha256=OrXFeKavII2zM1q2WkPKH1r_3BPVsL9RYZYlceLbUbg,497
+Scikit_Qfit-0.1.4.dist-info/top_level.txt,sha256=R_JxNeMAKaM-GZrHr32XC1VeKfl0aVmpgE5eIiZGmg0,7
+skqfit/__init__.py,sha256=qcbYp6UNKMiFXnQQD1xV62DNAZkL2Z7uIpJa2hCRcB4,223
+skqfit/_version.py,sha256=BMWiE186s5AJeqb5ggSD5Vi4pIvh0jKr7Xt-MIyjKks,472
+skqfit/asmjacp.py,sha256=lBET6MW4NNNTDRSZYR6s0UO1VNvTvk0CMyKlINEC72o,6113
+skqfit/qspectre.py,sha256=GZrlWx_kKToNpH-DlMH_KUbE22Rn2PEBD-Bsust2CUw,46791
+skqfit/skeleton.py,sha256=mRp_Z8QgdNIib1smliVYmYxilTus2xDQe9nOW-4pmlA,1570
