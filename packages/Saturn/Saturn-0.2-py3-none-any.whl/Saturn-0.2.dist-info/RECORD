@@ -1,0 +1,10 @@
+Saturn-0.2.dist-info/DESCRIPTION.rst,sha256=2TjlXMlMG5509TJ3s9aKe3OV9_ttOTDgLh1am2916d4,9157
+Saturn-0.2.dist-info/METADATA,sha256=6wo7mXtmuvIL9CyDL5aBhFWNDb_70TgNKMIbNDcMq70,9482
+Saturn-0.2.dist-info/RECORD,,
+Saturn-0.2.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+Saturn-0.2.dist-info/metadata.json,sha256=l635THGJcobynglxzdOYdNS1LY1UK44brqnXPThtne0,563
+Saturn-0.2.dist-info/top_level.txt,sha256=LAD4MPqVpGiBr2HCcLlHSHvcZ6weoTO9_VFX-FxTIjw,7
+saturn/__init__.py,sha256=TZ4yP2093BMKiJDxv8MPOCzbeyKkTicPUpxHPdwTFlk,174
+saturn/from_arrow.py,sha256=T5eV64vVuUJIf5Grk2P1IqcOQW20HAkNohAr7NzXWwk,18142
+saturn/saturn.py,sha256=X23uWjTVwJMfzwo4i3XX55yisNwTgJbzx4rvIvvVdg8,6791
+saturn/tests.py,sha256=FSmZgtqd2RlbfKxHiVzQEuf6CIHMAiHe34AAQM5Hnho,2540
