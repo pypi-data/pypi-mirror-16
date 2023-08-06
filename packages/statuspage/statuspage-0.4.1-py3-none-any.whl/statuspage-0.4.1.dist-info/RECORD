@@ -1,0 +1,15 @@
+statuspage.py,sha256=4ZwsgG67p7D4Rbf4jLJLnrACsekcG60qs5t75Kufc_w,8055
+statuspage/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+statuspage/statuspage.py,sha256=QpWIjHe0fWxg8Bkznp5x27Pf_NlLRobaVryNmdsDvR0,8531
+statuspage/tests.py,sha256=5HmDXAGB2bCRIpvGc2_kTjIarWVUPSYuC1DBOxmhpj0,7197
+statuspage/template/favicon.png,sha256=xEAsSWbgoyrCyjUF2nx1_0-pZuV5FE-Mk28e1NVUWOo,3242
+statuspage/template/logo.png,sha256=xEAsSWbgoyrCyjUF2nx1_0-pZuV5FE-Mk28e1NVUWOo,3242
+statuspage/template/style.css,sha256=dMusXaNc1fyqPcK2jutFeg9kTCoSHGLSoNE44wQmXxk,16504
+statuspage/template/template.html,sha256=NgXALiYY1fm87Ek7jzvQFjXBgZBISc2szcpimmOsjQE,2977
+statuspage-0.4.1.dist-info/DESCRIPTION.rst,sha256=DcukdmeJUwnu_UtHuZQ_JMQarRNutvL5iBFcy3BRWng,5660
+statuspage-0.4.1.dist-info/METADATA,sha256=uPPLrdvVndi_tPDvG7N4deSRv8C81rsXaDz6Nm93FV8,6804
+statuspage-0.4.1.dist-info/RECORD,,
+statuspage-0.4.1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+statuspage-0.4.1.dist-info/entry_points.txt,sha256=adw1jV0i9TBIs6OjmGO0zDqEwZw3YoRsLbo3wsXcKzs,76
+statuspage-0.4.1.dist-info/metadata.json,sha256=kOzQ_jRAi5JkB2wfKgYuK-FI08MVfmeDFuUSVUF4Djw,1385
+statuspage-0.4.1.dist-info/top_level.txt,sha256=gR2Ss_Ld0CmCOG3TXouQaSMcBAaHYCgED8uGKeaAjkY,11
