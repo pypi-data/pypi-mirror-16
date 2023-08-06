@@ -1,0 +1,8 @@
+metakernel_bash.py
+setup.py
+metakernel_bash.egg-info/PKG-INFO
+metakernel_bash.egg-info/SOURCES.txt
+metakernel_bash.egg-info/dependency_links.txt
+metakernel_bash.egg-info/pbr.json
+metakernel_bash.egg-info/requires.txt
+metakernel_bash.egg-info/top_level.txt
