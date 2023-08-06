@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: cycle_detector
+Version: 0.0.2
+Summary: Cycle detectors
+Home-page: https://github.com/pelotoncycle/cycle_detector
+Author: Adam DePrince
+Author-email: adam@pelotoncycle.com
+License: Apache
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
