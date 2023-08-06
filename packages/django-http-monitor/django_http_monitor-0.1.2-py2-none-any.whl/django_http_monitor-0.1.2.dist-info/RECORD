@@ -1,0 +1,10 @@
+django_http_monitor-0.1.2.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+django_http_monitor-0.1.2.dist-info/METADATA,sha256=JXKfctL2TEUodywgqMv3_9yPb3mF3RPtMhxaGdCDkmg,846
+django_http_monitor-0.1.2.dist-info/RECORD,,
+django_http_monitor-0.1.2.dist-info/WHEEL,sha256=JTb7YztR8fkPg6aSjc571Q4eiVHCwmUDlX8PhuuqIIE,92
+django_http_monitor-0.1.2.dist-info/metadata.json,sha256=rHD59YZ8fu1AxayIUSD3_GzeauRpUwz8RWQE7lijBzI,931
+django_http_monitor-0.1.2.dist-info/top_level.txt,sha256=57mlmS1-8rFjxZpRY9eFVi97kwQAGNK_njFhrwwi_xM,13
+http_monitor/__init__.py,sha256=F3S2NrhD5KdL_KyTZpUissDlVZvLpSsenNi9U95mg2w,225
+http_monitor/middleware.py,sha256=EfS86t7AbiCUpwAjSKuG2PrVPmmsdAM45Ql1wfvxMA0,2327
+http_monitor/urls.py,sha256=vYjH5AHf-Ce9unk99hOQCBp0ikOcNE1hazSTTNFTo6g,259
+http_monitor/views.py,sha256=I_NGMGQRq-yvtqngFkJQI5dQCsPlpHhwVzjeh23i9OA,1989
