@@ -1,0 +1,235 @@
+Metadata-Version: 1.1
+Name: thecut-durationfield
+Version: 2.0.3
+Summary: Form and model fields for storing durations on Django models as ISO 8601 compliant strings, and returning relativedelta objects.
+Home-page: https://projects.thecut.net.au/projects/thecut-durationfield
+Author: The Cut Creative
+Author-email: development@thecut.net.au
+License: Apache Software License 2.0
+Description: ===============================
+        Welcome to thecut-durationfield
+        ===============================
+        
+        
+        .. image:: https://travis-ci.org/thecut/thecut-durationfield.svg
+            :target: https://travis-ci.org/thecut/thecut-durationfield
+        
+        .. image:: https://codecov.io/github/thecut/thecut-durationfield/coverage.svg
+            :target: https://codecov.io/github/thecut/thecut-durationfield
+        
+        .. image:: https://readthedocs.org/projects/thecut-durationfield/badge/?version=latest
+            :target: http://thecut-durationfield.readthedocs.io/en/latest/?badge=latest
+            :alt: Documentation Status
+        
+        This app provides a custom Django model field, ``RelativeDeltaField``, and
+        related form fields and widgets. ``RelativeDeltaField`` stores time durations
+        using `ISO 8601`_ representations, and returns ``dateutil.relativedelta``
+        objects which may be used directly with ``datetime.datetime`` objects.
+        
+        This project was inspired by packages such as `django-durationfield`_. However,
+        this project focuses on:
+        
+        #. providing a database-agnostic, standards-compliant way of storing the
+           durations in the database (using `ISO 8601`_).
+        #. returning ``dateutil.relativedelta`` objects that can be used to perform
+           calculations on ``datetime.datetime`` objects.
+        
+        Note that `django-durationfield`_ provides the ability to filter querysets
+        based on the relative size of the stored duration, which is not possible with
+        this project. I.e., you can't use ``__lt`` and ``__gt`` etc., when filtering
+        by fields provided by this project.
+        
+        
+        Documentation
+        -------------
+        
+        The full documentation is at https://thecut-durationfield.readthedocs.org.
+        
+        
+        Quickstart
+        ----------
+        
+        Install ``thecut-durationfield`` using the installation instructions found in the documentation.
+        
+        Model field
+        ~~~~~~~~~~~
+        
+        .. code:: python
+        
+            from django.db import models
+            from datetime import datetime
+            from thecut.durationfield.models import RelativeDeltaField
+        
+        
+            class MyModel(models.Model):
+                duration = RelativeDeltaField(blank=True, null=True)
+        
+        
+            my_instance = MyModel(duration='P7D')
+            datetime(2014, 1, 1) + my_instance.duration  # datetime(2014, 1, 8, 0, 0)
+        
+        
+        Form field
+        ~~~~~~~~~~
+        
+        Two form fields are provided: ``RelativeDeltaChoiceField`` and
+        ``RelativeDeltaTextInput``:
+        
+        .. code:: python
+        
+            from django import forms
+            from thecut.durationfield.models import RelativeDeltaChoiceField
+        
+            DURATIONS = [
+                ('', 'Never'),
+        	('P7D', 'One week'),
+        	('P1M', 'One month'),
+            ]
+        
+            class MyForm(forms.ModelForm):
+        
+                duration = RelativeDeltaChoiceField(choices=DURATIONS)
+        
+        
+        or, if you'd prefer to type in the (`ISO 8601`_ compliant) value manually:
+        
+        .. code:: python
+        
+            from django import forms
+            from thecut.durationfield.forms import RelativeDeltaTextInput
+        
+            class MyForm(forms.ModelForm):
+        
+                duration = RelativeDeltaTextInput()
+        
+        
+        Credits
+        -------
+        
+        See ``AUTHORS.rst``.
+        
+        
+        .. _`ISO 8601`: http://en.wikipedia.org/wiki/ISO_8601#Durations
+        .. _`django-durationfield`: https://github.com/johnpaulett/django-durationfield
+        .. _`pypi`: http://pypi.python.org/pypi/django-timezone-field/
+        .. _`pip`: http://www.pip-installer.org/
+        
+        .. :changelog:
+        
+        =======
+        History
+        =======
+        
+        
+        2.0.3 (2016-08-15)
+        ------------------
+        
+        * Removed cross-document links from README.rst as it breaks pypi.
+        * Small fix to project's setup file.
+        
+        
+        2.0.2 (2016-08-15)
+        ------------------
+        
+        * Documentation updates.
+        
+        
+        2.0.1 (2016-08-15)
+        ------------------
+        
+        * Documentation fixes.
+        * Testing fixes.
+        
+        
+        2.0 (2016-08-15)
+        ------------------
+        
+        * Added support for Django 1.10.
+        * Removed support for Django < 1.8.
+        * Restructured test suite.
+        * Restructured documentation.
+        
+        
+        1.0.8 (2015-08-26)
+        ------------------
+        
+        * Improved handling of seconds and milliseconds.
+        
+        
+        1.0.8 (2015-08-26)
+        ------------------
+        
+        * Improved handling of seconds and milliseconds.
+        
+        
+        1.0.7 (2015-03-17)
+        ------------------
+        
+        * Added Python 3 support.
+        
+        
+        1.0.6 (2014-07-28)
+        ------------------
+        
+        * Fix an issue which caused an empty ``relativedelta`` to be returned for a
+          database NULL value.
+        * Get ``tox`` up and running.
+        * Update package for public release.
+        
+        
+        1.0.5 (2014-03-19)
+        ------------------
+        
+        - Remove ``distribute`` from ``install_requires``.
+        
+        
+        1.0.4 (2013-12-17)
+        -------------------
+        
+        - Fixed an issue with Postgres's fixed-length 64 character field.
+        
+        
+        1.0.3 (2013-09-28)
+        ------------------
+        
+        - Minor code cleanup.
+        
+        
+        1.0.2 (20132-08-08)
+        -------------------
+        
+        - Add a Select widget for friendlier form input.
+        
+        
+        1.0.1 (2013-07-25)
+        ------------------
+        
+        - Fixes to south introspection rules.
+        
+        
+        1.0 (2013-07-25)
+        ----------------
+        
+        - First useful release with base model and form fields.
+        
+        
+        0.1 (2013-06-10)
+        ----------------
+        
+        - Initial release, mostly useless.
+        
+Platform: any
+Classifier: Programming Language :: Python
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Natural Language :: English
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.8
+Classifier: Framework :: Django :: 1.9
+Classifier: Framework :: Django :: 1.10
