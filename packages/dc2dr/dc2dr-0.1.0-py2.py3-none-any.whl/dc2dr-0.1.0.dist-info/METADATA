@@ -1,0 +1,76 @@
+Metadata-Version: 2.0
+Name: dc2dr
+Version: 0.1.0
+Summary: Convert Docker Compose to Docker Run Commands
+Home-page: https://github.com/alexhumphreys/dc2dr
+Author: Alex Humphreys
+Author-email: humphreys.a@gmail.com
+License: MIT license
+Keywords: dc2dr
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: Click (>=6.0)
+Requires-Dist: PyYAML (==3.11)
+
+===============================
+dc2dr
+===============================
+
+
+.. image:: https://img.shields.io/pypi/v/dc2dr.svg
+        :target: https://pypi.python.org/pypi/dc2dr
+
+.. image:: https://img.shields.io/travis/alexhumphreys/dc2dr.svg
+        :target: https://travis-ci.org/alexhumphreys/dc2dr
+
+.. image:: https://readthedocs.org/projects/dc2dr/badge/?version=latest
+        :target: https://dc2dr.readthedocs.io/en/latest/?badge=latest
+        :alt: Documentation Status
+
+.. image:: https://pyup.io/repos/github/alexhumphreys/dc2dr/shield.svg
+     :target: https://pyup.io/repos/github/alexhumphreys/dc2dr/
+     :alt: Updates
+
+
+Convert Docker Compose to Docker Run Commands
+
+
+* Free software: MIT license
+* Documentation: https://dc2dr.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+Credits
+---------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+
+=======
+History
+=======
+
+0.1.0 (2016-08-02)
+------------------
+
+* First release on PyPI.
+
+

@@ -1,0 +1,10 @@
+dc2dr/__init__.py,sha256=ykok8yA_ibAngl6b94Etme8ZHAEkYJq8CuLSUQ4G2F4,113
+dc2dr/cli.py,sha256=GCyuoF1nTJGtvuOjTJ6IGOVAwcnpoC0aDJQ306POFEg,384
+dc2dr/parser.py,sha256=f8u-m1Oe075y9uNFWYmYVbuqzBF7tNqYRCUE1rQarJI,1731
+dc2dr-0.1.0.dist-info/DESCRIPTION.rst,sha256=X60Gupyd8Mzd2ewPDkNew9XRTiEcvPrKOKce-Pzn65c,1152
+dc2dr-0.1.0.dist-info/METADATA,sha256=O7g7V6GF44okgRLiiWcrqSOYr3J2EJLyzw4j7K2EN_M,2010
+dc2dr-0.1.0.dist-info/RECORD,,
+dc2dr-0.1.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+dc2dr-0.1.0.dist-info/entry_points.txt,sha256=EeurXRcw3JOmkz4ZWQDDDErjxOClY790Fv6TdDYxJSc,42
+dc2dr-0.1.0.dist-info/metadata.json,sha256=iHNltmoSUnlm9_UtB13utuT40lHaJ2tyz2tnvawBP-8,1182
+dc2dr-0.1.0.dist-info/top_level.txt,sha256=1b0YuKkmNKr-YGFtP-vmOEyX-OZT8Xn5Z1HRYRNSQTk,6
