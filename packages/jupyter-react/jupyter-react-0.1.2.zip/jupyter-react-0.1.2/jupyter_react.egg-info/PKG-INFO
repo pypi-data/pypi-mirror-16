@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: jupyter-react
+Version: 0.1.2
+Summary: React component extension for Jupyter Notebooks
+Home-page: https://github.com/timbr-io/jupyter-react
+Author: Chris Helm
+Author-email: chelm@timbr.io
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN

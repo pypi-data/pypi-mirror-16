@@ -1,0 +1,10 @@
+MANIFEST.in
+setup.py
+jupyter_react/__init__.py
+jupyter_react/component.py
+jupyter_react.egg-info/PKG-INFO
+jupyter_react.egg-info/SOURCES.txt
+jupyter_react.egg-info/dependency_links.txt
+jupyter_react.egg-info/not-zip-safe
+jupyter_react.egg-info/requires.txt
+jupyter_react.egg-info/top_level.txt
