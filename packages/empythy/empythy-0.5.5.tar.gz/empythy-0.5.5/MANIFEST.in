@@ -1,0 +1,3 @@
+include *.py *.md LICENSE .gitignore *.txt
+recursive-include corpora *.csv
+include corpora/aggregatedCorpusCleanedAndFiltered.csv
