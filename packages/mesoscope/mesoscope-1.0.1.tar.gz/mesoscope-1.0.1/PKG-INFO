@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: mesoscope
+Version: 1.0.1
+Summary: process data from the two-photon random access mesoscope
+Home-page: https://github.com/sofroniewn/mesoscope
+Author: sofroniewn
+Author-email: the.freeman.lab@gmail.com
+License: MIT
+Description: See https://github.com/sofroniewn/mesoscope
+Platform: UNKNOWN
