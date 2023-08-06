@@ -1,0 +1,5 @@
+[console_scripts]
+halla = halla.halla:main
+hallaclust = halla.hallaclust:main
+hallagram = halla.hallagram:main
+
