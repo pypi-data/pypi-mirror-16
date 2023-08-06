@@ -1,0 +1,3 @@
+[console_scripts]
+ultra_config = ultra_config.cli:main
+
