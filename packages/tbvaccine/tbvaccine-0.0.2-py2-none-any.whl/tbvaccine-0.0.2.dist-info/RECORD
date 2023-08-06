@@ -1,0 +1,12 @@
+tbvaccine/__init__.py,sha256=A4K5kczEHvVK6_H2pqnW5aZh3oesst5nGFbHQzTfIPc,104
+tbvaccine/cli.py,sha256=XSS924GxcE3YVSZ3yvbelRBO5o_K2Ofpp-GvjyXv5hQ,1103
+tbvaccine/tbv.py,sha256=3Sv6_oCym0Ts_zhzA9i9GZNkboeQoNuJ_OVA2TDU000,4835
+tbvaccine/tests.py,sha256=7GHsJJime7FUTONrYoNF9EMytuCS_KhnBs3PcXRdw08,715
+tbvaccine/version.py,sha256=miSsqPy2PFJ18TW9kocQJLcv4HFpkfQhcTzgAO-GTVE,22
+tbvaccine-0.0.2.dist-info/DESCRIPTION.rst,sha256=w0Vcg4MRR_jx2li7cg56u8p1_Dc_tRwz5FiG4RkhlBw,1764
+tbvaccine-0.0.2.dist-info/METADATA,sha256=xGZdOty1Dyw4D4v0Wsh3uIChezM4TX6QsRaVnlZ4fH8,2552
+tbvaccine-0.0.2.dist-info/RECORD,,
+tbvaccine-0.0.2.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+tbvaccine-0.0.2.dist-info/entry_points.txt,sha256=cAoAFFUk6qTsarxmljJhzWlk8U1wp6WgIKNV3deGhrM,50
+tbvaccine-0.0.2.dist-info/metadata.json,sha256=I2jeyRatRMX04g1aPhkCDAEcHRZYqa2vkfhDXAVW-yI,1161
+tbvaccine-0.0.2.dist-info/top_level.txt,sha256=hPR8zNEGiS_MXSHVEqzBSpQQnR2UuzFdyiF-tTIKVIA,10
