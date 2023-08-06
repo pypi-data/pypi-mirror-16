@@ -1,0 +1,16 @@
+README.rst
+setup.cfg
+setup.py
+datasync/__init__.py
+datasync.egg-info/PKG-INFO
+datasync.egg-info/SOURCES.txt
+datasync.egg-info/dependency_links.txt
+datasync.egg-info/entry_points.txt
+datasync.egg-info/not-zip-safe
+datasync.egg-info/requires.txt
+datasync.egg-info/top_level.txt
+datasync/management/__init__.py
+datasync/management/commands/__init__.py
+datasync/management/commands/sync_environment.py
+datasync/scripts/__init__.py
+datasync/scripts/cli.py
