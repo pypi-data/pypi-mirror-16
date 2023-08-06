@@ -1,0 +1,5 @@
+# pip install -r requirements.txt
+# Utilizando Python para automatização de Openstack, Kubernetes, Docker e demais necessidades.
+# Api's para Python gerenciar o Openstack
+# Api's para Python gerenciar Kubernetes e Dockers
+# Bootstrap para validação das funções do Openstack, criação de cluster em Kubernetes ou Docker utilizando Openstack.
