@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: bottle-tweepy
+Version: 0.1
+Summary: Tweepy integration for Bottle.
+Home-page: http://github.com/tawfiq9009/bottle-tweepy/
+Author: Tawfiq Hamed
+Author-email: tawfiq9009@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: any
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires: bottle (>=0.9)
+Requires: tweepy
