@@ -1,0 +1,13 @@
+django_returnfields/__init__.py,sha256=VxpgKN0Pd1MovCPPnr7vTFgl6PXGk4bq6-pbwfuI30U,12045
+django_returnfields/aggressive.py,sha256=wZswFgzx9fVlF1g0tWyuUjrnAG3XP16BORTzYIu9W2E,1048
+django_returnfields/app.py,sha256=GoB_Z4-JfVkCPT_oiUBvPK1s41sFJdlLZyBeTXcvb5s,3779
+django_returnfields/constants.py,sha256=MayKnU_YOerQIOkma8LZPt0Ate7CFE-kNcjNZaFPrDk,20
+django_returnfields/optimize.py,sha256=T8zcLPWSk6MrulN6hkFhZF5XUuN71AyOpnBS7V-bk10,8367
+django_returnfields/structures.py,sha256=3WCFSH_xb81Sxh3es_g7VNsnjaomKpDpf-40IwtBp0g,451
+django_returnfields-0.3.2.dist-info/DESCRIPTION.rst,sha256=iNn1G7HR9zWNHxj1lB-VLHtre6plo3EXNsYMBhjdv7w,3635
+django_returnfields-0.3.2.dist-info/entry_points.txt,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+django_returnfields-0.3.2.dist-info/METADATA,sha256=lz37IHLxrEY4itUEaG5YwnGDPVB6Xdp5bLZYKTudefs,4388
+django_returnfields-0.3.2.dist-info/metadata.json,sha256=LgDOhyiaZ0y1YLHxyLAZCPi91bddmnYxcMUqibyqrTk,907
+django_returnfields-0.3.2.dist-info/RECORD,,
+django_returnfields-0.3.2.dist-info/top_level.txt,sha256=bISthfxftiZdln8I8Xkr1GNLmQblOycvPU31Ib27ip4,20
+django_returnfields-0.3.2.dist-info/WHEEL,sha256=-aSo8rHuuPDEFzkcqqQ55pDyCjy25bYMLxSiHWKAOTc,92
