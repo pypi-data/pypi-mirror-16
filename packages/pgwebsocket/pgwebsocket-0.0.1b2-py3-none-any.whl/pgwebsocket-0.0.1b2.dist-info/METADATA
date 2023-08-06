@@ -1,0 +1,44 @@
+Metadata-Version: 2.0
+Name: pgwebsocket
+Version: 0.0.1b2
+Summary: Async websocket to PostgreSQL proxy
+Home-page: https://github.com/wirehive/pgwebsocket
+Author: Wirehive Ltd
+Author-email: barnaby@wirehive.net
+License: GPLv2
+Keywords: aiohttp psycopg2 postgresql websocket
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: aiohttp
+Requires-Dist: psycopg2
+
+pgwebsocket
+===========
+
+::
+
+    from pgwebsocket import PgWebsocket
+
+    app = PgWebsocket(
+        "postgresql://"
+    )
+
+    @app.on_connect
+    async def on_connect(ctx):
+        """"""
+        ctx.subscribed = []
+        await ctx.execute("LISTEN all;")
+
+    @app.on_disconnect
+    async def on_disconnect(ctx):
+        """"""
+        await ctx.execute("UNLISTEN all;")
+
+    if __name__ == '__main__':
+        app.run()
+
+
+
