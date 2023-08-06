@@ -1,0 +1,30 @@
+0.1.5 (08-08-2016)
+------------------
+
+-  Move process_uri check
+
+0.1.4 (04-08-2016)
+------------------
+
+-  Add dossier service
+-  Add processor
+
+0.1.3 (27-07-2016)
+------------------
+
+-  Exit daemon when parsing feed fails
+
+0.1.2 (27-07-2016)
+------------------
+
+-  Bug fix: initialization daemon_manager
+
+0.1.1 (25-07-2016)
+------------------
+
+-  Remove oeauth requirement
+
+0.1.0 (25-07-2016)
+------------------
+
+-  Initial version
