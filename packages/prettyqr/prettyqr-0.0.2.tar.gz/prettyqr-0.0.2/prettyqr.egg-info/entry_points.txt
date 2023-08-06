@@ -1,0 +1,3 @@
+[console_scripts]
+prettyqr = prettyqr.cli:main
+

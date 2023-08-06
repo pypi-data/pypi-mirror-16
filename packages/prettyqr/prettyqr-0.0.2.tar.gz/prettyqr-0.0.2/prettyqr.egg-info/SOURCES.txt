@@ -1,0 +1,14 @@
+README.rst
+setup.cfg
+setup.py
+prettyqr/__init__.py
+prettyqr/cli.py
+prettyqr/error.py
+prettyqr/image.py
+prettyqr/pretty.py
+prettyqr.egg-info/PKG-INFO
+prettyqr.egg-info/SOURCES.txt
+prettyqr.egg-info/dependency_links.txt
+prettyqr.egg-info/entry_points.txt
+prettyqr.egg-info/requires.txt
+prettyqr.egg-info/top_level.txt
