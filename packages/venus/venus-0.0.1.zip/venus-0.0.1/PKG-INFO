@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: venus
+Version: 0.0.1
+Summary: This is a package of micro service architecture.
+Home-page: https://pypi.python.org/pypi/venus
+Author: dy
+Author-email: email
+License: MIT
+Description: This is a project of micro service architecture!
+Keywords: service
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 1 - Planning
