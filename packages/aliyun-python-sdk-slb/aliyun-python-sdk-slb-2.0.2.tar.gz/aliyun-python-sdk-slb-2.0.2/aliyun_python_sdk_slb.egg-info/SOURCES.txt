@@ -1,0 +1,10 @@
+MANIFEST.in
+README.rst
+setup.py
+aliyun_python_sdk_slb.egg-info/PKG-INFO
+aliyun_python_sdk_slb.egg-info/SOURCES.txt
+aliyun_python_sdk_slb.egg-info/dependency_links.txt
+aliyun_python_sdk_slb.egg-info/requires.txt
+aliyun_python_sdk_slb.egg-info/top_level.txt
+aliyunsdkslb/__init__.py
+aliyunsdkslb/request/__init__.py
