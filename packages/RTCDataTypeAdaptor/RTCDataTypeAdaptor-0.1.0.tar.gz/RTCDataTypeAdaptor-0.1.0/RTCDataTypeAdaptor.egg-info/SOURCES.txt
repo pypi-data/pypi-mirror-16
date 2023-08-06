@@ -1,0 +1,10 @@
+README.rst
+setup.py
+RTCDataTypeAdaptor/__init__.py
+RTCDataTypeAdaptor/project_generator.py
+RTCDataTypeAdaptor.egg-info/PKG-INFO
+RTCDataTypeAdaptor.egg-info/SOURCES.txt
+RTCDataTypeAdaptor.egg-info/dependency_links.txt
+RTCDataTypeAdaptor.egg-info/requires.txt
+RTCDataTypeAdaptor.egg-info/top_level.txt
+RTCDataTypeAdaptor/bin/generate_adaptor.py
