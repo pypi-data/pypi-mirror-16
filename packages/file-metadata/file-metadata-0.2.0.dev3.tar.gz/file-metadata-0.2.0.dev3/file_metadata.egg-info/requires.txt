@@ -1,0 +1,13 @@
+python-magic
+six>=1.8.0
+appdirs
+pathlib2
+pillow>=2.5.0
+numpy>=1.7.2
+dlib
+scipy
+matplotlib
+scikit-image>=0.12
+wand
+zbar
+pycolorname

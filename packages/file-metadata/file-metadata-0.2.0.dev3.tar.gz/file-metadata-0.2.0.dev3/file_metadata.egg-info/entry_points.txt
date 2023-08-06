@@ -1,0 +1,5 @@
+[console_scripts]
+wikibot-create-config = file_metadata.wikibot.generate_user_files:main
+wikibot-filemeta-log = file_metadata.wikibot.log_bot:main
+wikibot-filemeta-simple = file_metadata.wikibot.simple_bot:main
+
