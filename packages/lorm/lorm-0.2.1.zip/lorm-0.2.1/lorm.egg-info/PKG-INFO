@@ -1,0 +1,26 @@
+Metadata-Version: 1.1
+Name: lorm
+Version: 0.2.1
+Summary: A light weight python ORM without models.
+Home-page: https://github.com/zii/lorm
+Author: zii
+Author-email: gamcat@gmail.com
+License: MIT
+Description: **Example**
+        
+        ::
+        
+         import lorm
+         
+         c = lorm.mysql_connect('localhost', 3306, 'root', '******', 'mysql')
+         
+         print c.user.get(host='localhost')
+        
+Keywords: orm
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
