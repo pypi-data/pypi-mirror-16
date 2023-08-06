@@ -1,0 +1,10 @@
+mrjob
+simplejson
+boto3
+sphinx_bootstrap_theme
+setuptools_scm
+future
+six
+s3fs
+nose
+warc

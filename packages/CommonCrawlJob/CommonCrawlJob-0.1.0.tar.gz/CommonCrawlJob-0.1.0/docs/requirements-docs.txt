@@ -1,0 +1,3 @@
+-r ../requirements.txt
+nbsphinx
+sphinx_rtd_theme
