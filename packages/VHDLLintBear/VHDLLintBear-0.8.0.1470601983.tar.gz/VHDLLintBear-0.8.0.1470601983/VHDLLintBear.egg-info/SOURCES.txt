@@ -1,0 +1,7 @@
+setup.py
+VHDLLintBear/VHDLLintBear.py
+VHDLLintBear/__init__.py
+VHDLLintBear.egg-info/PKG-INFO
+VHDLLintBear.egg-info/SOURCES.txt
+VHDLLintBear.egg-info/dependency_links.txt
+VHDLLintBear.egg-info/top_level.txt
