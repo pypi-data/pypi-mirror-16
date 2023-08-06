@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: websync
+Version: 0.2
+Summary: Websync
+Home-page: https://github.com/vistoyn/websync
+Author: Ildar Bikmamatov
+Author-email: vistoyn@gmail.com
+License: Apache License Version 2.0
+Description: Description
+        =================
+        
+        Read more: https://github.com/vistoyn/websync
+        or 
+        in file README.md
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Internet
+Classifier: Topic :: Utilities

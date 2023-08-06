@@ -1,0 +1,13 @@
+DESCRIPTION.rst
+MANIFEST.in
+README.md
+setup.py
+scripts/websync
+websync/__init__.py
+websync/dict.py
+websync/lib.py
+websync/main.py
+websync.egg-info/PKG-INFO
+websync.egg-info/SOURCES.txt
+websync.egg-info/dependency_links.txt
+websync.egg-info/top_level.txt
