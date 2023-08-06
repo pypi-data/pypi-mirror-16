@@ -1,0 +1,54 @@
+#!python
+from ci_jira_releaser import JiraReleaser
+import argparse
+import os
+
+JIRA_USER_KEY = 'JIRA_USER'
+JIRA_PASSWORD_KEY = 'JIRA_PASSWORD'
+JIRA_URL = "JIRA_URL"
+BUILD_NUMBER_KEY = 'BUILD_NUMBER'
+
+def main():
+	parser = argparse.ArgumentParser(description="A simple way to label development tags or auto make a releaser within Jira",
+		epilog="Don't forget you can use environment variables")
+	parser.add_argument('-p', '--project-key', help="The Jira project key: e.g PROJ", required=True)
+	parser.add_argument('-u', '--jira-url', help="The url Jira is located at including http://", required=True)
+	parser.add_argument('-r', '--repo-root', help="The location of the git repo, must have a .git inside", required=False)
+	parser.add_argument('-U', '--jira-username', help="environment_var[JIRA_USER]", required=False)
+	parser.add_argument('-P', '--jira-password', help="environment_var[JIRA_PASSWORD]", required=False)
+	parser.add_argument('--from-commit', help="Hash of git commit to start grabbing issues from", required=True)
+	parser.add_argument('--to-commit', help="End commit to parse through")
+	parser.add_argument('--project-name', help="The name of the project to help generate the label")
+	parser.add_argument('--build-number', help="For build systems usually an environment variable. Usually passed by Jenkins as a ENV variable.", default=0)
+	parser.add_argument('--development', help="Pass flag if using for development", action='store_true')
+	parser.add_argument('--staging', help="Pass flag if using for staging", action='store_true')	
+	parser.add_argument('--production', help="Pass flag if using for production", action='store_true')
+	args = parser.parse_args()
+	jira_username = os.environ.get(JIRA_USER_KEY, None)
+	jira_password = os.environ.get(JIRA_PASSWORD_KEY, None)
+	jira_url = os.environ.get(JIRA_URL, None)
+	build_number = os.environ.get(BUILD_NUMBER_KEY, None)
+	if jira_username is not None and jira_password is not None and jira_url is None and build_number is None:
+		updater = JiraReleaser(args.project_key, args.jira_url, jira_username=jira_username, \
+			jira_password=jira_password, repo_root=args.repo_root, from_commit=args.from_commit, \
+			to_commit=args.to_commit, is_development=args.development, is_staging=args.staging, is_production=args.production, \
+			build_number=args.build_number, project_name=args.project_name)
+	elif jira_username is not None and jira_password is not None and jira_url is not None and build_number is None:
+		updater = JiraReleaser(args.project_key, jira_url, jira_username=jira_username, \
+			jira_password=jira_password, repo_root=args.repo_root, from_commit=args.from_commit, \
+			to_commit=args.to_commit, is_development=args.development, is_staging=args.staging, is_production=args.production, \
+			build_number=args.build_number, project_name=args.project_name)
+	elif jira_username is not None and jira_password is not None and build_number is not None and jira_url is not None:
+		updater = JiraReleaser(args.project_key, jira_url, jira_username=jira_username, \
+			jira_password=jira_password, repo_root=args.repo_root, from_commit=args.from_commit, \
+			to_commit=args.to_commit, is_development=args.development, is_staging=args.staging, is_production=args.production, \
+			build_number=build_number, project_name=args.project_name)
+	if args.production or args.development or args.staging:
+		version = updater.create_jira_version()
+		print(updater.update_issues_version(updater.get_issues(updater.list_commits())))
+		version.update(fields={'released': True})
+		print('{} version RELEASED'.format(version.name))
+
+
+if __name__ == '__main__':
+	main()
