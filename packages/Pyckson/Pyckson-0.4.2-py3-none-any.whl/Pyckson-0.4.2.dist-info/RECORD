@@ -1,0 +1,16 @@
+Pyckson-0.4.2.dist-info/DESCRIPTION.rst,sha256=rK7nx0zDG4AerPOEp8pM-6RDqAIzljXHObOCMUBG1Sk,93
+Pyckson-0.4.2.dist-info/METADATA,sha256=mp4gNoqEe-gzcmKi9PGgonREu2vPPwy9vyIWYUCzjjs,345
+Pyckson-0.4.2.dist-info/RECORD,,
+Pyckson-0.4.2.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+Pyckson-0.4.2.dist-info/metadata.json,sha256=VG6XePCyKpJzWQkzkU1dNXhWvHrfZ9G9E6TPaiSpWE0,448
+Pyckson-0.4.2.dist-info/top_level.txt,sha256=YGGBA41Iwc92a9MOgwlnpyvbUyu7Ts5I6LGCvR_gvoU,8
+pyckson/__init__.py,sha256=omF9GGFrwn338TGvdd_R8rMkBAGMnQGMkqS1YgN-u38,122
+pyckson/builders.py,sha256=bNDLMyNc5gOqdaaartqcy0B-s5UfV341zNSKgQEiip8,2796
+pyckson/const.py,sha256=vBdwT9cqyGwA8yPu2gsVjrzAY1vtuevmMHMUzeiKiLA,391
+pyckson/decorators.py,sha256=gbcAr4U0TkOBnvScPZ2DbTV1DnFwo8OFEc1lXyBPDK0,1538
+pyckson/enum.py,sha256=XCU9T_BW1mihGBqaPCKkZff8nC4nMrh0y4EvcDAT7gU,422
+pyckson/helpers.py,sha256=Tng_cAXIJt-ZLgXJIWwiFdqwulv63ACOZ8gmflG4BnA,1438
+pyckson/json.py,sha256=YI6ZbF_LpSMmyZZtfLyWyqEmdvMP-t_DHQTxyPUspU4,495
+pyckson/model.py,sha256=QXdE86HM3vs3x9z7d3kKOhmgddusHYfP5abJ513Qs1k,2415
+pyckson/parser.py,sha256=KesdRileBBAc87qtnF5LPm1sW5WdIGsn9EbWevYpZQE,1138
+pyckson/serializer.py,sha256=MVKooLxA7fl5M1sJ6WFC7jJ3lwiP28Sf0XT3yC_gpRg,1508
