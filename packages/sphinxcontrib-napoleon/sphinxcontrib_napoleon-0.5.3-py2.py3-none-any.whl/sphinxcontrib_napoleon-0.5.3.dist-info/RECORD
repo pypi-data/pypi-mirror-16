@@ -1,0 +1,15 @@
+sphinxcontrib_napoleon-0.5.3-py3.5-nspkg.pth,sha256=H36IaUlhc45hYx8cyTc5fScVk3IVYmL-mrLCKePhVlI,326
+sphinxcontrib/napoleon/__init__.py,sha256=UUOwW5rq932zXdjmzakZBmQQMHLzHJq8c7hmYa1J3P0,16491
+sphinxcontrib/napoleon/_version.py,sha256=JahvtXO-IVcPbp2x69ZQVhlg8qRvM_lECTBBpCdMfAE,295
+sphinxcontrib/napoleon/docstring.py,sha256=qQL90msqFwGfnh4B_mqoqxa7owhMxEtWACZHHHmL9j0,34431
+sphinxcontrib_napoleon-0.5.3.dist-info/DESCRIPTION.rst,sha256=PjrzEhUorvGUka62A0jk-pwCdkNgxjsiXJ2Pf0aAXvI,5365
+sphinxcontrib_napoleon-0.5.3.dist-info/METADATA,sha256=-GgsjQy9MUuX68OvbY9WmrAt5Z3gyAdWUskZKWhVZeY,6286
+sphinxcontrib_napoleon-0.5.3.dist-info/RECORD,,
+sphinxcontrib_napoleon-0.5.3.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+sphinxcontrib_napoleon-0.5.3.dist-info/metadata.json,sha256=4feitGGqEXBZNajmMBIO55bBjggh6SPCBct_1F7tD2w,1247
+sphinxcontrib_napoleon-0.5.3.dist-info/namespace_packages.txt,sha256=VJrV3_vaiKQVgVpR0I1iecxoO0drzGu-M0j40PVP2QQ,14
+sphinxcontrib_napoleon-0.5.3.dist-info/top_level.txt,sha256=takF8yTwXcZOz9PPIyDUWCnRMNf00TOUwPtnoaTBDvs,20
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/napoleon/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/napoleon/test_docstring.py,sha256=-o8rCEbcMRs0zEqyOnb1OxtInok7TveytAAC9pZJy-8,43257
+tests/napoleon/test_napoleon.py,sha256=M8ZnDgcq97SAEtJqya6pRNJ5_BygQdERegZHYp1vWmQ,6576
