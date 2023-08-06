@@ -1,0 +1,10 @@
+setup.py
+gbXMLParser/BuildingObjects.py
+gbXMLParser/__init__.py
+gbXMLParser/gbXMLBatchParser.py
+gbXMLParser/gbXMLParser.py
+gbXMLParser.egg-info/PKG-INFO
+gbXMLParser.egg-info/SOURCES.txt
+gbXMLParser.egg-info/dependency_links.txt
+gbXMLParser.egg-info/not-zip-safe
+gbXMLParser.egg-info/top_level.txt
