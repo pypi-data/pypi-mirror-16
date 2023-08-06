@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: serf-client2
+Version: 1.0.0
+Summary: Python RPC client for the Serf with streaming support
+Home-page: https://github.com/wix/serf-client2
+Author: WIX
+Author-email: UNKNOWN
+License: MIT
+Download-URL: https://github.com/wix/serf-client2/archive/master.zip
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License

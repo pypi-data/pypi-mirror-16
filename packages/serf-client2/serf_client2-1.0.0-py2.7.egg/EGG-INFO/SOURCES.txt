@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+serf_client2/__init__.py
+serf_client2/client.py
+serf_client2/connection.py
+serf_client2.egg-info/PKG-INFO
+serf_client2.egg-info/SOURCES.txt
+serf_client2.egg-info/dependency_links.txt
+serf_client2.egg-info/requires.txt
+serf_client2.egg-info/top_level.txt
