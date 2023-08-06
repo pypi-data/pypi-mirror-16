@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+fakearray/__init__.py
+fakearray/calciumimaging.py
+fakearray.egg-info/PKG-INFO
+fakearray.egg-info/SOURCES.txt
+fakearray.egg-info/dependency_links.txt
+fakearray.egg-info/requires.txt
+fakearray.egg-info/top_level.txt
+test/test_basic.py
+test/test_calcium_imaging.py
