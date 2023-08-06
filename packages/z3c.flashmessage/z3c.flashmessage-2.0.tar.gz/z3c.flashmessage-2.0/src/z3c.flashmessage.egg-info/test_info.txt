@@ -1,0 +1,8 @@
+test_module = 
+test_suite = z3c.flashmessage.tests.test_suite
+test_loader = zope.testrunner.eggsupport:SkipLayers
+tests_require = zope.publisher
+   zope.component
+   zope.security
+   zope.app.wsgi[testlayer] >= 4.0
+   Webtest
