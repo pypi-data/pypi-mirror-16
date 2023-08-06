@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: tripoli
+Version: 1.1.1
+Summary: IIIF document validation.
+Home-page: https://github.com/DDMAL/tripoli
+Author: Alex Parmentier
+Author-email: a.g.parmentier@gmail.com
+License: https://opensource.org/licenses/MIT
+Download-URL: https://github.com/DDMAL/tripoli/tarball/master
+Description: UNKNOWN
+Keywords: validator,IIIF
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Multimedia :: Graphics :: Presentation
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: Web Environment
+Classifier: Programming Language :: Python
