@@ -1,0 +1,77 @@
+<VRTDataset rasterXSize="500" rasterYSize="501">
+  <SRS>PROJCS["WGS 84 / UTM zone 13N",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-105],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","32613"]]</SRS>
+  <GeoTransform>  4.8754800000000000e+05,  2.0000000000000000e+00,  0.0000000000000000e+00,  4.4435540000000000e+06,  0.0000000000000000e+00, -2.0000000000000000e+00</GeoTransform>
+  <VRTRasterBand dataType="Float32" band="1">
+    <ColorInterp>Gray</ColorInterp>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="1">14JUN20181517-M2AS-053792616010_01_P001_Rad.TIF</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="500" RasterYSize="501" DataType="Float32" BlockXSize="500" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="500" ySize="501" />
+      <DstRect xOff="0" yOff="0" xSize="500" ySize="501" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="2">
+    <SimpleSource>
+      <SourceFilename relativeToVRT="1">14JUN20181517-M2AS-053792616010_01_P001_Rad.TIF</SourceFilename>
+      <SourceBand>2</SourceBand>
+      <SourceProperties RasterXSize="500" RasterYSize="501" DataType="Float32" BlockXSize="500" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="500" ySize="501" />
+      <DstRect xOff="0" yOff="0" xSize="500" ySize="501" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="3">
+    <SimpleSource>
+      <SourceFilename relativeToVRT="1">14JUN20181517-M2AS-053792616010_01_P001_Rad.TIF</SourceFilename>
+      <SourceBand>3</SourceBand>
+      <SourceProperties RasterXSize="500" RasterYSize="501" DataType="Float32" BlockXSize="500" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="500" ySize="501" />
+      <DstRect xOff="0" yOff="0" xSize="500" ySize="501" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="4">
+    <SimpleSource>
+      <SourceFilename relativeToVRT="1">14JUN20181517-M2AS-053792616010_01_P001_Rad.TIF</SourceFilename>
+      <SourceBand>4</SourceBand>
+      <SourceProperties RasterXSize="500" RasterYSize="501" DataType="Float32" BlockXSize="500" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="500" ySize="501" />
+      <DstRect xOff="0" yOff="0" xSize="500" ySize="501" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="5">
+    <SimpleSource>
+      <SourceFilename relativeToVRT="1">14JUN20181517-M2AS-053792616010_01_P001_Rad.TIF</SourceFilename>
+      <SourceBand>5</SourceBand>
+      <SourceProperties RasterXSize="500" RasterYSize="501" DataType="Float32" BlockXSize="500" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="500" ySize="501" />
+      <DstRect xOff="0" yOff="0" xSize="500" ySize="501" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="6">
+    <SimpleSource>
+      <SourceFilename relativeToVRT="1">14JUN20181517-M2AS-053792616010_01_P001_Rad.TIF</SourceFilename>
+      <SourceBand>6</SourceBand>
+      <SourceProperties RasterXSize="500" RasterYSize="501" DataType="Float32" BlockXSize="500" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="500" ySize="501" />
+      <DstRect xOff="0" yOff="0" xSize="500" ySize="501" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="7">
+    <SimpleSource>
+      <SourceFilename relativeToVRT="1">14JUN20181517-M2AS-053792616010_01_P001_Rad.TIF</SourceFilename>
+      <SourceBand>7</SourceBand>
+      <SourceProperties RasterXSize="500" RasterYSize="501" DataType="Float32" BlockXSize="500" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="500" ySize="501" />
+      <DstRect xOff="0" yOff="0" xSize="500" ySize="501" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="8">
+    <SimpleSource>
+      <SourceFilename relativeToVRT="1">14JUN20181517-M2AS-053792616010_01_P001_Rad.TIF</SourceFilename>
+      <SourceBand>8</SourceBand>
+      <SourceProperties RasterXSize="500" RasterYSize="501" DataType="Float32" BlockXSize="500" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="500" ySize="501" />
+      <DstRect xOff="0" yOff="0" xSize="500" ySize="501" />
+    </SimpleSource>
+  </VRTRasterBand>
+</VRTDataset>
