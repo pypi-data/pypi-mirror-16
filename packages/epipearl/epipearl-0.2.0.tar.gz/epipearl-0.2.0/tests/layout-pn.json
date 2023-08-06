@@ -1,0 +1,29 @@
+{
+    "audio": [
+        {
+            "settings": {
+                "source": "{source_id}.{aconnector}-{ainput}-audio"
+            },
+            "type": "source"
+        }
+    ],
+    "background": "#000000",
+    "nosignal": {
+        "id": "default"
+    },
+    "video": [
+        {
+            "position": {
+                "height": "100%",
+                "keep_aspect_ratio": true,
+                "left": "0%",
+                "top": "0%",
+                "width": "100%"
+            },
+            "settings": {
+                "source": "{source_id}.{vconnector}-{vinput}"
+            },
+            "type": "source"
+        }
+    ]
+}

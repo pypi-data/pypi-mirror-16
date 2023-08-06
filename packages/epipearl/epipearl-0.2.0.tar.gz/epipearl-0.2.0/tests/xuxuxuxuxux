@@ -1,0 +1,88 @@
+{
+    "ca_capture_card_id": "D2P280762", 
+    "ca_name_id": "dev_epiphan006", 
+    "ca_serial_number": "ED72ED0D", 
+    "ca_url": "http://dev-epiphan006.dce.harvard.edu", 
+    "channel_encodings": {
+        "audio": "on", 
+        "audiochannels": "1", 
+        "audiopreset": "libfaac;44100", 
+        "autoframesize": "", 
+        "codec": "h.264", 
+        "fpslimit": 30, 
+        "vencpreset": "5", 
+        "vkeyframeinterval": 1, 
+        "vprofile": "100"
+    }, 
+    "channels": {
+        "dce_live": {
+            "channel_id": "7", 
+            "encodings": {
+                "audiobitrate": 96, 
+                "framesize": "1920x540", 
+                "vbitrate": 4000
+            }, 
+            "rtmp_url": "rtmp://p.ep355694.i.akamaientrypoint.net/EntryPoint", 
+            "stream_name": "dev-epiphan006-presenter-delivery.stream-1920x1080_1_200@355694"
+        }, 
+        "dce_live_lowbr": {
+            "channel_id": "6", 
+            "encodings": {
+                "audiobitrate": 64, 
+                "framesize": "960x270", 
+                "vbitrate": 250
+            }, 
+            "rtmp_url": "rtmp://p.ep355694.i.akamaientrypoint.net/EntryPoint", 
+            "stream_name": "dev-epiphan006-presenter-delivery.stream-960x270_1_200@355694"
+        }, 
+        "dce_pn": {
+            "channel_id": "8", 
+            "encodings": {
+                "audiobitrate": 160, 
+                "framesize": "1920x1080", 
+                "vbitrate": 9000
+            }
+        }, 
+        "dce_pr": {
+            "channel_id": "5", 
+            "encodings": {
+                "audiobitrate": 160, 
+                "framesize": "1280x720", 
+                "vbitrate": 9000
+            }
+        }
+    }, 
+    "cluster_env": "dev", 
+    "cluster_name_id": "naomi-cadash", 
+    "date_and_time": {
+        "ntp_server": "0.nz.pool.ntp.org", 
+        "timezone": "US/Eastern"
+    }, 
+    "firmware_version": "epiphan_firmware_version", 
+    "location_name_id": "lab", 
+    "maintenance": {
+        "permanent_logs": "on"
+    }, 
+    "mh_admin_url": "http://matterhorn.naomi.dev.dcex.harvard.edu", 
+    "mh_ca_name": "dev-epiphan006", 
+    "mhpearl_file_search_range": 58, 
+    "mhpearl_update_frequency": 123, 
+    "mhpearl_version": "some_version", 
+    "pn_vconnector": "hdmi", 
+    "pn_vinput": "b", 
+    "pr_vconnector": "sdi", 
+    "pr_vinput": "a", 
+    "recorders": {
+        "dce_prpn": {
+            "output_format": "avi", 
+            "recorder_id": "6", 
+            "sizelimit": 64000000, 
+            "timelimit": 360
+        }
+    }, 
+    "role": "primary", 
+    "source_deinterlacing": "on", 
+    "touchscreen": {
+        "episcreen_timeout": 456
+    }
+}

@@ -1,0 +1,64 @@
+{
+    "audio": [
+        {
+            "settings": {
+                "source": "D2P281020.sdi-a-audio"
+            },
+            "type": "source"
+        }
+    ],
+    "background": "#000000",
+    "video": [
+        {
+            "crop": {},
+            "position": {
+                "bottom": "0%",
+                "keep_aspect_ratio": true,
+                "left": "0%",
+                "right": "50%",
+                "top": "0%"
+            },
+            "settings": {
+                "source": "D2P281020.sdi-a"
+            },
+            "type": "source"
+        },
+        {
+            "crop": {},
+            "position": {
+                "bottom": "0%",
+                "keep_aspect_ratio": true,
+                "left": "50%",
+                "right": "0%",
+                "top": "0%"
+            },
+            "settings": {
+                "source": "D2P281020.hdmi-b"
+            },
+            "type": "source"
+        }
+    ]
+}
+dev-epiphan002-presenter-delivery.stream-1920x540_1_200@355694
+prod-epiphan004-presenter-delivery.stream-1920x540_1_200@345252
+
+
+pfd_form_id:mainForm
+codec:h.264
+vencpreset:5
+vprofile:100
+framesize1_from_signal:
+framesize1:1280x720
+framesize1_width:1280
+framesize1_height:720
+vkeyframeinterval1:1
+fpslimit1:30
+vbitrate1:9000
+audio:on
+audiopreset:libfaac;44100
+audiochannels:1
+audiobitrate:160
+htmlrefresh:
+
+
+
