@@ -1,0 +1,3 @@
+[helga_webhooks]
+notify = helga_notify:notify
+
