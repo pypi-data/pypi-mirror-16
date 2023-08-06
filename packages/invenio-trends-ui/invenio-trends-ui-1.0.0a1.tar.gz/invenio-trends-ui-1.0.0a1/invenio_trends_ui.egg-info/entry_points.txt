@@ -1,0 +1,7 @@
+[invenio_assets.bundles]
+invenio_trends_ui_css = invenio_trends_ui.bundles:css
+invenio_trends_ui_js = invenio_trends_ui.bundles:js
+
+[invenio_base.apps]
+invenio_trends_ui = invenio_trends_ui:InvenioTrendsUI
+
