@@ -1,0 +1,17 @@
+flake8
+kinto
+mock
+pytest
+pytest-cache
+pytest-capturelog
+pytest-cover
+pytest-sugar
+requests
+SQLAlchemy
+tox
+unittest2
+WebTest
+werkzeug
+wheel
+zest.releaser
+zope.sqlalchemy
