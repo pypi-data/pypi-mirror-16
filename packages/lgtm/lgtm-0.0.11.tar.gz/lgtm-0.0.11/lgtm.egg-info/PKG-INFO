@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: lgtm
+Version: 0.0.11
+Summary: A pull request approval system using GitHub protected branches and OWNERS files.
+Home-page: https://github.com/nerdwallet/github-lgtm
+Author: Chase Seibert
+Author-email: cseibert@nerdwallet.com
+License: Other/Proprietary License
+Description: UNKNOWN
+Platform: UNKNOWN
