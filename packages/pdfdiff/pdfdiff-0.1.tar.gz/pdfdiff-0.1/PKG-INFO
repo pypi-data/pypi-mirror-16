@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: pdfdiff
+Version: 0.1
+Summary: Print difference between 2 pdf on console
+Home-page: http://www.github.com/vnitinv/pdfdiff
+Author: Nitin Kumar
+Author-email: vnitinv@rediffmail.com
+License: Apache 2.0
+Description: UNKNOWN
+Keywords: automation python framework
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

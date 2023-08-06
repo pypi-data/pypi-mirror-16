@@ -1,0 +1,11 @@
+MANIFEST.in
+pdfdiff.py
+requirements.txt
+setup.cfg
+setup.py
+pdfdiff.egg-info/PKG-INFO
+pdfdiff.egg-info/SOURCES.txt
+pdfdiff.egg-info/dependency_links.txt
+pdfdiff.egg-info/entry_points.txt
+pdfdiff.egg-info/requires.txt
+pdfdiff.egg-info/top_level.txt
