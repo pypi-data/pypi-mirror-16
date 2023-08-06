@@ -1,0 +1,5 @@
+setup.py
+PEP8Bear.egg-info/PKG-INFO
+PEP8Bear.egg-info/SOURCES.txt
+PEP8Bear.egg-info/dependency_links.txt
+PEP8Bear.egg-info/top_level.txt
