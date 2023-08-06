@@ -1,0 +1,3 @@
+[console_scripts]
+wearesports = wearesports.shell:main
+

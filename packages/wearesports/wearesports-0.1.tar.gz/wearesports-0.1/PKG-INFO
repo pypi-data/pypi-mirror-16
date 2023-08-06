@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: wearesports
+Version: 0.1
+Summary: WeAreSports Command-line interface
+Home-page: http://github.com/AymericMoneron/wearesports
+Author: Aymeric MONERON
+Author-email: aymeric.moneron@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: wearesports sports booking command-line cli
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7

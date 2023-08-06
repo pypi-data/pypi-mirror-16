@@ -1,0 +1,12 @@
+README.rst
+setup.py
+wearesports/__init__.py
+wearesports/shell.py
+wearesports/utils.py
+wearesports.egg-info/PKG-INFO
+wearesports.egg-info/SOURCES.txt
+wearesports.egg-info/dependency_links.txt
+wearesports.egg-info/entry_points.txt
+wearesports.egg-info/not-zip-safe
+wearesports.egg-info/requires.txt
+wearesports.egg-info/top_level.txt
