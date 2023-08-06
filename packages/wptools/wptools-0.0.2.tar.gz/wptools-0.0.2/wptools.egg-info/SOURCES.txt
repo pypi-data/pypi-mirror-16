@@ -1,0 +1,16 @@
+HISTORY.rst
+LICENSE
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+wptools/__init__.py
+wptools/extract.py
+wptools/fetch.py
+wptools/utils.py
+wptools.egg-info/PKG-INFO
+wptools.egg-info/SOURCES.txt
+wptools.egg-info/dependency_links.txt
+wptools.egg-info/requires.txt
+wptools.egg-info/top_level.txt
