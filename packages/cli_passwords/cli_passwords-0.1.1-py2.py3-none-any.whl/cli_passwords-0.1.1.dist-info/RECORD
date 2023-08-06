@@ -1,0 +1,10 @@
+cli_passwords/__init__.py,sha256=nXpFZRUn7XaqeNmNW2AsuzZMRXVIoVV4EvenP1lUz18,104
+cli_passwords/cli.py,sha256=Dj7Eh7J_GH4ETQq5RGSx9jOK29w__tWqTWtWWHQyQEw,336
+cli_passwords/cli_passwords.py,sha256=iwhKnzeBJLKxpRVjvzwiRE63_zNpIBfaKLITauVph-0,24
+cli_passwords-0.1.1.dist-info/DESCRIPTION.rst,sha256=KreKWWo9wQE-jJtSeZ-JMqoK7e4YE-oXpmFWrqa6MrA,1270
+cli_passwords-0.1.1.dist-info/METADATA,sha256=9A_XA85rQXhucfVEsrNI-u2K8uySHmxa6PiQ7_y7FfQ,2156
+cli_passwords-0.1.1.dist-info/RECORD,,
+cli_passwords-0.1.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+cli_passwords-0.1.1.dist-info/entry_points.txt,sha256=AZy0pcQ4cbJ3JysHwjaJE65SkC5vE6WQkpLOIAWFKHo,58
+cli_passwords-0.1.1.dist-info/metadata.json,sha256=7323bQvt9_9WcNDvWuxrUn9yCPX7nBB5USpL55Pyt-0,1236
+cli_passwords-0.1.1.dist-info/top_level.txt,sha256=_x17CJYZUtDADBURqYApSQFTegxmMZ1IeO5eErnxW_U,14
