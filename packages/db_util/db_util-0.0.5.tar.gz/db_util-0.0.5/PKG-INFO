@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: db_util
+Version: 0.0.5
+Summary: MySQL Utility
+Home-page: https://github.com/america/Python
+Author: Takashi Haga
+Author-email: dreamers.ball66@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Database
