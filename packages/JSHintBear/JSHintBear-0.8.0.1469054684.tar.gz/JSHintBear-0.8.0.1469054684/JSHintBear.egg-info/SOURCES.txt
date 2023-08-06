@@ -1,0 +1,7 @@
+setup.py
+JSHintBear/JSHintBear.py
+JSHintBear/__init__.py
+JSHintBear.egg-info/PKG-INFO
+JSHintBear.egg-info/SOURCES.txt
+JSHintBear.egg-info/dependency_links.txt
+JSHintBear.egg-info/top_level.txt
