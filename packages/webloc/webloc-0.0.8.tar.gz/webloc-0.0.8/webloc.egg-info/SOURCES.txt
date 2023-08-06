@@ -1,0 +1,16 @@
+MANIFEST.in
+classifiers.txt
+description.txt
+keywords.txt
+platforms.txt
+requirements.txt
+setup.py
+version.txt
+Examples/webloc "$path" "$url"
+Examples/webloc --help
+bin/webloc
+webloc.egg-info/PKG-INFO
+webloc.egg-info/SOURCES.txt
+webloc.egg-info/dependency_links.txt
+webloc.egg-info/requires.txt
+webloc.egg-info/top_level.txt

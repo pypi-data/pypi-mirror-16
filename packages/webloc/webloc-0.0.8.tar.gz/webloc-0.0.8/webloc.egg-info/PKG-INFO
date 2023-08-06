@@ -1,0 +1,59 @@
+Metadata-Version: 1.0
+Name: webloc
+Version: 0.0.8
+Summary: get/set webloc url (OS X)
+Home-page: https://github.com/russianidiot/webloc.sh.cli
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: .. README generated with readmemako.py (github.com/russianidiot/readme-mako.py) and .README dotfiles (github.com/russianidiot-dotfiles/.README)
+        
+        Install
+        ```````
+        
+        :code:`[sudo] pip install webloc`
+        
+        Usage
+        `````
+        .. code:: bash
+        
+        	# webloc --help
+        	usage: webloc path [url]
+        
+        Example
+        ```````
+        
+        .. code:: bash
+        
+        	$ webloc "$path" # get
+        	$ webloc "$path" "$url" # set
+        
+        `Examples/`_
+        
+        .. _Examples/: https://github.com/russianidiot/webloc.sh.cli/tree/master/Examples
+        
+        Feedback |github_issues| |gitter| |github_follow|
+        
+        .. |github_issues| image:: https://img.shields.io/github/issues/russianidiot/webloc.sh.cli.svg
+        	:target: https://github.com/russianidiot/webloc.sh.cli/issues
+        
+        .. |github_follow| image:: https://img.shields.io/github/followers/russianidiot.svg?style=social&label=Follow
+        	:target: https://github.com/russianidiot
+        
+        .. |gitter| image:: https://badges.gitter.im/russianidiot/webloc.sh.cli.svg
+        	:target: https://gitter.im/russianidiot/webloc.sh.cli
+Keywords: volume
+Platform: OS X
+Classifier: Environment :: Console
+Classifier: Environment :: MacOS X
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Natural Language :: Russian
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Unix Shell
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
