@@ -1,0 +1,10 @@
+mastercard_fraud_scoring-0.0.1.dist-info/DESCRIPTION.rst,sha256=FxFPKQ_bQUJ63edRYuIHmEPemLxnISPFfxQHVzVv-Rk,28
+mastercard_fraud_scoring-0.0.1.dist-info/METADATA,sha256=LEAmN1OXYEFqJERQr-idr-mk7BQuGs3fOUaKnmzuryw,858
+mastercard_fraud_scoring-0.0.1.dist-info/RECORD,,
+mastercard_fraud_scoring-0.0.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+mastercard_fraud_scoring-0.0.1.dist-info/metadata.json,sha256=FyCWQtbrZ5185mUGwSYCY074-wutlA0-b1S4RZ-5s48,1013
+mastercard_fraud_scoring-0.0.1.dist-info/top_level.txt,sha256=3coA5LPnJ2zgh5Q2KaGFt-f3jaGfUa8wVxT5IjQfax0,29
+mastercardfraudscoring/__init__.py,sha256=y8kmstpSGO0aZaxehboYfMD6tt_PCvIw5GOT1iF0vhI,81
+mastercardfraudscoring/scorelookup.py,sha256=rizrxTxQGW5R0J7woMusHSGE6xqwaxdZDGos1VH80XY,2905
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_scorelookup.py,sha256=cAibQBJOZkiQNO36Pb7TWhqDjTghJ3llmwfiBP40yEc,5280
