@@ -1,0 +1,9 @@
+README.txt
+setup.py
+zaagpro/__init__.py
+zaagpro/hello.py
+zaagpro.egg-info/PKG-INFO
+zaagpro.egg-info/SOURCES.txt
+zaagpro.egg-info/dependency_links.txt
+zaagpro.egg-info/not-zip-safe
+zaagpro.egg-info/top_level.txt
