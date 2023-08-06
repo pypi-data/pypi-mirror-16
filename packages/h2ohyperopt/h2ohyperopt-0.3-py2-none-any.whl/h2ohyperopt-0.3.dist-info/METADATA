@@ -1,0 +1,20 @@
+Metadata-Version: 2.0
+Name: h2ohyperopt
+Version: 0.3
+Summary: Library for Hyperopt based optimization in H2O Ecosystem
+Home-page: http://github.com/abhishekmalali/h2o-hyperopt/
+Author: Abhishek Malali
+Author-email: anon@anon.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: h2o
+Requires-Dist: hyperopt
+Requires-Dist: networkx
+Requires-Dist: nose
+Requires-Dist: numpy
+Requires-Dist: pymongo (==2.2)
+Requires-Dist: scipy
+
+UNKNOWN
+
+
