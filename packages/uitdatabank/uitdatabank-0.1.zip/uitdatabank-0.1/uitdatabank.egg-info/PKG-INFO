@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: uitdatabank
+Version: 0.1
+Summary: A light wrapper around the UiTdatabank API v2
+Home-page: https://github.com/ruettet/uitdatabank
+Author: Tom Ruette
+Author-email: tom@kunsten.be
+License: Apache 2
+Description: UNKNOWN
+Platform: UNKNOWN
