@@ -1,0 +1,11 @@
+simple_models-0.5.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+simple_models-0.5.0.dist-info/METADATA,sha256=aTVQP1m0pgSUdXDPliyayzrcCcbY-U6WYm8pwKcr2js,482
+simple_models-0.5.0.dist-info/RECORD,,
+simple_models-0.5.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+simple_models-0.5.0.dist-info/metadata.json,sha256=CY_Z5B7Ux56jTto4msFUSOtnFK2FSmkYKGY-Cv4v7sE,648
+simple_models-0.5.0.dist-info/top_level.txt,sha256=xML0aSH2ehzwKSFGamUrzgvqROpfYtRz5d-rUE_u-TY,13
+simplemodels/__init__.py,sha256=swxx2V4gCKHnLkyIWCBRIvz-WNNZG1nH-TsU6b62G70,95
+simplemodels/exceptions.py,sha256=UbqTA4uQN1gwb02FHZgA5fX9k42byBs0Rt2874wZF4A,1139
+simplemodels/fields.py,sha256=gOo1PFtTZgcHyORH484KvZsxPXHgg6WcKWB-JTerlDo,13484
+simplemodels/models.py,sha256=2AhnexatlatZ0PwA9-ygUswp4t7eoXoR8GfPqtmezlY,8221
+simplemodels/utils.py,sha256=5BkfJg9O-qg8f0q95WlP59RwvPsmDcbJt2SleX783Tg,1059
