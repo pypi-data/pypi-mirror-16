@@ -1,0 +1,10 @@
+numpy
+lockfile
+future
+scikit-learn
+matplotlib
+nilearn
+sklearn
+nibabel
+nipype
+niworkflows
