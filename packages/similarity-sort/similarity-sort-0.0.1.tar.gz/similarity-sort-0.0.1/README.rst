@@ -1,0 +1,1 @@
+Similarity sort based on Jaro-Winkler distance algorithm.

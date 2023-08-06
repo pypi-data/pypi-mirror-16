@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: similarity-sort
+Version: 0.0.1
+Summary: Modern Factory Similarity Sort
+Home-page: https://github.com/modernfactory/messenger-sdk
+Author: Marcin Szepczynski, Grzegorz Waszkowiak
+Author-email: marcin@modernfactory.pl, grzegorz.waszkowiak@modernfactory.pl
+License: MIT
+Description: Similarity sort based on Jaro-Winkler distance algorithm.
+Platform: UNKNOWN
