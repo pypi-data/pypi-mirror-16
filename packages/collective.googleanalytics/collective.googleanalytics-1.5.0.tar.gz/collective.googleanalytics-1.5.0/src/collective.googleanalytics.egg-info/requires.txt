@@ -1,0 +1,8 @@
+setuptools
+gdata>=2.0.18
+
+[test]
+mocker
+plone.app.testing
+Products.PloneTestCase
+unittest2
