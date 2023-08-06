@@ -1,0 +1,8 @@
+phpenv.py
+setup.py
+phpenv.egg-info/PKG-INFO
+phpenv.egg-info/SOURCES.txt
+phpenv.egg-info/dependency_links.txt
+phpenv.egg-info/entry_points.txt
+phpenv.egg-info/not-zip-safe
+phpenv.egg-info/top_level.txt

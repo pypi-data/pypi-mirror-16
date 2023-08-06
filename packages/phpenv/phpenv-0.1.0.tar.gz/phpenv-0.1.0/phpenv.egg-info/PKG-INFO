@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: phpenv
+Version: 0.1.0
+Summary: Php virtual environment builder
+Home-page: https://github.com/lomonosow/phpenv
+Author: Lomonosow
+Author-email: lomonosow93@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: any
