@@ -1,0 +1,4 @@
+requests==2.10.0
+argparse
+typing==3.5.2.2
+enum34==1.1.6
