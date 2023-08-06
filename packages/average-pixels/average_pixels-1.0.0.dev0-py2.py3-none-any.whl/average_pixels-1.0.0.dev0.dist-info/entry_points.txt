@@ -1,0 +1,3 @@
+[console_scripts]
+average-pixels = average_pixels.average_pixels:main
+

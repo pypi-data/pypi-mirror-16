@@ -1,0 +1,17 @@
+Metadata-Version: 2.0
+Name: average-pixels
+Version: 1.0.0.dev0
+Summary: Average pixels from multiple images off Bing Image Search
+Home-page: https://github.com/liviu-/average-pixels
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: Pillow
+Requires-Dist: numpy
+Requires-Dist: requests
+Requires-Dist: scipy
+
+UNKNOWN
+
+
