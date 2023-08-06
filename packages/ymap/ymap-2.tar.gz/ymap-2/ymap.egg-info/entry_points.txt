@@ -1,0 +1,6 @@
+[console_scripts]
+yproteins = ymap.ymap:ymap_proteins
+ygenes = ymap.ymap:ymap_genes
+ydata = ymap.ymap:data
+yweb = ymap:web
+
