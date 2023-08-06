@@ -1,0 +1,10 @@
+setup.py
+coco/__init__.py
+coco/coco.py
+cocov.egg-info/PKG-INFO
+cocov.egg-info/SOURCES.txt
+cocov.egg-info/dependency_links.txt
+cocov.egg-info/entry_points.txt
+cocov.egg-info/not-zip-safe
+cocov.egg-info/requires.txt
+cocov.egg-info/top_level.txt
