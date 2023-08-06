@@ -1,0 +1,8 @@
+README.rst
+setup.cfg
+setup.py
+cheerlights.egg-info/PKG-INFO
+cheerlights.egg-info/SOURCES.txt
+cheerlights.egg-info/dependency_links.txt
+cheerlights.egg-info/requires.txt
+cheerlights.egg-info/top_level.txt
