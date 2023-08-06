@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+dcos_marathon/__init__.py
+dcos_marathon/dcos_marathon.py
+dcos_marathon/dcos_marathon.egg-info/PKG-INFO
+dcos_marathon/dcos_marathon.egg-info/SOURCES.txt
+dcos_marathon/dcos_marathon.egg-info/dependency_links.txt
+dcos_marathon/dcos_marathon.egg-info/requires.txt
+dcos_marathon/dcos_marathon.egg-info/top_level.txt
+resources/schema/AppDefinition.json
+resources/schema/Group.json
