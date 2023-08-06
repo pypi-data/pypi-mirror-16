@@ -1,0 +1,23 @@
+CHANGES
+=======
+
+1.0.1
+-----
+
+* unpin package version
+* fix config generation
+
+1.0.0
+-----
+
+* Add COLLECTD_CONF_DIR config option
+* Add collectd support for Ubuntu
+* Force flake8<3.0
+* Fix path issue for devstack
+* Fix testcases race condition
+* Adds option to disable collectd installation
+* Add documentation
+* Add devstack support
+* Implement plugin
+* Apply cookie cutter template
+* Added .gitreview
