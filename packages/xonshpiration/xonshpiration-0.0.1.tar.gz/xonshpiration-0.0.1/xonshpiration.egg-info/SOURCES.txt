@@ -1,0 +1,8 @@
+setup.py
+xonshpiration.egg-info/PKG-INFO
+xonshpiration.egg-info/SOURCES.txt
+xonshpiration.egg-info/dependency_links.txt
+xonshpiration.egg-info/not-zip-safe
+xonshpiration.egg-info/pbr.json
+xonshpiration.egg-info/top_level.txt
+xontrib/xonshpiration.xsh
