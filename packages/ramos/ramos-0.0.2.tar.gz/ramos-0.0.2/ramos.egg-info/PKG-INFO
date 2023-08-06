@@ -1,0 +1,27 @@
+Metadata-Version: 1.1
+Name: ramos
+Version: 0.0.2
+Summary: Generic Django backend pool 
+Home-page: https://github.com/luizalabs/ramos
+Author: LuizaLabs
+Author-email: pypi@luizalabs.com
+License: UNKNOWN
+Description: Ramos
+        =====
+        
+        .. image:: https://travis-ci.org/luizalabs/ramos.svg?branch=master
+            :target: https://travis-ci.org/luizalabs/ramos
+        
+        .. image:: https://codecov.io/gh/luizalabs/ramos/branch/master/graph/badge.svg
+            :target: https://codecov.io/gh/luizalabs/ramos
+        
+        Generic backend pool for Django
+        
+Keywords: django backends pool
+Platform: UNKNOWN
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
