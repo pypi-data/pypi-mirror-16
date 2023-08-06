@@ -1,0 +1,15 @@
+[console_scripts]
+aperitif = jouets.aperitif.__main__:main
+bin = jouets.bin.__main__:main
+chemin = jouets.chemin.__main__:main
+cholera = jouets.pestecholera.cholera.__main__:main
+dobble = jouets.dobble.__main__:main
+egyptienne = jouets.egyptienne.__main__:main
+erathostene = jouets.erathostene.__main__:main
+fractale = jouets.fractale.__main__:main
+labyrinthe = jouets.labyrinthe.__main__:main
+mafia = jouets.mafia.__main__:main
+memobble = jouets.dobble.memobble.__main__:main
+peste = jouets.pestecholera.peste.__main__:main
+sudoku = jouets.sudoku.__main__:main
+
