@@ -1,0 +1,13 @@
+fbmessenger/__init__.py,sha256=ijSGXBFw1iX_7VTgrFHopgIoXqNd2-wKQtWhOKTW2N4,5665
+fbmessenger/attachments.py,sha256=jPvek-3pHPojAYF6Kc-41Qt7bpwyhbnnMF0Z4o5X0m4,1103
+fbmessenger/elements.py,sha256=5dFCLe5reweURgTfe-KchMAPqTJ8eq9Dj04UCPRgm0M,3966
+fbmessenger/quick_replies.py,sha256=dbmXshMIJ9SZ51fPboTqFloL-mLdqn313S8_YMa455Q,882
+fbmessenger/sender_actions.py,sha256=AbPvJyFVcweocfsfdz4Uh1y4FGAu-ej9UeLipECZkQA,378
+fbmessenger/templates.py,sha256=1y7LsRg99O4BUrbCtW7QX8SwrBMn91JyeqAk2ltzjv0,3124
+fbmessenger/thread_settings.py,sha256=yybSeJJtgX9xAQN4E4vKh-hzqOD8UwI448n1qfc1XSo,2385
+fbmessenger-2.0.0.dist-info/DESCRIPTION.rst,sha256=VRKk3s8KsuyTsFjFvt8mS8dC6JCEwO8gL5U83wAWPz8,7259
+fbmessenger-2.0.0.dist-info/METADATA,sha256=evG1nRRsSSwiB4LjwlMY1ztYVHH2SuvbuDeYaFxp4nY,8141
+fbmessenger-2.0.0.dist-info/RECORD,,
+fbmessenger-2.0.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+fbmessenger-2.0.0.dist-info/metadata.json,sha256=bgVvyMWE2jTAPNB2ZdlAm-Nhji52XKaLDX-qxpTM_ik,1116
+fbmessenger-2.0.0.dist-info/top_level.txt,sha256=ys0tewrXHYoAo_JS6euwq0QjlI0gwyoUULQrtCI05Gs,12
