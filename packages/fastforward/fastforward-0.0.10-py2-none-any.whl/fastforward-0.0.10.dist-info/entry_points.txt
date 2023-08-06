@@ -1,0 +1,21 @@
+[console_scripts]
+ff = fastforward.cli:main
+
+[openstack]
+cinder = fastforward.cinder:make
+environment = fastforward.environment:make
+glance = fastforward.glance:make
+haproxy = fastforward.haproxy:make
+horizon = fastforward.horizon:make
+keystone = fastforward.keystone:make
+manila = fastforward.manila:make
+manila-share = fastforward.manila_share:make
+mysql = fastforward.mysql:make
+neutron = fastforward.neutron:make
+neutron-agent = fastforward.neutron_agent:make
+nova = fastforward.nova:make
+nova-compute = fastforward.nova_compute:make
+rabbitmq = fastforward.rabbitmq:make
+swift = fastforward.swift:make
+swift-storage = fastforward.swift_storage:make
+
