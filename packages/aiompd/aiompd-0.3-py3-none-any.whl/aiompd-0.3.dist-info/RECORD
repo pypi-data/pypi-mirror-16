@@ -1,0 +1,11 @@
+aiompd/__init__.py,sha256=MF64bwUCd4sm3dvcxZnkb4ujHtxT_KeuXdD0nVieEt4,27
+aiompd/client.py,sha256=jrskVO5thhn11P7Xfv9I5U598za5B-Urjx6yMWbKC2c,7913
+aiompd/helpers.py,sha256=mRAlJ8__Yqv90lLea3Y56KwanZ6ECigtBzn2yM77r2E,2637
+aiompd/protocol.py,sha256=KUewwyzdCuK8dzIyDw0CLYbLq0Jsv1bQv5_CYTXTFVI,830
+aiompd/types.py,sha256=-VhSRGBtCqrjwe0HLAL_p_at0CTLBpDagTkmkfJZq3o,529
+aiompd-0.3.dist-info/DESCRIPTION.rst,sha256=W2J_aYuMkB8WdmW9ZsHf9RJQx29ak5F507jQo0iM0k4,1289
+aiompd-0.3.dist-info/METADATA,sha256=OCQH72Yw880ZsvE0AAo-8ZtBkQab8GGuQLgL7AvZc08,1913
+aiompd-0.3.dist-info/RECORD,,
+aiompd-0.3.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+aiompd-0.3.dist-info/metadata.json,sha256=qE5-Er2rEV_mVaIBATNdxKlcUi8eQv1kcMxtfFWjLGc,752
+aiompd-0.3.dist-info/top_level.txt,sha256=LQXAQ8pXsAsAQWXCnPXvljAoMpvhRbKAAsYxCm9o1SU,7
