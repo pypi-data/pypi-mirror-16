@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: steam-market
+Version: 0.2.0
+Summary: A Python API for getting prices from the Steam market.
+Home-page: https://github.com/csu/PySteamMarket
+Author: Christopher Su
+Author-email: chris+gh@christopher.su
+License: UNKNOWN
+Download-URL: https://github.com/csu/PySteamMarket/archive/master.zip
+Description: UNKNOWN
+Platform: UNKNOWN
