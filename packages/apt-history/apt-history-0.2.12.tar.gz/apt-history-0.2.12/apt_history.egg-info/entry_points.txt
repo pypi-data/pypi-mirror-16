@@ -1,0 +1,3 @@
+[console_scripts]
+apt-history = apt_history:main
+
