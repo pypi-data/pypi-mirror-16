@@ -1,0 +1,55 @@
+
+=======
+Arpegio
+=======
+
+.. image:: https://img.shields.io/travis/arpegio-dj/arpegio.svg
+   :target: https://travis-ci.org/arpegio-dj/arpegio
+
+.. image:: https://landscape.io/github/arpegio-dj/arpegio/master/landscape.svg?style=flat
+   :target: https://landscape.io/github/arpegio-dj/arpegio/master
+   :alt: Code Health
+
+.. image:: https://img.shields.io/coveralls/arpegio-dj/arpegio.svg
+   :target: https://coveralls.io/github/arpegio-dj/arpegio
+
+.. image:: https://img.shields.io/codecov/c/github/arpegio-dj/arpegio.svg
+   :target: https://codecov.io/gh/arpegio-dj/arpegio
+
+.. image:: https://img.shields.io/codeclimate/github/arpegio-dj/arpegio.svg
+   :target: https://codeclimate.com/github/arpegio-dj/arpegio
+
+.. image:: https://img.shields.io/codeclimate/issues/github/arpegio-dj/arpegio.svg
+   :target: https://codeclimate.com/github/arpegio-dj/arpegio
+
+.. image:: https://img.shields.io/github/downloads/arpegio-dj/arpegio/total.svg
+   :target: https://github.com/arpegio-dj/arpegio
+
+.. image:: https://img.shields.io/github/release/arpegio-dj/arpegio.svg
+   :target: https://github.com/arpegio-dj/arpegio
+
+.. image:: https://img.shields.io/github/downloads/arpegio-dj/arpegio/latest/total.svg
+   :target: https://github.com/arpegio-dj/arpegio
+
+------------------------------
+Apps that sound good together.
+------------------------------
+
+Arpegio is a set of apps that work well together and are easily extendable and customizable. Following the best practices in the Django world and the website development Arpegio takes away from you all the boilerplate needed to do an awesome website/webapp.
+
+You can plug all the apps you need for the next big project you're working on. There's no need to learn yet another layer of abstraction. Arpegio is vanilla Django with some helper functions. No new rules to learn.
+
+The template structure makes really simple to create custom themes. For those that say that Django is great for webapps but bad for webdesign will think twice about it now.
+
+License
+=======
+
+These apps are licensed under the MIT license.
+
+----------------------------------
+
+**Note:** Arpegio is `hosted on Gitlab.com
+<https://gitlab.com/arpegio/arpegio>`_ and there is a `mirror on Github
+<https://github.com/arpegio-dj/arpegio>`_ to
+easy collaboration. Please try to commit to the canonical repository instead of
+the mirror.
