@@ -1,0 +1,45 @@
+Metadata-Version: 1.1
+Name: ccall
+Version: 0.1.0
+Summary: A short description for your project.
+Home-page: UNKNOWN
+Author: Fábio Macêdo Mendes
+Author-email: fabiomacedomendes@gmail.com
+License: UNKNOWN
+Description: Uses cffi to build a simple interface for calling functions in a C file. This
+        package is designed for convenience and should work only in the very simple
+        cases. It is used in an educational setting in a mixed Python/C programming
+        course.
+        
+        Usage
+        =====
+        
+        It is very simple. Say you have a "libfuncs.c" in the working directory
+        
+        .. code-block::c
+            #include<stdio.h>
+        
+            int double(int x) {
+                return x + x;
+            }
+        
+        We can call the `double` function by relying in the implicit import in the
+        :mod:`ccall` module.
+        
+        >>> import ccall as c
+        >>> c.libfuncs.double(21)
+        42
+        
+        
+        Limitations
+        ===========
+        
+        This software is beta. Use with care!
+        
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries
