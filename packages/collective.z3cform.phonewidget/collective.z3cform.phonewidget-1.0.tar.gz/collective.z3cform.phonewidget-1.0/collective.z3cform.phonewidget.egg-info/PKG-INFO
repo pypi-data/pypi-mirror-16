@@ -1,0 +1,27 @@
+Metadata-Version: 1.1
+Name: collective.z3cform.phonewidget
+Version: 1.0
+Summary: HTML5 phone input implementation with python validation
+Home-page: http://svn.plone.org/svn/collective/
+Author: Martronic SA
+Author-email: martronic@martronic.ch
+License: GPL
+Description: Introduction
+        ============
+        
+        
+        
+        phonewidget, HTML5 tel type implementation.
+        
+        Changelog
+        =========
+        
+        1.0dev (unreleased)
+        -------------------
+        
+        - Initial release
+        
+Keywords: number,input,widget,phone
+Platform: UNKNOWN
+Classifier: Framework :: Plone
+Classifier: Programming Language :: Python

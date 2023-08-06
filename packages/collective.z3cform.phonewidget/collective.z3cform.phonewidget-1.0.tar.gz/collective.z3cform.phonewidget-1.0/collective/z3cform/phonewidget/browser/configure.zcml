@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:z3c="http://namespaces.zope.org/z3c"
+    i18n_domain="collective.z3cform.phonewidget">
+
+  <z3c:widgetTemplate
+      mode="input"
+      widget=".widget.IPhoneWidget"
+      layer="z3c.form.interfaces.IFormLayer"
+      template="templates/phone_input.pt"
+      />
+
+  <adapter
+      for="*
+           zope.publisher.interfaces.browser.IBrowserRequest
+           z3c.form.interfaces.IForm
+           zope.schema.interfaces.IField
+           .widget.IPhoneWidget"
+      provides="z3c.form.interfaces.IValidator"
+      factory=".widget.PhoneWidgetValidator"/>
+
+</configure>

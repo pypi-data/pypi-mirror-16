@@ -1,0 +1,42 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2016-05-24 07:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+msgid "Could not interpret numbers after plus-sign."
+msgstr "Ne peut pas interpréter le numéro après le signe \"+\"."
+
+msgid "Country calling code supplied was not recognised."
+msgstr "L'indicatif du pays fourni n'a pas été reconnu."
+
+msgid "Missing or invalid default region."
+msgstr "Région par défaut manquante ou invalide."
+
+msgid "Phone number had an IDD, but after this was not long enough to be a viable phone number."
+msgstr "Le numéro de téléphone a un IDD, mais la suite n'était pas assez longue pour être un numéro de téléphone viable."
+
+msgid "The phone number supplied was None."
+msgstr "Le numéro de téléphone fourni était None."
+
+msgid "The string supplied did not seem to be a phone number."
+msgstr "La chaîne fournie ne semble pas être un numéro de téléphone."
+
+msgid "The string supplied is too long to be a phone number."
+msgstr "La chaîne fournie est trop longue pour être un numéro de téléphone."
+
+msgid "The string supplied is too short to be a phone number."
+msgstr "La chaîne fournie est trop courte pour être un numéro de téléphone."
+
+msgid "The string supplied was too long to parse."
+msgstr "La chaîne fournie est trop longue pour être analysée."
