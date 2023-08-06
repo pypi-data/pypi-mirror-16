@@ -1,0 +1,11 @@
+twisted_s3/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+twisted_s3/auth.py,sha256=65vsaiu8r3SWP8XOMbzNCUQzmCPQt74fveacuKhzehk,6299
+twisted_s3/client.py,sha256=0XqDovagYN9p5Lmii8Yn5kWUfqnFkA1gzyhPZzrTKB0,8733
+twisted_s3/future.py,sha256=XcqWOXq_ruCd5r0vEOLaV7goJ2iE6GUhjxuKkwg_uo4,1366
+twisted_s3/response.py,sha256=kKtKXCeZ_SH3UUr9pYNmTaE-sLkMOjpR6oxF7B0ZrCk,5094
+twisted_s3-0.2.1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+twisted_s3-0.2.1.dist-info/METADATA,sha256=1Uoc64PgHzslS3T-izGEkcWrV3JLvrQeLuICWp8v2Tw,456
+twisted_s3-0.2.1.dist-info/RECORD,,
+twisted_s3-0.2.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+twisted_s3-0.2.1.dist-info/metadata.json,sha256=lQA-ZWkwIsh-8OHx5Xz0RtKj0QmTpgrlLNt_KDsOh74,703
+twisted_s3-0.2.1.dist-info/top_level.txt,sha256=jwxd8ajEEm3lkyr6Dg3T4LQ59VS8Fo-e-Gzv1hVwaz0,11
