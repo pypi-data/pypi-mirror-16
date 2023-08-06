@@ -1,0 +1,18 @@
+Automation.ipynb
+LICENSE
+MANIFEST.in
+Principal Component Viewer.ipynb
+README.rst
+Untitled.ipynb
+Untitled1.ipynb
+Untitled196.ipynb
+Untitled2.ipynb
+aasdf.ipynb
+meetuper.ipynb
+setup.cfg
+setup.py
+whatever_forever.egg-info/PKG-INFO
+whatever_forever.egg-info/SOURCES.txt
+whatever_forever.egg-info/dependency_links.txt
+whatever_forever.egg-info/requires.txt
+whatever_forever.egg-info/top_level.txt
