@@ -1,0 +1,32 @@
+Metadata-Version: 1.1
+Name: wlt
+Version: 1.0.1
+Summary: This is a package for wlt(USTC) loging
+Home-page: https://git.ustclug.org/phys-cs-lover/wltlogin
+Author: Chenxiao Liu
+Author-email: Venique@mail.ustc.edu.cn
+License: MIT
+Description: ﻿# 帮助手册
+        
+        ## 前情提要
+        
+        基于Python3.5 Anaconda整合包编写
+        
+        >Python2.7你怎么还没死啊，快点去死啊，你不死我很为难的。
+        
+        ## 使用
+        
+        支持命令行参数
+        
+            python3 wltsetting.py [username] [password] [portnumber]
+        
+        By Chenxiao Liu 
+        
+        >Ruby is so cute
+        
+Keywords: python3 wlt USTC
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
