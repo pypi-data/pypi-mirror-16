@@ -1,0 +1,22 @@
+Metadata-Version: 2.0
+Name: ohai
+Version: 0
+Summary: A demo of reliable pth installation, with a dash of troll.
+Home-page: https://github.com/bukzor/ohai
+Author: Buck Evan
+Author-email: buck.2019@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: License :: OSI Approved :: MIT License
+
+default semantics for install.extra_path cause all installed modules to go
+into a directory whose name is equal to the contents of the .pth file.
+
+All that was necessary was to remove that one behavior to get what you'd
+generally want.
+
+
