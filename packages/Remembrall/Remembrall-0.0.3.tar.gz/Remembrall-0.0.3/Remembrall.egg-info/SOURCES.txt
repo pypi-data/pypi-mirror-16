@@ -1,0 +1,12 @@
+constants.py
+initializer.py
+list.py
+main.py
+setup.py
+Remembrall.egg-info/PKG-INFO
+Remembrall.egg-info/SOURCES.txt
+Remembrall.egg-info/dependency_links.txt
+Remembrall.egg-info/entry_points.txt
+Remembrall.egg-info/requires.txt
+Remembrall.egg-info/top_level.txt
+Remembrall.egg-info/zip-safe

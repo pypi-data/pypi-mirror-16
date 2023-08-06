@@ -1,0 +1,3 @@
+[console_scripts]
+remembrall = main:console_entry
+
