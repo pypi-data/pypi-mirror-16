@@ -1,0 +1,43 @@
+Metadata-Version: 1.1
+Name: base64image
+Version: 0.4.0
+Summary: Base64 Image Handler for Data URIs
+Home-page: UNKNOWN
+Author: Lily Seabreeze
+Author-email: lillian.gardenia.seabreeze@gmail.com
+License: MIT
+Description: base64image
+        ===========
+        
+        |PyPi|
+        
+        Base64-encoded images for HTML data URIs.
+        
+        ``pip install base64image``
+        
+        Examples
+        --------
+        
+        \`\`\` from base64image import Base64Image b64\_image =
+        Base64Image.from\_file("wowo.png") image\_element = '' % base64\_image
+        
+        base64\_image = Base64Image.from\_url("http://example.org/haha.jpg")
+        base64\_image.to\_file("haha.jpg")
+        
+        base64\_image.image\_format base64\_image.base64\_image\_string
+        base64\_image.image\_string
+        
+        try: base64\_image = Base64Image.from\_base64\_image\_string("...")
+        except ValueError: print("lol that string isn't an image encoded in
+        base64...") else: pil\_image = base64\_image.get\_pil\_image() \`\`
+        
+        .. |PyPi| image:: https://img.shields.io/pypi/v/base64image.svg
+           :target: https://pypi.python.org/pypi/base64image
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
