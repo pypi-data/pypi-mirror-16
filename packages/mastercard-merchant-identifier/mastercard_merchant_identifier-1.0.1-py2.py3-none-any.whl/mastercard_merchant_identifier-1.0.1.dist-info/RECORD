@@ -1,0 +1,11 @@
+mastercard_merchant_identifier-1.0.1.dist-info/DESCRIPTION.rst,sha256=FxFPKQ_bQUJ63edRYuIHmEPemLxnISPFfxQHVzVv-Rk,28
+mastercard_merchant_identifier-1.0.1.dist-info/METADATA,sha256=XASJXr7OH62kMRV_zV9FfXin7vguXHq8UsLsmb42dQk,881
+mastercard_merchant_identifier-1.0.1.dist-info/RECORD,,
+mastercard_merchant_identifier-1.0.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+mastercard_merchant_identifier-1.0.1.dist-info/metadata.json,sha256=XGDqTArs1IjiK1DfbgdmkAqqnOMBVnO0D4NZiGwrUdc,1036
+mastercard_merchant_identifier-1.0.1.dist-info/top_level.txt,sha256=DuRm-9VLCJfRobOeE8XFqh_KEERcBhMf6CMe6o531F4,35
+mastercardmerchantidentifier/__init__.py,sha256=lsCXHpYl4lhoqwQ8FB_t8CywjGR9_iQ-eecDiwwFSxg,94
+mastercardmerchantidentifier/merchantidentifier.py,sha256=FIQ8-AtYA4aORMxFMSDEEhrNs8oHpUMNp_ufD_StXDg,3028
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/base_test.py,sha256=SWfNM_dCV32W6OAT7yu8a4QRdZGJVSzdYmyjT7U2bAk,852
+tests/test_merchantidentifier.py,sha256=J0P4-sz1EghW1EE2zoF7tssH2x7O_4E-i_FI_llDUlE,6490
