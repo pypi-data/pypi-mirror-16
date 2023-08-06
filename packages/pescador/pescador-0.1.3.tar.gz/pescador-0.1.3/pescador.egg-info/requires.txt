@@ -1,0 +1,9 @@
+joblib>=0.9
+six
+pyzmq
+numpy
+scipy
+scikit-learn
+
+[docs]
+numpydoc
