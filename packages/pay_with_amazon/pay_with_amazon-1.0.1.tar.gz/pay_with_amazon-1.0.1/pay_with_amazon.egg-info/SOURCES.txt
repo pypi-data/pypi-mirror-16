@@ -1,0 +1,16 @@
+setup.cfg
+setup.py
+pay_with_amazon/__init__.py
+pay_with_amazon/client.py
+pay_with_amazon/ipn_handler.py
+pay_with_amazon/login_with_amazon.py
+pay_with_amazon/lwa_region.py
+pay_with_amazon/payment_request.py
+pay_with_amazon/payment_response.py
+pay_with_amazon/pwa_region.py
+pay_with_amazon/version.py
+pay_with_amazon.egg-info/PKG-INFO
+pay_with_amazon.egg-info/SOURCES.txt
+pay_with_amazon.egg-info/dependency_links.txt
+pay_with_amazon.egg-info/requires.txt
+pay_with_amazon.egg-info/top_level.txt
