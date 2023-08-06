@@ -1,0 +1,15 @@
+CHANGES.rst
+LICENSE
+MANIFEST.in
+README.rst
+django-LICENSE
+setup.cfg
+setup.py
+django_embed_template/__init__.py
+django_embed_template.egg-info/PKG-INFO
+django_embed_template.egg-info/SOURCES.txt
+django_embed_template.egg-info/dependency_links.txt
+django_embed_template.egg-info/requires.txt
+django_embed_template.egg-info/top_level.txt
+django_embed_template/templatetags/__init__.py
+django_embed_template/templatetags/embed.py
