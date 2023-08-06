@@ -1,0 +1,16 @@
+Kotti>=1.0.0
+unidecode
+keyring
+oauth2client>=1.5
+google-api-python-client>=1.4.2
+python-dateutil
+addressable>=1.4.2
+inspect-it>=0.3.2
+werkzeug>=0.10
+keyring==5.3
+click>=3.3
+pyyaml>=3
+prettytable>=0.7
+colorama>=0.3
+googleanalytics>=0.22.2
+kotti_controlpanel>=1.0.0
