@@ -1,0 +1,24 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml">
+
+  <subscriber
+      zcml:condition="installed plone.app.dexterity"
+      for="plone.dexterity.interfaces.IDexterityContent
+           Products.CMFCore.interfaces.IActionSucceededEvent"
+      handler=".subscribers.post_news"
+      />
+  <subscriber
+      zcml:condition="installed plone.app.dexterity"
+      for="plone.dexterity.interfaces.IDexterityContent
+           zope.lifecycleevent.IObjectModifiedEvent"
+      handler=".subscribers.repost_news"
+      />
+  <subscriber
+      zcml:condition="installed plone.app.dexterity"
+      for="plone.dexterity.interfaces.IDexterityContent
+           zope.lifecycleevent.IObjectRemovedEvent"
+      handler=".subscribers.delete_video"
+      />
+
+</configure>
