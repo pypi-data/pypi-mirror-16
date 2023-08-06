@@ -1,0 +1,20 @@
+Metadata-Version: 2.0
+Name: fsq-wrapper
+Version: 0.0.2
+Summary: This is a CLI tool to make calls to the foursquare API
+Home-page: https://github.com/Zabanaa/foursquare-cli
+Author: Karim Cheurfi (Zabanaa)
+Author-email: karim.cheurfi@gmail.com
+License: MIT
+Keywords: Foursquare API web development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: Freely Distributable
+Classifier: Programming Language :: Python
+Requires-Dist: requests
+
+UNKNOWN
+
+
