@@ -1,0 +1,17 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+dictsheet/__init__.py
+dictsheet/dictsheet.py
+dictsheet/row.py
+dictsheet.egg-info/PKG-INFO
+dictsheet.egg-info/SOURCES.txt
+dictsheet.egg-info/dependency_links.txt
+dictsheet.egg-info/requires.txt
+dictsheet.egg-info/top_level.txt
+tests/test_config.py
+tests/test_config.sample.py
+tests/test_dict_sheet.py
