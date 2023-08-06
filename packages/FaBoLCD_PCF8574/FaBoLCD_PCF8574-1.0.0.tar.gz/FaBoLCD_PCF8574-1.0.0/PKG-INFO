@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: FaBoLCD_PCF8574
+Version: 1.0.0
+Summary: This is a library for the FaBo LCD I2C Brick.
+Home-page: https://github.com/FaBoPlatform/FaBoLCD-PCF8574-Python
+Author: FaBo
+Author-email: info@fabo.io
+License: Apache License 2.0
+Description: FaBoLCD-PCF8574-Python
+        ======================
+        
+        How to install.
+        ---------------
+        
+        ::
+        
+            pip install FaBoLCD_PCF8574
+        
+        FaBo LCD I2C Brick
+        ------------------
+        
+        　`#212 LCD I2C Brick <http://fabo.io/212.html>`__
+        
+        PCF8574
+        -------
+        
+        　PCF8574 is Remote 8-bit I/O expander for I2C-bus.
+        
+        PCF8574 Datasheet
+        ~~~~~~~~~~~~~~~~~
+        
+        　`PCF8574
+        Datasheet <http://www.nxp.com/documents/data_sheet/PCF8574_PCF8574A.pdf>`__
+        
+        Releases
+        --------
+        
+        -  1.0.0 Initial release.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development
+Classifier: Topic :: System :: Hardware
