@@ -1,0 +1,11 @@
+*.pyc
+*.sw?
+*.sqlite3
+.DS_STORE
+*.egg-info
+.eggs
+MANIFEST
+.venv
+.tox
+build
+dist
