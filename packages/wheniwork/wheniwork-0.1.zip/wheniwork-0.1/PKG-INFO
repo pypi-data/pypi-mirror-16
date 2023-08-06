@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: wheniwork
+Version: 0.1
+Summary: A library for interfacing with the WhenIWork.com API
+Home-page: https://github.com/fimion/wheniwork-api-py
+Author: Alex Riviere
+Author-email: fimion@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/fimion/wheniwork-api-py/tarball/0.1
+Description: UNKNOWN
+Keywords: wheniwork,api
+Platform: UNKNOWN
