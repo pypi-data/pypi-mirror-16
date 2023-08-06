@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+mkscreenshot/__init__.py
+mkscreenshot/mkscreenshot.py
+mkscreenshot.egg-info/PKG-INFO
+mkscreenshot.egg-info/SOURCES.txt
+mkscreenshot.egg-info/dependency_links.txt
+mkscreenshot.egg-info/entry_points.txt
+mkscreenshot.egg-info/requires.txt
+mkscreenshot.egg-info/top_level.txt

@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: mkscreenshot
+Version: 1.0.2
+Summary: Screenshot websites quickly
+Home-page: https://github.com/sesh/mkscreenshot
+Author: Brenton Cleeland
+Author-email: brenton@brntn.me
+License: MIT License
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: b'Natural Language :: English'
+Classifier: b'License :: OSI Approved :: MIT License'
+Classifier: b'Programming Language :: Python :: 3'
+Classifier: b'Programming Language :: Python :: 3.5'
