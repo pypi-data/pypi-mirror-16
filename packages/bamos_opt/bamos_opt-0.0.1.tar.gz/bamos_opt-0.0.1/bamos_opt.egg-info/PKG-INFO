@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: bamos-opt
+Version: 0.0.1
+Summary: Python library for optimization
+Home-page: https://github.com/bamos/opt.py
+Author: Brandon Amos
+Author-email: bamos@cs.cmu.edu
+License: Apache 2.0
+Description: UNKNOWN
+Platform: any
