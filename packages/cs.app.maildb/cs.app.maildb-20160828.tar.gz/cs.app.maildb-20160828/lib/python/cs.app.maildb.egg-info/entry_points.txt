@@ -1,0 +1,3 @@
+[console_scripts]
+maildb = cs.app.maildb:main
+
