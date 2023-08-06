@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: visualdeploy
+Version: 0.1
+Summary: See your app's deployment progress in real time
+Home-page: https://github.com/puilp0502/visualdeploy
+Author: Frank Yang
+Author-email: puilp0502@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/puilp0502/visualdeploy/tarball/0.1
+Description: UNKNOWN
+Keywords: deploy,wsgi,flask
+Platform: UNKNOWN
