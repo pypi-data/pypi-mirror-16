@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: xyz2rast
+Version: 0.1.2.dev0
+Summary: Gridding algorithm for time series XYZ data
+Home-page: https://github.com/tashley/xyz2rast.git
+Author: Thomas Ashley
+Author-email: tashley22@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
