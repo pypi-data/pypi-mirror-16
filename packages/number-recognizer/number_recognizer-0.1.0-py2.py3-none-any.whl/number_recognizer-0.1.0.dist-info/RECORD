@@ -1,0 +1,10 @@
+number_recognizer-0.1.0.dist-info/DESCRIPTION.rst,sha256=MxySevMUSz2X3cDjPParhgYiuAOlwnV6sStP1pxQnX4,1498
+number_recognizer-0.1.0.dist-info/METADATA,sha256=j8wUg4Q01YV6F0gGPGL1I6zRUdBMUIO-10Z2zeUwESo,2417
+number_recognizer-0.1.0.dist-info/RECORD,,
+number_recognizer-0.1.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+number_recognizer-0.1.0.dist-info/entry_points.txt,sha256=M6xc66yTx5_hqqu7zC8nDTbSUigxBj0W7QUxuU-7VEw,52
+number_recognizer-0.1.0.dist-info/metadata.json,sha256=LWml-Gthz7Xe62XxQi-23mNk2OND8z8BcFmlW1uXITY,1196
+number_recognizer-0.1.0.dist-info/top_level.txt,sha256=nx2bbOPZew6FQZDYwFUOlbE3OBflUJ86oHYVdixMlCs,11
+recognizer/__init__.py,sha256=pmQHH17z2FDnGitzhUqX9LTnL04yQmlEaDV9BUjR6vw,128
+recognizer/cli.py,sha256=B01fzaERAnXheOTZiLZ5WRVsFYncqiwcihF3PmS1TiU,4063
+recognizer/recognizer.py,sha256=EUWADRMryeAjs1E2iTmVHrbxT7ClSZQmY-pTiR1pB-4,2150
