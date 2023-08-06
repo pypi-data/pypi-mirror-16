@@ -1,0 +1,7 @@
+setup.py
+XMLBear/XMLBear.py
+XMLBear/__init__.py
+XMLBear.egg-info/PKG-INFO
+XMLBear.egg-info/SOURCES.txt
+XMLBear.egg-info/dependency_links.txt
+XMLBear.egg-info/top_level.txt
