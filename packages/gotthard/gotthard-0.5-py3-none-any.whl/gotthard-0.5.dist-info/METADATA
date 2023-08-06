@@ -1,0 +1,40 @@
+Metadata-Version: 2.0
+Name: gotthard
+Version: 0.5
+Summary: Command line utility to tunnel a PostgreSQL connection
+Home-page: https://github.com/zalando-incubator/stups-gotthard
+Author: Feike Steenbergen
+Author-email: feike.steenbergen@zalando.de
+License: Apache License 2.0
+Keywords: gotthard spilo tunnel postgresql
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Requires-Dist: clickclick (>=1.0)
+
+========
+Gotthard
+========
+
+Installation
+============
+
+.. code-block:: bash
+
+  $ sudo pip3 install --upgrade gotthard
+
+Usage
+=====
+
+.. code-block:: bash
+
+  $ gotthard --help
+
+
