@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: relog
+Version: 1.0
+Summary: Wrap logging round 3rd party functions and calls
+Home-page: https://bitbucket.org/jestersghost/relog
+Author: Jesters Ghost
+Author-email: jestersghost@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
