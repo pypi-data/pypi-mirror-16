@@ -1,0 +1,13 @@
+setup.py
+serializable/__init__.py
+serializable/helpers.py
+serializable/primtive_types.py
+serializable/serializable.py
+serializable.egg-info/PKG-INFO
+serializable.egg-info/SOURCES.txt
+serializable.egg-info/dependency_links.txt
+serializable.egg-info/requires.txt
+serializable.egg-info/top_level.txt
+test/test_class.py
+test/test_function.py
+test/test_object.py
