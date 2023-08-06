@@ -1,0 +1,10 @@
+vlcp_event_cython/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vlcp_event_cython/event.pyd,sha256=qarXOyHK0CA3mgnh1eer13bWlocyz3IQkb8zycU-_F0,111616
+vlcp_event_cython/matchtree.pyd,sha256=GMsGN_kFulLSp4IMsVmGcCRw0gm0KnaGT1XR-fcfZ38,72192
+vlcp_event_cython/pqueue.pyd,sha256=WcMrGod5KInEhIIJIs41cT0MXmxvfbdEKRlMQd9BWo8,306688
+vlcp_event_cython-0.1.1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+vlcp_event_cython-0.1.1.dist-info/METADATA,sha256=lz9-yDai8fKnCZjiRnUFvAjth-BoYxwnSFiyFLc3sNQ,314
+vlcp_event_cython-0.1.1.dist-info/RECORD,,
+vlcp_event_cython-0.1.1.dist-info/WHEEL,sha256=Jmq6HlU3-gun8Kdi3LY3f3pFZ0JqJ7Bn8GbGn_XfX0M,106
+vlcp_event_cython-0.1.1.dist-info/metadata.json,sha256=FZ7muvmxWrg8m1wa0E1_faN0onHvf7IJWRNZBji_-DU,489
+vlcp_event_cython-0.1.1.dist-info/top_level.txt,sha256=JEVReFjQ2KTPyGBV6ZeR4Gxi-xBOFlOJnT2-VitC8Z4,18
