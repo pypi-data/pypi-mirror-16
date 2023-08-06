@@ -1,0 +1,3 @@
+[console_scripts]
+chwc = command_history_wordcloud.command_history_wordcloud:main
+
