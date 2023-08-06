@@ -1,0 +1,8 @@
+setup.py
+pymonaco/__init__.py
+pymonaco/main.py
+pymonaco/monacoread.py
+pymonaco.egg-info/PKG-INFO
+pymonaco.egg-info/SOURCES.txt
+pymonaco.egg-info/dependency_links.txt
+pymonaco.egg-info/top_level.txt
