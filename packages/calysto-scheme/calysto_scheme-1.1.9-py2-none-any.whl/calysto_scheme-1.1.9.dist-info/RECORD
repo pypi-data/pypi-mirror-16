@@ -1,0 +1,15 @@
+calysto_scheme-1.1.9.dist-info/DESCRIPTION.rst,sha256=KV0MRlq6lQKelcRAc8sV7XGXD_-rH5xodPeUO35Ynqk,2237
+calysto_scheme-1.1.9.dist-info/RECORD,,
+calysto_scheme-1.1.9.dist-info/metadata.json,sha256=QUgKF-dpbj0YSZKhcfFeqz8qIiFJ9e4I7sFbEdlhDl0,721
+calysto_scheme-1.1.9.dist-info/pbr.json,sha256=wQcgwnK6rKR2VPp0nEtEHGjHHgakx8OVahTRpq3biBE,47
+calysto_scheme-1.1.9.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
+calysto_scheme-1.1.9.dist-info/METADATA,sha256=QytC3LGM_MF5C53ra0dIkhSqNfhZVRCvU6079QIg-zU,2795
+calysto_scheme-1.1.9.dist-info/top_level.txt,sha256=oQAPM4gJ99bT8ub6LGY9EZhKMDTdl2CWLtQaSMbrAD0,15
+calysto_scheme/scheme.py,sha256=HvL5YgoWmqY_g5Ur56Fhjd4_UGgx2103TKj0bsKiRmk,373168
+calysto_scheme/__init__.py,sha256=E5wgUQtg78on7HYHSNRDgcRthxcdQ7mZFsb1HDI7kcI,35
+calysto_scheme/kernel.py,sha256=CaWkPLGvx7A-t03W2_xMAic9YrvT_VB8d8Ro0aHSVoE,15295
+calysto_scheme/__main__.py,sha256=xfQ5kPn-BueTTsLo5TmeAt4-Fpfbx7N3Tfd8bReQdAc,108
+calysto_scheme/images/logo-32x32.png,sha256=wGA2dnlCEC8NdFAtqnwkzpndanxqBZRIlFLXjGIlaB0,731
+calysto_scheme/images/logo-64x64.png,sha256=Rp5lq5aAXeyPXGG4GpmWKyQxthCvtV_Ys16tb16QfIY,1724
+calysto_scheme/modules/sllgen.ss,sha256=IwfGyPmR65ag2_GDbj2jEgLOxPwY5WOvp999PY1ScyE,82686
+calysto_scheme/modules/test_all.ss,sha256=z9q-cxOo2N1VnvOLQy8IT3pes3c6UCbdftecJ1wJ4Yo,24621
