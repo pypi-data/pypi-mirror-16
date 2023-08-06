@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: unclegabe
+Version: 0.0.1
+Summary: Runner to replicate Unclebob functionality for Django 1.8+
+Home-page: https://github.com/andrewgross/unclegabe
+Author: Andrew Gross
+Author-email: andrew.w.gross@gmail.com
+License: UNKNOWN
+Description: # Unclegabe
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
