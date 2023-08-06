@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: torPythonInt
+Version: 1.1.1
+Summary: An easy interface to use tor with python
+Home-page: https://github.com/ukarroum/tor-python-interface
+Author: Yassir Karroum
+Author-email: ukarroum17@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/ukarroum/tor-python-interface/tarball/1.2
+Description: UNKNOWN
+Keywords: tor,interface
+Platform: UNKNOWN
