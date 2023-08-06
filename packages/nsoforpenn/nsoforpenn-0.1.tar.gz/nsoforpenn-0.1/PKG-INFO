@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: nsoforpenn
+Version: 0.1
+Summary: Code base to scrape an ical that describes events, times, locations and more regarding NSO events.
+Home-page: https://github.com/pennlabs/NSO-api
+Author: Penn Labs
+Author-email: admin@pennlabs.org
+License: UNKNOWN
+Download-URL: https://github.com/pennlabs/NSO-api/tarball/0.1
+Description: UNKNOWN
+Keywords: penn,nso,new,student,orientation,university,Pennsylvania,labs
+Platform: UNKNOWN
