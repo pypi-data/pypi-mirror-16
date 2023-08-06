@@ -1,0 +1,10 @@
+setup.py
+prettytraceback/__init__.py
+prettytraceback/__main__.py
+prettytraceback/_version.py
+prettytraceback.egg-info/PKG-INFO
+prettytraceback.egg-info/SOURCES.txt
+prettytraceback.egg-info/dependency_links.txt
+prettytraceback.egg-info/requires.txt
+prettytraceback.egg-info/top_level.txt
+test/test.py
