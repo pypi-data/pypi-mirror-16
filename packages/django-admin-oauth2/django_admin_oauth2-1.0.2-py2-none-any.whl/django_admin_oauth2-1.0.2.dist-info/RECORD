@@ -1,0 +1,13 @@
+django_admin_oauth2-1.0.2.dist-info/DESCRIPTION.rst,sha256=W8DNpU-y2IWebjhEYHF8S1v0laHYqs24rvDEtvv8SFk,3715
+django_admin_oauth2-1.0.2.dist-info/METADATA,sha256=lKjUNqjjcUhCAec3haG75rcxta5GBcGeJ7TTvcePY2A,4358
+django_admin_oauth2-1.0.2.dist-info/metadata.json,sha256=uitr_G5RUJY845r8MnjiAZzP1DStV2ThhroVvD32M6o,816
+django_admin_oauth2-1.0.2.dist-info/RECORD,,
+django_admin_oauth2-1.0.2.dist-info/top_level.txt,sha256=Y9lHCglSIA9CC-To4hnk8rLlmJjiWWFJ6RqT8F5g1-U,11
+django_admin_oauth2-1.0.2.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
+oauthadmin/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+oauthadmin/adminsite.py,sha256=JKwANjNgvzS6ZLTna8boi82THb-cajky6SOS-JHzmG0,382
+oauthadmin/middleware.py,sha256=6qihu-aqwZJAmjlGHEvf8w-9INcnMzcqMvvVpdGkKtw,1594
+oauthadmin/settings.py,sha256=02u72qPrRVwAnMaZL0a_lJjrQRSTCh_PSteooRgjvQI,328
+oauthadmin/urls.py,sha256=2zmizHGEhcTMIsEqMc3k9idTKSGW6_Tjq6DM7Nwl_BQ,280
+oauthadmin/utils.py,sha256=IxkoaNbr7GEv-WJmw5-IHzXE_mEm07YiQKhftV_WSPQ,888
+oauthadmin/views.py,sha256=sBrI0m2-3bPzdUCm5iysU2_Z95eZ5yrPVbhmHYQxcjY,3768
