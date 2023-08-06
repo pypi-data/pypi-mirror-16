@@ -1,0 +1,13 @@
+README.rst
+setup.cfg
+setup.py
+taskin/__init__.py
+taskin/engine.py
+taskin/pools.py
+taskin/task.py
+taskin.egg-info/PKG-INFO
+taskin.egg-info/SOURCES.txt
+taskin.egg-info/dependency_links.txt
+taskin.egg-info/not-zip-safe
+taskin.egg-info/requires.txt
+taskin.egg-info/top_level.txt
