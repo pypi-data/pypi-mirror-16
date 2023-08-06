@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: gcc_subnets
+Version: 1
+Summary: A simple client for fetching Google Compute Cloud subnets.
+Home-page: https://github.com/sbarbett/gcc_subnets
+Author: Shane Barbetta
+Author-email: shane@barbetta.me
+License: The MIT License (MIT)
+Description: UNKNOWN
+Keywords: gcc_subnets
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
