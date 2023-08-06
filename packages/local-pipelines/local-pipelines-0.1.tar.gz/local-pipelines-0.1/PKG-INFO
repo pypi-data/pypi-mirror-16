@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: local-pipelines
+Version: 0.1
+Summary: local-pipelines is a parser for bitbucket-pipelines.yml files that
+will run the pipeline using your local docker-engine.
+
+Home-page: http://bitbucket.org/rw_grim/local-pipelines
+Author: Gary Kramlich
+Author-email: grim@reaperworld.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
