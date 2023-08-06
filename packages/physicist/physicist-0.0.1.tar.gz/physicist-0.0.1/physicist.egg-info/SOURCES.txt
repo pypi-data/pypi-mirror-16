@@ -1,0 +1,7 @@
+README.rst
+setup.py
+physicist/__init__.py
+physicist.egg-info/PKG-INFO
+physicist.egg-info/SOURCES.txt
+physicist.egg-info/dependency_links.txt
+physicist.egg-info/top_level.txt
