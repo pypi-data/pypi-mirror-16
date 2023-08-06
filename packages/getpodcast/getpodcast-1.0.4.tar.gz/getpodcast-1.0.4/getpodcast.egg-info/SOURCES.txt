@@ -1,0 +1,8 @@
+README.rst
+getpodcast.py
+setup.py
+getpodcast.egg-info/PKG-INFO
+getpodcast.egg-info/SOURCES.txt
+getpodcast.egg-info/dependency_links.txt
+getpodcast.egg-info/requires.txt
+getpodcast.egg-info/top_level.txt
