@@ -1,0 +1,9 @@
+Django>=1.4
+django_select2
+django-extensions>=1.0.0
+rarfile
+six
+lxml
+south>=1.0
+unrar
+suds-jurko>=0.6
