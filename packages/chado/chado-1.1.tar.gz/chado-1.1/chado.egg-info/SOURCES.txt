@@ -1,0 +1,11 @@
+setup.cfg
+setup.py
+chado/__init__.py
+chado.egg-info/PKG-INFO
+chado.egg-info/SOURCES.txt
+chado.egg-info/dependency_links.txt
+chado.egg-info/requires.txt
+chado.egg-info/top_level.txt
+scripts/create_analysis.py
+scripts/create_organism.py
+scripts/purge_organism.py
