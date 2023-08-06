@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: python-pipe
+Version: 1.0.0
+Summary: A general purpose sh-like forward pipe operator for Python
+Home-page: https://github.com/sup/pype
+Author: Charles Lai
+Author-email: cjl223@cornell.edu
+License: UNKNOWN
+Download-URL: https://github.com/sup/pype/archive/1.0.0.tar.gz
+Description: UNKNOWN
+Keywords: pipe,infix,operatior,bash
+Platform: UNKNOWN
