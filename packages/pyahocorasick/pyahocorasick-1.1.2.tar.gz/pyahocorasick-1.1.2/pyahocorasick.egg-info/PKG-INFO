@@ -1,0 +1,26 @@
+Metadata-Version: 1.1
+Name: pyahocorasick
+Version: 1.1.2
+Summary: pyahocorasick is a fast and memory efficient library for fast exact or approximate multi-pattern string search. It is implemented in C and tested on Python 2.7 and 3.4+.
+Home-page: http://github.com/WojciechMula/pyahocorasick
+Author: Wojciech Muła
+Author-email: wojciech_mula@poczta.onet.pl
+License:  BSD-3-Clause and Public-Domain
+Description: ========================================================================
+                                  pyahocorasick
+        ========================================================================
+        
+        .. contents::
+        
+        
+Keywords: aho-corasick,trie,automaton,dictionary
+Platform: Linux
+Platform: MacOSX
+Platform: Windows
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Text Editors :: Text Processing
