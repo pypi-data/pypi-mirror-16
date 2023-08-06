@@ -1,0 +1,8 @@
+GitPython
+conf
+fullpath
+future
+gitconfig
+gitconfigparser
+public
+setupfiles
