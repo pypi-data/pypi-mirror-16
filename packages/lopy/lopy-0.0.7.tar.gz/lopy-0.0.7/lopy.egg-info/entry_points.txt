@@ -1,0 +1,3 @@
+[console_scripts]
+lopy = lopy.lopy:main
+
