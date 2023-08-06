@@ -1,0 +1,17 @@
+img2url/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+img2url/config.py,sha256=2LBn1cFlsait3vDnH9V9wTuiUq__Czqoj76xC_1IjTY,752
+img2url/github.py,sha256=6DJZj17gsVkL6SG8g7Zn-yg7S3gIcRzI6-F65IATdCA,4695
+img2url/main.py,sha256=dkPBUuTXiu00km622C4sWkLLUvOJGJxhnEK73hkd0RE,2807
+img2url/metadata.py,sha256=OzUU3WBbSlg5ZxEIVpkljebBoiwtAQoDOf-P5RWkUqY,319
+img2url/remotes/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+img2url/remotes/base.py,sha256=PLlsDSpb_zPa54FpatvGat9Q7S036WdrjNW3fQaYDsI,3541
+img2url/remotes/github.py,sha256=CqIBxi8N378Pz1vs3ObaYAz_aqGEPGnO1laVc9msRqw,6666
+img2url/remotes/qiniu.py,sha256=BM6LIaqFm4vbc_Ja4cWWfZxzZDaadsXBjCHI305XsyE,2191
+img2url/remotes/utils.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+img2url-0.2.0.dist-info/DESCRIPTION.rst,sha256=LQVc4CJo7PlG2aHjdq_ptq3T0ZxBOd-ymreJGs5tG6c,4856
+img2url-0.2.0.dist-info/METADATA,sha256=MZF8pxRKAVIiXGv316Nt7lW_lK0PGfVaI2Nk9YII-iU,5647
+img2url-0.2.0.dist-info/RECORD,,
+img2url-0.2.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+img2url-0.2.0.dist-info/entry_points.txt,sha256=LO_0gvkeWJcU8gZQtt4o__OBzv754zbtLzGSlDsorY0,54
+img2url-0.2.0.dist-info/metadata.json,sha256=vNcKym9kzoR5HwkEAYhZ7Rf1axz-lD0jHzA1N_EQ4g0,985
+img2url-0.2.0.dist-info/top_level.txt,sha256=9Qw361-iuxskOsKkUnoAL1nQMNW2unQD5-DXzHyq8uc,8
