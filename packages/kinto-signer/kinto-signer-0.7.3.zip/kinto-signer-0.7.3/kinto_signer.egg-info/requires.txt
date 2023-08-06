@@ -1,0 +1,3 @@
+kinto>=3.2.4
+ecdsa
+requests-hawk
