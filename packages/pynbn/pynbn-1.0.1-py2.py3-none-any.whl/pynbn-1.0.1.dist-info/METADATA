@@ -1,0 +1,15 @@
+Metadata-Version: 2.0
+Name: pynbn
+Version: 1.0.1
+Summary: Access to NBN data from python
+Home-page: https://github.com/lionfish0/pynbn
+Author: Mike Smith
+Author-email: mike@michaeltsmith.org.uk
+License: MIT
+Keywords: NBN access wrapper
+Platform: UNKNOWN
+Requires-Dist: requests
+
+UNKNOWN
+
+
