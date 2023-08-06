@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+import ipshell 
+from imqtt import *
+
+if __name__ == '__main__':
+    ipshell.ipshell()
