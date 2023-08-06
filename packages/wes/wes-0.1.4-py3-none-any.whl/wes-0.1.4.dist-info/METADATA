@@ -1,0 +1,14 @@
+Metadata-Version: 2.0
+Name: wes
+Version: 0.1.4
+Summary: Use Wes Anderson Color Palettes in Matplotlib & Seaborn
+Home-page: https://github.com/ljwolf/wampl
+Author: Levi John Wolf
+Author-email: levi.john.wolf@gmail.com
+License: CC-BY-SA
+Platform: UNKNOWN
+Requires-Dist: matplotlib
+
+UNKNOWN
+
+
