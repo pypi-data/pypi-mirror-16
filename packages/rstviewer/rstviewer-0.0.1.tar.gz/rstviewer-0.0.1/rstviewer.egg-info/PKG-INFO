@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: rstviewer
+Version: 0.0.1
+Summary: An in-browser RST viewer with live updating
+Home-page: UNKNOWN
+Author: Jonathan Terhorst
+Author-email: terhorst@gmail.com
+License: BSD
+Description: UNKNOWN
+Keywords: ReStructuredText rst editor viewer
+Platform: UNKNOWN
