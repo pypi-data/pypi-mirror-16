@@ -1,0 +1,3 @@
+[console_scripts]
+docker-rerun = docker_rerun:main
+

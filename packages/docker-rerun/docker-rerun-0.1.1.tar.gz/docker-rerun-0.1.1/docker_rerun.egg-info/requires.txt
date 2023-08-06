@@ -1,0 +1,7 @@
+
+[dev]
+
+[test]
+coverage
+nose
+pylint
