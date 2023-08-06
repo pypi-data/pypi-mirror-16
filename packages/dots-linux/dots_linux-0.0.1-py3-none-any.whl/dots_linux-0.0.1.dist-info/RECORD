@@ -1,0 +1,15 @@
+dots/__init__.py,sha256=7AJf41_3x4XaRW2iSDaj0akUrTem_mixTZA-SLJjD1Y,306
+dots/cli.py,sha256=adJq-UCG9Ubciuab0hEnoC06vLI4OsHlBKzNgByMiHE,1747
+dots/desktop.py,sha256=sfIGGiDJPFjxCWY-NtVfcN9c41GFC6eY-znX1_AFA04,7861
+dots/shell.py,sha256=zpfUS-9ZuP-03zFPkI8UdTf5St1g9DK9GMqyvVl5ovQ,1826
+dots/tui.py,sha256=YT0SODtKFs10vW2dIiTmoPwDV2ruL_YUUX45LI2vz1M,2731
+dots/tests/__init__.py,sha256=4flW7ElnFssVtpYp_aQ3hKlb1eeAxC9obNiabk-U3PI,41
+dots_linux-0.0.1.dist-info/DESCRIPTION.rst,sha256=4uKi9QNzo4tPpawjauCZGwo_ox_Vsfe7QF_0g4NxV98,2050
+dots_linux-0.0.1.dist-info/METADATA,sha256=NRKm1xXm6fp-0DQMCUAKCjOCh3exdj-GpSLsVC9i0H0,2792
+dots_linux-0.0.1.dist-info/RECORD,,
+dots_linux-0.0.1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+dots_linux-0.0.1.dist-info/entry_points.txt,sha256=z1wTIknkaRaIrooPPOtyEkl6ZNXlYAQkQOlFQh_eZv8,40
+dots_linux-0.0.1.dist-info/metadata.json,sha256=XCQTfQtUIfGMFfn5x6lE49x2SXJVaKNOAsGqvFVMHQ8,967
+dots_linux-0.0.1.dist-info/top_level.txt,sha256=_SMMU7_CTdxDO3JAwPFnDgX4XWLricY9IqtdZoXesKc,11
+tests/__init__.py,sha256=KzYXpW_3ArmFNkfrEppfCVdaIXFH1GEAbjViNjhIpCY,48
+tests/test_tui.py,sha256=YqrDHKoUuX7FwvLPc_1yZhozqtzUiNfdNzoQhJe5dP0,2240

@@ -1,0 +1,3 @@
+[console_scripts]
+dots = dots.cli:main
+
