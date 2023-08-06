@@ -1,0 +1,9 @@
+README.rst
+repex.py
+setup.py
+repex.egg-info/PKG-INFO
+repex.egg-info/SOURCES.txt
+repex.egg-info/dependency_links.txt
+repex.egg-info/entry_points.txt
+repex.egg-info/requires.txt
+repex.egg-info/top_level.txt
