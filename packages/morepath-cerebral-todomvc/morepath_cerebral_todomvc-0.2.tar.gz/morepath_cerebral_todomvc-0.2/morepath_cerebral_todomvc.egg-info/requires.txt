@@ -1,0 +1,6 @@
+morepath>=0.15
+
+[test]
+pytest
+pytest-cov
+webtest

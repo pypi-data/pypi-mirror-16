@@ -1,0 +1,64 @@
+{
+  "name": "morepath_cerebral_todomvc",
+  "version": "0.1.0",
+  "description": "Hypermedia todomvc application powered with morepath and cerebral",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morepath/morepath_cerebral_todomvc.git"
+  },
+  "keywords": [
+    "cerebral",
+    "morepath",
+    "todomvc",
+    "REST"
+  ],
+  "author": "Henri Hulski <henri.hulski@gazeta.pl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/morepath/morepath_cerebral_todomvc/issues"
+  },
+  "homepage": "https://github.com/morepath/morepath_cerebral_todomvc#readme",
+  "scripts": {
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "test": "standard"
+  },
+  "dependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "cerebral": "^1.0.1",
+    "cerebral-module-devtools": "^0.7.1",
+    "cerebral-module-http": "^0.4.5",
+    "cerebral-module-router": "^0.17.1",
+    "cerebral-view-react": "^0.12.11",
+    "classnames": "^2.2.5",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.9.0",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "style-loader": "^0.13.1",
+    "todomvc-app-css": "^2.0.6",
+    "todomvc-common": "^1.0.2",
+    "uuid": "^2.0.2",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "standard": "^7.1.2"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "webpack.config.js",
+      "static/*.js"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
+  }
+}
