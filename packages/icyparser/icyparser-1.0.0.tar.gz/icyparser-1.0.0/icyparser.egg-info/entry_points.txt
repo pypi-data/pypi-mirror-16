@@ -1,0 +1,3 @@
+[console_scripts]
+icyparser = icyparser:entry_point
+
