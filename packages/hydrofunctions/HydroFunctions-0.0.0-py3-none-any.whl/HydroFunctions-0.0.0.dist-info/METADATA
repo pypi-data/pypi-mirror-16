@@ -1,0 +1,14 @@
+Metadata-Version: 2.0
+Name: HydroFunctions
+Version: 0.0.0
+Summary: convenience functions for hydrology
+Home-page: https://github.com/mroberge/hf
+Author: Martin Roberge
+Author-email: mroberge.whois@gmail.com
+License: MIT
+Requires-Dist: numpy
+Requires-Dist: pandas
+
+HydroFunctions
+
+
