@@ -1,0 +1,16 @@
+aioimaplib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aioimaplib/aioimaplib.py,sha256=vpiMllVqb3pwbGekcwxPnSPdvlfumPZ4QMWaPIQsDJ0,28144
+aioimaplib/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aioimaplib/tests/example.py,sha256=y54ZJjJlU5NFSoJ32mSNUhiD9F04WWzemU1al5gKDgY,1098
+aioimaplib/tests/imapserver.py,sha256=jfp5Et8St2voVtjUTsiev-CFTdaq8mVbN9uJQNcnJbM,22766
+aioimaplib/tests/test_acceptance_aioimaplib.py,sha256=gse8Ru_jZnh6-zBFQ1vHLoq5k3luOjqi_DA3ntc0nOE,1581
+aioimaplib/tests/test_aioimaplib.py,sha256=On2KJ7oOxzyq5Mz8wFgm3jV3FFu6EDkDqLNcEYhzSDo,21027
+aioimaplib/tests/test_imapserver.py,sha256=bQAn9S-egO_AJFOoKZ03458uK7-REDBjO9hQRksxrRs,4302
+aioimaplib/tests/test_imapserver_imaplib.py,sha256=DlThg3EMfMY0WxVpHDTJI-pI7ZiWLtkswjWP03pYqe4,16997
+aioimaplib/tests/test_imapserver_imaplib2.py,sha256=TGjubw5RBE2juldcqoJEdWF_KEAX2GiZ4GhlGXeA-mE,2278
+aioimaplib-0.5.12.dist-info/DESCRIPTION.rst,sha256=s1MLLqLbdl-20_Np1yAMH0Gc9TVGqvCZvuVYawzXeJk,8649
+aioimaplib-0.5.12.dist-info/METADATA,sha256=SYRM0PdM1n6qOIyv3ugO0Zz_A_rAXRCDi7xeGYxtNmA,9164
+aioimaplib-0.5.12.dist-info/RECORD,,
+aioimaplib-0.5.12.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+aioimaplib-0.5.12.dist-info/metadata.json,sha256=LtKB8UPH4LG0RMEdEgFWDYpqq76hieLzbKS8xdku2WI,686
+aioimaplib-0.5.12.dist-info/top_level.txt,sha256=Q-zAXKvQeKPJM2749uVXtIB7oae2oie4sB00jmsdA4g,11
