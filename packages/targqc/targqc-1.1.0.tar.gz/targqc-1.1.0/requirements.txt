@@ -1,0 +1,11 @@
+setuptools>=18.5
+pip
+numpy
+pandas
+pybedtools
+joblib
+jsontemplate
+ipyparallel
+ipython-cluster-helper
+PyMonad
+gffutils
