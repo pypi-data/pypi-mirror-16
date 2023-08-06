@@ -1,0 +1,14 @@
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+pyoffers/__init__.py
+pyoffers/api.py
+pyoffers/exceptions.py
+pyoffers/logging.py
+pyoffers/utils.py
+pyoffers.egg-info/PKG-INFO
+pyoffers.egg-info/SOURCES.txt
+pyoffers.egg-info/dependency_links.txt
+pyoffers.egg-info/requires.txt
+pyoffers.egg-info/top_level.txt
