@@ -1,0 +1,1 @@
+{"extensions": {"python.details": {"contacts": [{"email": "david@klangfragment.de", "name": "David Krause", "role": "author"}], "document_names": {"description": "DESCRIPTION.rst"}, "project_urls": {"Home": "https://github.com/enthus1ast/smex"}}}, "generator": "bdist_wheel (0.29.0)", "metadata_version": "2.0", "name": "smex", "summary": "A little state machine", "version": "0.1"}
