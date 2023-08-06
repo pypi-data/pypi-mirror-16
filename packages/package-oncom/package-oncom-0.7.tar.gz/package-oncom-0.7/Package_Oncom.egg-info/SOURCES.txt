@@ -1,0 +1,11 @@
+MANIFEST.in
+README.rst
+setup.py
+Package_Oncom.egg-info/PKG-INFO
+Package_Oncom.egg-info/SOURCES.txt
+Package_Oncom.egg-info/dependency_links.txt
+Package_Oncom.egg-info/not-zip-safe
+Package_Oncom.egg-info/top_level.txt
+package_oncom/__init__.py
+package_oncom/my_module.py
+package_oncom.egg-info/SOURCES.txt
