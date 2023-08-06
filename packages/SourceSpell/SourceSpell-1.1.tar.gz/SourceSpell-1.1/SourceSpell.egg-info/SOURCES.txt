@@ -1,0 +1,10 @@
+README.rst
+setup.py
+SourceSpell.egg-info/PKG-INFO
+SourceSpell.egg-info/SOURCES.txt
+SourceSpell.egg-info/dependency_links.txt
+SourceSpell.egg-info/entry_points.txt
+SourceSpell.egg-info/requires.txt
+SourceSpell.egg-info/top_level.txt
+sourcespell/__init__.py
+sourcespell/sourcespell.py
