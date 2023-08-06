@@ -1,0 +1,17 @@
+pystray/__init__.py,sha256=SQpcNPUeDwzQ_txx_FqhV_4f-k0tHH-mGBoIuuOHG4Y,1529
+pystray/_base.py,sha256=SCbqjMVu61TSEv8FiMLs8At_ERdVPMbiRdIg3gJ33w8,10106
+pystray/_darwin.py,sha256=hTzSyhaFCHTtJt1EX_toEPI777GGWitTWFVG4PgqrrU,6013
+pystray/_gtk.py,sha256=UDDZTMfZ8wJ0VmZLogh1XpIALYLYB8bnxPwl5HHY7Y0,5319
+pystray/_info.py,sha256=aDKNTRqEjK7vIMojATrYLhvh-xh2o3YGaJ2_CBBnutg,67
+pystray/_win32.py,sha256=ZTR3lS7PcN3N9QCY6T6pzVvqJEWXsrYDva44bZ_61q4,11403
+pystray/_xorg.py,sha256=sP0lIIY7e7k6UgdKUY16W_nHSFg7oY_UX4A5RR9Prs4,14703
+pystray/_util/__init__.py,sha256=08nbuRAVTeW7F_XJ79LTaFIV0SxyeFYfx9GMYRsU_ks,715
+pystray/_util/win32.py,sha256=8AdV3Fjswxvwaoqx7z9xoOfjEaA6yClKxSbOKjpWTsE,8019
+pystray-0.6.dist-info/DESCRIPTION.rst,sha256=Pd1pdTje9Zvgaf-Y3_hdLAOPxD6uK41lYQoqB2naNQM,1690
+pystray-0.6.dist-info/METADATA,sha256=wUJNo-b5YzHfkhg5QZ0PhlUBPi6YzBRl8_ySGYdPTUY,2558
+pystray-0.6.dist-info/RECORD,,
+pystray-0.6.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+pystray-0.6.dist-info/metadata.json,sha256=47c0ie1jgGh7cDVL0Lm9X6XnL8f0BaS0dW040nq2vik,1062
+pystray-0.6.dist-info/pbr.json,sha256=I6ivhm7mCbpCxh069rxODawmeIrhaBHzLtlzG94F5qc,46
+pystray-0.6.dist-info/top_level.txt,sha256=6xvZ5fFN6P3IotgMJLAHeWonXXZzDdf47BhMLsXEHlg,8
+pystray-0.6.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
