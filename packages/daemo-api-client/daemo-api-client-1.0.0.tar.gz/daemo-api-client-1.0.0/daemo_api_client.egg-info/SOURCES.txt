@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+setup.py
+daemo/__init__.py
+daemo/client.py
+daemo/models.py
+daemo_api_client.egg-info/PKG-INFO
+daemo_api_client.egg-info/SOURCES.txt
+daemo_api_client.egg-info/dependency_links.txt
+daemo_api_client.egg-info/requires.txt
+daemo_api_client.egg-info/top_level.txt
