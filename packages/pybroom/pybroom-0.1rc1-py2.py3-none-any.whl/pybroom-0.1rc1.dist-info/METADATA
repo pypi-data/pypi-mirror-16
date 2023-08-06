@@ -1,0 +1,42 @@
+Metadata-Version: 2.0
+Name: pybroom
+Version: 0.1rc1
+Summary: Make tidy DataFrames from messy fit/model results.
+Home-page: https://github.com/tritemio/pybroom
+Author: Antonino Ingargiola
+Author-email: tritemio@gmail.com
+License: MIT
+Download-URL: https://github.com/tritemio/pybroom
+Keywords: dataframe tidy-data long-form model fitting
+Platform: Windows
+Platform: Linux
+Platform: Mac OS X
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: lmfit
+Requires-Dist: pandas
+Requires-Dist: setuptools
+
+
+pybroom
+=======
+
+Pybroom converts fitting results objects into
+`Pandas <http://pandas.pydata.org/`__
+`DataFrame <http://pandas.pydata.org/pandas-docs/stable/dsintro.html#dataframe>`__
+in tidy format
+`(Wickham 2014) `<http://dx.doi.org/10.18637/jss.v059.i10>`__.
+
+The tidy format creates an uniform interface to fit results and allows to
+cleanly combine results from different fits (e.g. comparison of different
+models, comparison of different datasets, etc.). Moreover, tidy DataFrames
+can be easily and systematically plotted with
+`seaborn <https://web.stanford.edu/~mwaskom/software/seaborn/>`__
+(and, increasingly,
+`matplotlib <http://matplotlib.org/>`__).
+
+
