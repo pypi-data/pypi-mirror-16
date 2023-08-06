@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: maester
+Version: 0.1.8
+Summary: A platform for running tests on multiple Android devices in series
+Home-page: https://github.com/JohnyGall/Maester
+Author: John James Gallagher & Joseph Thomas Campbell
+Author-email: jcamp1095@gmail.com, johny.gallagher@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/JohnyGall/Maester/tarball/0.1.8
+Description: UNKNOWN
+Keywords: testing,android,automation,appium,multiple,series,unittest,test,debug,pytest,qa,app,maester,debuging
+Platform: UNKNOWN
