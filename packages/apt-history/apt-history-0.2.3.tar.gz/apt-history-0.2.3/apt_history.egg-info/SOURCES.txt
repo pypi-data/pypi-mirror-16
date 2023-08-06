@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+apt-history/__init__.py
+apt_history.egg-info/PKG-INFO
+apt_history.egg-info/SOURCES.txt
+apt_history.egg-info/dependency_links.txt
+apt_history.egg-info/entry_points.txt
+apt_history.egg-info/top_level.txt
