@@ -1,0 +1,8 @@
+setup.py
+zaifapi/__init__.py
+zaifapi/impl.py
+zaifapi.egg-info/PKG-INFO
+zaifapi.egg-info/SOURCES.txt
+zaifapi.egg-info/dependency_links.txt
+zaifapi.egg-info/requires.txt
+zaifapi.egg-info/top_level.txt
