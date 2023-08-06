@@ -1,0 +1,6 @@
+requests
+clint
+fpdf
+bs4
+termcolor
+pysocks
