@@ -1,0 +1,11 @@
+
+[celery]
+celery
+
+[ldap]
+
+[restful]
+flask-restful
+
+[sentry]
+raven[flask]
