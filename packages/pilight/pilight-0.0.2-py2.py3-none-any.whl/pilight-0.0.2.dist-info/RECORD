@@ -1,0 +1,16 @@
+pilight/__init__.py,sha256=QqIBvwQFdP22ON93ZPd3b3AILUc9pk_kkCIxDY4HEKM,217
+pilight/__init__.pyc,sha256=2DvA-bhkuWpla3G4C0fVSKQI4hEumYxSIaJmRNWjeiQ,259
+pilight/pilight.py,sha256=BSzSJE8ykjlmIW_Hjum38Hl4nvwLu4zjDa369cnJWWw,6899
+pilight/pilight.pyc,sha256=rrIv6A3FxWzsaCpPgiGNYJtKlBESmLpA9xs65IaHOdU,4742
+pilight/__pycache__/__init__.cpython-35.pyc,sha256=AwGa_ET928vONpMh8_AWRQTS9FXptyFmGZ2JfH1sOCU,234
+pilight/__pycache__/pilight.cpython-35.pyc,sha256=Az29IW4o7v1A1gUcBnDjvoNoPkrYh2ZEpLAEHPET1X4,4781
+pilight/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pilight/tests/__init__.pyc,sha256=u3YQuBoJC8XqOUDU0liKt4vAsU56L-Jz2fcWvkGz9so,138
+pilight/tests/test_client.py,sha256=kK8e8opnJw1G-AmwRSBall98dDQ1phof_Al4WgCApoo,502
+pilight/tests/test_client.pyc,sha256=NZwixX26Zc8qmZbiKxOsLBVVENNjbkEXNDq0WAry8xU,867
+pilight-0.0.2.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+pilight-0.0.2.dist-info/METADATA,sha256=XwK3zAXZ3enCYLMP3ZnHnP3uVBA6PXXuZzYFbgr2h0s,323
+pilight-0.0.2.dist-info/RECORD,,
+pilight-0.0.2.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+pilight-0.0.2.dist-info/metadata.json,sha256=Y0-TYwYV4Rg88gjEYiYTj3ZJeUaZi0zTbjQLhj0g_9Q,535
+pilight-0.0.2.dist-info/top_level.txt,sha256=mmeb2MBpyLtjBJUIUqm8Z5HXvtdbOX5EUQTgP9PoVNQ,8
