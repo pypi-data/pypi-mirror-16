@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: django-timetracker
+Version: 0.1.0
+Summary: Django app that provides an API for tracking time spent.
+Home-page: http://github.com/cdriehuys/django-timetracker
+Author: Chathan Driehuys
+Author-email: cdriehuys@gmail.com
+License: MIT
+Description: # django-timetracker
+        Time tracking API implemented with Django.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django :: 1.8
+Classifier: Framework :: Django :: 1.9
+Classifier: Framework :: Django :: 1.10
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
