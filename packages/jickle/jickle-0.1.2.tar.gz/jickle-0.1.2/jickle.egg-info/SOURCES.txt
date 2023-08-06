@@ -1,0 +1,7 @@
+setup.py
+jickle/__init__.py
+jickle.egg-info/PKG-INFO
+jickle.egg-info/SOURCES.txt
+jickle.egg-info/dependency_links.txt
+jickle.egg-info/not-zip-safe
+jickle.egg-info/top_level.txt
