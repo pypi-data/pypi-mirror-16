@@ -1,0 +1,11 @@
+MANIFEST.in
+README.rst
+setup.py
+spry.egg-info/PKG-INFO
+spry.egg-info/SOURCES.txt
+spry.egg-info/dependency_links.txt
+spry.egg-info/entry_points.txt
+spry.egg-info/top_level.txt
+sprypy/__init__.py
+sprypy/__main__.py
+sprypy/spry.py
