@@ -1,0 +1,3 @@
+[console_scripts]
+sentinella = sentinella.agent.cli:main
+
