@@ -1,0 +1,22 @@
+Metadata-Version: 2.0
+Name: lambkin
+Version: 0.0.3
+Summary: CLI tool for managing functions in AWS Lambda.
+Home-page: https://github.com/jarpy/lambkin
+Author: Toby McLaughlin
+Author-email: toby@jarpy.net
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Requires-Dist: boto3
+Requires-Dist: click (>5,<7)
+Requires-Dist: pystache
+
+UNKNOWN
+
+
