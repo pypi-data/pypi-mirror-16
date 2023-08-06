@@ -1,0 +1,15 @@
+django_overextends-0.4.2.dist-info/DESCRIPTION.rst,sha256=SMkslvfNNkCpNQLDsxc5p1yQx6fArZFnalAzB_il1Bk,3770
+django_overextends-0.4.2.dist-info/METADATA,sha256=DuwmedDr5gHK8mg5zxUZBqBzOMz0h34QPYS_C0kQINc,4734
+django_overextends-0.4.2.dist-info/metadata.json,sha256=E0YctJGPFEs-ecrk2W2RZUVluw08J8m2HW-Ow0FJ1HE,1061
+django_overextends-0.4.2.dist-info/RECORD,,
+django_overextends-0.4.2.dist-info/top_level.txt,sha256=Sbegcb6qlbkIBIoCHwc42AXE7uN6mvbBQMatk8ACYXk,25
+django_overextends-0.4.2.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+overextends/__init__.py,sha256=5Fbxxet_NbzVQvs6xrBUzmq_W9lrfrYUS291eVjfrLI,23
+overextends/models.py,sha256=oHUIIC8BS01JIxUJfJT4BA_7D_QwBYmU4MrnkO5OOiI,307
+overextends/tests.py,sha256=fHvPR7JtaYUYvG7TmBrVRgHnuH69QCkINd3fndSG-5E,4069
+overextends/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+overextends/templatetags/overextends_tags.py,sha256=QxjHDBSXor1NFXPQCCdLwrF7_Dp4aL3VIrLZL3gdgN0,6706
+test_project/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+test_project/manage.py,sha256=_g0eOJrHza4SJh2B6SoqzVRyU2w4wbADOoTrquUR5Q8,307
+test_project/settings.py,sha256=b6iV9sZeJ360_0R5Voh5mW7aS1qf7USlW6JDxItMe0I,1310
+test_project/urls.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
