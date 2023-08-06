@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: django_includes
+Version: 0.1.3
+Summary: Include django views as a subparts of other django views, using either HTTP (with esi or hinclude) or direct render.
+Home-page: https://github.com/hartym/django-includes
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: Apache License, Version 2.0
+Download-URL: https://github.com/hartym/django-includes/archive/0.1.3.tar.gz
+Description: django-includes
+        ===============
+        
+        Experimental software. There is no tests, no documentation, use it are your own risks (or don't).
+Platform: UNKNOWN
