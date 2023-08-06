@@ -1,0 +1,99 @@
+Metadata-Version: 2.0
+Name: bcTesting
+Version: 0.2.5
+Summary: A Simple Testing Framework
+Home-page: https://github.com/barishcb/testing
+Author: Barish Chandran B
+Author-email: barishcb@gmail.com
+License: MIT
+Keywords: bcTesting unittest setuptools development
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Requires-Dist: testtools
+Provides-Extra: dev
+Requires-Dist: check-manifest; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: coverage; extra == 'test'
+
+This is a simple testing framework to make the unittesting easy.
+
+:Author: `Barish Chandran B <http://www.barishcb.com>`_
+
+.. contents::
+    :local:
+    :depth: 2
+    :backlinks: none
+
+.. sectnum::
+
+Introduction
+============
+
+What is bcTesting?
+------------------
+
+``bcTesting`` is a simple unittesting framework. Which is a combination of mox, mock and fixtures.
+
+What is it good for?
+--------------------
+
+* New testing framework for tool developement
+* Easy integration of mox and fixures
+* Extra assert functionalities
+
+How is bcTesting licensed?
+--------------------------
+
+`MIT License <https://opensource.org/licenses/MIT>`_
+
+Contact details
+---------------
+
+Drop me an email to barishcb@gmail.com for any questions regarding ``bcTesting``. For reporting problems with ``bcTesting`` or submitting feature requests, the best way is to open an issue on the `bcTesting project page <https://github.com/barishcb/testing>`_.
+
+Installation
+============
+
+Prerequisites
+-------------
+
+* ``bcTesting`` was tested only on Python 2.7, on both Linux and Windows. It should work on any later version as well.
+
+Installation process
+--------------------
+
+Installing ``bcTesting`` is very simple. Once you download and unzip the package, you just have to execute the standard ``python setup.py install``. The setup script will then place the ``bcTesting`` module into ``site-packages`` in your Python's installation library.
+
+Alternatively, since ``bcTesting`` is listed in the `Python Package Index <http://pypi.python.org/pypi/bcTesting>`_ (PyPI), you can install it using your favorite Python packaging/distribution tool, for example with::
+
+    > pip install bcTesting
+
+It's recommended to run ``_build_tables.py`` in the ``bcTesting`` code directory after installation to make sure the parsing tables are pre-generated. This can make your code run faster.
+
+Package contents
+================
+
+Once you unzip the ``bcTesting`` package, you'll see the following files and directories:
+
+README.rst:
+  This README file.
+
+setup.py:
+  Installation script
+
+bcTesting/:
+  The ``bcTesting`` module source code.
+
+tests/:
+  Unit tests.
+
+Contributors
+============
+
+`Barish Chandran B <http://www.barishcb.com>`_
+
+
