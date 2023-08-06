@@ -1,0 +1,16 @@
+README.rst
+setup.py
+amicleaner/__init__.py
+amicleaner/cli.py
+amicleaner/core.py
+amicleaner/utils.py
+amicleaner/resources/__init__.py
+amicleaner/resources/config.py
+amicleaner/resources/models.py
+aws_amicleaner.egg-info/PKG-INFO
+aws_amicleaner.egg-info/SOURCES.txt
+aws_amicleaner.egg-info/dependency_links.txt
+aws_amicleaner.egg-info/entry_points.txt
+aws_amicleaner.egg-info/pbr.json
+aws_amicleaner.egg-info/requires.txt
+aws_amicleaner.egg-info/top_level.txt
