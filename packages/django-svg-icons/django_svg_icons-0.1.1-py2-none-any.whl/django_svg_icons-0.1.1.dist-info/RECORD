@@ -1,0 +1,13 @@
+django_svg_icons-0.1.1.dist-info/DESCRIPTION.rst,sha256=mvxa3U_1yUKArKuB1vNR2K4Am__0zcqZcNRdEsU1Ono,1801
+django_svg_icons-0.1.1.dist-info/METADATA,sha256=Hy55vLPUAkXZ4NX-R3RZR8VrJruJRL2BV-VccLT2P1w,2718
+django_svg_icons-0.1.1.dist-info/RECORD,,
+django_svg_icons-0.1.1.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+django_svg_icons-0.1.1.dist-info/metadata.json,sha256=0peYR0ntg5q1Oi4Tpr8OKwYSytlQFopJTMhix_YViu4,1017
+django_svg_icons-0.1.1.dist-info/top_level.txt,sha256=CmuKDZDRtbEzg_Vga61pdFXeBPrcwSfQBoIFIBQtRXM,10
+svg_icons/__init__.py,sha256=dIsg3ElFgLrX0kiqb5x8zEgFuL5uwtia7B4cxZT6hLU,340
+svg_icons/readers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+svg_icons/readers/base.py,sha256=SpxEU8sj0ccJrbLNZsU-IPWt6bmmA5I_KXERs7M2rug,1621
+svg_icons/readers/icomoon.py,sha256=vwZJGQSV2VJQS6tEmAfCxPa45Dj00hl1rcLj7HbsuYA,992
+svg_icons/templates/svg_icons/icon.html,sha256=bNOeg5tOs_5ftbZ4oQR7y_eDkhr2F4XMwRUuf666wHE,214
+svg_icons/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+svg_icons/templatetags/svg_icons.py,sha256=3dBde9MRGEdnkBqQ_rFgiickO3RtzlwGhyJ5KKkSoNY,1111
