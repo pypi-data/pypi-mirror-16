@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+bin/colorize-html
+pygments_colorizer/__init__.py
+pygments_colorizer/colorizer.py
+pygments_colorizer.egg-info/PKG-INFO
+pygments_colorizer.egg-info/SOURCES.txt
+pygments_colorizer.egg-info/dependency_links.txt
+pygments_colorizer.egg-info/not-zip-safe
+pygments_colorizer.egg-info/top_level.txt

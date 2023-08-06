@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: pygments-colorizer
+Version: 1.0.0
+Summary: Syntax highlighter for higlighting code blocks in html using Pygments.
+Home-page: https://github.com/BrutalSimplicity/colorizer
+Author: BrutalSimplicity
+Author-email: kory.taborn@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
