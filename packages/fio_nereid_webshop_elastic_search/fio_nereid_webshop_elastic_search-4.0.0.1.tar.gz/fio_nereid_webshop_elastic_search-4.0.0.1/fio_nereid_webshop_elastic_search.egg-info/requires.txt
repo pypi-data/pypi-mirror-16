@@ -1,0 +1,4 @@
+fio_nereid_webshop >= 4.0, < 4.1
+trytond_elastic_search >= 4.0, < 4.1
+fio_product_attribute_strict >= 4.0, < 4.1
+trytond >= 4.0, < 4.1
