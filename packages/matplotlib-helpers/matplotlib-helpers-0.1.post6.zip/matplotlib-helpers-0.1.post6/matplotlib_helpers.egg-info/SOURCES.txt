@@ -1,0 +1,13 @@
+MANIFEST.in
+RELEASE-VERSION
+pavement.py
+paver-minilib.zip
+setup.py
+version.py
+matplotlib_helpers/__init__.py
+matplotlib_helpers/chart.py
+matplotlib_helpers.egg-info/PKG-INFO
+matplotlib_helpers.egg-info/SOURCES.txt
+matplotlib_helpers.egg-info/dependency_links.txt
+matplotlib_helpers.egg-info/requires.txt
+matplotlib_helpers.egg-info/top_level.txt
