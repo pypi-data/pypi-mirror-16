@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: suffixtree
+Version: 0.1
+Summary: Yet another suffix tree implementation in Python
+Home-page: https://github.com/cartoonist/suffixtree
+Author: Ali Ghaffaari
+Author-email: ali.ghaffaari@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/cartoonist/suffixtree/tarball/0.1
+Description: UNKNOWN
+Keywords: suffix,tree,indexing,data structure
+Platform: UNKNOWN
