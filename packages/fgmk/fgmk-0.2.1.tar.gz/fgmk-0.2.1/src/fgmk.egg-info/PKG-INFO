@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: fgmk
+Version: 0.2.1
+Summary: A PyQt5 Maker to generate a RPG Javascript game.
+Home-page: https://github.com/ericoporto/fgmk
+Author: Erico Porto
+Author-email: elhafulvics@gmail.com
+License: GPLv2
+Download-URL: https://github.com/ericoporto/fgmk/tarball/0.2
+Description: UNKNOWN
+Keywords: game development
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Games/Entertainment :: Role-Playing
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Programming Language :: Python :: 3.4
