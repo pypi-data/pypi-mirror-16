@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: pypi2cwl
+Version: 0.1.0
+Summary: Instrument for extracting tools from PyPi packages and generating CWL tool descriptions
+Home-page: https://github.com/common-workflow-language/pypi2cwl
+Author: Anton Khodak
+Author-email: anton.khodak@ukr.net
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: Apache Software License

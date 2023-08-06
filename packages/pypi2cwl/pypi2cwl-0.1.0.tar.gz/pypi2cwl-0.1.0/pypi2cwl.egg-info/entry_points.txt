@@ -1,0 +1,3 @@
+[console_scripts]
+pypi2cwl = pypi2cwl.pypi2cwl:main
+

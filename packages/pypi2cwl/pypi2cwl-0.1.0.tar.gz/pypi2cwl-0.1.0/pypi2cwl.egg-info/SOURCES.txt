@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+pypi2cwl/__init__.py
+pypi2cwl/pypi2cwl.py
+pypi2cwl/test_pypi2cwl.py
+pypi2cwl.egg-info/PKG-INFO
+pypi2cwl.egg-info/SOURCES.txt
+pypi2cwl.egg-info/dependency_links.txt
+pypi2cwl.egg-info/entry_points.txt
+pypi2cwl.egg-info/top_level.txt
