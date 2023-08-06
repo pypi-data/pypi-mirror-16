@@ -1,0 +1,14 @@
+miditime/MIDITime.py,sha256=LxAT10m3FIol75D5Q3j8RjGVXvBa_J2JvyaoGqvcUKc,6798
+miditime/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+miditime/makemidi.py,sha256=HNMowkDnl_tQQzIbDkoeiKL4pERtnCj9n0qgyCB3C6E,2959
+miditime/miditime.py,sha256=Tl6-Zq3dxdb8jeuduCWzzM7AWIwZ6CHFv3aRDiYPiac,9417
+miditime/tests.py,sha256=oubgnc6i1IBZ9qYPfWgBL9k3uMAzGgU0OrCxEUEf3lw,2200
+miditime-1.0.4.dist-info/DESCRIPTION.rst,sha256=Mywq_5rENthQujifiYsup0Rh5oAgO7RA3kc1ARxFAh4,6298
+miditime-1.0.4.dist-info/METADATA,sha256=UDMeSGIttBfExJef7aQcXDQtY9N_nxIguPjKMwtwfq8,7380
+miditime-1.0.4.dist-info/RECORD,,
+miditime-1.0.4.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+miditime-1.0.4.dist-info/metadata.json,sha256=EZWMI-6iWXmddVIIt4NSvoA03KBXVPPmRjiW-IAFYBE,1217
+miditime-1.0.4.dist-info/top_level.txt,sha256=lxQtl8-23fX4KwFhKqislX43yQP2GIqY457hHH4k_lg,18
+midiutil/MidiFile.py,sha256=Oc7FLG2goDXgXw_utijxAxpCuLCDVj60XkQ-uSdFEpE,38546
+midiutil/MidiFile3.py,sha256=kZ3X1dp-6LsAw82zVPbouSmjFq-2wf3v6kDxaFdX9jA,40844
+midiutil/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
