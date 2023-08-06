@@ -1,0 +1,7 @@
+setup.py
+RubySmellBear/RubySmellBear.py
+RubySmellBear/__init__.py
+RubySmellBear.egg-info/PKG-INFO
+RubySmellBear.egg-info/SOURCES.txt
+RubySmellBear.egg-info/dependency_links.txt
+RubySmellBear.egg-info/top_level.txt
