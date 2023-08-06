@@ -1,0 +1,7 @@
+setup.py
+isc_dhcp_filter/__init__.py
+isc_dhcp_filter.egg-info/PKG-INFO
+isc_dhcp_filter.egg-info/SOURCES.txt
+isc_dhcp_filter.egg-info/dependency_links.txt
+isc_dhcp_filter.egg-info/requires.txt
+isc_dhcp_filter.egg-info/top_level.txt

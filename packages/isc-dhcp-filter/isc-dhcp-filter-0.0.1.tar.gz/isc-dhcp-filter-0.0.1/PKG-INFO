@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: isc-dhcp-filter
+Version: 0.0.1
+Summary: This library provides a filter API on top of  python-isc-dhcp-leases.
+Home-page: UNKNOWN
+Author: Andreas Rammhold
+Author-email: andreas@rammhold.de
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
