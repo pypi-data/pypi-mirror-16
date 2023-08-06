@@ -1,0 +1,7 @@
+setup.py
+CPPCleanBear/__init__.py
+CPPCleanBear.egg-info/PKG-INFO
+CPPCleanBear.egg-info/SOURCES.txt
+CPPCleanBear.egg-info/dependency_links.txt
+CPPCleanBear.egg-info/entry_points.txt
+CPPCleanBear.egg-info/top_level.txt
