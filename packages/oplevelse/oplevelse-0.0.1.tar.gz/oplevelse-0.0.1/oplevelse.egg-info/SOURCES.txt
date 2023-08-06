@@ -1,0 +1,13 @@
+setup.py
+cli/__init__.py
+cli/api.py
+cli/lang.py
+cli/main.py
+cli/oplevelse.py
+cli/task.py
+oplevelse.egg-info/PKG-INFO
+oplevelse.egg-info/SOURCES.txt
+oplevelse.egg-info/dependency_links.txt
+oplevelse.egg-info/entry_points.txt
+oplevelse.egg-info/requires.txt
+oplevelse.egg-info/top_level.txt
