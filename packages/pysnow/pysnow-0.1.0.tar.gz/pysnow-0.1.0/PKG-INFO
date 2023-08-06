@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: pysnow
+Version: 0.1.0
+Summary: Python library for the ServiceNow REST API
+Home-page: https://github.com/rbw0/pysnow
+Author: Robert Wikman
+Author-email: rbw@vault13.org
+License: GPLv2
+Download-URL: https://github.com/rbw0/pysnow/tarball/0.1.0
+Description: UNKNOWN
+Keywords: servicenow,rest,api,http
+Platform: any
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
