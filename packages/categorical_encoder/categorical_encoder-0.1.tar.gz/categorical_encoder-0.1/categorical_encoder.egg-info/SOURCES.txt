@@ -1,0 +1,12 @@
+setup.py
+categorical_encoder/__init__.py
+categorical_encoder/base_encoder.py
+categorical_encoder/binary_encoder.py
+categorical_encoder/encoder_service.py
+categorical_encoder/ordinal_encoder.py
+categorical_encoder/utils.py
+categorical_encoder.egg-info/PKG-INFO
+categorical_encoder.egg-info/SOURCES.txt
+categorical_encoder.egg-info/dependency_links.txt
+categorical_encoder.egg-info/not-zip-safe
+categorical_encoder.egg-info/top_level.txt
