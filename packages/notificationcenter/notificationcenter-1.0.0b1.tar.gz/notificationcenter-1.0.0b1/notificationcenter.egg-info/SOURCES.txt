@@ -1,0 +1,11 @@
+MANIFEST.in
+setup.cfg
+setup.py
+versioneer.py
+notificationcenter/__init__.py
+notificationcenter/_notificationcenter.py
+notificationcenter/_version.py
+notificationcenter.egg-info/PKG-INFO
+notificationcenter.egg-info/SOURCES.txt
+notificationcenter.egg-info/dependency_links.txt
+notificationcenter.egg-info/top_level.txt
