@@ -1,0 +1,7 @@
+peppercorn
+
+[dev]
+cx_Oracle
+
+[test]
+coverage
