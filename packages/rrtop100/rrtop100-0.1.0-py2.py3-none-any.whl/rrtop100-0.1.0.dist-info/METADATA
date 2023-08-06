@@ -1,0 +1,28 @@
+Metadata-Version: 2.0
+Name: rrtop100
+Version: 0.1.0
+Summary: RadioRecord Top Hits Downloader
+Home-page: https://github.com/kidig/rrtop100
+Author: Dmitrii Gerasimenko
+Author-email: kiddima@gmail.com
+License: BSD
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Unix
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: aiohttp (==0.22.5)
+Requires-Dist: click (==6.6)
+Requires-Dist: lxml (==3.6.1)
+
+
+RadioRecord Top Hits Downloader
+
+

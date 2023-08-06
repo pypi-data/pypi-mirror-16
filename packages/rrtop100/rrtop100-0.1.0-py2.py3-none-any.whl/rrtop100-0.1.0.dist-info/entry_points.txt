@@ -1,0 +1,3 @@
+[console_scripts]
+rrtop100 = rrtop.cli:main
+
