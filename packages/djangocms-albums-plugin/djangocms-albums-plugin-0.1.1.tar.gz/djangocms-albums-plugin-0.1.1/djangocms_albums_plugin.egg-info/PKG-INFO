@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: djangocms-albums-plugin
+Version: 0.1.1
+Summary: Adds photogallery functionality to your djangocms website
+Home-page: https://github.com/iferminm/djangocms-albums-plugin
+Author: Israel Fermín Montilla
+Author-email: iferminm@gmail.com
+License: GPL 3.0
+Description: Adds photogallery and albums functionality to your djangocms powered website
+Platform: UNKNOWN
