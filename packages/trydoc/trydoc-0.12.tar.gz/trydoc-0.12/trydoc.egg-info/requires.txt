@@ -1,0 +1,9 @@
+path.py
+simplejson
+Sphinx >= 1.0b2
+
+[proteus]
+proteus >= 3.2
+
+[view directive]
+tryton >= 3.2
