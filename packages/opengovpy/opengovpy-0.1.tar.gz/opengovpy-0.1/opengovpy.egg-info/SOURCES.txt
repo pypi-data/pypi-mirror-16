@@ -1,0 +1,10 @@
+README.txt
+setup.cfg
+setup.py
+opengovpy/__init__.py
+opengovpy/opengovpy.py
+opengovpy.egg-info/PKG-INFO
+opengovpy.egg-info/SOURCES.txt
+opengovpy.egg-info/dependency_links.txt
+opengovpy.egg-info/requires.txt
+opengovpy.egg-info/top_level.txt

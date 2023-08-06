@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: opengovpy
+Version: 0.1
+Summary: Python wrapper around http://api.data.mos.ru/
+Home-page: https://github.com/AntonKorobkov/opengovpy
+Author: Anton Korobkov
+Author-email: korobq@gmail.com
+License: BSD
+Description: UNKNOWN
+Keywords: api opendata
+Platform: UNKNOWN
