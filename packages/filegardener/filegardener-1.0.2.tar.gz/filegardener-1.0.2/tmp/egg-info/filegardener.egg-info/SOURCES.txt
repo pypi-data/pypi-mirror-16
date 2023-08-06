@@ -1,0 +1,4 @@
+README.rst
+filegardener.py
+setup.py
+./tmp/egg-info/filegardener.egg-info/SOURCES.txt
