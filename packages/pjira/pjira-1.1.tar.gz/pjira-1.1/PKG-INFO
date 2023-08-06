@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: pjira
+Version: 1.1
+Summary: A simple Atlassian jira cli client written in python
+Home-page: https://github.com/gabber12/python-jira
+Author: Shubham Sharma
+Author-email: shubham.sha12@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/gabber12/python-jira/archive/1.1.tar.gz
+Description: UNKNOWN
+Keywords: client,cli,jira
+Platform: UNKNOWN
