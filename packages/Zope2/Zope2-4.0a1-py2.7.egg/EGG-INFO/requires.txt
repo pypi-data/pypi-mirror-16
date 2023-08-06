@@ -1,0 +1,61 @@
+AccessControl>=4.0a1
+Acquisition
+BTrees
+DateTime
+DocumentTemplate
+ExtensionClass
+Missing
+MultiMapping
+PasteDeploy
+Persistence
+Products.OFSP >= 2.13.2
+RestrictedPython
+ZConfig >= 2.9.2
+ZODB
+ZopeUndo
+docutils
+five.globalrequest
+pytz
+repoze.retry
+setuptools
+tempstorage
+transaction
+waitress
+zdaemon
+zExceptions >= 3.2
+zLOG
+zope.browser
+zope.browsermenu
+zope.browserpage >= 4.0
+zope.browserresource >= 3.11
+zope.component
+zope.configuration
+zope.container
+zope.contentprovider
+zope.contenttype
+zope.deferredimport
+zope.event
+zope.exceptions
+zope.i18n [zcml]
+zope.i18nmessageid
+zope.interface >= 3.8
+zope.lifecycleevent
+zope.location
+zope.pagetemplate >= 4.0.2
+zope.processlifetime
+zope.proxy
+zope.ptresource
+zope.publisher
+zope.schema
+zope.security
+zope.sendmail
+zope.sequencesort
+zope.site
+zope.size
+zope.structuredtext
+zope.tal
+zope.tales >= 3.5.0
+zope.testbrowser
+zope.testing
+zope.traversing
+zope.viewlet

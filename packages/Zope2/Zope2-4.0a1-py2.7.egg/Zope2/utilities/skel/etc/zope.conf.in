@@ -1,0 +1,5 @@
+%include <<INSTANCE_HOME>>/etc/base.conf
+
+<http-server>
+  address 8080
+</http-server>

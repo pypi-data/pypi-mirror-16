@@ -1,0 +1,18 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five">
+
+  <five:deprecatedManageAddDelete
+      class="OFS.userfolder.BasicUserFolder"/>
+
+  <five:deprecatedManageAddDelete
+      class="OFS.Cache.CacheManager"/>
+
+  <five:deprecatedManageAddDelete
+      class="Products.Sessions.BrowserIdManager.BrowserIdManager"/>
+  <five:deprecatedManageAddDelete
+      class="Products.Sessions.SessionDataManager.SessionDataManager"/>
+
+  <five:deprecatedManageAddDelete
+      class="Products.SiteAccess.VirtualHostMonster.VirtualHostMonster"/>
+
+</configure>

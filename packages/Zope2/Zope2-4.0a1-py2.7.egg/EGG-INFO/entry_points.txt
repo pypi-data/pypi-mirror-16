@@ -1,0 +1,14 @@
+[console_scripts]
+addzope2user = Zope2.utilities.adduser:main
+mkzopeinstance = Zope2.utilities.mkzopeinstance:main
+runwsgi = Zope2.Startup.serve:main
+runzope = Zope2.Startup.run:run
+zopectl = Zope2.Startup.zopectl:run
+zpasswd = Zope2.utilities.zpasswd:main
+
+[paste.app_factory]
+main = Zope2.Startup.run:make_wsgi_app
+
+[paste.filter_app_factory]
+httpexceptions = Zope2.Startup.httpexceptions:main
+
