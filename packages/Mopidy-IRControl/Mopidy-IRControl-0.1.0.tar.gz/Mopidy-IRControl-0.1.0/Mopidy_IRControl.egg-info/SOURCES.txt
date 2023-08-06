@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+Mopidy_IRControl.egg-info/PKG-INFO
+Mopidy_IRControl.egg-info/SOURCES.txt
+Mopidy_IRControl.egg-info/dependency_links.txt
+Mopidy_IRControl.egg-info/entry_points.txt
+Mopidy_IRControl.egg-info/not-zip-safe
+Mopidy_IRControl.egg-info/requires.txt
+Mopidy_IRControl.egg-info/top_level.txt
+mopidy_IRControl/__init__.py
+mopidy_IRControl/actor.py
+mopidy_IRControl/ext.conf

@@ -1,0 +1,3 @@
+[mopidy.ext]
+IRControl = mopidy_IRControl:Extension
+
