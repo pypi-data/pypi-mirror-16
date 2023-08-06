@@ -1,0 +1,14 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+README.rst
+setup.cfg
+setup.py
+misc/regret_plot.png
+slots/__init__.py
+slots/slots.py
+slots.egg-info/PKG-INFO
+slots.egg-info/SOURCES.txt
+slots.egg-info/dependency_links.txt
+slots.egg-info/requires.txt
+slots.egg-info/top_level.txt
