@@ -1,0 +1,12 @@
+average_pixels/__init__.py,sha256=4SfftUsd63_1u_aY1FmPieMwhOMn1H0SlXzCiUb7uYM,68
+average_pixels/average_pixels.py,sha256=7esIymul3omVTdngg4baOE1balkRiRh7153fKZL5D_I,2352
+average_pixels/get_images.py,sha256=rTiKE0ZiJoBWzo9M6IRAmsuqgdKHQj9R2jOU3tJY_QA,1668
+average_pixels/parse_args.py,sha256=c0dIKT26OjlG2oLyn2swgywzsIw61CfE5C9e7gbKpN0,1331
+average_pixels/version.py,sha256=RsZjRjMprNcDm97wqRRSk6rTLgTX8N0GyicZyZ8OsBQ,22
+average_pixels-1.0.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+average_pixels-1.0.0.dist-info/METADATA,sha256=S18XPEPqUehq6ZUXrr81TYo46bsLy0RVLg5VPrwnhxk,345
+average_pixels-1.0.0.dist-info/RECORD,,
+average_pixels-1.0.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+average_pixels-1.0.0.dist-info/entry_points.txt,sha256=_0_dKKqc5F0pUiAH3VUYN4vDGFjIgiUbWfpF9taP9PI,71
+average_pixels-1.0.0.dist-info/metadata.json,sha256=st01Z5y1SUAA2n8Vu0VWe1cGUdsWt1egh1chseDY4jg,640
+average_pixels-1.0.0.dist-info/top_level.txt,sha256=Ns12-sVNqJ52WbyQENCx-oGRwndOYY-DHyJ8mcLz3So,15
