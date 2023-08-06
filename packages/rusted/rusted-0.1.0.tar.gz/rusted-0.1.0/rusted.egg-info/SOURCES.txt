@@ -1,0 +1,9 @@
+rusted.py
+setup.cfg
+setup.py
+rusted.egg-info/PKG-INFO
+rusted.egg-info/SOURCES.txt
+rusted.egg-info/dependency_links.txt
+rusted.egg-info/entry_points.txt
+rusted.egg-info/requires.txt
+rusted.egg-info/top_level.txt
