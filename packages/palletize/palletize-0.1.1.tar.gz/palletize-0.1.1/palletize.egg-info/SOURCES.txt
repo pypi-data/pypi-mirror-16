@@ -1,0 +1,7 @@
+setup.py
+bin/palletize
+palletize.egg-info/PKG-INFO
+palletize.egg-info/SOURCES.txt
+palletize.egg-info/dependency_links.txt
+palletize.egg-info/requires.txt
+palletize.egg-info/top_level.txt
