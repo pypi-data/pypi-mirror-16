@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: ical_dict
+Version: 0.2
+Summary: A Python library to convert an .ics file into a Dictionary object.
+Home-page: https://github.com/jayrav13/ical_dict
+Author: Jay Ravaliya
+Author-email: jayrav13@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/jayrav13/ical_dict/tarball/0.2
+Description: UNKNOWN
+Keywords: calendar,ical,ics,json,dictionary,python
+Platform: UNKNOWN
