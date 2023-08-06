@@ -1,0 +1,11 @@
+XStatic_angular_ui_router-0.3.1.1.dist-info/DESCRIPTION.rst,sha256=WmEJhMZL4hHWBiMZsVwwFQgA8szJiAWy36U7TKMvvVw,626
+XStatic_angular_ui_router-0.3.1.1.dist-info/METADATA,sha256=hrvmzuKmHwi3qYML5v51sfLFTH7nIl8Vfzae7B9YLfE,708
+XStatic_angular_ui_router-0.3.1.1.dist-info/RECORD,,
+XStatic_angular_ui_router-0.3.1.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+XStatic_angular_ui_router-0.3.1.1.dist-info/metadata.json,sha256=Qba_AEFS9gzGRfMymxgqMiYWLxOl89EV3iTYIUmOqlo,228
+XStatic_angular_ui_router-0.3.1.1.dist-info/top_level.txt,sha256=tDpXyaHF81JGnzDNskkXZNoFrs3YW_a1ueuzoAmLNas,8
+xstatic/__init__.py,sha256=G-d438vPx7m_ks5e9XTtM3u7LDRO5dSSukibukWmyPM,56
+xstatic/pkg/__init__.py,sha256=G-d438vPx7m_ks5e9XTtM3u7LDRO5dSSukibukWmyPM,56
+xstatic/pkg/ui_router/__init__.py,sha256=IbQ-WUf1oxdNXKJbZ2YY6oliGL6yScSzPbNcexqgnjQ,1984
+xstatic/pkg/ui_router/data/angular-ui-router.js,sha256=CneY3yJKhR15R8lpYYEzjZQ9tfn21dUSx06SL_XX1gY,171551
+xstatic/pkg/ui_router/data/angular-ui-router.min.js,sha256=WMX1oGxdlHQ-INIGXgmbExcvhBREk8bR9fSseB2qIVs,32961
