@@ -1,0 +1,19 @@
+Metadata-Version: 2.0
+Name: python-irodsclient
+Version: 0.5.0rc1
+Summary: A python API for iRODS
+Home-page: https://github.com/irods/python-irodsclient
+Author: iRODS Consortium
+Author-email: support@irods.org
+License: BSD
+Keywords: irods
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Operating System :: POSIX :: Linux
+Requires-Dist: PrettyTable (>=0.7.2)
+
+UNKNOWN
+
+
