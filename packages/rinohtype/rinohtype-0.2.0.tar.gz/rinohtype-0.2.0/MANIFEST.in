@@ -1,0 +1,21 @@
+graft doc
+prune doc/_build
+graft src
+graft tests
+graft tests_regression
+prune tests_regression/sphinx
+
+recursive-include examples *.md *.py *.txt *.xml *.jpg *.png
+
+include CHANGES.rst
+include CONTRIBUTING.rst
+include LICENSE
+include README.rst
+
+include .bumpversion.cfg
+include .travis.yml
+include tox.ini
+include coverage.py
+include Dockerfile
+
+global-exclude *.py[cod] __pycache__ *.so *.dylib .DS_Store
