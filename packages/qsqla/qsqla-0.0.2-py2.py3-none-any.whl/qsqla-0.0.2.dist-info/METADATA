@@ -1,0 +1,46 @@
+Metadata-Version: 2.0
+Name: qsqla
+Version: 0.0.2
+Summary: qSQLA is a query builder for SQLAlchemy Core Selectables 
+Home-page: https://github.com/hoffmann/qsqla
+Author: Peter Hoffmann
+Author-email: peter.hoffmann@blue-yonder.com
+License: BSD
+Download-URL: https://github.com/hoffmann/qsqla/tarball/
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: python-dateutil
+Requires-Dist: sqlalchemy
+
+qsqla
+===============================
+
+
+qSQLA is a query builder for SQLAlchemy Core Selectables 
+
+Installation / Usage
+--------------------
+
+To install use pip:
+
+    $ pip install qsqla
+
+
+Or clone the repo:
+
+    $ git clone https://github.com/hoffmann/qsqla.git
+    $ python setup.py install
+
+Contributing
+------------
+
+TBD
+
+Example
+-------
+
+TBD
+
+
