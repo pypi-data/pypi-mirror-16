@@ -1,0 +1,10 @@
+README.rst
+awsudo.py
+setup.cfg
+setup.py
+awsudo.egg-info/PKG-INFO
+awsudo.egg-info/SOURCES.txt
+awsudo.egg-info/dependency_links.txt
+awsudo.egg-info/entry_points.txt
+awsudo.egg-info/requires.txt
+awsudo.egg-info/top_level.txt
