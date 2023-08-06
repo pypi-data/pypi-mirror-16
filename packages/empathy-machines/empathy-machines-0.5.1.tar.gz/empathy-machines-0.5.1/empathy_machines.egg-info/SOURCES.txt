@@ -1,0 +1,14 @@
+.gitignore
+LICENSE
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+corpora/aggregatedCorpusCleaned.csv
+corpora/aggregatedCorpusCleanedAndFiltered.csv
+empathy_machines.egg-info/PKG-INFO
+empathy_machines.egg-info/SOURCES.txt
+empathy_machines.egg-info/dependency_links.txt
+empathy_machines.egg-info/requires.txt
+empathy_machines.egg-info/top_level.txt
