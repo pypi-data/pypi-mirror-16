@@ -1,0 +1,7 @@
+setup.py
+GitCommitBear/GitCommitBear.py
+GitCommitBear/__init__.py
+GitCommitBear.egg-info/PKG-INFO
+GitCommitBear.egg-info/SOURCES.txt
+GitCommitBear.egg-info/dependency_links.txt
+GitCommitBear.egg-info/top_level.txt
