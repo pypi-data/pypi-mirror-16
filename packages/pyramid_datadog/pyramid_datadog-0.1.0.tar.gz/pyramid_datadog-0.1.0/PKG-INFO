@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: pyramid_datadog
+Version: 0.1.0
+Summary: Datadog integration for Pyramid
+Home-page: https://github.com/SurveyMonkey/pyramid_datadog
+Author: Paola Castro
+Author-email: paolac@surveymonkey.com
+License: MIT License
+Description: UNKNOWN
+Keywords: datadog pyramid metrics integration
+Platform: UNKNOWN
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
