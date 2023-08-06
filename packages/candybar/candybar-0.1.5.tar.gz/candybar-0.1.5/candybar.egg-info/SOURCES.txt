@@ -1,0 +1,13 @@
+setup.py
+candybar/CandyBarCode128.py
+candybar/CandyBarCode39.py
+candybar/CandyBarImage.py
+candybar/CandyBarImagePdf417.py
+candybar/CandyBarPdf417.py
+candybar/PatternPdf417.py
+candybar/__init__.py
+candybar.egg-info/PKG-INFO
+candybar.egg-info/SOURCES.txt
+candybar.egg-info/dependency_links.txt
+candybar.egg-info/requires.txt
+candybar.egg-info/top_level.txt

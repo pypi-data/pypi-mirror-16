@@ -1,0 +1,26 @@
+Metadata-Version: 1.1
+Name: candybar
+Version: 0.1.5
+Summary: Python library for barcode generator (code128, code39, and pdf417)
+Home-page: http://candybar.pw
+Author: Scott Umsted
+Author-email: scott@wildidea.xyz
+License: Apache
+Description: 
+            candybar
+        
+            Python 3 barcode generator.
+            Code39, Code128, PDF417 - Text mode and all sub-modes are supported
+            
+Keywords: pdf417 code128 code39 barcode
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
