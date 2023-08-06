@@ -1,0 +1,12 @@
+android_sdk_updater-1.0.1.data/scripts/android-sdk-updater,sha256=ygH_G9YRVFcaPmIck_97VF0C-g4Mbsjga7oiyELuuOg,3692
+android_sdk_updater-1.0.1.dist-info/DESCRIPTION.rst,sha256=A6lI_eo-smD4HAR_JXZaJnxTiwACoOmVIoiIVV6_Pmk,8696
+android_sdk_updater-1.0.1.dist-info/METADATA,sha256=ACZQZ22AnEFF2AmzwgW5Tvjmk6EtAlxTxG1tqK_ernY,9067
+android_sdk_updater-1.0.1.dist-info/RECORD,,
+android_sdk_updater-1.0.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+android_sdk_updater-1.0.1.dist-info/metadata.json,sha256=ea1-8v6ka5jrGyZFkGUuJoV1x7sBS63u-9ZC6_KO7lk,587
+android_sdk_updater-1.0.1.dist-info/top_level.txt,sha256=d5_6jZMaEqx6RDhN76p0BiXNOEhHhw7hCS0wvn96xXw,12
+sdk_updater/__init__.py,sha256=pQQJEMp5vplYBfHZApz7Impl3Vr91H9KXwLK07tRnSI,234
+sdk_updater/list.py,sha256=CpDcC0UOPfUWqj48ntqXOsR-89cvymAM-JeW-5_mY8w,2149
+sdk_updater/package.py,sha256=yW7NC8hWJG3tWd2tI6qRBRMdbWSnzjeZvWcH86HetTM,659
+sdk_updater/scan.py,sha256=OtW7sAnJ1Q-9OI26B-c2SRSugSLVb65d9hmwnqfDnDQ,3014
+sdk_updater/update.py,sha256=droLS9MQXM-1qBIE2C_g02QVLC_PfXr0EmmoQ7KEaGA,5277
