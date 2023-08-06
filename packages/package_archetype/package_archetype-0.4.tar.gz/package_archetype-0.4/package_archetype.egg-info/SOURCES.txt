@@ -1,0 +1,12 @@
+setup.cfg
+setup.py
+package_archetype/__init__.py
+package_archetype/hello_world.py
+package_archetype.egg-info/PKG-INFO
+package_archetype.egg-info/SOURCES.txt
+package_archetype.egg-info/dependency_links.txt
+package_archetype.egg-info/entry_points.txt
+package_archetype.egg-info/requires.txt
+package_archetype.egg-info/top_level.txt
+package_archetype/test/__init__.py
+package_archetype/test/test_hello_world.py
