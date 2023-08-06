@@ -1,0 +1,3 @@
+[console_scripts]
+beehve = beehve.manage_beehve:main
+
