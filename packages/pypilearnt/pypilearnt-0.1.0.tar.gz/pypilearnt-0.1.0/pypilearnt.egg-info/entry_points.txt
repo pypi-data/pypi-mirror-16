@@ -1,0 +1,3 @@
+[console_scripts]
+pypilearnt = pypilearnt.cli:main
+
