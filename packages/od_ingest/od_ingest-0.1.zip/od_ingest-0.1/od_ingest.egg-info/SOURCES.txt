@@ -1,0 +1,7 @@
+setup.py
+od_ingest/__init__.py
+od_ingest.egg-info/PKG-INFO
+od_ingest.egg-info/SOURCES.txt
+od_ingest.egg-info/dependency_links.txt
+od_ingest.egg-info/not-zip-safe
+od_ingest.egg-info/top_level.txt

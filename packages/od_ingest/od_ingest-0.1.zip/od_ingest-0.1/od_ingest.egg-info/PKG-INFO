@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: od-ingest
+Version: 0.1
+Summary: Ingest open data from excel, assign event name, date, cat ids
+Home-page: https://github.com/lizasapphire/od_ingest
+Author: lizasapphire
+Author-email: lizasapphire@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
