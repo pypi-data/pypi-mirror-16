@@ -1,0 +1,11 @@
+datestuff/__init__.py,sha256=ZFrxuXQp1eut3QKuY4sGte091zp8I4cfL6UdF67KT_0,142
+datestuff/_comparable.py,sha256=dTU7vOPFZ4TvOX9ygccAHqWG-AEq3SAL5qN9sRKMSNs,742
+datestuff/daterange.py,sha256=sFjt1klPjXY69-WrKUONIS_fyGVuBHkR1HmPpffYnlE,2700
+datestuff/relative.py,sha256=thGRjaVmHQi_e3bWamxKmabOf_gg5zpFRCMZPV9FJj4,5820
+datestuff/utils.py,sha256=WDKfcdYu5uyZIUIIc2uOmpnvQE9S2h96Tq-ZCh6W4ZU,218
+datestuff-0.1.0.dist-info/DESCRIPTION.rst,sha256=VKd18InAsfSPP2hCB6T8ibzZRWRX4z4F4AQDqTKPBf4,5631
+datestuff-0.1.0.dist-info/METADATA,sha256=lNi9y_CMVoaM5xtf5dG7FHhV0q_jNYL9sdrpP4i0UA0,6188
+datestuff-0.1.0.dist-info/RECORD,,
+datestuff-0.1.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+datestuff-0.1.0.dist-info/metadata.json,sha256=EDoNi1eAVvGmPl29d5xEHTmTp4dn_t1VlKTYHMrxTMg,746
+datestuff-0.1.0.dist-info/top_level.txt,sha256=BZ7M30fsdvjYoKo_pGmSNzppYXQpi6D6e26noVQCHCc,10
