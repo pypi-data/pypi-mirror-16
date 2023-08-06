@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: django-todo-api
+Version: 0.2.0
+Summary: API for managing todo's.
+Home-page: https://gitlab.com/cdriehuys/django-todo-api
+Author: Chathan Driehuys
+Author-email: cdriehuys@gmail.com
+License: MIT
+Description: # Todo API
+        
+        API for managing tasks using django and django rest framework.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django :: 1.8
+Classifier: Framework :: Django :: 1.9
+Classifier: Framework :: Django :: 1.10
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
