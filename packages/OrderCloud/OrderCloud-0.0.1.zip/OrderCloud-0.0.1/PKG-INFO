@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: OrderCloud
+Version: 0.0.1
+Summary: A Python SDK for the OrderCloud API
+Home-page: https://github.com/ordercloud-api/python-sdk
+Author: UNKNOWN
+Author-email: ordercloud@four51.com
+License: UNKNOWN
+Download-URL: https://github.com/ordercloud-api/python-sdk/tarball/0.1
+Description:     A Python SDK for the OrderCloud API. A full ecommerce backend as a service.
+            
+Keywords: OrderCloud,ecommerce
+Platform: UNKNOWN
