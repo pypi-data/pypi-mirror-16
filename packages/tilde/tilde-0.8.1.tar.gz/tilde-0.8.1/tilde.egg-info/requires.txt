@@ -1,0 +1,14 @@
+numpy >= 1.9
+ujson
+bcrypt
+importlib
+pg8000
+sqlalchemy >= 1.0.12
+argparse
+ase >= 3.11
+spglib >= 1.9.1
+tornado >= 4.3.0
+sockjs-tornado
+websocket-client
+futures
+httplib2
