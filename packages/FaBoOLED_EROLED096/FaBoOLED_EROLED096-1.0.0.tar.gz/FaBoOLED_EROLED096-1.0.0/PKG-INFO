@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: FaBoOLED_EROLED096
+Version: 1.0.0
+Summary: This is a library for the FaBo LCD I2C Brick.
+Home-page: https://github.com/FaBoPlatform/FaBoOLED-EROLED096-Python
+Author: FaBo
+Author-email: info@fabo.io
+License: Apache License 2.0
+Description: FaBoOLED-EROLED096-Python
+        =========================
+        
+        How to install.
+        ---------------
+        
+        ::
+        
+            pip install FaBoOLED_EROLED096
+        
+        FaBo OLED Brick
+        ---------------
+        
+        　`#214 OLED I2C Brick <http://fabo.io/214.html>`__
+        
+        EROLED096
+        ---------
+        
+        　EROLED096 is 0.96 OLED module.
+        
+        EROLED096 Datasheet
+        ~~~~~~~~~~~~~~~~~~~
+        
+        　`EROLED096
+        Datasheet <http://www.buydisplay.com/download/manual/ER-OLED0.96_Series_Datasheet.pdf>`__
+        
+        Releases
+        --------
+        
+        -  1.0.0 Initial release.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development
+Classifier: Topic :: System :: Hardware
