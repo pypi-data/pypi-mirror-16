@@ -1,0 +1,175 @@
+CHANGES
+=======
+
+1.2.26
+------
+
+* Add contract for interface MTU
+* Add set and unset for juniper base and QFX
+
+1.2.25
+------
+
+* Pass only strings in requests headers
+
+1.2.24
+------
+
+* Add the compliance tests for auto-negotiation
+
+1.2.23
+------
+
+* Add juniper set_interface_auto_negotiation_state
+* Add unset-interface-auto-negotiation
+* Add auto-negotiation information on get_interface
+
+1.2.22
+------
+
+* Fix the parsing of get information command that has new lines
+* Un-pin ncclient version
+
+1.2.21
+------
+
+* Cisco interface reset
+
+1.2.20
+------
+
+* Renamed _get_operations to be clearer
+* Added reset port for brocade switches
+* Use operation="delete" on reset_interface
+* Add support for configuration-less interfaces
+* Add UnknownInterface exception to compliance tests
+* Juniper methods support defaulted interfaces
+* Make sure all compliance test are executed
+* Revert "Merge pull request #147 from stephanerobert/cisco_interface_reset"
+* fix the test for the new ip
+* use non routable ip to test drop connection hypothesis
+* Cisco interface reset
+
+1.2.19
+------
+
+* Remove documentation from build
+
+1.2.18
+------
+
+* fix travis.yml
+
+1.2.17
+------
+
+* Package Documentation with dist
+
+1.2.16
+------
+
+* Remove Redlock-FIFO from dependencies
+* Change the way request data is being obtained as call will be deprecated
+
+1.2.15
+------
+
+* Bump fakeswitches
+* Expose reset_interface call to the API
+* reset_interface for juniper and QFX
+* Rename DeleteBondTest to RemoveBondTest
+
+1.2.14
+------
+
+* Improve bond-related compliance tests
+* Add/Remove_interface_from_bond stop using cache
+* Make sure GetVersionsTest is executed against all switches
+* Add compliance test for bonds
+* rename password_prompt for prompt
+* Added text assertions of errors to the compliance tests
+* Added text assertions of errors to the compliance tests
+* Added a test that validates the proxy chaining
+* Use release version of flexmock
+* New show_version call
+
+1.2.13
+------
+
+* Monkey patch ncclient for issue 125
+
+1.2.12
+------
+
+* Ensure that interface can be set and unset twice without failing
+* Make sure the compliance test are loaded automatically
+* remove unused cleanup in get_vlan_interfaces
+* Change contains_inanyorder to proper usage
+* Make fake-switch have priority over MockSsh
+* Cleanup dell adapter
+* Remove brocade sorted
+
+1.2.11
+------
+
+* Removed some VrrpGroupDescriptor
+* Removed some members of SwitchDescriptor
+* All switches are now compliant on get_vlan_interfaces. * Bump fakeswitches that now list ports on show vlan * Dell10g now supports get_vlan_interfaces
+
+1.2.10
+------
+
+* compliance test use self.client for unset method
+* Implementing the compliance test for validating set_interface_state
+* Implementing the compliance test for validating set_interface_state
+* test naming changes test logics changes
+* compliance test adjustment
+* Compliance test for unsetting an interface state
+
+1.2.9
+-----
+
+* weird line erasing fix
+* use of the refresh item system
+* Implementing unset interface set for the remote switch
+* use of the refresh item system
+* [cached] unset_interface_state implementation
+* Implementing unset interface set for the remote switch
+* Properly setting and unsetting the disabled state for juniper switches
+* unset_interface_state - api layer level
+* Supporting resetting the state of a juniper interface
+* better logic to set native vlan id
+* fake-switches version bump cisco vrrp ip address fix
+* fake-seitches juniper compatibility
+* Better cleanup of the get_vlan_interfaces and get_interface
+* Make sure get_interface_test works
+* Bump fake-switches and fix a file that moved
+* Make sure get_interface_test cleanups itself
+* Fix get_interfaces test for brocade
+* Do not test trunk native vlan on getVlanInterfaces
+
+1.2.8
+-----
+
+* Remove vlan.interfaces
+* Added a system test that proves that remote sessions can be continued on a different netman
+* Get vlan interfaces compliance test
+* Changed value errors for local exceptions
+
+1.2.7
+-----
+
+* Add the definition of get_vlan_interfaces on SwitchBase
+* Add get_vlan_interfaces method on juniper switches
+* Add get_vlan_interfaces on Brocade
+* handle unknown vlan number
+
+1.2.6
+-----
+
+* Made regex threadsafe
+
+1.2.5
+-----
+
+* vlan var name changes
