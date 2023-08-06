@@ -1,0 +1,48 @@
+Metadata-Version: 1.1
+Name: FaBoProximity-VCNL4010
+Version: 1.0.1
+Summary: This is a library for the FaBo Proximity I2C Brick.
+Home-page: https://github.com/FaBoPlatform/FaBoProximity-VCNL4010-Python
+Author: FaBo
+Author-email: info@fabo.io
+License: Apache License 2.0
+Description: FaBoProximity-VCNL4010-Python
+        =============================
+        
+        How to install.
+        ---------------
+        
+        ::
+        
+            pip install FaBoProximity_VCNL4010
+        
+        FaBo Proximity I2C Brick
+        ------------------------
+        
+        　`#205 Proximity I2C Brick <http://fabo.io/205.html>`__
+        
+        VCNL4010
+        --------
+        
+        　Proximity and Ambient Light Sensor with Infrared Emitter, I2C
+        Interface.
+        
+        VCNL4010 Datasheet
+        ~~~~~~~~~~~~~~~~~~
+        
+        　`VCNL4010 Datasheet <http://www.vishay.com/docs/83462/vcnl4010.pdf>`__
+        
+        Releases
+        --------
+        
+        -  1.0.0 Initial release.
+        -  1.0.1 Modify comments.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development
+Classifier: Topic :: System :: Hardware
