@@ -1,0 +1,13 @@
+django_zerodowntime-0.2.6.dist-info/DESCRIPTION.rst,sha256=sCP8AMFRr4xdw-isBkPqvydvccg7lq10Hxm-kbq74mA,2109
+django_zerodowntime-0.2.6.dist-info/METADATA,sha256=5XXSOY_PjgWLI30-hEEn3qk9ErruvCXjUi0oIBU_KKI,2932
+django_zerodowntime-0.2.6.dist-info/RECORD,,
+django_zerodowntime-0.2.6.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+django_zerodowntime-0.2.6.dist-info/metadata.json,sha256=YEYzmgFsQvaEJvUhWhmytA807awR9FIrKPw0tzshUz0,1022
+django_zerodowntime-0.2.6.dist-info/top_level.txt,sha256=AR_cEzxf0izNKS4f2xzuZ3fHG0Y13onm-Toc2EqY7AA,13
+zerodowntime/__init__.py,sha256=M5WdfS4ku2L31iU5KtJeNCFZliUWZ-tF8vqoVH-8c1o,108
+zerodowntime/migration_utils.py,sha256=9CafI5SvksiYs5p67xBTlXX9s_9lpa1hxgQ6QIZdrQ0,2280
+zerodowntime/models.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zerodowntime/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zerodowntime/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zerodowntime/management/commands/check_migrations.py,sha256=cJDsS7ESeJ213PYSYRBBCKMyagpTrtIPsxcOm8ToGy0,1455
+zerodowntime/management/commands/install_git_hooks.py,sha256=2J1gJNhadivDgs7K2mx0QjuWduyoPH3VHXDrwHPjSPA,1571
