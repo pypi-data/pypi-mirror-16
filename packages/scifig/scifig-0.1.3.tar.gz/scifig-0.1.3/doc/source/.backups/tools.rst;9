@@ -1,0 +1,14 @@
+Tools
+=====
+
+scifigextract
+-------------
+
+List filepath in \includegraphics[]{} commands
+
+scifigextract.py list mytexfile.tex
+
+pdf/fig1.pdf
+pdf/fig2.pdf
+pdf/fig3a.pdf
+pdf/fig3b.pdf
