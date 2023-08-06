@@ -1,0 +1,11 @@
+django_rangepaginator/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_rangepaginator/layout.py,sha256=nKnVrw6rQl8HDhTHxjypxIo7myW2cH1uBIUgfketE_k,591
+django_rangepaginator/templates/django_rangepaginator/bootstrap3.html,sha256=zCp7BmU3EcoQ9iwZb1XpofCzTA9sWeqpq1sHCTBJ5oA,1285
+django_rangepaginator/templatetags/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_rangepaginator/templatetags/rangepaginator.py,sha256=UeY8Du85jscpSFJTUygxtvKdeem46cgqJMN8XKabews,2031
+django_rangepaginator-0.2.0.dist-info/DESCRIPTION.rst,sha256=4deGVAIKM5zn2VZLoP0O_JUWMcojbrlOoZc55sevroQ,841
+django_rangepaginator-0.2.0.dist-info/METADATA,sha256=KZUmBUfYxpaDNvgrcM0Y1slJgZE_tKl0OEjdqOGjwpk,2271
+django_rangepaginator-0.2.0.dist-info/RECORD,,
+django_rangepaginator-0.2.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+django_rangepaginator-0.2.0.dist-info/metadata.json,sha256=sbmt4BILDnFM88Yv2ZEKwiJMHq7PMFrYv3BkfLfkS1I,1550
+django_rangepaginator-0.2.0.dist-info/top_level.txt,sha256=6uLy6SW1QZaBtiaBKtiPR0jqQrGkfL7hCLe6TNnxeLs,22
