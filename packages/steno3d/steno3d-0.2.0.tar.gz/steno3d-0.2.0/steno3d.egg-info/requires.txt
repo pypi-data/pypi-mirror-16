@@ -1,0 +1,5 @@
+numpy>=1.7
+future
+six
+requests
+properties>=0.1.5
