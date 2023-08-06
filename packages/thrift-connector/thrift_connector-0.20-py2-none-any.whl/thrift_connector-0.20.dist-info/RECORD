@@ -1,0 +1,10 @@
+thrift_connector/__init__.py,sha256=-rwjaGSu0mZpSeKW59eDK53uzKOCIW8KQ17QiWFXbAA,369
+thrift_connector/connection_pool.py,sha256=k5X5-FntmsHOR9mA61ep1DhFT6d61q_bIRpEUG3NeFA,17585
+thrift_connector/hooks.py,sha256=LKk1R_KxgJkPcdOVgq9hJS4yBf_5J92FmdNYHrE5DsY,1267
+thrift_connector/zookeeper_watcher.py,sha256=iwhKnzeBJLKxpRVjvzwiRE63_zNpIBfaKLITauVph-0,24
+thrift_connector-0.20.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+thrift_connector-0.20.dist-info/METADATA,sha256=soeQqI74oSLHQ8TNVVeJARd5HBU1HOXN1u-B8kESfhc,298
+thrift_connector-0.20.dist-info/metadata.json,sha256=kLeYEkbLTEG_M9wjWqJYbTrjvgP-4uDTTgCnXO9bSUY,487
+thrift_connector-0.20.dist-info/RECORD,,
+thrift_connector-0.20.dist-info/top_level.txt,sha256=JGeUquygdkacgATlapNJXO4jkgrqjUWIlTC6XRXjeMo,17
+thrift_connector-0.20.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
