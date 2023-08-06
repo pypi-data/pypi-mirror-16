@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: aztecdecoder
+Version: 1.0.0
+Summary: Biblioteka programistyczna pozwalająca na dekodowanie danych z dowodów rejestracyjnych pojazdów samochodowych zapisanych w formie kodu AZTEC 2D.
+Home-page: https://www.pelock.com
+Author: Bartosz Wójcik
+Author-email: support@pelock.com
+License: Apache-2.0
+Description: UNKNOWN
+Keywords: aztec2d aztec-decoder aztec
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Natural Language :: Polish
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
