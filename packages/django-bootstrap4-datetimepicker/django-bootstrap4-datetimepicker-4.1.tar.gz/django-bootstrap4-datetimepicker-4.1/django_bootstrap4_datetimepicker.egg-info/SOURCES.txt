@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+bootstrap4_datetime/__init__.py
+bootstrap4_datetime/widgets.py
+django_bootstrap4_datetimepicker.egg-info/PKG-INFO
+django_bootstrap4_datetimepicker.egg-info/SOURCES.txt
+django_bootstrap4_datetimepicker.egg-info/dependency_links.txt
+django_bootstrap4_datetimepicker.egg-info/top_level.txt
