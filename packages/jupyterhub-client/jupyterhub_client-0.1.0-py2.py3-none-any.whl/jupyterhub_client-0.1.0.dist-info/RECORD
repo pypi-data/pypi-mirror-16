@@ -1,0 +1,10 @@
+jupyterhub_client/__init__.py,sha256=SH8-XY8Zd4St-v0w6-H0OfDNpRTtn9D1D90RtDNyEao,62
+jupyterhub_client/async.py,sha256=VByd-s8I8QQiuEzb2v29rt60-TWBTtsdECnlqhSf8v4,811
+jupyterhub_client/base.py,sha256=ZrB10OvR1SL4GoewCg4A_QFmGXssP46TJE1vu1PQnlU,4619
+jupyterhub_client/sync.py,sha256=EUilou6kset3AcvNh6HWdkKOTZXC6nvFC3Jyf2ovG68,620
+jupyterhub_client-0.1.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+jupyterhub_client-0.1.0.dist-info/METADATA,sha256=Kya3jNdcTMwF6q8ibV0_SNpYhCVZB360I3_X6JVIOGk,509
+jupyterhub_client-0.1.0.dist-info/RECORD,,
+jupyterhub_client-0.1.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+jupyterhub_client-0.1.0.dist-info/metadata.json,sha256=4p5imPqW35Q0Xn88F7aJZkMV2vUfobcOCmVN5oo0D3Y,690
+jupyterhub_client-0.1.0.dist-info/top_level.txt,sha256=0YdBQltLGL3iDvUWDbz8YsAy7fvQg5JjmRd6pCjfGrs,18
