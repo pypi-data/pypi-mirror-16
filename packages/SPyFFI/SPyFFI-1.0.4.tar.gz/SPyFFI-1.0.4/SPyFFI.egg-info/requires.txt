@@ -1,0 +1,6 @@
+zachopy
+matplotlib
+numpy
+astropy==1.1.2
+astroquery
+sh
