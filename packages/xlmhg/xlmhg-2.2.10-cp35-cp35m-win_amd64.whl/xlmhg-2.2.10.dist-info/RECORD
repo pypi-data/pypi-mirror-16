@@ -1,0 +1,11 @@
+xlmhg/__init__.py,sha256=ShwawkMEIAWCIa4tfHXDUvq5pB7eM84h4OW7aNPFJfY,279
+xlmhg/mhg.py,sha256=o8vM_25ViHpR6D9jBn-eMMXzy0Q_wYpUuKKc8lOGIWY,11609
+xlmhg/mhg_cython.cp35-win_amd64.pyd,sha256=WthlTQgEpbkLWBUYlqCbrzoiWxmkfaJpz55I_Cpc1yE,135168
+xlmhg/result.py,sha256=mCzQnb-SifkXWjZoSnf7yhiTAbqj6UP5GU_s2pb9o7Y,3989
+xlmhg/test.py,sha256=IWceJEYAvNBt_Py2YITLIsEtI54hZ58TCm994UyZLZ4,9829
+xlmhg-2.2.10.dist-info/DESCRIPTION.rst,sha256=WVR7Pm_2mGVrQ1Ey4CyfxwJMO969P69dMvC1faMp8ms,4851
+xlmhg-2.2.10.dist-info/METADATA,sha256=IhAFB6r8OoZnUfZYcgv-JhkLaNgKQ-B2UHZZUujUw-w,5734
+xlmhg-2.2.10.dist-info/RECORD,,
+xlmhg-2.2.10.dist-info/WHEEL,sha256=SUgfiiDWQYcL1n6t2OS_7aUz1Z2lCAWOT6Rx0MQyQko,106
+xlmhg-2.2.10.dist-info/metadata.json,sha256=bx6IiPWXnVPvqzec9i31QeeN-Ze0jxi8TbyVZc8VoMA,1144
+xlmhg-2.2.10.dist-info/top_level.txt,sha256=osYafJxINjXWbVF1jkgp5BiInmc7F64BUkFXgKEdKBw,6
