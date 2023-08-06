@@ -1,0 +1,10 @@
+MANIFEST.in
+README.rst
+setup.py
+chippy/__init__.py
+chippy/mmlparser.py
+chippy/synthesizer.py
+chippy.egg-info/PKG-INFO
+chippy.egg-info/SOURCES.txt
+chippy.egg-info/dependency_links.txt
+chippy.egg-info/top_level.txt
