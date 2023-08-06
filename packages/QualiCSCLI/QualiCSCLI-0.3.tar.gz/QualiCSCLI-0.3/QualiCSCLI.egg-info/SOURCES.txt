@@ -1,0 +1,9 @@
+QualiCSCLI.py
+Table.py
+setup.py
+QualiCSCLI.egg-info/PKG-INFO
+QualiCSCLI.egg-info/SOURCES.txt
+QualiCSCLI.egg-info/dependency_links.txt
+QualiCSCLI.egg-info/entry_points.txt
+QualiCSCLI.egg-info/requires.txt
+QualiCSCLI.egg-info/top_level.txt
