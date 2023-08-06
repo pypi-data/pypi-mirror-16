@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: YoutubetoMp3
+Version: 1.0.0
+Summary: Download Youtube Videos to Mp3 using Command Line
+Home-page: https://github.com/Pratik151/YoutubetoMp3/
+Author: Pratik Patel
+Author-email: pratikpatel15133@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: Youtube,Mp3,Videos
+Platform: UNKNOWN
+Classifier: Operating System :: POSIX
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Utilities
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

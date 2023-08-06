@@ -1,0 +1,3 @@
+[console_scripts]
+YoutubetoMp3 = YoutubetoMp3:main
+
