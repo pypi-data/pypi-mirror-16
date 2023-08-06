@@ -1,0 +1,8 @@
+setup.py
+libopeniot/__init__.py
+libopeniot/tcpclient.py
+libopeniot.egg-info/PKG-INFO
+libopeniot.egg-info/SOURCES.txt
+libopeniot.egg-info/dependency_links.txt
+libopeniot.egg-info/not-zip-safe
+libopeniot.egg-info/top_level.txt
