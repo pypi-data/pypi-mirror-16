@@ -1,0 +1,12 @@
+MANIFEST.in
+setup.py
+mplsvds/__init__.py
+mplsvds/logo-plot.png
+mplsvds/mplsvds.py
+mplsvds.egg-info/PKG-INFO
+mplsvds.egg-info/SOURCES.txt
+mplsvds.egg-info/dependency_links.txt
+mplsvds.egg-info/requires.txt
+mplsvds.egg-info/top_level.txt
+mplsvds/test/__init__.py
+mplsvds/test/test.py
