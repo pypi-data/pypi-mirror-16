@@ -1,0 +1,14 @@
+mastercard_assurance_iq-1.0.0.dist-info/DESCRIPTION.rst,sha256=FxFPKQ_bQUJ63edRYuIHmEPemLxnISPFfxQHVzVv-Rk,28
+mastercard_assurance_iq-1.0.0.dist-info/METADATA,sha256=mRFjUKxvQQ5mN1lJm9MhWlc77qkSzTYd3bwGIlLgoio,857
+mastercard_assurance_iq-1.0.0.dist-info/RECORD,,
+mastercard_assurance_iq-1.0.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+mastercard_assurance_iq-1.0.0.dist-info/metadata.json,sha256=FYY6_jz-IAeIT7X0F-LnnGBenLVbIiQRL_GwqbCJ2BE,1012
+mastercard_assurance_iq-1.0.0.dist-info/top_level.txt,sha256=iedPbkbVqV3HooKgmp30SGReWlzeLU_b-oDuN0zTxiY,28
+mastercardassuranceiq/__init__.py,sha256=Aet4BXUwcQr0gJvw89ZTDXpYcpN-3DUmtM1UqG1UiDo,206
+mastercardassuranceiq/ecommercemessage.py,sha256=t74RrFU6yuKkdn73XlRttOk4-hNNBJnGmPgH-YaW0Fk,2940
+mastercardassuranceiq/ecommercemessageconfidence.py,sha256=cboHXTfPtO0o-ttk3lHalR3LA2g5Hwdfs9h4riUrtpc,2994
+mastercardassuranceiq/ecommercemessagescore.py,sha256=rQi2iwYOCP17e40Z85TyEPiDXcp81KcyYmrTti_MI6g,2964
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_ecommercemessage.py,sha256=OT2Wk3_6-eOWjiqWs7q2jcnY4gyWGdJ0OuGvAY_Mq_0,6977
+tests/test_ecommercemessageconfidence.py,sha256=TU7bA59aCXrZZgZ4VH6-lEZMKGryJD5gZyKp-MK2Yn4,3889
+tests/test_ecommercemessagescore.py,sha256=RDIQrC5qt5bhC0FUrB0YRM73-9kXTJTu0tv3vmn_e9E,7313
