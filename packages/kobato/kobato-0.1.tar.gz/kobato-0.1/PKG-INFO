@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: kobato
+Version: 0.1
+Summary: A command line interface to your point.im blog
+Home-page: https://github.com/nico-izo/kobato
+Author: Nicolay Izoderov
+Author-email: nico-izo@ya.ru
+License: GNU/GPLv3
+Download-URL: https://github.com/nico-izo/kobato/tarball/0.1
+Description: UNKNOWN
+Keywords: social blog cli
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Internet
+Classifier: Topic :: Utilities
