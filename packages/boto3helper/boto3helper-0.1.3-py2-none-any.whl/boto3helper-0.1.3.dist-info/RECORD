@@ -1,0 +1,10 @@
+boto3helper/__init__.py,sha256=OSscT7sogE2XAdKwBlcolY9dq3Sg1qe8oVz3GXGJEKI,170
+boto3helper/cloudwatchlogs_helper.py,sha256=zHvYbkp1pZvA9p52JvkW-nxF29oRKKfq1wHIiVSiGeU,5471
+boto3helper/ec2_helper.py,sha256=o3CRT3NpfUgxP4hU6aCyeeCV1gGjZuUR4rN5siKIqoY,4734
+boto3helper/emr_helper.py,sha256=g0MdKvQ4J3oMNEwIwP_iXSjwKxVejhmIDjukT4NtRrs,3821
+boto3helper-0.1.3.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+boto3helper-0.1.3.dist-info/METADATA,sha256=CoXfb81FsJxg5u4r8p7WWwjKBqIewDaRkpw43u7Tfuw,547
+boto3helper-0.1.3.dist-info/RECORD,,
+boto3helper-0.1.3.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+boto3helper-0.1.3.dist-info/metadata.json,sha256=qfV8Q7LIAaENlsPTAExsJw1yvLjNUJ7-u8JNlfjHE4M,726
+boto3helper-0.1.3.dist-info/top_level.txt,sha256=PiAL71gpBOqNI8MI2akjtEQ1otG1vBn0m6qe0F8-FMQ,12
