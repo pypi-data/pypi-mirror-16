@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: wav2image
+Version: 1.0.2
+Summary: Waveform generator that can generate any image type
+Home-page: https://github.com/niland/wav2image
+Author: Niland
+Author-email: support@niland.io
+License: MIT
+Description: UNKNOWN
+Keywords: waveform svg png wav
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Multimedia :: Sound/Audio :: Analysis
+Classifier: License :: OSI Approved :: MIT License

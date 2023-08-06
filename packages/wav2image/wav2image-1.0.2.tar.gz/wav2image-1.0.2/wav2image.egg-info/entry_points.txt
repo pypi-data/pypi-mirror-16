@@ -1,0 +1,3 @@
+[console_scripts]
+wav2image = wav2image:main
+
