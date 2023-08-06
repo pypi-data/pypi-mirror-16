@@ -1,0 +1,47 @@
+Metadata-Version: 1.1
+Name: django-b2storage
+Version: 0.2.1
+Summary: A backblaze b2 storage system for django
+Home-page: https://github.com/amlatyrngom/django-b2storage
+Author: Amadou Latyr Ngom
+Author-email: amlatyr.ngom@gmail.com
+License: MIT
+Description: # Django Backblaze B2 Storage
+        A backblaze B2 storage system for django
+        
+        ## Description
+        django-b2storage is a storage system for django using the cloud service [Backblaze B2](https://www.backblaze.com/b2/cloud-storage.html "link to b2 website").
+        
+        ## Installation
+        To install django-b2storage:
+        
+        ```sh
+        $ pip install django_b2storage
+        ```
+        
+        Then in your settings file, add the following:
+        ```sh
+        DEFAULT_FILE_STORAGE = 'django_b2storage.backblaze_b2.B2Storage'
+        B2_ACCOUNT_ID = 'your_account_id'
+        B2_APPLICATION_KEY = 'your_application_key'
+        B2_BUCKET_NAME = 'your_bucket_name'
+        B2_BUCKET_ID = 'your_bucket_id'
+        ```
+        
+        And That's It!!!
+        You will now be able to refer to user uploaded files using:
+        ```sh
+        object_with_file.file.url()
+        ```
+        
+        ## Tutorial
+        To see this in action alongside with [Heroku](https://www.heroku.com/ "link to heroku webite"), see my tutorial [here](http://example.com/ "link to my tutorial")
+        
+Keywords: backblaze b2 django storage media
+Platform: UNKNOWN
+Classifier: Framework :: Django
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Developers
