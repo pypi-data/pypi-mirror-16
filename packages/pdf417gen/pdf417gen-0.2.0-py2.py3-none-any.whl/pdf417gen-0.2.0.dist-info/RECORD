@@ -1,0 +1,14 @@
+pdf417/__init__.py,sha256=MH7K5mYV-grFHY-bb2-8iO1ECYbyoQI5E4uOPEixD5o,135
+pdf417/codes.py,sha256=-HwNj7OMm1QcI_skRvb1KVcBm9u4n3m7OkQ2Ise1ig4,25520
+pdf417/compaction.py,sha256=Wlu_LfQlKYFvp1P90RR8xCA9Nz4R_J8u6xkJuA8EUiA,7489
+pdf417/data.py,sha256=vR3ZdRkhft9oR8EoedvGnz19FetenB8CqxkUDukYiKY,8894
+pdf417/encoding.py,sha256=4uHnayx5gV20Vv_lCEYd8eqpo97Kn03M9aTtHcO3T3E,4722
+pdf417/error_correction.py,sha256=yU9GSXdvPEXHapFuo40pntYtNmqnlCV1XkPJciDY6JI,726
+pdf417/rendering.py,sha256=e1Ba5mr237DoOkgwPrds2L4LtAPJfapcZkr5m1BL_Wg,2646
+pdf417/util.py,sha256=Xz6m2MJv0_stlX_Ze5mZ_DvaFKUo5ZfPiozH38xRrDQ,564
+pdf417gen-0.2.0.dist-info/DESCRIPTION.rst,sha256=-_pr5UUb50oQ-dMqA2AxisPrsUxznMmkJQMoopJCo8A,69
+pdf417gen-0.2.0.dist-info/METADATA,sha256=58YvPtHPXIFCXr4iPgjty2pjzIS6_4LYAIi6EqwBXAI,1086
+pdf417gen-0.2.0.dist-info/RECORD,,
+pdf417gen-0.2.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+pdf417gen-0.2.0.dist-info/metadata.json,sha256=WrRNbD2AkUnYGuS8S6nQ90WyW7pytiNyijopNB_rtwE,1134
+pdf417gen-0.2.0.dist-info/top_level.txt,sha256=h4ZZxKhwm3XtRvVv0Eq8eKXTQovbEBBex-_u-o6MTEA,7
