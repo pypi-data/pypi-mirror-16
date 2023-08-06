@@ -1,0 +1,6 @@
+setuptools
+ipykernel >= 4.0
+traitlets
+rdflib
+pygments
+SPARQLWrapper
