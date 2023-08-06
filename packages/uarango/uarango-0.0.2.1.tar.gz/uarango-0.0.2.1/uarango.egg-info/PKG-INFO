@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: uarango
+Version: 0.0.2.1
+Summary: UNIST arangoDB Restful Python Library
+Home-page: https://github.com/koorukuroo/uarango
+Author: Kyunghoon Kim
+Author-email: preware@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Database
+Classifier: Development Status :: 5 - Production/Stable
