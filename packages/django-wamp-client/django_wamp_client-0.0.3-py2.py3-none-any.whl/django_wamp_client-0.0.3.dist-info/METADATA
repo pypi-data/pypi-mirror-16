@@ -1,0 +1,21 @@
+Metadata-Version: 2.0
+Name: django-wamp-client
+Version: 0.0.3
+Summary: Wamp Client for Django Channels
+Home-page: https://github.com/fcurella/django-wamp-client
+Author: Flavio Curella
+Author-email: flavio.curella@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Django
+Requires-Dist: autobahn
+Requires-Dist: channels
+
+UNKNOWN
+
+
