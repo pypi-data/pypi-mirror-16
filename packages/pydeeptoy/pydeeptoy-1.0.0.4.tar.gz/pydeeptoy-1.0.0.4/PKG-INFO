@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: pydeeptoy
+Version: 1.0.0.4
+Summary: Python deep learning library for learning purposes
+Home-page: https://github.com/stormy-ua/DeepLearningToy/tree/master/src/pydeeptoy
+Author: Kirill Panarin
+Author-email: kirill.panarin@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: machine learning,deep learning,neural network
+Platform: UNKNOWN
