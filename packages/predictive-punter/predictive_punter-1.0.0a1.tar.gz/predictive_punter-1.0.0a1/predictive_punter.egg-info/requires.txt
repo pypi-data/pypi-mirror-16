@@ -1,0 +1,14 @@
+cache_requests
+lxml
+punters_client
+pymongo
+racing_data
+redis
+requests
+
+[dev]
+bumpversion
+check-manifest
+
+[test]
+tox
