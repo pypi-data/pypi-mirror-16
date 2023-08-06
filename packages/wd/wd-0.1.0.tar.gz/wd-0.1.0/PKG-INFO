@@ -1,0 +1,38 @@
+Metadata-Version: 1.1
+Name: wd
+Version: 0.1.0
+Summary: Macaca Python Client
+Home-page: https://github.com/macacajs/wd.py
+Author: Zichen Zhu
+Author-email: zic.zhu@gmail.com
+License: MIT
+Description: Macaca Python Client
+        ====================
+        
+        .. image:: https://img.shields.io/coveralls/macacajs/wd.py/master.svg
+            :target: https://coveralls.io/github/macacajs/wd.py
+        
+        .. image:: https://img.shields.io/travis/macacajs/wd.py/master.svg
+            :target: https://travis-ci.org/macacajs/wd.py
+        
+        .. image:: https://img.shields.io/pypi/v/wd.svg
+            :target: https://pypi.python.org/pypi/wd
+        
+        .. image:: https://img.shields.io/pypi/pyversions/wd.svg
+            :target: https://pypi.python.org/pypi/wd/
+        
+        .. image:: https://img.shields.io/pypi/dd/wd.svg
+            :target: https://pypi.python.org/pypi/wd/
+        
+        ----
+        
+        Python Webdriver Client
+        
+Keywords: macaca,webdriver,uitest,mobile automation,e2e
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
