@@ -1,0 +1,3 @@
+[console_scripts]
+rbs = ruamel.browser.server.__main__:main
+
