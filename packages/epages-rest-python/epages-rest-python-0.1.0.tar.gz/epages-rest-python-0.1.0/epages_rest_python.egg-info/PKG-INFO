@@ -1,0 +1,43 @@
+Metadata-Version: 1.1
+Name: epages-rest-python
+Version: 0.1.0
+Summary: The epages online shop API for Python
+Home-page: https://github.com/ooz/epages-rest-python
+Author: Oliver Zscheyge
+Author-email: oliverzscheyge@gmail.com
+License: MIT
+Description: epages REST API for Python
+        ==========================
+        
+        See [epages API](https://developer.epages.com/apps) for detailed documentation.
+        
+        Installation
+        ------------
+        
+        pip package inc soon. :)
+        
+        Testing
+        -------
+        
+        Executing the tests requires a [developer shop](http://www.epages.cloud/developer/).
+        
+            cd epages-rest-python
+            cp run_tests.sh.template run_tests.sh
+            # Edit run_tests.sh: enter your epages host, shop and API key
+            bash run_tests.sh
+        
+        Contributing
+        ------------
+        
+        TODO
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
