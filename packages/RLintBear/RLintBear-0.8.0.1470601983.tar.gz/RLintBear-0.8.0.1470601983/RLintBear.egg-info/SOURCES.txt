@@ -1,0 +1,7 @@
+setup.py
+RLintBear/RLintBear.py
+RLintBear/__init__.py
+RLintBear.egg-info/PKG-INFO
+RLintBear.egg-info/SOURCES.txt
+RLintBear.egg-info/dependency_links.txt
+RLintBear.egg-info/top_level.txt
