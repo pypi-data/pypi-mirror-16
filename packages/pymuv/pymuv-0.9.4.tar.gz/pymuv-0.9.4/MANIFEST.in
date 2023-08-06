@@ -1,0 +1,3 @@
+include README.rst REFERENCE.rst
+recursive-include pymuv incls examples
+
