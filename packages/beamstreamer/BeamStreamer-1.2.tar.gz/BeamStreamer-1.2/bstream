@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+
+# -*- coding: utf-8 -*-
+from beamstreamer import beam_streamer
+import sys
+
+bs = beam_streamer.BeamStreamer()
+
+if __name__ == "__main__":
+    
+    if len(sys.argv) == 2:
+        sys.exit(bs.open_stream(sys.argv[1]))
+    elif len(sys.argv) == 3:
+        sys.exit(bs.open_stream(sys.argv[1], sys.argv[2]))
+    else:
+        print("Syntax: ")
+        print("beamstreamer [stream] [quality]")
