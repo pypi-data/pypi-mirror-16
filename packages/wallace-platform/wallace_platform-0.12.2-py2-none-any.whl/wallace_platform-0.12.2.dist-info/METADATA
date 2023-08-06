@@ -1,0 +1,22 @@
+Metadata-Version: 2.0
+Name: wallace-platform
+Version: 0.12.2
+Summary: Wallace, a platform for experimental cultural evolution
+Home-page: http://github.com/berkeley-cocosci/Wallace
+Author: Berkeley CoCoSci
+Author-email: wallace@cocosci.berkeley.edu
+License: MIT
+Keywords: science,cultural evolution,experiments,psychology
+Platform: UNKNOWN
+Requires-Dist: SQLAlchemy (==0.8.3)
+Requires-Dist: psiturk-wallace (==2.1.2)
+Requires-Dist: click (==6.6)
+Requires-Dist: future (==0.15.2)
+Requires-Dist: pexpect (==3.3)
+Requires-Dist: psycopg2 (>=2.5.4)
+Requires-Dist: redis (==2.10.3)
+Requires-Dist: rq (==0.5.5)
+
+UNKNOWN
+
+
