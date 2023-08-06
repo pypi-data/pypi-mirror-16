@@ -1,0 +1,11 @@
+midiutil/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+midiutil/MidiFile.py,sha256=Oc7FLG2goDXgXw_utijxAxpCuLCDVj60XkQ-uSdFEpE,38546
+midiutil/MidiFile3.py,sha256=kZ3X1dp-6LsAw82zVPbouSmjFq-2wf3v6kDxaFdX9jA,40844
+miditime-1.1.1.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+miditime-1.1.1.dist-info/DESCRIPTION.rst,sha256=Mywq_5rENthQujifiYsup0Rh5oAgO7RA3kc1ARxFAh4,6298
+miditime-1.1.1.dist-info/METADATA,sha256=39lO_F9-aOsLLfu8W4eZnHOw5n_03M40AtWvnS9l0BE,7380
+miditime-1.1.1.dist-info/RECORD,,
+miditime-1.1.1.dist-info/metadata.json,sha256=CXV6q6tD77X3kCUZm8Ohj6es0JrtKKE0bo9huTmCOfo,1217
+miditime-1.1.1.dist-info/top_level.txt,sha256=lxQtl8-23fX4KwFhKqislX43yQP2GIqY457hHH4k_lg,18
+miditime/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+miditime/miditime.py,sha256=5DMeuLtq1Uk0vY9zxEsr-Xc95O3ieXjw2TwjzyvJm0o,9859
