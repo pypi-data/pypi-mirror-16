@@ -1,0 +1,5 @@
+appdirs
+docopt
+inform>=1.4
+shlib
+python-gnupg
