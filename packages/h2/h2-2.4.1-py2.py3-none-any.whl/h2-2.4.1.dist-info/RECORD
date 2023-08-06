@@ -1,0 +1,15 @@
+h2/__init__.py,sha256=yY2HJpQGa6cJx--NP3Tu_BQ4XHzKQpuDj2M1Vgl4Ofg,86
+h2/connection.py,sha256=JiTXkYUxKy2_rj4mL887EPv0K5e62iBoX_Xkz6Beg7E,71776
+h2/errors.py,sha256=pCGYlc_3DkbVMZRzFAdoMdqfx0CVjNFYVyhdUx17yWM,1616
+h2/events.py,sha256=4XR5ED0ZysxDHeikeEQkqG6xzWMcFBwlJb4QRTVjpgk,18711
+h2/exceptions.py,sha256=D_4Zt6npZZmzx9qEMoT88F13cAWktaK3oFavJtk9h6M,4777
+h2/frame_buffer.py,sha256=j20DL8vm1kt0cd1TW4wtlY1tgSTld3-pXV9BVhau5Kk,7155
+h2/settings.py,sha256=miZagpDNn7cu0mZT7VBaWFltwVXk8fy9ZZ31X-SlZCk,8300
+h2/stream.py,sha256=IAbLOv06nn6w3qz3MrghmxbtKnDZ21sWZrkOtpUN6G0,44514
+h2/utilities.py,sha256=IrB795hjJzBfFNqJ4725gnP5a9AYEpctVaeor44VyKk,7915
+h2-2.4.1.dist-info/DESCRIPTION.rst,sha256=xcfwOLhhU4XGV0DuMnU3XuYjlzF7N_p9ouI_KIfsRF8,16100
+h2-2.4.1.dist-info/METADATA,sha256=ZG7EK-Mvy2fIv6DQjrEBVSI4bouasKOP2sTezexNiXk,17128
+h2-2.4.1.dist-info/RECORD,,
+h2-2.4.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+h2-2.4.1.dist-info/metadata.json,sha256=O6KZPseZFA88Ack-VwuvYuv3p2lExtTBio83qB-v_Wg,1172
+h2-2.4.1.dist-info/top_level.txt,sha256=Hiulx8KxI2jFUM1dG7-CZeRkO3j50MBwCLG36Vrq-kI,3
