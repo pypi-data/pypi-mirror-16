@@ -1,0 +1,171 @@
+{
+    "version": 1,
+    "interactions": [
+        {
+            "request": {
+                "body": "currency=BXC&amount=3000&phonenumber=%2B40715441309&metadata.my_id=123ASDAsd123",
+                "headers": {
+                    "Content-Length": [
+                        "79"
+                    ],
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Beyonic-Client-Version": [
+                        "0.1.9"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "User-Agent": [
+                        "python-requests/2.11.1"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Beyonic-Client": [
+                        "Python"
+                    ],
+                    "Beyonic-Version": [
+                        "v2"
+                    ],
+                    "Content-Type": [
+                        "application/x-www-form-urlencoded"
+                    ]
+                },
+                "method": "POST",
+                "uri": "http://staging.beyonic.com/api/collectionrequests"
+            },
+            "response": {
+                "status": {
+                    "message": "CREATED",
+                    "code": 201
+                },
+                "headers": {
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-security-policy": [
+                        "script-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com *.jsdelivr.net beyonic.atlassian.net 'unsafe-inline' 'unsafe-eval' *.google-analytics.com *.newrelic.com bam.nr-data.net; img-src 'self' *.bootstrapcdn.com *.cloudflare.com secure.gravatar.com data: blob: *.openstreetmap.org *.google-analytics.com; default-src 'self'; frame-src 'self' beyonic.atlassian.net; style-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com 'unsafe-inline' cdn.jsdelivr.net; media-src 'self'; connect-src 'self'; font-src 'self' *.bootstrapcdn.com data:; report-uri /reports/csp-report/"
+                    ],
+                    "content-language": [
+                        "en"
+                    ],
+                    "expires": [
+                        "Thu, 25 Aug 2016 04:55:32 GMT"
+                    ],
+                    "vary": [
+                        "Accept-Language, Cookie"
+                    ],
+                    "server": [
+                        "WSGIServer/0.1 Python/2.7.10"
+                    ],
+                    "last-modified": [
+                        "Thu, 25 Aug 2016 04:55:32 GMT"
+                    ],
+                    "allow": [
+                        "GET, POST, HEAD, OPTIONS"
+                    ],
+                    "cache-control": [
+                        "no-cache, no-store, must-revalidate, max-age=0"
+                    ],
+                    "date": [
+                        "Thu, 25 Aug 2016 04:55:32 GMT"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": {
+                    "string": "{\"id\":65,\"organization\":2,\"amount\":\"3000.0000\",\"currency\":\"BXC\",\"phonenumber\":\"+40715441309\",\"reason\":\"\",\"metadata\":{\"my_id\":\"123ASDAsd123\"},\"created\":\"2016-08-25T04:55:32.307997Z\",\"author\":1,\"modified\":\"2016-08-25T04:55:32.308029Z\",\"updated_by\":1,\"collection\":null,\"success_message\":\"\",\"instructions\":null,\"send_instructions\":false}"
+                }
+            }
+        },
+        {
+            "request": {
+                "body": null,
+                "headers": {
+                    "Accept-Encoding": [
+                        "gzip, deflate"
+                    ],
+                    "Beyonic-Client-Version": [
+                        "0.1.9"
+                    ],
+                    "Accept": [
+                        "*/*"
+                    ],
+                    "User-Agent": [
+                        "python-requests/2.11.1"
+                    ],
+                    "Connection": [
+                        "keep-alive"
+                    ],
+                    "Beyonic-Client": [
+                        "Python"
+                    ],
+                    "Beyonic-Version": [
+                        "v2"
+                    ]
+                },
+                "method": "GET",
+                "uri": "http://staging.beyonic.com/api/collectionrequests/65"
+            },
+            "response": {
+                "status": {
+                    "message": "OK",
+                    "code": 200
+                },
+                "headers": {
+                    "x-xss-protection": [
+                        "1; mode=block"
+                    ],
+                    "content-security-policy": [
+                        "script-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com *.jsdelivr.net beyonic.atlassian.net 'unsafe-inline' 'unsafe-eval' *.google-analytics.com *.newrelic.com bam.nr-data.net; img-src 'self' *.bootstrapcdn.com *.cloudflare.com secure.gravatar.com data: blob: *.openstreetmap.org *.google-analytics.com; default-src 'self'; frame-src 'self' beyonic.atlassian.net; style-src 'self' *.googleapis.com *.bootstrapcdn.com *.cloudflare.com 'unsafe-inline' cdn.jsdelivr.net; media-src 'self'; connect-src 'self'; font-src 'self' *.bootstrapcdn.com data:; report-uri /reports/csp-report/"
+                    ],
+                    "content-language": [
+                        "en"
+                    ],
+                    "expires": [
+                        "Thu, 25 Aug 2016 04:55:32 GMT"
+                    ],
+                    "vary": [
+                        "Accept-Language, Cookie"
+                    ],
+                    "server": [
+                        "WSGIServer/0.1 Python/2.7.10"
+                    ],
+                    "last-modified": [
+                        "Thu, 25 Aug 2016 04:55:32 GMT"
+                    ],
+                    "allow": [
+                        "GET, HEAD, OPTIONS"
+                    ],
+                    "cache-control": [
+                        "no-cache, no-store, must-revalidate, max-age=0"
+                    ],
+                    "date": [
+                        "Thu, 25 Aug 2016 04:55:32 GMT"
+                    ],
+                    "x-frame-options": [
+                        "SAMEORIGIN"
+                    ],
+                    "x-content-type-options": [
+                        "nosniff"
+                    ],
+                    "content-type": [
+                        "application/json"
+                    ]
+                },
+                "body": {
+                    "string": "{\"id\":65,\"organization\":2,\"amount\":\"3000.0000\",\"currency\":\"BXC\",\"phonenumber\":\"+40715441309\",\"reason\":\"\",\"metadata\":{\"my_id\":\"123ASDAsd123\"},\"created\":\"2016-08-25T04:55:32.307997Z\",\"author\":1,\"modified\":\"2016-08-25T04:55:32.308029Z\",\"updated_by\":1,\"collection\":null,\"success_message\":\"\",\"instructions\":null,\"send_instructions\":false}"
+                }
+            }
+        }
+    ]
+}
