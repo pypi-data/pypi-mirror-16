@@ -1,0 +1,27 @@
+Metadata-Version: 1.1
+Name: stegart
+Version: 0.1.0
+Summary: Renders a graphical representation of the data provided
+Home-page: https://github.com/kulinacs/stegart
+Author: kulinacs
+Author-email: nicklaus@kulinacs.com
+License: MIT
+Description: =======
+        StegArt
+        =======
+        Renders a graphical representation of the data provided
+        
+        StegArt takes the passed input string, converts it to hex, and displays the
+        resulting hexstring as BGR color using OpenCV. Designed with hexdigests of
+        hashes in mind, but can be used for binary and ascii input as well.
+        
+Keywords: image representation steganography
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
