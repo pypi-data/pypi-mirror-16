@@ -1,0 +1,13 @@
+gimmik/__init__.py,sha256=As4NbheiATBUnNsrMdYWXzsUshSnSfErfq6SUu_mdPk,1014
+gimmik/_version.py,sha256=Ak62uWdxhPo5gUDSWd-BE_bSzSA4oJnPLFEQthfditA,45
+gimmik/kernels/c-omp.mako,sha256=rSR-W744sXbQzUnH8NUG8c_1MfzGXT2pEu-5A8xDWfk,634
+gimmik/kernels/c.mako,sha256=UqmG4CJfB7h7ztOJQk4VmOrcDF5aEkqSO6ea0ljdUOw,601
+gimmik/kernels/cuda.mako,sha256=p5c-uQ5C8l8UettSQFhi-aejXONiqKxmg2TraeG1NF8,631
+gimmik/kernels/ispc.mako,sha256=evNyIv9w3iyBehgn_1dRoqApB9vVSDkJF3_E3UYN_fU,605
+gimmik/kernels/opencl.mako,sha256=oUIFcuCeWP54j99bIH6ZpWNcRh-B79dq2F0Ziy-yBHc,735
+gimmik-2.1.dist-info/DESCRIPTION.rst,sha256=LAlnn_SzVXCb1gJMJ_k5T0vxY4De_0MQEhbirAmgAZE,473
+gimmik-2.1.dist-info/METADATA,sha256=HS2vWSusWPf97R3uJ5IFqkz9z4RFGfNXB4oKPG6LcYc,957
+gimmik-2.1.dist-info/RECORD,,
+gimmik-2.1.dist-info/WHEEL,sha256=zX7PHtH_7K-lEzyK75et0UBa3Bj8egCBMXe1M4gc6SU,92
+gimmik-2.1.dist-info/metadata.json,sha256=eo3A_ArqA5znOao9OeUH0UFfx1VW_vCw-a-Hkva79MQ,703
+gimmik-2.1.dist-info/top_level.txt,sha256=-Z3BAy33EQay5LE_QG4GYGWYODTVoZrGI3dnhUdHg9k,7
