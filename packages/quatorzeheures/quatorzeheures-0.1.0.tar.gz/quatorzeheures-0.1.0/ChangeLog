@@ -1,0 +1,16 @@
+CHANGES
+=======
+
+0.1.0
+-----
+
+* add gitignore
+* add travis config
+* Add tests and tox config
+* Fix py3 tests
+* log udp stream host and port
+* Fix OSC encoder
+* update README
+* New implementation using amidi
+* add LICENSE
+* first commit
