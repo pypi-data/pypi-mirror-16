@@ -1,0 +1,10 @@
+#!/Users/brett/.virtualenvs/stirplate-uploader/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'stirplate==1.3.4','console_scripts','stirplate'
+__requires__ = 'stirplate==1.3.4'
+import sys
+from pkg_resources import load_entry_point
+
+if __name__ == '__main__':
+    sys.exit(
+        load_entry_point('stirplate==1.3.4', 'console_scripts', 'stirplate')()
+    )
