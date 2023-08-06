@@ -1,0 +1,10 @@
+README.rst
+setup.py
+mscxyz/__init__.py
+mscxyz/mscxyz.py
+mscxyz.egg-info/PKG-INFO
+mscxyz.egg-info/SOURCES.txt
+mscxyz.egg-info/dependency_links.txt
+mscxyz.egg-info/not-zip-safe
+mscxyz.egg-info/requires.txt
+mscxyz.egg-info/top_level.txt

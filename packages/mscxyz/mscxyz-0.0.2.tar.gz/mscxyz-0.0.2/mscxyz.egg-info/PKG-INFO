@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: mscxyz
+Version: 0.0.2
+Summary: A command line tool to manipulate the XML based *.mscX and *.mscZ files of the notation software MuseScore.
+Home-page: https://github.com/Josef-Friedrich/mscxyz
+Author: Josef Friedrich
+Author-email: josef@friedrich.rocks
+License: MIT
+Description: UNKNOWN
+Keywords: audio
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
