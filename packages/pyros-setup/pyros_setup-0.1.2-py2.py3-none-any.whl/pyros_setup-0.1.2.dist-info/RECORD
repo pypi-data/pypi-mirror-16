@@ -1,0 +1,17 @@
+pyros_setup-0.1.2.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+pyros_setup-0.1.2.dist-info/RECORD,,
+pyros_setup-0.1.2.dist-info/entry_points.txt,sha256=YA1vzcsBv9GgZnUVNzEzhFZusTggaywB4jsA4-Q4-Hw,59
+pyros_setup-0.1.2.dist-info/metadata.json,sha256=iFwy3C-Kd_DaRen1DWYeFb8qEBk0Czl7RGyo6JA8KiY,809
+pyros_setup-0.1.2.dist-info/METADATA,sha256=1A6ZJG7zzhYK4Ud52KZg4_4nhlkN7Xyk3lvmDnlxTj4,416
+pyros_setup-0.1.2.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+pyros_setup-0.1.2.dist-info/top_level.txt,sha256=LQO5VhdQVLkFQt9OwMKivrGW2U2Wf8ZvxwqrnFkqy9E,12
+pyros_setup/utils.py,sha256=FfDBkB9tjgBJ-6H_l5AIMB8ZYWD5oKgh4k9IaSqBUfo,806
+pyros_setup/_version.py,sha256=1-4GtI0MBUFEYJQx5ch0EFH5vp7tjyZ6eiPsfxRFPfQ,266
+pyros_setup/__main__.py,sha256=t-4ACs9YXk5AP0z0C3X5bRl1dW4gwKOo2VnGxYEdDKI,1238
+pyros_setup/__init__.py,sha256=E_lfpLcPhcHt4kC8ccPp1pABm0N4kva-xvTCpZOl5QI,4829
+pyros_setup/ros_setup.py,sha256=tmhDFp7DS0hinOn1IYl-Kc3d6rMFtkm5f3-CPZav8J0,10750
+pyros_setup/tests/testing_jade.cfg,sha256=YERrN663VuQzYdK7OJ45YB0ZVC50dThCYVznVtqGyYI,92
+pyros_setup/tests/conftest.py,sha256=Rr8clrvM5TR_rogiv6WTj0CPM0Lo-KESzaHoLwufY5I,137
+pyros_setup/tests/testing_indigo.cfg,sha256=O1zcTu14BgNydIKDGWoH9tFYyAcO7JQKCansEf6_MhA,94
+pyros_setup/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyros_setup/tests/test_setup.py,sha256=IOEDSe_8NlpvDjSqIKei-v2emyJGSr8r-KL9-4NBo6s,3682
