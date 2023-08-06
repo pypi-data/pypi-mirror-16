@@ -1,0 +1,7 @@
+testing.common.database >= 1.1.0
+pymysql
+
+[testing]
+mock
+nose
+SQLAlchemy
