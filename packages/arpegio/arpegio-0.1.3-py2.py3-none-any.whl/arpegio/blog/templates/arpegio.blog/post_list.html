@@ -1,0 +1,27 @@
+{% extends 'arpegio.core/base.html' %}
+
+{% block content %}
+<div>
+  {% include 'arpegio.blog/includes/posts_list.html' with posts=posts %}
+  {% if is_paginated %}
+    <nav>
+      <ul>
+        {% if page_obj.has_previous %}
+          <li>
+            <a href="{% url 'blog:blog' page=page_obj.previous_page_number %}">
+              Previous
+            </a>
+          </li>
+        {% endif %}
+        {% if page_obj.has_next %}
+          <li>
+            <a href="{% url 'blog:blog' page=page_obj.next_page_number %}">
+              Next
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  {% endif %}
+</div>
+{% endblock %}
