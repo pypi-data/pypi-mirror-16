@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+arkgamepy.egg-info/PKG-INFO
+arkgamepy.egg-info/SOURCES.txt
+arkgamepy.egg-info/dependency_links.txt
+arkgamepy.egg-info/requires.txt
+arkgamepy.egg-info/top_level.txt
+arkpy/__init__.py
+arkpy/ark.py
+arkpy/arktypes.py
+arkpy/binary.py
+arkpy/entities.py
+arkpy/utils.py
