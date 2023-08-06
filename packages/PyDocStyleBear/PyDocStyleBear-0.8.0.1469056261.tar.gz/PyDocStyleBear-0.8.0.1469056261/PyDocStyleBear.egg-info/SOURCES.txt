@@ -1,0 +1,7 @@
+setup.py
+PyDocStyleBear/PyDocStyleBear.py
+PyDocStyleBear/__init__.py
+PyDocStyleBear.egg-info/PKG-INFO
+PyDocStyleBear.egg-info/SOURCES.txt
+PyDocStyleBear.egg-info/dependency_links.txt
+PyDocStyleBear.egg-info/top_level.txt
