@@ -1,0 +1,11 @@
+thedonald/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+thedonald/__main__.py,sha256=zO3n1ZidN_QI6jBgLO9z0xp9PZhrK34T-Ih3w9nQu30,90
+thedonald/auth.py,sha256=Lx_G2NSz97oxTcAMOrOeElCo7icJhYiYnH5iDXKhkY0,601
+thedonald/generate.py,sha256=dysB5HF0fB-n7unkamkDE4KVGV8ttn1nZbcvGlFvnzU,2154
+thedonald/tweets.py,sha256=YUd_tV7_B9z24A47TXMYUwyr40znsAb0S37RjSS60mk,963
+thedonald-1.0.4.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+thedonald-1.0.4.dist-info/METADATA,sha256=YqGGJhjM982RsL-nWzw50UCbrVHQgOgyFDzpoPPMTf0,297
+thedonald-1.0.4.dist-info/RECORD,,
+thedonald-1.0.4.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+thedonald-1.0.4.dist-info/metadata.json,sha256=m5n5kSRYiGF4H-5nkY5H7qoKLQYpEN0JFVtKu40Bvvk,487
+thedonald-1.0.4.dist-info/top_level.txt,sha256=JL5heYW67uT6lRM8-iSLoh6xpCCZILHqaVgHdTczOiU,10
