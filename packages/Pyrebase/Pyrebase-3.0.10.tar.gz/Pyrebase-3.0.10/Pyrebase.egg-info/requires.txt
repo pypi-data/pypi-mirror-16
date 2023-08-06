@@ -1,0 +1,4 @@
+requests
+sseclient
+gcloud
+oauth2client
