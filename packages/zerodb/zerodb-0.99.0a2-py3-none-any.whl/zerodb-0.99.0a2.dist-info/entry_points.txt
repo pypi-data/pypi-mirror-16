@@ -1,0 +1,3 @@
+
+[console_scripts]
+zerodb-initdb = zerodb.permissions.base:init_db_script
