@@ -1,0 +1,3 @@
+[console_scripts]
+mksearch = makefile_parser.__main__:main
+

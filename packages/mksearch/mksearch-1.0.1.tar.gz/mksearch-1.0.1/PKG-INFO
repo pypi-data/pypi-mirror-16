@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: mksearch
+Version: 1.0.1
+Summary: Recursively search makefiles for a value and output json parseable list
+Home-page: https://github.com/itow0001/TEMPLATE
+Author: Ian Itow
+Author-email: itow0001@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Programming Language :: Python :: 2.7

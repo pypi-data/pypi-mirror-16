@@ -1,0 +1,11 @@
+setup.py
+src/makefile_parser/__init__.py
+src/makefile_parser/__main__.py
+src/makefile_parser/modules/__init__.py
+src/makefile_parser/modules/manager.py
+src/mksearch.egg-info/PKG-INFO
+src/mksearch.egg-info/SOURCES.txt
+src/mksearch.egg-info/dependency_links.txt
+src/mksearch.egg-info/entry_points.txt
+src/mksearch.egg-info/not-zip-safe
+src/mksearch.egg-info/top_level.txt
