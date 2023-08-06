@@ -1,0 +1,41 @@
+Metadata-Version: 2.0
+Name: zenbot
+Version: 0.1.0
+Summary: UNKNOWN
+Home-page: https://github.com/underyx/zenbot
+Author: Bence Nagy
+Author-email: bence@underyx.me
+License: UNKNOWN
+Download-URL: https://github.com/underyx/zenbot/releases
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.5
+Requires-Dist: aiohttp
+Requires-Dist: gunicorn
+
+# zenbot
+
+Zen distribution system, happily interfacing with a specific team communication
+service named Slack.
+
+## Usage
+
+```
+docker build -t zenbot .
+docker run -P zenbot
+```
+
+## The other sort of usage
+
+You say:
+
+>/zen explicit
+
+Channel sees:
+
+>Explicit is better than implicit.
+
+
