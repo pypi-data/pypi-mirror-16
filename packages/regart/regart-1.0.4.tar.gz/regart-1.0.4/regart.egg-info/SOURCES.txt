@@ -1,0 +1,12 @@
+setup.py
+bin/regart
+regart/__init__.py
+regart/__main__.py
+regart.egg-info/PKG-INFO
+regart.egg-info/SOURCES.txt
+regart.egg-info/dependency_links.txt
+regart.egg-info/not-zip-safe
+regart.egg-info/requires.txt
+regart.egg-info/top_level.txt
+test/__init__.py
+test/test_ascii_generation.py
