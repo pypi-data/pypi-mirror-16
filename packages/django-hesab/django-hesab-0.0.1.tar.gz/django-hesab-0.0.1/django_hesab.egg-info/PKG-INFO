@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: django-hesab
+Version: 0.0.1
+Summary: Customizable Elasticsearch backend for django-haystack
+Home-page: https://github.com/rhblind/django-hesab
+Author: Rolf Håvard Blindheim
+Author-email: rhblind@gmail.com
+License: MIT License
+Download-URL: https://github.com/rhblind/django-hesab.git
+Description: Makes the Haystack Elasticsearch backend configurable through django settings file
+Platform: UNKNOWN
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
