@@ -1,0 +1,6 @@
+eqcorrscan.core.subspace.det_statistic
+======================================
+
+.. currentmodule:: eqcorrscan.core.subspace
+
+.. autofunction:: det_statistic
