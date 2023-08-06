@@ -1,0 +1,4 @@
+nclude LICENSE
+include README.rst
+recursive-include ideia_summernote/static *
+recursive-include ideia_summernote/templates *
