@@ -1,0 +1,73 @@
+Metadata-Version: 1.1
+Name: BuildChecker
+Version: 0.1.2
+Summary: Helps to get notification when building your application. Used mainly while training your deep neural network.
+Home-page: https://github.com/ashwin1992/BuildChecker
+Author: Ashwin Raju
+Author-email: ashwinraju101@gmail.com
+License: Apache Software License 2.0
+Description: ===============================
+        BuildChecker
+        ===============================
+        
+        
+        .. image:: https://img.shields.io/pypi/v/BuildChecker.svg
+                :target: https://pypi.python.org/pypi/BuildChecker
+        
+        .. image:: https://img.shields.io/travis/ashwin1992/BuildChecker.svg
+                :target: https://travis-ci.org/ashwin1992/BuildChecker
+        
+        .. image:: https://readthedocs.org/projects/BuildChecker/badge/?version=latest
+                :target: https://BuildChecker.readthedocs.io/en/latest/?badge=latest
+                :alt: Documentation Status
+        
+        .. image:: https://pyup.io/repos/github/ashwin1992/BuildChecker/shield.svg
+             :target: https://pyup.io/repos/github/ashwin1992/BuildChecker/
+             :alt: Updates
+        
+        
+        Helps to get notification when building your application. Used mainly while training your deep neural network.
+        Training your deep neural network takes atleast 48 hours and it is very tedious to log in to the server every now and then to check the status. This Build Checker can be deployed to your program and it will send a notification to your mail and phone number if there are any errors in the build.
+        
+        
+        * Free software: Apache Software License 2.0
+        * Documentation: https://BuildChecker.readthedocs.io.
+        
+        
+        Features
+        --------
+        
+        * TODO
+        
+        Credits
+        ---------
+        
+        This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+        
+        .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+        .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+        
+        
+        
+        =======
+        History
+        =======
+        
+        0.1.0 (2016-07-30)
+        ------------------
+        
+        * First release on PyPI.
+        
+Keywords: BuildChecker
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
