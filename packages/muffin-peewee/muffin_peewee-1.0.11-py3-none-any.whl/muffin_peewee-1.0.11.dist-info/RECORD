@@ -1,0 +1,15 @@
+example/__init__.py,sha256=TkckHSkHVFvzkRAW8aM1QfjG8Fnbz1YcOdmeoitt-5o,275
+example/models.py,sha256=YoiIzXh_bvKZHNT8O6u15ujNFEQIxBbTUgWMniO9Csg,233
+example/views.py,sha256=jqM_NrpA6QBdFjhiWTK_UUiMguLhZqNAZhfDN1D8HtY,892
+muffin_peewee/__init__.py,sha256=LJKbKIDuQBAFu8oHWkZgXygq_xQsjeBSwtHgW23arDE,451
+muffin_peewee/debugtoolbar.py,sha256=KV-NZ3esN6OpUfp-dFb0FcLRLSVJ5-70ZTN_bjovEj8,2020
+muffin_peewee/fields.py,sha256=hADW1bN7QLKs1k58MwwDqIQ1Rky2I4als-duMWAl_SA,1479
+muffin_peewee/models.py,sha256=vX84nKm0shbhJDqUmxnXbe3HlfBawU4fUTf9ShS4A4g,4152
+muffin_peewee/mpeewee.py,sha256=xuSyRewrV-w3zfJMAmwRkKy-Jov9MXZlZZniMHKjyFo,5566
+muffin_peewee/plugin.py,sha256=FzVAiTRKpcb5J-tXeWn1EY9sXB1J2EfFqY7CzTOHvDw,6683
+muffin_peewee-1.0.11.dist-info/DESCRIPTION.rst,sha256=tUVPtjQIFrwMSzVJ5cx2-L3jlywyMafu41156qWaFfY,3012
+muffin_peewee-1.0.11.dist-info/METADATA,sha256=4rJ1QXgp9PYw8_h1QiHCPcVzkNlPDq1U_jdlkCFi9Uc,3974
+muffin_peewee-1.0.11.dist-info/RECORD,,
+muffin_peewee-1.0.11.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+muffin_peewee-1.0.11.dist-info/metadata.json,sha256=agcB7hDodb1sCG8KUf-74UlFL4ooPSCssU_tYy5hlPw,1120
+muffin_peewee-1.0.11.dist-info/top_level.txt,sha256=cLPLBOCPtMI7jO97LHlxK-3XAhhSf9ne4w7rGEFJlXI,22
