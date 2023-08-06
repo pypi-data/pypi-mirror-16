@@ -1,0 +1,150 @@
+Location:
+  Latitude: 35.054
+  Longitude: -106.539
+  Altitude: 1663
+  Timezone: 'MST'
+
+SAPM Parameters:
+  Ns: 12                        
+  Np: 2
+  A0: 0.934425158
+  A1: 0.061300718
+  A2: -0.013966234
+  A3: 0.001212089
+  A4: -4.50E-05
+  B0: 1
+  B1: -0.002438
+  B2: 0.0003103
+  B3: -1.25E-05
+  B4: 2.11E-07
+  B5: -1.36E-09
+  C0: 1.02426
+  C1: -0.024262
+  C2: -0.451614
+  C3: -11.2165
+  C4: 1.00021
+  C5: -0.000206352
+  C6: 1.18877
+  C7: -0.188767
+  Isco: 8.71363
+  Impo: 7.98597
+  Voco: 38.2807
+  Vmpo: 29.9784
+  Aisc: 0.00047 
+  Aimp: 0.000484
+  Bvoco: -0.12864
+  Mbvoc: 0
+  Bvmpo: -0.12
+  Mbvmp: 0
+  N: 1.2321
+  Cells_in_Series: 60
+  IXO: 8.6503
+  IXXO: 5.52369
+  FD: 1
+  deltaT: 3
+  a: -3.469158041
+  b: -0.092100608
+
+MET Translation: 
+  DHI: [Diffuse_Wm2_Avg]
+  DNI: [Direct_Wm2_Avg]
+  GHI: [Global_Wm2_Avg] 
+  Air Pressure: [Pressure_mBar_Avg]
+  Wind Speed: [WS_ms_Mean]
+  Wind Speed Stdev: [WS_ms_Std]
+  Wind Direction: [Wdir_Mean]
+  Wind Direction Stdev: [Wdir_Std]
+  Relative Humidity: [RH_pct_Avg]
+  Datalog Temperature: [Panel_Temp_C_Avg]
+  Datalog Voltage: [Battery_V_Avg]
+  Time Per Scan: [ProcessTime_S_Max]
+  GHI Raw: [Global_mV_Avg]
+  Rainfall Total: [Rain_mm_Tot]
+  Rainfall: [Rain_mm_Daily]
+  GHI Temperature: [Temp_CMP22_C_Avg]
+  
+Baseline6kW Translation:
+  Ambient Temperature: [LocalAmbientTemp_Avg]
+  Box Temperature: [ICP7019_1CJCTemp_Avg, ICP7019_2CJCTemp_Avg, 
+    ICP7019_3CJCTemp_Avg, ICP7019_4CJCTemp_Avg, ICP7019_5CJCTemp_Avg,
+    ICP7019_6CJCTemp_Avg, ICP7019_7CJCTemp_Avg]
+  Module Temperature 1: [ModTemp1_Avg, ModTemp2_Avg, ModTemp3_Avg, ModTemp4_Avg, 
+    ModTemp5_Avg, ModTemp6_Avg, ModTemp7_Avg, ModTemp8_Avg]
+  Module Temperature 2: [ModTemp9_Avg, ModTemp10_Avg, ModTemp11_Avg, 
+    ModTemp12_Avg, ModTemp13_Avg, ModTemp14_Avg, ModTemp15_Avg,ModTemp16_Avg]
+  DC Voltage: [Sys1Vdc_Avg, Sys2Vdc_Avg]
+  DC Current 1: [Sys1Str1Idc_Avg, Sys1Str2Idc_Avg]
+  DC Current 2: [Sys2Str1Idc_Avg, Sys2Str2Idc_Avg]
+  AC Voltage: [Sys1Vac_Avg, Sys2Vac_Avg]
+  AC Current: [Sys1Iac_Avg, Sys2Iac_Avg]
+  AC Power: [Sys1Wac_Avg, Sys2Wac_Avg]
+  AC VAR: [Sys1VARac_Avg, Sys2VARac_Avg]
+  Power Factor: [Sys1PowerFactor_Avg, Sys2PowerFactor_Avg]
+  Frequency: [Sys1Frequency_Avg, Sys2Frequency_Avg]
+  POA: [POAIrrad1_Avg]
+  Ref Cell Irradiance: [RefCell1Irrad_Avg, RefCell2Irrad_Avg]
+  Ref Cell Temperature: [RefCell1Temp_Avg, RefCell2Temp_Avg]
+  Ref Cell Raw: [RefCell1R_Avg, RefCell2R_Avg]
+
+Composite Signals: 
+- DC Current: "np.sum({DC Current 1},axis=1), np.sum({DC Current 2},axis=1)"
+- DC Power: "np.multiply({DC Current},{DC Voltage})"
+- Inverter Efficiency: "np.divide({AC Power},{DC Power})"
+
+Corrupt Values: [-999]
+  
+Range Bounds:
+  DHI: [0, 600]
+  GHI: [0, 1500]
+  DNI: [0, 1400]
+  Relative Humidity: [0, 100]
+  Wind Speed: [0, 40]
+  Wind Direction: [0, 360]
+  Datalog Temperature: [-40, 55]
+  Datalog Voltage: [9.6, 16]
+  Time Per Scan: [None, 2]
+  Ambient Temperature: [-20,45]
+  Box Temperature: [-20,90]
+  Module Temperature 1: [-20,90]
+  Module Temperature 2: [-20,90]
+  DC Voltage: [0, "{Vmpo}*{Ns}*1.2"]
+  DC Current: [0, "{Impo}*{Np}*1.4"]
+  DC Power: [0, "{Vmpo}*{Ns}*{Impo}*{Np}*1.4"]
+  AC Voltage: [0, None]
+  AC Current: [0, None]
+  AC Power: [0, None]
+  Inverter Efficiency: [0.75, 1.01]
+  Power Factor: [-1, 1]
+  Frequency: [57, 63]
+  POA: [0, 1400]
+
+Increment Bounds: 
+  DHI: [0.000000001, None, 60]
+  DNI: [0.000000001, None, 60] 
+  GHI: [0.000000001, None, 60]
+  Air Pressure: [0.000000001, None, 60]
+  Wind Speed: [0.000000001, None, 60]
+  Wind Speed Stdev: [0.000000001, None, 60]
+  Wind Direction: [0.000000001, None, 60]
+  Wind Direction Stdev: [0.000000001, None, 60]
+  Relative Humidity: [0.000000001, None, 60]
+  Time Per Scan: [0.000000001, None, 60]
+  GHI Raw: [0.000000001, None, 60]
+  GHI Temperature: [0.000000001, None, 60]
+  Ambient Temperature: [0.000000001, None, 60]
+  Box Temperature : [0.000000001, None, 60]
+  Module Temperature 1: [0.000000001, None, 60]
+  Module Temperature 2: [0.000000001, None, 60]
+  DC Voltage: [0.000000001, None, 60]
+  DC Current: [0.000000001, None, 60]
+  DC Power: [0.000000001, None, 60]
+  AC Voltage: [0.000000001, None, 60]
+  AC Current: [0.000000001, None, 60]
+  AC Power: [0.000000001, None, 60]
+  AC VAR: [0.000000001, None, 60]
+  Power Factor: [0.000000001, None, 60]
+  Frequency: [0.000000001, None, 60]
+  POA: [0.000000001, None, 60]
+  Ref Cell Irradiance: [0.000000001, None, 60]
+  Ref Cell Temperature: [0.000000001, None, 60]
+  Ref Cell Raw: [0.000000001, None, 60]
