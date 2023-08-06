@@ -1,0 +1,25 @@
+Metadata-Version: 1.1
+Name: Eve-ElasticSearch
+Version: 0.0.6
+Summary: Elasticsearch data layer for eve rest framework and elasticsearch 2.x
+Home-page: https://github.com/hitakaken/eve-elasticsearch
+Author: CaoKe
+Author-email: hitakaken@gmail.com
+License: MIT
+Description: Eve-ElasticSearch
+        ====================
+        
+        Eve ElasticSearch
+        
+Platform: any
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
