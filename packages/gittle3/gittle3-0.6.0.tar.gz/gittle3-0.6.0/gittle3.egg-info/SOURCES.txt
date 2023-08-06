@@ -1,0 +1,16 @@
+setup.cfg
+setup.py
+gittle/__init__.py
+gittle/auth.py
+gittle/exceptions.py
+gittle/gittle.py
+gittle/server.py
+gittle/utils/__init__.py
+gittle/utils/git.py
+gittle/utils/paths.py
+gittle/utils/urls.py
+gittle3.egg-info/PKG-INFO
+gittle3.egg-info/SOURCES.txt
+gittle3.egg-info/dependency_links.txt
+gittle3.egg-info/requires.txt
+gittle3.egg-info/top_level.txt
