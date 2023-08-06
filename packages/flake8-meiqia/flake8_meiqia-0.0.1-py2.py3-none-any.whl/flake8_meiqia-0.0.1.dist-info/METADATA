@@ -1,0 +1,19 @@
+Metadata-Version: 2.0
+Name: flake8-meiqia
+Version: 0.0.1
+Summary: UNKNOWN
+Home-page: https://github.com/Meiqia/flake8-meiqia
+Author: Meiqia Developers
+Author-email: dev@meiqia.com
+License: Apache License 2.0
+Platform: UNKNOWN
+Requires-Dist: flake8
+Requires-Dist: pep8
+Requires-Dist: pyflakes
+
+flake8-meiqia
+=============
+
+Python style guideline in Meiqia.
+
+
