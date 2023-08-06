@@ -1,0 +1,13 @@
+lib/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+lib/cp437.py,sha256=xXu697KQDkjy6MVHMeMgVcQ9ltymGnweW5TxwxB8alo,1550
+lib/iterable.py,sha256=YW2-FhaYvGqqShC_glthzQSastF6TGw0lcVEAkYaN-I,1136
+seriously/SeriouslyCommands.py,sha256=i-EoAgG-uomxehTTUW2C6M0eLOnbvrgmX27VJcBKzik,33884
+seriously/__init__.py,sha256=NXqu8lj8uXgmpwr9hjSpuSUr_Wc4VSKi8Gs1eJP0q8c,24
+seriously/seriously.py,sha256=IZ48K-cmsqUuBDQiQvUwc31zaUcoXFNlkG2pYcfaPcw,8245
+seriously-2.0.37.dist-info/DESCRIPTION.rst,sha256=w2s9DFvSvJsSZ3npL1WBkR2zfyzECuMjgDwn0lyLc0w,86
+seriously-2.0.37.dist-info/METADATA,sha256=nc4pZ9rM2X3P7EL5su_bH39kh8QElUJ2D37yViBY8X0,630
+seriously-2.0.37.dist-info/RECORD,,
+seriously-2.0.37.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+seriously-2.0.37.dist-info/entry_points.txt,sha256=H-sKOr6roCOk8nVgMU_vA4FqtWZiJMmLxsFVKHkVVc0,56
+seriously-2.0.37.dist-info/metadata.json,sha256=o-GSRT0OX3txxWcn-byvxOrQ7TTgJmh_xXTWBBGD-yA,845
+seriously-2.0.37.dist-info/top_level.txt,sha256=a5EwiXw4vjoRnPAm1FX2VBpSgxQwCE1HgHh-JApH1DQ,14
