@@ -1,0 +1,4 @@
+click==6.6
+mistune==0.7.3
+Jinja2==2.8
+Pygments==2.1.3
