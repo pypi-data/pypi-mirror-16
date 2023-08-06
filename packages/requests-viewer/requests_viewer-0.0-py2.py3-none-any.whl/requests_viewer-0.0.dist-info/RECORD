@@ -1,0 +1,14 @@
+requests_viewer/__init__.py,sha256=CgOJzlRDU3QrIwUDHKswuNa9TH90RU5YJHdnvtRXgXA,330
+requests_viewer/image.py,sha256=yKp24klsZMB1c_rLgNRzYn_gAO5BNnDfWRqgmc504jQ,459
+requests_viewer/js.py,sha256=h2_v-FlMOlw8tK5JJpXiiDhXjGX-L3ZTIUU8Rz3uFUA,423
+requests_viewer/main.py,sha256=t_ls_Eiu2sC84sy6Qv9pr1KOUKjfvK0FRufGT9BipJI,653
+requests_viewer/web.py,sha256=GxrSaVivIC-e-1gXjCayZyNhGTIF2-B2dxMfwwiH5Jw,4782
+requests_viewer/web_compat.py,sha256=ay335HQiKROOpmjKX8YzitUDhLHwM7Twdpv_pVjEmzQ,246
+requests_viewer-0.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+requests_viewer-0.0.dist-info/METADATA,sha256=-7e7AGDckp_wZwQytJJrp3YWh1MAz-d-1dVHGdt76nc,400
+requests_viewer-0.0.dist-info/RECORD,,
+requests_viewer-0.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+requests_viewer-0.0.dist-info/metadata.json,sha256=1FIhA6iSipp4hZ89wrj-nGXxWVDdGVrN4s_TPV2aMbI,564
+requests_viewer-0.0.dist-info/top_level.txt,sha256=yYuz6_TxXZlff8xGkVuMoYWaJERwxJohoXSY1TmvgjY,22
+tests/__init__.py,sha256=z8fS-euUKoWiDYzA4qVRU4omNMK4VxbDtSSmg1KntMo,31
+tests/run_test.py,sha256=lGZPX7bl8gWyUfVFtWlyWwAvg2fT9l7Ak50_qqafTdw,370
