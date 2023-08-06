@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: pendulumify
+Version: 1.0.0
+Summary: Recursively replace Python standard datetime objects with Pendulum instances
+Home-page: https://github.com/SpotOnInc/pendulumify
+Author: SpotOn
+Author-email: josh@spoton.com
+License: MIT
+Download-URL: https://github.com/SpotOnInc/pendulumify/archive/v1.0.0.tar.gz
+Description: UNKNOWN
+Keywords: pendulum,time,date,datetime
+Platform: any
