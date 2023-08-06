@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: yacontracts
+Version: 0.1.2
+Summary: YAContracts: Yet Another contracts package
+Home-page: http://msempere.github.com/yacontracts/
+Author: MSempere
+Author-email: msempere@gmx.com
+License: MIT
+Download-URL: http://github.com/msempere/yacontracts/tarball/0.1.2
+Description: YAContracts: Yet Another contracts package
+Keywords: type checking,value checking,contracts
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Software Development :: Testing
