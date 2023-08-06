@@ -1,0 +1,42 @@
+Metadata-Version: 2.0
+Name: powermate
+Version: 0.0.1
+Summary: Library for Griffin Powermate Bluetooth controllers
+Home-page: https://github.com/auchter/powermate
+Author: Michael Auchter
+Author-email: a@phire.org
+License: MIT
+Keywords: powermate bluetooth
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.4
+Requires-Dist: bluepy
+
+powermate: python library for Griffin Powermate Bluetooth
+=========================================================
+
+This provides a basic library for using a Griffin Powermate Bluetooth controller with Python.
+
+Getting Started
+---------------
+
+Bring up your Bluetooth interface::
+
+        $ sudo hciconfig hci0 up
+
+Discover your Griffin Powermate's address::
+
+        $ sudo hcitool lescan 
+        00:12:92:08:07:B9 PowerMate Bluetooth
+
+Run the demo to try to connect and display events from your Powermate::
+
+        $ powermate-demo 00:12:92:08:07:B9
+        Connected to 00:12:92:08:07:B9
+        Clockwise
+        ^C
+
+
+
+
