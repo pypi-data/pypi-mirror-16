@@ -1,0 +1,16 @@
+/sshuttle/version.py
+/docs/conf.py
+/tmp/
+/.cache/
+/.eggs/
+/.tox/
+/build/
+/dist/
+/sshuttle.egg-info/
+/docs/_build/
+*.pyc
+*~
+*.8
+/.do_built
+/.do_built.dir
+/.redo
