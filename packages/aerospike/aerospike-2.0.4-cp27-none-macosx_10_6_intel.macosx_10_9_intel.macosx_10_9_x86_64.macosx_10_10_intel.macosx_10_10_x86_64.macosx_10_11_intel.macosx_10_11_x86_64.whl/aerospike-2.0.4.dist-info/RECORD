@@ -1,0 +1,11 @@
+aerospike.so,sha256=qUDlHsH0nmhlIjEZe1AgaG-09tq2fCv41WFMjlD3ndc,1032652
+aerospike-2.0.4.data/data/aerospike/lua/aerospike.lua,sha256=AYXD4bxgu2j8WZsQYIq79hFivH-RVoSGFyXfPG3ffzM,5592
+aerospike-2.0.4.data/data/aerospike/lua/as.lua,sha256=cj8Mw23nFcsUi2J4LoroFum8voBtCPvMi-BpoTN6FBk,3211
+aerospike-2.0.4.data/data/aerospike/lua/stream_ops.lua,sha256=OWCilDPhfQi1AzPwH2UqRca_EL4peuq688FhDqxNqwo,8862
+aerospike-2.0.4.dist-info/DESCRIPTION.rst,sha256=cI1phmYL_3FUu2cOdXWzGbp9A6O4adIOQz1YuXVS3bc,3793
+aerospike-2.0.4.dist-info/METADATA,sha256=SbvUFpHlmtAST3qfSg0m3UuRpsXZ-WJSXEzgiatwVxA,4478
+aerospike-2.0.4.dist-info/RECORD,,
+aerospike-2.0.4.dist-info/WHEEL,sha256=-soUgz2mDom-gXWc-Hq5dwhn-LnQB2GVo_yF4Cu21pc,110
+aerospike-2.0.4.dist-info/eager_resources.txt,sha256=q32cFZ-NUqdsExLHiL6da4qX2b1OnSNn-YM1fzB-5Uk,105
+aerospike-2.0.4.dist-info/metadata.json,sha256=g3w65r_V3jXCIK9JZkkYDrX4ZE1g6AY_k1GFXenQfdQ,829
+aerospike-2.0.4.dist-info/top_level.txt,sha256=5HK8BCcGdQlIavL9SBtp8juB53608xAm2uqaeYCLbVc,10
