@@ -1,0 +1,9 @@
+[console_scripts]
+neutron = neutronclient.shell:main
+
+[openstack.cli.extension]
+neutronclient = neutronclient.osc.plugin
+
+[openstack.neutronclient.v2]
+
+
