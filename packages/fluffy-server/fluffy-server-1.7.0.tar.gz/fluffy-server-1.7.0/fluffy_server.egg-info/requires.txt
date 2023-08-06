@@ -1,0 +1,4 @@
+pygments
+flask
+cached_property
+boto3
