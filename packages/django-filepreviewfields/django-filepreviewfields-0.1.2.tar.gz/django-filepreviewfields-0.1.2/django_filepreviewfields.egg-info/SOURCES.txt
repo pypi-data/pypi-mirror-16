@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+setup.py
+django_filepreviewfields.egg-info/PKG-INFO
+django_filepreviewfields.egg-info/SOURCES.txt
+django_filepreviewfields.egg-info/dependency_links.txt
+django_filepreviewfields.egg-info/not-zip-safe
+django_filepreviewfields.egg-info/requires.txt
+django_filepreviewfields.egg-info/top_level.txt
+filepreviewfields/__init__.py
+filepreviewfields/models.py
+filepreviewfields/widgets.py
+filepreviewfields/static/filepreviewfields/css/widget.css
+filepreviewfields/static/filepreviewfields/js/widget.js
