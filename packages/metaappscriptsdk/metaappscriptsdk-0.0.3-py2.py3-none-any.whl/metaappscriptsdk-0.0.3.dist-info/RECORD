@@ -1,0 +1,10 @@
+metaappscriptsdk/__init__.py,sha256=B-LN5tIpSH-FK6sIFYYPnwFgbp4qKqaX6LwmZsPXCmE,470
+metaappscriptsdk/info.py,sha256=Ume5dF1wnfErEre-SCy2FL_LjmqbSf6qa8NBMiTSIPU,60
+metaappscriptsdk/logger/__init__.py,sha256=Zi4VdOEPCy-4kugr765fxTcFNeEhFfWb5aqq_fGBMVE,1276
+metaappscriptsdk/logger/custom_fluent.py,sha256=5d6GizmF8MtIS2fNGRc8ka7XMLOB8rSkVF-gxwYFaIs,965
+metaappscriptsdk-0.0.3.dist-info/DESCRIPTION.rst,sha256=oBQmjqbaPNmQUgGWwcpfjY_QxtW9bJmGYS1f7LBMrzU,808
+metaappscriptsdk-0.0.3.dist-info/METADATA,sha256=oCmKnU7QkYsm7v5P1VBzuyKmlB9OXsteye9NIz1RQXM,1333
+metaappscriptsdk-0.0.3.dist-info/RECORD,,
+metaappscriptsdk-0.0.3.dist-info/WHEEL,sha256=GrqQvamwgBV4nLoJe0vhYRSWzWsx7xjlt74FT0SWYfE,110
+metaappscriptsdk-0.0.3.dist-info/metadata.json,sha256=S7O0tlRVQbKk-HTO51yreRvHinwY_rrngFz3sAXca2I,701
+metaappscriptsdk-0.0.3.dist-info/top_level.txt,sha256=O1LwYMvljs422xJQCn2tzwmlF65tERYqCZvg0XQ14Os,17
