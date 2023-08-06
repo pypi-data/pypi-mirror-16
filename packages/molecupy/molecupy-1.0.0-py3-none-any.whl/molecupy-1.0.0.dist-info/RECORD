@@ -1,0 +1,14 @@
+molecupy/__init__.py,sha256=bbdTLDeKrWctj2_zpBUVBeVVRj-CH0vUzTaVeoQgdDY,99
+molecupy/access.py,sha256=gky_zuYbuucIt7_PTwA03-w2QbaGq53RH2YAoAyYMLs,1511
+molecupy/exceptions.py,sha256=LM_O_bTzdy3HpI0VeK1SGG3Il8U6mh-DG-dQWeibhoY,1955
+molecupy/pdb.py,sha256=88J2CrnWGq0-Q-yKw2l3wOQE3xulbrcbrgD63kSrjkA,18089
+molecupy/pdbdatafile.py,sha256=Wbl15G1hYc8OUEL04SvjSULTl70jasOQMCYhTh7-MYY,26983
+molecupy/pdbfile.py,sha256=oHpbeTxqiZvPmAQrGcSZxzk00243lZw-KlZBRlFy5fM,4538
+molecupy/residues.py,sha256=i9IUKz4bqW1DMwMqCAmcKXS8DCVkj1vDiHpS3rwjZyc,11394
+molecupy/structures.py,sha256=7ybah18H10I09CcqexEjy3Wb-7u3wlyPjeQv8FKlh0M,51010
+molecupy-1.0.0.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+molecupy-1.0.0.dist-info/METADATA,sha256=en67u2rCUoXBJ6Ssi95Lqi--BYE_ePYu1-IuKVBiK-c,889
+molecupy-1.0.0.dist-info/RECORD,,
+molecupy-1.0.0.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+molecupy-1.0.0.dist-info/metadata.json,sha256=8zkeo_uIXNW1ZcAHTtH6q6Pa6wM8nQxKrf_Q3n8ZBUo,1026
+molecupy-1.0.0.dist-info/top_level.txt,sha256=lx8OFIeR9j9H8J6C3m-tOs3u6I6klivjBObe8pClZyU,9
