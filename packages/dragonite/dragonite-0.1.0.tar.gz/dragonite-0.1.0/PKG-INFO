@@ -1,0 +1,43 @@
+Metadata-Version: 1.1
+Name: dragonite
+Version: 0.1.0
+Summary: Dragon Con command line utility
+Home-page: https://github.com/neuroticnerd/dragoncon-bot
+Author: Bryce Eggleton
+Author-email: eggleton.bryce@gmail.com
+License: Apache License, Version 2.0
+Description: Dragonite
+        ============
+        
+        Dragonite is a command-line utility which gathers room availability
+        information from the host hotels of the annual
+        `Dragon Con <http://www.dragoncon.org/>`_ event.
+        
+        
+        Installation
+        --------------
+        
+        .. code:: bash
+        
+            pip install dragonite
+        
+        
+        Usage
+        --------
+        
+        .. code:: bash
+        
+            dragonite --help
+        
+Keywords: dragonite,dragoncon,dragon,con
+Platform: any
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Utilities
