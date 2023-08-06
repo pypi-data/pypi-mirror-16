@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: cmsis-svd
+Version: 0.4
+Summary: CMSIS SVD data files and parser
+Home-page: https://github.com/posborne/cmsis-svd
+Author: Paul Osborne
+Author-email: osbpau@gmail.com
+License: Apache 2.0
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Topic :: System :: Hardware
+Classifier: Topic :: System :: Boot :: Init
+Classifier: Topic :: System :: Hardware :: Hardware Drivers
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Software Development :: Embedded Systems
+Classifier: Topic :: System :: Operating System Kernels
+Classifier: Topic :: Utilities
+Classifier: Topic :: Text Processing :: Markup
