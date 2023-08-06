@@ -1,0 +1,15 @@
+i2p/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+i2p/crypto.py,sha256=EpMUFkq2aOqXrOth3cp0z-lNZpuMUW7NZkw0R67aESs,17631
+i2p/datatypes.py,sha256=xU-BHrv0j25VzLv5vvwlwE7jb6Ur_72yYaAr10LbEJ4,21844
+i2p/util.py,sha256=PLJ6SVlbvRtmdokBjm5K0YYW_Cn5Q_TM7YoOxmW6n_I,1661
+i2p/socket/__init__.py,sha256=-qmps0WSCKWRivAfwurW1fkqedPj_JBKDtTeKMoegEo,5108
+i2p/socket/__main__.py,sha256=mfptk8k8NRBrVV2VVGWTq8NqXu0QyK4B17hzBQBWsxQ,2106
+i2p/socket/exceptions.py,sha256=u7acymw0sEafNBlDZYvGTA1ZrGATHWJg97-yVxrFN3U,349
+i2p/socket/sam/__init__.py,sha256=g09Q-9BjTnDb8vHAViD0gXjlsd10rFoH9IcY51wkFu8,2135
+i2p/socket/sam/simple.py,sha256=EpfBINb8LNjlQVl0VSvaDsLaIWNhfRiH-1holCgFBuQ,15373
+i2p.socket-0.2.2.dist-info/DESCRIPTION.rst,sha256=sEkyaqOp_ESw5JSQhejBB64Lxsy5fTzwl4kVSBEcn-c,872
+i2p.socket-0.2.2.dist-info/METADATA,sha256=M8UvCXOUloW9MhCvfFml3d9Tbotxue5jmtHX3_3ZO5M,1823
+i2p.socket-0.2.2.dist-info/RECORD,,
+i2p.socket-0.2.2.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+i2p.socket-0.2.2.dist-info/metadata.json,sha256=wYV7Cn9pt7meBeufRZRiquYG8P72OCp1QzLqKTDaWQc,1058
+i2p.socket-0.2.2.dist-info/top_level.txt,sha256=9ZljcZuRiL3sjUji4IJtmGTxXteseNfmFV7SWL588ks,4
