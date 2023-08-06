@@ -1,0 +1,17 @@
+meta_package_manager/__init__.py,sha256=5CAVBYVPDfi3KS6giRyyeOd8vCSfplrZg9ohYCwsnNg,1940
+meta_package_manager/apm.py,sha256=rK-_2nFWxblOhBYhS4L3XaZmrrbUS1T-pKN9hOI1mp4,1738
+meta_package_manager/base.py,sha256=o72W8XIIKUl095l5zbAbP5MuIdyDroiWQpB0cHJKNHU,3093
+meta_package_manager/cli.py,sha256=ldBOk7v3r8Hx5Hqh10zBd7xOBbCDKlIghlt0TK1RKw4,2097
+meta_package_manager/gem.py,sha256=ItPLdo4jQA28GLXYtpOlIHmnru7uIHCw0tQIvItUqBE,2723
+meta_package_manager/homebrew.py,sha256=dwVfJD1tiq9FfG6nCiJ0BQe3XS5FLL7iwgxxQ2UJOis,7214
+meta_package_manager/mas.py,sha256=b4-_dbYx_ZDLvUkEK37YNTpIP6N94olRyHIoyRGO3yk,2032
+meta_package_manager/npm.py,sha256=1_1D-LBIO2CivgpFB_reAq_YT8a1hU2Vc358IUeFoqk,2433
+meta_package_manager/pip.py,sha256=OJOFsNe05JPglL6dVJJz1z50AVC8Wh_lnTZ6LJEWzyQ,3239
+meta_package_manager/tests/__init__.py,sha256=Ei27vI-Xa-DbjNts95x9MssoUa_K_9Yz77CRvqJXO84,849
+meta_package_manager-1.8.0.dist-info/DESCRIPTION.rst,sha256=x8zZzLqEOfvarliEariaRkzJ0rAQFoY8PnComRVMT1A,8845
+meta_package_manager-1.8.0.dist-info/METADATA,sha256=asGhKlY2oUMC1dWzIlU4pOmV3_1rfqv5AvMNuvG_LPk,11008
+meta_package_manager-1.8.0.dist-info/RECORD,,
+meta_package_manager-1.8.0.dist-info/WHEEL,sha256=bee59qcPjkyXfMaxNWjl2CGotqfumWx9pC1hlVLr2mM,92
+meta_package_manager-1.8.0.dist-info/entry_points.txt,sha256=fctnPbDkgLcMpp6AIRMRv-FDhqD2CBH6oM6lEnZVdvQ,54
+meta_package_manager-1.8.0.dist-info/metadata.json,sha256=SrdCPXXaJafSjMDotXZy1q6YnCDOK22-DCH4HQHTK2g,2463
+meta_package_manager-1.8.0.dist-info/top_level.txt,sha256=lmmW1aSi6GwEKhlUjehE9B8Ry0obsCp62UgUbQfR0zs,21
