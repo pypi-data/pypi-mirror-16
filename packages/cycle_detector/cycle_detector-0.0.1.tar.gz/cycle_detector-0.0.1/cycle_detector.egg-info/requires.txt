@@ -1,0 +1,10 @@
+six
+
+[test]
+coverage
+pytest
+pytest-cov
+flake8
+
+[dev]
+check-manifest
