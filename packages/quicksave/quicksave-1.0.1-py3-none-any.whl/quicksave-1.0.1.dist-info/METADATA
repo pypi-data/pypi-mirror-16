@@ -1,0 +1,26 @@
+Metadata-Version: 2.0
+Name: quicksave
+Version: 1.0.1
+Summary: A (very) simple file versioning system
+Home-page: https://github.com/agraubert/quicksave
+Author: Aaron Graubert
+Author-email: captianjroot@live.com
+License: MIT
+Keywords: version control
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+
+# quicksave
+
+A (very) simple file versioning system
+
+__Version:__ 1.0.1
+
+
