@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+automationapi/__init__.py
+automationapi/manageapp.py
+automationapi.egg-info/PKG-INFO
+automationapi.egg-info/SOURCES.txt
+automationapi.egg-info/dependency_links.txt
+automationapi.egg-info/top_level.txt

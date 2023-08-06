@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: automationapi
+Version: 0.2
+Summary: Automation Library
+Home-page: https://github.com/rsmrahul1/automation-api
+Author: Rahul R
+Author-email: rsmrahul@gmail.com
+License: MIT
+Download-URL: https://github.com/rsmrahul1/automation-api.git
+Description: Api for automation
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
