@@ -1,0 +1,89 @@
+Metadata-Version: 1.1
+Name: LordKey
+Version: 0.0.3
+Summary: Detect the sequence element by identifier or the identifier by element of sequence.
+Home-page: https://github.com/valsorym/lordkey/
+Author: Davydenko Myroslav
+Author-email: i@valsorym.com
+License: MIT
+Description: 
+        LordKey
+        =======
+        
+        It solves the problem of determining the combination in a sequence based on
+        the some alphabet with a given length, and use combination to determine the
+        iteration index.
+        
+        
+        Problem
+        -------
+        
+        There are several elements to iterate - ``a``, ``b`` and ``c``. How many
+        possible combinations for unique enumeration if key size is ``3``? Or, which
+        combination is at the tenth iteration? Or which iteration corresponds the
+        ``aca`` combination?
+        
+        For `abc` alphabet and 3 key size can be created the next iterations::
+        
+             0. aaa      1. aab      2. aac      3. aba      4. abb      5. abc
+             6. aca      7. acb      8. acc      9. baa     10. bab     11. bac
+            12. bba     13. bbb     14. bbc     15. bca     16. bcb     17. bcc
+            18. caa     19. cab     20. cac     21. cba     22. cbb     23. cbc
+            24. cca     25. ccb     26. ccc
+        
+        So, the maximum number of iterations - ``27``, for ``10`` iteration corresponds
+        to ``baa`` combination and the ``aca`` combination - it is ``7`` iteration.
+        
+        
+        Theory
+        ------
+        
+        Use the arbitrary alphabet (set of available characters to create a key) and
+        size of key can be created a sequence of unique combinations, where each new
+        combination has its unique numeric index (from 0 to N - where the N is maximum
+        number of possible combinations or infinity).
+        
+        If specify the index (for example an ID in the table of database) - will be
+        returned the combination (key) for this index, and if specify combination -
+        will be returned it index.
+        
+        P.s. The sequence is not created - just calculate the data of a specified
+        element. This algorithm allows you to quickly get the result.
+        
+        Example::
+        
+            # INITIAL DATA
+            # =================
+            # Alphabet | abcde
+            # ---------+-------
+            # Key size | 3
+            #
+            # SEQUENCE
+            # ==============================================
+            # ID  |  0  |  1  |  2  | ... | 122 | 123 | 124
+            # ----+-----+-----+-----+-----+-----+-----+-----
+            # Key | aaa | aab | aac | ... | eec | eed | eee
+        
+            lk = LordKey(alphabet='abcde', size=3)
+            lk.get_key_by_id(122) # eec
+            lk.get_id_by_key('ecc') # 122
+        
+        The alphabet may be omitted then will be used value by default. If not set the
+        size value - key size can be from one char to infinity.
+        
+        Example::
+        
+            # Size not specified.
+            lk = LordKey(alphabet='abc')
+            lk.get_key_by_id(1) # b
+            lk.get_key_by_id(10) # bab
+            lk.get_key_by_id(100) # bacab
+            lk.get_key_by_id(1000) # bbabaab
+            lk.get_key_by_id(10000) # bbbcabbab
+            lk.get_key_by_id(100000) # bcaacabbcab
+            lk.get_key_by_id(1000000) # bcbccbacacaab
+            lk.get_key_by_id(10000000) # caacbbaabbacbab
+        
+        
+Platform: UNKNOWN
+Provides: lordkey
