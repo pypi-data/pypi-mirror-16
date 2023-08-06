@@ -1,0 +1,15 @@
+p55py/__init__.py,sha256=QCg-KLTYxmg75MoQvh0pwN8jNASts14irCF5Xpy-XTk,246
+p55py/_version.py,sha256=C3j8bNp0OXFiR3kZPlWeUHbgUp9oD4qQbu5xzJQi9-A,72
+p55py/example.py,sha256=cidKEyYtIx3joTM_lgPr5XHuOk2YlSae_yvB_nOhPlI,4706
+p55py/static/extension.js,sha256=mS6GITT7XsEvJ9Y1ZGCIPaOB6yUbMDWA1mmveoCWRDE,2028
+p55py/static/index.js,sha256=qv3HfUFqFa3k6WVu3aD1MWZFadZO79sdV9WeT2DfFbw,60850
+p55py/static/index.js.map,sha256=3pClNGKLv4xZ80CA8Jj2vCeHomLQWXpTK9KdWnV4h4o,69750
+p55py-0.1.0.data/data/share/jupyter/nbextensions/p55py/extension.js,sha256=mS6GITT7XsEvJ9Y1ZGCIPaOB6yUbMDWA1mmveoCWRDE,2028
+p55py-0.1.0.data/data/share/jupyter/nbextensions/p55py/index.js,sha256=qv3HfUFqFa3k6WVu3aD1MWZFadZO79sdV9WeT2DfFbw,60850
+p55py-0.1.0.data/data/share/jupyter/nbextensions/p55py/index.js.map,sha256=3pClNGKLv4xZ80CA8Jj2vCeHomLQWXpTK9KdWnV4h4o,69750
+p55py-0.1.0.dist-info/DESCRIPTION.rst,sha256=R1wo27MhkrvaZjaxKBM5AxiCv767y7jv2UHMRWCzhc8,50
+p55py-0.1.0.dist-info/METADATA,sha256=WK7Tt5LRjbOkK_E3JvpjLq5CZW6Vk7Jlq2Fc6oT9kag,851
+p55py-0.1.0.dist-info/RECORD,,
+p55py-0.1.0.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+p55py-0.1.0.dist-info/metadata.json,sha256=50etmL4Q7hZXiXvxJsB_yIvRqeAamNkQSZyTC2PIs1Q,932
+p55py-0.1.0.dist-info/top_level.txt,sha256=g-Rk73AoSbayX2Ie8SnX0MM96DWiGoOSZlsabqB68Yg,6
