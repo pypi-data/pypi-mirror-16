@@ -1,0 +1,11 @@
+setup.cfg
+setup.py
+meli_client/__init__.py
+meli_client/meli.py
+meli_client/ssl_helper.py
+meli_client.egg-info/PKG-INFO
+meli_client.egg-info/SOURCES.txt
+meli_client.egg-info/dependency_links.txt
+meli_client.egg-info/top_level.txt
+test/__init__.py
+test/main.py

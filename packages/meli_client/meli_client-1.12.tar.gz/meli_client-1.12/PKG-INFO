@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: meli_client
+Version: 1.12
+Summary: A MercadoLibre wrapper built for python development
+Home-page: https://github.com/DanAmador/python-sdk
+Author: MercadoLibre
+Author-email: daniel.amador@mercadolibre.com.mx
+License: UNKNOWN
+Download-URL: https://github.com/DanAmador/python-sdk/tarball/0.1
+Description: UNKNOWN
+Keywords: mercado,libre,restful,client,wrapper
+Platform: UNKNOWN
