@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: tinyblend
+Version: 1.0.0
+Summary: A tiny blender file loader
+Home-page: https://github.com/gabdube/tinyblend
+Author: Gabriel Dubé
+Author-email: gdube.475@gmail.com
+License: MIT
+Download-URL: https://github.com/gabdube/tinyblend
+Description: UNKNOWN
+Keywords: game,3d,blender,import
+Platform: UNKNOWN
