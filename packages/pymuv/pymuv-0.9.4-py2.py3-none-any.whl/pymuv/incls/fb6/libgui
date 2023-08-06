@@ -1,0 +1,19 @@
+$include "$lib/gui"
+
+namespace libgui {
+
+    const C_PANE = "notebook_pane";
+
+    extern multiple Generate(descriptor, spec) = "GUI_GENERATE";
+    extern void DlogRegister(dlogid, handlers) = "GUI_DLOG_REGISTER";
+    extern void DlogDeregister(dlogid) = "GUI_DLOG_DEREGISTER";
+    extern void DlogStateDataSet(dlogid, data) = "GUI_DLOG_STATEDATA_SET";
+    extern void EventRegister(eventid, handler) = "EVENT_REGISTER";
+    extern void EventDeregister(eventid) = "EVENT_DEREGISTER";
+    extern void EventStateDataSet(eventid, data) = "EVENT_STATEDATA_SET";
+    extern multiple EventProcess() = "GUI_EVENT_PROCESS";
+    extern single MessageBox(title, text, buttons, opts) = "GUI_MESSAGEBOX";
+
+}
+
+
