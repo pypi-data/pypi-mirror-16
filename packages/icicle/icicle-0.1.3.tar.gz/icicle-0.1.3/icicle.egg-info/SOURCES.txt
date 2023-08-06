@@ -1,0 +1,8 @@
+setup.py
+icicle/__init__.py
+icicle/deepfreeze.py
+icicle/frozendict.py
+icicle.egg-info/PKG-INFO
+icicle.egg-info/SOURCES.txt
+icicle.egg-info/dependency_links.txt
+icicle.egg-info/top_level.txt
