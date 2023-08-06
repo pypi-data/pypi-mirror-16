@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: smartgetenv
+Version: 0.1.0
+Summary: Use smart get env is os.getenv() on steroid
+Home-page: https://github.com/guillaumevincent/smartgetenv.git
+Author: Guillaume Vincent
+Author-email: gvincent@oslab.fr
+License: MIT
+Description: UNKNOWN
+Keywords: env 12factor environment getenv
+Platform: UNKNOWN
