@@ -1,0 +1,17 @@
+django_FBO/__init__.py,sha256=CGvJczJBzLIk9ycwUjbYqjwJAGLoi9ACL_haBxEj5zE,118
+django_FBO/baking.py,sha256=M89M5Vg1oV5eg5oNEYSMhVT91GbSt674MU1b4aZn9WI,5096
+django_FBO/file_objects.py,sha256=edbz6NqlRz7umyPP5Il6SWnpCIWa65NUz7hQ5RVwbfM,4199
+django_FBO/manager.py,sha256=YLrj_IzFU_wxvfwmLtZchxGmcpLe1s7_Q0o7UxOv1ik,9848
+django_FBO/query.py,sha256=QLP_NrVR4NEaaCdJyY604caq-qRH_GXy7Mo37Wm0Hv8,3338
+django_FBO/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_FBO/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_FBO/management/commands/bake_site.py,sha256=kl6XVOx0Usd8UWxccVIvc2fS-YSab6qxlnZuxMS0I4w,476
+django_FBO/modules/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_FBO/modules/blog.py,sha256=J0xPbSOimnxKu_jmUANfH08WNsV9M_3R7IFTqeJHJqo,10536
+django_FBO/modules/pages.py,sha256=ZkQU7RexwFzN-Nzsz3RU5zvY4sMc5wQ1BVit5jyiWkQ,1178
+django_FBO-0.5.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+django_FBO-0.5.dist-info/METADATA,sha256=bZXzCHe6NjFNI_U-6q8Rer-JzptWmHXEllwP2T_crQc,519
+django_FBO-0.5.dist-info/RECORD,,
+django_FBO-0.5.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+django_FBO-0.5.dist-info/metadata.json,sha256=c-mAR7mUmG_sfPn_6ZRRMe5fFOgUbDLz_72afnUifyE,700
+django_FBO-0.5.dist-info/top_level.txt,sha256=zaW9gYDoH3-vBPwB3ILndZRL6mW7ks11S7QObt7tcZg,11
