@@ -1,0 +1,34 @@
+<component xmlns="https://raw.githubusercontent.com/zopefoundation/ZConfig/master/doc/schema.dtd"
+           prefix="dhcpkit_technicolor.server_extension.config">
+
+    <description>
+        These are the server extensions for Technicolor CPEs. Currently the only option is the SOL_MAX_RT variant that
+        Technicolor implements, which is the same option as the standard SOL_MAX_RT but with a different type number.
+    </description>
+
+    <sectiontype name="sol-max-rt-technicolor"
+                 extends="option_handler_factory_base"
+                 implements="handler_factory"
+                 datatype=".SolMaxRTTechnicolorOptionHandlerFactory">
+
+        <description><![CDATA[
+            This sections sets the SOL_MAX_RT value that will be sent to the client in a Technicolor-specific way.
+        ]]></description>
+
+        <example><![CDATA[
+            <sol-max-rt-technicolor>
+                limit 43200
+                always-send yes
+            </sol-max-rt-technicolor>
+        ]]></example>
+
+        <key name="limit" datatype=".max_rt" required="yes">
+            <description>
+                Specify the number of seconds to send as MAX_SOL_RT. The value must be between 60 and 86400 seconds.
+            </description>
+            <example>
+                21600
+            </example>
+        </key>
+    </sectiontype>
+</component>
