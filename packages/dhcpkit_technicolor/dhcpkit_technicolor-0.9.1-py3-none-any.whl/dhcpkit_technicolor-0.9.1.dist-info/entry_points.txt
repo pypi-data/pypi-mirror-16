@@ -1,0 +1,6 @@
+[dhcpkit.ipv6.options]
+65279 = dhcpkit_technicolor.options:SolMaxRTTechnicolorOption
+
+[dhcpkit.ipv6.server.extensions]
+technicolor = dhcpkit_technicolor.server_extension
+
