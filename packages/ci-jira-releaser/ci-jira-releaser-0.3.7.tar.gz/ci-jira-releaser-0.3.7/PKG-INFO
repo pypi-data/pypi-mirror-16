@@ -1,0 +1,14 @@
+Metadata-Version: 1.0
+Name: ci-jira-releaser
+Version: 0.3.7
+Summary: Simple way to release past(or current) commits within Jira
+Home-page: https://github.com/bookmd/jira-releaser
+Author: Ben Waters
+Author-email: ben@book-md.com
+License: MIT
+Description: # jira-releaser
+        Simple way to release past(or current) commits within Jira
+        
+        Credit to @shamrin for the name generator code [https://github.com/shamrin/namesgenerator](https://github.com/shamrin/namesgenerator)
+        
+Platform: UNKNOWN
