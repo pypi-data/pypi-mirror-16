@@ -1,0 +1,9 @@
+README.rst
+bijection.py
+setup.cfg
+setup.py
+bijection.egg-info/PKG-INFO
+bijection.egg-info/SOURCES.txt
+bijection.egg-info/dependency_links.txt
+bijection.egg-info/requires.txt
+bijection.egg-info/top_level.txt
