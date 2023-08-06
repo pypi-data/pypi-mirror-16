@@ -1,0 +1,23 @@
+Metadata-Version: 1.1
+Name: neo4ast
+Version: 0.1.0
+Summary: Store Python AST into Neo4j database
+Home-page: https://github.com/nettee/neo4ast-python
+Author: nettee
+Author-email: nettee.liu@gmail.com
+License: MIT
+Description: Store Python AST into Neo4j database
+        =======================
+        
+        This project aim to provide a tool for testing, storing Python Abstract
+        Syntax Tree (AST) into Neo4j database.
+Keywords: ast neo4j
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Testing
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
