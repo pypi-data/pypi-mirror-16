@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+django_gist_embed.egg-info/PKG-INFO
+django_gist_embed.egg-info/SOURCES.txt
+django_gist_embed.egg-info/dependency_links.txt
+django_gist_embed.egg-info/top_level.txt
+gist_embed/__init__.py
+gist_embed/apps.py
+gist_embed/views.py
+gist_embed/migrations/__init__.py
+gist_embed/templatetags/__init__.py
+gist_embed/templatetags/gist_embed.py
