@@ -1,0 +1,2 @@
+bamboo_api
+GitPython>=2.0.0
