@@ -1,0 +1,13 @@
+MANIFEST.in
+requirements.txt
+setup.py
+test_requirements.txt
+version.txt
+quali/__init__.py
+quali/testing/__init__.py
+quali/testing/extensions/__init__.py
+quali/testing/extensions/mocking_extensions.py
+quali_testing_helpers.egg-info/PKG-INFO
+quali_testing_helpers.egg-info/SOURCES.txt
+quali_testing_helpers.egg-info/dependency_links.txt
+quali_testing_helpers.egg-info/top_level.txt
