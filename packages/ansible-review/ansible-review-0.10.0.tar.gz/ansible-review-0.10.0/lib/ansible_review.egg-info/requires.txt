@@ -1,0 +1,5 @@
+ansible-lint>=3.0.0
+pyyaml
+appdirs
+unidiff
+flake8
