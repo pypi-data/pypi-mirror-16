@@ -1,0 +1,11 @@
+django_wamp_client-0.0.2.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+django_wamp_client-0.0.2.dist-info/METADATA,sha256=q2BopiBRf0GzvZCzvSm0GWZ7kZ3BtYmTcHd8wMWEL84,575
+django_wamp_client-0.0.2.dist-info/RECORD,,
+django_wamp_client-0.0.2.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+django_wamp_client-0.0.2.dist-info/metadata.json,sha256=WyuQqbCEAJxx5MPNJm_LTDJR9m56txWdxmBHBtQ2hek,716
+django_wamp_client-0.0.2.dist-info/top_level.txt,sha256=RvUz6QWjZgApi6_c6TLNMxsykZH4rP3Oa3_-rloDllk,11
+wampclient/__init__.py,sha256=kaJBNndRWsxkX3oig9JOs3xhlT69iTm4e4DcLqFljho,2636
+wampclient/conf.py,sha256=XkYtsa3IgfbdES17g5FmMsOz2or_jllyhJs9SSwZc_c,94
+wampclient/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wampclient/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+wampclient/management/commands/wamp_client.py,sha256=pavgeVsGqKRbaJ7iZwlJZrag2HCsLfoNGI3DXtdv8OA,7673
