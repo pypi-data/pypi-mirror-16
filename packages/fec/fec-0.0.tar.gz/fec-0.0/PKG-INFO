@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: fec
+Version: 0.0
+Summary: Simple FEC API wrapper
+Home-page: http://jakekara.com
+Author: Jake Kara
+Author-email: jake@jakekara.com
+License: UNKNOWN
+Description: Simple FEC API wrapper
+        
+Platform: UNKNOWN
+Requires: requests

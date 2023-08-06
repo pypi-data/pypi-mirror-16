@@ -1,0 +1,8 @@
+README.txt
+setup.py
+fec/__init__.py
+fec/fec.py
+fec.egg-info/PKG-INFO
+fec.egg-info/SOURCES.txt
+fec.egg-info/dependency_links.txt
+fec.egg-info/top_level.txt
