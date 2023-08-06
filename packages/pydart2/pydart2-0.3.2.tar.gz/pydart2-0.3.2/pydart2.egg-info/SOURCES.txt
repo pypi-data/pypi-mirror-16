@@ -1,0 +1,13 @@
+MANIFEST.in
+README
+setup.py
+pydart2/__init__.py
+pydart2.egg-info/PKG-INFO
+pydart2.egg-info/SOURCES.txt
+pydart2.egg-info/dependency_links.txt
+pydart2.egg-info/not-zip-safe
+pydart2.egg-info/top_level.txt
+scripts/__init__.py
+scripts/__init__.pyc
+scripts/install_dart.py
+scripts/install_dart.pyc
