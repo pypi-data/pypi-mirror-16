@@ -1,0 +1,24 @@
+Metadata-Version: 2.0
+Name: tvsongs
+Version: 0.2
+Summary: Find and listen to songs featured in TV shows.
+Home-page: https://github.com/zvovov/tvsongs
+Author: Chirag Khatri
+Author-email: zvovov@gmail.com
+License: MIT
+Keywords: find search listen tv show series songs music featured
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Multimedia
+Classifier: Topic :: Multimedia :: Sound/Audio
+Classifier: Topic :: Multimedia :: Sound/Audio :: Analysis
+Classifier: Topic :: Text Processing :: General
+Requires-Dist: beautifulsoup4
+Requires-Dist: requests
+Requires-Dist: python-slugify
+
+UNKNOWN
+
+
