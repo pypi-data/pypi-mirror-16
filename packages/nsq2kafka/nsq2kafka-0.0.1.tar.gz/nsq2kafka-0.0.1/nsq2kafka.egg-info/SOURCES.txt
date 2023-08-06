@@ -1,0 +1,10 @@
+setup.py
+nsq2kafka/__init__.py
+nsq2kafka/__main__.py
+nsq2kafka.egg-info/PKG-INFO
+nsq2kafka.egg-info/SOURCES.txt
+nsq2kafka.egg-info/dependency_links.txt
+nsq2kafka.egg-info/entry_points.txt
+nsq2kafka.egg-info/not-zip-safe
+nsq2kafka.egg-info/requires.txt
+nsq2kafka.egg-info/top_level.txt

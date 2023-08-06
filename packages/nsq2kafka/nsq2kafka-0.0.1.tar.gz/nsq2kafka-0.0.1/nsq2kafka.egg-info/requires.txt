@@ -1,0 +1,2 @@
+pynsq==0.7.0
+kafka-python==1.2.5
