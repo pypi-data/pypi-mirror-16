@@ -1,0 +1,9 @@
+README
+setup.py
+depopwatch/__init__.py
+depopwatch/depopwatch.py
+depopwatch.egg-info/PKG-INFO
+depopwatch.egg-info/SOURCES.txt
+depopwatch.egg-info/dependency_links.txt
+depopwatch.egg-info/not-zip-safe
+depopwatch.egg-info/top_level.txt
