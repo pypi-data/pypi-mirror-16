@@ -1,0 +1,30 @@
+Metadata-Version: 1.1
+Name: simex
+Version: 0.1
+Summary: Ultra-simple human readable DSL for matching text.
+Home-page: https://github.com/hitchtest/simplematch
+Author: Colm O'Connor
+Author-email: colm.oconnor.github@gmail.com
+License: MIT
+Description: SimpleMatch
+        ===========
+        
+        SimpleMatch is a replacement for regular expressions that lets you write non-developer
+        readable/writeable matching expressions.
+Keywords: regex text matching
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Operating System :: Unix
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
