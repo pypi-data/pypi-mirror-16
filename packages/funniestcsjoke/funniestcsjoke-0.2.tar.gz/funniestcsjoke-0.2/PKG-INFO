@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: funniestcsjoke
+Version: 0.2
+Summary: The funniest CS joke I found
+Home-page: http://github.com/fierobert/funniestcsjoke
+Author: RF
+Author-email: rf@itsoftwareengineering.com
+License: MIT
+Description: Funniest CS Joke
+        --------
+        
+        To use simply do::
+        
+            >>> import funniestcsjoke
+            >>> print funniestcsjoke.joke()
+Keywords: funniest cs joke comedy flying circus
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Text Processing :: Linguistic

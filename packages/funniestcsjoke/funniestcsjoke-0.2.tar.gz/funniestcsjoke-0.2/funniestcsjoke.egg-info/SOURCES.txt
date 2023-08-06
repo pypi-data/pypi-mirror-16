@@ -1,0 +1,15 @@
+MANIFEST.in
+README.rst
+setup.py
+bin/funniest-cs-joke
+funniestcsjoke/__init__.py
+funniestcsjoke/command_line.py
+funniestcsjoke/data.json
+funniestcsjoke/text.py
+funniestcsjoke.egg-info/PKG-INFO
+funniestcsjoke.egg-info/SOURCES.txt
+funniestcsjoke.egg-info/dependency_links.txt
+funniestcsjoke.egg-info/entry_points.txt
+funniestcsjoke.egg-info/not-zip-safe
+funniestcsjoke.egg-info/requires.txt
+funniestcsjoke.egg-info/top_level.txt
