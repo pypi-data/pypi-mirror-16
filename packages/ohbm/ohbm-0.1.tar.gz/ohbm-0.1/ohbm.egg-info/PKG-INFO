@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: ohbm
+Version: 0.1
+Summary: python api wrapper for the ohbm conference.
+Home-page: http://www.github.com/vsoch/ohbm
+Author: Vanessa Sochat
+Author-email: vsochat@stanford.edu
+License: LICENSE
+Description: UNKNOWN
+Keywords: ohbm,neuroscience,psychology,brains,api,wrapper
+Platform: UNKNOWN
