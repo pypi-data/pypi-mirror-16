@@ -1,0 +1,10 @@
+brotli/__init__.py,sha256=R0p77MoKoHUs563zfsLj5Pu-OW1buZ0UczANd_lKDCs,87
+brotli/_brotli.pyd,sha256=fsJn4ksC2F3_a8ELn4gEOxZj3ZtgP4ab0X3419pmu9A,761856
+brotli/brotli.py,sha256=j62RlhuA8o4OlwpO1BH4iknEUwDahBc-HRAROxlQplk,3709
+brotli/build.py,sha256=7TQvB-lZsGI8xoyRxGtMDCAPpq9P2gJ_BO7V5q9YzlA,5308
+brotlipy-0.4.0.dist-info/DESCRIPTION.rst,sha256=H4BXv0TytWUztUX5NAvviPomPIcAgaay5_pb162KZCM,1194
+brotlipy-0.4.0.dist-info/METADATA,sha256=wXuAM_sscIBXei1L_ZyUDIUF8Fw5Opg3FvUChRLbU6U,1898
+brotlipy-0.4.0.dist-info/RECORD,,
+brotlipy-0.4.0.dist-info/WHEEL,sha256=i1flLVXjD3-osCxVhRTT_0ATQQwEMYVIc5-9r4Sisck,106
+brotlipy-0.4.0.dist-info/metadata.json,sha256=CIwxvpiyciy-JsfrPLbrSZSzjKngixpXnctJG5elXbo,871
+brotlipy-0.4.0.dist-info/top_level.txt,sha256=gsS54HrhO3ZveFxeMrKo_7qH4Sm4TbQ7jGLVBEqJ4NI,15
