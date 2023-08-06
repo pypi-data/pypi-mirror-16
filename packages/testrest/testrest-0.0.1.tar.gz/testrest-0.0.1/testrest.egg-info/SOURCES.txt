@@ -1,0 +1,10 @@
+LICENSE
+MANIFEST.in
+setup.cfg
+setup.py
+testrest/__init__.py
+testrest/testrest.py
+testrest.egg-info/PKG-INFO
+testrest.egg-info/SOURCES.txt
+testrest.egg-info/dependency_links.txt
+testrest.egg-info/top_level.txt

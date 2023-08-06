@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: testrest
+Version: 0.0.1
+Summary: Test framework for testing restful interfaces in python
+Home-page: https://github.com/oskarnyqvist/testrest
+Author: oskarnyqvist
+Author-email: oskarnyqvist@gmail.com
+License: UNKNOWN
+Description: Test framework for testing restful interfaces in python
+Keywords: testing,rest
+Platform: UNKNOWN
