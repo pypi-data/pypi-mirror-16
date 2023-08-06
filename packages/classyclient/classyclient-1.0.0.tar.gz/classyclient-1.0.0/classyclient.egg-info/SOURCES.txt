@@ -1,0 +1,11 @@
+setup.py
+classyclient/ClassyClient.py
+classyclient/ClassyClientResponse.py
+classyclient/Exceptions.py
+classyclient/__init__.py
+classyclient.egg-info/PKG-INFO
+classyclient.egg-info/SOURCES.txt
+classyclient.egg-info/dependency_links.txt
+classyclient.egg-info/requires.txt
+classyclient.egg-info/top_level.txt
+classyclient.egg-info/zip-safe

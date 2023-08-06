@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: classyclient
+Version: 1.0.0
+Summary: A package for interacting with Classy's API in Python.
+Home-page: https://github.com/dnussbaum/classy-python-client-library
+Author: Daniel Nussbaum
+Author-email: daniel.e.nussbaum@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
