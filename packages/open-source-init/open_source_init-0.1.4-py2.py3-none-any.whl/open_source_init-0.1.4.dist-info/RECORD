@@ -1,0 +1,13 @@
+open_source_init/__init__.py,sha256=RdqKR4wEbsGAcLcoGEG94bYnLRk9GH9Dwu2kmKbQA6w,104
+open_source_init/cli.py,sha256=GBBV8ZYmkITrZSGc1e7BLZ_cWTm2Jv3CK5Ba_f8eZs0,2178
+open_source_init/credentials.py,sha256=hK0dvTqt2I9_chxN5cyFBAekmD-p5wPzEiZrYlLK-w4,515
+open_source_init/github_init.py,sha256=K0AS6Oa89azAs0VafzlTM10TCka6_k5A0Kry5xc7tfI,1609
+open_source_init/pypi_init.py,sha256=XLlJjo4-0NTNVgYEIdUU_ynr36Xm56df18Aj9LmBLVE,1352
+open_source_init/travis_init.py,sha256=msBig-5Duk9jA7GIEtRKKhXPc2ran5UaHXGjwc_cMLs,3320
+open_source_init-0.1.4.dist-info/top_level.txt,sha256=qMQyxhcATqlVA8fBxeeFTKU6tWwl0wkI94rMyZQE9K0,17
+open_source_init-0.1.4.dist-info/entry_points.txt,sha256=YSX28CbKOF_6xkPE2cFbYTdC2BGcCWboLvwux7hI7Fw,63
+open_source_init-0.1.4.dist-info/METADATA,sha256=28J3MMHywtBmWN-h2b1NK3Du6Irbz5k0NDmpmqjuldI,2522
+open_source_init-0.1.4.dist-info/DESCRIPTION.rst,sha256=Vb27DYdovwwj9qif3KQClUsaBzTojHOMJ-U1mBSiFv0,1352
+open_source_init-0.1.4.dist-info/metadata.json,sha256=ndLBJa4g9uMUKtU7FlXmj_VES-IleoBRFFazvbBfj7I,1422
+open_source_init-0.1.4.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+open_source_init-0.1.4.dist-info/RECORD,,
