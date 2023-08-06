@@ -1,0 +1,92 @@
+Metadata-Version: 2.0
+Name: minchin.pelican.themes.minchindotca
+Version: 1.0.0
+Summary: Pelican theme, first used for Minchin.ca.
+Home-page: https://github.com/MinchinWeb/minchin.pelican.themes.minchindotca
+Author: W. Minchin
+Author-email: w_minchin@hotmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: pelican
+
+====================
+Minchin dot CA Theme
+====================
+
+``Minchin dot CA`` is a theme for `Pelican <http://docs.getpelican.com/>`_,
+a static site generator written in Python.
+
+The ``Minchin dot CA`` theme is based on Bootstrap 3, and was first used at
+`Minchin.ca <http://minchin.ca>`_. 
+
+Installation
+============
+
+The easiest way to install the ``Minchin dot CA`` theme is through the use
+of pip. This will also install the required dependencies automatically.
+
+.. code-block:: sh
+
+  pip install minchin.pelican.themes.minchindotca
+
+Then, in your ``pelicanconf.py`` file, import the modele, use the
+built in function to specify your theme location, and set the default
+colour scheme:
+
+.. code-block:: python
+
+  from minchin.pelican.themes import minchindotca
+
+  THEME = minchindotca.get_path()
+  BOOTSTRAP_THEME = 'minchindotca'
+
+
+You will may also need to configure the theme through the use of additional
+settings (see below).
+
+
+Requirements
+============
+
+``Minchin dot ca`` requires Pelican.
+This can be manually installed with pip:
+
+.. code-block:: sh
+
+   pip install pelican
+
+
+Additional Settings
+===================
+
+Details coming. In the meantime, refer to the settings on the `Bootstrap 3
+theme <https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3>`_.
+
+
+Credits
+-------
+
+Original theme developed by `Daan Debie <http://dandydev.net/>`_.
+
+The idea that a theme could be installed as a Python package by `Jeff
+Forcier <http://bitprophet.org/>`_'s `Alabaster theme
+<https://github.com/bitprophet/alabaster>`_ for Sphinx.
+
+
+v. 1.0.0 [2016-08-15]
+=====================
+
+- pull code out of main Minchin.ca repo
+- move package to 'minchin.pelican.themes.minchindotca'
+- add 'setup.py', 'README.rst', 'CHANGELOG.rst'
+
+
