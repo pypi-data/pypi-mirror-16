@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: gmmmc
+Version: 0.2.1.8
+Summary: Functions for drawing Monte Carlo samples from GMM parameter space
+Home-page: http://github.com/jeremy-ma/gmmmc
+Author: Jeremy Ma
+Author-email: jeremy.ma@student.unsw.edu.au
+License: UNKNOWN
+Download-URL: https://github.com/jeremy-ma/gmmmc/tarball/0.1
+Description: UNKNOWN
+Keywords: gmm,monte carlo,speech
+Platform: UNKNOWN
