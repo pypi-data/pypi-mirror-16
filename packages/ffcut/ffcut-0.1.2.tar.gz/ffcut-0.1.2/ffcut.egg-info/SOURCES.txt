@@ -1,0 +1,17 @@
+AUTHORS
+ChangeLog
+LICENSE
+README.rst
+setup.cfg
+setup.py
+tox.ini
+ffcut/__init__.py
+ffcut/main.py
+ffcut/test.py
+ffcut.egg-info/PKG-INFO
+ffcut.egg-info/SOURCES.txt
+ffcut.egg-info/dependency_links.txt
+ffcut.egg-info/entry_points.txt
+ffcut.egg-info/not-zip-safe
+ffcut.egg-info/pbr.json
+ffcut.egg-info/top_level.txt
