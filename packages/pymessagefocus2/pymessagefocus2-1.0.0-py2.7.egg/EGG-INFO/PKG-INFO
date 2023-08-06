@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: pymessagefocus2
+Version: 1.0.0
+Summary: Thinner wrapper around xmlrpclib to provide complete API coverage for Adestra MessageFocus
+Home-page: https://github.com/mkohlmyr/pymessagefocus2
+Author: Mikael Kohlmyr
+Author-email: mikael@kohlmyr.com
+License: LICENSE
+Description: UNKNOWN
+Platform: UNKNOWN
