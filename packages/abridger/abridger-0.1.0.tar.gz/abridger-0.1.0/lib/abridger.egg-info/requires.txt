@@ -1,0 +1,6 @@
+setuptools
+pyyaml
+six
+jsonschema
+dj-database-url
+future
