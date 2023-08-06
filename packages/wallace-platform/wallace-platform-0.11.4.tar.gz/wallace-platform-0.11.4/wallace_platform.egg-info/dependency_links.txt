@@ -1,0 +1,1 @@
+git+git://github.com/berkeley-cocosci/psiTurk.git@wallace3#egg=psiturk
