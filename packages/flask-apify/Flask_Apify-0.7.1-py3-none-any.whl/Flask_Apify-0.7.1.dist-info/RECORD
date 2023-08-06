@@ -1,0 +1,15 @@
+Flask_Apify-0.7.1.dist-info/DESCRIPTION.rst,sha256=Dx92k3nvRrnPf3eRn4qiaZ0jYq_iC7tGaVEB-8B52KM,130
+Flask_Apify-0.7.1.dist-info/METADATA,sha256=uUKu1iwbme_7Ipf7wvQkjP6uEaIVQd4CstrokUYATY4,1079
+Flask_Apify-0.7.1.dist-info/RECORD,,
+Flask_Apify-0.7.1.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+Flask_Apify-0.7.1.dist-info/metadata.json,sha256=6kfar7Kdw_vVx6YayZ-fkhRIxistxZCG7d6zd4qT6rg,1132
+Flask_Apify-0.7.1.dist-info/top_level.txt,sha256=eBLsvMWLzjwRSyA0CiaB2gH1GOFh8gh0rB-CT8Frexo,12
+flask_apify/__init__.py,sha256=clFNUF0USHqBsehvN7VLYiQxLbmfTkjNEZmLUWfYRdY,242
+flask_apify/exc.py,sha256=z6WOuuUL_e5GWJb0WflcMndnaxxUotyXq-bS_gAX8Y4,2078
+flask_apify/fy.py,sha256=EoMEwmpGq79o6oab3suQn7qcAJqcUEWGukHtmutdaCs,14309
+flask_apify/http.py,sha256=US9VPsqnmFrCBhdKro7P6w6_Qo3GL5zao8_XU92O0Bs,390
+flask_apify/utils.py,sha256=GLjtw7b7PXlbXkj1N9M1sCyaIqx51S9hPA2DYQqIiSs,1423
+flask_apify/serializers/__init__.py,sha256=dKpKqiqH4-uj5376aKfL04bt-NTULnEXc6D1PQgUf9s,1539
+flask_apify/serializers/debug.py,sha256=lEyewWfqU_qKVmLFYF0RoSWyZv8g_ntvYg3XFGNeLGI,811
+flask_apify/serializers/json.py,sha256=Ssr-fkibn-Q6Wfnf4y1Vp0UyYLrdbFw98as098AyRoM,494
+flask_apify/serializers/jsonp.py,sha256=oRDwTUQT9mMeu598X0_5_gjiiGTJz5Dhq1OiD_JPZzw,1724
