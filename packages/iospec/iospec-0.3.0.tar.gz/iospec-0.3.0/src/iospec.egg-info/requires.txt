@@ -1,0 +1,4 @@
+jinja2
+pygeneric>=0.3
+unidecode
+fake-factory
