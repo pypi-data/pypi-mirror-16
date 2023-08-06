@@ -1,0 +1,15 @@
+Metadata-Version: 2.0
+Name: pokeauth
+Version: 0.0.1
+Summary: A helper library for developers using pokeauth.com
+Home-page: https://github.com/thisbejim/pokeauth-python
+Author: James Childs-Maidment
+Author-email: UNKNOWN
+License: MIT
+Keywords: Pokemon,PokemonGo
+Platform: UNKNOWN
+Requires-Dist: requests
+
+UNKNOWN
+
+
