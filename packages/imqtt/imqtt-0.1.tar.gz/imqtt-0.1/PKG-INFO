@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: imqtt
+Version: 0.1
+Summary: Iteractive MQTT packet manipulation shell based on IPython
+Home-page: https://github.com/shafreeck/imqtt
+Author: Shafreeck Sea
+Author-email: shafreeck@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/shafreeck/imqtt/tarball/0.1
+Description: UNKNOWN
+Keywords: mqtt,ipython,python,imqtt,mqtt client
+Platform: UNKNOWN
