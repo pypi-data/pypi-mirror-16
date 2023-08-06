@@ -1,0 +1,52 @@
+Metadata-Version: 1.1
+Name: security-sensor
+Version: 1.0
+Summary: Security sensor is a Django app to process events log from different security source.
+Home-page: https://github.com/MGautier/security-sensor
+Author: Moises Gautier Gomez
+Author-email: moisesgautiergomez@correo.ugr.es
+License: MIT License
+Description: =====
+        Security sensor
+        =====
+        
+        Security sensor is a Django app to process events log from different security source.
+        
+        Detailed documentation is in the "docs" directory.
+        
+        Quick start
+        -----------
+        
+        1. Add "secapp" to your INSTALLED_APPS setting like this::
+        
+            INSTALLED_APPS = [
+                ...
+                'secapp',
+            ]
+        
+        2. Include the secapp URLconf in your project urls.py like this::
+        
+            url(r'^secapp/', include('secapp.urls')),
+        
+        3. Run `python manage.py migrate` to create the secapp models.
+        
+        4. Start the development server and visit http://127.0.0.1:8000/admin/
+           to create a user isolated like user-secapp (you'll need the Admin app enabled).
+        
+        5. Visit http://127.0.0.1:8000/secapp/ to see events log in a chart.
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Web Environment
+Classifier: Environment :: Console
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: System :: Monitoring
