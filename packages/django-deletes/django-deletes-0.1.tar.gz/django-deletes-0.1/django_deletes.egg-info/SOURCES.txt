@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+README.rst
+setup.py
+django_deletes.egg-info/PKG-INFO
+django_deletes.egg-info/SOURCES.txt
+django_deletes.egg-info/dependency_links.txt
+django_deletes.egg-info/top_level.txt
+docs/how_to_use.md
+softdeletes/__init__.py
+softdeletes/admin.py
+softdeletes/managers.py
+softdeletes/mixins.py
+softdeletes/models.py
