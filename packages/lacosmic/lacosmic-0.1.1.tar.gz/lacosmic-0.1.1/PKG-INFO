@@ -1,0 +1,13 @@
+Metadata-Version: 1.0
+Name: lacosmic
+Version: 0.1.1
+Summary: lacosmic
+Home-page: https://github.com/larrybradley/lacosmic
+Author: Larry Bradley
+Author-email: larry.bradley@gmail.com
+License: unknown
+Description: 
+        Package to remove cosmic rays from an astronomical image using the
+        L.A.Cosmic (PASP 113, 1420, 2001) algorithm.
+        
+Platform: UNKNOWN
