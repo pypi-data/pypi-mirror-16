@@ -1,0 +1,6 @@
+setuptools
+
+[test]
+plone.app.testing
+plone.app.contenttypes>=1.1b1
+unittest2
