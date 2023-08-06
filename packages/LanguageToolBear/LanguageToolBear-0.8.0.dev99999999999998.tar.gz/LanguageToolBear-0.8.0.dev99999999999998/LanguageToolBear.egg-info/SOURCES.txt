@@ -1,0 +1,5 @@
+setup.py
+LanguageToolBear.egg-info/PKG-INFO
+LanguageToolBear.egg-info/SOURCES.txt
+LanguageToolBear.egg-info/dependency_links.txt
+LanguageToolBear.egg-info/top_level.txt
