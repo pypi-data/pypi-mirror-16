@@ -1,0 +1,38 @@
+Metadata-Version: 2.0
+Name: playback
+Version: 0.3.9
+Summary: OpenStack provisioning and orchestration library
+Home-page: https://github.com/jiasir/playback/
+Author: jiasir
+Author-email: jiasir@icloud.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: PyYAML (==3.11)
+Requires-Dist: ecdsa (==0.13)
+Requires-Dist: fabric (==1.10.2)
+Requires-Dist: jinja2 (==2.8)
+Requires-Dist: markupsafe (==0.23)
+Requires-Dist: paramiko (==1.16.0)
+Requires-Dist: pycrypto (==2.6.1)
+Requires-Dist: setuptools (==19.6.2)
+Requires-Dist: tqdm (==3.8.0)
+
+# Playback
+
+Playback is an OpenStack provisioning and orchestration library that all of the OpenStack components can be deployed automation with high availability on Ubuntu based operating system(Xenial and trusty) as a pythonic way.
+
+## Quick-start
+
+    from playback.api import Horizon
+
+    remote_user = 'ubuntu'
+    remote_hosts = ['192.168.1.3', '192.168.1.4']
+
+    horizon = Horizon(user=remote_user, hosts=remote_hosts)
+    horizon.install(openstack_host='192.168.1.2', memcached_servers='192.168.1.3:11211,192.168.1.4:11211', time_zone='America/New_York')
+
+## Current version
+
+* v0.3.9 (Ris)
+  Improved documents
+
