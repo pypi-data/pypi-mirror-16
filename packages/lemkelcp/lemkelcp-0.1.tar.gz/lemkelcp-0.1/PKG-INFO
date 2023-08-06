@@ -1,0 +1,14 @@
+Metadata-Version: 1.1
+Name: lemkelcp
+Version: 0.1
+Summary: A Python implementation of Lemke's Algorithm for linear complementarity problems
+Home-page: https://github.com/AndyLamperski/lemkelcp
+Author: Andy Lamperski
+Author-email: alampers@umn.edu
+License: MIT
+Description: UNKNOWN
+Keywords: linear complementarity problem lcp optimization
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Scientific/Engineering :: Mathematics
