@@ -1,0 +1,55 @@
+# ==============================
+# Import Differential Expression
+# ==============================
+---
+
+- slug: upload-diffexp
+  name: Differential Expression (table)
+  data_name: 'Differential expression ({{ src.file }})'
+  version: 1.0.4
+  type: data:differentialexpression:upload
+  category: upload
+  persistence: RAW
+  description: >
+    Upload Differential Expression table.
+  input:
+    - name: src
+      label: Differential expression file
+      type: basic:file
+      description: >
+        Differential expression file. Supported file types: *.xls, *.xlsx, *.tab (tab-delimited file), *.diff. First column must contain gene/transcript IDs. DE file must include columns with log2(fold change) and FDR or pval information. DE file must contain header row with column names. Accepts DESeq, DESeq2, edgeR and CuffDiff output files.
+      required: true
+      validate_regex: '\.(xls|xlsx|tab|tab.gz|diff|diff.gz)$'
+  output:
+    - name: diffexp
+      label: Differential expression
+      type: basic:file
+    - name: volcano_plot
+      label: Volcano plot
+      type: basic:json
+  run:
+    runtime: polyglot
+    bash: |
+      NAME='{{ src.file }}'
+
+      if [[ '.{{ src.file }}' =~ \.(xls)$ ]]; then
+        re-import "{{ src.file_temp|default:src.file }}" "{{ src.file }}" "xls" "xls" 0.3 extract
+        convert_DE_excel_table.py '{{ src.file }}' > "${NAME}.tab"
+        volcanoplot.py ${NAME}.tab
+        re-checkrc
+        re-progress 0.7
+        gzip "${NAME}.tab"
+      elif [[ '.{{ src.file }}' =~ \.(xlsx)$ ]]; then
+        re-import "{{ src.file_temp|default:src.file }}" "{{ src.file }}" "xlsx" "xlsx" 0.3 extract
+        convert_DE_excel_table.py '{{ src.file }}' > "${NAME}.tab"
+        volcanoplot.py ${NAME}.tab
+        re-checkrc
+        re-progress 0.7
+        gzip "${NAME}.tab"
+      else
+        re-import "{{ src.file_temp|default:src.file }}" "{{ src.file }}" "diff|tab|gz" "tab" 0.3 compress
+        volcanoplot.py ${NAME}.tab.gz
+        re-checkrc
+        re-progress 0.7
+      fi
+      re-save-file diffexp ${NAME}.tab.gz
