@@ -1,0 +1,7 @@
+setup.py
+sofc/__init__.py
+sofc/sofc.py
+sofc.egg-info/PKG-INFO
+sofc.egg-info/SOURCES.txt
+sofc.egg-info/dependency_links.txt
+sofc.egg-info/top_level.txt
