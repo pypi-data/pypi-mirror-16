@@ -1,0 +1,7 @@
+pyproj
+pygeogrids
+pygrib
+numpy
+pygeobase
+datedown>=0.2
+trollsift
