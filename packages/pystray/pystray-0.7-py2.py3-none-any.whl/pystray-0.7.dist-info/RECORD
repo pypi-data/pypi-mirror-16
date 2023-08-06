@@ -1,0 +1,17 @@
+pystray/__init__.py,sha256=SQpcNPUeDwzQ_txx_FqhV_4f-k0tHH-mGBoIuuOHG4Y,1529
+pystray/_base.py,sha256=_vxqWdIWKfGuhB0bmj1kl7NOnneTeLIU86h3kLibg3Q,10419
+pystray/_darwin.py,sha256=1-ZQByHDEHgC4GbcJcpj-M7Xgga8quyLJXhg1wf6Ixc,6802
+pystray/_gtk.py,sha256=JN4t5util3OH0O87AdZipJ9WEmLEkmzymPNnogoo9I4,5390
+pystray/_info.py,sha256=2BWlW3tsMAAsiKXdTOGTui6Q0uKt9H_1LAH9E1HeyeE,67
+pystray/_win32.py,sha256=MlPWCM5YhxFLqNy76Nmd7Eo5hp0RhE9kzvhE99IDe_I,10459
+pystray/_xorg.py,sha256=_VuENwOrgvpI0yfqMCq2CigfEfRrgTVgHcjvdEzrWxc,14609
+pystray/_util/__init__.py,sha256=177_yuKAClPULLSyfjxAn5zA6py0ReOM-YW8TyxzcHA,1584
+pystray/_util/win32.py,sha256=DXhgnkRmWZdKFa5AJtT7FCljmYYAJrejCNLNWTo8wSg,8581
+pystray-0.7.dist-info/DESCRIPTION.rst,sha256=ngb0RzTZQzQNBrGOZeM6aFoCoADFv0LMbSI3E1mlg7w,1952
+pystray-0.7.dist-info/METADATA,sha256=V_xJ7jPbGYzw_g9dT-xh0sTNkMqqHt-KYDsWB55tatA,2820
+pystray-0.7.dist-info/RECORD,,
+pystray-0.7.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+pystray-0.7.dist-info/metadata.json,sha256=VvPMA518AcK5IClOd9qjk1-4v6MUFFlYZshoe7MuRrA,1062
+pystray-0.7.dist-info/pbr.json,sha256=9bPbNeCjKqhr7qLRCuhhkmdc3pNKVU6hIW2GQ6cSNPs,47
+pystray-0.7.dist-info/top_level.txt,sha256=6xvZ5fFN6P3IotgMJLAHeWonXXZzDdf47BhMLsXEHlg,8
+pystray-0.7.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
