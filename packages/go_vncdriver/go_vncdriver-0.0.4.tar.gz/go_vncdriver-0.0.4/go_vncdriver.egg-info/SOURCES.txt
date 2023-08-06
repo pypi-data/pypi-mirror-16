@@ -1,0 +1,9 @@
+setup.py
+go_vncdriver/Makefile
+go_vncdriver/__init__.py
+go_vncdriver/build.sh
+go_vncdriver/govnc_py.c
+go_vncdriver.egg-info/PKG-INFO
+go_vncdriver.egg-info/SOURCES.txt
+go_vncdriver.egg-info/dependency_links.txt
+go_vncdriver.egg-info/top_level.txt
