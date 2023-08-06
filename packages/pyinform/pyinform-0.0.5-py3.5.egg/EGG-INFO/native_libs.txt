@@ -1,0 +1,2 @@
+pyinform/inform-0.0.5/lib/macosx-x86_64/libinform.0.0.5.dylib
+pyinform/inform-0.0.5/lib/win-amd64/inform.dll
