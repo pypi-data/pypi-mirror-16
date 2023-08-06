@@ -1,0 +1,7 @@
+DataProperty>=0.8.1
+ipaddress
+logbook
+pyparsing
+six
+subprocrunner>=0.3.0
+voluptuous
