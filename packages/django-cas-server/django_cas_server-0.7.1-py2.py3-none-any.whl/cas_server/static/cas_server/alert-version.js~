@@ -1,0 +1,11 @@
+function alert_version(last_version){
+    jQuery(function( $ ){
+        $("#alert-version").click(function( e ){
+            e.preventDefault();
+            createCookie("cas-alert-version", last_version, 10*365)
+        });
+        if(readCookie("cas-alert-version") === last_version){
+            $("#alert-version").parent().hide();
+        }
+    });
+}
