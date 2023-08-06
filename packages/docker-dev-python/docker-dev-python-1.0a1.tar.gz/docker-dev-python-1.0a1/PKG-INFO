@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: docker-dev-python
+Version: 1.0a1
+Summary: Python plugin for development tools for Docker
+Home-page: https://github.com/2degrees/docker-dev-python
+Author: 2degrees
+Author-email: 2degrees-floss@googlegroups.com
+License: UNKNOWN
+Description: Python plugin for docker-dev
+        ============================
+Platform: UNKNOWN
