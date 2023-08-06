@@ -1,0 +1,3 @@
+[console_scripts]
+sourcespell = sourcespell.sourcespell:main
+
