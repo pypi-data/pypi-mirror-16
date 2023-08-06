@@ -1,0 +1,6 @@
+setup.py
+TravelTogether_Django.egg-info/PKG-INFO
+TravelTogether_Django.egg-info/SOURCES.txt
+TravelTogether_Django.egg-info/dependency_links.txt
+TravelTogether_Django.egg-info/requires.txt
+TravelTogether_Django.egg-info/top_level.txt

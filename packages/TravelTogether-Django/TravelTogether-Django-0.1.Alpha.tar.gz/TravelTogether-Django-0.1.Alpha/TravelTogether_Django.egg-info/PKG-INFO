@@ -1,0 +1,30 @@
+Metadata-Version: 1.1
+Name: TravelTogether-Django
+Version: 0.1.Alpha
+Summary: Simple carpool webapp using Django
+Home-page: https://github.com/borisaltanov/TravelTogether
+Author: Boris Altanov
+Author-email: borisaltanov@gmail.com
+License: GNU GPL v2
+Description: # TravelTogether
+        
+        * TravelTogether is a web application, which helps you to find other people to share your travel. You may be looking for passangers and don't want to travel alone. You may not like public transportation such as trains and buses and prefer to travel by car with someone else. This application will give you the opportunity to travel the way you like it.
+        
+        * With TravelTogether you can:
+          * make your personal account
+          * offer a travel to other users
+          * look for travel
+        
+        * TravelTogether will:
+          * use Google Maps API to determine travel duration and distance
+          * give you push-notifications via email
+          * pay for your travel
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
