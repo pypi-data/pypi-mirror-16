@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: meipai
+Version: 0.1.1
+Summary: A command line interface to search,play videos on meipai
+Home-page: https://github.com/PyBeaner/meipai
+Author: PyBeaner
+Author-email: 758046738@qq.com
+License: MIT
+Description: UNKNOWN
+Keywords: meipai,video,cli
+Platform: UNKNOWN
