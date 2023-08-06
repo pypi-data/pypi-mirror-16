@@ -1,0 +1,3 @@
+[console_scripts]
+wallace = wallace.command_line:wallace
+
