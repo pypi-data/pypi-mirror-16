@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: pylocks
+Version: 0.2.0
+Summary: redis-backed locks and leases
+Home-page: UNKNOWN
+Author: Scott Ivey
+Author-email: scott.ivey@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
