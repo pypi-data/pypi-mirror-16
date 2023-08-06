@@ -1,0 +1,3 @@
+[console_scripts]
+pyfeld = pyfeld.rfcmd:run_main
+
