@@ -1,0 +1,4 @@
+[console_scripts]
+boltrun = boltkit.runner:run
+boltstub = boltkit.server:stub
+
