@@ -1,0 +1,3 @@
+[console_scripts]
+hark_builder = hark_builder.cli:main
+
