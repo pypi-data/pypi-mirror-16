@@ -1,0 +1,10 @@
+requests
+untangle>=1.1.0
+bigpy>=0.1.1
+
+[dev]
+check-manifest
+
+[test]
+coverage
+httpretty
