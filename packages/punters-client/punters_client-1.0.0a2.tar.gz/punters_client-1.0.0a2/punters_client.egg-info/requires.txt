@@ -1,0 +1,10 @@
+cssselect
+pytz
+tzlocal
+
+[dev]
+bumpversion
+check-manifest
+
+[test]
+tox
