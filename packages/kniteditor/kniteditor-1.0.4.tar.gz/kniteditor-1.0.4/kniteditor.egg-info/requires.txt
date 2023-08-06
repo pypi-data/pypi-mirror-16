@@ -1,0 +1,8 @@
+AYABInterface==0.0.9
+crc8==0.0.3
+knittingpattern==0.1.19
+ObservableList==0.0.2
+Pillow==3.2.0
+pyserial==3.1.1
+webcolors==1.5
+xmltodict==0.10.2
