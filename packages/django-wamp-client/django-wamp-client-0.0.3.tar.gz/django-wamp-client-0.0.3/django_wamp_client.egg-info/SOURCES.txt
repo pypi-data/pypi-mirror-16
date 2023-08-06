@@ -1,0 +1,14 @@
+README.rst
+setup.cfg
+setup.py
+django_wamp_client.egg-info/PKG-INFO
+django_wamp_client.egg-info/SOURCES.txt
+django_wamp_client.egg-info/dependency_links.txt
+django_wamp_client.egg-info/not-zip-safe
+django_wamp_client.egg-info/requires.txt
+django_wamp_client.egg-info/top_level.txt
+wampclient/__init__.py
+wampclient/conf.py
+wampclient/management/__init__.py
+wampclient/management/commands/__init__.py
+wampclient/management/commands/wamp_client.py
