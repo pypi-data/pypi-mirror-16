@@ -1,0 +1,4 @@
+pytest
+pytest-cov==2.2.1
+mock
+flake8
