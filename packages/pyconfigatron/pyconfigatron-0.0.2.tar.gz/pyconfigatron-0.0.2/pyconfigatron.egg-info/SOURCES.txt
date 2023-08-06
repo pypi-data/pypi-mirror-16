@@ -1,0 +1,7 @@
+setup.py
+pyconfigatron/__init__.py
+pyconfigatron.egg-info/PKG-INFO
+pyconfigatron.egg-info/SOURCES.txt
+pyconfigatron.egg-info/dependency_links.txt
+pyconfigatron.egg-info/pbr.json
+pyconfigatron.egg-info/top_level.txt
