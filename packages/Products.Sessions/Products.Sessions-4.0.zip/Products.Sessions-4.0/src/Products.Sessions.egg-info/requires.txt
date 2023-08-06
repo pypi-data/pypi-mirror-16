@@ -1,0 +1,9 @@
+setuptools
+AccessControl
+Acquisition
+BTrees
+Persistence
+transaction
+ZODB
+Zope2 >= 4.0.dev0
+zope.interface
