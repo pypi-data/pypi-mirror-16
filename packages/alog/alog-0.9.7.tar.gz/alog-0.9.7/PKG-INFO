@@ -1,0 +1,20 @@
+Metadata-Version: 1.1
+Name: alog
+Version: 0.9.7
+Summary: Python logging for Humans
+Home-page: https://github.org/keitheis/alog
+Author: Keith Yang
+Author-email: yang@keitheis.org
+License: Apache 2.0
+Description: UNKNOWN
+Keywords: simple basic application logging
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Topic :: System :: Logging
+Classifier: Topic :: Software Development
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
