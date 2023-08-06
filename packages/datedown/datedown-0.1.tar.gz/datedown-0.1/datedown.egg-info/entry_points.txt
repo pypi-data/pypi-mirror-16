@@ -1,0 +1,3 @@
+[console_scripts]
+datedown = datedown.interface:run
+
