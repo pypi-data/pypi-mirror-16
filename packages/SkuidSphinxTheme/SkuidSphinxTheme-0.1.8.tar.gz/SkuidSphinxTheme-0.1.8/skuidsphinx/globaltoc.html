@@ -1,0 +1,20 @@
+<div class="toc">
+  {{ toctree(includehidden=True, maxdepth=3, titles_only=true ) }}
+</div>
+<script>
+$( document ).ready(function() {
+    $('h3').addClass('collapsed');
+    $('h3').siblings().slideToggle(1);
+  });
+$('h3').click( function() {
+  if ($(this).hasClass('collapsed')){
+    $(this).removeClass('collapsed');
+    $(this).siblings().slideToggle(300);
+  } else {
+    $(this).addClass('collapsed');
+    $(this).siblings().slideToggle(300);
+  }
+});
+</script>
+
+
