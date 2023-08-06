@@ -1,0 +1,39 @@
+Metadata-Version: 2.0
+Name: zerodb
+Version: 0.99.0b1
+Summary: End-to-end encrypted database
+Home-page: http://zerodb.io
+Author: ZeroDB Inc.
+Author-email: michael@zerodb.io
+License: AGPLv3
+Platform: UNKNOWN
+Requires-Dist: BTrees
+Requires-Dist: ZEO (>=5.0.0a2)
+Requires-Dist: ZODB (>=5.0.0a6)
+Requires-Dist: aes256gcm-nacl
+Requires-Dist: cachetools
+Requires-Dist: mock
+Requires-Dist: pycryptodome
+Requires-Dist: requests (>=2.0)
+Requires-Dist: scrypt
+Requires-Dist: six (>=1.7.0)
+Requires-Dist: zc.zlibstorage (>=1.1.0)
+Requires-Dist: zerodbext.catalog (==0.8.4)
+Requires-Dist: zodbpickle
+Requires-Dist: zope.component (>=4.0.0)
+Requires-Dist: zope.event (>=4.0.0)
+Requires-Dist: zope.index (>=4.0.0)
+Requires-Dist: zope.lifecycleevent (>=4.0.0)
+Provides-Extra: testing
+Requires-Dist: coverage; extra == 'testing'
+Requires-Dist: mock; extra == 'testing'
+Requires-Dist: path.py; extra == 'testing'
+Requires-Dist: pdbpp; extra == 'testing'
+Requires-Dist: pytest; extra == 'testing'
+Requires-Dist: pytest-cov; extra == 'testing'
+Requires-Dist: wheel; extra == 'testing'
+Requires-Dist: zope.testing; extra == 'testing'
+
+UNKNOWN
+
+
