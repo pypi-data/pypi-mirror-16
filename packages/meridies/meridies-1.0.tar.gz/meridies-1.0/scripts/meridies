@@ -1,0 +1,72 @@
+#!/usr/bin/env python
+# PYTHON_ARGCOMPLETE_OK
+
+import pytz
+import datetime
+import dateutil.tz
+
+def compute(compact, date, local_timezone):
+
+    d = datetime.datetime.utcnow().replace(tzinfo = pytz.utc, microsecond = 0)
+
+    if local_timezone:
+        d = d.astimezone(dateutil.tz.tzlocal())
+
+    if date:
+        s = d.date().isoformat()
+    elif d.tzinfo == pytz.utc:
+        s = '%sZ' % d.replace(tzinfo = None).isoformat()
+    else:
+        s = d.isoformat()
+    if compact:
+        print(s.replace('-', '').replace(':', ''))
+    else:
+        print(s)
+
+def _init_argparser():
+
+    import argparse
+    argparser = argparse.ArgumentParser(description = None)
+    # argparser.add_argument('a', nargs = '*')
+    # argparser.add_argument('--b')
+    argparser.add_argument(
+            '--compact',
+            '--short',
+            '-s',
+            action = 'store_true',
+            help = 'Omit hyphens in date and colons in time string.',
+            )
+    argparser.add_argument(
+            '--date',
+            '-d',
+            action = 'store_true',
+            )
+    argparser.add_argument(
+            '--local-timezone',
+            '-l',
+            action = 'store_true',
+            )
+    # argparser.add_argument('file', type = argparse.FileType('r'))
+    # exclusive_group = argparser.add_mutually_exclusive_group(required = False)
+    # exclusive_group.add_argument('--exclusive-1', action='store_true')
+    # exclusive_group.add_argument('--exclusive-2', action='store_true')
+    # subparsers = argparser.add_subparsers(help = None, dest = 'command')
+    return argparser
+
+def main(argv):
+
+    argparser = _init_argparser()
+    try:
+        import argcomplete
+        argcomplete.autocomplete(argparser)
+    except ImportError:
+        pass
+    args = argparser.parse_args(argv)
+
+    compute(**vars(args))
+
+    return 0
+
+if __name__ == "__main__":
+    import sys
+    sys.exit(main(sys.argv[1:]))

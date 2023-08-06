@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+meridies.egg-info/PKG-INFO
+meridies.egg-info/SOURCES.txt
+meridies.egg-info/dependency_links.txt
+meridies.egg-info/requires.txt
+meridies.egg-info/top_level.txt
+scripts/meridies
