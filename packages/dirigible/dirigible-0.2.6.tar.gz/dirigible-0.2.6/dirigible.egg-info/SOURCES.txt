@@ -1,0 +1,16 @@
+README.rst
+setup.cfg
+setup.py
+dirigible/__init__.py
+dirigible/config.py
+dirigible/exceptions.py
+dirigible/utils.py
+dirigible.egg-info/PKG-INFO
+dirigible.egg-info/SOURCES.txt
+dirigible.egg-info/dependency_links.txt
+dirigible.egg-info/not-zip-safe
+dirigible.egg-info/requires.txt
+dirigible.egg-info/top_level.txt
+dirigible/vault/__init__.py
+dirigible/vault/lib.py
+dirigible/vault/unicode.py

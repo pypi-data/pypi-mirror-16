@@ -1,0 +1,28 @@
+Dirigible
+=========
+
+Dirigible is a minimal python package the provides two shortcuts for working
+with config files:
+
+  1) it can transparently read config files encrypted with Ansible Vault, and 
+  2) shortcuts for finding and loading configs files in common locations, like 
+     ~/.{{appname}} or /etc/{{appname}}, or looking in a location specified by 
+     an environment variable "${{appname|upper}}_CONFIG_DIR" if defined.
+
+Examples
+++++++++
+
+Load a basic, unencrypted config file from 
+
+    from os.path import join, abspath, dirname
+    import digible
+
+    class MyConfig(dirigible.Config):
+
+        appname = 'testapp'
+        defaults = join(dirname(abspath(__file__)), 'defaults')
+
+        @CachedAttr
+        def cfg(self):
+            return self.load_config_filename('myapp.cfg')
+
