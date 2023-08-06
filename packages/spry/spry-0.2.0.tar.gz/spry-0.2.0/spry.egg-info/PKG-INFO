@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: spry
+Version: 0.2.0
+Summary: Spry is a social media collector toolsuite
+Home-page: https://github.com/jamesacampbell/spry
+Author: James Campbell
+Author-email: james@jamescampbell.us
+License: GNUv3
+Download-URL: https://github.com/jamesacampbell/spry/tarball/0.2.0
+Description: # spry
+        
+        .. image:: https://img.shields.io/pypi/v/spry.svg
+            :target: https://pypi.python.org/pypi/spry
+        
+        social media intelligence from the terminal
+        
+Keywords: social,collector,scraper
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python
