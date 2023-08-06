@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: wepana
+Version: 0.2.0
+Summary: An analyzer for web page content powered by Python.
+Home-page: https://github.com/mofei2816/wepana
+Author: Mervin Zhang
+Author-email: mofei2816@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3

@@ -1,0 +1,10 @@
+setup.py
+test/test.py
+wepana/__init__.py
+wepana/analyzer.py
+wepana/error.py
+wepana/regex.py
+wepana.egg-info/PKG-INFO
+wepana.egg-info/SOURCES.txt
+wepana.egg-info/dependency_links.txt
+wepana.egg-info/top_level.txt
