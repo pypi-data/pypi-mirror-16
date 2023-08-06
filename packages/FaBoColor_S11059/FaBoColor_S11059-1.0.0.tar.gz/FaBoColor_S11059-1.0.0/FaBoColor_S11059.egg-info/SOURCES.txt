@@ -1,0 +1,7 @@
+setup.py
+FaBoColor_S11059/S11059.py
+FaBoColor_S11059/__init__.py
+FaBoColor_S11059.egg-info/PKG-INFO
+FaBoColor_S11059.egg-info/SOURCES.txt
+FaBoColor_S11059.egg-info/dependency_links.txt
+FaBoColor_S11059.egg-info/top_level.txt
