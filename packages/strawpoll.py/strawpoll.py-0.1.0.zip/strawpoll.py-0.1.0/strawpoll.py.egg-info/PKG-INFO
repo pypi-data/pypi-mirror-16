@@ -1,0 +1,72 @@
+Metadata-Version: 1.1
+Name: strawpoll.py
+Version: 0.1.0
+Summary: An async python wrapper for the Strawpoll API.
+Home-page: https://github.com/PapyrusThePlant/strawpoll.py
+Author: PapyrusThePlant
+Author-email: UNKNOWN
+License: MIT
+Description: ============
+        strawpoll.py
+        ============
+        
+        .. image:: https://img.shields.io/pypi/pyversions/strawpoll.py.png
+            :target: pypi_
+        
+        .. image:: https://img.shields.io/pypi/v/strawpoll.py.png
+            :target: pypi_
+        
+        .. image:: https://img.shields.io/badge/license-MIT-blue.png
+            :target: license_
+        
+        .. image:: https://readthedocs.org/projects/strawpollpy/badge/
+            :target: documentation_
+        
+        strawpoll.py is an async wrapper for `strawpoll's API`_ written in Python.
+        
+        For more info, take a look at the documentation_.
+        
+        .. _documentation: http://strawpollpy.readthedocs.io/
+        .. _license: https://raw.githubusercontent.com/PapyrusThePlant/strawpoll.py/master/LICENSE
+        .. _pypi: https://pypi.python.org/pypi/discord.py/
+        .. _strawpoll's API:  https://strawpoll.zendesk.com/hc/en-us/articles/218979828-Straw-Poll-API-Information
+        
+        Requirements
+        ============
+        
+        * Python 3.4.2+
+        * ``aiohttp`` library
+        
+        Example
+        =======
+        
+        ::
+        
+            import asyncio
+            import strawpoll
+        
+            async def main():
+                api = strawpoll.API()
+        
+                p1 = await api.get_poll(10915632)
+                print(p1.results())
+        
+                p2 = strawpoll.Poll('lol?', ['ha', 'haha', 'hahaha', 'hahahaha', 'hahahahaha'])
+                await api.submit_poll(p2)
+                print(p2.url)
+        
+            asyncio.get_event_loop().run_until_complete(main())
+        
+        
+Keywords: strawpoll.py
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
