@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: loompy
+Version: 0.4
+Summary: Create and use .loom files from Python
+Home-page: https://github.com/linnarsson-lab/loompy
+Author: Sten Linnarsson
+Author-email: sten.linnarsson@ki.se
+License: BSD
+Description: UNKNOWN
+Keywords: loom omics transcriptomics bioinformatics
+Platform: UNKNOWN
