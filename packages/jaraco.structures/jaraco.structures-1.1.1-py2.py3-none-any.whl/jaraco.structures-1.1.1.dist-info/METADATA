@@ -1,0 +1,26 @@
+Metadata-Version: 2.0
+Name: jaraco.structures
+Version: 1.1.1
+Summary: jaraco.structures
+Home-page: https://github.com/jaraco/jaraco.structures
+Author: Jason R. Coombs
+Author-email: jaraco@jaraco.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+
+.. image:: https://img.shields.io/pypi/v/jaraco.structures.svg
+   :target: https://pypi.org/project/jaraco.structures
+
+.. image:: https://img.shields.io/pypi/pyversions/jaraco.structures.svg
+
+.. image:: https://img.shields.io/pypi/dm/jaraco.structures.svg
+
+.. image:: https://img.shields.io/travis/jaraco/jaraco.structures/master.svg
+   :target: http://travis-ci.org/jaraco/jaraco.structures
+
+
