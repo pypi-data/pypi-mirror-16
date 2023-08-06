@@ -1,0 +1,54 @@
+Metadata-Version: 1.1
+Name: zopyx.plone.hyphenator
+Version: 0.1.3
+Summary: Hyphenation support for Plone
+Home-page: http://pypi.python.org/pypi/zopyx.plone.hyphenator
+Author: Andreas Jung
+Author-email: info@zopyx.com
+License: GPL
+Description: zopyx.plone.hyphenator
+        ======================
+        
+        Plone 5 add-on to provide customizable hyphenation support
+        for custom CSS/jQuery selectors. The hyphenation support is based on
+        
+        http://mnater.github.io/Hyphenator/
+        
+        Installation
+        ------------
+        
+        Nothing special. Add ``zopyx.plone.hyphenator`` to you buildout and
+        install it throught the Plone add-on installer. You can configure 
+        a list of selectors inside the ``Hyphenator`` control panel of Plone
+        that will be considered for hyphenation (Plone 5 toolbar by default).
+        
+        Repository
+        ----------   
+        
+        - https://github.com/zopyx/zopyx.plone.hyphenator
+        
+        Bugtracker
+        ----------
+        
+        - https://github.com/zopyx/zopyx.plone.hyphenator/issues
+        
+        Author
+        ------
+        | Andreas Jung/ZOPYX
+        | Hundskapfklinge 33
+        | D-72074 Tuebingen, Germany
+        | info@zopyx.com
+        | www.zopyx.com
+        
+        
+        0.1.0 (2016-07-27)
+        ------------------
+        - first release
+        
+Keywords: Plone Hyphenation
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Framework :: Plone
+Classifier: Framework :: Plone :: 5.0
+Classifier: Framework :: Zope2
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
