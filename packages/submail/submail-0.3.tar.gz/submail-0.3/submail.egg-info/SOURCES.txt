@@ -1,0 +1,15 @@
+README.rst
+setup.py
+submail/__init__.py
+submail/common.py
+submail/mail.py
+submail/sms.py
+submail/submail.py
+submail.egg-info/PKG-INFO
+submail.egg-info/SOURCES.txt
+submail.egg-info/dependency_links.txt
+submail.egg-info/requires.txt
+submail.egg-info/top_level.txt
+tests/__init__.py
+tests/test_mail.py
+tests/test_message.py
