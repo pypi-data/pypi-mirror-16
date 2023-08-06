@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+<title>SQLObject Developer Guide</title>
+    <link href="layout.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="page">
+      <h1 class="doc-title"><a></a></h1>
+      <div id="navcontainer">
+		    <ul id="navlist">
+          <li class="pagenav">
+            <ul>
+              <li class="page_item">
+                <a href="index.html" title="Project Home / Index">SQLObject</a>
+              </li>
+              <li class="page_item">
+                <a href="module-index.html" title="sqlobject package and module reference">Modules</a>
+              </li>
+              <li>
+                <a href="community.html" title="Mailing List">Discuss</a>
+              </li>
+	      <li>
+	        <a href="SQLObject.html">Documentation</a>
+	      </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <hr>
+      <div id="content"><div class="rst-doc">
+  <h1 class="pudge-member-page-heading">SQLObject Developer Guide</h1>
+  <div class="contents topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><a href="#development-installation" class="reference internal" id="id1">Development Installation</a></li>
+<li><a href="#architecture" class="reference internal" id="id2">Architecture</a><ul>
+<li><a href="#columns-validators-and-converters" class="reference internal" id="id3">Columns, validators and converters</a></li>
+</ul>
+</li>
+<li><a href="#style-guide" class="reference internal" id="id4">Style Guide</a></li>
+<li><a href="#testing" class="reference internal" id="id5">Testing</a></li>
+<li><a href="#documentation" class="reference internal" id="id6">Documentation</a></li>
+</ul>
+</div>
+<p id="start">These are some notes on developing SQLObject.</p>
+<div class="section" id="development-installation">
+<h1>Development Installation</h1>
+<p>First install <a href="http://www.formencode.org/en/latest/download.html" class="reference external">FormEncode</a>:</p>
+<pre class="literal-block">
+$ git clone git://github.com/formencode/formencode.git
+$ cd formencode
+$ sudo python setup.py develop
+</pre>
+<p>Then do the same for SQLObject:</p>
+<pre class="literal-block">
+$ git clone git clone git://github.com/sqlobject/sqlobject
+$ cd sqlobject
+$ sudo python setup.py develop
+</pre>
+<p>Or rather fork it and clone your fork. To develop a feature or a bugfix
+create a separate branch, push it to your fork and create a pull request
+to the original repo. That way CI will be triggered to test your code.</p>
+<p>Voila!  The packages are globally installed, but the files from the
+checkout were not copied into <tt class="docutils literal"><span class="pre">site-packages</span></tt>.  See <a href="https://setuptools.readthedocs.io/en/latest/index.html" class="reference external">setuptools</a> for more.</p>
+</div>
+<div class="section" id="architecture">
+<h1>Architecture</h1>
+<p>There are three main kinds of objects in SQLObject: tables, columns and
+connections.</p>
+<p>Tables-related objects are in <a href="sqlobject/main.py.html" class="reference external">sqlobject/main.py</a> module. There are two
+main classes: <tt class="docutils literal">SQLObject</tt> and <tt class="docutils literal">sqlmeta</tt>; the latter is not a
+metaclass but a parent class for <tt class="docutils literal">sqlmeta</tt> attribute in every class -
+the authors tried to move there all attributes and methods not directly
+related to columns to avoid cluttering table namespace.</p>
+<p>Connections are instances of <tt class="docutils literal">DBConnection</tt> class (from
+<a href="sqlobject/dbconnection.py.html" class="reference external">sqlobject/dbconnection.py</a>) and its concrete descendants.
+<tt class="docutils literal">DBConnection</tt> contains generic code for generating SQL, working with
+transactions and so on. Concrete connection classes (like
+<tt class="docutils literal">PostgresConnection</tt> and <tt class="docutils literal">SQLiteConnection</tt>) provide
+backend-specific functionality.</p>
+<div class="section" id="columns-validators-and-converters">
+<h2>Columns, validators and converters</h2>
+<p>Columns are instances of classes from <a href="sqlobject/col.py.html" class="reference external">sqlobject/col.py</a>. There are two
+classes for every column: one is for user to include into an instance of
+SQLObject, an instance of the other is automatically created by
+SQLObject's metaclass. The two classes are usually named <tt class="docutils literal">Col</tt> and
+<tt class="docutils literal">SOCol</tt>; for example, <tt class="docutils literal">BoolCol</tt> and <tt class="docutils literal">SOBoolCol</tt>. User-visible
+classes, descendants of <tt class="docutils literal">Col</tt>, seldom contain any code; the main code
+for a column is in <tt class="docutils literal">SOCol</tt> descendants and in validators.</p>
+<p>Every column has a list of validators. Validators validate input data
+and convert input data to python data and back. Every validator must
+have methods <tt class="docutils literal">from_python</tt> and <tt class="docutils literal">to_python</tt>. The former converts data
+from python to internal representation that will be converted by
+converters to SQL strings. The latter converts data from SQL data to
+python. Also please bear in mind that validators can receive <tt class="docutils literal">None</tt>
+(for SQL <tt class="docutils literal">NULL</tt>) and <tt class="docutils literal">SQLExpression</tt> (an object that represents
+SQLObject expressions); both objects must be passed unchanged by
+validators.</p>
+<p>Converters from <a href="sqlobject/converters.py.html" class="reference external">sqlobject/converters.py</a> aren't visible to users. They
+are used behind the scene to convert objects returned by validators to
+backend-specific SQL strings. The most elaborated converter is
+<tt class="docutils literal">StringLikeConverter</tt>. Yes, it converts strings to strings. It
+converts python strings to SQL strings using backend-specific quoting
+rules.</p>
+<p>Let look into <tt class="docutils literal">BoolCol</tt> as an example. The very <tt class="docutils literal">BoolCol</tt> doesn't
+have any code. <tt class="docutils literal">SOBoolCol</tt> has a method to create <tt class="docutils literal">BoolValidator</tt>
+and methods to create backend-specific column type. <tt class="docutils literal">BoolValidator</tt>
+has identical methods <tt class="docutils literal">from_python</tt> and <tt class="docutils literal">to_python</tt>; the method
+passes <tt class="docutils literal">None</tt>, <tt class="docutils literal">SQLExpression</tt> and bool values unchanged; int and
+objects that have method <tt class="docutils literal">__nonzero__</tt> are converted to bool; other
+objects trigger validation error. Bool values that are returned by call
+to <tt class="docutils literal">from_python</tt> will be converted to SQL strings by
+<tt class="docutils literal">BoolConverter</tt>; bool values from <tt class="docutils literal">to_python</tt> (is is supposed they
+are originated from the backend via DB API driver) are passed to the
+application.</p>
+<p>Objects that are returned from <tt class="docutils literal">from_python</tt> must be registered with
+converters. Another approach for <tt class="docutils literal">from_python</tt> is to return an object
+that has <tt class="docutils literal">__sqlrepr__</tt> method. Such objects convert to SQL strings
+themselves, converters are not used.</p>
+</div>
+</div>
+<div class="section" id="style-guide">
+<h1>Style Guide</h1>
+<p>Generally you should follow the recommendations in <a href="http://www.python.org/dev/peps/pep-0008/" class="reference external">PEP 8</a>, the
+Python Style Guide.  Some things to take particular note of:</p>
+<ul class="simple">
+<li>With a few exceptions sources must be <a href="https://gitlab.com/pycqa/flake8" class="reference external">flake8</a>-clean (and hence
+pep8-clean). Please consider using pre-commit hook installed by
+running <tt class="docutils literal">flake8 <span class="pre">--install-hook</span></tt>.</li>
+</ul>
+<ul>
+<li><p class="first"><strong>No tabs</strong>.  Not anywhere.  Always indent with 4 spaces.</p>
+</li>
+<li><p class="first">We don't stress too much on line length.  But try to break lines up
+by grouping with parenthesis instead of with backslashes (if you
+can).  Do asserts like:</p>
+<pre class="literal-block">
+assert some_condition(a, b), (
+    "Some condition failed, %r isn't right!" % a)
+</pre>
+</li>
+<li><p class="first">But if you are having problems with line length, maybe you should
+just break the expression up into multiple statements.</p>
+</li>
+<li><p class="first">Blank lines between methods, unless they are very small and closely
+bound to each other.</p>
+</li>
+<li><p class="first"><em>Never</em> use the form <tt class="docutils literal">condition and trueValue or falseValue</tt>.
+Break it out and use a variable.</p>
+</li>
+<li><p class="first">Careful of namespace pollution.  SQLObject does allow for <tt class="docutils literal">from
+sqlobject import *</tt> so names should be fairly distinct, or they
+shouldn't be exported in <tt class="docutils literal">sqlobject.__init__</tt>.</p>
+</li>
+<li><p class="first">We're very picky about whitespace.  There's one and only one right way
+to do it.  Good examples:</p>
+<pre class="literal-block">
+short = 3
+longerVar = 4
+
+if x == 4:
+    do stuff
+
+func(arg1='a', arg2='b')
+func((a + b)*10)
+</pre>
+<p><strong>Bad</strong> examples:</p>
+<pre class="literal-block">
+short    =3
+longerVar=4
+
+if x==4: do stuff
+
+func(arg1 = 'a', arg2 = 'b')
+func(a,b)
+func( a, b )
+[ 1, 2, 3 ]
+</pre>
+<p>To us, the poor use of whitespace seems lazy.  We'll think less of
+your code (justified or not) for this very trivial reason.  We will
+fix all your code for you if you don't do it yourself, because we
+can't bear to look at sloppy whitespace.</p>
+</li>
+<li><p class="first">Use <tt class="docutils literal">@@</tt> to mark something that is suboptimal, or where you have a
+concern that it's not right.  Try to also date it and put your
+username there.</p>
+</li>
+<li><p class="first">Docstrings are good.  They should look like:</p>
+<pre class="literal-block">
+class AClass(object):
+    """
+    doc string...
+    """
+</pre>
+<p>Don't use single quotes (''').  Don't bother trying make the string
+less vertically compact.</p>
+</li>
+<li><p class="first">Comments go right before the thing they are commenting on.</p>
+</li>
+<li><p class="first">Methods never, ever, ever start with capital letters.  Generally
+only classes are capitalized.  But definitely never methods.</p>
+</li>
+<li><p class="first">mixedCase is preferred.</p>
+</li>
+<li><p class="first">Use <tt class="docutils literal">cls</tt> to refer to a class.  Use <tt class="docutils literal">meta</tt> to refer to a
+metaclass (which also happens to be a class, but calling a metaclass
+<tt class="docutils literal">cls</tt> will be confusing).</p>
+</li>
+<li><p class="first">Use <tt class="docutils literal">isinstance</tt> instead of comparing types.  E.g.:</p>
+<pre class="literal-block">
+if isinstance(var, str): ...
+# Bad:
+if type(var) is StringType: ...
+</pre>
+</li>
+<li><p class="first">Never, ever use two leading underscores.  This is annoyingly
+private.  If name clashes are a concern, use name mangling instead
+(e.g., <tt class="docutils literal">_SO_blahblah</tt>).  This is essentially the same thing as
+double-underscore, only it's transparent where double underscore
+obscures.</p>
+</li>
+<li><p class="first">Module names should be unique in the package.  Subpackages shouldn't
+share module names with sibling or parent packages.  Sadly this
+isn't possible for <tt class="docutils literal">__init__</tt>, but it's otherwise easy enough.</p>
+</li>
+<li><p class="first">Module names should be all lower case, and probably have no
+underscores (smushedwords).</p>
+</li>
+</ul>
+</div>
+<div class="section" id="testing">
+<h1>Testing</h1>
+<p>Tests are important.  Tests keep everything from falling apart.  All
+new additions should have tests.</p>
+<p>Testing uses py.test, an alternative to <tt class="docutils literal">unittest</tt>.  It is available
+at <a href="http://pytest.org/" class="reference external">http://pytest.org/</a> and <a href="https://pypi.python.org/pypi/pytest" class="reference external">https://pypi.python.org/pypi/pytest</a>.  Read its
+<a href="http://docs.pytest.org/en/latest/getting-started.html" class="reference external">getting started</a> document for more.</p>
+<p>To actually run the test, you have to give it a database to connect to.
+You do so with the option <tt class="docutils literal"><span class="pre">-D</span></tt>. You can either give a complete URI or
+one of several shortcuts like <tt class="docutils literal">mysql</tt> (these shortcuts are defined in
+the top of <tt class="docutils literal">tests/dbtest.py</tt>).</p>
+<p>All the tests are modules in <tt class="docutils literal">sqlobject/tests</tt>.  Each module tests
+one kind of feature, more or less.  If you are testing a module, call
+the test module <tt class="docutils literal">tests/test_modulename.py</tt> -- only modules that
+start with <tt class="docutils literal">test_</tt> will be picked up by py.test.</p>
+<p>The "framework" for testing is in <tt class="docutils literal">tests/dbtest</tt>.  There's a couple of
+important functions:</p>
+<p><tt class="docutils literal">setupClass(soClass)</tt> creates the tables for the class.  It tries to
+avoid recreating tables if not necessary.</p>
+<p><tt class="docutils literal">supports(featureName)</tt> checks if the database backend supports the
+named feature.  What backends support what is defined at the top of
+<tt class="docutils literal">dbtest</tt>.</p>
+<p>If you <tt class="docutils literal">import *</tt> you'll also get py.test's version of <a href="http://docs.pytest.org/en/latest/assert.html#assertions-about-expected-exceptions" class="reference external">raises</a>, an
+<tt class="docutils literal">inserts</tt> function that can create instances for you, and a couple
+miscellaneous functions.</p>
+<p>If you submit a patch or implement a feature without a test, we'll be
+forced to write the test.  That's no fun for us, to just be writing
+tests.  So please, write tests; everything at least needs to be
+exercised, even if the tests are absolutely complete.</p>
+<p>We now use Travis CI and Circle CI to run tests. See the statuses:</p>
+<a href="https://travis-ci.org/sqlobject/sqlobject" class="reference external image-reference"><img src="https://travis-ci.org/sqlobject/sqlobject.svg?branch=master" alt="https://travis-ci.org/sqlobject/sqlobject.svg?branch=master"></a>
+<a href="https://circleci.com/gh/sqlobject/sqlobject" class="reference external image-reference"><img src="https://circleci.com/gh/sqlobject/sqlobject.svg?style=shield" alt="https://circleci.com/gh/sqlobject/sqlobject.svg?style=shield"></a>
+<p>To avoid triggering unnecessary test run at CI services add text <a href="https://docs.travis-ci.com/user/customizing-the-build/#skipping-a-build" class="reference external">[skip ci]</a> or
+<a href="https://circleci.com/docs/skip-a-build/" class="reference external">[ci skip]</a> anywhere in your commit
+messages for commits that don't change code (documentation updates and such).</p>
+<p>We use <a href="https://pypi.python.org/pypi/coverage" class="reference external">coverage.py</a>
+to measures code coverage by tests and upload the result for analyzis to
+<a href="https://coveralls.io/github/sqlobject/sqlobject" class="reference external">Coveralls</a> and
+<a href="https://codecov.io/gh/sqlobject/sqlobject" class="reference external">Codecov</a>:</p>
+<a href="https://coveralls.io/github/sqlobject/sqlobject?branch=master" class="reference external image-reference"><img src="https://coveralls.io/repos/github/sqlobject/sqlobject/badge.svg?branch=master" alt="https://coveralls.io/repos/github/sqlobject/sqlobject/badge.svg?branch=master"></a>
+<a href="https://codecov.io/gh/sqlobject/sqlobject" class="reference external image-reference"><object type="image/svg+xml" data="https://codecov.io/gh/sqlobject/sqlobject/branch/master/graph/badge.svg">https://codecov.io/gh/sqlobject/sqlobject/branch/master/graph/badge.svg</object></a>
+</div>
+<div class="section" id="documentation">
+<h1>Documentation</h1>
+<p>Please write documentation.  Documentation should live in the docs/
+directory.  Pudge converts documentation from Restructured Text to
+HTML.  It presently requires kid 0.9.6, which must be obtained
+separately (for instance, from <a href="https://pypi.python.org/pypi/kid/0.9.6" class="reference external">https://pypi.python.org/pypi/kid/0.9.6</a>).</p>
+<a href="https://sourceforge.net/projects/sqlobject" class="reference external image-reference"><img src="https://sourceforge.net/sflogo.php?group_id=74338&amp;type=10" alt="Get SQLObject at SourceForge.net. Fast, secure and Free Open Source software downloads" style="width: 80px; height: 15px;" class="noborder align-center"></a>
+</div>
+</div></div>
+      <div id="footer">
+        <p style="float: left;">
+          built with 
+          <a href="http://lesscode.org/projects/pudge/">pudge/0.1.3</a> |
+		      original design by 
+          <a href="http://blog.ratterobert.com/">ratter / robert</a>
+	      </p>
+        <div>
+        <br> <!--
+        <a name="search">
+          <form method="get" id="searchform" 
+                action="http://lesscode.org/blog/index.php">
+            <div>
+              <input type="text" value="" name="s" id="s" />
+              <input type="submit" id="searchsubmit" value="Search" />
+            </div>
+          </form>
+        </a> -->
+        <br>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
