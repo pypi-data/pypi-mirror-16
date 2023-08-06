@@ -1,0 +1,17 @@
+.gitignore
+.travis.yml
+CHANGELOG.md
+LICENSE.txt
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+tox.ini
+racing_data/__init__.py
+racing_data.egg-info/PKG-INFO
+racing_data.egg-info/SOURCES.txt
+racing_data.egg-info/dependency_links.txt
+racing_data.egg-info/entry_points.txt
+racing_data.egg-info/requires.txt
+racing_data.egg-info/top_level.txt
+tests/racing_data_test.py

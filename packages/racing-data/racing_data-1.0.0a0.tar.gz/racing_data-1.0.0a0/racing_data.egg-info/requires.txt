@@ -1,0 +1,7 @@
+setuptools_scm
+
+[dev]
+check-manifest
+
+[test]
+tox
