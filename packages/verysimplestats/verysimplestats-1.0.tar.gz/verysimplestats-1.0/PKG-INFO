@@ -1,0 +1,22 @@
+Metadata-Version: 1.1
+Name: verysimplestats
+Version: 1.0
+Summary: Statistics for humans
+Home-page: http://github.com/PierreSelim/verysimplestats
+Author: PierreSelim
+Author-email: ps.huard@gmail.com
+License: MIT
+Description: Statistics for humans
+        =====================
+        
+        Provides mean, median, variance, standard deviation, correlation,
+        linear regression in simple python.
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering

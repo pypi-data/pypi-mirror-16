@@ -1,0 +1,9 @@
+MANIFEST.in
+README.md
+setup.py
+verysimplestats/__init__.py
+verysimplestats/statistics.py
+verysimplestats.egg-info/PKG-INFO
+verysimplestats.egg-info/SOURCES.txt
+verysimplestats.egg-info/dependency_links.txt
+verysimplestats.egg-info/top_level.txt
