@@ -1,0 +1,15 @@
+MANIFEST.in
+setup.cfg
+setup.py
+p55py/__init__.py
+p55py/_version.py
+p55py/example.py
+p55py.egg-info/PKG-INFO
+p55py.egg-info/SOURCES.txt
+p55py.egg-info/dependency_links.txt
+p55py.egg-info/not-zip-safe
+p55py.egg-info/requires.txt
+p55py.egg-info/top_level.txt
+p55py/static/extension.js
+p55py/static/index.js
+p55py/static/index.js.map
