@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: jot-notes
+Version: 0.1.0
+Summary: A simple utility for writing notes without remembering where you put them.
+Home-page: https://github.com/dschep/jot
+Author: Daniel Schep
+Author-email: dschep@gmail.com
+License: GPLv3
+Description: UNKNOWN
+Keywords: notes git markdown
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
