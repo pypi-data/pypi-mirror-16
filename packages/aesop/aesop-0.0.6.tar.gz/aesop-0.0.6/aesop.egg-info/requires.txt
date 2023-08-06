@@ -1,0 +1,6 @@
+prody
+gridDataFormats
+scipy
+numpy
+modeller
+python-dateutil
