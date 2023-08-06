@@ -1,0 +1,7 @@
+setup.py
+VerilogLintBear/VerilogLintBear.py
+VerilogLintBear/__init__.py
+VerilogLintBear.egg-info/PKG-INFO
+VerilogLintBear.egg-info/SOURCES.txt
+VerilogLintBear.egg-info/dependency_links.txt
+VerilogLintBear.egg-info/top_level.txt
