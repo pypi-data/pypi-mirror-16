@@ -1,0 +1,14 @@
+Metadata-Version: 2.0
+Name: ansible-inventory-grapher
+Version: 2.2.0
+Summary: Creates graphs representing ansible inventory
+Home-page: http://github.com/willthames/ansible-inventory-grapher
+Author: Will Thames
+Author-email: will@thames.id.au
+License: GPLv3
+Platform: UNKNOWN
+Requires-Dist: ansible (>=1.9)
+
+UNKNOWN
+
+
