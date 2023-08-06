@@ -1,0 +1,7 @@
+tornado
+GitPython
+requests
+
+[dev]
+
+[test]
