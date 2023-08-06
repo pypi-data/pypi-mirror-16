@@ -1,0 +1,8 @@
+setup.py
+mmal/__init__.py
+mmal/pandas.py
+mmal_pandas.egg-info/PKG-INFO
+mmal_pandas.egg-info/SOURCES.txt
+mmal_pandas.egg-info/dependency_links.txt
+mmal_pandas.egg-info/requires.txt
+mmal_pandas.egg-info/top_level.txt
