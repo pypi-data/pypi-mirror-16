@@ -1,0 +1,24 @@
+Metadata-Version: 2.0
+Name: multitude
+Version: 0.1.0
+Summary: A couple of useful data structures
+Home-page: https://github.com/chucksmash/multitude.git
+Author: Chuck Bassett
+Author-email: iamchuckb@gmail.com
+License: MIT
+Keywords: d,i,r,e,c,t,e,d, ,g,r,a,p,h, ,o,r,d,e,r,e,d, ,s,e,t, ,s,t,r,u,c,t,u,r,e,s
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+
+# multitude
+
+A silly name for a library of data structures.
+
+
