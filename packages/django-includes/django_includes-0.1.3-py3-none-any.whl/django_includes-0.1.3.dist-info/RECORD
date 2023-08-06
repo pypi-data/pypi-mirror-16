@@ -1,0 +1,12 @@
+django_includes/__init__.py,sha256=rHpbzsGo90wiagsbCmYVvfdjQHACrB5Yl8MYyfx9PLg,73
+django_includes/jinja2.py,sha256=8vHb9ZDX70JHDAzi3Ks74UXx1qHQ1nLT4yJTahbKv1U,2846
+django_includes/middleware.py,sha256=x0gXHPkf_FZzCKeBO4cjy32uImxkWxtMlvqtGpPibmo,1397
+django_includes/settings.py,sha256=r-HQamI0kWSEz4VrB7d-XAx6zyUBFuL5fjHImCTzB8o,23
+django_includes/utils.py,sha256=tMfPtXIE11pHKrmPIFro8nfloGWGyN7vJ7j5sx_qELc,449
+django_includes/views.py,sha256=YRUwx0gMcOyQN9ojlIY-bwJbLgc1ZnHCaaVCqxOjyS8,2913
+django_includes-0.1.3.dist-info/DESCRIPTION.rst,sha256=WG4_B7GCbr5Oqdn7fjtcdb3_3cyihTBnApFjtsj8akQ,132
+django_includes-0.1.3.dist-info/METADATA,sha256=EIxtkuzeRd9cmKgJ0caYAvxQwGwRtftw7n_CGNmQNfk,1188
+django_includes-0.1.3.dist-info/RECORD,,
+django_includes-0.1.3.dist-info/WHEEL,sha256=rNo05PbNqwnXiIHFsYm0m22u4Zm6YJtugFG2THx4w3g,92
+django_includes-0.1.3.dist-info/metadata.json,sha256=M8nSHQO-lm97OJg4x_AurksBJsLGQUMI9tPP8Ds_wso,931
+django_includes-0.1.3.dist-info/top_level.txt,sha256=hr-0-Rmd-dgchqszkyV_m-9WbN7KD4YB2qSRCBjjIao,16
