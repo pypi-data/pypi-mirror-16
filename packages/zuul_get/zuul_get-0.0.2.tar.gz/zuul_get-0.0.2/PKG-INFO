@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: zuul_get
+Version: 0.0.2
+Summary: Retrieves CI job URLs from OpenStack Zuul
+Home-page: https://github.com/major/zuul_get
+Author: Major Hayden
+Author-email: major@mhtx.net
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
