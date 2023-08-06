@@ -1,0 +1,9 @@
+ansible:
+  playbooks_dir: examples/playbooks
+  inventory_path: examples/inventory.txt
+
+routing_keys:
+    - org.fedoraproject.prod.ansible.playbook.start
+    - org.fedoraproject.prod.buildsys.build.state.change
+
+plugin: fedmsg
