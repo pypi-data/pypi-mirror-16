@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: locate-me
+Version: 0.0.1a
+Summary: Python CLI tool that returns hidden GPS coordinates from photos and locates it on a google map
+Home-page: https://github.com/Zabanaa/locate-me
+Author: Karim Cheurfi
+Author-email: karim.cheurfi@gmail.com
+License: WTFPL
+Description: UNKNOWN
+Keywords: exif data gps info google maps
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Topic :: Multimedia :: Graphics :: Capture :: Digital Camera
+Classifier: Programming Language :: Python :: 3
