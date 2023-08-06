@@ -1,0 +1,14 @@
+stormhttp/__init__.py,sha256=gxmpRCPNR1jxOvKDoIMUEjcGilWinprAlJIrXIOu-MI,1017
+stormhttp/cookies.py,sha256=3X_uyOyFomHEkE2JS2ntIwIa5CnAoDXTvCmwlyPzV08,3280
+stormhttp/headers.py,sha256=h6QdeNiruAh8q7_fcSyeOPbZcKDzTY5l9jBNGgW_2eY,981
+stormhttp/message.py,sha256=06ZvgccZTnfy96UFoZSFqUZh2seUREVtelIABAWBNgw,4220
+stormhttp/parser.py,sha256=MnIOa3p5Ukt2HjHtnCKiRDe_Abzpm5hqxGSG7zMq0ZA,1869
+stormhttp/request.py,sha256=zvKxRtsQDzDoWZrR-UUsmtX7oohupEIpZcQuVxKz3xI,908
+stormhttp/response.py,sha256=fEBm2N9vF_ngozymUkzWQd7dkDR1EIn5E3lYS7OYDt0,960
+stormhttp/url.py,sha256=a_liucEF6bEeIu0JBOy3dhNSCtCGALtsO5afRe2Y44A,593
+stormhttp-0.0.16.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+stormhttp-0.0.16.dist-info/METADATA,sha256=CgrfpE1A5OQ8DtWyQnsWcqFbdDy-K4E9T4pQxZcOO70,758
+stormhttp-0.0.16.dist-info/RECORD,,
+stormhttp-0.0.16.dist-info/WHEEL,sha256=Ds0ba8WsPJtjBPzEMyPOBG3qfPa6B4mlzB-vhzorIZs,97
+stormhttp-0.0.16.dist-info/metadata.json,sha256=NS1wtl-Sm73Equ8fbbbydPH4yLCmm_E7w06USTiark4,1006
+stormhttp-0.0.16.dist-info/top_level.txt,sha256=_Ed5NkJ6_tGT2yjsFd06ghSS6NSk9uQUUEXusdIxEwc,10
