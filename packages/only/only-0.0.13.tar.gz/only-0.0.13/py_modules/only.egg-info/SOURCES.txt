@@ -1,0 +1,12 @@
+MANIFEST.in
+description.txt
+keywords.txt
+requirements.txt
+setup.py
+version.txt
+Examples/.DS_Store
+py_modules/only.py
+py_modules/only.egg-info/PKG-INFO
+py_modules/only.egg-info/SOURCES.txt
+py_modules/only.egg-info/dependency_links.txt
+py_modules/only.egg-info/top_level.txt
