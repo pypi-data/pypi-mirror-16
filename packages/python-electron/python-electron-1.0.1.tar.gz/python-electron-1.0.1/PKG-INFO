@@ -1,0 +1,49 @@
+Metadata-Version: 1.1
+Name: python-electron
+Version: 1.0.1
+Summary: A python interface for Apache Electron CLI
+Home-page: http://github.com/talpor/python-cordova
+Author: Oshane Bailey
+Author-email: b4.oshany@gmail.com
+License: UNKNOWN
+Description: 
+        python-electron
+        ===============================================
+        
+        This is a very simple Python library to interface with the Electron-Packager command line tool.
+        
+        
+        Key concepts
+        ===============================================
+        - Interact with the Electron-Packager directly from Python
+        - Enables building and archiving Electron applications from your Python code
+        
+        
+        Usage
+        ===============================================
+        
+        Example::
+        
+           import electron
+        
+           application = electron.App(
+               APPLICATION_NAME,
+               APPLICATION_FOLDER
+           )
+           application.build('android') # or any installed platform
+           application.archive('ios') # or any installed platform
+        
+Keywords: python,electron,electron-packager,electron-app
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Localization
+Classifier: Topic :: Utilities
