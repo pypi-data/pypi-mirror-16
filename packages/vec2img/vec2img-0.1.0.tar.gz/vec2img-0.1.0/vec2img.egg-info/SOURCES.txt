@@ -1,0 +1,10 @@
+README.rst
+setup.py
+vec2img/__init__.py
+vec2img/command.py
+vec2img.egg-info/PKG-INFO
+vec2img.egg-info/SOURCES.txt
+vec2img.egg-info/dependency_links.txt
+vec2img.egg-info/entry_points.txt
+vec2img.egg-info/requires.txt
+vec2img.egg-info/top_level.txt

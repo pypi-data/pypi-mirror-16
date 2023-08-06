@@ -1,0 +1,3 @@
+[console_scripts]
+vec2img = vec2img.command:main
+
