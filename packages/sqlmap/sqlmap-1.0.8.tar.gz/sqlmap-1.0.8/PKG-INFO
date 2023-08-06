@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: sqlmap
+Version: 1.0.8
+Summary: Automatic SQL injection and database takeover tool
+Home-page: https://sqlmap.org
+Author: Bernardo Damele Assumpcao Guimaraes, Miroslav Stampar
+Author-email: bernardo@sqlmap.org, miroslav@sqlmap.org
+License: GPLv2
+Download-URL: https://github.com/sqlmapproject/sqlmap/archive/1.0.8.zip
+Description: UNKNOWN
+Platform: UNKNOWN
