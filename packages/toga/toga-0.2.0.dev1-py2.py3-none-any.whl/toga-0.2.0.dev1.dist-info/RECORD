@@ -1,0 +1,15 @@
+toga/__init__.py,sha256=Sx4UZMIb7tM9TlDnQFqrVrt525SKOb3optB11oR2-Lo,3020
+toga/compat.py,sha256=jlyC7jb3S5Ep6sPnYAdTDk9ao4TCl5N8uwSjDioC9hc,238
+toga/constraint.py,sha256=H0Ar9z0hlYH5Sz36gP5mKEt1maw9QLrgGK-Ack3Owe8,5886
+toga/widget.py,sha256=MDoLFxK5C2Mmh3nrIuyIcqehS7s6aqpRPXWHeIYHP_o,2754
+toga/constants/__init__.py,sha256=RQaV2VG0NHmogjMBS7CNIO6Jmk1JkZ7B_HdvFIsKSLw,25
+toga/constants/alignment.py,sha256=e_B5J_3fTPEkwQsmfh9CZZR4awMKnrG8PFxG9IJmHu4,95
+toga/constants/key.py,sha256=z09kb4dsd9TzgBDi0Lj9sYYQ1uEzL-FrwJo_phG_5sI,10332
+toga/resources/tiberius-32.png,sha256=YCcgs_QpiNumOtA48cvY9rR8b9t8DtLyhRJcaUCOCKg,1970
+toga/resources/tiberius.icns,sha256=-4X9Wh1tgnHFycNxkOR0EPu_e_EWSA_fEzWkjxr3fMc,396417
+toga-0.2.0.dev1.dist-info/DESCRIPTION.rst,sha256=tIlXo0b9Uf2QBjTT0WVBr0mhciTfHuO9EuBSifi4qHs,4208
+toga-0.2.0.dev1.dist-info/METADATA,sha256=WeKLb0E-w28PtXrQ5dbbbax7uta0sUV-VW8JzPn1hw0,5367
+toga-0.2.0.dev1.dist-info/RECORD,,
+toga-0.2.0.dev1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+toga-0.2.0.dev1.dist-info/metadata.json,sha256=0hqUnVCCkkaS6xCfyg1rslD6evCJUzHg-GfmepUEDWo,1252
+toga-0.2.0.dev1.dist-info/top_level.txt,sha256=ysG4XGS60-DA9TTp5qlvozscyx6iBOl7KJY30CiSTUU,5
