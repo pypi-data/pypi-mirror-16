@@ -1,0 +1,8 @@
+filelock
+python-daemon
+six
+websocket-client
+
+[dev]
+
+[test]
