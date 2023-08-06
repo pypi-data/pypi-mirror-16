@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: Meh
+Version: 1.1
+Summary: Python configuration files in Python.
+Home-page: https://github.com/PhilipTrauner/Meh
+Author: Philip Trauner
+Author-email: philip.trauner@aol.com
+License: UNKNOWN
+Description: Python configuration files in Python.
+Keywords: config,cfg,meh,py,json
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
