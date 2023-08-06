@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: CW_stegano
+Version: 1.0.7
+Summary: A fun little python script that encodes and decodes strings and images
+Patch #2:
+there were some errors with the v1.0.5, this patch should fix those errors.
+Home-page: https://github.com/CalderWhite/steganography
+Author: Calder White
+Author-email: calderwhite1@gmail.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
