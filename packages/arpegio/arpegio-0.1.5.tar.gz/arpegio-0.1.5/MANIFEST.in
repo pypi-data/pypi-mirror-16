@@ -1,0 +1,5 @@
+include README.rst
+include LICENSE
+include arpegio/blog/templates/**/*.html
+include arpegio/core/templates/**/*.html
+include arpegio/pages/templates/**/*.html
