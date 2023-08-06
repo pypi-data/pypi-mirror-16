@@ -1,0 +1,9 @@
+setup.py
+pyAPIUSBP/AIO.py
+pyAPIUSBP/DIO.py
+pyAPIUSBP/LICENSE.txt
+pyAPIUSBP/__init__.py
+pyAPIUSBP.egg-info/PKG-INFO
+pyAPIUSBP.egg-info/SOURCES.txt
+pyAPIUSBP.egg-info/dependency_links.txt
+pyAPIUSBP.egg-info/top_level.txt
