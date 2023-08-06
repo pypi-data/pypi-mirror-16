@@ -1,0 +1,5 @@
+nodeconductor>=0.101.2
+lxml>=3.2.0
+
+[dev]
+Sphinx==1.2.2
