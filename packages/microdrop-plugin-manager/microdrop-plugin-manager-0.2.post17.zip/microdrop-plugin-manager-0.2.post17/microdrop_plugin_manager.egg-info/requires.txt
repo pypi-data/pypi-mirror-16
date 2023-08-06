@@ -1,0 +1,5 @@
+configobj
+path-helpers
+pip-helpers>=0.6
+progressbar2
+si-prefix>=0.4.post3
