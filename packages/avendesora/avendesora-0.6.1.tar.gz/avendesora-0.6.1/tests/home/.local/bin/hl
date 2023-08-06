@@ -1,0 +1,4 @@
+#!/usr/bin/python3
+# EASY-INSTALL-SCRIPT: 'hl==1.0','hl'
+__requires__ = 'hl==1.0'
+__import__('pkg_resources').run_script('hl==1.0', 'hl')
