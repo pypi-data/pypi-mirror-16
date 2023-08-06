@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: tasks-for-notebook
+Version: 0.0.7
+Summary: TODO list on iPython notebook
+Home-page: https://github.com/llby/tasks-for-notebook
+Author: llby
+Author-email: llby@shingor.net
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Topic :: Utilities
