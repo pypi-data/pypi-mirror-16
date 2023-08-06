@@ -1,0 +1,12 @@
+metaappscriptsdk/__init__.py,sha256=kbO-SVvtUDhYSN33MKYk8WkM6DsnFcfcN54rYGIfyYA,1347
+metaappscriptsdk/info.py,sha256=hveCp7r553NZzOdZJXBgMte8dVPuoDO0TpoXJ9g8J0g,110
+metaappscriptsdk/logger/__init__.py,sha256=8s184Xt4uK_6qwlAkr1DYcEsOdEgLU9sWAWT6iET4dY,2675
+metaappscriptsdk/logger/bulk_logger.py,sha256=dowGF6Jd5xIOaDWw_JyDGFKu9Jj48hX6DVszx7vBFh8,1618
+metaappscriptsdk/logger/custom_fluent.py,sha256=PGHdi7lufN9Zk7avxTiNVnZLtbMi2ub9Ky2KBRccVCE,4459
+metaappscriptsdk/logger/logger.py,sha256=J-8At4U0DPkpYhhUcovWxIZzXgwXyBbf0sIk3bXHa-4,1091
+metaappscriptsdk-0.0.7.dist-info/DESCRIPTION.rst,sha256=mx048Aqiaz4-MTAQ3LmpldI24YezDQIWUkYSTdp8Co8,4088
+metaappscriptsdk-0.0.7.dist-info/METADATA,sha256=bi8Jo766gFaHBdJxL-tCYDIY5PLhonn1q84kCSWXRiY,4613
+metaappscriptsdk-0.0.7.dist-info/RECORD,,
+metaappscriptsdk-0.0.7.dist-info/WHEEL,sha256=GrqQvamwgBV4nLoJe0vhYRSWzWsx7xjlt74FT0SWYfE,110
+metaappscriptsdk-0.0.7.dist-info/metadata.json,sha256=Yybs500X02QKdVsHtjKswmNvkrGySoNPsNFh9Yb4uSM,701
+metaappscriptsdk-0.0.7.dist-info/top_level.txt,sha256=O1LwYMvljs422xJQCn2tzwmlF65tERYqCZvg0XQ14Os,17
