@@ -1,0 +1,10 @@
+README.rst
+setup.cfg
+setup.py
+usajobs/__init__.py
+usajobs.egg-info/PKG-INFO
+usajobs.egg-info/SOURCES.txt
+usajobs.egg-info/dependency_links.txt
+usajobs.egg-info/not-zip-safe
+usajobs.egg-info/requires.txt
+usajobs.egg-info/top_level.txt
