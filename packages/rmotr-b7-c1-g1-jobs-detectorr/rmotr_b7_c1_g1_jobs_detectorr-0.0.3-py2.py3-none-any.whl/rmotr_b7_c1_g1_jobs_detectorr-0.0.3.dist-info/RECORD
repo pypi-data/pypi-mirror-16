@@ -1,0 +1,11 @@
+jobs_detector/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jobs_detector/exceptions.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+jobs_detector/main.py,sha256=uIxEH8U2ykdiA2E9CQz3isiE-lBBoYRSYbi_BKLObpU,4564
+jobs_detector/settings.py,sha256=LBz9UzEPerNZ4R6iqXSoYQHydP17wIT3p2pXEUBk2zc,135
+rmotr_b7_c1_g1_jobs_detectorr-0.0.3.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+rmotr_b7_c1_g1_jobs_detectorr-0.0.3.dist-info/METADATA,sha256=qOfaCiBJjRmthbYP25ImKjmZlh7qg8RWf1i4LPkVnUU,253
+rmotr_b7_c1_g1_jobs_detectorr-0.0.3.dist-info/RECORD,,
+rmotr_b7_c1_g1_jobs_detectorr-0.0.3.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+rmotr_b7_c1_g1_jobs_detectorr-0.0.3.dist-info/entry_points.txt,sha256=FOll3YLG6u_io1EvdvVgF5b2YRaLCbMkrFDccV7ynr8,68
+rmotr_b7_c1_g1_jobs_detectorr-0.0.3.dist-info/metadata.json,sha256=_GXHOgmJKLeu6BHmGfrMbmrWkpTeJFn1IX9aDu40bAA,633
+rmotr_b7_c1_g1_jobs_detectorr-0.0.3.dist-info/top_level.txt,sha256=Dh7zMRYXWNt27IRSf8-lguYGGB3jm9Zp8zsKXSXA8pc,14
