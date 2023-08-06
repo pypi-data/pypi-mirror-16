@@ -1,0 +1,3 @@
+[console_scripts]
+unitth = unitth.bin.run:main
+
