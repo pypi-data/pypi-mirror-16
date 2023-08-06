@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+lcalc/__init__.py
+lcalc/lcalc.py
+lcalc.egg-info/PKG-INFO
+lcalc.egg-info/SOURCES.txt
+lcalc.egg-info/dependency_links.txt
+lcalc.egg-info/top_level.txt
