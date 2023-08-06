@@ -1,0 +1,4 @@
+[console_scripts]
+oh = omnihash.omnihash:main
+omnihash = omnihash.omnihash:main
+
