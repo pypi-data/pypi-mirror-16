@@ -1,0 +1,7 @@
+setup.py
+ESLintBear/ESLintBear.py
+ESLintBear/__init__.py
+ESLintBear.egg-info/PKG-INFO
+ESLintBear.egg-info/SOURCES.txt
+ESLintBear.egg-info/dependency_links.txt
+ESLintBear.egg-info/top_level.txt
