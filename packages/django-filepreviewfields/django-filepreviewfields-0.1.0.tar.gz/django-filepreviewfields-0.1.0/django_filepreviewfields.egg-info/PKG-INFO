@@ -1,0 +1,68 @@
+Metadata-Version: 1.1
+Name: django-filepreviewfields
+Version: 0.1.0
+Summary: Fields for previewing image and video uploaded files
+Home-page: https://github.com/cereigido/django-filepreviewfields/
+Author: Paulo Cereigido
+Author-email: paulocereigido@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/cereigido/django-filepreviewfields//tarball/0.1.0
+Description: django-filepreviewfields
+        ========================
+        
+        > Fields for previewing image and video uploaded files
+        
+        Installation
+        ------------
+        
+        ```sh
+        pip install django-filepreviewfields
+        ```
+        
+        Adding to installed apps
+        ------------------------
+        
+        - To use file preview fields, you have to add it to your INSTALLED_APPS on your project's settings.py so the needed static files can be loaded:
+        
+        ```python
+            INSTALLED_APPS = (
+                ...
+                'filepreviewfields',
+            )
+        ```
+        
+        Using SortedManyToManyField
+        ---------------------------
+        
+        - To use SortedManyToMany field, just create a field as if you were adding the default ManyToMany
+        
+        ```python
+            from django.db import models
+            from filepreviewfields.fields import ImagePreviewField, VideoPreviewField
+        
+            class Movie(models.Model):
+                ...
+                cover = ImagePreviewField()
+                video = VideoPreviewField()
+        
+        ```
+        
+        License
+        -------
+        
+        MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Database
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Internet :: WWW/HTTP :: Site Management
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
