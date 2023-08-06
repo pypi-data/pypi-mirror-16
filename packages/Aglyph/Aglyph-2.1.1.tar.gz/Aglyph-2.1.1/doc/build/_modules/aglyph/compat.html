@@ -1,0 +1,709 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aglyph.compat &mdash; Aglyph 2.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Aglyph 2.1.1 documentation" href="../../index.html"/>
+        <link rel="up" title="aglyph" href="../aglyph.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Aglyph
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../whats-new.html">What&#8217;s new in release 2.1.1?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get-started.html">Getting started with Aglyph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cookbook.html">Aglyph cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../api-ref.html">Aglyph API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../testing.html">Aglyph 2.1.1 testing summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap for future releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Aglyph</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../aglyph.html">aglyph</a> &raquo;</li>
+      
+    <li>aglyph.compat</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for aglyph.compat</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: UTF-8 -*-</span>
+
+<span class="c1"># Copyright (c) 2006-2016 Matthew Zipay &lt;mattz@ninthtest.net&gt;</span>
+<span class="c1">#</span>
+<span class="c1"># Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span class="c1"># of this software and associated documentation files (the &quot;Software&quot;), to deal</span>
+<span class="c1"># in the Software without restriction, including without limitation the rights</span>
+<span class="c1"># to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span class="c1"># copies of the Software, and to permit persons to whom the Software is</span>
+<span class="c1"># furnished to do so, subject to the following conditions:</span>
+<span class="c1">#</span>
+<span class="c1"># The above copyright notice and this permission notice shall be included in</span>
+<span class="c1"># all copies or substantial portions of the Software.</span>
+<span class="c1">#</span>
+<span class="c1"># THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span class="c1"># IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span class="c1"># FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span class="c1"># AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span class="c1"># LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span class="c1"># OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE</span>
+<span class="c1"># SOFTWARE.</span>
+
+<span class="sd">&quot;&quot;&quot;This module defines constants, functions, and classes that are used</span>
+<span class="sd">to enable Python version and variant cross-compatibility.</span>
+
+<span class="sd">There are two primary goals:</span>
+
+<span class="sd">#. Make the differences between Python 2 ``str``/``unicode`` and</span>
+<span class="sd">   Python 3 ``bytes``/``str`` as transparent as possible.</span>
+<span class="sd">#. Hide Python API differences behind aliases that can be used in any</span>
+<span class="sd">   version or variant.</span>
+
+<span class="sd">Keeping these constructs contained in a separate module makes them</span>
+<span class="sd">easier to maintain (and easier to remove later).</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Matthew Zipay &lt;mattz@ninthtest.net&gt;&quot;</span>
+<span class="n">__version__</span> <span class="o">=</span> <span class="s2">&quot;2.1.0&quot;</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">types</span>
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
+
+<span class="c1"># TODO: Need a custom OrderedDict (Jython 2.5.3 collections module doesn&#39;t have it)</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;ClassAndFunctionTypes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DataType&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DoctypeTreeBuilder&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;etree_iter&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;is_callable&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;is_gae&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;is_ironpython&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;is_jython&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;is_pypy&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;is_python_2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;is_python_3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;is_stackless&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;log_compatibility&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;new_instance&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;NoOpLoggingHandler&quot;</span><span class="p">,</span>   <span class="c1"># deprecated; remove in 3.0.0</span>
+    <span class="s2">&quot;NULL_LOGGING_HANDLER&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;OrderedDict&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;platform_detail&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;python_implementation&quot;</span><span class="p">,</span>    <span class="c1"># deprecated; remove in 3.0.0</span>
+    <span class="s2">&quot;RESTRICTED_BUILTINS&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;StringTypes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TextType&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="c1">#: True if the Python MAJOR version is 2.</span>
+<span class="n">is_python_2</span> <span class="o">=</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">#: True if the Python MAJOR version is 3.</span>
+<span class="n">is_python_3</span> <span class="o">=</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1">#: The name of the runtime Python implementation (e.g. &quot;CPython&quot;, &quot;Jython&quot;).</span>
+<span class="n">_py_impl</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">platform</span><span class="p">,</span> <span class="s2">&quot;python_implementation&quot;</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="s2">&quot;Python&quot;</span><span class="p">)()</span>
+
+<span class="c1"># platform.python_implementation() has proven to be somewhat unreliable</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="s2">&quot;JYTHON_JAR&quot;</span><span class="p">)):</span>
+    <span class="n">_py_impl</span> <span class="o">=</span> <span class="s2">&quot;Jython&quot;</span>
+<span class="k">elif</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">sys</span><span class="p">,</span> <span class="s2">&quot;pypy_version_info&quot;</span><span class="p">)):</span>
+    <span class="n">_py_impl</span> <span class="o">=</span> <span class="s2">&quot;PyPy&quot;</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">clr</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">_has_clr</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">_has_clr</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1">#: True if the runtime Python implementation is IronPython.</span>
+<span class="n">is_ironpython</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;ironpython&quot;</span> <span class="ow">in</span> <span class="n">_py_impl</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span> <span class="ow">and</span> <span class="n">_has_clr</span>
+
+<span class="c1">#: True if the runtime Python implementation is Jython.</span>
+<span class="n">is_jython</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;jython&quot;</span> <span class="ow">in</span> <span class="n">_py_impl</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+<span class="c1">#: True if the runtime Python implementation is PyPy.</span>
+<span class="n">is_pypy</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;pypy&quot;</span> <span class="ow">in</span> <span class="n">_py_impl</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+<span class="c1"># PYVER: PyPy includes support for stackless, but as of the 3.2.5-compatible</span>
+<span class="c1"># PyPy 2.4.0 release, importing the &quot;stackless&quot; module causes an AttributeError</span>
+<span class="c1"># (see https://github.com/eventlet/eventlet/issues/83)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">stackless</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">_has_stackless</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">_py_impl</span> <span class="o">=</span> <span class="s2">&quot;Stackless Python&quot;</span>
+    <span class="n">_has_stackless</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1">#: True if the runtime Python implementation is Stackless Python.</span>
+<span class="n">is_stackless</span> <span class="o">=</span> <span class="p">(</span><span class="ow">not</span> <span class="n">is_pypy</span><span class="p">)</span> <span class="ow">and</span> <span class="n">_has_stackless</span>
+
+<span class="c1">#: True if running on the Google App Engine</span>
+<span class="n">is_gae</span> <span class="o">=</span> <span class="s2">&quot;APPENGINE_RUNTIME&quot;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span>
+
+<span class="n">python_implementation</span> <span class="o">=</span> <span class="n">_py_impl</span>
+<span class="sd">&quot;&quot;&quot;The name of the runtime Python implementation.</span>
+
+<span class="sd">.. deprecated:: 2.1.0</span>
+<span class="sd">   Superceded by :attr:`platform_detail` and will be **removed** in\</span>
+<span class="sd">   release 3.0.0.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">_py_ver</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">.</span><span class="si">%d</span><span class="s2">.</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;final&quot;</span><span class="p">):</span>
+    <span class="n">_py_ver</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s%s%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">_py_ver</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="n">_py_system</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">is_gae</span><span class="p">):</span>
+    <span class="n">_py_system</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">platform</span><span class="p">,</span> <span class="s2">&quot;platform&quot;</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="kc">None</span><span class="p">)()</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">_py_system</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="n">_py_system</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">platform</span><span class="p">,</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="k">lambda</span><span class="p">:</span> <span class="s2">&quot;Unknown&quot;</span><span class="p">)()</span>
+
+<span class="c1">#: The python implementation, version, and platform information.</span>
+<span class="n">platform_detail</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> </span><span class="si">%s</span><span class="s2"> (</span><span class="si">%s</span><span class="s2">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">_py_impl</span><span class="p">,</span> <span class="n">_py_ver</span><span class="p">,</span> <span class="n">_py_system</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">is_gae</span><span class="p">):</span>
+    <span class="n">platform_detail</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> [GAE]&quot;</span> <span class="o">%</span> <span class="n">platform_detail</span>
+
+<span class="c1"># get a reference to the built-ins for use below; note that __builtins__ is not</span>
+<span class="c1"># always available (and when it is, can be either a module or a dict), so</span>
+<span class="c1"># explicitly import the appropriate module here</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">is_python_2</span><span class="p">):</span>
+    <span class="n">_py_builtins</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="s2">&quot;__builtin__&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">__dict__</span>
+<span class="k">else</span><span class="p">:</span> <span class="c1"># assume is_python_3</span>
+    <span class="n">_py_builtins</span> <span class="o">=</span> <span class="nb">__import__</span><span class="p">(</span><span class="s2">&quot;builtins&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">__dict__</span>
+
+<span class="c1"># normalize text (Unicode) and data (encoded bytes) types, as this is the most</span>
+<span class="c1"># significant difference between Python 2 and 3</span>
+<span class="c1">#</span>
+<span class="c1"># Also:</span>
+<span class="c1"># * u&quot;...&quot; is valid syntax in Python 2, but raises SyntaxError in Python 3</span>
+<span class="c1"># * b&quot;...&quot; is valid syntax in Python 3, but raise SyntaxError in Python 2</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">is_python_2</span><span class="p">):</span>
+    <span class="n">_text_type</span> <span class="o">=</span> <span class="n">_py_builtins</span><span class="p">[</span><span class="s2">&quot;unicode&quot;</span><span class="p">]</span>
+    <span class="n">_data_type</span> <span class="o">=</span> <span class="nb">str</span>
+<span class="k">else</span><span class="p">:</span>  <span class="c1"># assume is_python_3</span>
+    <span class="n">_text_type</span> <span class="o">=</span> <span class="nb">str</span>
+    <span class="n">_data_type</span> <span class="o">=</span> <span class="n">_py_builtins</span><span class="p">[</span><span class="s2">&quot;bytes&quot;</span><span class="p">]</span>
+
+<span class="n">TextType</span> <span class="o">=</span> <span class="n">_text_type</span>
+<span class="sd">&quot;&quot;&quot;The type of Unicode text.</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">   The Python 2 Unicode text type is :obj:`unicode`, while the Python 3</span>
+<span class="sd">   Unicode text type is :obj:`str`.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">DataType</span> <span class="o">=</span> <span class="n">_data_type</span>
+<span class="sd">&quot;&quot;&quot;The type of encoded byte data.</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">   The Python 2 encoded byte data type is ``str``, while the Python 3</span>
+<span class="sd">   encoded byte data type is ``bytes``.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">StringTypes</span> <span class="o">=</span> <span class="p">(</span><span class="n">TextType</span><span class="p">,</span> <span class="n">DataType</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;The types recognized generically as &quot;strings.&quot;</span>
+
+<span class="sd">.. note::</span>
+<span class="sd">   ``StringTypes`` is always the 2-tuple</span>
+<span class="sd">   ``(`` :data:`TextType` ``,`` :data:`DataType` ``)``.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># define a null (no-op) logging handler</span>
+<span class="c1"># (used in aglyph.__init__)</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">logging</span><span class="p">,</span> <span class="s2">&quot;NullHandler&quot;</span><span class="p">)):</span>
+    <span class="n">NoOpLoggingHandler</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">logging</span><span class="p">,</span> <span class="s2">&quot;NullHandler&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">class</span> <span class="nc">NoOpLoggingHandler</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Handler</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The null (no-op) logging handler.</span>
+
+<span class="sd">        This handler is (should be) used by library code to avoid &quot;No</span>
+<span class="sd">        handlers could be found&quot; warnings when no handlers are</span>
+<span class="sd">        configured for the library&#39;s logging channel.</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">           :py:class:`logging.NullHandler` is not available in</span>
+<span class="sd">           Python &lt; 2.7 or in Python 3.0.</span>
+
+<span class="sd">        .. deprecated:: 2.1.0</span>
+<span class="sd">           Aglyph is no longer supported on Python &lt; 2.7 or</span>
+<span class="sd">           Python == 3.0, so :class:`logging.NullHandler` will used</span>
+<span class="sd">           moving forward.</span>
+<span class="sd">           This class will be **removed** in release 3.0.0.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+            <span class="k">pass</span>
+        <span class="k">def</span> <span class="nf">emit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+            <span class="k">pass</span>    
+        <span class="k">def</span> <span class="nf">createLock</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lock</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1">#: The null (no-op) logging handler instance.</span>
+<span class="n">NULL_LOGGING_HANDLER</span> <span class="o">=</span> <span class="n">NoOpLoggingHandler</span><span class="p">()</span>
+
+<span class="n">_class_and_func_types</span> <span class="o">=</span> <span class="p">[</span><span class="nb">type</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">FunctionType</span><span class="p">,</span> <span class="n">types</span><span class="o">.</span><span class="n">BuiltinFunctionType</span><span class="p">]</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">is_python_2</span><span class="p">):</span>
+    <span class="c1"># take old-style classes into account when trying to determine whether or</span>
+    <span class="c1"># not an object is a class or function</span>
+    <span class="c1"># (used in aglyph.__init__.format_dotted_name)</span>
+    <span class="n">_class_and_func_types</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">types</span><span class="p">,</span> <span class="s2">&quot;ClassType&quot;</span><span class="p">))</span>
+
+    <span class="c1"># the built-in function &#39;callable&#39; is available in Python 2</span>
+    <span class="c1"># (used in &#39;aglyph.assembler.Assembler._wire&#39; and</span>
+    <span class="c1">#  &#39;aglyph.component.Evaluator.__init__&#39;)</span>
+    <span class="n">_callable</span> <span class="o">=</span> <span class="n">_py_builtins</span><span class="p">[</span><span class="s2">&quot;callable&quot;</span><span class="p">]</span>
+
+    <span class="c1"># a function that can create an (uninitialized) instance of an old-style or</span>
+    <span class="c1"># new-style class</span>
+    <span class="c1"># (used in &#39;aglyph.assembler.Assembler._create_borg&#39; and</span>
+    <span class="c1">#  &#39;aglyph.assembler.Assembler._initialize&#39;)</span>
+    <span class="n">_instance_type</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">types</span><span class="p">,</span> <span class="s2">&quot;InstanceType&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">_new_instance</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">issubclass</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="nb">object</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">_instance_type</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> <span class="c1"># assume is_python_3</span>
+    <span class="c1"># the built-in function &#39;callable&#39; is not available in Python 3.0 and 3.1</span>
+    <span class="c1"># (used in &#39;aglyph.assembler.Assembler._wire&#39; and</span>
+    <span class="c1">#  &#39;aglyph.component.Evaluator.__init__&#39;)</span>
+    <span class="n">_callable</span> <span class="o">=</span> <span class="n">_py_builtins</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;callable&quot;</span><span class="p">,</span>
+                                 <span class="k">lambda</span> <span class="n">o</span><span class="p">:</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="s2">&quot;__call__&quot;</span><span class="p">))</span>
+
+    <span class="c1"># a function that can create an (uninitialized) instance of a class</span>
+    <span class="c1"># (used in &#39;aglyph.assembler.Assembler._create_borg&#39; and</span>
+    <span class="c1">#  &#39;aglyph.assembler.Assembler._initialize&#39;)</span>
+    <span class="n">_new_instance</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">cls</span><span class="p">:</span> <span class="n">cls</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">cls</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">aglyph.compat.ordereddict</span> <span class="k">import</span> <span class="n">OrderedDict</span>
+
+<span class="n">ClassAndFunctionTypes</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">_class_and_func_types</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;The types of classes and functions.</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">   Old-style classes need to be taken into account in Python 2, but do</span>
+<span class="sd">   not exist in Python 3.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">is_callable</span> <span class="o">=</span> <span class="n">_callable</span>
+<span class="sd">&quot;&quot;&quot;Return ``True`` if the argument is a callable object.</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">   The builtin ``callable`` function is not available in Python 3.0 or</span>
+<span class="sd">   Python 3.1.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">new_instance</span> <span class="o">=</span> <span class="n">_new_instance</span>
+<span class="sd">&quot;&quot;&quot;Create an **uninitialized** instance of the class object argument.</span>
+
+<span class="sd">.. note::</span>
+
+<span class="sd">   Old-style classes need to be taken into account in Python 2, but do</span>
+<span class="sd">   not exist in Python 3.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<span class="c1"># create a module that contains a &quot;safe&quot; subset of built-ins (for use as</span>
+<span class="c1"># builtins in the globals passed to &#39;eval()&#39;)</span>
+<span class="c1"># (used in &#39;aglyph.context.XMLContext._parse_eval&#39;)</span>
+<span class="n">_restricted_builtins</span> <span class="o">=</span> <span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="o">.</span><span class="n">__new__</span><span class="p">(</span><span class="n">types</span><span class="o">.</span><span class="n">ModuleType</span><span class="p">)</span>
+<span class="n">_restricted_builtins</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2">.RESTRICTED_BUILTINS&quot;</span> <span class="o">%</span> <span class="n">__name__</span><span class="p">,</span>
+                              <span class="s2">&quot;Aglyph restricted builtins for :py:func:`eval`&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">allowed</span> <span class="ow">in</span> <span class="p">[</span>
+            <span class="s2">&quot;ArithmeticError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AssertionError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AttributeError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;BaseException&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;BufferError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;BytesWarning&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;DeprecationWarning&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;EOFError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Ellipsis&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;EnvironmentError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Exception&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;False&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;FloatingPointError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;FutureWarning&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;GeneratorExit&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;IOError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ImportError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ImportWarning&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;IndentationError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;IndexError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;KeyError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;KeyboardInterrupt&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;LookupError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;MemoryError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;NameError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;NotImplemented&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;NotImplementedError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;OSError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;OverflowError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;PendingDeprecationWarning&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ReferenceError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ResourceWarning&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;RuntimeError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;RuntimeWarning&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;StandardError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;StopIteration&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;SyntaxError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;SyntaxWarning&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;SystemError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;TabError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;True&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;TypeError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UnboundLocalError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UnicodeDecodeError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UnicodeEncodeError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UnicodeError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UnicodeTranslateError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UnicodeWarning&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UserWarning&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ValueError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Warning&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;__debug__&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;abs&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;all&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;any&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;apply&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ascii&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;basestring&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;bin&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;bool&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;buffer&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;bytearray&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;bytes&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;callable&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;chr&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cmp&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;coerce&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;complex&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;dict&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;dir&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;divmod&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;enumerate&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;filter&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;float&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;format&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;frozenset&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;getattr&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hasattr&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hash&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;hex&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;int&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;intern&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;isinstance&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;issubclass&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;iter&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;len&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;list&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;long&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;map&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;max&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;memoryview&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;min&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;next&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;oct&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ord&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pow&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;range&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;reduce&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;repr&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;reversed&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;round&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;set&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;slice&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sorted&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;str&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;sum&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;tuple&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;unichr&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;unicode&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;xrange&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;zip&quot;</span>
+        <span class="p">]:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">allowed</span> <span class="ow">in</span> <span class="n">_py_builtins</span><span class="p">):</span>
+        <span class="n">_restricted_builtins</span><span class="o">.</span><span class="n">__dict__</span><span class="p">[</span><span class="n">allowed</span><span class="p">]</span> <span class="o">=</span> <span class="n">_py_builtins</span><span class="p">[</span><span class="n">allowed</span><span class="p">]</span>
+<span class="k">del</span> <span class="n">allowed</span>
+
+<span class="n">RESTRICTED_BUILTINS</span> <span class="o">=</span> <span class="n">_restricted_builtins</span>
+<span class="sd">&quot;&quot;&quot;A module object that defines a &quot;safe&quot; subset of Python builtins.</span>
+
+<span class="sd">These builtins are passed in the globals to the builtin :obj:`eval`</span>
+<span class="sd">function.</span>
+
+<span class="sd">.. deprecated:: 2.0.0</span>
+<span class="sd">   Use a top-level ``&lt;component&gt;`` instead of a nested ``&lt;eval&gt;``. This</span>
+<span class="sd">   member will be **removed** in release 3.0.0.</span>
+
+<span class="sd">.. seealso::</span>
+
+<span class="sd">   `Eval really is dangerous &lt;http://nedbatchelder.com/blog/201206/eval_really_is_dangerous.html&gt;`_</span>
+<span class="sd">      Ned Batchelder&#39;s insanely thorough discussion of :obj:`eval`</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="DoctypeTreeBuilder"><a class="viewcode-back" href="../../aglyph.compat.html#aglyph.compat.DoctypeTreeBuilder">[docs]</a><span class="k">class</span> <span class="nc">DoctypeTreeBuilder</span><span class="p">(</span><span class="n">ET</span><span class="o">.</span><span class="n">TreeBuilder</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;An :mod:`xml.etree.ElementTree.TreeBuilder` that avoids</span>
+<span class="sd">    deprecation warnings for</span>
+<span class="sd">    :meth:`xml.etree.ElementTree.XMLParser.doctype`.</span>
+
+<span class="sd">    .. seealso::</span>
+<span class="sd">       `Issue14007 &lt;http://bugs.python.org/issue14007&gt;`_</span>
+<span class="sd">          xml.etree.ElementTree - XMLParser and TreeBuilder&#39;s doctype()\</span>
+<span class="sd">          method missing</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">doctype</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">pubid</span><span class="p">,</span> <span class="n">system</span><span class="p">):</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="etree_iter"><a class="viewcode-back" href="../../aglyph.compat.html#aglyph.compat.etree_iter">[docs]</a><span class="k">def</span> <span class="nf">etree_iter</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">tag</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return an iterator over elements named *tag* rooted at *root*.</span>
+
+<span class="sd">    :param root: an :class:`xml.etree.ElementTree.ElementTree` or\</span>
+<span class="sd">                 :class:`xml.etree.ElementTree.Element`</span>
+
+<span class="sd">    .. note::</span>
+<span class="sd">       Refer to :meth:`xml.etree.ElementTree.Element.iter` for an</span>
+<span class="sd">       explanation of the *tag* keyword and the return value/type.</span>
+
+<span class="sd">    :meth:`xml.etree.ElementTree.Element.iter` is not available in</span>
+<span class="sd">    Python 2.6 and 3.1, but **is** available in 2.7, 3.2, and 3.3.</span>
+
+<span class="sd">    :meth:`xml.etree.ElementTree.Element.getiterator` is deprecated,</span>
+<span class="sd">    but **only** in 2.7 and 3.2.</span>
+
+<span class="sd">    As a work-around, this function will use ``root.iter`` if it is</span>
+<span class="sd">    defined, or will fall back to using ``root.getiterator``.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">iter_method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">&quot;iter&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">iter_method</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># allow AttributeError here</span>
+        <span class="n">iter_method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s2">&quot;getiterator&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">iter_method</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="log_compatibility"><a class="viewcode-back" href="../../aglyph.compat.html#aglyph.compat.log_compatibility">[docs]</a><span class="k">def</span> <span class="nf">log_compatibility</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Log the runtime compatibility details.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">_logger</span><span class="o">.</span><span class="n">isEnabledFor</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)):</span>
+        <span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;is_python_2? </span><span class="si">%r</span><span class="s2">; is_python_3? </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span>
+                      <span class="n">is_python_2</span><span class="p">,</span> <span class="n">is_python_3</span><span class="p">)</span>
+        <span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+            <span class="s2">&quot;is_ironpython? </span><span class="si">%r</span><span class="s2">, is_jython? </span><span class="si">%r</span><span class="s2">, is_pypy? </span><span class="si">%r</span><span class="s2">, is_stackless? </span><span class="si">%r</span><span class="s2">, &quot;</span>
+            <span class="s2">&quot;is_gae? </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="n">is_ironpython</span><span class="p">,</span> <span class="n">is_jython</span><span class="p">,</span> <span class="n">is_pypy</span><span class="p">,</span> <span class="n">is_stackless</span><span class="p">,</span> <span class="n">is_gae</span><span class="p">)</span>
+        <span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;TextType is </span><span class="si">%r</span><span class="s2">; DataType is </span><span class="si">%r</span><span class="s2">; StringTypes is </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span>
+                      <span class="n">TextType</span><span class="p">,</span> <span class="n">DataType</span><span class="p">,</span> <span class="n">StringTypes</span><span class="p">)</span>
+        <span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;NoOpLoggingHandler is </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">NoOpLoggingHandler</span><span class="p">)</span>
+        <span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;OrderedDict is </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">OrderedDict</span><span class="p">)</span>
+        <span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;ClassAndFunctionTypes is </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">ClassAndFunctionTypes</span><span class="p">)</span>
+        <span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;is_callable is </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">is_callable</span><span class="p">)</span>
+        <span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;new_instance is </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">new_instance</span><span class="p">)</span>
+        <span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;RESTRICTED_BUILTINS (deprecated) contains </span><span class="si">%r</span><span class="s2">&quot;</span><span class="p">,</span>
+                      <span class="nb">sorted</span><span class="p">(</span><span class="n">RESTRICTED_BUILTINS</span><span class="o">.</span><span class="n">__dict__</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span></div>
+
+
+<span class="k">del</span> <span class="n">_py_builtins</span>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2006-2016, Matthew Zipay.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'2.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

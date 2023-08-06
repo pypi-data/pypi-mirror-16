@@ -1,0 +1,234 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>What’s new in release 2.0.0? &mdash; Aglyph 2.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Aglyph 2.1.1 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Aglyph
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="whats-new.html">What&#8217;s new in release 2.1.1?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Getting started with Aglyph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">Aglyph cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api-ref.html">Aglyph API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Aglyph 2.1.1 testing summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap for future releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Aglyph</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>What&#8217;s new in release 2.0.0?</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="what-s-new-in-release-2-0-0">
+<h1>What&#8217;s new in release 2.0.0?<a class="headerlink" href="#what-s-new-in-release-2-0-0" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="http://www.python.org/download/releases/2.5/">Python 2.5</a> is no longer
+supported (and Aglyph 2.0.0 will not run on Python 2.5 without patching).</li>
+<li>Creating components using <a class="reference external" href="https://docs.python.org/3/library/functions.html#staticmethod" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">staticmethod</span></code></a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#classmethod" title="(in Python v3.5)"><code class="xref py py-obj docutils literal"><span class="pre">classmethod</span></code></a>, and nested
+classes (any level) is now supported via
+<a class="reference internal" href="aglyph.component.html#aglyph.component.Component.factory_name" title="aglyph.component.Component.factory_name"><code class="xref py py-attr docutils literal"><span class="pre">aglyph.component.Component.factory_name</span></code></a>.</li>
+<li>Referencing class objects, nested class objects (any level), functions, or
+attributes as components is now supported via
+<a class="reference internal" href="aglyph.component.html#aglyph.component.Component.member_name" title="aglyph.component.Component.member_name"><code class="xref py py-attr docutils literal"><span class="pre">aglyph.component.Component.member_name</span></code></a>.</li>
+<li>The <a class="reference internal" href="cookbook.html"><span class="doc">Aglyph cookbook</span></a> has been expanded to include many new recipes, including
+examples of the aforementioned
+<a class="reference internal" href="aglyph.component.html#aglyph.component.Component.factory_name" title="aglyph.component.Component.factory_name"><code class="xref py py-attr docutils literal"><span class="pre">aglyph.component.Component.factory_name</span></code></a> and
+<a class="reference internal" href="aglyph.component.html#aglyph.component.Component.member_name" title="aglyph.component.Component.member_name"><code class="xref py py-attr docutils literal"><span class="pre">aglyph.component.Component.member_name</span></code></a> configuration options.</li>
+<li>The <code class="docutils literal"><span class="pre">&lt;eval&gt;</span></code> element in declarative XML configuration is <strong>deprecated</strong>.
+Use a <code class="docutils literal"><span class="pre">&lt;component&gt;</span></code> and a <code class="docutils literal"><span class="pre">&lt;reference&gt;</span></code> (or <code class="docutils literal"><span class="pre">&#64;reference</span></code> attribute) to
+configure anything that was previously declared as an <code class="docutils literal"><span class="pre">&lt;eval&gt;</span></code>.</li>
+<li>The <a class="reference internal" href="aglyph.html#aglyph.has_importable_dotted_name" title="aglyph.has_importable_dotted_name"><code class="xref py py-func docutils literal"><span class="pre">aglyph.has_importable_dotted_name()</span></code></a> function is <strong>deprecated</strong>.
+The <a class="reference internal" href="aglyph.html#aglyph.format_dotted_name" title="aglyph.format_dotted_name"><code class="xref py py-func docutils literal"><span class="pre">aglyph.format_dotted_name()</span></code></a> function now verifies that the dotted
+name is actually importable.</li>
+<li>The <a class="reference internal" href="aglyph.html#aglyph.identify_by_spec" title="aglyph.identify_by_spec"><code class="xref py py-func docutils literal"><span class="pre">aglyph.identify_by_spec()</span></code></a> function is <strong>deprecated</strong>. This really
+belonged in <a class="reference internal" href="aglyph.binder.html#aglyph.binder.Binder" title="aglyph.binder.Binder"><code class="xref py py-class docutils literal"><span class="pre">aglyph.binder.Binder</span></code></a> to begin with, which is where it
+now resides as a non-public method.</li>
+<li>Multiple calls to <code class="xref py py-meth docutils literal"><span class="pre">aglyph.binder._Binding.init()</span></code> and
+<code class="xref py py-meth docutils literal"><span class="pre">aglyph.binder._Binding.attributes()</span></code> now have a cumulative effect,
+rather than replacing any previously-specified arguments or attributes,
+respectively.</li>
+<li><a class="reference internal" href="aglyph.compat.html#module-aglyph.compat" title="aglyph.compat"><code class="xref py py-mod docutils literal"><span class="pre">aglyph.compat</span></code></a> and <a class="reference internal" href="aglyph.context.html#aglyph.context.XMLContext" title="aglyph.context.XMLContext"><code class="xref py py-class docutils literal"><span class="pre">aglyph.context.XMLContext</span></code></a> have been updated
+to avoid deprecated <a class="reference external" href="https://docs.python.org/3/library/xml.etree.elementtree.html#module-xml.etree.ElementTree" title="(in Python v3.5)"><code class="xref py py-mod docutils literal"><span class="pre">xml.etree.ElementTree</span></code></a> methods.</li>
+<li>Python implementation detection in <a class="reference internal" href="aglyph.compat.html#module-aglyph.compat" title="aglyph.compat"><code class="xref py py-mod docutils literal"><span class="pre">aglyph.compat</span></code></a> has been improved.</li>
+<li>The <a class="reference internal" href="aglyph.compat.ipyetree.html#aglyph.compat.ipyetree.XmlReaderTreeBuilder" title="aglyph.compat.ipyetree.XmlReaderTreeBuilder"><code class="xref py py-class docutils literal"><span class="pre">aglyph.compat.ipyetree.XmlReaderTreeBuilder</span></code></a> class is
+<strong>deprecated</strong>. IronPython applications no longer need to explicitly pass a
+parser to <a class="reference internal" href="aglyph.context.html#aglyph.context.XMLContext" title="aglyph.context.XMLContext"><code class="xref py py-class docutils literal"><span class="pre">aglyph.context.XMLContext</span></code></a> (Aglyph now uses a sensible
+default).
+<em>(note: with this change, the Aglyph API is now 100% cross-compatible with
+all tested Python versions and variants)</em></li>
+<li>The <a class="reference internal" href="get-started.html"><span class="doc">Getting started with Aglyph</span></a> tutorial and accompanying sample code have been
+revamped to better demonstrate the various Aglyph configuration approaches,
+as well as to provide more substantive component examples.</li>
+<li>Aglyph documentation now uses the <a class="reference external" href="http://read-the-docs.readthedocs.org/en/latest/theme.html">Read the Docs Theme</a>.</li>
+</ul>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2006-2016, Matthew Zipay.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

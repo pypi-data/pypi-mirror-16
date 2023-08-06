@@ -1,0 +1,267 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>aglyph.cache — Simple object caching support for Aglyph &mdash; Aglyph 2.1.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Aglyph 2.1.1 documentation" href="index.html"/>
+        <link rel="up" title="Aglyph API reference" href="api-ref.html"/>
+        <link rel="next" title="aglyph.compat — Python version/variant compatibility" href="aglyph.compat.html"/>
+        <link rel="prev" title="aglyph.binder — The Aglyph component binder" href="aglyph.binder.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Aglyph
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.1.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="whats-new.html">What&#8217;s new in release 2.1.1?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-started.html">Getting started with Aglyph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">Aglyph cookbook</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api-ref.html">Aglyph API reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="aglyph.html"><code class="docutils literal"><span class="pre">aglyph</span></code> &#8212; Dependency Injection for Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aglyph.assembler.html"><code class="docutils literal"><span class="pre">aglyph.assembler</span></code> &#8212; The Aglyph component assembler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aglyph.binder.html"><code class="docutils literal"><span class="pre">aglyph.binder</span></code> &#8212; The Aglyph component binder</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="docutils literal"><span class="pre">aglyph.cache</span></code> &#8212; Simple object caching support for Aglyph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aglyph.compat.html"><code class="docutils literal"><span class="pre">aglyph.compat</span></code> &#8212; Python version/variant compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aglyph.compat.ipyetree.html"><code class="docutils literal"><span class="pre">aglyph.compat.ipyetree</span></code> &#8212; an <em>ElementTree</em> parser for <em>IronPython</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="aglyph.component.html"><code class="docutils literal"><span class="pre">aglyph.component</span></code> &#8212; Defining components and their dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aglyph.context.html"><code class="docutils literal"><span class="pre">aglyph.context</span></code> &#8212; Defining component contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aglyph.integration.cherrypy.html"><code class="docutils literal"><span class="pre">aglyph.integration.cherrypy</span></code> &#8212; Integrating Aglyph with CherryPy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Aglyph 2.1.1 testing summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap for future releases</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Aglyph</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="api-ref.html">Aglyph API reference</a> &raquo;</li>
+      
+    <li><code class="docutils literal"><span class="pre">aglyph.cache</span></code> &#8212; Simple object caching support for Aglyph</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aglyph-cache-simple-object-caching-support-for-aglyph">
+<h1><a class="reference internal" href="#module-aglyph.cache" title="aglyph.cache"><code class="xref py py-mod docutils literal"><span class="pre">aglyph.cache</span></code></a> &#8212; Simple object caching support for Aglyph<a class="headerlink" href="#aglyph-cache-simple-object-caching-support-for-aglyph" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Release:</th><td class="field-body">2.1.1</td>
+</tr>
+</tbody>
+</table>
+<span class="target" id="module-aglyph.cache"></span><p>The classes in this module define mapping types that use lock objects
+for synchronization.</p>
+<p>Atomic &#8220;check-then-act&#8221; operations can be performed by acquiring the
+cache lock, performing the check-then-act sequence, and finally
+releasing the cache lock.</p>
+<dl class="class">
+<dt id="aglyph.cache.MutexCache">
+<em class="property">class </em><code class="descclassname">aglyph.cache.</code><code class="descname">MutexCache</code><a class="reference internal" href="_modules/aglyph/cache.html#MutexCache"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aglyph.cache.MutexCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aglyph.cache._LockingCache</span></code></p>
+<p>A mapping that uses a primitive lock to synchronize access.</p>
+<p>If the lock is held, any attempt to acquire it will block until the
+holding thread releases the lock.</p>
+<p>To use a mutex cache:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cache</span> <span class="o">=</span> <span class="n">MutexCache</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="k">with</span> <span class="n">cache</span><span class="p">:</span>
+    <span class="c1"># check-then-act</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="aglyph.cache.ReentrantMutexCache">
+<em class="property">class </em><code class="descclassname">aglyph.cache.</code><code class="descname">ReentrantMutexCache</code><a class="reference internal" href="_modules/aglyph/cache.html#ReentrantMutexCache"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#aglyph.cache.ReentrantMutexCache" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">aglyph.cache._LockingCache</span></code></p>
+<p>A mapping that uses a reentrant lock to synchronize access.</p>
+<p>If the lock is held, any attempt to acquire it by a thread OTHER
+than the holding thread will block until the holding thread releases
+the lock. (A reentrant mutex permits the same thread to acquire the
+same lock more than once, allowing nested access to a shared
+resource by a single thread.)</p>
+<p>To use a re-entrant mutex cache:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cache</span> <span class="o">=</span> <span class="n">ReentrantMutexCache</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="k">with</span> <span class="n">cache</span><span class="p">:</span>
+    <span class="c1"># check-then-act</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="aglyph.compat.html" class="btn btn-neutral float-right" title="aglyph.compat — Python version/variant compatibility" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="aglyph.binder.html" class="btn btn-neutral" title="aglyph.binder — The Aglyph component binder" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2006-2016, Matthew Zipay.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
