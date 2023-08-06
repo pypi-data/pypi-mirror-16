@@ -1,0 +1,12 @@
+uiautomator/__init__.py,sha256=mokNz9n9lKw28kGLNChgjYHFatOoeMI2kwfhCQFi7lM,48454
+uiautomator/libs/app-uiautomator-test.apk,sha256=jlzIvHNZMMsDehhI7t9pYqmKP258Ncz7poP3ytUUJ-4,1312103
+uiautomator/libs/app-uiautomator.apk,sha256=Srjp0xL0Xw5LNAM5FoxJIEnedwW-liMwNTMBZx7XED0,1589314
+uiautomator/libs/bundle.jar,sha256=WOI7-OlsbesvBcKtXNwOCNoQ09UJjSWO23aeCdC5u2k,461493
+uiautomator/libs/uiautomator-stub.jar,sha256=WVSUHWDkm8jg-oBz9BQmbjPiBgSvpKw_bO3QI8XPEqQ,34104
+atx_uiautomator-0.2.10.dist-info/top_level.txt,sha256=UqUulC5mTfx01V7llVPR-EtpuJl5-QnGplTT81Vf3ZU,12
+atx_uiautomator-0.2.10.dist-info/pbr.json,sha256=LxRheZMjtCdmnGtEa3I6ME6Okij4gRAoCFow2Qzs41Y,47
+atx_uiautomator-0.2.10.dist-info/METADATA,sha256=TwSByxeQ9xcidtUBgEsyZ-ZT59pHadifZD1Z2g1ktzw,864
+atx_uiautomator-0.2.10.dist-info/DESCRIPTION.rst,sha256=yzSWfCTX6KaKT9lJNZRmgYjV_q9QMP3qYZ1X-B9zIXo,69
+atx_uiautomator-0.2.10.dist-info/metadata.json,sha256=_t0bcddPbVQRuihlU61CEjf7MZNZmvmJ_0ciyApOWVY,926
+atx_uiautomator-0.2.10.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
+atx_uiautomator-0.2.10.dist-info/RECORD,,
