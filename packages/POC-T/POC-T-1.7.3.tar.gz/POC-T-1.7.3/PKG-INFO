@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: POC-T
+Version: 1.7.3
+Summary: POC-T: Pentest Over Concurrent Toolkit
+Home-page: https://github.com/Xyntax/POC-T
+Author: cdxy
+Author-email: i@cdxy.me
+License: GPLv2
+Description: UNKNOWN
+Keywords: pentest,PoC,Exp,bruteforce,spider,POC-T
+Platform: any

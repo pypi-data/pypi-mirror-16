@@ -1,0 +1,4 @@
+lib
+plugin
+script
+thirdparty
