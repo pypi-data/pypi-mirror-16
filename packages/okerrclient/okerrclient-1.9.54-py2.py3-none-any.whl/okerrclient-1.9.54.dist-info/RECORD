@@ -1,0 +1,16 @@
+okerrclient-1.9.54.data/scripts/okerr-client,sha256=pWVWmWOxRrbXAJA8ZsiRoZmVkFpHKIRjiWH1S8MhCF0,4577
+okerrclient-1.9.54.data/scripts/okerrclient,sha256=0FR8L_inqb35qusdcC8W-70pz0IgCqrbGbz3SXanx7o,5843
+okerrclient/fs.py,sha256=8agNKQdkcNr-PsWRP2bSYWC5jTtbd-jbhlCv7s-k4Gk,6731
+okerrclient/taskproc.py,sha256=fPfD-67nLt2LYHW7Db1EztQDcsGFOl0O861VknVge7s,3955
+okerrclient/taskseq.py,sha256=CjkwhZ-bhCX7ozC3X3HT2yK24gN7snLfpItQyIXFdDI,29067
+okerrclient/__init__.py,sha256=zG6sdLN_fcFYvbDFYIAxrqsjdeKEMKdVnZU5BBuwm5M,8594
+okerrclient/list.py,sha256=2h9pyaT5nG0N5ov69S2hnv8LS3ljH2D3YjcclqBQNoQ,11101
+okerrclient/listcmd.py,sha256=0KJ_uhFWr4dsHQPrvxe4crr0mLtRIfTr9iQf0g-XrEU,13895
+okerrclient/stdin.py,sha256=Dw9XzIMkRUF4pFIu4tn3rgNLcGTyFSL-NC0jTYuSeKA,327
+okerrclient/run.py,sha256=RNy6DDylQqmlrdQ0KuT7zzO_e8bxROygCT-RdslKXHs,2407
+okerrclient-1.9.54.dist-info/WHEEL,sha256=AvR0WeTpDaxT645bl5FQxUK6NPsTls2ttpcGJg3j1Xg,110
+okerrclient-1.9.54.dist-info/metadata.json,sha256=T8lDlTysI1iACwNZ5sXlrmGahwY7Kz0o7_dopxJKTCY,503
+okerrclient-1.9.54.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+okerrclient-1.9.54.dist-info/METADATA,sha256=wUtSWoOe_1pERmhDzjl8G2ydLP67f6EPYN0AJQyP7tk,327
+okerrclient-1.9.54.dist-info/top_level.txt,sha256=81vyLReQPJf11BaciNz__f_4wKv0pVGNhRqf7IAFVns,12
+okerrclient-1.9.54.dist-info/RECORD,,
