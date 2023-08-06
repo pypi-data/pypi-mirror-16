@@ -1,0 +1,19 @@
+Metadata-Version: 2.0
+Name: dystic
+Version: 0.2.1
+Summary: a static site generator using dynamic principles
+Home-page: https://github.com/MiteshNinja/dystic
+Author: Mitesh Shah
+Author-email: mitesh@miteshshah.com
+License: UNKNOWN
+Download-URL: https://github.com/MiteshNinja/dystic/tarball/0.2.1
+Keywords: blog,generator,static,dynamic,dystic
+Platform: UNKNOWN
+Requires-Dist: jinja2
+Requires-Dist: mistune
+Requires-Dist: pygments
+Requires-Dist: pyyaml
+
+Please visit https://github.com/MiteshNinja/dystic for more details.
+
+
