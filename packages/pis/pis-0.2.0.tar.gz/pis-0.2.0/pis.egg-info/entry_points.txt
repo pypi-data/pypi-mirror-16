@@ -1,0 +1,3 @@
+[console_scripts]
+pis = pis.main:main
+
