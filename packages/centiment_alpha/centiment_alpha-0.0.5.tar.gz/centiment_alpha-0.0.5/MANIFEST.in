@@ -1,0 +1,1 @@
+recursive-include lexicon *.list *.lex *.txt *.tweet *.replace
