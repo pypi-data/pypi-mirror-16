@@ -1,0 +1,12 @@
+README.rst
+setup.py
+proxapy/__init__.py
+proxapy/config.py
+proxapy/proxapy.py
+proxapy.egg-info/PKG-INFO
+proxapy.egg-info/SOURCES.txt
+proxapy.egg-info/dependency_links.txt
+proxapy.egg-info/not-zip-safe
+proxapy.egg-info/requires.txt
+proxapy.egg-info/top_level.txt
+scripts/proxapy
