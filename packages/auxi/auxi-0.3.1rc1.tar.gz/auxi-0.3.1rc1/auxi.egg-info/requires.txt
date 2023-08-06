@@ -1,0 +1,7 @@
+jsonpickle
+tabulate
+enum34
+python-dateutil
+cerberus
+pandas
+bibtexparser
