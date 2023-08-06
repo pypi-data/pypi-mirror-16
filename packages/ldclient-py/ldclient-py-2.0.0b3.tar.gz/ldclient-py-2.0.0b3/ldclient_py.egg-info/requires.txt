@@ -1,0 +1,14 @@
+CacheControl>=0.10.2
+requests>=2.10.0
+sseclient>=0.0.12
+future>=0.15.2
+strict-rfc3339>=0.7
+
+[redis]
+redis>=2.10.5
+
+[twisted]
+txrequests>=0.9
+pyOpenSSL>=0.14
+cryptography>=1.0
+service_identity>=16.0
