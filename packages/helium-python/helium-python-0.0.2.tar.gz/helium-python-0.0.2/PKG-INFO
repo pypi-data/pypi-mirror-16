@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: helium-python
+Version: 0.0.2
+Summary: Wrapper for the Helium API
+Home-page: https://github.com/helium/helium-python
+Author: Marc Nijdam
+Author-email: UNKNOWN
+License: BSD
+Description: Python toolkit for working with the Helium API
+Platform: UNKNOWN
