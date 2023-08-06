@@ -1,0 +1,26 @@
+#content select.single-select2-widget,
+#content select.multi-select2-widget {
+    min-width: 15em;
+}
+
+#content div.single-select2-widget { font-size: 16px; }
+#content div.multi-select2-widget { font-size: 13px; }
+
+#content div.multi-select2-widget li {
+    line-height: 13px;
+    margin: 3px 0 3px 5px;
+}
+
+#content div.single-select2-widget a.select2-choice,
+#content div.multi-select2-widget a.select2-choice,
+div.select2-drop div.select2-result-label {
+    font-size: 0.8em;
+}
+
+div.select2-drop div.select2-result-label span {
+    display: block;
+}
+
+div.select2-drop div.select2-result-label span.subcategory {
+    margin-left: 1em;
+}
