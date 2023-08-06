@@ -1,0 +1,7 @@
+YAMLLintBear.py
+setup.py
+YAMLLintBear.egg-info/PKG-INFO
+YAMLLintBear.egg-info/SOURCES.txt
+YAMLLintBear.egg-info/dependency_links.txt
+YAMLLintBear.egg-info/entry_points.txt
+YAMLLintBear.egg-info/top_level.txt
