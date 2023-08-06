@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: SPyFFI
+Version: 1.0.0
+Summary: Spiffy Python for Full Frame Images (tools for simulating TESS images, calibrations, and light curves)
+Home-page: https://github.com/TESScience/SPyFFI
+Author: Zach Berta-Thompson
+Author-email: zkbt@mit.edu
+License: UNKNOWN
+Download-URL: https://github.com/TESScience/SPyFFI/tarball/1.0.0
+Description: UNKNOWN
+Platform: UNKNOWN
