@@ -1,0 +1,10 @@
+setup.py
+downloadMusicVK/__init__.py
+downloadMusicVK/authorization.py
+downloadMusicVK/downloadMusic.py
+downloadMusicVK/supportFunc.py
+dwnlMusicVK.egg-info/PKG-INFO
+dwnlMusicVK.egg-info/SOURCES.txt
+dwnlMusicVK.egg-info/dependency_links.txt
+dwnlMusicVK.egg-info/entry_points.txt
+dwnlMusicVK.egg-info/top_level.txt
