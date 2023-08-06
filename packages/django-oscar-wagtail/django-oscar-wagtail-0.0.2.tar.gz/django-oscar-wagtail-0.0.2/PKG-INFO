@@ -1,0 +1,45 @@
+Metadata-Version: 1.1
+Name: django-oscar-wagtail
+Version: 0.0.2
+Summary: Integration between Django Oscar and Wagtail
+Home-page: UNKNOWN
+Author: Michael van Tellingen
+Author-email: michaelvantellingen@gmail.com
+License: MIT
+Description: Django Oscar Wagtail
+        ====================
+        
+        This project integrates the Wagtail CMS with Django Oscar for eCommerce.
+        
+        
+        
+        Installation
+        ------------
+        
+        Fork the catalogue app as described in the oscar documentation. Then instead of
+        using the AbstractCategory from Oscar use the one from this project. 
+        
+        
+        Add the following to your settings
+        
+        code-block:: python
+        
+            OSCAR_DASHBOARD_NAVIGATION.insert(1, {
+                'label': 'CMS',
+                'icon': 'icon-th-list',
+                'url_name': 'wagtailadmin_home',
+                'access_fn': lambda user, *args: user.has_perm('wagtailadmin.access_admin')
+            })
+        
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
