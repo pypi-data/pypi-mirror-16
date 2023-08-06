@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: indiaDND
+Version: 0.2.0
+Summary: A python project to detect whether a given indian mobile number is DND(Do Not Disturb) mode or not
+Home-page: https://github.com/RoadToNaukri/indiaDndPython
+Author: RoadToNaukri.com
+Author-email: tech@roadtonaukri.com
+License: MIT
+Download-URL: https://github.com/RoadToNaukri/indiaDndPython/tarball/0.2.0
+Description: UNKNOWN
+Keywords: DND india,DND,india
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
