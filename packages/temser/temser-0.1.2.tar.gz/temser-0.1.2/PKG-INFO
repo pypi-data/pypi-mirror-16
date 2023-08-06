@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: temser
+Version: 0.1.2
+Summary: A templating engine and web server for data driven pages.
+Home-page: https://github.com/dagnelies/temser
+Author: Arnaud Dagnelies
+Author-email: arnaud.dagnelies@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: template server
+Platform: UNKNOWN

@@ -1,0 +1,8 @@
+setup.cfg
+setup.py
+temser.py
+temser.egg-info/PKG-INFO
+temser.egg-info/SOURCES.txt
+temser.egg-info/dependency_links.txt
+temser.egg-info/requires.txt
+temser.egg-info/top_level.txt
