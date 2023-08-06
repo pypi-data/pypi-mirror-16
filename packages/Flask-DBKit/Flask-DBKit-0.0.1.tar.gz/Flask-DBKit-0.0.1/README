@@ -1,0 +1,54 @@
+Flask-DBKit
+===========
+
+Simple dbkit integration for Flask.
+
+
+Overview
+========
+
+Flask-DBKit aims to provide painless integration of
+`dbkit`_ for the `Flask`_ web framework.
+
+
+Features
+========
+
+- Wraps each call to the flask wsgi applicaton
+  with a dbkit execution context.
+- Simplify database configuration values for
+  different database engines.
+
+
+Quickstart
+==========
+
+A simple example of how to initialise the extension::
+
+    from dbkit import execute
+    from flask import Flask
+    from flask.ext.dbkit import DBKit
+    import sqlite3
+
+    app = Flask(__name__)
+    app.config['DB_PATH'] = ':memory:'
+
+    dbkit = DBKit(sqlite3)
+    dbkit.init_app(app)
+
+    @app.route('/')
+    def index():
+        return execute('SELECT "Hi there from your DB."')
+
+
+Limitations
+===========
+
+- Currently limits the pool implementation to that as
+  returned by `dbkit.create_pool`.
+- Causes a pool connection on every application endpoint
+  regardless of whether it actually uses it.
+
+
+.. _dbkit: https://pypi.python.org/pypi/dbkit/
+.. _Flask: https://pypi.python.org/pypi/Flask/
