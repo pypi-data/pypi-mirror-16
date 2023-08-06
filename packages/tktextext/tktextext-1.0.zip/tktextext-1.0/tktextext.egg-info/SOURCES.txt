@@ -1,0 +1,7 @@
+README.rst
+setup.py
+tktextext.py
+tktextext.egg-info/PKG-INFO
+tktextext.egg-info/SOURCES.txt
+tktextext.egg-info/dependency_links.txt
+tktextext.egg-info/top_level.txt
