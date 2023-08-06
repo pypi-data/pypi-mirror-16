@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: PyLog2html
+Version: 1.0.0
+Summary: Python logging to html
+Home-page: https://github.com/trelay/PyLog2html
+Author: Trelay Wang
+Author-email: trelwan@celestica.com
+License: MIT
+Download-URL: https://github.com/trelay/PyLog2html/tarball/1.0.0
+Description: UNKNOWN
+Keywords: logging html
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
