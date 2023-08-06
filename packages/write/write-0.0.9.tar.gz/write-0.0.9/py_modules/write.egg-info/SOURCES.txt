@@ -1,0 +1,13 @@
+MANIFEST.in
+classifiers.txt
+description.txt
+keywords.txt
+requirements.txt
+setup.py
+version.txt
+py_modules/write.py
+py_modules/write.egg-info/PKG-INFO
+py_modules/write.egg-info/SOURCES.txt
+py_modules/write.egg-info/dependency_links.txt
+py_modules/write.egg-info/requires.txt
+py_modules/write.egg-info/top_level.txt

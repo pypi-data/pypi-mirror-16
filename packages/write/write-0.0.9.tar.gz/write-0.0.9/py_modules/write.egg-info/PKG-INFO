@@ -1,0 +1,78 @@
+Metadata-Version: 1.0
+Name: write
+Version: 0.0.9
+Summary: write(path,content), open.write replacement. python2 and python3 compatible
+Home-page: https://github.com/russianidiot/write.py
+Author: UNKNOWN
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: .. README generated with readmemako.py (github.com/russianidiot/readme-mako.py) and .README dotfiles (github.com/russianidiot-dotfiles/.README)
+        
+        Install
+        ```````
+        
+        :code:`[sudo] pip install write`
+        
+        Usage
+        `````
+        
+        .. code:: python
+        
+        	>>>	from write import write
+        	
+        	>>> write(path,text)
+        
+        Example
+        ```````
+        
+        .. code:: python
+        
+        	>>> write(path,'string')
+        	>>> open(path).read()
+        	'string'
+        	
+        	>>> write(path,None) # touch
+        	>>> open(path).read()
+        	''
+        	
+        	>>> write(path,42) # write integer
+        	>>> open(path).read()
+        	'42'
+        	
+        	>>> write(path,dict()) # converted to str
+        	>>> open(path).read()
+        	'{}'
+        
+        `Examples/`_
+        
+        .. _Examples/: https://github.com/russianidiot/write.py/tree/master/Examples
+        
+        Feedback |github_issues| |gitter| |github_follow|
+        
+        .. |github_issues| image:: https://img.shields.io/github/issues/russianidiot/write.py.svg
+        	:target: https://github.com/russianidiot/write.py/issues
+        
+        .. |github_follow| image:: https://img.shields.io/github/followers/russianidiot.svg?style=social&label=Follow
+        	:target: https://github.com/russianidiot
+        
+        .. |gitter| image:: https://badges.gitter.im/russianidiot/write.py.svg
+        	:target: https://gitter.im/russianidiot/write.py
+Keywords: write file
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Natural Language :: Russian
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.0
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
