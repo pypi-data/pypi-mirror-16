@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: django-hash-field
+Version: 0.01
+Summary: Hash field for Django (stored in postgres as UUID)
+Home-page: https://github.com/amcat/django-hash-field
+Author: Wouter van Atteveldt
+Author-email: wouter@vanatteveldt.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: django
+Platform: UNKNOWN
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
