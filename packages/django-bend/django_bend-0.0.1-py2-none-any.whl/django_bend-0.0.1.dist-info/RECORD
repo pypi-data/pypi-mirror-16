@@ -1,0 +1,16 @@
+django_bend/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_bend/convert.py,sha256=m1qLjTvEabwtERAH41TKsef2M_1jM7Dwg9RxV9pZSO8,4857
+django_bend/parsing.py,sha256=OQcsRI-OU2prH7OkRE4qUYCAPnFoWEO5pr3O0UrqAOk,2826
+django_bend/schema.py,sha256=me2evePcRJq6MOn7Vz6Z19VCzr_w0B1hs4RsEte7dbE,777
+django_bend/management/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_bend/management/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_bend/management/commands/bend_data.py,sha256=5XfjLZT6OA87qHCSnJSCj4iaVyEJ3zj5Obk1yrRdW2Y,1510
+django_bend-0.0.1.dist-info/DESCRIPTION.rst,sha256=OCTuuN6LcWulhHS3d5rfjdsQtW22n7HENFRh6jC6ego,10
+django_bend-0.0.1.dist-info/METADATA,sha256=pk1t9j-bkRLvRkpNWjPKpv8LZxeUFNLeQLypXNSgLTs,463
+django_bend-0.0.1.dist-info/metadata.json,sha256=vipUoHa9bcYD_sImCVzGAfNLkYeJwyRVwZN3g0G2JFk,537
+django_bend-0.0.1.dist-info/RECORD,,
+django_bend-0.0.1.dist-info/top_level.txt,sha256=gAq-YmKuvORW1tiTrjiQ2a7UwFHiNZqTZBJBF2Xy4uE,18
+django_bend-0.0.1.dist-info/WHEEL,sha256=54bVun1KfEBTJ68SHUmbxNPj80VxlQ0sHi4gZdGZXEY,92
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_convert.py,sha256=p382jL3thXiVayGt66B4T1lh4Ryq50fM1Gxds3_c4WY,2890
+tests/test_parsing.py,sha256=PU2vDIGc8xkMFzVNhI5CDT6bdqJfv_fHvBnWjQICAEU,2792
