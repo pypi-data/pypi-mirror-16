@@ -1,0 +1,13 @@
+Metadata-Version: 2.0
+Name: commit-message-validator
+Version: 0.1.0
+Summary: Validate the format of a commit message to Wikimedia Gerrit standards
+Home-page: https://www.mediawiki.org/wiki/Gerrit/Commit_message_guidelines
+Author: Bryan Davis
+Author-email: bd808@wikimedia.org
+License: GPL-2.0+
+Platform: UNKNOWN
+
+UNKNOWN
+
+
