@@ -1,0 +1,8 @@
+setup.py
+mondo/__init__.py
+mondo/mondo.py
+mondo_python.egg-info/PKG-INFO
+mondo_python.egg-info/SOURCES.txt
+mondo_python.egg-info/dependency_links.txt
+mondo_python.egg-info/requires.txt
+mondo_python.egg-info/top_level.txt

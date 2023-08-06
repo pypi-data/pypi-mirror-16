@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: mondo-python
+Version: 0.1.0
+Summary: A python SDK for interacting with the Mondo API.
+Home-page: https://github.com/muyiwaolu/mondo-python
+Author: Muyiwa Olu-Ogunleye
+Author-email: m.oluogunleye94@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
