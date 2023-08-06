@@ -1,0 +1,3 @@
+[console_scripts]
+goephor = goephor.__main__:main
+
