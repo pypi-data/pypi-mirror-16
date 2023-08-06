@@ -1,0 +1,3 @@
+colorclass
+docopt
+sphinx
