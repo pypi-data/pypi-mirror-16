@@ -1,0 +1,7 @@
+pybroom.py
+setup.py
+pybroom.egg-info/PKG-INFO
+pybroom.egg-info/SOURCES.txt
+pybroom.egg-info/dependency_links.txt
+pybroom.egg-info/requires.txt
+pybroom.egg-info/top_level.txt
