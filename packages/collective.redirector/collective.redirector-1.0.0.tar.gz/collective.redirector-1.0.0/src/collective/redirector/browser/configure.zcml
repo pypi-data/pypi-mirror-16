@@ -1,0 +1,46 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.redirector">
+
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot
+      directory="overrides"
+      layer="collective.redirector.interfaces.ICollectiveRedirectLayer"
+      />
+
+  <!-- Publish static files -->
+  <browser:resourceDirectory
+      name="collective.redirector"
+      directory="static"
+      />
+
+  <browser:page
+     name="redirectview"
+     for="*"
+     layer="zope.interface.Interface"
+     class=".views.RedirectView"
+     template="templates/redirect_page.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
+    name="jsfunctions"
+    for="*"
+    manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+    class=".viewlets.JSFunctionsViewlet"
+    template="templates/jsfunctions.pt"
+    permission="zope2.View"
+    />
+
+  <browser:viewlet
+    name="redirectviewlet"
+    for="*"
+    manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+    class=".viewlets.RedirectViewlet"
+    template="templates/redirect_viewlet.pt"
+    permission="zope2.View"
+    />
+</configure>

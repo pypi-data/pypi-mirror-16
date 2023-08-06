@@ -1,0 +1,8 @@
+<!-- collective redirect -->
+<metal:block tal:define="redirects view/redirects">
+  <div tal:repeat="redirect redirects">
+    <metal:show tal:condition="redirect/enableRedirect">
+        <span style="display: none" tal:replace="structure redirect/span"></span>
+    </metal:show>
+  </div>
+</metal:block>

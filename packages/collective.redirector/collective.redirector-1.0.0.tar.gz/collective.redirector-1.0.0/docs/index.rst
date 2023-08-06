@@ -1,0 +1,5 @@
+====================
+collective.redirector
+====================
+
+User documentation
