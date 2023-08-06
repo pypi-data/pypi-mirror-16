@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: insight360mlapi
+Version: 0.12
+Summary: API to call trained model stored in Azure ML portal to predict building energy
+Home-page: UNKNOWN
+Author: Runsheng Song
+Author-email: runsheng.song@autodesk.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
