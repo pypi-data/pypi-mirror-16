@@ -1,0 +1,58 @@
+Metadata-Version: 1.1
+Name: kotti_google_analytics
+Version: 1.1.4
+Summary: Google Analytics for Kotti
+Home-page: https://github.com/b4oshany/kotti_google_analytics
+Author: Oshane Bailey
+Author-email: b4.oshany@gmail.com
+License: BSD-derived (http://www.repoze.org/LICENSE.txt)
+Description: 
+        
+        History
+        =======
+        
+        1.1.1
+        ------
+        
+        - Fixed rst files.
+        
+        
+        1.1.0
+        -------
+        
+        - Added Google visualization for reports.
+        - Added kotti_controlpanel_ kotti package, in order to save Google Analytics settings.
+        - Added `Google Analytics Embed API`_ for visualizations.
+        - Added `googleanalytics`_ python package to generate access token for Google Analytics.
+        
+        .. _googleanalytics: https://pypi.python.org/pypi/googleanalytics/0.22.2
+        .. _Google Analytics Embed API: https://ga-dev-tools.appspot.com/
+        .. _kottii_controlpanel: https://pypi.python.org/pypi/kotti_controlpanel
+        
+        
+        1.0.3
+        ------
+        
+        - Set the tracking code to be placed in the slot below the content area.
+        
+        
+        1.0.2
+        -------
+        
+        - Added Tracking code
+        
+        
+        1.0.0 - unreleased
+        --------------------
+        
+        - Create package with ``pcreate -s kotti kotti_google_analytics``.
+        
+Keywords: google analytics kotti web cms wcms pylons pyramidsqlalchemy bootstrap tracking users
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Framework :: Pylons
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
+Classifier: License :: Repoze Public License
