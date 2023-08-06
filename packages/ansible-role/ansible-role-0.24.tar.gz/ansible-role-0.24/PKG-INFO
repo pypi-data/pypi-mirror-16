@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: ansible-role
+Version: 0.24
+Summary: The missing "ansible-role" command
+Home-page: https://github.com/mattvonrocketstein/ansible-role-apply/
+Author: mattvonrocketstein
+Author-email: $author@gmail
+License: apache
+Download-URL: https://github.com/mattvonrocketstein/ansible-role-apply//tarball/master
+Description: The missing "ansible-role" command, downloads, installs, and cleans temporary ansible roles without the need for manually editing ansible playbooks
+Keywords: ansible,role,devops
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Software Development :: Bug Tracking
+Classifier: Topic :: System :: Installation/Setup
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: Utilities
