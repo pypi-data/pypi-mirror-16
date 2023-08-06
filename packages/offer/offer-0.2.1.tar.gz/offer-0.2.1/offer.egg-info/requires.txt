@@ -1,0 +1,12 @@
+netifaces>=0.10.4,<0.11.0
+
+[tests]
+mock
+nose
+coverage
+yanc
+preggy
+tox
+ipdb
+coveralls
+sphinx

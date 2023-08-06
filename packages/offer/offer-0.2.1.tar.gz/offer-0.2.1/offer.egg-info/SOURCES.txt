@@ -1,0 +1,14 @@
+MANIFEST.in
+README.rst
+setup.py
+offer/__init__.py
+offer/__main__.py
+offer/offerCLI.py
+offer/version.py
+offer.egg-info/PKG-INFO
+offer.egg-info/SOURCES.txt
+offer.egg-info/dependency_links.txt
+offer.egg-info/entry_points.txt
+offer.egg-info/requires.txt
+offer.egg-info/top_level.txt
+offer.egg-info/zip-safe
