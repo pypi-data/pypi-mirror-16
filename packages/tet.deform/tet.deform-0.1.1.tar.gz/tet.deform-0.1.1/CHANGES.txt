@@ -1,0 +1,8 @@
+2016-07-24  Antti Haapala  <antti.haapala@anttipatterns.com>
+
+    * Added MANIFEST.in
+
+2015-09-04  Antti Haapala  <antti@haapala.name>
+
+    * initial version
+
