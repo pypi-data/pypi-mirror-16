@@ -1,0 +1,1 @@
+{"name": "atx-androguard", "run_requires": [{"requires": ["distribute"]}], "generator": "bdist_wheel (0.24.0)", "summary": "Androguard is a full python tool to play with Android files.", "metadata_version": "2.0", "version": "3.0", "extensions": {"python.details": {"document_names": {"description": "DESCRIPTION.rst"}}}, "extras": []}
