@@ -1,0 +1,7 @@
+[console_scripts]
+pdkutil = pdkutil.pdkutil:main
+
+[pdkutil]
+get = pdkutil.commands:Get
+store = pdkutil.commands:Store
+
