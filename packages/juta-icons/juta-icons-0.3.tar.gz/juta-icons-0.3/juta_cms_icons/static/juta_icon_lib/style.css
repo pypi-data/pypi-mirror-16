@@ -1,0 +1,420 @@
+@font-face {
+  font-family: 'juta-icon';
+  src:
+    url('fonts/juta-icon.ttf?hvac4m') format('truetype'),
+    url('fonts/juta-icon.woff?hvac4m') format('woff'),
+    url('fonts/juta-icon.svg?hvac4m#juta-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="juta-icon-"], [class*=" juta-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'juta-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  padding-right: 12px;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.juta-icon-account_box:before {
+  content: "\e851";
+}
+.juta-icon-contact_mail:before {
+  content: "\e0d0";
+}
+.juta-icon-contact_phone:before {
+  content: "\e0cf";
+}
+.juta-icon-contacts:before {
+  content: "\e0ba";
+}
+.juta-icon-gavel2:before {
+  content: "\e90e";
+}
+.juta-icon-library_books:before {
+  content: "\e02f";
+}
+.juta-icon-print:before {
+  content: "\e8ad";
+}
+.juta-icon-nature_people:before {
+  content: "\e407";
+}
+.juta-icon-person:before {
+  content: "\e7fd";
+}
+.juta-icon-book4:before {
+  content: "\e902";
+}
+.juta-icon-tag:before {
+  content: "\e903";
+}
+.juta-icon-book5:before {
+  content: "\e905";
+}
+.juta-icon-user:before {
+  content: "\e906";
+}
+.juta-icon-graduate:before {
+  content: "\e908";
+}
+.juta-icon-archive:before {
+  content: "\e909";
+}
+.juta-icon-library2:before {
+  content: "\e90a";
+}
+.juta-icon-auction:before {
+  content: "\e90b";
+}
+.juta-icon-justice:before {
+  content: "\e90c";
+}
+.juta-icon-book6:before {
+  content: "\e90d";
+}
+.juta-icon-book7:before {
+  content: "\e90f";
+}
+.juta-icon-barcode2:before {
+  content: "\e910";
+}
+.juta-icon-barcode3:before {
+  content: "\e911";
+}
+.juta-icon-bookmark3:before {
+  content: "\e912";
+}
+.juta-icon-bookmark4:before {
+  content: "\e913";
+}
+.juta-icon-user2:before {
+  content: "\e914";
+}
+.juta-icon-mail:before {
+  content: "\e915";
+}
+.juta-icon-aperture:before {
+  content: "\e916";
+}
+.juta-icon-book2:before {
+  content: "\e904";
+}
+.juta-icon-alert:before {
+  content: "\f02d";
+}
+.juta-icon-book8:before {
+  content: "\f007";
+}
+.juta-icon-calendar:before {
+  content: "\f068";
+}
+.juta-icon-database:before {
+  content: "\f096";
+}
+.juta-icon-file-pdf2:before {
+  content: "\f014";
+}
+.juta-icon-law:before {
+  content: "\f0d8";
+}
+.juta-icon-mail2:before {
+  content: "\f03b";
+}
+.juta-icon-mail-read:before {
+  content: "\f03c";
+}
+.juta-icon-microscope:before {
+  content: "\f089";
+}
+.juta-icon-mortar-board:before {
+  content: "\f0d7";
+}
+.juta-icon-package:before {
+  content: "\f0c4";
+}
+.juta-icon-paintcan:before {
+  content: "\f0d1";
+}
+.juta-icon-repo:before {
+  content: "\f001";
+}
+.juta-icon-repo-pull:before {
+  content: "\f006";
+}
+.juta-icon-search:before {
+  content: "\f02e";
+}
+.juta-icon-sign-in:before {
+  content: "\f036";
+}
+.juta-icon-sign-out:before {
+  content: "\f032";
+}
+.juta-icon-tools:before {
+  content: "\f031";
+}
+.juta-icon-trashcan:before {
+  content: "\f0d0";
+}
+.juta-icon-versions:before {
+  content: "\f064";
+}
+.juta-icon-office:before {
+  content: "\e907";
+}
+.juta-icon-connection:before {
+  content: "\e91b";
+}
+.juta-icon-book:before {
+  content: "\e91f";
+}
+.juta-icon-books:before {
+  content: "\e920";
+}
+.juta-icon-library:before {
+  content: "\e921";
+}
+.juta-icon-profile:before {
+  content: "\e923";
+}
+.juta-icon-stack:before {
+  content: "\e92e";
+}
+.juta-icon-cart:before {
+  content: "\e93a";
+}
+.juta-icon-credit-card:before {
+  content: "\e93f";
+}
+.juta-icon-map:before {
+  content: "\e94b";
+}
+.juta-icon-map2:before {
+  content: "\e94c";
+}
+.juta-icon-calendar2:before {
+  content: "\e953";
+}
+.juta-icon-printer:before {
+  content: "\e954";
+}
+.juta-icon-download:before {
+  content: "\e960";
+}
+.juta-icon-spinner:before {
+  content: "\e97a";
+}
+.juta-icon-key:before {
+  content: "\e98d";
+}
+.juta-icon-lock:before {
+  content: "\e98f";
+}
+.juta-icon-unlocked:before {
+  content: "\e990";
+}
+.juta-icon-cogs2:before {
+  content: "\e995";
+}
+.juta-icon-gift:before {
+  content: "\e99f";
+}
+.juta-icon-hammer2:before {
+  content: "\e9a8";
+}
+.juta-icon-power-cord:before {
+  content: "\e9b7";
+}
+.juta-icon-download3:before {
+  content: "\e9c7";
+}
+.juta-icon-sphere:before {
+  content: "\e9c9";
+}
+.juta-icon-earth:before {
+  content: "\e9ca";
+}
+.juta-icon-bookmark:before {
+  content: "\e9d2";
+}
+.juta-icon-warning:before {
+  content: "\ea07";
+}
+.juta-icon-cross:before {
+  content: "\ea0f";
+}
+.juta-icon-enter:before {
+  content: "\ea13";
+}
+.juta-icon-exit:before {
+  content: "\ea14";
+}
+.juta-icon-indent-increase:before {
+  content: "\ea7b";
+}
+.juta-icon-share2:before {
+  content: "\ea82";
+}
+.juta-icon-google-plus:before {
+  content: "\ea8b";
+}
+.juta-icon-facebook:before {
+  content: "\ea90";
+}
+.juta-icon-twitter:before {
+  content: "\ea96";
+}
+.juta-icon-youtube2:before {
+  content: "\ea9e";
+}
+.juta-icon-linkedin2:before {
+  content: "\eaca";
+}
+.juta-icon-chrome:before {
+  content: "\ead9";
+}
+.juta-icon-firefox:before {
+  content: "\eada";
+}
+.juta-icon-IE:before {
+  content: "\eadb";
+}
+.juta-icon-edge:before {
+  content: "\eadc";
+}
+.juta-icon-safari:before {
+  content: "\eadd";
+}
+.juta-icon-opera:before {
+  content: "\eade";
+}
+.juta-icon-file-pdf:before {
+  content: "\eadf";
+}
+.juta-icon-file-openoffice:before {
+  content: "\eae0";
+}
+.juta-icon-file-word:before {
+  content: "\eae1";
+}
+.juta-icon-file-excel:before {
+  content: "\eae2";
+}
+.juta-icon-libreoffice:before {
+  content: "\eae3";
+}
+.juta-icon-codepen:before {
+  content: "\eae8";
+}
+.juta-icon-barcode:before {
+  content: "\f02a";
+}
+.juta-icon-book3:before {
+  content: "\f02f";
+}
+.juta-icon-bookmark2:before {
+  content: "\f030";
+}
+.juta-icon-eye:before {
+  content: "\f06e";
+}
+.juta-icon-key2:before {
+  content: "\f084";
+}
+.juta-icon-cogs:before {
+  content: "\f085";
+}
+.juta-icon-gears:before {
+  content: "\f085";
+}
+.juta-icon-group:before {
+  content: "\f0c0";
+}
+.juta-icon-users:before {
+  content: "\f0c0";
+}
+.juta-icon-truck:before {
+  content: "\f0d2";
+}
+.juta-icon-gavel:before {
+  content: "\f0e3";
+}
+.juta-icon-legal:before {
+  content: "\f0e3";
+}
+.juta-icon-cc-visa:before {
+  content: "\f1f0";
+}
+.juta-icon-cc-mastercard:before {
+  content: "\f1f1";
+}
+.juta-icon-cc-paypal:before {
+  content: "\f1f4";
+}
+.juta-icon-facebook-official:before {
+  content: "\f230";
+}
+.juta-icon-user-plus:before {
+  content: "\f234";
+}
+.juta-icon-chrome2:before {
+  content: "\f268";
+}
+.juta-icon-firefox2:before {
+  content: "\f269";
+}
+.juta-icon-opera2:before {
+  content: "\f26a";
+}
+.juta-icon-internet-explorer:before {
+  content: "\f26b";
+}
+.juta-icon-edge2:before {
+  content: "\f282";
+}
+.juta-icon-warning2:before {
+  content: "\e917";
+}
+.juta-icon-open-book:before {
+  content: "\e918";
+}
+.juta-icon-uninstall:before {
+  content: "\e919";
+}
+.juta-icon-add-user:before {
+  content: "\e900";
+}
+.juta-icon-book9:before {
+  content: "\e91a";
+}
+.juta-icon-globe:before {
+  content: "\e91c";
+}
+.juta-icon-graduation-cap:before {
+  content: "\e91d";
+}
+.juta-icon-network:before {
+  content: "\e901";
+}
+.juta-icon-dropbox:before {
+  content: "\e91e";
+}
+.juta-icon-yelp:before {
+  content: "\e922";
+}
+.juta-icon-dribbble:before {
+  content: "\e924";
+}
+.juta-icon-linkedin:before {
+  content: "\e925";
+}
+
