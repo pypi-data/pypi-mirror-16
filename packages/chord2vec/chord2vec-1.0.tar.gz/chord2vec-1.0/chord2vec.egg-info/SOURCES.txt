@@ -1,0 +1,14 @@
+JSB_Chorales.pickle
+MANIFEST.in
+README.md
+setup.py
+chord2vec/__init__.py
+chord2vec/seq2seq_model.py
+chord2vec/seq2seqs.py
+chord2vec/seq2seqs_model.py
+chord2vec.egg-info/PKG-INFO
+chord2vec.egg-info/SOURCES.txt
+chord2vec.egg-info/dependency_links.txt
+chord2vec.egg-info/not-zip-safe
+chord2vec.egg-info/requires.txt
+chord2vec.egg-info/top_level.txt
