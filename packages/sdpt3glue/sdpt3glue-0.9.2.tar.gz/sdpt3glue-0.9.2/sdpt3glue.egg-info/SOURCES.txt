@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+sdpt3glue/SDPT3solve.m
+sdpt3glue/__init__.py
+sdpt3glue/result.py
+sdpt3glue/sedumi_writer.py
+sdpt3glue/solve.py
+sdpt3glue/solve_locally.py
+sdpt3glue/solve_neos.py
+sdpt3glue.egg-info/PKG-INFO
+sdpt3glue.egg-info/SOURCES.txt
+sdpt3glue.egg-info/dependency_links.txt
+sdpt3glue.egg-info/requires.txt
+sdpt3glue.egg-info/top_level.txt
