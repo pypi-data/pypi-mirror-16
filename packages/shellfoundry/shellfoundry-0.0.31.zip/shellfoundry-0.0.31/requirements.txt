@@ -1,0 +1,6 @@
+requests
+cookiecutter
+qpm
+click
+pyyaml
+giturlparse.py
