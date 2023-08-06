@@ -1,0 +1,11 @@
+statsbiblioteket.github_cloner-0.2.1rc0.dist-info/METADATA,sha256=GnYGyhW_cE67cfIyjvpnV-P0q9I-Eg0ihsASmlWkt_8,2028
+statsbiblioteket.github_cloner-0.2.1rc0.dist-info/entry_points.txt,sha256=Chrl1nWzedU8RXtvBjoeNpYcxm_9H-AuYbyNfoZXy1c,85
+statsbiblioteket.github_cloner-0.2.1rc0.dist-info/RECORD,,
+statsbiblioteket.github_cloner-0.2.1rc0.dist-info/WHEEL,sha256=6lxp_S3wZGmTBtGMVmNNLyvKFcp7HqQw2Wn4YYk-Suo,110
+statsbiblioteket.github_cloner-0.2.1rc0.dist-info/top_level.txt,sha256=FTiw-Ur0U1nneY2jzcDL4VTgFBlWhmV6QsvxoGrOhco,17
+statsbiblioteket.github_cloner-0.2.1rc0.dist-info/DESCRIPTION.rst,sha256=6NppOS0r73JFUaZhlPSOAFmAuqxzBlkWZdxdM2MmFRM,1179
+statsbiblioteket.github_cloner-0.2.1rc0.dist-info/metadata.json,sha256=n3EsdsysC95bKV6Xu6GBsa77dk3pjQ5UBwzSA8lTPIE,1235
+statsbiblioteket/github_cloner/__main__.py,sha256=lLrdUWpLgvjd99yOtE3icBR9D7YraELBMxgwRzU9Las,186
+statsbiblioteket/github_cloner/__init__.py,sha256=EGpts5iBp1NkoOZQRsWPSQ6FyfDGttgIGWdXXbW59DE,673
+statsbiblioteket/github_cloner/myTypes.py,sha256=dhP0TJ18LBdiT-Cq0HosFZMRTxn-6cRlTHNNazR1Nzo,860
+statsbiblioteket/github_cloner/github_cloner.py,sha256=NHKgwJbOj9XB5UZl1GH-BlVuoZDommro6z0OXwqx_GU,7217
