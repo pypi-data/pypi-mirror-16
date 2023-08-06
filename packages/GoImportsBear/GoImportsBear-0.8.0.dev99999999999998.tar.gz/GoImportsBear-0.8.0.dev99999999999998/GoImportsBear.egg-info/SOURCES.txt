@@ -1,0 +1,5 @@
+setup.py
+GoImportsBear.egg-info/PKG-INFO
+GoImportsBear.egg-info/SOURCES.txt
+GoImportsBear.egg-info/dependency_links.txt
+GoImportsBear.egg-info/top_level.txt
