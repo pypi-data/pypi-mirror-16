@@ -1,0 +1,14 @@
+django_render_block-0.4.dist-info/DESCRIPTION.rst,sha256=QkXvhFthzaDryTk0WTnZkQW3aJUcdCD7Er9wt3-Cxeg,5706
+django_render_block-0.4.dist-info/METADATA,sha256=BifBVji6CGGlXb7Vu6cqsMMdeDUh-FtwxuvBMyU6wjs,6649
+django_render_block-0.4.dist-info/RECORD,,
+django_render_block-0.4.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+django_render_block-0.4.dist-info/metadata.json,sha256=ZUUUVi4ngEBvU9SZ9j7pHfYjdNTJn1Tkg6n2N8GNqQ8,1088
+django_render_block-0.4.dist-info/top_level.txt,sha256=-tN4lU8X6-P6mCMKdBO8u0Pyku1YqCE0eOOMTRIKuFs,19
+render_block/__init__.py,sha256=uCZc-qETCOe33_GvCVb0-wfxOhJJfHrcZbyTvg2sD88,122
+render_block/base.py,sha256=3DDqb12JZM6gDzb6CwpcLlDBwneWUIIL2CV4P3reW5Y,1662
+render_block/django.py,sha256=hpiDZ6HpfbERwHvURzRDpUydn602-3qc6VYRKvclffU,3189
+render_block/exceptions.py,sha256=doZ0jrQuwqnMtDf9w0iLNpd0QELmGU0DMSaJhYLoc84,350
+render_block/jinja2.py,sha256=G4LHEO5Sa_TtIeQtGrWOADxOOeqMiVJHdnvQkqTXPgM,587
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/settings.py,sha256=UCGVSP1QJQPRkw9Ms4-ZJTh5PtxjeJstByiiGO_dids,846
+tests/tests.py,sha256=FCcDm3NEjbsKX0OQdqmoJ7MMHsekAMMBWndSgFaCZjU,5910
