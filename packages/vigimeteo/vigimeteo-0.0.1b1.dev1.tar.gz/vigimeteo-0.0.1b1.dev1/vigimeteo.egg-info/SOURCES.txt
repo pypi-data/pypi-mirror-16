@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+vigimeteo/__init__.py
+vigimeteo/vigimeteo.cfg
+vigimeteo/vigimeteo.py
+vigimeteo.egg-info/PKG-INFO
+vigimeteo.egg-info/SOURCES.txt
+vigimeteo.egg-info/dependency_links.txt
+vigimeteo.egg-info/entry_points.txt
+vigimeteo.egg-info/requires.txt
+vigimeteo.egg-info/top_level.txt
