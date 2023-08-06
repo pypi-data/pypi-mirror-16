@@ -1,0 +1,36 @@
+Changelog
+=========
+
+1.0b5 (2016-08-09)
+------------------
+
+- Rearrange priority of event handlers so that quick reply postbacks are 
+  caught [Izhar Firdaus]
+
+
+1.0b4 (2016-08-08)
+------------------
+
+- Ignore CLI when starting up hub
+  [Izhar Firdaus]
+
+
+1.0b3 (2016-08-08)
+------------------
+
+- Ensure that all child processes are killed when parent is terminated.
+  [Izhar Firdaus]
+
+
+1.0b2 (2016-07-13)
+------------------
+
+- Bug with page_id mapping. Ensure it is read as string now instead of integer
+  [Izhar Firdaus]
+
+
+1.0b1 (2016-07-13)
+------------------
+
+- Initial fully functional bot framework with hub implementation
+  [Izhar Firdaus]
