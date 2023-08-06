@@ -1,0 +1,16 @@
+mastercard_places-0.0.1.dist-info/DESCRIPTION.rst,sha256=FxFPKQ_bQUJ63edRYuIHmEPemLxnISPFfxQHVzVv-Rk,28
+mastercard_places-0.0.1.dist-info/METADATA,sha256=3aHZaNlhXyhDvENmeV1Z43SR2FcNtj3utg8TydeCuk8,851
+mastercard_places-0.0.1.dist-info/RECORD,,
+mastercard_places-0.0.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+mastercard_places-0.0.1.dist-info/metadata.json,sha256=jDSOQIiUTx2GJFdvIKRr2_CaynMzwQdjtHejUZeNPPw,1006
+mastercard_places-0.0.1.dist-info/top_level.txt,sha256=60OwrNYtZbxoVQUHgGMpe4oiXi7NAxCaC_bg2iDSZA0,23
+mastercardplaces/__init__.py,sha256=YePzsyqrSfXofzVC4QWenj-m6I7QXx2yZWiwxrNFLeU,237
+mastercardplaces/geocodelocation.py,sha256=R-L-dpUH6oWEWB7y_EAzzOFWyTRWXLWBf286IX9MEYI,3100
+mastercardplaces/merchantcategorycodes.py,sha256=EYbPFs8RDumGEdTXNWte3a8ivSHWL2Abm4glpEa_a8A,3059
+mastercardplaces/merchantindustries.py,sha256=Dm-CAmRlpZlgmGeE7JXMUyUGOk4VdTjejZ2-Dak0xD8,3041
+mastercardplaces/merchantpointofinterest.py,sha256=mgCznVmnoQjIn_qqa-QKvt8UXWB29WXCcUtrlCbJWCU,3154
+tests/GeocodeLocationTest.py,sha256=BMllZc9dgBO0Vh8yD4yQRfWVNGdAt7zY_3F8X3bnOe8,3834
+tests/MerchantCategoryCodesTest.py,sha256=m-7TNBmDy9dgpafz-jGJ2uSBkaCDw6bcZzGd3XB7u0Y,4979
+tests/MerchantIndustriesTest.py,sha256=2Rvfck9uMqep9pkwYHSMuwvUXmqFVf8gOZJsCZUVJYA,4900
+tests/MerchantPointOfInterestTest.py,sha256=E63e47cnthrs3UVIhL2ZZlBmWJpH1euQzGknzUxV-Hw,17808
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
