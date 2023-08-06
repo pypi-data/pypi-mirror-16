@@ -1,0 +1,14 @@
+case/__init__.py,sha256=CQcDfKGHEZCAfvi9b0r_ypqgkNsPijH7HobWx-gjNF4,997
+case/case.py,sha256=pqQqqf7OavSgJehAENBAc-ZdnFstdUliHgNHnzsySsQ,9271
+case/mock.py,sha256=3M5KcOjmx5QkZnA9yGlFYW82t3QOVVrhJckM9jHgbXM,18340
+case/pytest.py,sha256=dagxNAvJTJHpHlYYbrhFNWRy17wKWmKsXCr_lm6Dy1s,2762
+case/skip.py,sha256=i_35-ffBHrPP0Etbw63RDGzFviwGV23DsBGe0UU8dJ0,7443
+case/utils.py,sha256=wiumfp0yeeL-1zetdI1_UMpBdOGSahLCjS3RAxwT_F0,6827
+case/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+case-1.3.1.dist-info/DESCRIPTION.rst,sha256=b8Sc5ZPLTFA1wJJlaDgMoF9FSsn-EkM9klg6tBB98HQ,2319
+case-1.3.1.dist-info/METADATA,sha256=D5KLjyampIkuiDyYJ1n1Gjr1menItWL-5GIFC7ctJ8c,3258
+case-1.3.1.dist-info/RECORD,,
+case-1.3.1.dist-info/WHEEL,sha256=o2k-Qa-RMNIJmUdIc7KU6VWR_ErNRbWNlxDIpl7lm34,110
+case-1.3.1.dist-info/entry_points.txt,sha256=blc45XTPYtD9YhzXB0IjeGns0eJ4SNbMJ8bKaYFe0BM,31
+case-1.3.1.dist-info/metadata.json,sha256=MDKSHMDoeUUOnsM4NBmUnFwCbCK8MO6octTUWIMoc8Y,1157
+case-1.3.1.dist-info/top_level.txt,sha256=HfF7xuqqQ1bhSERcf0xOarBv_L2pKy4pBG6ZcEC2G9Y,5
